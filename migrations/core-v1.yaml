@@ -4,7 +4,7 @@ core_contract:
   repository: reference-atlas-core
   commit: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
   fixed_release: null
-  release_gate: Core v1.0.0 Control Planeの固定commitを使用する。Subject Certificateは必須Profile未Closureのため未生成。
+  release_gate: Core v1.0.0 Control Planeの固定commitを使用し、全必須Profile closure後にSubject CertificateをGeneratorで生成する。
 legacy_repository: null
 legacy_manifest_present: false
 preserved_research:

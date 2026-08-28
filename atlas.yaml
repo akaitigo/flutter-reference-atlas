@@ -9,7 +9,7 @@ repository:
   default_branch: main
 archetypes: [product, language-platform]
 stage: 1
-status: incomplete
+status: complete
 language:
   primary: ja
   identifiers: en

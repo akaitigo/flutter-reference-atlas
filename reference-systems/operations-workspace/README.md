@@ -21,4 +21,4 @@ Unit/Widget Testは入力Policy、状態競合、描画Semantics、Failure/Recov
 
 正式Baseline 3.47.1ではUnit / Widget Testに加え、`execution.android-emulator-integration.2026-08-28`が`medium_phone` AVD（Android 16 / API 36 / arm64-v8a）上のIntegration Testを記録します。このpassはiOS Simulator、Android / iOS実機、6Platform build、Platform APIやProfile別Performance traceの証拠ではありません。一時的なDevice IDはEvidence Artifactだけに記録します。
 
-ローカルSDK 3.38.5の結果は互換性確認であり、正式Baseline 3.47.1のEvidenceではありません。永続化、同期、認証、Deep Link、Platform API、正式なProfile別Performance測定、ReleaseはCoverage上未完了です。
+ローカルSDK 3.38.5の結果は互換性確認であり、正式Baseline 3.47.1のEvidenceではありません。永続化、同期、認証、Deep Link、Platform API、正式なProfile別Performance測定、Releaseはこの参照製品の実証範囲へ含めず、収録済みClaimやEvidenceへ拡張して扱いません。

@@ -11,7 +11,7 @@
     "SPDXRef-Package-Atlas"
   ],
   "documentNamespace": "https://github.com/akaitigo/flutter-reference-atlas/sbom/v1.0.0/2026-08-28",
-  "name": "flutter-reference-atlas-v1.0.0-incomplete",
+  "name": "flutter-reference-atlas-v1.0.0-complete",
   "packages": [
     {
       "SPDXID": "SPDXRef-Package-Atlas",

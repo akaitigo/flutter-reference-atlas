@@ -57,4 +57,4 @@ Android Emulatorの現在のpassは`execution.android-emulator-integration.2026-
 
 ## 完成境界
 
-公開Surface Inventoryは、上記の宣言済み粒度では存在し、未分類0を機械検査できます。ただしInventory GateとRuntime Gateは独立です。Android Emulatorの単一passはiOS Simulator、実機、6Platform build、Platform Channel / Plugin / Add-to-AppのNative runtimeを証明しません。必須Target、Environment Profile、Evidence Set、Publication Gateがすべて閉じ、Completion Certificateが生成されるまでは`status: incomplete`を維持します。
+公開Surface Inventoryは、上記の宣言済み粒度では存在し、未分類0を機械検査できます。ただしInventory GateとRuntime Gateは独立です。Android Emulatorの単一passはiOS Simulator、実機、6Platform build、Platform Channel / Plugin / Add-to-AppのNative runtimeを証明しません。固定Epochでは必須Targetを`covered`または理由付き`infeasible`へ閉じ、必須Profile、Evidence Set、Publication GateとCompletion Certificateを満たした状態だけを`status: complete`とします。

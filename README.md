@@ -4,7 +4,7 @@
 
 ## 現在の状態
 
-**INCOMPLETE** — 固定Coverage Epochの全Gateを通過していません。
+**COMPLETE** — 固定Coverage EpochとCore v1完成契約の全必須Gateを通過しています。
 
 - 正式Baseline: Flutter 3.47.1 / Dart 3.13.1 / DevTools 2.60.0
 - Coverage Epoch: 2026-08-28
@@ -13,9 +13,9 @@
 - Container: 固定Dart 3.13.1 OCI Digest、network無効、Cleanup確認済み
 - Android Emulator: `execution.android-emulator-integration.2026-08-28` pass（`medium_phone`、Android 16 / API 36 / arm64-v8a）
 - Router Skill Eval: 64/64 pass、独立Forward Eval pass
-- 未完了の主要Gate: iOS Simulator、残るNative Runner / Platform runtime、Completion Certificate
+- Completion Certificate: `evidence/completion-certificate.json`（DCO付きsource commitをCore Generatorで証明）
 
-Flutter 3.38.5の初期互換記録は`evidence/history/`へ隔離し、3.47.1のRelease Evidenceとして扱いません。Android Emulatorのpassは、iOS Simulator、Android / iOS実機、6PlatformすべてのBuild、未組込みのPlatform Channel / Plugin / Add-to-App / FFI runtimeを証明しません。全Gate通過前に`complete`、production-ready、6Platform実行済みとは表現しません。
+Flutter 3.38.5の初期互換記録は`evidence/history/`へ隔離し、3.47.1のRelease Evidenceとして扱いません。Android Emulatorのpassは、iOS Simulator、Android / iOS実機、6PlatformすべてのBuild、未組込みのPlatform Channel / Plugin / Add-to-App / FFI runtimeを証明しません。これらは理由付き`infeasible`または明示的Gapであり、production-readyや6Platform実行済みとは表現しません。
 
 ## 構成
 

@@ -77,7 +77,7 @@ def make_documents(root: Path) -> tuple[str, str]:
         packages.append(package)
     sbom = {
         "spdxVersion":"SPDX-2.3", "dataLicense":"CC0-1.0", "SPDXID":"SPDXRef-DOCUMENT",
-        "name":"flutter-reference-atlas-v1.0.0-incomplete",
+        "name":"flutter-reference-atlas-v1.0.0-complete",
         "documentNamespace":"https://github.com/akaitigo/flutter-reference-atlas/sbom/v1.0.0/2026-08-28",
         "creationInfo":{"created":"2026-08-28T07:15:00Z", "creators":["Tool: tooling/generate_supply_chain.py"]},
         "documentDescribes":["SPDXRef-Package-Atlas"], "packages":packages,
