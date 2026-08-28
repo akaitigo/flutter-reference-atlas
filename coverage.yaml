@@ -1,0 +1,150 @@
+schema_version: 1
+atlas_id: flutter-reference-atlas
+epoch: "2026-08-28"
+authority_lock_digest: sha256:c24de5c1382ed64931092f87471fc55f923441389c0a19287f95d8beb594e409
+target_sets:
+  - id: baseline
+    title: 固定SDKと一次資料
+    sequence: 1
+    completion_required: true
+    exit_criteria:
+      - Flutter、Engine、Dart、DevToolsのVersionとrevisionを固定すること
+      - Authority LockとRuntime InventoryのDigestを再計算できること
+  - id: product
+    title: Production Reference Product
+    sequence: 2
+    completion_required: true
+    exit_criteria:
+      - Adaptive UI、状態遷移、永続化境界を自動試験できること
+      - 正常、拒否、障害、復旧の代表フローを再実行できること
+  - id: language-platform
+    title: FlutterとDartの公開能力
+    sequence: 3
+    completion_required: true
+    exit_criteria:
+      - 固定SDKの公開SurfaceをCapabilityへ欠落なく分類すること
+      - Platform固有能力を実行環境とEvidenceへ接続すること
+  - id: execution
+    title: 再実行可能なLab
+    sequence: 4
+    completion_required: true
+    exit_criteria:
+      - local、container、simulatorのSetupからCleanupを自動化すること
+      - 各Labの決定論範囲と失敗注入の隔離を明示すること
+  - id: quality
+    title: 品質、運用、移行
+    sequence: 5
+    completion_required: true
+    exit_criteria:
+      - Test、性能、Accessibility、Security、配布判断を証拠化すること
+      - Upgrade、Incident、BackupとRestoreのRunbookを検証すること
+  - id: skill
+    title: Router Skillと評価
+    sequence: 6
+    completion_required: true
+    exit_criteria:
+      - 一つのRouterがCapability、Lab、Evidenceへ正しく誘導すること
+      - Coverage外と権限外の依頼を捏造または実行せず返すこと
+targets:
+  - id: baseline.flutter-3.47.1
+    title: Flutter 3.47.1 Authority Baseline
+    target_set: baseline
+    kind: compatibility
+    requirement: required
+    state: partial
+    rationale: 配布物とrevisionは固定済みだが、対象SDK本体での全Lab再実行がまだ完了していない。
+    claim_ids: [baseline.flutter-version-lock]
+    evidence_ids: []
+  - id: product.operations-workspace
+    title: Operations Workspace製品実装
+    target_set: product
+    kind: construction
+    requirement: required
+    state: partial
+    rationale: Adaptive UIと状態管理の基準実装は存在するが、永続化、同期、配布までの閉包が未完了である。
+    claim_ids: [product.adaptive-state-flow]
+    evidence_ids: [execution.local-compatibility.2026-08-28]
+  - id: language.public-surface-inventory
+    title: 公開API Surface Inventory
+    target_set: language-platform
+    kind: capability
+    requirement: required
+    state: planned
+    rationale: SDK公開SymbolとCLI Optionを機械抽出して全件をCapabilityへ分類する必要がある。
+    claim_ids: []
+    evidence_ids: []
+  - id: language.dart-concurrency
+    title: Dart非同期処理と競合解決
+    target_set: language-platform
+    kind: capability
+    requirement: required
+    state: covered
+    rationale: 固定Dart 3.13.1 Containerで決定論的競合解決とlost update検出を再実行した。
+    claim_ids: [language.deterministic-conflict-resolution]
+    evidence_ids: [execution.container-conflict.2026-08-28]
+  - id: platform.six-target-builds
+    title: 公式6Platform Build
+    target_set: language-platform
+    kind: compatibility
+    requirement: required
+    state: planned
+    rationale: Android、iOS、Web、Windows、macOS、Linuxの固定環境Build証拠を揃える必要がある。
+    claim_ids: []
+    evidence_ids: []
+  - id: execution.local
+    title: Local Profile Lab
+    target_set: execution
+    kind: operation
+    requirement: required
+    state: partial
+    rationale: 再実行Scriptは存在するが対象SDK 3.47.1ではなく既存3.38.5でのみ確認している。
+    claim_ids: [execution.local-repeatability]
+    evidence_ids: [execution.local-compatibility.2026-08-28]
+  - id: execution.container
+    title: Container Profile Lab
+    target_set: execution
+    kind: operation
+    requirement: required
+    state: covered
+    rationale: Digest固定Dart 3.13.1 ImageをNetwork無効で実行し、終了後の派生ContainerとImageをCleanupした。
+    claim_ids: [execution.container-isolation]
+    evidence_ids: [execution.container-conflict.2026-08-28]
+  - id: execution.simulator
+    title: Mobile Simulator Profile Lab
+    target_set: execution
+    kind: operation
+    requirement: required
+    state: infeasible
+    rationale: 現在のHostには完全なXcodeとAndroid SDKがなく、対象Simulatorでの実行証拠を生成できない。
+    claim_ids: []
+    evidence_ids: []
+    exclusion:
+      reason: iOS SimulatorまたはAndroid EmulatorのToolchain導入後に再評価し、代替証拠を同等とは扱わない。
+      reviewed_at: "2026-08-28"
+  - id: quality.accessibility-performance-security
+    title: Accessibility・Performance・Security Gate
+    target_set: quality
+    kind: performance
+    requirement: required
+    state: planned
+    rationale: Semantics、Keyboard、Frame、Memory、Secret、SBOMの定量Gateを対象SDKで実行する必要がある。
+    claim_ids: []
+    evidence_ids: []
+  - id: quality.migration-operations
+    title: Upgradeと運用Runbook
+    target_set: quality
+    kind: migration
+    requirement: required
+    state: partial
+    rationale: Runbookの骨格はあるがBackup、Restore、Upgrade Drillの実行証拠が未生成である。
+    claim_ids: [quality.explicit-operational-boundary]
+    evidence_ids: []
+  - id: skill.router
+    title: Flutter Reference Router Skill
+    target_set: skill
+    kind: skill
+    requirement: required
+    state: covered
+    rationale: Routerの決定論Eval 9件と独立Agent Forward Evalで、Coverage Gap、Simulator専用Lab、書込・公開権限境界を確認した。
+    claim_ids: [skill.routes-without-invention]
+    evidence_ids: [skill.router-eval.2026-08-28]

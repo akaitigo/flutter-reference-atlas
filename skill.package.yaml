@@ -1,0 +1,17 @@
+schema_version: 1
+atlas_id: flutter-reference-atlas
+atlas_release: v1.0.0
+router:
+  id: flutter-reference-router
+  path: .agents/skills/flutter-reference-router/SKILL.md
+  description: Flutterの設計、実装、診断、復旧、移行、ReviewをCoverageと一次資料、再実行可能なLabへ案内する。
+generated_from:
+  - coverage.yaml
+  - atlas/capabilities/index.json
+  - atlas/claims/index.json
+  - labs/index.json
+adapters:
+  - codex
+evals:
+  path: evals/
+  minimum_pass_rate: 1.0

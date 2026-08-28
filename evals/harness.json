@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "flutter-reference-router-eval",
+  "files": {
+    "routes": "sha256:cd5fd2389a22ea4f2913451f7e6400b56ee932904d6efe498782ed7db078e01c",
+    "cases": "sha256:8b3e168c28ef590a604e7ac6044efe8056e02d7008f0bc81096d0320541cf817",
+    "evaluator": "sha256:71c75f074b48df4212ee0ab21578acc48af861c03f7b0e4e4c613ff005ec1f0b",
+    "router": "sha256:50e75bc00af7f1ae4b63f9be3274a2f9b9f89ba12c44abaf88bb93b4db7fa2f3"
+  },
+  "observable_outcomes": ["capability selection", "coverage gap", "write boundary", "publication boundary"]
+}

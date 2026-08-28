@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "labs": [
+    {"id":"lab.authority-lock","path":"tooling/atlascheck","profiles":["local"]},
+    {"id":"lab.widget-lifecycle","path":"labs/widget-lifecycle","profiles":["local"]},
+    {"id":"lab.simulator-integration","path":"reference-systems/operations-workspace/integration_test","profiles":["simulator"]},
+    {"id":"lab.offline-conflict-resolution","path":"labs/offline-conflict-resolution","profiles":["local","container"]},
+    {"id":"lab.local-profile","path":"scripts/labs-local.sh","profiles":["local"]},
+    {"id":"lab.container-profile","path":"scripts/labs-container.sh","profiles":["container"]},
+    {"id":"lab.operations-drill","path":"operations","profiles":["local"]},
+    {"id":"lab.skill-eval","path":"evals","profiles":["local"]}
+  ],
+  "tests": [
+    {"id":"test.overlay-validator","path":"tooling/atlascheck/main_test.go"},
+    {"id":"test.operations-workspace","path":"reference-systems/operations-workspace/test"},
+    {"id":"test.simulator-integration","path":"reference-systems/operations-workspace/integration_test/workspace_integration_test.dart"},
+    {"id":"test.conflict-verifier","path":"labs/offline-conflict-resolution/bin/verify.dart"},
+    {"id":"test.local-script","path":"scripts/labs-local.sh"},
+    {"id":"test.container-script","path":"scripts/labs-container.sh"},
+    {"id":"test.runbook-structure","path":"scripts/validate-runbooks.sh"},
+    {"id":"test.router-eval","path":"evals/evaluate.py"}
+  ]
+}

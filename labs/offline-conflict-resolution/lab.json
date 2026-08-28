@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "lab.offline-conflict-resolution",
+  "deterministic_scope": "同じRevision集合、比較規則、Dart言語Semantics",
+  "setup": "Dart 3.13.1 SDK OCI imageをDigest固定で取得する。",
+  "execute": "dart run labs/offline-conflict-resolution/bin/verify.dart",
+  "verify": "winner、conflicting actors、lost update判定が入力順序で変化しない。",
+  "cleanup": "Containerを--rmで終了し、派生Imageを削除する。",
+  "files": {
+    "resolver": "sha256:98117037589891a629438334744b3eed3b100c441d0bde35cef72552fc346669",
+    "verifier": "sha256:1df53ddb97e83e366271a32a3751bbee7a5e590e8106bba6cd2e3af692a061f4",
+    "dockerfile": "sha256:110c04bff6284a24ef9b18ec026649e13d27a5313d5d45a644171e76e4342100"
+  }
+}

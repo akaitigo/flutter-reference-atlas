@@ -1,0 +1,50 @@
+schema_version: 1
+id: flutter-reference-atlas
+title: Flutter 技術実証アトラス
+owner:
+  github: akaitigo
+repository:
+  url: https://github.com/akaitigo/flutter-reference-atlas
+  visibility: public
+  default_branch: main
+archetypes: [product, language-platform]
+stage: 1
+status: incomplete
+language:
+  primary: ja
+  identifiers: en
+coverage:
+  epoch: "2026-08-28"
+  manifest: coverage.yaml
+authority:
+  lockfile: sources.lock.yaml
+  policy: primary-first
+mastery:
+  manifest: mastery.yaml
+  contract_version: 1.0.0
+scope:
+  statement: Flutter 3.47.1と同梱Dart 3.13.1の公開アプリ開発Surfaceを、製品実装、決定論的Lab、試験、運用証拠として実証する。
+  exclusions:
+    - pub.dev上のコミュニティPackage全件を個別評価すること
+    - FlutterおよびDart SDKのprivate APIと内部CI運用を網羅すること
+    - Google PlayおよびApp Storeの実アカウントへ成果物を公開すること
+requires:
+  - reference-atlas-core
+skills:
+  router:
+    id: flutter-reference-router
+    path: .agents/skills/flutter-reference-router/SKILL.md
+  package_manifest: skill.package.yaml
+  evals: evals/
+completion:
+  policy_version: 1.0.0
+  required_profiles: [local, container, simulator]
+  certificate: evidence/completion-certificate.json
+license:
+  default: Apache-2.0
+  notice: NOTICE
+  third_party_manifest: third_party/manifest.yaml
+  sbom: sbom.spdx.json
+security:
+  disclosure: SECURITY.md
+  defensive_only: true

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "atlas_id": "flutter-reference-atlas",
+  "capabilities": [
+    {"id":"baseline.sdk-lock","title":"SDKと一次資料の固定","target_ids":["baseline.flutter-3.47.1"],"recommendation":"required"},
+    {"id":"product.adaptive-workspace","title":"Adaptive Operations Workspace","target_ids":["product.operations-workspace"],"recommendation":"recommended"},
+    {"id":"language.conflict-resolution","title":"決定論的競合解決","target_ids":["language.dart-concurrency"],"recommendation":"recommended"},
+    {"id":"execution.local-lab","title":"Local Lab","target_ids":["execution.local"],"recommendation":"conditional"},
+    {"id":"execution.container-lab","title":"Container Lab","target_ids":["execution.container"],"recommendation":"conditional"},
+    {"id":"execution.simulator-lab","title":"Simulator Lab","target_ids":["execution.simulator"],"recommendation":"blocked"},
+    {"id":"operations.runbooks","title":"運用Runbook","target_ids":["quality.migration-operations"],"recommendation":"required"},
+    {"id":"skill.router","title":"Flutter Router Skill","target_ids":["skill.router"],"recommendation":"required"}
+  ]
+}

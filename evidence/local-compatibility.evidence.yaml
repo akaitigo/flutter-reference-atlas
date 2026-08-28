@@ -1,0 +1,20 @@
+schema_version: 1
+id: execution.local-compatibility.2026-08-28
+atlas_id: flutter-reference-atlas
+claim_ids: [product.adaptive-state-flow, execution.local-repeatability]
+kind: compatibility
+producer: Flutter Test 3.38.5 and Dart 3.10.4
+command: scripts/labs-local.sh && scripts/labs-local.sh
+created_at: "2026-08-28T15:28:23+09:00"
+environment:
+  profile: local
+  manifest_digest: sha256:f0f614b25c13c29a035cfe4e4d15029dc032ee84b3dfae4a2645c99f57c108fe
+source_digest: sha256:c24de5c1382ed64931092f87471fc55f923441389c0a19287f95d8beb594e409
+harness_digest: sha256:82305f4631fb8d26fb4959b87655a763f950dee02cea277da5d667e724ea12b3
+artifact:
+  uri: evidence/artifacts/local-compatibility-report.json
+  digest: sha256:162ab08e3518e878063461eda39365aba41b7ffbac0a37dfd94a4f3cd45d960f
+  media_type: application/json
+  size_bytes: 442
+verdict: pass
+retention: git

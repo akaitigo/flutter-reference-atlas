@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-08-28T15:00:00+09:00",
+  "profile": "local",
+  "host": {
+    "os": "macOS 26.1 25B78",
+    "architecture": "darwin-arm64",
+    "locale": "ja-JP"
+  },
+  "flutter": {
+    "version": "3.38.5",
+    "channel": "stable",
+    "framework_revision": "f6ff1529fd6d8af5f706051d9251ac9231c83407",
+    "engine_revision": "1527ae0ec577a4ef50e65f6fefcfc1326707d9bf",
+    "engine_content_hash": "c108a94d7a8273e112339e6c6833daa06e723a54",
+    "dart_version": "3.10.4",
+    "dart_revision": "a0daa5004ec02c0638ba6e50791ba9338a87374c",
+    "devtools_version": "2.51.1",
+    "devtools_revision": "9360cc98ac03a6e50a9f56213fb7f45e62f55fcf"
+  },
+  "available_targets": ["macos", "chrome"],
+  "missing_toolchains": ["android-sdk", "full-xcode", "cocoapods"],
+  "matches_authority_baseline": false
+}

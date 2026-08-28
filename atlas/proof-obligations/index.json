@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "proof_obligations": [
+    {"id":"proof.baseline-digest","oracle":"Manifest間のVersionとSHA-256が一致する。"},
+    {"id":"proof.product-observable-state","oracle":"操作後の画面とController Stateが一致する。"},
+    {"id":"proof.conflict-determinism","oracle":"入力順序に依存せず同じwinnerとconflict countを返す。"},
+    {"id":"proof.setup-execute-verify-cleanup","oracle":"再実行可能で終了後Resourceが残らない。"},
+    {"id":"proof.operational-decisions","oracle":"必須運用項目が適用または理由付き非適用である。"},
+    {"id":"proof.skill-routing","oracle":"Expected Routeと権限判断が全Caseで一致する。"}
+  ]
+}

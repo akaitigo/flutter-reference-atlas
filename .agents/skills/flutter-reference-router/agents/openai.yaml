@@ -1,0 +1,6 @@
+interface:
+  display_name: "Flutter Reference Router"
+  short_description: "Flutter設計と検証を一次資料・Lab・Evidenceへ案内"
+  default_prompt: "$flutter-reference-routerを使い、このFlutter課題をCoverageと再実行可能な証拠へ接続してください。"
+policy:
+  allow_implicit_invocation: true

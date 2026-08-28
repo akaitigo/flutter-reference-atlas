@@ -1,0 +1,21 @@
+schema_version: 1
+coverage_epoch: "2026-08-28"
+flutter:
+  version: 3.47.1
+  channel: stable
+  framework_revision: 6655482ec06e547f90abf8ae7590466f4415978d
+  engine_revision: 5d531788691ec3404cac0cee66ead4007b177363
+  release_bundle_sha256: 38c9ffe0af4a71e4600f4fda310f0e895757550926128e28aa57782ea97538fa
+dart:
+  version: 3.13.1
+  revision: 852b3e3608906afbe6102573cfd4407aeedd1b78
+devtools:
+  version: 2.60.0
+  revision: 12d595649f189f1896722623f72599077f476848
+core_contract:
+  commit: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+  release_status: unreleased-commit
+execution_status:
+  target_sdk_installed: false
+  local_compatibility_sdk: 3.38.5
+  completion_effect: 対象SDKで全Evidenceを再生成するまでstatusはincompleteのままとする。

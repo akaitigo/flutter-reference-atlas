@@ -1,0 +1,35 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.0'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.1'
+          channel: stable
+          cache: true
+      - uses: actions/checkout@v4
+        with:
+          repository: akaitigo/reference-atlas-core
+          ref: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+          path: .tools/reference-atlas-core
+      - name: Core atlas CLIを固定commitからBuild
+        run: make atlas-bootstrap CORE_DIR=.tools/reference-atlas-core
+      - name: atlas validateとOverlay Gate
+        run: make validate CORE_DIR=.tools/reference-atlas-core
+      - name: Test・Analyze・Skill Eval・Legal Gate
+        run: make test analyze skill-eval runbooks legal
+
+# Publication、Release、Store送信はこのWorkflowで行わない。

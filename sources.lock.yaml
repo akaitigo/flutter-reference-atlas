@@ -1,0 +1,104 @@
+schema_version: 1
+atlas_id: flutter-reference-atlas
+epoch: "2026-08-28"
+generated_at: "2026-08-28T15:00:00+09:00"
+sources:
+  - id: reference-atlas-core-v1
+    kind: source
+    title: 技術実証アトラス Core main 正本
+    url: https://github.com/akaitigo/reference-atlas-core/commit/d5c0a6ce757fd5f43af837edd26f55c7325b811e
+    version: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+    retrieved_at: "2026-08-28"
+    digest: sha256:67120b38028fa871625f370f3688e52a4963df1f318d6e4b30a1cb6b8accbc38
+    license: Apache-2.0
+    redistribution: metadata-only
+  - id: flutter-sdk-3.47.1-macos-arm64
+    kind: source
+    title: Flutter SDK 3.47.1 stable macOS arm64 release bundle
+    url: https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.47.1-stable.zip
+    version: 3.47.1+6655482ec06e547f90abf8ae7590466f4415978d
+    retrieved_at: "2026-08-28"
+    digest: sha256:38c9ffe0af4a71e4600f4fda310f0e895757550926128e28aa57782ea97538fa
+    license: BSD-3-Clause
+    redistribution: link-only
+  - id: flutter-release-manifest-macos
+    kind: registry
+    title: Flutter macOS release manifest
+    url: https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json
+    version: retrieved-2026-08-28
+    retrieved_at: "2026-08-28"
+    digest: sha256:e193b03722f211c32ed4a80789be13e7a7d361f0ce153b97b8ada3def51a1e4e
+    license: BSD-3-Clause
+    redistribution: metadata-only
+  - id: flutter-engine-3.47.1-deps
+    kind: source
+    title: Flutter Engine dependency lock for Flutter 3.47.1
+    url: https://github.com/flutter/flutter/blob/5d531788691ec3404cac0cee66ead4007b177363/DEPS
+    version: 5d531788691ec3404cac0cee66ead4007b177363
+    retrieved_at: "2026-08-28"
+    digest: sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261
+    license: BSD-3-Clause
+    redistribution: metadata-only
+  - id: dart-sdk-3.13.1
+    kind: source
+    title: Flutter Engine DEPSに固定されたDart SDK revision
+    url: https://github.com/flutter/flutter/blob/5d531788691ec3404cac0cee66ead4007b177363/DEPS#L59
+    version: 3.13.1+852b3e3608906afbe6102573cfd4407aeedd1b78
+    retrieved_at: "2026-08-28"
+    digest: sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261
+    license: BSD-3-Clause
+    redistribution: metadata-only
+  - id: devtools-2.60.0
+    kind: source
+    title: Dart and Flutter DevTools application metadata
+    url: https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml
+    version: 2.60.0+12d595649f189f1896722623f72599077f476848
+    retrieved_at: "2026-08-28"
+    digest: sha256:2bc73e86b0d652245417d9d3f42d7f633f7c41e1369e869bde348d352d15346a
+    license: BSD-3-Clause
+    redistribution: metadata-only
+  - id: flutter-3.47-release-notes
+    kind: release-notes
+    title: Flutter 3.47.0 release notes
+    url: https://docs.flutter.dev/release/release-notes/release-notes-3.47.0
+    version: 3.47.0-family-retrieved-2026-08-28
+    retrieved_at: "2026-08-28"
+    digest: sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3
+    license: CC-BY-4.0 and BSD-3-Clause for code samples
+    redistribution: link-only
+  - id: dart-3.13-changelog
+    kind: release-notes
+    title: Dart SDK 3.13 changelog
+    url: https://dart.dev/changelog
+    version: 3.13-family-retrieved-2026-08-28
+    retrieved_at: "2026-08-28"
+    digest: sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5
+    license: CC-BY-4.0 and BSD-3-Clause for code samples
+    redistribution: link-only
+  - id: flutter-widgets-api
+    kind: official-documentation
+    title: Flutter widgets library API documentation
+    url: https://api.flutter.dev/flutter/widgets/widgets-library.html
+    version: retrieved-2026-08-28
+    retrieved_at: "2026-08-28"
+    digest: sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23
+    license: CC-BY-4.0 and BSD-3-Clause for code samples
+    redistribution: link-only
+  - id: local-runtime-inventory
+    kind: runtime-inventory
+    title: ローカルFlutter実行環境Inventory
+    url: https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/local/runtime-inventory.json
+    version: captured-2026-08-28
+    retrieved_at: "2026-08-28"
+    digest: sha256:f0f614b25c13c29a035cfe4e4d15029dc032ee84b3dfae4a2645c99f57c108fe
+    license: Apache-2.0
+    redistribution: allowed
+  - id: dart-container-3.13.1
+    kind: runtime-inventory
+    title: Dart 3.13.1 SDK OCI runtime image
+    url: https://hub.docker.com/_/dart
+    version: 3.13.1-sdk-linux-arm64
+    retrieved_at: "2026-08-28"
+    digest: sha256:d3f19cf5c18a7939d6af3f0896b2e9fec3f31f7ba3a2f88bfe6181e903084a51
+    license: BSD-3-Clause
+    redistribution: metadata-only

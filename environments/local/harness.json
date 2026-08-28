@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "local-compatibility-harness",
+  "files": {
+    "runner": "sha256:6c98b22f567d690cafe6846b6c8e7fe84b48fa58fce89056ebd9a4b56fb30bae",
+    "operations_workspace_lock": "sha256:b364ab784446f5b69c9f6a375ae9d06848720dcf5b8b116260c4a6cf82e8d89e",
+    "widget_lifecycle_lock": "sha256:38b1272e2228027f785e2dd29a96c3c382b6ae29c954655ef5e009a43da1b9b3",
+    "source_and_tests": "sha256:01e25da49942a8076ce81cd457cb91998e89772c02026e70934726efd977b65a"
+  },
+  "baseline_scope": "Flutter 3.38.5 local compatibility only"
+}

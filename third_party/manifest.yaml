@@ -1,0 +1,71 @@
+schema_version: 1
+generated_at: "2026-08-28T15:00:00+09:00"
+review_status: incomplete
+entries:
+  - id: flutter-sdk-template
+    name: Flutter SDK project templates
+    version: 3.38.5+f6ff1529fd6d8af5f706051d9251ac9231c83407
+    source: https://github.com/flutter/flutter/tree/f6ff1529fd6d8af5f706051d9251ac9231c83407/packages/flutter_tools/templates
+    license: BSD-3-Clause
+    license_file: LICENSES/BSD-3-Clause.txt
+    copyright_holder: The Flutter Authors
+    redistribution: allowed
+    provenance_domain: source-code
+    files:
+      - reference-systems/operations-workspace/android
+      - reference-systems/operations-workspace/ios
+      - reference-systems/operations-workspace/linux
+      - reference-systems/operations-workspace/macos
+      - reference-systems/operations-workspace/web
+      - reference-systems/operations-workspace/windows
+      - reference-systems/operations-workspace/.metadata
+    digest: pending-directory-digest
+    review_status: review-required
+  - id: flutter-lints
+    name: flutter_lints
+    version: 6.0.0
+    source: https://pub.dev/packages/flutter_lints/versions/6.0.0
+    license: BSD-3-Clause
+    license_file: LICENSES/BSD-3-Clause.txt
+    copyright_holder: The Flutter Authors
+    redistribution: allowed
+    provenance_domain: source-code
+    files: [reference-systems/operations-workspace/pubspec.lock]
+    digest: sha256:3105dc8492f6183fb076ccf1f351ac3d60564bff92e20bfc4af9cc1651f4e7e1
+    review_status: reviewed
+  - id: go-yaml-v3
+    name: gopkg.in/yaml.v3
+    version: 3.0.1
+    source: https://github.com/go-yaml/yaml/tree/v3.0.1
+    license: MIT AND Apache-2.0
+    license_file: LICENSES/gopkg.in-yaml.v3.txt
+    copyright_holder: Kirill Simonov and Canonical Ltd
+    redistribution: allowed
+    provenance_domain: source-code
+    files: [go.mod, go.sum]
+    digest: pending-go-module-sum
+    review_status: review-required
+  - id: dart-container-image
+    name: Dart SDK container image
+    version: 3.13.1-sdk
+    source: https://hub.docker.com/_/dart
+    license: BSD-3-Clause
+    license_file: LICENSES/BSD-3-Clause.txt
+    copyright_holder: The Dart Authors
+    redistribution: metadata-only
+    provenance_domain: generated-artifact
+    files: [environments/container/Dockerfile]
+    digest: sha256:d3f19cf5c18a7939d6af3f0896b2e9fec3f31f7ba3a2f88bfe6181e903084a51
+    review_status: reviewed
+  - id: github-actions
+    name: GitHub Actions used by CI
+    version: checkout-v4, setup-go-v5, flutter-action-v2
+    source: https://github.com/actions
+    license: MIT
+    license_file: LICENSES/MIT.txt
+    copyright_holder: GitHub and respective contributors
+    redistribution: link-only
+    provenance_domain: source-code
+    files: [.github/workflows/ci.yml]
+    digest: pending-action-commit-pins
+    review_status: review-required

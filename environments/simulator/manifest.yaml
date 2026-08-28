@@ -1,0 +1,10 @@
+schema_version: 1
+profile: simulator
+supported_runners: [ios-simulator, android-emulator]
+claims: [product.adaptive-state-flow]
+setup: scripts/labs-simulator.sh doctor
+execute: scripts/labs-simulator.sh run
+verify: 対象Simulatorでintegration_testが終了コード0を返すこと。
+cleanup: scripts/labs-simulator.sh cleanup
+current_status: infeasible
+blockers: [full-xcode, cocoapods, android-sdk]

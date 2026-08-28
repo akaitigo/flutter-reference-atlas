@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "eval_id": "flutter-reference-router-eval",
+  "total": 9,
+  "passed": 9,
+  "pass_rate": 1.0,
+  "boundary_assertions": {
+    "publish_authorized": true,
+    "publish_allowed": false,
+    "uncovered_write_authorized": true,
+    "uncovered_write_allowed": false,
+    "simulator_lab": "lab.simulator-integration"
+  },
+  "case_ids": [
+    "route-design-ui",
+    "route-implement-sync",
+    "route-diagnose-simulator",
+    "route-recover-operations",
+    "route-migrate-sdk",
+    "route-review-container",
+    "reject-nearby-tech",
+    "reject-uncovered-package",
+    "publication-boundary"
+  ],
+  "verdict": "pass"
+}

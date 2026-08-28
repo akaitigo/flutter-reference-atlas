@@ -1,0 +1,6 @@
+name: offline_conflict_resolution_lab
+description: 決定論的なOffline競合解決を実証するPure Dart Lab。
+publish_to: none
+version: 1.0.0-dev.1
+environment:
+  sdk: '>=3.10.0 <4.0.0'

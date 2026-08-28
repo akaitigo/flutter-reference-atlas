@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "atlas_id": "flutter-reference-atlas",
+  "claims": [
+    {
+      "id":"baseline.flutter-version-lock",
+      "capability_id":"baseline.sdk-lock",
+      "proof_obligation_id":"proof.baseline-digest",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps","dart-sdk-3.13.1","devtools-2.60.0"],
+      "acceptance":"固定Version、revision、配布物Digestが一次資料から再計算できる。",
+      "lab_id":"lab.authority-lock",
+      "test_id":"test.overlay-validator"
+    },
+    {
+      "id":"product.adaptive-state-flow",
+      "capability_id":"product.adaptive-workspace",
+      "proof_obligation_id":"proof.product-observable-state",
+      "authority_ids":["flutter-widgets-api"],
+      "acceptance":"同じ状態遷移が狭幅と広幅UIで観測でき、Widget Testが成功する。",
+      "lab_id":"lab.widget-lifecycle",
+      "test_id":"test.operations-workspace"
+    },
+    {
+      "id":"language.deterministic-conflict-resolution",
+      "capability_id":"language.conflict-resolution",
+      "proof_obligation_id":"proof.conflict-determinism",
+      "authority_ids":["dart-sdk-3.13.1","dart-container-3.13.1"],
+      "acceptance":"同一入力を順序変更しても競合解決結果が一致し、lost updateを検出する。",
+      "lab_id":"lab.offline-conflict-resolution",
+      "test_id":"test.conflict-verifier"
+    },
+    {
+      "id":"execution.local-repeatability",
+      "capability_id":"execution.local-lab",
+      "proof_obligation_id":"proof.setup-execute-verify-cleanup",
+      "authority_ids":["local-runtime-inventory"],
+      "acceptance":"Local Scriptを連続2回実行して同じVerdictを得て、一時Resourceが残らない。",
+      "lab_id":"lab.local-profile",
+      "test_id":"test.local-script"
+    },
+    {
+      "id":"execution.container-isolation",
+      "capability_id":"execution.container-lab",
+      "proof_obligation_id":"proof.setup-execute-verify-cleanup",
+      "authority_ids":["dart-sdk-3.13.1","dart-container-3.13.1"],
+      "acceptance":"Network無効Containerで検証が成功し、終了後にContainerが残らない。",
+      "lab_id":"lab.container-profile",
+      "test_id":"test.container-script"
+    },
+    {
+      "id":"quality.explicit-operational-boundary",
+      "capability_id":"operations.runbooks",
+      "proof_obligation_id":"proof.operational-decisions",
+      "authority_ids":["reference-atlas-core-v1"],
+      "acceptance":"Upgrade、Incident、Backup、Restore、Capacityの適用判断と手順が記録される。",
+      "lab_id":"lab.operations-drill",
+      "test_id":"test.runbook-structure"
+    },
+    {
+      "id":"skill.routes-without-invention",
+      "capability_id":"skill.router",
+      "proof_obligation_id":"proof.skill-routing",
+      "authority_ids":["reference-atlas-core-v1"],
+      "acceptance":"全Eval Caseで正しいMode、Capability、Gap、権限境界を返す。",
+      "lab_id":"lab.skill-eval",
+      "test_id":"test.router-eval"
+    }
+  ]
+}

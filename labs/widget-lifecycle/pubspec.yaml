@@ -1,0 +1,14 @@
+name: widget_lifecycle_lab
+description: Flutter AppLifecycleStateの観測とcleanupを検証するLab。
+publish_to: none
+version: 1.0.0-dev.1
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: false

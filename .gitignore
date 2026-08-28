@@ -1,0 +1,9 @@
+.dart_tool/
+.packages
+build/
+coverage/
+*.iml
+.idea/
+.DS_Store
+evidence/artifacts/*.tmp
+.tools/

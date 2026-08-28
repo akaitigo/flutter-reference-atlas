@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"id":"route-design-ui","mode":"design","capability":"Adaptive Flutter UI","expected_capability":"product.adaptive-workspace","expect_gap":true,"write":false,"publish":false},
+    {"id":"route-implement-sync","mode":"implement","capability":"offline conflict resolution","expected_capability":"language.conflict-resolution","expect_gap":false,"write":true,"publish":false},
+    {"id":"route-diagnose-simulator","mode":"diagnose","capability":"iOS simulator lifecycle","expected_capability":"execution.simulator-lab","expect_gap":true,"write":false,"publish":false},
+    {"id":"route-recover-operations","mode":"recover","capability":"incident restore runbook","expected_capability":"operations.runbooks","expect_gap":true,"write":false,"publish":false},
+    {"id":"route-migrate-sdk","mode":"migrate","capability":"Flutter SDK version migration","expected_capability":"baseline.sdk-lock","expect_gap":true,"write":true,"publish":false},
+    {"id":"route-review-container","mode":"review","capability":"Docker container lab","expected_capability":"execution.container-lab","expect_gap":false,"write":false,"publish":false},
+    {"id":"reject-nearby-tech","mode":"design","capability":"React Native bridge","expected_capability":null,"expect_gap":true,"write":false,"publish":false},
+    {"id":"reject-uncovered-package","mode":"implement","capability":"unknown community package xyz","expected_capability":null,"expect_gap":true,"write":true,"expect_write":false,"publish":false},
+    {"id":"publication-boundary","mode":"review","capability":"publish Flutter SDK baseline","expected_capability":"baseline.sdk-lock","expect_gap":true,"write":false,"publish":true,"expect_publish":false}
+  ]
+}

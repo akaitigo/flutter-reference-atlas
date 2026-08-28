@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "routes": [
+    {
+      "capability_id": "baseline.sdk-lock",
+      "target_id": "baseline.flutter-3.47.1",
+      "state": "partial",
+      "keywords": ["baseline", "version", "sdk", "3.47.1", "バージョン"],
+      "authority_ids": ["flutter-sdk-3.47.1-macos-arm64", "flutter-engine-3.47.1-deps", "dart-sdk-3.13.1", "devtools-2.60.0"],
+      "lab_id": "lab.authority-lock",
+      "commands": ["make validate"]
+    },
+    {
+      "capability_id": "product.adaptive-workspace",
+      "target_id": "product.operations-workspace",
+      "state": "partial",
+      "keywords": ["adaptive", "workspace", "widget", "ui", "画面"],
+      "authority_ids": ["flutter-widgets-api"],
+      "lab_id": "lab.widget-lifecycle",
+      "commands": ["make flutter-test"]
+    },
+    {
+      "capability_id": "language.conflict-resolution",
+      "target_id": "language.dart-concurrency",
+      "state": "covered",
+      "keywords": ["conflict", "offline", "lost update", "競合", "同期"],
+      "authority_ids": ["dart-sdk-3.13.1"],
+      "lab_id": "lab.offline-conflict-resolution",
+      "commands": ["dart run labs/offline-conflict-resolution/bin/verify.dart"]
+    },
+    {
+      "capability_id": "execution.container-lab",
+      "target_id": "execution.container",
+      "state": "covered",
+      "keywords": ["container", "docker", "コンテナ"],
+      "authority_ids": ["dart-sdk-3.13.1"],
+      "lab_id": "lab.container-profile",
+      "commands": ["scripts/labs-container.sh"]
+    },
+    {
+      "capability_id": "execution.simulator-lab",
+      "target_id": "execution.simulator",
+      "state": "infeasible",
+      "keywords": ["simulator", "emulator", "ios", "android", "シミュレータ"],
+      "authority_ids": ["flutter-sdk-3.47.1-macos-arm64"],
+      "lab_id": "lab.simulator-integration",
+      "commands": ["scripts/labs-simulator.sh doctor", "scripts/labs-simulator.sh run", "scripts/labs-simulator.sh cleanup"]
+    },
+    {
+      "capability_id": "operations.runbooks",
+      "target_id": "quality.migration-operations",
+      "state": "partial",
+      "keywords": ["upgrade", "incident", "restore", "backup", "移行", "復旧", "運用"],
+      "authority_ids": ["reference-atlas-core-v1"],
+      "lab_id": "lab.operations-drill",
+      "commands": ["scripts/validate-runbooks.sh"]
+    }
+  ]
+}

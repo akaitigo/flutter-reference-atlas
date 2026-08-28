@@ -1,0 +1,20 @@
+schema_version: 1
+id: skill.router-eval.2026-08-28
+atlas_id: flutter-reference-atlas
+claim_ids: [skill.routes-without-invention]
+kind: skill-eval
+producer: evals/evaluate.py
+command: python3 evals/evaluate.py
+created_at: "2026-08-28T15:28:23+09:00"
+environment:
+  profile: local
+  manifest_digest: sha256:f0f614b25c13c29a035cfe4e4d15029dc032ee84b3dfae4a2645c99f57c108fe
+source_digest: sha256:c24de5c1382ed64931092f87471fc55f923441389c0a19287f95d8beb594e409
+harness_digest: sha256:6de9736868cc59fd33df8762a6ed36701aa3313f0003c0af155875ceb434389b
+artifact:
+  uri: evidence/artifacts/router-eval-report.json
+  digest: sha256:e5affada11fb1f0024683b761a16bf8a7d0d5161b27627d50bdf2d6018abe8d5
+  media_type: application/json
+  size_bytes: 639
+verdict: pass
+retention: git

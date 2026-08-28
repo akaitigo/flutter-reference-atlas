@@ -1,0 +1,20 @@
+schema_version: 1
+id: execution.container-conflict.2026-08-28
+atlas_id: flutter-reference-atlas
+claim_ids: [language.deterministic-conflict-resolution, execution.container-isolation]
+kind: test-report
+producer: Docker 29.1.2 and Dart 3.13.1
+command: scripts/labs-container.sh
+created_at: "2026-08-28T15:28:23+09:00"
+environment:
+  profile: container
+  manifest_digest: sha256:62c98c80a8e24c277807105fed41928aabf4b825ae52cd51de033d66e8956b95
+source_digest: sha256:c24de5c1382ed64931092f87471fc55f923441389c0a19287f95d8beb594e409
+harness_digest: sha256:df6d8bb5b21a7c1298b8d3119dd62016872162f8450b2d38329a8c7d960298e5
+artifact:
+  uri: evidence/artifacts/container-conflict-report.json
+  digest: sha256:cdd9a338ac362f235ef8665a9c62a96aba99331b570a1c48603a257e8737be80
+  media_type: application/json
+  size_bytes: 386
+verdict: pass
+retention: git
