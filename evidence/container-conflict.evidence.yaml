@@ -9,7 +9,7 @@ created_at: "2026-08-28T07:15:00Z"
 environment:
   profile: container
   manifest_digest: sha256:62c98c80a8e24c277807105fed41928aabf4b825ae52cd51de033d66e8956b95
-source_digest: sha256:178fb77475110267290631bcb1118d90aa7b361ae38c86736ffa199feac449d9
+source_digest: sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f
 harness_digest: sha256:6a2c67a7f689a6450c70959c0e809a71ebf4c1c8a723f599fc5dc048eb3a204b
 harness_path: environments/container/harness.json
 artifact:

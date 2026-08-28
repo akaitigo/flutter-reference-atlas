@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "execution.android-emulator-lab",
+  "id": "execution.android-emulator-repeatability",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Android 16 API 36 Emulatorを実機と区別し、Flutter 3.47.1でassemble、install、run、Integration Test 1件を成功させ、AVDとApplication Dataを保持してCleanupする。"
+      ],
+      "id": "proof.android-emulator-integration",
+      "statement": "Lab lab.simulator-integration とTest test.simulator-integrationで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "android-emulator-runtime-inventory"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Android 16 API 36 Emulatorを実機と区別し、Flutter 3.47.1でassemble、install、run、Integration Test 1件を成功させ、AVDとApplication Dataを保持してCleanupする。",
+  "status": "accepted"
+}

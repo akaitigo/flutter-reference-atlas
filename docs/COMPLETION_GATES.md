@@ -13,4 +13,4 @@
 
 Core CLIの`atlas validate`は5 Manifest、Claim実体、Evidence、第三者Manifest、ProvenanceのSchema形状を検証し、`atlas audit .`はID、Epoch、Target Set、Routerを横断監査します。Overlay ValidatorはManifest間Digest、Claim/Evidence Graph、Artifact、Skill Eval、Legal Path、Status整合を補います。
 
-現在、Authority、有限Coverage分類、Mastery、Claim実体、Formal Local、Container、Operations Drill、Skill、SBOM/第三者Manifest/Provenanceはローカルで閉じています。Simulator pass EvidenceとAndroid/iOS/Windows/Linux Native Runner Evidenceがなく、Control Plane v1のRequired Profile Gateを満たさないため、Certificateは生成せず`status: incomplete`を維持します。
+現在、Authority、有限Coverage分類、Mastery、Claim実体、Formal Local、Container、Operations Drill、Skill、SBOM/第三者Manifest/Provenanceはローカルで閉じています。Android Emulator Integration Testは`execution.android-emulator-integration.2026-08-28`としてpassしていますが、これはiOS Simulator、Android / iOS実機、6PlatformすべてのNative Runner、未組込みのPlatform Channel / Plugin / Add-to-App / FFI runtimeのEvidenceではありません。残るRequired Profile / Publication Gateが閉じるまでCertificateは生成せず、`status: incomplete`を維持します。

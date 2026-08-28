@@ -1,0 +1,43 @@
+{
+  "diagnostics": {
+    "flutter_devices_digest": "sha256:6dead506d3dc9b6c3647565542d8259c0b740c59fe5687b1e0ba57f5076b96d4",
+    "flutter_doctor_digest": "sha256:b398e99b67feb98e460e3a081508bbcf7b6fdc00ebc9ad46df527067b3ef955a",
+    "flutter_version_digest": "sha256:1946c0bd2860e82c66e47b13cdfcde2fa7c20f3d9f48d79e8c12d700186c855a"
+  },
+  "profile": "simulator",
+  "runner": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "flutter_device": {
+      "capabilities": {
+        "flutterExit": true,
+        "hardwareRendering": true,
+        "hotReload": true,
+        "hotRestart": true,
+        "screenshot": true,
+        "startPaused": true
+      },
+      "emulator": true,
+      "id": "emulator-5554",
+      "isSupported": true,
+      "name": "sdk gphone64 arm64",
+      "sdk": "Android 16 (API 36)",
+      "targetPlatform": "android-arm64"
+    },
+    "kind": "android-emulator",
+    "model": "sdk_gphone64_arm64",
+    "os_version": "16",
+    "physical_device": false,
+    "runtime_name": "medium_phone"
+  },
+  "schema_version": 1,
+  "toolchain": {
+    "dart_version": "3.13.1",
+    "devtools_version": "2.60.0",
+    "engine_revision": "5d531788691ec3404cac0cee66ead4007b177363",
+    "flutter_version": "3.47.1",
+    "framework_revision": "6655482ec06e547f90abf8ae7590466f4415978d",
+    "sdk_root": "./.tools/flutter-3.47.1/flutter"
+  }
+}

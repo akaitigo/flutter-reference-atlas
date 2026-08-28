@@ -11,10 +11,11 @@
 - Core Contract: `reference-atlas-core` v1.0.0 commit `cf9e6e2d981305c83f970c1f21a1ddc9c1109263`
 - Formal Local: 16/16 command pass（Framework、Product、FFI、Security、Recovery、Web release buildを含む）
 - Container: 固定Dart 3.13.1 OCI Digest、network無効、Cleanup確認済み
-- Router Skill Eval: 62/62 pass、独立Forward Eval pass
-- 未完了の主要Gate: iOS/Android Simulator、Android/iOS/Windows/Linux Native Runner、Completion Certificate
+- Android Emulator: `execution.android-emulator-integration.2026-08-28` pass（`medium_phone`、Android 16 / API 36 / arm64-v8a）
+- Router Skill Eval: 64/64 pass、独立Forward Eval pass
+- 未完了の主要Gate: iOS Simulator、残るNative Runner / Platform runtime、Completion Certificate
 
-Flutter 3.38.5の初期互換記録は`evidence/history/`へ隔離し、3.47.1のRelease Evidenceとして扱いません。全Gate通過前に`complete`、production-ready、6Platform実行済みとは表現しません。
+Flutter 3.38.5の初期互換記録は`evidence/history/`へ隔離し、3.47.1のRelease Evidenceとして扱いません。Android Emulatorのpassは、iOS Simulator、Android / iOS実機、6PlatformすべてのBuild、未組込みのPlatform Channel / Plugin / Add-to-App / FFI runtimeを証明しません。全Gate通過前に`complete`、production-ready、6Platform実行済みとは表現しません。
 
 ## 構成
 
@@ -44,7 +45,7 @@ Container ProfileはDocker daemon起動後に実行します。
 scripts/labs-container.sh
 ```
 
-Simulator ProfileはToolchain不足を`infeasible`として記録しており、ContainerやSource Contractを同等の代替証拠とは扱いません。
+Simulator ProfileではAndroid Emulator Integration Testを実行済みです。iOS Simulator、実機、6Platform buildは別の実行Surfaceであり、Android Emulator、Container、Source Contractのいずれも相互の代替証拠とは扱いません。
 
 ## 完成の意味
 

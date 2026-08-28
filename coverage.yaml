@@ -1,7 +1,7 @@
 schema_version: 1
 atlas_id: flutter-reference-atlas
 epoch: "2026-08-28"
-authority_lock_digest: sha256:178fb77475110267290631bcb1118d90aa7b361ae38c86736ffa199feac449d9
+authority_lock_digest: sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f
 target_sets:
   - id: baseline
     title: 固定SDKと一次資料
@@ -202,17 +202,26 @@ targets:
     rationale: Digest固定Dart 3.13.1 ImageをNetwork無効で実行し、終了後の派生ContainerとImageをCleanupした。
     claim_ids: [execution.container-isolation]
     evidence_ids: [execution.container-conflict.2026-08-28]
-  - id: execution.simulator
-    title: Mobile Simulator Profile Lab
+  - id: execution.android-emulator
+    title: Android Emulator Profile Lab
+    target_set: execution
+    kind: operation
+    requirement: required
+    state: covered
+    rationale: Android 16 API 36 Emulatorを実機と判別し、Flutter 3.47.1でassemble、install、runとIntegration Test 1件を通した。
+    claim_ids: [execution.android-emulator-repeatability, platform.runner-matrix-is-explicit]
+    evidence_ids: [execution.android-emulator-integration.2026-08-28]
+  - id: execution.ios-simulator
+    title: iOS Simulator Profile Lab
     target_set: execution
     kind: operation
     requirement: required
     state: infeasible
-    rationale: 現在のHostには完全なXcodeとAndroid SDKがなく、対象Simulatorでの実行証拠を生成できない。
+    rationale: 現在のHostはCommand Line Toolsのみでfull XcodeとCocoaPodsがなく、iOS Simulator runtimeを実行できない。
     claim_ids: [platform.runner-matrix-is-explicit]
     evidence_ids: [execution.formal-local-closure.2026-08-28]
     exclusion:
-      reason: iOS SimulatorまたはAndroid EmulatorのToolchain導入後に再評価し、代替証拠を同等とは扱わない。
+      reason: full Xcode、iOS Simulator runtime、CocoaPodsを用意したHostで再評価し、Android Emulator Evidenceを代替とは扱わない。
       reviewed_at: "2026-08-28"
   - id: quality.testing
     title: Unit・Widget・Integration Test Contract

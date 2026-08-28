@@ -16,6 +16,7 @@
     {"id":"lab.formal-local-closure","path":"tooling/evidence_capture","profiles":["local"]},
     {"id":"lab.local-profile","path":"scripts/labs-local.sh","profiles":["local"]},
     {"id":"lab.container-profile","path":"scripts/labs-container.sh","profiles":["container"]},
+    {"id":"lab.simulator-profile","path":"scripts/labs-simulator.sh","profiles":["simulator"]},
     {"id":"lab.skill-eval","path":"evals","profiles":["local"]}
   ],
   "tests": [
@@ -33,6 +34,7 @@
     {"id":"test.formal-local-closure","path":"tooling/evidence_capture/bin/capture.dart"},
     {"id":"test.local-script","path":"scripts/labs-local.sh"},
     {"id":"test.container-script","path":"scripts/labs-container.sh"},
+    {"id":"test.simulator-script","path":"scripts/labs-simulator.sh"},
     {"id":"test.runbook-structure","path":"scripts/validate-runbooks.sh"},
     {"id":"test.router-eval","path":"evals/evaluate.py"}
   ]

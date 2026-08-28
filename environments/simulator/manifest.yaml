@@ -1,10 +1,35 @@
 schema_version: 1
 profile: simulator
-supported_runners: [ios-simulator, android-emulator]
-claims: [product.adaptive-state-flow]
+supported_runners: [android-emulator, ios-simulator]
+claims: [execution.android-emulator-repeatability, platform.runner-matrix-is-explicit]
+toolchain:
+  flutter: 3.47.1
+  dart: 3.13.1
+  devtools: 2.60.0
+android_emulator:
+  current_status: covered
+  os: Android 16
+  api_level: 36
+  architecture: arm64-v8a
+  physical_device: false
+  device_selection: FLUTTER_ATLAS_DEVICE_ID、FLUTTER_DEVICE_ID、または一意な起動済みemulator-*を使う。
+ios_simulator:
+  current_status: infeasible
+  blockers: [full-xcode, cocoapods]
+  reason: 現在のHostはCommand Line Toolsのみで、iOS Simulator runtimeを実行できない。
 setup: scripts/labs-simulator.sh doctor
 execute: scripts/labs-simulator.sh run
-verify: 対象Simulatorでintegration_testが終了コード0を返すこと。
+verify: 対象EmulatorまたはSimulatorでintegration_testが終了コード0かつAll tests passedを返し、JSON Reportを生成すること。
 cleanup: scripts/labs-simulator.sh cleanup
-current_status: infeasible
-blockers: [full-xcode, cocoapods, android-sdk]
+artifacts:
+  retained_runtime_inventory: environments/simulator/runtime-inventory.json
+  retained_integration_report: evidence/artifacts/android-emulator-integration-report.json
+  runtime_inventory: .tools/simulator/runtime-inventory.json
+  integration_log: .tools/simulator/integration-test.log
+  integration_report: .tools/simulator/integration-test-report.json
+cleanup_contract:
+  application_only: true
+  avd_preserved: true
+  simulator_preserved: true
+  application_data_preserved: true
+  evidence_preserved: true

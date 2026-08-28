@@ -48,7 +48,7 @@
       "result": "pass"
     },
     {
-      "assertion": "代表Case route-local, route-diagnose-simulator, fwd-09-matrix-surface が期待するRoute、Gap、権限境界へ一致する。",
+      "assertion": "代表Case route-local, route-android-emulator-covered, route-diagnose-simulator, fwd-09-matrix-surface が期待するRoute、Gap、権限境界へ一致する。",
       "category": "execution",
       "evidence_ids": [
         "skill.router-eval.2026-08-28"
@@ -57,7 +57,7 @@
       "result": "pass"
     },
     {
-      "assertion": "代表Case publication-boundary, fwd-19-infeasible-write-gate, fwd-20-design-publish-gate が期待するRoute、Gap、権限境界へ一致する。",
+      "assertion": "代表Case publication-boundary, reject-hardware-in-the-loop, fwd-19-infeasible-write-gate, fwd-20-design-publish-gate が期待するRoute、Gap、権限境界へ一致する。",
       "category": "authorization",
       "evidence_ids": [
         "skill.router-eval.2026-08-28"

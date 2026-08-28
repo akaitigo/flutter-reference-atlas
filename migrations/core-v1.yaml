@@ -13,14 +13,14 @@ preserved_research:
   - legacy_id: production-reference-product
     target_ids: [product.operations-workspace]
   - legacy_id: executable-scenarios
-    target_ids: [language.dart-concurrency, execution.local, execution.container, execution.simulator]
+    target_ids: [language.dart-concurrency, execution.local, execution.container, execution.android-emulator, execution.ios-simulator]
   - legacy_id: conformance-catalog
     target_ids: [language.public-surface-inventory]
   - legacy_id: blueprints-skills-evals
     target_ids: [skill.router]
 unmigrated:
   - legacy_id: six-platform-release-evidence
-    reason: Android SDK、完全なXcode、Windows/Linux RunnerがHostに存在しないため、証拠を捏造せずinfeasibleとして保持した。
+    reason: Android Emulatorは実行済みだが、完全なXcode、Windows/Linux RunnerがHostに存在しないため、残るRunnerを捏造せずinfeasibleとして保持した。
 aliases: []
 mastery_migration:
   contract_version: 1.0.0

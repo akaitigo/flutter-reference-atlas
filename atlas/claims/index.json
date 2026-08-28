@@ -89,8 +89,14 @@
     {
       "id":"platform.runner-matrix-is-explicit","capability_id":"platform.runner-matrix","proof_obligation_id":"proof.runner-blocker-matrix",
       "authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],
-      "acceptance":"Webで実行できたGateとAndroid、iOS、Windows、Linuxで不足するHost toolchainを混同せず列挙する。",
-      "lab_id":"lab.formal-local-closure","test_id":"test.formal-local-closure"
+      "acceptance":"WebとAndroid Emulatorの実行済みGateを、iOS Simulator、Android/iOS実機、Windows、Linuxの未実行Runnerと混同せず列挙する。",
+      "lab_id":"lab.simulator-integration","test_id":"test.simulator-integration"
+    },
+    {
+      "id":"execution.android-emulator-repeatability","capability_id":"execution.android-emulator-lab","proof_obligation_id":"proof.android-emulator-integration",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","android-emulator-runtime-inventory"],
+      "acceptance":"Android 16 API 36 Emulatorを実機と区別し、Flutter 3.47.1でassemble、install、run、Integration Test 1件を成功させ、AVDとApplication Dataを保持してCleanupする。",
+      "lab_id":"lab.simulator-integration","test_id":"test.simulator-integration"
     },
     {
       "id":"execution.local-repeatability","capability_id":"execution.local-lab","proof_obligation_id":"proof.setup-execute-verify-cleanup",

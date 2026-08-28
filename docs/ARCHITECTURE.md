@@ -27,12 +27,34 @@ Core Schemaに存在しないFlutter固有Nodeは`atlas/`のOverlayとして保�
 
 - `offline-conflict-resolution`: lost updateを検出するPure Dartの決定論的競合解決
 - `widget-lifecycle`: Controller lifecycleとWidget再構築の契約
+- `platform-integration`: Platform Channel / Plugin、Add-to-App、Web / Desktop / MobileのSource ContractとmacOS arm64 FFI runtimeを分離して検証
 - `local`: Dart LabとFlutter TestをHostで実行
 - `container`: Network無効の固定Dart ImageでPure Dart Labを実行
 - `simulator`: iOS SimulatorまたはAndroid Emulator上のIntegration Test
 
 各Profileの結果は互換ではありません。特にWidget Testは実端末またはSimulatorでのPlugin、Lifecycle、Renderingを証明しません。
 
+## 実行Surfaceの分離
+
+実行環境は一つの`runtime`へまとめず、次の証拠を別々に扱います。
+
+| Surface | 証明する範囲 | 証明しない範囲 |
+|---|---|---|
+| Local Flutter Test | Unit / Widget契約とHost上で実行可能なLab | Simulator、実機、対象OS Runner |
+| Container | 固定Image、network無効のPure Dart Lab | Flutter Engine、GPU、Device API |
+| Android Emulator | 指定AVD / Android runtime上の製品Integration Test | iOS Simulator、実機、6Platform build、未組込みPlugin / FFI fixture |
+| iOS Simulator | iOS Simulator上の対象Integration Test | Android、実機、配布署名 |
+| Android / iOS実機 | 指定DeviceとOSでの対象Runtime | 他Device class、他OS、Store配布 |
+| Platform build matrix | Android、iOS、Web、macOS、Windows、LinuxごとのBuild / Runner | 未実行Platformと実機挙動 |
+
+Android Emulatorの現在のpassは`execution.android-emulator-integration.2026-08-28`で識別します。これはAndroid 16 / API 36 / arm64-v8aの`medium_phone` AVD上の製品Integration Testであり、iOS Simulator、Android / iOS実機、または6PlatformすべてのBuildを閉じません。接続時に変わる一時的なDevice IDは実行Artifactへ限定します。
+
+## 公開Surface Inventory
+
+`baseline/public-surface-inventory.json`が、固定したFlutter 3.47.1の公開Library entrypointとCLI sourceを有限な分類単位として列挙します。`tooling/surface_inventory/generate.py`による再生成結果とのbyte-for-byte一致と未分類0を検査し、Coverage Epoch内の宣言済み粒度でInventoryを閉じます。
+
+このInventoryは全公開SymbolのAPI互換性表ではなく、Runtime挙動、Plugin ecosystem全体、対象OSでのBuild成功も代替しません。新SDKでは新しいCoverage Epochと差分Inventoryが必要です。
+
 ## 完成境界
 
-Flutter 3.47.1公開Surfaceの機械Inventoryが存在しない現時点では、有限性はVersionとAuthority Corpusまで固定され、Surface分類Gateは未完了です。API Inventory Generatorが全公開SymbolとCLI Surfaceを抽出し、未分類0を証明するまで完成しません。
+公開Surface Inventoryは、上記の宣言済み粒度では存在し、未分類0を機械検査できます。ただしInventory GateとRuntime Gateは独立です。Android Emulatorの単一passはiOS Simulator、実機、6Platform build、Platform Channel / Plugin / Add-to-AppのNative runtimeを証明しません。必須Target、Environment Profile、Evidence Set、Publication Gateがすべて閉じ、Completion Certificateが生成されるまでは`status: incomplete`を維持します。

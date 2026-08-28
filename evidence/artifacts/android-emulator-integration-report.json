@@ -1,0 +1,74 @@
+{
+  "cleanup_contract": {
+    "application_data_preserved": true,
+    "application_only": true,
+    "avd_preserved": true,
+    "evidence_preserved": true
+  },
+  "command": ".tools/flutter-3.47.1/flutter/bin/flutter test integration_test/workspace_integration_test.dart -d emulator-5554 --no-pub",
+  "finished_at": "2026-08-28T08:02:45Z",
+  "inputs": {
+    "pubspec_lock_digest": "sha256:eb7f6140dfe32d21ef85f07c0c834cc32a4844a75042285e1679558dd0d4cf54",
+    "runtime_inventory_digest": "sha256:669f36a09003290678923c311c181dd0b8683703ae76916e4a3cdaa6f572a10a",
+    "test_file_digest": "sha256:ee6245d2c7f557f80615a8218bab74bfa32e09615abe5d6f573fe5b77c4a5471"
+  },
+  "inventory": {
+    "diagnostics": {
+      "flutter_devices_digest": "sha256:6dead506d3dc9b6c3647565542d8259c0b740c59fe5687b1e0ba57f5076b96d4",
+      "flutter_doctor_digest": "sha256:b398e99b67feb98e460e3a081508bbcf7b6fdc00ebc9ad46df527067b3ef955a",
+      "flutter_version_digest": "sha256:1946c0bd2860e82c66e47b13cdfcde2fa7c20f3d9f48d79e8c12d700186c855a"
+    },
+    "profile": "simulator",
+    "runner": {
+      "api_level": 36,
+      "architecture": "arm64-v8a",
+      "device_id": "emulator-5554",
+      "flutter_device": {
+        "capabilities": {
+          "flutterExit": true,
+          "hardwareRendering": true,
+          "hotReload": true,
+          "hotRestart": true,
+          "screenshot": true,
+          "startPaused": true
+        },
+        "emulator": true,
+        "id": "emulator-5554",
+        "isSupported": true,
+        "name": "sdk gphone64 arm64",
+        "sdk": "Android 16 (API 36)",
+        "targetPlatform": "android-arm64"
+      },
+      "kind": "android-emulator",
+      "model": "sdk_gphone64_arm64",
+      "os_version": "16",
+      "physical_device": false,
+      "runtime_name": "medium_phone"
+    },
+    "schema_version": 1,
+    "toolchain": {
+      "dart_version": "3.13.1",
+      "devtools_version": "2.60.0",
+      "engine_revision": "5d531788691ec3404cac0cee66ead4007b177363",
+      "flutter_version": "3.47.1",
+      "framework_revision": "6655482ec06e547f90abf8ae7590466f4415978d",
+      "sdk_root": "./.tools/flutter-3.47.1/flutter"
+    }
+  },
+  "lab_id": "lab.simulator-integration",
+  "log": {
+    "digest": "sha256:f2e7452c1839b2d84b0be0270959f5ad64ca2776a9b610150d5c57d9956b516d",
+    "size_bytes": 490
+  },
+  "oracle": {
+    "all_tests_passed": true,
+    "assemble_install_run_exercised": true,
+    "exit_code": 0,
+    "expected_test_count": 1
+  },
+  "profile": "simulator",
+  "schema_version": 1,
+  "started_at": "2026-08-28T08:02:23Z",
+  "test_id": "test.simulator-integration",
+  "verdict": "pass"
+}

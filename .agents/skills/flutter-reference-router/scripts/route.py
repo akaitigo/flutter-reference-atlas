@@ -47,6 +47,17 @@ def qualifier_gaps(query: str, matches: list[dict[str, object]], policy: dict[st
         gaps.append("Source Contractは実機Runtime Evidenceの代替ではありません。")
     if any(keyword_matches(query, str(term)) for term in policy.get("external_environment_terms", [])):
         gaps.append("外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。")
+    if any(keyword_matches(query, str(term)) for term in policy.get("hardware_runtime_terms", [])):
+        gaps.append("実機・hardware-in-the-loop Runtime Evidenceは収録されていません。")
+    generic_simulator_requested = any(
+        keyword_matches(query, str(term)) for term in policy.get("generic_simulator_terms", [])
+    )
+    runner_qualified = any(
+        keyword_matches(query, str(term))
+        for term in policy.get("qualified_simulator_terms", [])
+    )
+    if generic_simulator_requested and not runner_qualified:
+        gaps.append("Runner未指定のSimulator Evidenceはcoveredとして扱いません。")
 
     if "platform.ffi" in capabilities:
         requested_platforms = {name for name in ("windows", "linux", "android", "ios", "macos") if keyword_matches(query, name)}

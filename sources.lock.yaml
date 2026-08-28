@@ -93,6 +93,15 @@ sources:
     digest: sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23
     license: Apache-2.0
     redistribution: allowed
+  - id: android-emulator-runtime-inventory
+    kind: runtime-inventory
+    title: Android Emulator API 36 arm64 実行環境Inventory
+    url: https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/simulator/runtime-inventory.json
+    version: flutter-3.47.1-android-16-api-36-arm64-captured-2026-08-28
+    retrieved_at: "2026-08-28"
+    digest: sha256:669f36a09003290678923c311c181dd0b8683703ae76916e4a3cdaa6f572a10a
+    license: Apache-2.0
+    redistribution: allowed
   - id: dart-container-3.13.1
     kind: runtime-inventory
     title: Dart 3.13.1 SDK OCI runtime image

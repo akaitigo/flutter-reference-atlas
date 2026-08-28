@@ -31,7 +31,7 @@ created_at: "2026-08-28T07:32:22.065256Z"
 environment:
   profile: local
   manifest_digest: sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23
-source_digest: sha256:178fb77475110267290631bcb1118d90aa7b361ae38c86736ffa199feac449d9
+source_digest: sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f
 harness_digest: sha256:a4391ed76541b61990b5c7e69009d3d3e6c9166b94933adeb31a2cbca9d11dab
 harness_path: tooling/evidence_capture/bin/capture.dart
 artifact:

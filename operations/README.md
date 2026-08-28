@@ -9,4 +9,4 @@
 | Incident | 適用 | Lab失敗、Evidence陳腐化、依存脆弱性を別Runbookで扱う。 |
 | Capacity | 適用 | `FramePerformanceMonitor`を120 sampleへ制限し、slow count、p95、worstを診断画面へ公開する。Binary Sizeと実機MemoryはRunner Matrix再評価時に追加する。 |
 
-Backup、Migration、Restore、破損拒否、Cleanupは正式Local Evidenceで実行済みです。Simulatorと全Native Runnerを要する運用証拠は未Closureのまま分離します。
+Backup、Migration、Restore、破損拒否、Cleanupは正式Local Evidenceで実行済みです。製品Integration TestはAndroid Emulatorで`execution.android-emulator-integration.2026-08-28`としてpassしていますが、iOS Simulator、Android / iOS実機、全Native Runnerを要する運用証拠は別Surfaceとして未Closureのまま分離します。

@@ -1,6 +1,6 @@
 {
   "pass_rate": 1.0,
-  "passed": 62,
+  "passed": 64,
   "results": [
     {
       "actual": {
@@ -387,29 +387,86 @@
           "flutter-sdk-3.47.1-macos-arm64",
           "local-runtime-inventory"
         ],
-        "capability_id": "execution.simulator-lab",
+        "capability_id": "execution.ios-simulator-lab",
         "commands": [
-          "scripts/labs-simulator.sh doctor",
-          "scripts/labs-simulator.sh run",
-          "scripts/labs-simulator.sh cleanup"
+          "scripts/labs-simulator.sh doctor"
         ],
         "coverage_gap": true,
         "gap_reasons": [
-          "execution.simulator-labのCoverage stateはinfeasibleです。"
+          "execution.ios-simulator-labのCoverage stateはinfeasibleです。"
         ],
         "lab_id": "lab.simulator-integration",
         "matched_capabilities": [
-          "execution.simulator-lab"
+          "execution.ios-simulator-lab"
         ],
         "mode": "diagnose",
         "publish_allowed": false,
         "publish_authorized": false,
         "state": "infeasible",
-        "target_id": "execution.simulator",
+        "target_id": "execution.ios-simulator",
         "write_allowed": false,
         "write_authorized": false
       },
       "id": "route-diagnose-simulator",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "android-emulator-runtime-inventory"
+        ],
+        "capability_id": "execution.android-emulator-lab",
+        "commands": [
+          "scripts/labs-simulator.sh doctor",
+          "scripts/labs-simulator.sh run",
+          "scripts/labs-simulator.sh cleanup",
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.simulator-integration",
+        "matched_capabilities": [
+          "execution.android-emulator-lab",
+          "quality.testing"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "execution.android-emulator",
+        "write_allowed": true,
+        "write_authorized": true
+      },
+      "id": "route-android-emulator-covered",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.testing",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "実機・hardware-in-the-loop Runtime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "quality.testing"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.testing",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-hardware-in-the-loop",
       "passed": true
     },
     {
@@ -924,6 +981,7 @@
         "gap_reasons": [
           "firebase固有のCoverageとRuntime Evidenceは収録されていません。",
           "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "実機・hardware-in-the-loop Runtime Evidenceは収録されていません。",
           "特定Pluginの実装・Runtime Evidenceは収録されていません。"
         ],
         "lab_id": "lab.platform-integration-source-contract",
@@ -1157,7 +1215,8 @@
         "gap_reasons": [
           "testflight固有のCoverageとRuntime Evidenceは収録されていません。",
           "公開、配信、Store送信はPublication Coverage外です。",
-          "Source Contractは実機Runtime Evidenceの代替ではありません。"
+          "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "実機・hardware-in-the-loop Runtime Evidenceは収録されていません。"
         ],
         "lab_id": "lab.platform-integration-source-contract",
         "matched_capabilities": [
@@ -1284,6 +1343,7 @@
         "gap_reasons": [
           "firebase固有のCoverageとRuntime Evidenceは収録されていません。",
           "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "実機・hardware-in-the-loop Runtime Evidenceは収録されていません。",
           "特定Pluginの実装・Runtime Evidenceは収録されていません。"
         ],
         "lab_id": "lab.platform-integration-source-contract",
@@ -1337,20 +1397,18 @@
           "flutter-sdk-3.47.1-macos-arm64",
           "local-runtime-inventory"
         ],
-        "capability_id": "execution.simulator-lab",
+        "capability_id": "execution.ios-simulator-lab",
         "commands": [
           "scripts/labs-simulator.sh doctor",
-          "scripts/labs-simulator.sh run",
-          "scripts/labs-simulator.sh cleanup",
           "make formal-local"
         ],
         "coverage_gap": true,
         "gap_reasons": [
-          "execution.simulator-labのCoverage stateはinfeasibleです。"
+          "execution.ios-simulator-labのCoverage stateはinfeasibleです。"
         ],
         "lab_id": "lab.simulator-integration",
         "matched_capabilities": [
-          "execution.simulator-lab",
+          "execution.ios-simulator-lab",
           "quality.accessibility",
           "product.navigation",
           "product.adaptive-workspace"
@@ -1359,7 +1417,7 @@
         "publish_allowed": false,
         "publish_authorized": false,
         "state": "infeasible",
-        "target_id": "execution.simulator",
+        "target_id": "execution.ios-simulator",
         "write_allowed": false,
         "write_authorized": false
       },
@@ -1566,6 +1624,7 @@
           "camera固有のCoverageとRuntime Evidenceは収録されていません。",
           "wayland固有のCoverageとRuntime Evidenceは収録されていません。",
           "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "実機・hardware-in-the-loop Runtime Evidenceは収録されていません。",
           "特定Pluginの実装・Runtime Evidenceは収録されていません。"
         ],
         "lab_id": "lab.platform-integration-source-contract",
@@ -1681,27 +1740,25 @@
           "flutter-sdk-3.47.1-macos-arm64",
           "local-runtime-inventory"
         ],
-        "capability_id": "execution.simulator-lab",
+        "capability_id": "execution.ios-simulator-lab",
         "commands": [
           "scripts/labs-simulator.sh doctor",
-          "scripts/labs-simulator.sh run",
-          "scripts/labs-simulator.sh cleanup",
           "make formal-local"
         ],
         "coverage_gap": true,
         "gap_reasons": [
-          "execution.simulator-labのCoverage stateはinfeasibleです。"
+          "execution.ios-simulator-labのCoverage stateはinfeasibleです。"
         ],
         "lab_id": "lab.simulator-integration",
         "matched_capabilities": [
-          "execution.simulator-lab",
+          "execution.ios-simulator-lab",
           "quality.testing"
         ],
         "mode": "implement",
         "publish_allowed": false,
         "publish_authorized": false,
         "state": "infeasible",
-        "target_id": "execution.simulator",
+        "target_id": "execution.ios-simulator",
         "write_allowed": false,
         "write_authorized": true
       },
@@ -1740,5 +1797,5 @@
     }
   ],
   "schema_version": 1,
-  "total": 62
+  "total": 64
 }

@@ -57,8 +57,8 @@ def main() -> int:
             "coverage-gap": ["reject-uncovered-package", "reject-windows-ffi-runtime", "reject-new-flutter-version"],
             "lifecycle": ["route-implement-state", "route-failure", "fwd-12-bloc-migration"],
             "authority": ["route-public-surface", "route-migrate-sdk", "route-review-container"],
-            "execution": ["route-local", "route-diagnose-simulator", "fwd-09-matrix-surface"],
-            "authorization": ["publication-boundary", "fwd-19-infeasible-write-gate", "fwd-20-design-publish-gate"],
+            "execution": ["route-local", "route-android-emulator-covered", "route-diagnose-simulator", "fwd-09-matrix-surface"],
+            "authorization": ["publication-boundary", "reject-hardware-in-the-loop", "fwd-19-infeasible-write-gate", "fwd-20-design-publish-gate"],
             "security": ["route-security", "fwd-05-firebase-plugin", "fwd-18-review-write-gate"],
         }
         by_id = {result["id"]: result for result in results}

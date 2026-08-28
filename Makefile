@@ -18,7 +18,7 @@ atlas-bootstrap:
 	@cd "$(CORE_SNAPSHOT)" && GOCACHE="$(ATLAS_GO_CACHE)" go build -o "$(CURDIR)/$(ATLAS_BIN)" ./cmd/atlas
 
 atlas-validate:
-	@$(ATLAS_BIN) validate atlas.yaml mastery.yaml sources.lock.yaml coverage.yaml skill.package.yaml third_party/manifest.yaml provenance.yaml evals/flutter-router.skill-eval.json evidence/container-conflict.evidence.yaml evidence/formal-local-closure.evidence.yaml evidence/router-eval.evidence.yaml
+	@$(ATLAS_BIN) validate atlas.yaml mastery.yaml sources.lock.yaml coverage.yaml skill.package.yaml third_party/manifest.yaml provenance.yaml evals/flutter-router.skill-eval.json evidence/android-emulator-integration.evidence.yaml evidence/container-conflict.evidence.yaml evidence/formal-local-closure.evidence.yaml evidence/router-eval.evidence.yaml
 	@for claim in claims/*.claim.json; do $(ATLAS_BIN) validate "$$claim" || exit 1; done
 
 atlas-audit:

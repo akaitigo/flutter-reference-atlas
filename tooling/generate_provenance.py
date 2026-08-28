@@ -12,6 +12,7 @@ from pathlib import Path
 ARTIFACTS = [
     ("evidence/artifacts/formal-local-closure-report.json", "test-report", "Apache-2.0", ["flutter-sdk-3.47.1-macos-arm64", "dart-sdk-3.13.1", "local-runtime-inventory"], "tooling/evidence_capture/bin/capture.dart"),
     ("evidence/artifacts/container-conflict-report.json", "test-report", "Apache-2.0", ["dart-sdk-3.13.1", "dart-container-3.13.1"], "scripts/labs-container.sh"),
+    ("evidence/artifacts/android-emulator-integration-report.json", "test-report", "Apache-2.0", ["flutter-sdk-3.47.1-macos-arm64", "android-emulator-runtime-inventory"], "scripts/labs-simulator.sh"),
     ("evidence/artifacts/router-eval-report.json", "skill-eval", "Apache-2.0", ["reference-atlas-core-v1"], "evals/evaluate.py"),
     ("evals/flutter-router.skill-eval.json", "skill-eval", "Apache-2.0", ["reference-atlas-core-v1"], "evals/evaluate.py"),
     ("baseline/public-surface-inventory.json", "generated", "Apache-2.0", ["flutter-sdk-3.47.1-macos-arm64", "flutter-engine-3.47.1-deps", "dart-sdk-3.13.1", "devtools-2.60.0"], "tooling/surface_inventory/generate.py"),

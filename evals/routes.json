@@ -9,13 +9,17 @@
     "publication_terms": ["publish", "publication", "deploy", "rollout", "go live", "ship", "submit", "distribute", "production release", "production deploy", "launch", "store release", "store公開", "公開", "配信", "配布", "提出", "申請", "本番リリース", "本番反映", "本番投入", "本番展開", "本番公開", "ローンチ", "app store connect", "google play console"],
     "runtime_terms": ["実機", "device runtime", "runtime evidence", "runtime検証"],
     "external_environment_terms": ["production", "staging", "hosting", "本番", "ステージング"],
+    "hardware_runtime_terms": ["実機", "physical device", "hardware-in-the-loop", "hardware in the loop", "hil"],
+    "generic_simulator_terms": ["simulator", "emulator", "シミュレータ", "エミュレータ"],
+    "qualified_simulator_terms": ["android emulator", "androidエミュレータ", "ios simulator", "iosシミュレータ"],
     "source_contract_capabilities": [
       "platform.channel-plugin", "platform.add-to-app", "platform.desktop", "platform.mobile"
     ],
     "ffi_runtime_platforms": ["macos"]
   },
   "routes": [
-    {"capability_id":"execution.simulator-lab","target_id":"execution.simulator","state":"infeasible","keywords":["simulator","emulator","シミュレータ","エミュレータ"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],"lab_id":"lab.simulator-integration","commands":["scripts/labs-simulator.sh doctor","scripts/labs-simulator.sh run","scripts/labs-simulator.sh cleanup"]},
+    {"capability_id":"execution.ios-simulator-lab","target_id":"execution.ios-simulator","state":"infeasible","priority":50,"keywords":["ios simulator","iosシミュレータ"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],"lab_id":"lab.simulator-integration","commands":["scripts/labs-simulator.sh doctor"]},
+    {"capability_id":"execution.android-emulator-lab","target_id":"execution.android-emulator","state":"covered","priority":40,"keywords":["android emulator","androidエミュレータ"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","android-emulator-runtime-inventory"],"lab_id":"lab.simulator-integration","commands":["scripts/labs-simulator.sh doctor","scripts/labs-simulator.sh run","scripts/labs-simulator.sh cleanup"]},
     {"capability_id":"platform.runner-matrix","target_id":"platform.six-target-builds","state":"infeasible","keywords":["six platform","build matrix","runner matrix","全platform","6 platform"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],"lab_id":"lab.formal-local-closure","commands":["make formal-local"]},
     {"capability_id":"framework.element-reconciliation","target_id":"framework.internal-architecture","state":"covered","keywords":["element","reconciliation","widget identity","valuekey","framework internal","内部構造"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],"lab_id":"lab.framework-element-reconciliation","commands":[".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-element-reconciliation"]},
     {"capability_id":"framework.rendering-invalidation","target_id":"framework.rendering-pipeline","state":"covered","keywords":["renderobject","rendering pipeline","layout","paint","constraint","描画"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps"],"lab_id":"lab.framework-rendering-pipeline","commands":[".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-rendering-pipeline"]},

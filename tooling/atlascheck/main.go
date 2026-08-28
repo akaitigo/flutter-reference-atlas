@@ -192,6 +192,15 @@ func validate(root string) error {
 				return fmt.Errorf("Local Runtime Inventory Digestが不一致です: want %s got %s", digest, source.Digest)
 			}
 		}
+		if source.ID == "android-emulator-runtime-inventory" {
+			digest, err := digestFile(filepath.Join(root, "environments/simulator/runtime-inventory.json"))
+			if err != nil {
+				return err
+			}
+			if source.Digest != digest {
+				return fmt.Errorf("Android Emulator Runtime Inventory Digestが不一致です: want %s got %s", digest, source.Digest)
+			}
+		}
 	}
 
 	setIDs := map[string]bool{}

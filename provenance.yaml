@@ -24,7 +24,18 @@
       ]
     },
     {
-      "digest": "sha256:902662c70a25a66456f07e4be2af5118073dd155fa0efab86d95278b7954de73",
+      "digest": "sha256:d663dab7d2bfc7dd231a86a87bff7f8f1e614ca5eb0158fbd50a40cd717b0427",
+      "generated_by": "scripts/labs-simulator.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/artifacts/android-emulator-integration-report.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:8fd300f9210b92a22a65d3f81e41fdf37ede745bea2761e535ea0655113bf71e",
       "generated_by": "evals/evaluate.py",
       "kind": "skill-eval",
       "license": "Apache-2.0",
@@ -34,7 +45,7 @@
       ]
     },
     {
-      "digest": "sha256:9c9aaf3b9baf0b50ba4b2d01e75e244796a37f75849ba4cc0778108f9b52d369",
+      "digest": "sha256:1724d5fdb21fed9269fdc2c16c2781d3913f86a266cc88b08f29004cf19d7ab6",
       "generated_by": "evals/evaluate.py",
       "kind": "skill-eval",
       "license": "Apache-2.0",

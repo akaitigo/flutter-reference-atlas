@@ -14,6 +14,7 @@
     {"id":"proof.add-to-app-source-contract","oracle":"両Native hostがEngine起動と同一Engine IDを宣言する。"},
     {"id":"proof.web-release-artifact","oracle":"正式SDKのWeb release buildが成功し、非空file集合を生成する。"},
     {"id":"proof.runner-blocker-matrix","oracle":"実行済みRunnerと不足Toolchainがdoctor出力およびEnvironment Inventoryに一致する。"},
+    {"id":"proof.android-emulator-integration","oracle":"固定Android Emulatorでassemble、install、run、Integration Testが終了コード0となり、実機を受理せず非破壊Cleanupする。"},
     {"id":"proof.setup-execute-verify-cleanup","oracle":"再実行可能で終了後Resourceが残らない。"},
     {"id":"proof.test-pyramid","oracle":"各層の独立Oracleが正式SDKで終了コード0を返す。"},
     {"id":"proof.accessibility-semantics","oracle":"重要な状態と操作がSemantics treeとFocus順へ公開される。"},
