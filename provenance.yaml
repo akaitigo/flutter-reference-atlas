@@ -68,7 +68,7 @@
       ]
     },
     {
-      "digest": "sha256:3218edd540f82577b7feb169a601c72fe9c61267116e8a27ed37cf528955b064",
+      "digest": "sha256:f4ef3cbfd8f70643b5d4db3bec162781a8e89550228bcb807a2e673ad049d026",
       "generated_by": "tooling/generate_supply_chain.py",
       "kind": "sbom",
       "license": "CC0-1.0",

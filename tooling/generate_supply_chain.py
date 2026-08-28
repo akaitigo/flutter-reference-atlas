@@ -60,12 +60,13 @@ def make_documents(root: Path) -> tuple[str, str]:
         })
     third_party = {"schema_version": 1, "artifacts": artifacts}
 
+    sbom_artifacts = [artifact for artifact in artifacts if artifact["kind"] == "go-module"]
     packages = [{
         "name":"flutter-reference-atlas", "SPDXID":"SPDXRef-Package-Atlas", "versionInfo":"1.0.0",
         "downloadLocation":"https://github.com/akaitigo/flutter-reference-atlas", "filesAnalyzed":False,
         "licenseConcluded":"Apache-2.0", "licenseDeclared":"Apache-2.0", "copyrightText":"Copyright 2026 akaitigo",
     }]
-    for index, artifact in enumerate(artifacts, start=1):
+    for index, artifact in enumerate(sbom_artifacts, start=1):
         package = {
             "name": artifact["name"], "SPDXID": f"SPDXRef-Package-{index}", "versionInfo": artifact["version"].removeprefix("v"),
             "downloadLocation": artifact["source"], "filesAnalyzed": False,
@@ -83,7 +84,7 @@ def make_documents(root: Path) -> tuple[str, str]:
         "documentDescribes":["SPDXRef-Package-Atlas"], "packages":packages,
         "relationships":[{"spdxElementId":"SPDXRef-DOCUMENT", "relationshipType":"DESCRIBES", "relatedSpdxElement":"SPDXRef-Package-Atlas"}] + [
             {"spdxElementId":"SPDXRef-Package-Atlas", "relationshipType":"DEPENDS_ON", "relatedSpdxElement":f"SPDXRef-Package-{index}"}
-            for index in range(1, len(artifacts) + 1)
+            for index in range(1, len(sbom_artifacts) + 1)
         ],
     }
     return (
