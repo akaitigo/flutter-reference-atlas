@@ -4,10 +4,13 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 action="${1:-doctor}"
+sdk_root="${FLUTTER_ATLAS_SDK_ROOT:-$repo_root/.tools/flutter-3.47.1/flutter}"
+flutter_bin="$sdk_root/bin/flutter"
+[[ -x "$flutter_bin" ]] || { echo "エラー: Flutter 3.47.1 SDKがありません: $sdk_root" >&2; exit 1; }
 
 case "$action" in
   doctor)
-    flutter doctor -v
+    "$flutter_bin" doctor -v
     ios_ready=false
     android_ready=false
     if command -v xcrun >/dev/null 2>&1 && xcrun simctl list devices >/dev/null 2>&1; then
@@ -24,7 +27,7 @@ case "$action" in
   run)
     : "${FLUTTER_DEVICE_ID:?FLUTTER_DEVICE_IDへSimulatorまたはEmulator IDを指定してください}"
     cd "$repo_root/reference-systems/operations-workspace"
-    flutter test integration_test/workspace_integration_test.dart -d "$FLUTTER_DEVICE_ID"
+    "$flutter_bin" test integration_test/workspace_integration_test.dart -d "$FLUTTER_DEVICE_ID"
     ;;
   cleanup)
     echo "Flutter test runnerがApplication Processを終了します。外部Simulatorは停止しません。"

@@ -1,0 +1,5 @@
+name: security_boundary
+description: Flutter Atlas向け入力、Secret、URL、Platform応答Boundaryの決定論Lab。
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"

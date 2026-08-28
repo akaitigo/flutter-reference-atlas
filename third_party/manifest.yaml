@@ -1,71 +1,311 @@
-schema_version: 1
-generated_at: "2026-08-28T15:00:00+09:00"
-review_status: incomplete
-entries:
-  - id: flutter-sdk-template
-    name: Flutter SDK project templates
-    version: 3.38.5+f6ff1529fd6d8af5f706051d9251ac9231c83407
-    source: https://github.com/flutter/flutter/tree/f6ff1529fd6d8af5f706051d9251ac9231c83407/packages/flutter_tools/templates
-    license: BSD-3-Clause
-    license_file: LICENSES/BSD-3-Clause.txt
-    copyright_holder: The Flutter Authors
-    redistribution: allowed
-    provenance_domain: source-code
-    files:
-      - reference-systems/operations-workspace/android
-      - reference-systems/operations-workspace/ios
-      - reference-systems/operations-workspace/linux
-      - reference-systems/operations-workspace/macos
-      - reference-systems/operations-workspace/web
-      - reference-systems/operations-workspace/windows
-      - reference-systems/operations-workspace/.metadata
-    digest: pending-directory-digest
-    review_status: review-required
-  - id: flutter-lints
-    name: flutter_lints
-    version: 6.0.0
-    source: https://pub.dev/packages/flutter_lints/versions/6.0.0
-    license: BSD-3-Clause
-    license_file: LICENSES/BSD-3-Clause.txt
-    copyright_holder: The Flutter Authors
-    redistribution: allowed
-    provenance_domain: source-code
-    files: [reference-systems/operations-workspace/pubspec.lock]
-    digest: sha256:3105dc8492f6183fb076ccf1f351ac3d60564bff92e20bfc4af9cc1651f4e7e1
-    review_status: reviewed
-  - id: go-yaml-v3
-    name: gopkg.in/yaml.v3
-    version: 3.0.1
-    source: https://github.com/go-yaml/yaml/tree/v3.0.1
-    license: MIT AND Apache-2.0
-    license_file: LICENSES/gopkg.in-yaml.v3.txt
-    copyright_holder: Kirill Simonov and Canonical Ltd
-    redistribution: allowed
-    provenance_domain: source-code
-    files: [go.mod, go.sum]
-    digest: pending-go-module-sum
-    review_status: review-required
-  - id: dart-container-image
-    name: Dart SDK container image
-    version: 3.13.1-sdk
-    source: https://hub.docker.com/_/dart
-    license: BSD-3-Clause
-    license_file: LICENSES/BSD-3-Clause.txt
-    copyright_holder: The Dart Authors
-    redistribution: metadata-only
-    provenance_domain: generated-artifact
-    files: [environments/container/Dockerfile]
-    digest: sha256:d3f19cf5c18a7939d6af3f0896b2e9fec3f31f7ba3a2f88bfe6181e903084a51
-    review_status: reviewed
-  - id: github-actions
-    name: GitHub Actions used by CI
-    version: checkout-v4, setup-go-v5, flutter-action-v2
-    source: https://github.com/actions
-    license: MIT
-    license_file: LICENSES/MIT.txt
-    copyright_holder: GitHub and respective contributors
-    redistribution: link-only
-    provenance_domain: source-code
-    files: [.github/workflows/ci.yml]
-    digest: pending-action-commit-pins
-    review_status: review-required
+{
+  "artifacts": [
+    {
+      "id": "flutter-sdk",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "Flutter SDK",
+      "redistribution": "link-only",
+      "source": "https://github.com/flutter/flutter/tree/6655482ec06e547f90abf8ae7590466f4415978d",
+      "version": "3.47.1"
+    },
+    {
+      "id": "dart-container",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "Dart SDK container image",
+      "redistribution": "metadata-only",
+      "source": "https://hub.docker.com/_/dart",
+      "version": "3.13.1-sdk"
+    },
+    {
+      "id": "go-yaml-v3",
+      "kind": "go-module",
+      "license": "MIT AND Apache-2.0",
+      "name": "gopkg.in/yaml.v3",
+      "redistribution": "allowed",
+      "source": "https://gopkg.in/yaml.v3",
+      "version": "v3.0.1"
+    },
+    {
+      "id": "actions-checkout",
+      "kind": "github-action",
+      "license": "MIT",
+      "name": "actions/checkout",
+      "redistribution": "link-only",
+      "source": "https://github.com/actions/checkout",
+      "version": "v4"
+    },
+    {
+      "id": "actions-setup-go",
+      "kind": "github-action",
+      "license": "MIT",
+      "name": "actions/setup-go",
+      "redistribution": "link-only",
+      "source": "https://github.com/actions/setup-go",
+      "version": "v5"
+    },
+    {
+      "id": "subosito-flutter-action",
+      "kind": "github-action",
+      "license": "MIT",
+      "name": "subosito/flutter-action",
+      "redistribution": "link-only",
+      "source": "https://github.com/subosito/flutter-action",
+      "version": "v2"
+    },
+    {
+      "id": "pub-async",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "async",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/async/versions/2.13.1",
+      "version": "2.13.1"
+    },
+    {
+      "id": "pub-boolean-selector",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "boolean_selector",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/boolean_selector/versions/2.1.2",
+      "version": "2.1.2"
+    },
+    {
+      "id": "pub-characters",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "characters",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/characters/versions/1.4.1",
+      "version": "1.4.1"
+    },
+    {
+      "id": "pub-clock",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "clock",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/clock/versions/1.1.2",
+      "version": "1.1.2"
+    },
+    {
+      "id": "pub-collection",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "collection",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/collection/versions/1.19.1",
+      "version": "1.19.1"
+    },
+    {
+      "id": "pub-fake-async",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "fake_async",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/fake_async/versions/1.3.3",
+      "version": "1.3.3"
+    },
+    {
+      "id": "pub-file",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "file",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/file/versions/7.0.1",
+      "version": "7.0.1"
+    },
+    {
+      "id": "pub-flutter-lints",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "flutter_lints",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/flutter_lints/versions/6.0.0",
+      "version": "6.0.0"
+    },
+    {
+      "id": "pub-leak-tracker",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "leak_tracker",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/leak_tracker/versions/11.0.2",
+      "version": "11.0.2"
+    },
+    {
+      "id": "pub-leak-tracker-flutter-testing",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "leak_tracker_flutter_testing",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/leak_tracker_flutter_testing/versions/3.0.10",
+      "version": "3.0.10"
+    },
+    {
+      "id": "pub-leak-tracker-testing",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "leak_tracker_testing",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/leak_tracker_testing/versions/3.0.2",
+      "version": "3.0.2"
+    },
+    {
+      "id": "pub-lints",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "lints",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/lints/versions/6.1.0",
+      "version": "6.1.0"
+    },
+    {
+      "id": "pub-matcher",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "matcher",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/matcher/versions/0.12.20",
+      "version": "0.12.20"
+    },
+    {
+      "id": "pub-material-color-utilities",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "material_color_utilities",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/material_color_utilities/versions/0.13.0",
+      "version": "0.13.0"
+    },
+    {
+      "id": "pub-meta",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "meta",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/meta/versions/1.19.0",
+      "version": "1.19.0"
+    },
+    {
+      "id": "pub-path",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "path",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/path/versions/1.9.1",
+      "version": "1.9.1"
+    },
+    {
+      "id": "pub-platform",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "platform",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/platform/versions/3.1.6",
+      "version": "3.1.6"
+    },
+    {
+      "id": "pub-process",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "process",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/process/versions/5.0.5",
+      "version": "5.0.5"
+    },
+    {
+      "id": "pub-source-span",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "source_span",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/source_span/versions/1.10.2",
+      "version": "1.10.2"
+    },
+    {
+      "id": "pub-stack-trace",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "stack_trace",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/stack_trace/versions/1.12.1",
+      "version": "1.12.1"
+    },
+    {
+      "id": "pub-stream-channel",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "stream_channel",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/stream_channel/versions/2.1.4",
+      "version": "2.1.4"
+    },
+    {
+      "id": "pub-string-scanner",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "string_scanner",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/string_scanner/versions/1.4.1",
+      "version": "1.4.1"
+    },
+    {
+      "id": "pub-sync-http",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "sync_http",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/sync_http/versions/0.3.1",
+      "version": "0.3.1"
+    },
+    {
+      "id": "pub-term-glyph",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "term_glyph",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/term_glyph/versions/1.2.2",
+      "version": "1.2.2"
+    },
+    {
+      "id": "pub-test-api",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "test_api",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/test_api/versions/0.7.12",
+      "version": "0.7.12"
+    },
+    {
+      "id": "pub-vector-math",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "vector_math",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/vector_math/versions/2.4.2",
+      "version": "2.4.2"
+    },
+    {
+      "id": "pub-vm-service",
+      "kind": "source",
+      "license": "BSD-3-Clause",
+      "name": "vm_service",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/vm_service/versions/15.3.0",
+      "version": "15.3.0"
+    },
+    {
+      "id": "pub-webdriver",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "webdriver",
+      "redistribution": "allowed",
+      "source": "https://pub.dev/packages/webdriver/versions/3.1.0",
+      "version": "3.1.0"
+    }
+  ],
+  "schema_version": 1
+}

@@ -3,7 +3,66 @@
 
 import argparse
 import json
+import re
+import unicodedata
 from pathlib import Path
+
+
+def normalize(value: str) -> str:
+    return unicodedata.normalize("NFKC", value).lower()
+
+
+def keyword_matches(query: str, keyword: str) -> bool:
+    keyword = normalize(keyword)
+    if keyword == "同期":
+        query = query.replace("非同期", "")
+    if re.fullmatch(r"[a-z0-9_.+ -]+", keyword):
+        return re.search(rf"(?<![a-z0-9_]){re.escape(keyword)}(?![a-z0-9_])", query) is not None
+    return keyword in query
+
+
+def qualifier_gaps(query: str, matches: list[dict[str, object]], policy: dict[str, object]) -> list[str]:
+    gaps: list[str] = []
+    flutter_versions = re.findall(r"flutter(?:\s+sdk)?(?:\s+version)?\s+(\d+\.\d+(?:\.\d+)?)", query)
+    supported_versions = set(policy.get("baseline_versions", []))
+    for version in flutter_versions:
+        if version not in supported_versions:
+            gaps.append(f"Flutter {version}は固定Baseline外です。")
+
+    for qualifier in policy.get("uncovered_qualifiers", []):
+        if keyword_matches(query, str(qualifier)):
+            gaps.append(f"{qualifier}固有のCoverageとRuntime Evidenceは収録されていません。")
+
+    publication_query = query.replace("release build", "")
+    publication_requested = any(keyword_matches(publication_query, str(term)) for term in policy.get("publication_terms", []))
+    publication_requested = publication_requested or re.search(r"\brelease\b", publication_query) is not None
+    publication_requested = publication_requested or "リリース" in query
+    if publication_requested:
+        gaps.append("公開、配信、Store送信はPublication Coverage外です。")
+
+    capabilities = {str(match["capability_id"]) for match in matches}
+    runtime_requested = any(keyword_matches(query, str(term)) for term in policy.get("runtime_terms", []))
+    source_contracts = set(policy.get("source_contract_capabilities", []))
+    if runtime_requested and capabilities & source_contracts:
+        gaps.append("Source Contractは実機Runtime Evidenceの代替ではありません。")
+    if any(keyword_matches(query, str(term)) for term in policy.get("external_environment_terms", [])):
+        gaps.append("外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。")
+
+    if "platform.ffi" in capabilities:
+        requested_platforms = {name for name in ("windows", "linux", "android", "ios", "macos") if keyword_matches(query, name)}
+        supported = set(policy.get("ffi_runtime_platforms", []))
+        unsupported = sorted(requested_platforms - supported)
+        if unsupported:
+            gaps.append(f"FFI Runtime EvidenceがないPlatformです: {', '.join(unsupported)}")
+    if "execution.container-lab" in capabilities and capabilities & {"quality.failure-recovery", "operations.runbooks"}:
+        gaps.append("Container Profileと復旧・運用Labを結合したEvidenceは収録されていません。")
+    if "product.state-lifecycle" in capabilities and any(term in query for term in ("migration", "移行")):
+        gaps.append("状態管理Packageまたは方式間MigrationのEvidenceは収録されていません。")
+    if "platform.channel-plugin" in capabilities and "plugin" in query:
+        generic_contract = any(term in query for term in ("methodchannel", "platform channel", "plugin registration"))
+        if not generic_contract:
+            gaps.append("特定Pluginの実装・Runtime Evidenceは収録されていません。")
+    return list(dict.fromkeys(gaps))
 
 
 def main() -> int:
@@ -16,12 +75,30 @@ def main() -> int:
 
     root = Path(__file__).resolve().parents[4]
     routes = json.loads((root / "evals" / "routes.json").read_text(encoding="utf-8"))
-    query = args.capability.lower()
-    selected = None
-    for route in routes["routes"]:
-        if any(keyword in query for keyword in route["keywords"]):
-            selected = route
-            break
+    query = normalize(args.capability)
+    ranked = []
+    for index, route in enumerate(routes["routes"]):
+        matched_keywords = [keyword for keyword in route["keywords"] if keyword_matches(query, keyword)]
+        if matched_keywords:
+            specificity = max(len(normalize(keyword).replace(" ", "")) for keyword in matched_keywords)
+            safety = 1 if route["state"] != "covered" else 0
+            priority = int(route.get("priority", 0))
+            if route["capability_id"] == "baseline.sdk-lock" and any(
+                keyword in {"sdk migration", "flutter sdk version", "flutter version", "3.47.1", "sdk移行", "sdkバージョン"}
+                for keyword in matched_keywords
+            ):
+                priority = 40
+            ranked.append((safety, priority, specificity, -index, route, matched_keywords))
+    ranked.sort(reverse=True, key=lambda item: (item[0], item[1], item[2], item[3]))
+    matches = [item[4] for item in ranked]
+    selected = matches[0] if matches else None
+    gaps = qualifier_gaps(query, matches, routes.get("policy", {}))
+    gaps.extend(
+        f"{match['capability_id']}のCoverage stateは{match['state']}です。"
+        for match in matches
+        if match["state"] != "covered"
+    )
+    gaps = list(dict.fromkeys(gaps))
 
     if selected is None:
         result = {
@@ -32,18 +109,27 @@ def main() -> int:
             "publish_allowed": False,
             "write_authorized": bool(args.write_authorized),
             "publish_authorized": bool(args.publish_authorized),
+            "gap_reasons": ["Coverageに一致するCapabilityがありません。"],
+            "matched_capabilities": [],
         }
     else:
+        commands = list(dict.fromkeys(command for match in matches for command in match.get("commands", [])))
         result = {
             "mode": args.mode,
-            "coverage_gap": selected["state"] != "covered",
+            "coverage_gap": bool(gaps),
             "capability_id": selected["capability_id"],
             "target_id": selected["target_id"],
             "state": selected["state"],
             "authority_ids": selected["authority_ids"],
             "lab_id": selected.get("lab_id"),
-            "commands": selected.get("commands", []),
-            "write_allowed": bool(args.write_authorized),
+            "commands": commands,
+            "gap_reasons": gaps,
+            "matched_capabilities": [match["capability_id"] for match in matches],
+            "write_allowed": bool(
+                args.write_authorized
+                and args.mode in {"implement", "recover", "migrate"}
+                and not gaps
+            ),
             "publish_allowed": False,
             "write_authorized": bool(args.write_authorized),
             "publish_authorized": bool(args.publish_authorized),

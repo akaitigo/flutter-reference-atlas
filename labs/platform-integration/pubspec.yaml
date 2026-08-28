@@ -1,0 +1,6 @@
+name: platform_integration_lab
+description: Flutter platform integrationのSource Contractを決定論的に検証するLab。
+publish_to: none
+version: 1.0.0-dev.1
+environment:
+  sdk: '>=3.10.0 <4.0.0'

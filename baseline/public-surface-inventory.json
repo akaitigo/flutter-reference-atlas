@@ -1,0 +1,1319 @@
+{
+  "assurance": {
+    "community_packages_included": false,
+    "meaning": "固定SDKに存在する公開Library entrypointと分類対象CLI sourceを欠落なく列挙した。Symbol単位のAPI互換性は別Gateである。",
+    "private_api_included": false,
+    "state": "complete"
+  },
+  "atlas_id": "flutter-reference-atlas",
+  "baseline": {
+    "channel": "stable",
+    "dart_revision": "852b3e3608906afbe6102573cfd4407aeedd1b78",
+    "dart_version": "3.13.1",
+    "devtools_revision": "12d595649f189f1896722623f72599077f476848",
+    "devtools_version": "2.60.0",
+    "engine_commit_date": "2026-08-18 23:36:01.000Z",
+    "engine_content_hash": "11d79658c444477b06513d32b52c8c4ccb7276b0",
+    "engine_revision": "5d531788691ec3404cac0cee66ead4007b177363",
+    "flutter_version": "3.47.1",
+    "framework_commit_date": "2026-08-19 10:07:23 -0700",
+    "framework_revision": "6655482ec06e547f90abf8ae7590466f4415978d",
+    "metadata_digests": {
+      "DEPS": "sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261",
+      "bin/cache/dart-sdk/bin/resources/devtools/version.json": "sha256:f1a891e99944fcd01ce2bcd23532de53eafeea3ceeb728b4fcea30405a9589b2",
+      "bin/cache/dart-sdk/lib/libraries.json": "sha256:a4e117a9ea8b5c86038bdd67179c61af76418fd423f6be8d6617a3c1932269d2",
+      "bin/cache/flutter.version.json": "sha256:0cbd8c6115b0c46154560965384554ecccbdeba55e8093de73bec71f1e411e72"
+    },
+    "skia_revision": "8df24be66531469e576a806749a0202ae26b8d08"
+  },
+  "coverage_epoch": "2026-08-28",
+  "generator": "tooling/surface_inventory/generate.py",
+  "schema_version": 1,
+  "surfaces": {
+    "dart": {
+      "excluded_registry_libraries": [
+        {
+          "id": "dart:html_common",
+          "reason": "公開dart:html実装が共有する内部Library"
+        },
+        {
+          "id": "dart:nativewrappers",
+          "reason": "VM/DOM実装用の内部Library"
+        },
+        {
+          "id": "dart:vmservice_io",
+          "reason": "VM Service実装用の内部Library"
+        }
+      ],
+      "granularity": "public-library-entrypoint-by-sdk-platform-section",
+      "libraries": [
+        {
+          "id": "dart:async",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm_js_common",
+            "wasm_standalone"
+          ]
+        },
+        {
+          "id": "dart:cli",
+          "platform_sections": [
+            "vm"
+          ]
+        },
+        {
+          "id": "dart:collection",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm_common"
+          ]
+        },
+        {
+          "id": "dart:concurrent",
+          "platform_sections": [
+            "vm_common"
+          ]
+        },
+        {
+          "id": "dart:convert",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm",
+            "wasm_js_compatibility",
+            "wasm_standalone"
+          ]
+        },
+        {
+          "id": "dart:core",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm",
+            "wasm_common",
+            "wasm_js_compatibility",
+            "wasm_standalone"
+          ]
+        },
+        {
+          "id": "dart:developer",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm_js_common",
+            "wasm_standalone"
+          ]
+        },
+        {
+          "id": "dart:ffi",
+          "platform_sections": [
+            "dartdevc",
+            "vm_common",
+            "wasm_common"
+          ]
+        },
+        {
+          "id": "dart:html",
+          "platform_sections": [
+            "dart2js",
+            "dartdevc"
+          ]
+        },
+        {
+          "id": "dart:indexed_db",
+          "platform_sections": [
+            "dart2js",
+            "dartdevc"
+          ]
+        },
+        {
+          "id": "dart:io",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm_common"
+          ]
+        },
+        {
+          "id": "dart:isolate",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm_common"
+          ]
+        },
+        {
+          "id": "dart:js",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc"
+          ]
+        },
+        {
+          "id": "dart:js_interop",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "wasm_js_common"
+          ]
+        },
+        {
+          "id": "dart:js_interop_unsafe",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "wasm_js_common"
+          ]
+        },
+        {
+          "id": "dart:js_util",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc"
+          ]
+        },
+        {
+          "id": "dart:math",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm_js_common",
+            "wasm_standalone"
+          ]
+        },
+        {
+          "id": "dart:mirrors",
+          "platform_sections": [
+            "vm_common"
+          ]
+        },
+        {
+          "id": "dart:svg",
+          "platform_sections": [
+            "dart2js",
+            "dartdevc"
+          ]
+        },
+        {
+          "id": "dart:typed_data",
+          "platform_sections": [
+            "_dart2js_common",
+            "dartdevc",
+            "vm_common",
+            "wasm",
+            "wasm_js_compatibility",
+            "wasm_standalone"
+          ]
+        },
+        {
+          "id": "dart:web_audio",
+          "platform_sections": [
+            "dart2js",
+            "dartdevc"
+          ]
+        },
+        {
+          "id": "dart:web_gl",
+          "platform_sections": [
+            "dart2js",
+            "dartdevc"
+          ]
+        }
+      ],
+      "library_count": 22
+    },
+    "engine": {
+      "granularity": "public-library-implementation-entrypoint",
+      "implementation_count": 3,
+      "libraries": [
+        {
+          "exports": [],
+          "id": "dart:ui",
+          "parts": [
+            "annotations.dart",
+            "channel_buffers.dart",
+            "compositing.dart",
+            "geometry.dart",
+            "hooks.dart",
+            "isolate_name_server.dart",
+            "key.dart",
+            "lerp.dart",
+            "math.dart",
+            "natives.dart",
+            "painting.dart",
+            "platform_dispatcher.dart",
+            "platform_isolate.dart",
+            "plugins.dart",
+            "pointer.dart",
+            "semantics.dart",
+            "text.dart",
+            "window.dart"
+          ],
+          "path": "engine/src/flutter/lib/ui/ui.dart",
+          "platform": "native",
+          "source_digest": "sha256:d225c09776d8d0e373523b3f237f2b6b7882c5b73ff8537ab88c88ab6294366f"
+        },
+        {
+          "exports": [],
+          "id": "dart:ui",
+          "parts": [
+            "annotations.dart",
+            "canvas.dart",
+            "channel_buffers.dart",
+            "compositing.dart",
+            "geometry.dart",
+            "key.dart",
+            "lerp.dart",
+            "math.dart",
+            "natives.dart",
+            "painting.dart",
+            "path.dart",
+            "path_metrics.dart",
+            "platform_dispatcher.dart",
+            "platform_isolate.dart",
+            "pointer.dart",
+            "rsuperellipse_param.dart",
+            "semantics.dart",
+            "text.dart",
+            "tile_mode.dart",
+            "window.dart"
+          ],
+          "path": "engine/src/flutter/lib/web_ui/lib/ui.dart",
+          "platform": "web",
+          "source_digest": "sha256:3cb6f546c615fdd571012f421d63275e9e3f6a06010b420a773de1eb08616072"
+        },
+        {
+          "exports": [
+            "ui_web/asset_manager.dart",
+            "ui_web/benchmarks.dart",
+            "ui_web/browser_detection.dart",
+            "ui_web/flutter_views_proxy.dart",
+            "ui_web/images.dart",
+            "ui_web/initialization.dart",
+            "ui_web/navigation/platform_location.dart",
+            "ui_web/navigation/url_strategy.dart",
+            "ui_web/platform_view_registry.dart",
+            "ui_web/plugins.dart",
+            "ui_web/semantics.dart",
+            "ui_web/testing.dart"
+          ],
+          "id": "dart:ui_web",
+          "parts": [],
+          "path": "engine/src/flutter/lib/web_ui/lib/ui_web/src/ui_web.dart",
+          "platform": "web",
+          "source_digest": "sha256:c528b94cf61da4ba62accd359d155de053d09632537902f66668c46ede64fb24"
+        }
+      ],
+      "logical_library_count": 2
+    },
+    "flutter_cli": {
+      "command_source_count": 51,
+      "commands": [
+        {
+          "path": "packages/flutter_tools/lib/src/commands/analyze.dart",
+          "source_digest": "sha256:c6dd3b5b9b1e5793efec3bfd249bfe7be0d47e4cc065a1bc67df412e20b0bfe9",
+          "source_id": "analyze"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/analyze_base.dart",
+          "source_digest": "sha256:df7f8f96e750da4f230722548cf3ecbf491225e58ef18f06cdd657578cdd926c",
+          "source_id": "analyze-base"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/analyze_continuously.dart",
+          "source_digest": "sha256:a7bb76edde382a5a5eca00107fa0ba01bd6f611dccc2b4f583f6e3767ef5583b",
+          "source_id": "analyze-continuously"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/analyze_once.dart",
+          "source_digest": "sha256:4f8bd508f6b287f5e5774316854377fab2a48d53a70b307aa03ace645f5aa591",
+          "source_id": "analyze-once"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/android_analyze.dart",
+          "source_digest": "sha256:cae6d8662ba2ce59597a635fb1f342b831e4396a5416a619c77da913147a192f",
+          "source_id": "android-analyze"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/assemble.dart",
+          "source_digest": "sha256:35ac9d842ca20cd73e9dc5bc2d8677813ed1ee6f1a23bb3b48da520fa6e783b9",
+          "source_id": "assemble"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/attach.dart",
+          "source_digest": "sha256:72e6cd4f4fda2737b37fc49eafcf7bf0018c4f4e5ced8a9b59853db95c6ba4dc",
+          "source_id": "attach"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build.dart",
+          "source_digest": "sha256:8a4bdd12c4b49753e087a3f1dd2d2f46b7b096edfc1967e7296c5141e6c129ac",
+          "source_id": "build"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_aar.dart",
+          "source_digest": "sha256:f90150f499ad07db2a0cc2ce0d635955d39ec91d025b3b81668db83d567257bf",
+          "source_id": "build-aar"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_apk.dart",
+          "source_digest": "sha256:1d0acef991ea2b757673df344ebd385a6d7e7d14813774b289b46d3250e3df14",
+          "source_id": "build-apk"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_appbundle.dart",
+          "source_digest": "sha256:2b43e052f3045680a55d0bda3f4fd538951775115a111410a7d2dd452424f6f3",
+          "source_id": "build-appbundle"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_bundle.dart",
+          "source_digest": "sha256:eb5545d2e739dd8374b11e147b64ea37d7d29dba4158c79841da6cb2ea3af01e",
+          "source_id": "build-bundle"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_ios.dart",
+          "source_digest": "sha256:53ff8228d33a023c2ae94a36e40f359575263ce2cae1594f911d870b7c8c1055",
+          "source_id": "build-ios"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_ios_framework.dart",
+          "source_digest": "sha256:52b12fd6cc312b904fa53e4bafbbcd88585902bb39ea4dcff1c65342ef60afc4",
+          "source_id": "build-ios-framework"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_linux.dart",
+          "source_digest": "sha256:b4ceb7e9f1f0b5fee02fde96a531cfe268315f84c8ab2e47108d6609d5891594",
+          "source_id": "build-linux"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_macos.dart",
+          "source_digest": "sha256:6671fbc49b19bdeeb577f0affe44eeac2ef8ea10cf3ea2296540a5313c6792b9",
+          "source_id": "build-macos"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_macos_framework.dart",
+          "source_digest": "sha256:ff9fec64810893052ba426853a4ea76142df1f859c4fd500acc6e90114d5dff9",
+          "source_id": "build-macos-framework"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_swift_package.dart",
+          "source_digest": "sha256:1890f84f2a72a770b29f748a461ccfade1c9a1b3eed90974021d01dc7b9a9133",
+          "source_id": "build-swift-package"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_web.dart",
+          "source_digest": "sha256:28b9780621e7b71b046312fb6bd741c1e6085f36c697be9f69fcc15589527b05",
+          "source_id": "build-web"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/build_windows.dart",
+          "source_digest": "sha256:dc7ba5e93d59a42f9fbeb3a790bf1f9b42a01ac88f42b4b3329cccf1f9799bdf",
+          "source_id": "build-windows"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/channel.dart",
+          "source_digest": "sha256:f02f25310029cd967331ea235608718629232abbdc6ab6f2b80f72225b72f819",
+          "source_id": "channel"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/clean.dart",
+          "source_digest": "sha256:9745a8e10db3d75590d3962d0ff18f8130b7b585fc1eba2045af2e75895ceb5c",
+          "source_id": "clean"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/config.dart",
+          "source_digest": "sha256:3504d4a233b9361a961b24df9584ef345828860c3dd67c4e3c9dda505544207a",
+          "source_id": "config"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/create.dart",
+          "source_digest": "sha256:cfd79432ceff540b7b13807d1f62dd73041900893afcd3e49ee108c1b1ed06c5",
+          "source_id": "create"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/create_base.dart",
+          "source_digest": "sha256:590d4ac85630b28309ea61064047d22d5bd7cc8f83aa9d2e52f772f75e50155f",
+          "source_id": "create-base"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/custom_devices.dart",
+          "source_digest": "sha256:2cef88a8be399a7ba1cf5f6085d402a0cd467fb573c47b75788458ef5135f190",
+          "source_id": "custom-devices"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/daemon.dart",
+          "source_digest": "sha256:314fdc8b1462fa80e6a76c7d6ad31fb5505c77387ec579f4c3751af00f14fc0e",
+          "source_id": "daemon"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/darwin_add_to_app.dart",
+          "source_digest": "sha256:f84670ef2165ad270ae2a300fe5dc9caeb7d6d6bde6612f5e4355b7ed62a8828",
+          "source_id": "darwin-add-to-app"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/debug_adapter.dart",
+          "source_digest": "sha256:6cfa384992eb800a8825c5e71d932722ef1e8a3fbeb0a6f3026ede8633e641b8",
+          "source_id": "debug-adapter"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/devices.dart",
+          "source_digest": "sha256:e5c757603093f3e414c37a312cddddff296a74e99ed20d52238794f0a8553669",
+          "source_id": "devices"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/doctor.dart",
+          "source_digest": "sha256:0d1db9297dfcacef241f5556919f74e08467132a9f658dc6f2df76ecd734f932",
+          "source_id": "doctor"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/downgrade.dart",
+          "source_digest": "sha256:c6e5590b2a4c652b112c3e944be331578707760f0a74dd7922805730b822c5e7",
+          "source_id": "downgrade"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/drive.dart",
+          "source_digest": "sha256:555193ce967df424f45cfdd2b63cd054a59722e45aa211756d761c7bc40fca99",
+          "source_id": "drive"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/emulators.dart",
+          "source_digest": "sha256:b0336e0d0d755cc4982d0dc2593ff84f6f44b6ce352258e8275452a73437bf6d",
+          "source_id": "emulators"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/generate.dart",
+          "source_digest": "sha256:587d679a04e9b43cc46dee72b638c80142fa9cdaa7ddf5ddc7bf2e7cd12bcaad",
+          "source_id": "generate"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/generate_localizations.dart",
+          "source_digest": "sha256:c60649888403311553d75066ae331260342eb3165e93a40c315223b05c065f9a",
+          "source_id": "generate-localizations"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/ide_config.dart",
+          "source_digest": "sha256:18a37b43c3fe1296271ec3e9caff075812918afdd3700bd9af755e5b7353f33a",
+          "source_id": "ide-config"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/install.dart",
+          "source_digest": "sha256:9e9c500f7cec2ca6f9dac9ba4c28103426954a99d234b99ae1a26f26615db58c",
+          "source_id": "install"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/ios_analyze.dart",
+          "source_digest": "sha256:b5d8489e9b1d75c1c75b4e08e23a5dd4f1422df1c90c8f19a21c826a71bc446e",
+          "source_id": "ios-analyze"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/logs.dart",
+          "source_digest": "sha256:6bf8d9d76fd1cc819f9204483df8c1ee371f2a497abe63ea3135342603f66ac7",
+          "source_id": "logs"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/packages.dart",
+          "source_digest": "sha256:e49e0dfd3abf4a12c3780fbcbdd39eff68204a196fa13b7595a293d6d3df1de6",
+          "source_id": "packages"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/precache.dart",
+          "source_digest": "sha256:c378d4d2aeafbbc2ebc85b2c0cd3783fee3137b5744131f0a4c44b0b0980d904",
+          "source_id": "precache"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/run.dart",
+          "source_digest": "sha256:ee1b2953fdbac926746f4ab8e16fc46a974b6fb00c71da3a5c2c4394e042fe87",
+          "source_id": "run"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/screenshot.dart",
+          "source_digest": "sha256:9fb2631d283d6f1b100167cf6ae47f3dc801f0f4a7c410605bc629dd40a7aeb0",
+          "source_id": "screenshot"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/shell_completion.dart",
+          "source_digest": "sha256:a0fab4f96c5bd603f5b7ef8ee634ced6bd6d3381ac9cac473dbe6199cab38015",
+          "source_id": "shell-completion"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/symbolize.dart",
+          "source_digest": "sha256:e776ac10bb0882c2607e2f7269d95922fa304626791c3550c517f7ee2ea27bed",
+          "source_id": "symbolize"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/test.dart",
+          "source_digest": "sha256:0b2956d87e54f51d702e3f316f49187d3c0e69e379657fbccbebc2fe07933dc7",
+          "source_id": "test"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/update_packages.dart",
+          "source_digest": "sha256:242667169c8483715e477ba311dc0f1949f585174a566700b67624a6786fe90e",
+          "source_id": "update-packages"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/upgrade.dart",
+          "source_digest": "sha256:c4c3d0933e008e1504006c8d5b42135839cd92f7bbf3a1c2ff3f28b937252467",
+          "source_id": "upgrade"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/validate_project.dart",
+          "source_digest": "sha256:39460bcc637de0a08178110d63e47501ee40cf50c8e1fd0bfdf975e82cb59cd5",
+          "source_id": "validate-project"
+        },
+        {
+          "path": "packages/flutter_tools/lib/src/commands/widget_preview.dart",
+          "source_digest": "sha256:0068ecef9650917f45d4e1c2c30cc8db6dbf56148ffc8f089672a6ec0272468c",
+          "source_id": "widget-preview"
+        }
+      ],
+      "granularity": "flutter-command-source-file",
+      "note": "Command sourceは公開APIではなく、CLI分類対象の有限集合である。"
+    },
+    "framework": {
+      "granularity": "public-library-entrypoint-and-direct-export-edge",
+      "libraries": [
+        {
+          "exports": [
+            "package:flutter/scheduler.dart",
+            "src/animation/animation.dart",
+            "src/animation/animation_controller.dart",
+            "src/animation/animation_style.dart",
+            "src/animation/animations.dart",
+            "src/animation/curves.dart",
+            "src/animation/listener_helpers.dart",
+            "src/animation/tween.dart",
+            "src/animation/tween_sequence.dart"
+          ],
+          "id": "package:flutter/animation.dart",
+          "path": "packages/flutter/lib/animation.dart",
+          "source_digest": "sha256:c4d049d3f6462d4fa4d73774e16566e162059ea01fc80a55f7ed2e519e1e0035"
+        },
+        {
+          "exports": [
+            "src/cupertino/activity_indicator.dart",
+            "src/cupertino/adaptive_text_selection_toolbar.dart",
+            "src/cupertino/app.dart",
+            "src/cupertino/bottom_tab_bar.dart",
+            "src/cupertino/button.dart",
+            "src/cupertino/checkbox.dart",
+            "src/cupertino/colors.dart",
+            "src/cupertino/constants.dart",
+            "src/cupertino/context_menu.dart",
+            "src/cupertino/context_menu_action.dart",
+            "src/cupertino/cupertino_focus_halo.dart",
+            "src/cupertino/date_picker.dart",
+            "src/cupertino/debug.dart",
+            "src/cupertino/desktop_text_selection.dart",
+            "src/cupertino/desktop_text_selection_toolbar.dart",
+            "src/cupertino/desktop_text_selection_toolbar_button.dart",
+            "src/cupertino/dialog.dart",
+            "src/cupertino/expansion_tile.dart",
+            "src/cupertino/form_row.dart",
+            "src/cupertino/form_section.dart",
+            "src/cupertino/icon_theme_data.dart",
+            "src/cupertino/icons.dart",
+            "src/cupertino/interface_level.dart",
+            "src/cupertino/list_section.dart",
+            "src/cupertino/list_tile.dart",
+            "src/cupertino/localizations.dart",
+            "src/cupertino/magnifier.dart",
+            "src/cupertino/menu_anchor.dart",
+            "src/cupertino/nav_bar.dart",
+            "src/cupertino/page_scaffold.dart",
+            "src/cupertino/picker.dart",
+            "src/cupertino/radio.dart",
+            "src/cupertino/refresh.dart",
+            "src/cupertino/route.dart",
+            "src/cupertino/scrollbar.dart",
+            "src/cupertino/search_field.dart",
+            "src/cupertino/segmented_control.dart",
+            "src/cupertino/sheet.dart",
+            "src/cupertino/slider.dart",
+            "src/cupertino/sliding_segmented_control.dart",
+            "src/cupertino/spell_check_suggestions_toolbar.dart",
+            "src/cupertino/switch.dart",
+            "src/cupertino/tab_scaffold.dart",
+            "src/cupertino/tab_view.dart",
+            "src/cupertino/text_field.dart",
+            "src/cupertino/text_form_field_row.dart",
+            "src/cupertino/text_selection.dart",
+            "src/cupertino/text_selection_toolbar.dart",
+            "src/cupertino/text_selection_toolbar_button.dart",
+            "src/cupertino/text_theme.dart",
+            "src/cupertino/theme.dart",
+            "src/cupertino/thumb_painter.dart",
+            "widgets.dart"
+          ],
+          "id": "package:flutter/cupertino.dart",
+          "path": "packages/flutter/lib/cupertino.dart",
+          "source_digest": "sha256:583f2cae539dfb361bbf3b5b76ccf2d072186e372e855c7e2b640e3cdec4e0bb"
+        },
+        {
+          "exports": [
+            "package:meta/meta.dart",
+            "src/foundation/annotations.dart",
+            "src/foundation/assertions.dart",
+            "src/foundation/basic_types.dart",
+            "src/foundation/binding.dart",
+            "src/foundation/bitfield.dart",
+            "src/foundation/capabilities.dart",
+            "src/foundation/change_notifier.dart",
+            "src/foundation/collections.dart",
+            "src/foundation/consolidate_response.dart",
+            "src/foundation/constants.dart",
+            "src/foundation/debug.dart",
+            "src/foundation/diagnostics.dart",
+            "src/foundation/error_dumper.dart",
+            "src/foundation/isolates.dart",
+            "src/foundation/key.dart",
+            "src/foundation/licenses.dart",
+            "src/foundation/memory_allocations.dart",
+            "src/foundation/node.dart",
+            "src/foundation/object.dart",
+            "src/foundation/observer_list.dart",
+            "src/foundation/persistent_hash_map.dart",
+            "src/foundation/platform.dart",
+            "src/foundation/print.dart",
+            "src/foundation/serialization.dart",
+            "src/foundation/service_extensions.dart",
+            "src/foundation/stack_frame.dart",
+            "src/foundation/synchronous_future.dart",
+            "src/foundation/timeline.dart",
+            "src/foundation/unicode.dart"
+          ],
+          "id": "package:flutter/foundation.dart",
+          "path": "packages/flutter/lib/foundation.dart",
+          "source_digest": "sha256:615ef38f92ec3a4965567e8701b9fb85a54b90a8f0cf4d627c4afbf0d1cb9e56"
+        },
+        {
+          "exports": [
+            "src/gestures/arena.dart",
+            "src/gestures/binding.dart",
+            "src/gestures/constants.dart",
+            "src/gestures/converter.dart",
+            "src/gestures/debug.dart",
+            "src/gestures/drag.dart",
+            "src/gestures/drag_details.dart",
+            "src/gestures/eager.dart",
+            "src/gestures/events.dart",
+            "src/gestures/force_press.dart",
+            "src/gestures/gesture_details.dart",
+            "src/gestures/gesture_settings.dart",
+            "src/gestures/hit_test.dart",
+            "src/gestures/long_press.dart",
+            "src/gestures/lsq_solver.dart",
+            "src/gestures/monodrag.dart",
+            "src/gestures/multidrag.dart",
+            "src/gestures/multitap.dart",
+            "src/gestures/pointer_router.dart",
+            "src/gestures/pointer_signal_resolver.dart",
+            "src/gestures/recognizer.dart",
+            "src/gestures/resampler.dart",
+            "src/gestures/scale.dart",
+            "src/gestures/tap.dart",
+            "src/gestures/tap_and_drag.dart",
+            "src/gestures/team.dart",
+            "src/gestures/velocity_tracker.dart"
+          ],
+          "id": "package:flutter/gestures.dart",
+          "path": "packages/flutter/lib/gestures.dart",
+          "source_digest": "sha256:9ab1694264650ee1b8cbf193c386204299e7577c56c6b63ffa224ce70e59cea7"
+        },
+        {
+          "exports": [
+            "src/material/about.dart",
+            "src/material/action_buttons.dart",
+            "src/material/action_chip.dart",
+            "src/material/action_icons_theme.dart",
+            "src/material/adaptive_text_selection_toolbar.dart",
+            "src/material/animated_icons.dart",
+            "src/material/app.dart",
+            "src/material/app_bar.dart",
+            "src/material/app_bar_theme.dart",
+            "src/material/arc.dart",
+            "src/material/autocomplete.dart",
+            "src/material/badge.dart",
+            "src/material/badge_theme.dart",
+            "src/material/banner.dart",
+            "src/material/banner_theme.dart",
+            "src/material/bottom_app_bar.dart",
+            "src/material/bottom_app_bar_theme.dart",
+            "src/material/bottom_navigation_bar.dart",
+            "src/material/bottom_navigation_bar_theme.dart",
+            "src/material/bottom_sheet.dart",
+            "src/material/bottom_sheet_theme.dart",
+            "src/material/button.dart",
+            "src/material/button_bar.dart",
+            "src/material/button_bar_theme.dart",
+            "src/material/button_style.dart",
+            "src/material/button_style_button.dart",
+            "src/material/button_theme.dart",
+            "src/material/calendar_date_picker.dart",
+            "src/material/card.dart",
+            "src/material/card_theme.dart",
+            "src/material/carousel.dart",
+            "src/material/carousel_theme.dart",
+            "src/material/checkbox.dart",
+            "src/material/checkbox_list_tile.dart",
+            "src/material/checkbox_theme.dart",
+            "src/material/chip.dart",
+            "src/material/chip_theme.dart",
+            "src/material/choice_chip.dart",
+            "src/material/circle_avatar.dart",
+            "src/material/color_scheme.dart",
+            "src/material/colors.dart",
+            "src/material/constants.dart",
+            "src/material/curves.dart",
+            "src/material/data_table.dart",
+            "src/material/data_table_source.dart",
+            "src/material/data_table_theme.dart",
+            "src/material/date.dart",
+            "src/material/date_picker.dart",
+            "src/material/date_picker_theme.dart",
+            "src/material/debug.dart",
+            "src/material/desktop_text_selection.dart",
+            "src/material/desktop_text_selection_toolbar.dart",
+            "src/material/desktop_text_selection_toolbar_button.dart",
+            "src/material/dialog.dart",
+            "src/material/dialog_theme.dart",
+            "src/material/divider.dart",
+            "src/material/divider_theme.dart",
+            "src/material/drawer.dart",
+            "src/material/drawer_header.dart",
+            "src/material/drawer_theme.dart",
+            "src/material/dropdown.dart",
+            "src/material/dropdown_menu.dart",
+            "src/material/dropdown_menu_form_field.dart",
+            "src/material/dropdown_menu_theme.dart",
+            "src/material/elevated_button.dart",
+            "src/material/elevated_button_theme.dart",
+            "src/material/elevation_overlay.dart",
+            "src/material/expand_icon.dart",
+            "src/material/expansion_panel.dart",
+            "src/material/expansion_tile.dart",
+            "src/material/expansion_tile_theme.dart",
+            "src/material/filled_button.dart",
+            "src/material/filled_button_theme.dart",
+            "src/material/filter_chip.dart",
+            "src/material/flexible_space_bar.dart",
+            "src/material/floating_action_button.dart",
+            "src/material/floating_action_button_location.dart",
+            "src/material/floating_action_button_theme.dart",
+            "src/material/grid_tile.dart",
+            "src/material/grid_tile_bar.dart",
+            "src/material/icon_button.dart",
+            "src/material/icon_button_theme.dart",
+            "src/material/icons.dart",
+            "src/material/ink_decoration.dart",
+            "src/material/ink_highlight.dart",
+            "src/material/ink_ripple.dart",
+            "src/material/ink_sparkle.dart",
+            "src/material/ink_splash.dart",
+            "src/material/ink_well.dart",
+            "src/material/input_border.dart",
+            "src/material/input_chip.dart",
+            "src/material/input_date_picker_form_field.dart",
+            "src/material/input_decorator.dart",
+            "src/material/list_tile.dart",
+            "src/material/list_tile_theme.dart",
+            "src/material/magnifier.dart",
+            "src/material/material.dart",
+            "src/material/material_button.dart",
+            "src/material/material_localizations.dart",
+            "src/material/material_state.dart",
+            "src/material/material_state_mixin.dart",
+            "src/material/menu_anchor.dart",
+            "src/material/menu_bar_theme.dart",
+            "src/material/menu_button_theme.dart",
+            "src/material/menu_style.dart",
+            "src/material/menu_theme.dart",
+            "src/material/mergeable_material.dart",
+            "src/material/motion.dart",
+            "src/material/navigation_bar.dart",
+            "src/material/navigation_bar_theme.dart",
+            "src/material/navigation_drawer.dart",
+            "src/material/navigation_drawer_theme.dart",
+            "src/material/navigation_rail.dart",
+            "src/material/navigation_rail_theme.dart",
+            "src/material/no_splash.dart",
+            "src/material/outlined_button.dart",
+            "src/material/outlined_button_theme.dart",
+            "src/material/page.dart",
+            "src/material/page_transitions_theme.dart",
+            "src/material/paginated_data_table.dart",
+            "src/material/popup_menu.dart",
+            "src/material/popup_menu_theme.dart",
+            "src/material/predictive_back_page_transitions_builder.dart",
+            "src/material/progress_indicator.dart",
+            "src/material/progress_indicator_theme.dart",
+            "src/material/radio.dart",
+            "src/material/radio_list_tile.dart",
+            "src/material/radio_theme.dart",
+            "src/material/range_slider.dart",
+            "src/material/range_slider_parts.dart",
+            "src/material/refresh_indicator.dart",
+            "src/material/reorderable_list.dart",
+            "src/material/scaffold.dart",
+            "src/material/scrollbar.dart",
+            "src/material/scrollbar_theme.dart",
+            "src/material/search.dart",
+            "src/material/search_anchor.dart",
+            "src/material/search_bar_theme.dart",
+            "src/material/search_view_theme.dart",
+            "src/material/segmented_button.dart",
+            "src/material/segmented_button_theme.dart",
+            "src/material/selectable_text.dart",
+            "src/material/selection_area.dart",
+            "src/material/shadows.dart",
+            "src/material/slider.dart",
+            "src/material/slider_parts.dart",
+            "src/material/slider_theme.dart",
+            "src/material/slider_value_indicator_shape.dart",
+            "src/material/snack_bar.dart",
+            "src/material/snack_bar_theme.dart",
+            "src/material/spell_check_suggestions_toolbar.dart",
+            "src/material/spell_check_suggestions_toolbar_layout_delegate.dart",
+            "src/material/stepper.dart",
+            "src/material/switch.dart",
+            "src/material/switch_list_tile.dart",
+            "src/material/switch_theme.dart",
+            "src/material/tab_bar_theme.dart",
+            "src/material/tab_controller.dart",
+            "src/material/tab_indicator.dart",
+            "src/material/tabs.dart",
+            "src/material/text_button.dart",
+            "src/material/text_button_theme.dart",
+            "src/material/text_field.dart",
+            "src/material/text_form_field.dart",
+            "src/material/text_selection.dart",
+            "src/material/text_selection_theme.dart",
+            "src/material/text_selection_toolbar.dart",
+            "src/material/text_selection_toolbar_text_button.dart",
+            "src/material/text_theme.dart",
+            "src/material/theme.dart",
+            "src/material/theme_data.dart",
+            "src/material/time.dart",
+            "src/material/time_picker.dart",
+            "src/material/time_picker_theme.dart",
+            "src/material/toggle_buttons.dart",
+            "src/material/toggle_buttons_theme.dart",
+            "src/material/tooltip.dart",
+            "src/material/tooltip_theme.dart",
+            "src/material/tooltip_visibility.dart",
+            "src/material/typography.dart",
+            "src/material/user_accounts_drawer_header.dart",
+            "widgets.dart"
+          ],
+          "id": "package:flutter/material.dart",
+          "path": "packages/flutter/lib/material.dart",
+          "source_digest": "sha256:ae4a73a45b5bd0c771cfd7bf89004736585fa5ddfadb948968d2457304139baf"
+        },
+        {
+          "exports": [
+            "dart:ui",
+            "src/painting/alignment.dart",
+            "src/painting/basic_types.dart",
+            "src/painting/beveled_rectangle_border.dart",
+            "src/painting/binding.dart",
+            "src/painting/border_radius.dart",
+            "src/painting/borders.dart",
+            "src/painting/box_border.dart",
+            "src/painting/box_decoration.dart",
+            "src/painting/box_fit.dart",
+            "src/painting/box_shadow.dart",
+            "src/painting/circle_border.dart",
+            "src/painting/clip.dart",
+            "src/painting/colors.dart",
+            "src/painting/continuous_rectangle_border.dart",
+            "src/painting/debug.dart",
+            "src/painting/decoration.dart",
+            "src/painting/decoration_image.dart",
+            "src/painting/edge_insets.dart",
+            "src/painting/flutter_logo.dart",
+            "src/painting/fractional_offset.dart",
+            "src/painting/geometry.dart",
+            "src/painting/gradient.dart",
+            "src/painting/image_cache.dart",
+            "src/painting/image_decoder.dart",
+            "src/painting/image_provider.dart",
+            "src/painting/image_resolution.dart",
+            "src/painting/image_stream.dart",
+            "src/painting/inline_span.dart",
+            "src/painting/linear_border.dart",
+            "src/painting/matrix_utils.dart",
+            "src/painting/notched_shapes.dart",
+            "src/painting/oval_border.dart",
+            "src/painting/paint_utilities.dart",
+            "src/painting/placeholder_span.dart",
+            "src/painting/rounded_rectangle_border.dart",
+            "src/painting/shader_warm_up.dart",
+            "src/painting/shape_decoration.dart",
+            "src/painting/stadium_border.dart",
+            "src/painting/star_border.dart",
+            "src/painting/strut_style.dart",
+            "src/painting/text_painter.dart",
+            "src/painting/text_scaler.dart",
+            "src/painting/text_span.dart",
+            "src/painting/text_style.dart"
+          ],
+          "id": "package:flutter/painting.dart",
+          "path": "packages/flutter/lib/painting.dart",
+          "source_digest": "sha256:ea5b54ce30f830559c4f1b11a74db2981a091d12ea101482ddb170dd9be8bc31"
+        },
+        {
+          "exports": [
+            "src/physics/clamped_simulation.dart",
+            "src/physics/friction_simulation.dart",
+            "src/physics/gravity_simulation.dart",
+            "src/physics/simulation.dart",
+            "src/physics/spring_simulation.dart",
+            "src/physics/tolerance.dart",
+            "src/physics/utils.dart"
+          ],
+          "id": "package:flutter/physics.dart",
+          "path": "packages/flutter/lib/physics.dart",
+          "source_digest": "sha256:2057dca22baa71f98f662266c7d51cc6a65e2072ca07d31e24dcd8d52677d7fb"
+        },
+        {
+          "exports": [
+            "package:flutter/foundation.dart",
+            "package:flutter/semantics.dart",
+            "package:vector_math/vector_math_64.dart",
+            "src/rendering/animated_size.dart",
+            "src/rendering/binding.dart",
+            "src/rendering/box.dart",
+            "src/rendering/custom_layout.dart",
+            "src/rendering/custom_paint.dart",
+            "src/rendering/debug.dart",
+            "src/rendering/debug_overflow_indicator.dart",
+            "src/rendering/decorated_sliver.dart",
+            "src/rendering/editable.dart",
+            "src/rendering/error.dart",
+            "src/rendering/flex.dart",
+            "src/rendering/flow.dart",
+            "src/rendering/image.dart",
+            "src/rendering/image_filter_config.dart",
+            "src/rendering/layer.dart",
+            "src/rendering/layout_helper.dart",
+            "src/rendering/list_body.dart",
+            "src/rendering/list_wheel_viewport.dart",
+            "src/rendering/mouse_tracker.dart",
+            "src/rendering/object.dart",
+            "src/rendering/paragraph.dart",
+            "src/rendering/performance_overlay.dart",
+            "src/rendering/platform_view.dart",
+            "src/rendering/proxy_box.dart",
+            "src/rendering/proxy_sliver.dart",
+            "src/rendering/rotated_box.dart",
+            "src/rendering/selection.dart",
+            "src/rendering/service_extensions.dart",
+            "src/rendering/shifted_box.dart",
+            "src/rendering/sliver.dart",
+            "src/rendering/sliver_fill.dart",
+            "src/rendering/sliver_fixed_extent_list.dart",
+            "src/rendering/sliver_grid.dart",
+            "src/rendering/sliver_group.dart",
+            "src/rendering/sliver_list.dart",
+            "src/rendering/sliver_multi_box_adaptor.dart",
+            "src/rendering/sliver_padding.dart",
+            "src/rendering/sliver_persistent_header.dart",
+            "src/rendering/sliver_tree.dart",
+            "src/rendering/stack.dart",
+            "src/rendering/table.dart",
+            "src/rendering/table_border.dart",
+            "src/rendering/texture.dart",
+            "src/rendering/tweens.dart",
+            "src/rendering/view.dart",
+            "src/rendering/viewport.dart",
+            "src/rendering/viewport_offset.dart",
+            "src/rendering/wrap.dart"
+          ],
+          "id": "package:flutter/rendering.dart",
+          "path": "packages/flutter/lib/rendering.dart",
+          "source_digest": "sha256:7875931fa86028656b5f4cb0a2c49b176ad1ac1494125f3ac71754761d7be667"
+        },
+        {
+          "exports": [
+            "src/scheduler/binding.dart",
+            "src/scheduler/debug.dart",
+            "src/scheduler/priority.dart",
+            "src/scheduler/service_extensions.dart",
+            "src/scheduler/ticker.dart"
+          ],
+          "id": "package:flutter/scheduler.dart",
+          "path": "packages/flutter/lib/scheduler.dart",
+          "source_digest": "sha256:06cc874cf07337df1a8266a6863126d83bfa683bf30dd2fb44a42b7d65fddb34"
+        },
+        {
+          "exports": [
+            "dart:ui",
+            "src/semantics/binding.dart",
+            "src/semantics/debug.dart",
+            "src/semantics/semantics.dart",
+            "src/semantics/semantics_event.dart",
+            "src/semantics/semantics_service.dart"
+          ],
+          "id": "package:flutter/semantics.dart",
+          "path": "packages/flutter/lib/semantics.dart",
+          "source_digest": "sha256:ce34b852d6305f4a143cd3c55f106c2b56ffb10126666682e2d8d5ee587760e7"
+        },
+        {
+          "exports": [
+            "src/services/app_version.dart",
+            "src/services/asset_bundle.dart",
+            "src/services/asset_manifest.dart",
+            "src/services/autofill.dart",
+            "src/services/binary_messenger.dart",
+            "src/services/binding.dart",
+            "src/services/browser_context_menu.dart",
+            "src/services/clipboard.dart",
+            "src/services/debug.dart",
+            "src/services/deferred_component.dart",
+            "src/services/flavor.dart",
+            "src/services/flutter_version.dart",
+            "src/services/font_loader.dart",
+            "src/services/haptic_feedback.dart",
+            "src/services/hardware_keyboard.dart",
+            "src/services/keyboard_inserted_content.dart",
+            "src/services/keyboard_key.g.dart",
+            "src/services/keyboard_maps.g.dart",
+            "src/services/live_text.dart",
+            "src/services/message_codec.dart",
+            "src/services/message_codecs.dart",
+            "src/services/mouse_cursor.dart",
+            "src/services/mouse_tracking.dart",
+            "src/services/platform_channel.dart",
+            "src/services/platform_views.dart",
+            "src/services/predictive_back_event.dart",
+            "src/services/process_text.dart",
+            "src/services/raw_keyboard.dart",
+            "src/services/raw_keyboard_android.dart",
+            "src/services/raw_keyboard_fuchsia.dart",
+            "src/services/raw_keyboard_ios.dart",
+            "src/services/raw_keyboard_linux.dart",
+            "src/services/raw_keyboard_macos.dart",
+            "src/services/raw_keyboard_web.dart",
+            "src/services/raw_keyboard_windows.dart",
+            "src/services/restoration.dart",
+            "src/services/scribe.dart",
+            "src/services/sensitive_content.dart",
+            "src/services/service_extensions.dart",
+            "src/services/spell_check.dart",
+            "src/services/system_channels.dart",
+            "src/services/system_chrome.dart",
+            "src/services/system_navigator.dart",
+            "src/services/system_sound.dart",
+            "src/services/text_boundary.dart",
+            "src/services/text_editing.dart",
+            "src/services/text_editing_delta.dart",
+            "src/services/text_formatter.dart",
+            "src/services/text_input.dart",
+            "src/services/text_layout_metrics.dart",
+            "src/services/undo_manager.dart"
+          ],
+          "id": "package:flutter/services.dart",
+          "path": "packages/flutter/lib/services.dart",
+          "source_digest": "sha256:d841fb45101e098066f23714134675c47c8f1a27f03fc8aa6ac0b3931fbaed8a"
+        },
+        {
+          "exports": [
+            "src/widget_previews/widget_previews.dart"
+          ],
+          "id": "package:flutter/widget_previews.dart",
+          "path": "packages/flutter/lib/widget_previews.dart",
+          "source_digest": "sha256:83fc3f6a4bd0a72725d360cd9cad55b4cddccfd64d04c7241bbc4efd73d45e9d"
+        },
+        {
+          "exports": [
+            "foundation.dart",
+            "package:characters/characters.dart",
+            "package:vector_math/vector_math_64.dart",
+            "rendering.dart",
+            "src/widgets/actions.dart",
+            "src/widgets/adapter.dart",
+            "src/widgets/animated_cross_fade.dart",
+            "src/widgets/animated_scroll_view.dart",
+            "src/widgets/animated_size.dart",
+            "src/widgets/animated_switcher.dart",
+            "src/widgets/annotated_region.dart",
+            "src/widgets/app.dart",
+            "src/widgets/app_lifecycle_listener.dart",
+            "src/widgets/async.dart",
+            "src/widgets/autocomplete.dart",
+            "src/widgets/autofill.dart",
+            "src/widgets/automatic_keep_alive.dart",
+            "src/widgets/banner.dart",
+            "src/widgets/basic.dart",
+            "src/widgets/binding.dart",
+            "src/widgets/bottom_navigation_bar_item.dart",
+            "src/widgets/color_filter.dart",
+            "src/widgets/container.dart",
+            "src/widgets/context_menu_button_item.dart",
+            "src/widgets/context_menu_controller.dart",
+            "src/widgets/date.dart",
+            "src/widgets/debug.dart",
+            "src/widgets/decorated_sliver.dart",
+            "src/widgets/default_selection_style.dart",
+            "src/widgets/default_text_editing_shortcuts.dart",
+            "src/widgets/desktop_text_selection_toolbar_layout_delegate.dart",
+            "src/widgets/dialog.dart",
+            "src/widgets/dismissible.dart",
+            "src/widgets/display_feature_sub_screen.dart",
+            "src/widgets/disposable_build_context.dart",
+            "src/widgets/drag_boundary.dart",
+            "src/widgets/drag_target.dart",
+            "src/widgets/draggable_scrollable_sheet.dart",
+            "src/widgets/dual_transition_builder.dart",
+            "src/widgets/editable_text.dart",
+            "src/widgets/expansible.dart",
+            "src/widgets/fade_in_image.dart",
+            "src/widgets/feedback.dart",
+            "src/widgets/flutter_logo.dart",
+            "src/widgets/focus_manager.dart",
+            "src/widgets/focus_scope.dart",
+            "src/widgets/focus_traversal.dart",
+            "src/widgets/form.dart",
+            "src/widgets/framework.dart",
+            "src/widgets/gesture_detector.dart",
+            "src/widgets/grid_paper.dart",
+            "src/widgets/heroes.dart",
+            "src/widgets/icon.dart",
+            "src/widgets/icon_data.dart",
+            "src/widgets/icon_theme.dart",
+            "src/widgets/icon_theme_data.dart",
+            "src/widgets/image.dart",
+            "src/widgets/image_filter.dart",
+            "src/widgets/image_icon.dart",
+            "src/widgets/implicit_animations.dart",
+            "src/widgets/indexed_stack.dart",
+            "src/widgets/inherited_model.dart",
+            "src/widgets/inherited_notifier.dart",
+            "src/widgets/inherited_theme.dart",
+            "src/widgets/interactive_viewer.dart",
+            "src/widgets/keyboard_listener.dart",
+            "src/widgets/layout_builder.dart",
+            "src/widgets/list_wheel_scroll_view.dart",
+            "src/widgets/localizations.dart",
+            "src/widgets/lookup_boundary.dart",
+            "src/widgets/magnifier.dart",
+            "src/widgets/media_query.dart",
+            "src/widgets/modal_barrier.dart",
+            "src/widgets/navigation_toolbar.dart",
+            "src/widgets/navigator.dart",
+            "src/widgets/navigator_pop_handler.dart",
+            "src/widgets/nested_scroll_view.dart",
+            "src/widgets/notification_listener.dart",
+            "src/widgets/orientation_builder.dart",
+            "src/widgets/overflow_bar.dart",
+            "src/widgets/overlay.dart",
+            "src/widgets/overscroll_indicator.dart",
+            "src/widgets/page_storage.dart",
+            "src/widgets/page_transitions_builder.dart",
+            "src/widgets/page_view.dart",
+            "src/widgets/pages.dart",
+            "src/widgets/performance_overlay.dart",
+            "src/widgets/pinned_header_sliver.dart",
+            "src/widgets/placeholder.dart",
+            "src/widgets/platform_menu_bar.dart",
+            "src/widgets/platform_selectable_region_context_menu.dart",
+            "src/widgets/platform_view.dart",
+            "src/widgets/pop_scope.dart",
+            "src/widgets/preferred_size.dart",
+            "src/widgets/primary_scroll_controller.dart",
+            "src/widgets/radio_group.dart",
+            "src/widgets/raw_keyboard_listener.dart",
+            "src/widgets/raw_menu_anchor.dart",
+            "src/widgets/raw_radio.dart",
+            "src/widgets/raw_tooltip.dart",
+            "src/widgets/reorderable_list.dart",
+            "src/widgets/repeating_animation_builder.dart",
+            "src/widgets/restoration.dart",
+            "src/widgets/restoration_properties.dart",
+            "src/widgets/router.dart",
+            "src/widgets/routes.dart",
+            "src/widgets/safe_area.dart",
+            "src/widgets/scroll_activity.dart",
+            "src/widgets/scroll_aware_image_provider.dart",
+            "src/widgets/scroll_configuration.dart",
+            "src/widgets/scroll_context.dart",
+            "src/widgets/scroll_controller.dart",
+            "src/widgets/scroll_delegate.dart",
+            "src/widgets/scroll_metrics.dart",
+            "src/widgets/scroll_notification.dart",
+            "src/widgets/scroll_notification_observer.dart",
+            "src/widgets/scroll_physics.dart",
+            "src/widgets/scroll_position.dart",
+            "src/widgets/scroll_position_with_single_context.dart",
+            "src/widgets/scroll_simulation.dart",
+            "src/widgets/scroll_view.dart",
+            "src/widgets/scrollable.dart",
+            "src/widgets/scrollable_helpers.dart",
+            "src/widgets/scrollbar.dart",
+            "src/widgets/selectable_region.dart",
+            "src/widgets/selection_container.dart",
+            "src/widgets/semantics_debugger.dart",
+            "src/widgets/sensitive_content.dart",
+            "src/widgets/service_extensions.dart",
+            "src/widgets/shared_app_data.dart",
+            "src/widgets/shortcuts.dart",
+            "src/widgets/single_child_scroll_view.dart",
+            "src/widgets/size_changed_layout_notifier.dart",
+            "src/widgets/sliver.dart",
+            "src/widgets/sliver_fill.dart",
+            "src/widgets/sliver_floating_header.dart",
+            "src/widgets/sliver_layout_builder.dart",
+            "src/widgets/sliver_persistent_header.dart",
+            "src/widgets/sliver_prototype_extent_list.dart",
+            "src/widgets/sliver_resizing_header.dart",
+            "src/widgets/sliver_tree.dart",
+            "src/widgets/slotted_render_object_widget.dart",
+            "src/widgets/snapshot_widget.dart",
+            "src/widgets/spacer.dart",
+            "src/widgets/spell_check.dart",
+            "src/widgets/standard_component_type.dart",
+            "src/widgets/status_transitions.dart",
+            "src/widgets/stretch_effect.dart",
+            "src/widgets/system_context_menu.dart",
+            "src/widgets/table.dart",
+            "src/widgets/tap_region.dart",
+            "src/widgets/text.dart",
+            "src/widgets/text_editing_intents.dart",
+            "src/widgets/text_selection.dart",
+            "src/widgets/text_selection_toolbar_anchors.dart",
+            "src/widgets/text_selection_toolbar_layout_delegate.dart",
+            "src/widgets/texture.dart",
+            "src/widgets/ticker_provider.dart",
+            "src/widgets/title.dart",
+            "src/widgets/toggleable.dart",
+            "src/widgets/transitions.dart",
+            "src/widgets/tween_animation_builder.dart",
+            "src/widgets/two_dimensional_scroll_view.dart",
+            "src/widgets/two_dimensional_viewport.dart",
+            "src/widgets/undo_history.dart",
+            "src/widgets/unique_widget.dart",
+            "src/widgets/value_listenable_builder.dart",
+            "src/widgets/view.dart",
+            "src/widgets/viewport.dart",
+            "src/widgets/widget_inspector.dart",
+            "src/widgets/widget_span.dart",
+            "src/widgets/widget_state.dart",
+            "src/widgets/will_pop_scope.dart"
+          ],
+          "id": "package:flutter/widgets.dart",
+          "path": "packages/flutter/lib/widgets.dart",
+          "source_digest": "sha256:a92594798991f9da576bbcb917ead74478754a079e223353d2ad44e34be341e5"
+        }
+      ],
+      "library_count": 13
+    }
+  }
+}

@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "id": "local-compatibility-harness",
+  "id": "formal-local-closure-harness",
   "files": {
-    "runner": "sha256:6c98b22f567d690cafe6846b6c8e7fe84b48fa58fce89056ebd9a4b56fb30bae",
-    "operations_workspace_lock": "sha256:b364ab784446f5b69c9f6a375ae9d06848720dcf5b8b116260c4a6cf82e8d89e",
-    "widget_lifecycle_lock": "sha256:38b1272e2228027f785e2dd29a96c3c382b6ae29c954655ef5e009a43da1b9b3",
-    "source_and_tests": "sha256:01e25da49942a8076ce81cd457cb91998e89772c02026e70934726efd977b65a"
+    "runner": "sha256:a4391ed76541b61990b5c7e69009d3d3e6c9166b94933adeb31a2cbca9d11dab",
+    "surface_inventory_generator": "sha256:d30a18b6bb9f70368cd2a22166197c7d8d20c10d084d767f0ba3dba4f38e2378",
+    "surface_inventory": "sha256:c7dbee181953b9528ac79760308be9011de66e06ec3c85907d9122cf833901be",
+    "operations_workspace_lock": "sha256:eb7f6140dfe32d21ef85f07c0c834cc32a4844a75042285e1679558dd0d4cf54",
+    "widget_lifecycle_lock": "sha256:2ddec2267adb6073e861ee5a58fa3645f5877f7dc1bbe0ffc251f113a18a83d4"
   },
-  "baseline_scope": "Flutter 3.38.5 local compatibility only"
+  "baseline_scope": "Flutter 3.47.1 formal local closure"
 }

@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "framework.rendering-invalidation",
+  "id": "framework.layout-and-paint-are-separate",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "ConstraintでSizeが決まり、paint-only変更はlayoutせず、geometry変更はlayoutからpaintへ進む。"
+      ],
+      "id": "proof.rendering-invalidation",
+      "statement": "Lab lab.framework-rendering-pipeline とTest test.framework-rendering-pipelineで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-engine-3.47.1-deps"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。ConstraintでSizeが決まり、paint-only変更はlayoutせず、geometry変更はlayoutからpaintへ進む。",
+  "status": "accepted"
+}

@@ -11,4 +11,6 @@
 7. Skill: Router Evalが最低合格率を満たし、Coverage Gapと権限境界を守る。
 8. Publication: Apache-2.0、NOTICE、Root SBOM、第三者Manifest、Provenance、Secret、Trademark Gateが通る。
 
-Core CLIの`atlas validate`は5 ManifestのSchema形状を検証し、`atlas audit .`はID、Epoch、Target Set、Routerを横断監査します。Overlay ValidatorはManifest間Digest、Claim/Evidence Graph、Artifact、Skill Eval、Legal Path、Status整合を補います。すべての成功が必要であり、現在は全体Gate未達です。
+Core CLIの`atlas validate`は5 Manifest、Claim実体、Evidence、第三者Manifest、ProvenanceのSchema形状を検証し、`atlas audit .`はID、Epoch、Target Set、Routerを横断監査します。Overlay ValidatorはManifest間Digest、Claim/Evidence Graph、Artifact、Skill Eval、Legal Path、Status整合を補います。
+
+現在、Authority、有限Coverage分類、Mastery、Claim実体、Formal Local、Container、Operations Drill、Skill、SBOM/第三者Manifest/Provenanceはローカルで閉じています。Simulator pass EvidenceとAndroid/iOS/Windows/Linux Native Runner Evidenceがなく、Control Plane v1のRequired Profile Gateを満たさないため、Certificateは生成せず`status: incomplete`を維持します。

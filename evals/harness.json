@@ -2,10 +2,11 @@
   "schema_version": 1,
   "id": "flutter-reference-router-eval",
   "files": {
-    "routes": "sha256:cd5fd2389a22ea4f2913451f7e6400b56ee932904d6efe498782ed7db078e01c",
-    "cases": "sha256:8b3e168c28ef590a604e7ac6044efe8056e02d7008f0bc81096d0320541cf817",
-    "evaluator": "sha256:71c75f074b48df4212ee0ab21578acc48af861c03f7b0e4e4c613ff005ec1f0b",
-    "router": "sha256:50e75bc00af7f1ae4b63f9be3274a2f9b9f89ba12c44abaf88bb93b4db7fa2f3"
+    "routes": "sha256:c1873ed77111ee20ed75015118509d412e26f7d6a88437642039a6c289f3ef43",
+    "cases": "sha256:cb68f3bf8a85a651528374fb7edd94e4f50f8e1aafb9bcfe707ef81e741cc1fb",
+    "forward_cases": "sha256:b8f8debced733351b8f05f6767db3025b8977ab665d7cdd1c87bd05d431c263c",
+    "evaluator": "sha256:78052dab1896f744401042d954d518a25a12a39ccad8ea84f52219cdb3b535f6",
+    "router": "sha256:74fe1f2718f6a5a48b054b46c9547aee72e7db49f38162a7a0de80a62ef5ef85"
   },
-  "observable_outcomes": ["capability selection", "coverage gap", "write boundary", "publication boundary"]
+  "observable_outcomes": ["compound capability selection", "qualifier coverage gap", "write boundary", "publication boundary"]
 }

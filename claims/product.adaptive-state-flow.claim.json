@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "product.adaptive-workspace",
+  "id": "product.adaptive-state-flow",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "同じ状態遷移が狭幅と広幅UIで観測でき、入力、保存、診断のWidget Testが成功する。"
+      ],
+      "id": "proof.product-observable-state",
+      "statement": "Lab lab.operations-workspace とTest test.operations-workspaceで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-widgets-api"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。同じ状態遷移が狭幅と広幅UIで観測でき、入力、保存、診断のWidget Testが成功する。",
+  "status": "accepted"
+}

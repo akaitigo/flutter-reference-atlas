@@ -1,0 +1,20 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.ffi",
+  "id": "platform.ffi-runtime-call",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "macOS arm64でC symbol atlas_addをDart FFIから呼び、19と23の和42を得て一時dylibを削除する。"
+      ],
+      "id": "proof.ffi-runtime",
+      "statement": "Lab lab.platform-ffi-runtime とTest test.platform-ffi-runtimeで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "dart-sdk-3.13.1"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。macOS arm64でC symbol atlas_addをDart FFIから呼び、19と23の和42を得て一時dylibを削除する。",
+  "status": "accepted"
+}

@@ -1,0 +1,20 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.channel-plugin",
+  "id": "platform.channel-plugin-source-contract",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Dart、Kotlin、SwiftのChannel名、Method名、Plugin class、attachとdetach宣言が一致する。"
+      ],
+      "id": "proof.platform-source-contract",
+      "statement": "Lab lab.platform-integration-source-contract とTest test.platform-source-contractで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Dart、Kotlin、SwiftのChannel名、Method名、Plugin class、attachとdetach宣言が一致する。",
+  "status": "accepted"
+}

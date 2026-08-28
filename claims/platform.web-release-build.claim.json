@@ -1,0 +1,20 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.web",
+  "id": "platform.web-release-build",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Web conditional exportがdart:ioを参照せず、Flutter 3.47.1 release buildが非空Artifactを生成する。"
+      ],
+      "id": "proof.web-release-artifact",
+      "statement": "Lab lab.formal-local-closure とTest test.formal-local-closureで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Web conditional exportがdart:ioを参照せず、Flutter 3.47.1 release buildが非空Artifactを生成する。",
+  "status": "accepted"
+}

@@ -1,11 +1,27 @@
 {
   "schema_version": 1,
   "proof_obligations": [
-    {"id":"proof.baseline-digest","oracle":"Manifest間のVersionとSHA-256が一致する。"},
-    {"id":"proof.product-observable-state","oracle":"操作後の画面とController Stateが一致する。"},
+    {"id":"proof.baseline-digest","oracle":"Manifest、SDK metadata、Version、revision、SHA-256が一致する。"},
+    {"id":"proof.keyed-reconciliation","oracle":"並替え後のState identityがKey有無の期待結果と一致する。"},
+    {"id":"proof.rendering-invalidation","oracle":"Constraint、layout、paint traceが変更種別ごとの期待順序と一致する。"},
+    {"id":"proof.product-observable-state","oracle":"操作後の画面、Semantics、Controller Stateが一致する。"},
+    {"id":"proof.state-lifecycle-order","oracle":"古い非同期結果とdispose後結果が新しいStateを変更しない。"},
+    {"id":"proof.navigation-route","oracle":"公開Routeの遷移、診断表示、戻る操作が成功する。"},
+    {"id":"proof.public-surface-regeneration","oracle":"固定SDKから生成したInventoryが保存済みJSONとbyte-for-byte一致する。"},
     {"id":"proof.conflict-determinism","oracle":"入力順序に依存せず同じwinnerとconflict countを返す。"},
+    {"id":"proof.platform-source-contract","oracle":"共有Channel、Method、Symbol、Engine ID、conditional exportが全Sourceで一致し、改変を検出する。"},
+    {"id":"proof.ffi-runtime","oracle":"一時Native libraryのsymbol呼出結果が42で、終了後Resourceが残らない。"},
+    {"id":"proof.add-to-app-source-contract","oracle":"両Native hostがEngine起動と同一Engine IDを宣言する。"},
+    {"id":"proof.web-release-artifact","oracle":"正式SDKのWeb release buildが成功し、非空file集合を生成する。"},
+    {"id":"proof.runner-blocker-matrix","oracle":"実行済みRunnerと不足Toolchainがdoctor出力およびEnvironment Inventoryに一致する。"},
     {"id":"proof.setup-execute-verify-cleanup","oracle":"再実行可能で終了後Resourceが残らない。"},
+    {"id":"proof.test-pyramid","oracle":"各層の独立Oracleが正式SDKで終了コード0を返す。"},
+    {"id":"proof.accessibility-semantics","oracle":"重要な状態と操作がSemantics treeとFocus順へ公開される。"},
+    {"id":"proof.performance-budget","oracle":"bounded FrameTiming sampleからslow count、p95、worstを正しく算出する。"},
+    {"id":"proof.security-boundary","oracle":"危険入力を拒否し、Secretを出力せず、安全入力だけを正規化して受理する。"},
+    {"id":"proof.failure-recovery","oracle":"失敗注入後も既存状態を保持し、Retryまたは明示拒否で回復する。"},
     {"id":"proof.operational-decisions","oracle":"必須運用項目が適用または理由付き非適用である。"},
-    {"id":"proof.skill-routing","oracle":"Expected Routeと権限判断が全Caseで一致する。"}
+    {"id":"proof.backup-migration-recovery","oracle":"BackupとRestoreが同値で、Migrationが入力を破壊せず、破損と未知Versionを拒否する。"},
+    {"id":"proof.skill-routing","oracle":"Expected Route、Coverage State、権限判断が全Caseで一致する。"}
   ]
 }

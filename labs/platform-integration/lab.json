@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "lab.platform-integration-source-contract",
+  "coverage_state": "exploratory",
+  "deterministic_scope": "契約Manifestと同梱Source fixtureの宣言、共有識別子、Platform import境界、runtime evidence状態",
+  "setup": "Dart SDKを用意する。Native SDK、署名、Simulator、実機はSource Contract検証には不要。",
+  "runtime_setup": "macOS arm64、正式Dart 3.13.1、Apple clang 17を用意する。",
+  "execute": "dart run labs/platform-integration/bin/verify.dart",
+  "runtime_execute": ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify_ffi_runtime.dart",
+  "verify": "全Source Contract checkがpassし、runtime evidenceがnot_collectedまたはblockedとして分離される。",
+  "test": "dart run labs/platform-integration/test/source_contract_verifier_test.dart",
+  "cleanup": "Source TestとFFI runtime verifierが作成する一時Directoryをfinallyで削除する。",
+  "runtime_evidence_policy": "Native runtimeを実行していない状態をpassへ昇格しない。"
+}

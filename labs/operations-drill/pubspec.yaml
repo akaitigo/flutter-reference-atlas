@@ -1,0 +1,5 @@
+name: operations_drill
+description: Flutter Atlas向けBackup、Restore、Migration、Failure Recoveryの決定論Lab。
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"

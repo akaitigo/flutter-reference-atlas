@@ -6,10 +6,10 @@ sources:
   - id: reference-atlas-core-v1
     kind: source
     title: 技術実証アトラス Core main 正本
-    url: https://github.com/akaitigo/reference-atlas-core/commit/d5c0a6ce757fd5f43af837edd26f55c7325b811e
-    version: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+    url: https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263
+    version: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
     retrieved_at: "2026-08-28"
-    digest: sha256:67120b38028fa871625f370f3688e52a4963df1f318d6e4b30a1cb6b8accbc38
+    digest: sha256:841ff24218218bd1262f7a71afa50c76c9f7a92ae50bfc036a4d8cc4dc4ba783
     license: Apache-2.0
     redistribution: metadata-only
   - id: flutter-sdk-3.47.1-macos-arm64
@@ -86,11 +86,11 @@ sources:
     redistribution: link-only
   - id: local-runtime-inventory
     kind: runtime-inventory
-    title: ローカルFlutter実行環境Inventory
+    title: 正式Flutter 3.47.1ローカル実行環境Inventory
     url: https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/local/runtime-inventory.json
-    version: captured-2026-08-28
+    version: flutter-3.47.1-captured-2026-08-28
     retrieved_at: "2026-08-28"
-    digest: sha256:f0f614b25c13c29a035cfe4e4d15029dc032ee84b3dfae4a2645c99f57c108fe
+    digest: sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23
     license: Apache-2.0
     redistribution: allowed
   - id: dart-container-3.13.1

@@ -8,10 +8,13 @@
 
 - 正式Baseline: Flutter 3.47.1 / Dart 3.13.1 / DevTools 2.60.0
 - Coverage Epoch: 2026-08-28
-- ローカル互換性確認環境: Flutter 3.38.5
-- 未完了の主要Gate: 3.47.1実行証拠、SDK公開Surface Inventory、iOS/Android Simulator、6Platform Build、SBOM/第三者来歴のClosure、Publication Certificate
+- Core Contract: `reference-atlas-core` v1.0.0 commit `cf9e6e2d981305c83f970c1f21a1ddc9c1109263`
+- Formal Local: 16/16 command pass（Framework、Product、FFI、Security、Recovery、Web release buildを含む）
+- Container: 固定Dart 3.13.1 OCI Digest、network無効、Cleanup確認済み
+- Router Skill Eval: 62/62 pass、独立Forward Eval pass
+- 未完了の主要Gate: iOS/Android Simulator、Android/iOS/Windows/Linux Native Runner、Completion Certificate
 
-3.38.5で得た結果を3.47.1のRelease Evidenceとして扱いません。全Gate通過前に`complete`、production-ready、完全網羅とは表現しません。
+Flutter 3.38.5の初期互換記録は`evidence/history/`へ隔離し、3.47.1のRelease Evidenceとして扱いません。全Gate通過前に`complete`、production-ready、6Platform実行済みとは表現しません。
 
 ## 構成
 
@@ -26,18 +29,22 @@
 
 ## ローカル検証
 
-Core CLIは指定commitからローカルBuildします。GitHub公開前のため、固定Release Artifactへ移行するGateは未達です。
+Core CLIは指定commitからローカルBuildします。正式SDKは`.tools/flutter-3.47.1/flutter`へ配置し、配布ZIPのSHA-256を`sources.lock.yaml`と照合します。
 
 ```bash
 make atlas-bootstrap
-make validate
-make atlas-audit
-make test
-make skill-eval
 make check
 ```
 
-Flutter CLIがHomebrew配下のCacheへ書き込む環境では、Sandbox外の許可またはWorkspace内の専用SDKが必要です。
+`make check`は正式Local Evidence再検証、Core Schema/Audit、Claim/Evidence Overlay、Dart/Flutter Test、Analyze、62件のSkill Eval、Runbook、SBOM/第三者Manifest/Provenanceを検査します。Flutter Testはlocalhost一時socketを使うため、制限Sandboxでは許可が必要です。
+
+Container ProfileはDocker daemon起動後に実行します。
+
+```bash
+scripts/labs-container.sh
+```
+
+Simulator ProfileはToolchain不足を`infeasible`として記録しており、ContainerやSource Contractを同等の代替証拠とは扱いません。
 
 ## 完成の意味
 

@@ -2,9 +2,9 @@ schema_version: 1
 atlas_id: flutter-reference-atlas
 core_contract:
   repository: reference-atlas-core
-  commit: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+  commit: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
   fixed_release: null
-  release_gate: Core v1の署名済み固定Releaseが未提供のためPublication Closure未達。
+  release_gate: Core v1.0.0 Control Planeの固定commitを使用する。Subject Certificateは必須Profile未Closureのため未生成。
 legacy_repository: null
 legacy_manifest_present: false
 preserved_research:
@@ -19,10 +19,8 @@ preserved_research:
   - legacy_id: blueprints-skills-evals
     target_ids: [skill.router]
 unmigrated:
-  - legacy_id: complete-public-api-inventory
-    reason: Flutter 3.47.1 SDK本体を取得していないため、Inventoryを生成せずplannedとして保持した。
   - legacy_id: six-platform-release-evidence
-    reason: 必須Native ToolchainがHostに存在しないため、証拠を捏造せずplannedとして保持した。
+    reason: Android SDK、完全なXcode、Windows/Linux RunnerがHostに存在しないため、証拠を捏造せずinfeasibleとして保持した。
 aliases: []
 mastery_migration:
   contract_version: 1.0.0

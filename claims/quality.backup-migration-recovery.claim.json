@@ -1,0 +1,20 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "operations.runbooks",
+  "id": "quality.backup-migration-recovery",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Backup round-trip、schema v1からv2への非破壊Migration、Restore、破損拒否、Cleanupが成功する。"
+      ],
+      "id": "proof.backup-migration-recovery",
+      "statement": "Lab lab.operations-drill とTest test.operations-drillで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "dart-sdk-3.13.1"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Backup round-trip、schema v1からv2への非破壊Migration、Restore、破損拒否、Cleanupが成功する。",
+  "status": "accepted"
+}

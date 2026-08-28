@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "lab_id": "lab.platform-integration-source-contract",
+  "evidence_layers": {
+    "source_contract": "同梱Source間の宣言と境界を静的に照合する。",
+    "runtime_evidence": "対象RunnerでのBuild、起動、呼出結果を別途収集する。"
+  },
+  "contracts": [
+    {
+      "id": "platform-channel.method-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/platform_channel/lib/device_bridge.dart",
+          "contains": [
+            "static const MethodChannel _channel = MethodChannel(",
+            "'dev.flutter.reference_atlas/device'",
+            "invokeMethod<String>('getPlatformVersion')"
+          ],
+          "not_contains": ["dart:ffi", "dart:js_interop"]
+        },
+        {
+          "file": "fixtures/platform_channel/android/DeviceBridgePlugin.kt",
+          "contains": [
+            "MethodChannel(binding.binaryMessenger, \"dev.flutter.reference_atlas/device\")",
+            "call.method == \"getPlatformVersion\"",
+            "result.success(android.os.Build.VERSION.RELEASE)"
+          ]
+        },
+        {
+          "file": "fixtures/platform_channel/ios/DeviceBridgePlugin.swift",
+          "contains": [
+            "let channel = FlutterMethodChannel(",
+            "name: \"dev.flutter.reference_atlas/device\"",
+            "call.method == \"getPlatformVersion\"",
+            "result(UIDevice.current.systemVersion)"
+          ]
+        }
+      ],
+      "shared_tokens": [
+        {
+          "name": "channel-name",
+          "value": "dev.flutter.reference_atlas/device",
+          "files": [
+            "fixtures/platform_channel/lib/device_bridge.dart",
+            "fixtures/platform_channel/android/DeviceBridgePlugin.kt",
+            "fixtures/platform_channel/ios/DeviceBridgePlugin.swift"
+          ]
+        },
+        {
+          "name": "method-name",
+          "value": "getPlatformVersion",
+          "files": [
+            "fixtures/platform_channel/lib/device_bridge.dart",
+            "fixtures/platform_channel/android/DeviceBridgePlugin.kt",
+            "fixtures/platform_channel/ios/DeviceBridgePlugin.swift"
+          ]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "not_collected",
+        "requires": [
+          "Flutter 3.47.1 engine",
+          "Android SDKまたはfull Xcode",
+          "対象Simulatorまたは実機"
+        ]
+      }
+    },
+    {
+      "id": "plugin.registration-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/platform_channel/pubspec.yaml",
+          "contains": [
+            "pluginClass: DeviceBridgePlugin",
+            "android:",
+            "ios:"
+          ]
+        },
+        {
+          "file": "fixtures/platform_channel/android/DeviceBridgePlugin.kt",
+          "contains": [
+            "class DeviceBridgePlugin : FlutterPlugin, MethodChannel.MethodCallHandler",
+            "override fun onAttachedToEngine",
+            "override fun onDetachedFromEngine"
+          ]
+        },
+        {
+          "file": "fixtures/platform_channel/ios/DeviceBridgePlugin.swift",
+          "contains": [
+            "public class DeviceBridgePlugin: NSObject, FlutterPlugin",
+            "public static func register(with registrar: FlutterPluginRegistrar)"
+          ]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "not_collected",
+        "requires": [
+          "Flutter plugin build",
+          "Gradle/Android SDK",
+          "Xcode/CocoaPods"
+        ]
+      }
+    },
+    {
+      "id": "ffi.abi-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/ffi/include/atlas_math.h",
+          "contains": [
+            "int32_t atlas_add(int32_t left, int32_t right);"
+          ]
+        },
+        {
+          "file": "fixtures/ffi/src/atlas_math.c",
+          "contains": [
+            "int32_t atlas_add(int32_t left, int32_t right)",
+            "return left + right;"
+          ]
+        },
+        {
+          "file": "fixtures/ffi/lib/atlas_math_bindings.dart",
+          "contains": [
+            "@Native<Int32 Function(Int32, Int32)>(symbol: 'atlas_add')",
+            "external int atlasAdd(int left, int right);"
+          ],
+          "not_contains": ["DynamicLibrary.process()"]
+        }
+      ],
+      "shared_tokens": [
+        {
+          "name": "native-symbol",
+          "value": "atlas_add",
+          "files": [
+            "fixtures/ffi/include/atlas_math.h",
+            "fixtures/ffi/src/atlas_math.c",
+            "fixtures/ffi/lib/atlas_math_bindings.dart"
+          ]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "not_collected",
+        "verifier": ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify_ffi_runtime.dart",
+        "requires": [
+          "macOS arm64ではApple clang 17とDart 3.13.1",
+          "他Platformでは対象ABI向けC compilerとRunner",
+          "ABIごとのruntime invocation"
+        ]
+      }
+    },
+    {
+      "id": "add-to-app.engine-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/add_to_app/android/HostActivity.kt",
+          "contains": [
+            "FlutterEngine(this)",
+            "DartExecutor.DartEntrypoint.createDefault()",
+            "FlutterEngineCache.getInstance().put(ENGINE_ID, engine)",
+            "private const val ENGINE_ID = \"reference_atlas_engine\""
+          ]
+        },
+        {
+          "file": "fixtures/add_to_app/ios/HostViewController.swift",
+          "contains": [
+            "FlutterEngine(name: \"reference_atlas_engine\")",
+            "engine.run()",
+            "FlutterViewController(",
+            "engine: engine",
+            "nibName: nil",
+            "bundle: nil"
+          ]
+        }
+      ],
+      "shared_tokens": [
+        {
+          "name": "engine-id",
+          "value": "reference_atlas_engine",
+          "files": [
+            "fixtures/add_to_app/android/HostActivity.kt",
+            "fixtures/add_to_app/ios/HostViewController.swift"
+          ]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "blocked",
+        "requires": [
+          "生成済みFlutter module artifact",
+          "Native host project",
+          "GradleまたはXcode build",
+          "iOS実機の場合は署名Team/Profile"
+        ]
+      }
+    },
+    {
+      "id": "boundary.web-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/boundaries/lib/platform_service.dart",
+          "contains": [
+            "if (dart.library.js_interop) 'platform_service_web.dart'"
+          ]
+        },
+        {
+          "file": "fixtures/boundaries/lib/platform_service_web.dart",
+          "contains": ["import 'dart:js_interop';", "return 'web';"],
+          "not_contains": ["dart:io"]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "not_collected",
+        "requires": ["Flutter web build", "対応Browserでの起動"]
+      }
+    },
+    {
+      "id": "boundary.desktop-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/boundaries/lib/platform_service.dart",
+          "contains": ["if (dart.library.io) 'platform_service_io.dart'"]
+        },
+        {
+          "file": "fixtures/boundaries/lib/platform_service_io.dart",
+          "contains": [
+            "Platform.isMacOS",
+            "Platform.isWindows",
+            "Platform.isLinux",
+            "return 'desktop';"
+          ],
+          "not_contains": ["dart:js_interop"]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "not_collected",
+        "requires": ["対象Desktop toolchain", "対象OSでのFlutter app起動"]
+      }
+    },
+    {
+      "id": "boundary.mobile-contract",
+      "scope": "source_contract",
+      "checks": [
+        {
+          "file": "fixtures/boundaries/lib/platform_service_io.dart",
+          "contains": [
+            "Platform.isAndroid",
+            "Platform.isIOS",
+            "return 'mobile';"
+          ],
+          "not_contains": ["dart:js_interop"]
+        }
+      ],
+      "runtime_evidence": {
+        "status": "not_collected",
+        "requires": [
+          "Android SDKまたはfull Xcode",
+          "Simulator/Emulatorまたは実機",
+          "実機配布の場合は署名"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "product.state-lifecycle",
+  "id": "product.state-lifecycle-is-ordered",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "stale async completionとdispose後completionが新しい状態や通知を上書きせず、失敗後Retryが同じ変更を一度だけ保存する。"
+      ],
+      "id": "proof.state-lifecycle-order",
+      "statement": "Lab lab.operations-workspace とTest test.operations-workspaceで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-widgets-api"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。stale async completionとdispose後completionが新しい状態や通知を上書きせず、失敗後Retryが同じ変更を一度だけ保存する。",
+  "status": "accepted"
+}

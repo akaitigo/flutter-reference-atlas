@@ -3,12 +3,27 @@
 import 'package:flutter/material.dart';
 
 import '../domain/incident.dart';
+import '../domain/incident_input_policy.dart';
+import '../observability/frame_performance_monitor.dart';
+import 'incident_status_chart.dart';
 import 'workspace_controller.dart';
+import 'workspace_diagnostics_screen.dart';
+
+abstract final class WorkspaceRoutes {
+  static const diagnostics = '/diagnostics';
+}
 
 class WorkspaceApp extends StatefulWidget {
-  const WorkspaceApp({required this.repository, super.key});
+  const WorkspaceApp({
+    required this.repository,
+    this.performanceMonitor,
+    this.navigatorObservers = const [],
+    super.key,
+  });
 
   final IncidentRepository repository;
+  final FramePerformanceMonitor? performanceMonitor;
+  final List<NavigatorObserver> navigatorObservers;
 
   @override
   State<WorkspaceApp> createState() => _WorkspaceAppState();
@@ -16,16 +31,26 @@ class WorkspaceApp extends StatefulWidget {
 
 class _WorkspaceAppState extends State<WorkspaceApp> {
   late final WorkspaceController controller;
+  late final FramePerformanceMonitor performanceMonitor;
+  late final bool _ownsPerformanceMonitor;
 
   @override
   void initState() {
     super.initState();
     controller = WorkspaceController(repository: widget.repository)..load();
+    _ownsPerformanceMonitor = widget.performanceMonitor == null;
+    performanceMonitor = widget.performanceMonitor ?? FramePerformanceMonitor();
+    performanceMonitor.start();
   }
 
   @override
   void dispose() {
     controller.dispose();
+    if (_ownsPerformanceMonitor) {
+      performanceMonitor.dispose();
+    } else {
+      performanceMonitor.stop();
+    }
     super.dispose();
   }
 
@@ -38,6 +63,18 @@ class _WorkspaceAppState extends State<WorkspaceApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff315da8)),
         useMaterial3: true,
       ),
+      navigatorObservers: widget.navigatorObservers,
+      onGenerateRoute: (settings) {
+        if (settings.name == WorkspaceRoutes.diagnostics) {
+          return MaterialPageRoute<void>(
+            settings: settings,
+            builder: (_) => WorkspaceDiagnosticsScreen(
+              performanceMonitor: performanceMonitor,
+            ),
+          );
+        }
+        return null;
+      },
       home: WorkspaceScreen(controller: controller),
     );
   }
@@ -61,28 +98,75 @@ class WorkspaceScreen extends StatelessWidget {
               IconButton(
                 key: const Key('refresh-button'),
                 tooltip: '再読み込み',
-                onPressed: state.loading ? null : controller.load,
+                onPressed: state.busy ? null : controller.load,
                 icon: const Icon(Icons.refresh),
+              ),
+              IconButton(
+                key: const Key('diagnostics-button'),
+                tooltip: '診断を開く',
+                onPressed: () => Navigator.of(
+                  context,
+                ).pushNamed(WorkspaceRoutes.diagnostics),
+                icon: const Icon(Icons.monitor_heart_outlined),
               ),
             ],
           ),
           floatingActionButton: FloatingActionButton.extended(
             key: const Key('create-button'),
-            onPressed: () => _showCreateDialog(context),
+            onPressed: state.busy ? null : () => _showCreateDialog(context),
             icon: const Icon(Icons.add),
             label: const Text('追加'),
           ),
           body: Column(
             children: [
-              if (state.message case final message?)
+              if (state.saving)
+                const LinearProgressIndicator(
+                  key: Key('save-progress'),
+                  semanticsLabel: '変更を保存中',
+                ),
+              if (state.failure case final failure?)
                 MaterialBanner(
-                  content: Text(message),
+                  key: const Key('failure-banner'),
+                  content: Semantics(
+                    liveRegion: true,
+                    child: Text(failure.message),
+                  ),
                   actions: [
+                    if (controller.canRetry)
+                      TextButton(
+                        key: const Key('retry-button'),
+                        onPressed: state.busy ? null : controller.retry,
+                        child: const Text('再試行'),
+                      ),
                     TextButton(
-                      onPressed: controller.load,
-                      child: const Text('再試行'),
+                      onPressed: controller.dismissFailure,
+                      child: const Text('閉じる'),
                     ),
                   ],
+                ),
+              if (state.announcement case final announcement?)
+                Semantics(
+                  key: const Key('status-announcement'),
+                  liveRegion: true,
+                  container: true,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 8,
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.check_circle_outline),
+                        const SizedBox(width: 8),
+                        Expanded(child: Text(announcement)),
+                        IconButton(
+                          tooltip: '通知を閉じる',
+                          onPressed: controller.dismissAnnouncement,
+                          icon: const Icon(Icons.close),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               Expanded(
                 child: LayoutBuilder(
@@ -127,6 +211,7 @@ class WorkspaceScreen extends StatelessWidget {
           key: const Key('incident-title-field'),
           autofocus: true,
           decoration: const InputDecoration(labelText: '件名'),
+          maxLength: IncidentTitlePolicy.maxRunes,
           onChanged: (value) => input = value,
           onSubmitted: (value) => Navigator.pop(context, value),
         ),
@@ -160,18 +245,38 @@ class IncidentList extends StatelessWidget {
     }
     return Semantics(
       label: 'インシデント一覧',
-      child: ListView.builder(
-        key: const Key('incident-list'),
-        itemCount: state.incidents.length,
-        itemBuilder: (context, index) {
-          final incident = state.incidents[index];
-          return ListTile(
-            selected: incident.id == state.selectedId,
-            title: Text(incident.title),
-            subtitle: Text(_statusLabel(incident.status)),
-            onTap: () => controller.select(incident.id),
-          );
-        },
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+            child: IncidentStatusChart(incidents: state.incidents),
+          ),
+          Expanded(
+            child: ListView.builder(
+              key: const Key('incident-list'),
+              itemCount: state.incidents.length,
+              itemBuilder: (context, index) {
+                final incident = state.incidents[index];
+                final selected = incident.id == state.selectedId;
+                return MergeSemantics(
+                  child: Semantics(
+                    button: true,
+                    selected: selected,
+                    label:
+                        '${incident.title}、状態 ${statusLabel(incident.status)}',
+                    child: ListTile(
+                      key: Key('incident-${incident.id}'),
+                      selected: selected,
+                      title: Text(incident.title),
+                      subtitle: Text(statusLabel(incident.status)),
+                      onTap: () => controller.select(incident.id),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -207,14 +312,17 @@ class IncidentDetail extends StatelessWidget {
                 label: const Text('一覧へ'),
               ),
             ),
-          Text(
-            incident.title,
-            style: Theme.of(context).textTheme.headlineMedium,
+          Semantics(
+            header: true,
+            child: Text(
+              incident.title,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ),
           const SizedBox(height: 12),
           Semantics(
-            label: '状態 ${_statusLabel(incident.status)}',
-            child: Chip(label: Text(_statusLabel(incident.status))),
+            label: '状態 ${statusLabel(incident.status)}',
+            child: Chip(label: Text(statusLabel(incident.status))),
           ),
           const SizedBox(height: 16),
           Text(incident.description),
@@ -223,7 +331,9 @@ class IncidentDetail extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: FilledButton(
               key: const Key('advance-status-button'),
-              onPressed: incident.status == IncidentStatus.resolved
+              onPressed:
+                  incident.status == IncidentStatus.resolved ||
+                      controller.state.busy
                   ? null
                   : controller.advanceSelected,
               child: const Text('次の状態へ'),
@@ -234,9 +344,3 @@ class IncidentDetail extends StatelessWidget {
     );
   }
 }
-
-String _statusLabel(IncidentStatus status) => switch (status) {
-  IncidentStatus.open => '未対応',
-  IncidentStatus.investigating => '調査中',
-  IncidentStatus.resolved => '解決済み',
-};

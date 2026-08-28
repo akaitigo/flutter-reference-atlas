@@ -1,0 +1,23 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "language.public-surface",
+  "id": "language.public-surface-is-finite",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Framework、Engine、Dart公開Library入口とCLI分類対象Sourceが同じSDKからbyte-for-byte再生成できる。"
+      ],
+      "id": "proof.public-surface-regeneration",
+      "statement": "Lab lab.public-surface-inventory とTest test.public-surface-inventoryで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-engine-3.47.1-deps",
+    "dart-sdk-3.13.1",
+    "devtools-2.60.0"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Framework、Engine、Dart公開Library入口とCLI分類対象Sourceが同じSDKからbyte-for-byte再生成できる。",
+  "status": "accepted"
+}

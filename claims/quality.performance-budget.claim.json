@@ -1,0 +1,20 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "quality.performance",
+  "id": "quality.performance-budget",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "FrameTimingをbounded sampleへ集約し、slow count、p95、worstを決定論入力から算出できる。"
+      ],
+      "id": "proof.performance-budget",
+      "statement": "Lab lab.operations-workspace とTest test.operations-workspaceで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。FrameTimingをbounded sampleへ集約し、slow count、p95、worstを決定論入力から算出できる。",
+  "status": "accepted"
+}

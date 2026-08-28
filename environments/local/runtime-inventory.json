@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "captured_at": "2026-08-28T15:00:00+09:00",
+  "captured_at": "2026-08-28T06:46:15.105790Z",
   "profile": "local",
   "host": {
     "os": "macOS 26.1 25B78",
@@ -8,17 +8,18 @@
     "locale": "ja-JP"
   },
   "flutter": {
-    "version": "3.38.5",
+    "version": "3.47.1",
     "channel": "stable",
-    "framework_revision": "f6ff1529fd6d8af5f706051d9251ac9231c83407",
-    "engine_revision": "1527ae0ec577a4ef50e65f6fefcfc1326707d9bf",
-    "engine_content_hash": "c108a94d7a8273e112339e6c6833daa06e723a54",
-    "dart_version": "3.10.4",
-    "dart_revision": "a0daa5004ec02c0638ba6e50791ba9338a87374c",
-    "devtools_version": "2.51.1",
-    "devtools_revision": "9360cc98ac03a6e50a9f56213fb7f45e62f55fcf"
+    "framework_revision": "6655482ec06e547f90abf8ae7590466f4415978d",
+    "engine_revision": "5d531788691ec3404cac0cee66ead4007b177363",
+    "engine_content_hash": "11d79658c444477b06513d32b52c8c4ccb7276b0",
+    "dart_version": "3.13.1",
+    "dart_revision": "852b3e3608906afbe6102573cfd4407aeedd1b78",
+    "devtools_version": "2.60.0",
+    "devtools_revision": "12d595649f189f1896722623f72599077f476848"
   },
   "available_targets": ["macos", "chrome"],
   "missing_toolchains": ["android-sdk", "full-xcode", "cocoapods"],
-  "matches_authority_baseline": false
+  "verified_runtime": ["dart-vm-macos-arm64", "chrome-web-release-build", "macos-arm64-ffi"],
+  "matches_authority_baseline": true
 }

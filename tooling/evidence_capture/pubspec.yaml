@@ -1,0 +1,5 @@
+name: atlas_evidence_capture
+description: Flutter AtlasのFormal Local Gateを構造化Artifactへ記録するHarness。
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"

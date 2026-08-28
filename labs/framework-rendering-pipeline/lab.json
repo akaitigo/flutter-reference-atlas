@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "lab.framework-rendering-pipeline",
+  "deterministic_scope": "RenderBoxのConstraint/Size契約とlayout/paint invalidation",
+  "setup": "Flutter 3.47.1 SDKをBaselineと照合し、flutter pub get --offlineを実行する。",
+  "execute": "flutter test test/pipeline_probe_test.dart --reporter expanded",
+  "verify": "初回はlayoutからpaint、paint-only変更はpaintだけ、size変更はlayoutからpaintの順に実行される。",
+  "cleanup": "buildと.dart_toolは再生成可能な一時物として削除でき、外部Resourceは作成しない。",
+  "evidence_policy": "Widget TestはFramework pipelineを証明するが、実GPU raster時間やSimulator frame timingを代替しない。",
+  "files": {
+    "implementation": "sha256:936cc3326d90b24dce82dec4544ad0920e089c772d52df4182bcfa002d64efe8",
+    "test": "sha256:c21aa2e7202a8b2095ad2bdd380255c9b60891fc2b664d9f462588756c24b3b7",
+    "dependency_lock": "sha256:1ac1113dc6ddc976459082b0ad4c33413b53d174e32ddf9f23fbe6e6973865e2"
+  }
+}

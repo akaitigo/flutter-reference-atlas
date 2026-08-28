@@ -3,67 +3,154 @@
   "atlas_id": "flutter-reference-atlas",
   "claims": [
     {
-      "id":"baseline.flutter-version-lock",
-      "capability_id":"baseline.sdk-lock",
-      "proof_obligation_id":"proof.baseline-digest",
+      "id":"baseline.flutter-version-lock","capability_id":"baseline.sdk-lock","proof_obligation_id":"proof.baseline-digest",
       "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps","dart-sdk-3.13.1","devtools-2.60.0"],
-      "acceptance":"固定Version、revision、配布物Digestが一次資料から再計算できる。",
-      "lab_id":"lab.authority-lock",
-      "test_id":"test.overlay-validator"
+      "acceptance":"固定Version、revision、配布物DigestとSDK内部metadataが一致し、正式SDKでHarnessが成功する。",
+      "lab_id":"lab.authority-lock","test_id":"test.formal-local-closure"
     },
     {
-      "id":"product.adaptive-state-flow",
-      "capability_id":"product.adaptive-workspace",
-      "proof_obligation_id":"proof.product-observable-state",
-      "authority_ids":["flutter-widgets-api"],
-      "acceptance":"同じ状態遷移が狭幅と広幅UIで観測でき、Widget Testが成功する。",
-      "lab_id":"lab.widget-lifecycle",
-      "test_id":"test.operations-workspace"
+      "id":"framework.key-controls-state-identity","capability_id":"framework.element-reconciliation","proof_obligation_id":"proof.keyed-reconciliation",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],
+      "acceptance":"同一runtimeTypeの兄弟を並べ替え、Keyなしでは位置、ValueKeyありでは論理項目へStateが残る。",
+      "lab_id":"lab.framework-element-reconciliation","test_id":"test.framework-element-reconciliation"
     },
     {
-      "id":"language.deterministic-conflict-resolution",
-      "capability_id":"language.conflict-resolution",
-      "proof_obligation_id":"proof.conflict-determinism",
+      "id":"framework.layout-and-paint-are-separate","capability_id":"framework.rendering-invalidation","proof_obligation_id":"proof.rendering-invalidation",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps"],
+      "acceptance":"ConstraintでSizeが決まり、paint-only変更はlayoutせず、geometry変更はlayoutからpaintへ進む。",
+      "lab_id":"lab.framework-rendering-pipeline","test_id":"test.framework-rendering-pipeline"
+    },
+    {
+      "id":"product.adaptive-state-flow","capability_id":"product.adaptive-workspace","proof_obligation_id":"proof.product-observable-state",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],
+      "acceptance":"同じ状態遷移が狭幅と広幅UIで観測でき、入力、保存、診断のWidget Testが成功する。",
+      "lab_id":"lab.operations-workspace","test_id":"test.operations-workspace"
+    },
+    {
+      "id":"product.state-lifecycle-is-ordered","capability_id":"product.state-lifecycle","proof_obligation_id":"proof.state-lifecycle-order",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],
+      "acceptance":"stale async completionとdispose後completionが新しい状態や通知を上書きせず、失敗後Retryが同じ変更を一度だけ保存する。",
+      "lab_id":"lab.operations-workspace","test_id":"test.operations-workspace"
+    },
+    {
+      "id":"product.navigation-is-observable","capability_id":"product.navigation","proof_obligation_id":"proof.navigation-route",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],
+      "acceptance":"公開named routeから診断画面へ遷移し、戻る操作とPerformance Snapshotを観測できる。",
+      "lab_id":"lab.operations-workspace","test_id":"test.operations-workspace"
+    },
+    {
+      "id":"language.public-surface-is-finite","capability_id":"language.public-surface","proof_obligation_id":"proof.public-surface-regeneration",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps","dart-sdk-3.13.1","devtools-2.60.0"],
+      "acceptance":"Framework、Engine、Dart公開Library入口とCLI分類対象Sourceが同じSDKからbyte-for-byte再生成できる。",
+      "lab_id":"lab.public-surface-inventory","test_id":"test.public-surface-inventory"
+    },
+    {
+      "id":"language.deterministic-conflict-resolution","capability_id":"language.conflict-resolution","proof_obligation_id":"proof.conflict-determinism",
       "authority_ids":["dart-sdk-3.13.1","dart-container-3.13.1"],
       "acceptance":"同一入力を順序変更しても競合解決結果が一致し、lost updateを検出する。",
-      "lab_id":"lab.offline-conflict-resolution",
-      "test_id":"test.conflict-verifier"
+      "lab_id":"lab.offline-conflict-resolution","test_id":"test.conflict-verifier"
     },
     {
-      "id":"execution.local-repeatability",
-      "capability_id":"execution.local-lab",
-      "proof_obligation_id":"proof.setup-execute-verify-cleanup",
-      "authority_ids":["local-runtime-inventory"],
-      "acceptance":"Local Scriptを連続2回実行して同じVerdictを得て、一時Resourceが残らない。",
-      "lab_id":"lab.local-profile",
-      "test_id":"test.local-script"
+      "id":"platform.channel-plugin-source-contract","capability_id":"platform.channel-plugin","proof_obligation_id":"proof.platform-source-contract",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"Dart、Kotlin、SwiftのChannel名、Method名、Plugin class、attachとdetach宣言が一致する。",
+      "lab_id":"lab.platform-integration-source-contract","test_id":"test.platform-source-contract"
     },
     {
-      "id":"execution.container-isolation",
-      "capability_id":"execution.container-lab",
-      "proof_obligation_id":"proof.setup-execute-verify-cleanup",
+      "id":"platform.ffi-runtime-call","capability_id":"platform.ffi","proof_obligation_id":"proof.ffi-runtime",
+      "authority_ids":["dart-sdk-3.13.1"],
+      "acceptance":"macOS arm64でC symbol atlas_addをDart FFIから呼び、19と23の和42を得て一時dylibを削除する。",
+      "lab_id":"lab.platform-ffi-runtime","test_id":"test.platform-ffi-runtime"
+    },
+    {
+      "id":"platform.add-to-app-engine-contract","capability_id":"platform.add-to-app","proof_obligation_id":"proof.add-to-app-source-contract",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"AndroidとiOS fixtureがFlutterEngineを起動し、同じEngine IDとFlutter View接続を宣言する。",
+      "lab_id":"lab.platform-integration-source-contract","test_id":"test.platform-source-contract"
+    },
+    {
+      "id":"platform.web-release-build","capability_id":"platform.web","proof_obligation_id":"proof.web-release-artifact",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"Web conditional exportがdart:ioを参照せず、Flutter 3.47.1 release buildが非空Artifactを生成する。",
+      "lab_id":"lab.formal-local-closure","test_id":"test.formal-local-closure"
+    },
+    {
+      "id":"platform.desktop-source-boundary","capability_id":"platform.desktop","proof_obligation_id":"proof.platform-source-contract",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"IO実装がmacOS、Windows、LinuxをDesktopとして分類しWeb専用APIへ依存しない。",
+      "lab_id":"lab.platform-integration-source-contract","test_id":"test.platform-source-contract"
+    },
+    {
+      "id":"platform.mobile-source-boundary","capability_id":"platform.mobile","proof_obligation_id":"proof.platform-source-contract",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"IO実装がAndroidとiOSをMobileとして分類し、ChannelとPluginのNative宣言が共有契約へ一致する。",
+      "lab_id":"lab.platform-integration-source-contract","test_id":"test.platform-source-contract"
+    },
+    {
+      "id":"platform.runner-matrix-is-explicit","capability_id":"platform.runner-matrix","proof_obligation_id":"proof.runner-blocker-matrix",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],
+      "acceptance":"Webで実行できたGateとAndroid、iOS、Windows、Linuxで不足するHost toolchainを混同せず列挙する。",
+      "lab_id":"lab.formal-local-closure","test_id":"test.formal-local-closure"
+    },
+    {
+      "id":"execution.local-repeatability","capability_id":"execution.local-lab","proof_obligation_id":"proof.setup-execute-verify-cleanup",
+      "authority_ids":["local-runtime-inventory","flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"正式Local HarnessがInventory、Framework、Product、Security、Operations、FFI、Web buildを一括実行しpassする。",
+      "lab_id":"lab.formal-local-closure","test_id":"test.formal-local-closure"
+    },
+    {
+      "id":"execution.container-isolation","capability_id":"execution.container-lab","proof_obligation_id":"proof.setup-execute-verify-cleanup",
       "authority_ids":["dart-sdk-3.13.1","dart-container-3.13.1"],
-      "acceptance":"Network無効Containerで検証が成功し、終了後にContainerが残らない。",
-      "lab_id":"lab.container-profile",
-      "test_id":"test.container-script"
+      "acceptance":"Network無効Containerで検証が成功し、終了後にContainerと派生Imageが残らない。",
+      "lab_id":"lab.container-profile","test_id":"test.container-script"
     },
     {
-      "id":"quality.explicit-operational-boundary",
-      "capability_id":"operations.runbooks",
-      "proof_obligation_id":"proof.operational-decisions",
+      "id":"quality.test-pyramid-is-repeatable","capability_id":"quality.testing","proof_obligation_id":"proof.test-pyramid",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"Domain、Controller、Widget、Framework、Source mutationの各Oracleが分離され、正式SDKで反復成功する。",
+      "lab_id":"lab.formal-local-closure","test_id":"test.formal-local-closure"
+    },
+    {
+      "id":"quality.accessibility-semantics","capability_id":"quality.accessibility","proof_obligation_id":"proof.accessibility-semantics",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],
+      "acceptance":"Chart、選択、見出し、進行、failure announcementのSemanticsとFocus境界をWidget Testで観測できる。",
+      "lab_id":"lab.operations-workspace","test_id":"test.operations-workspace"
+    },
+    {
+      "id":"quality.performance-budget","capability_id":"quality.performance","proof_obligation_id":"proof.performance-budget",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"FrameTimingをbounded sampleへ集約し、slow count、p95、worstを決定論入力から算出できる。",
+      "lab_id":"lab.operations-workspace","test_id":"test.operations-workspace"
+    },
+    {
+      "id":"quality.security-boundaries","capability_id":"quality.security","proof_obligation_id":"proof.security-boundary",
+      "authority_ids":["dart-sdk-3.13.1","flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"制御文字、bidi制御、危険URL、credential URI、Path traversal、Secret漏洩、型外Platform応答を拒否する。",
+      "lab_id":"lab.security-boundary","test_id":"test.security-boundary"
+    },
+    {
+      "id":"quality.failure-recovery-is-safe","capability_id":"quality.failure-recovery","proof_obligation_id":"proof.failure-recovery",
+      "authority_ids":["dart-sdk-3.13.1","flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"Repository失敗、stale completion、破損Backup、未知schemaを注入しても状態を壊さずRetryまたは拒否する。",
+      "lab_id":"lab.operations-drill","test_id":"test.operations-drill"
+    },
+    {
+      "id":"quality.explicit-operational-boundary","capability_id":"operations.runbooks","proof_obligation_id":"proof.operational-decisions",
       "authority_ids":["reference-atlas-core-v1"],
       "acceptance":"Upgrade、Incident、Backup、Restore、Capacityの適用判断と手順が記録される。",
-      "lab_id":"lab.operations-drill",
-      "test_id":"test.runbook-structure"
+      "lab_id":"lab.operations-drill","test_id":"test.runbook-structure"
     },
     {
-      "id":"skill.routes-without-invention",
-      "capability_id":"skill.router",
-      "proof_obligation_id":"proof.skill-routing",
+      "id":"quality.backup-migration-recovery","capability_id":"operations.runbooks","proof_obligation_id":"proof.backup-migration-recovery",
+      "authority_ids":["dart-sdk-3.13.1"],
+      "acceptance":"Backup round-trip、schema v1からv2への非破壊Migration、Restore、破損拒否、Cleanupが成功する。",
+      "lab_id":"lab.operations-drill","test_id":"test.operations-drill"
+    },
+    {
+      "id":"skill.routes-without-invention","capability_id":"skill.router","proof_obligation_id":"proof.skill-routing",
       "authority_ids":["reference-atlas-core-v1"],
       "acceptance":"全Eval Caseで正しいMode、Capability、Gap、権限境界を返す。",
-      "lab_id":"lab.skill-eval",
-      "test_id":"test.router-eval"
+      "lab_id":"lab.skill-eval","test_id":"test.router-eval"
     }
   ]
 }

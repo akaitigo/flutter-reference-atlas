@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "execution.container-lab",
+  "id": "execution.container-isolation",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Network無効Containerで検証が成功し、終了後にContainerと派生Imageが残らない。"
+      ],
+      "id": "proof.setup-execute-verify-cleanup",
+      "statement": "Lab lab.container-profile とTest test.container-scriptで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "dart-sdk-3.13.1",
+    "dart-container-3.13.1"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Network無効Containerで検証が成功し、終了後にContainerと派生Imageが残らない。",
+  "status": "accepted"
+}

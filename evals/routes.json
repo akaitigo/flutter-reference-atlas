@@ -1,59 +1,44 @@
 {
   "schema_version": 1,
+  "policy": {
+    "baseline_versions": ["3.47.1"],
+    "uncovered_qualifiers": [
+      "riverpod", "bloc", "cubit", "firebase", "go_router", "camera",
+      "wayland", "canvaskit", "wasm", "cloudflare", "testflight"
+    ],
+    "publication_terms": ["publish", "publication", "deploy", "rollout", "go live", "ship", "submit", "distribute", "production release", "production deploy", "launch", "store release", "store公開", "公開", "配信", "配布", "提出", "申請", "本番リリース", "本番反映", "本番投入", "本番展開", "本番公開", "ローンチ", "app store connect", "google play console"],
+    "runtime_terms": ["実機", "device runtime", "runtime evidence", "runtime検証"],
+    "external_environment_terms": ["production", "staging", "hosting", "本番", "ステージング"],
+    "source_contract_capabilities": [
+      "platform.channel-plugin", "platform.add-to-app", "platform.desktop", "platform.mobile"
+    ],
+    "ffi_runtime_platforms": ["macos"]
+  },
   "routes": [
-    {
-      "capability_id": "baseline.sdk-lock",
-      "target_id": "baseline.flutter-3.47.1",
-      "state": "partial",
-      "keywords": ["baseline", "version", "sdk", "3.47.1", "バージョン"],
-      "authority_ids": ["flutter-sdk-3.47.1-macos-arm64", "flutter-engine-3.47.1-deps", "dart-sdk-3.13.1", "devtools-2.60.0"],
-      "lab_id": "lab.authority-lock",
-      "commands": ["make validate"]
-    },
-    {
-      "capability_id": "product.adaptive-workspace",
-      "target_id": "product.operations-workspace",
-      "state": "partial",
-      "keywords": ["adaptive", "workspace", "widget", "ui", "画面"],
-      "authority_ids": ["flutter-widgets-api"],
-      "lab_id": "lab.widget-lifecycle",
-      "commands": ["make flutter-test"]
-    },
-    {
-      "capability_id": "language.conflict-resolution",
-      "target_id": "language.dart-concurrency",
-      "state": "covered",
-      "keywords": ["conflict", "offline", "lost update", "競合", "同期"],
-      "authority_ids": ["dart-sdk-3.13.1"],
-      "lab_id": "lab.offline-conflict-resolution",
-      "commands": ["dart run labs/offline-conflict-resolution/bin/verify.dart"]
-    },
-    {
-      "capability_id": "execution.container-lab",
-      "target_id": "execution.container",
-      "state": "covered",
-      "keywords": ["container", "docker", "コンテナ"],
-      "authority_ids": ["dart-sdk-3.13.1"],
-      "lab_id": "lab.container-profile",
-      "commands": ["scripts/labs-container.sh"]
-    },
-    {
-      "capability_id": "execution.simulator-lab",
-      "target_id": "execution.simulator",
-      "state": "infeasible",
-      "keywords": ["simulator", "emulator", "ios", "android", "シミュレータ"],
-      "authority_ids": ["flutter-sdk-3.47.1-macos-arm64"],
-      "lab_id": "lab.simulator-integration",
-      "commands": ["scripts/labs-simulator.sh doctor", "scripts/labs-simulator.sh run", "scripts/labs-simulator.sh cleanup"]
-    },
-    {
-      "capability_id": "operations.runbooks",
-      "target_id": "quality.migration-operations",
-      "state": "partial",
-      "keywords": ["upgrade", "incident", "restore", "backup", "移行", "復旧", "運用"],
-      "authority_ids": ["reference-atlas-core-v1"],
-      "lab_id": "lab.operations-drill",
-      "commands": ["scripts/validate-runbooks.sh"]
-    }
+    {"capability_id":"execution.simulator-lab","target_id":"execution.simulator","state":"infeasible","keywords":["simulator","emulator","シミュレータ","エミュレータ"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],"lab_id":"lab.simulator-integration","commands":["scripts/labs-simulator.sh doctor","scripts/labs-simulator.sh run","scripts/labs-simulator.sh cleanup"]},
+    {"capability_id":"platform.runner-matrix","target_id":"platform.six-target-builds","state":"infeasible","keywords":["six platform","build matrix","runner matrix","全platform","6 platform"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],"lab_id":"lab.formal-local-closure","commands":["make formal-local"]},
+    {"capability_id":"framework.element-reconciliation","target_id":"framework.internal-architecture","state":"covered","keywords":["element","reconciliation","widget identity","valuekey","framework internal","内部構造"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],"lab_id":"lab.framework-element-reconciliation","commands":[".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-element-reconciliation"]},
+    {"capability_id":"framework.rendering-invalidation","target_id":"framework.rendering-pipeline","state":"covered","keywords":["renderobject","rendering pipeline","layout","paint","constraint","描画"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps"],"lab_id":"lab.framework-rendering-pipeline","commands":[".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-rendering-pipeline"]},
+    {"capability_id":"product.state-lifecycle","target_id":"product.state-lifecycle","state":"covered","priority":30,"keywords":["state lifecycle","state migration","stale async","dispose","controller state","状態管理","非同期状態"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],"lab_id":"lab.operations-workspace","commands":["make formal-local"]},
+    {"capability_id":"product.navigation","target_id":"product.navigation","state":"covered","keywords":["navigation","navigator","named route","routing","画面遷移"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],"lab_id":"lab.operations-workspace","commands":["make formal-local"]},
+    {"capability_id":"language.public-surface","target_id":"language.public-surface-inventory","state":"covered","keywords":["public surface","api inventory","sdk inventory","公開api","surface inventory"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps","dart-sdk-3.13.1","devtools-2.60.0"],"lab_id":"lab.public-surface-inventory","commands":["python3 tooling/surface_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter --output baseline/public-surface-inventory.json --check"]},
+    {"capability_id":"platform.channel-plugin","target_id":"platform.channel-plugin-contract","state":"covered","keywords":["platform channel","methodchannel","plugin registration","plugin lifecycle","plugin","プラットフォームチャネル"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.platform-integration-source-contract","commands":[".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"]},
+    {"capability_id":"platform.ffi","target_id":"platform.ffi-macos","state":"covered","keywords":["dart ffi","native library","native symbol","c interop","ffi"],"authority_ids":["dart-sdk-3.13.1"],"lab_id":"lab.platform-ffi-runtime","commands":[".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify_ffi_runtime.dart"]},
+    {"capability_id":"platform.add-to-app","target_id":"platform.add-to-app-contract","state":"covered","priority":20,"keywords":["add-to-app","add to app","flutterengine","embed flutter","flutter埋め込み"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.platform-integration-source-contract","commands":[".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"]},
+    {"capability_id":"platform.web","target_id":"platform.web","state":"covered","keywords":["flutter web","web build","browser","chrome","web platform"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.formal-local-closure","commands":["make formal-local"]},
+    {"capability_id":"platform.desktop","target_id":"platform.desktop","state":"covered","keywords":["desktop","windows","linux","macos","デスクトップ"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.platform-integration-source-contract","commands":["make formal-local"]},
+    {"capability_id":"platform.mobile","target_id":"platform.mobile","state":"covered","keywords":["mobile boundary","android boundary","ios boundary","mobile platform","モバイル"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.platform-integration-source-contract","commands":[".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"]},
+    {"capability_id":"quality.testing","target_id":"quality.testing","state":"covered","keywords":["unit test","widget test","integration test","test pyramid","テスト"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.formal-local-closure","commands":["make formal-local"]},
+    {"capability_id":"quality.accessibility","target_id":"quality.accessibility-performance-security","state":"covered","keywords":["accessibility","semantics","screen reader","focus","アクセシビリティ"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],"lab_id":"lab.operations-workspace","commands":["make formal-local"]},
+    {"capability_id":"quality.performance","target_id":"quality.accessibility-performance-security","state":"covered","keywords":["performance","frame timing","p95","jank","性能"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.operations-workspace","commands":["make formal-local"]},
+    {"capability_id":"quality.security","target_id":"quality.accessibility-performance-security","state":"covered","keywords":["security","secret","bidi","path traversal","allowlist","セキュリティ"],"authority_ids":["dart-sdk-3.13.1","flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.security-boundary","commands":["make formal-local"]},
+    {"capability_id":"quality.failure-recovery","target_id":"quality.failure-recovery","state":"covered","keywords":["failure injection","repository failure","retry","stale completion","障害注入"],"authority_ids":["dart-sdk-3.13.1","flutter-sdk-3.47.1-macos-arm64"],"lab_id":"lab.operations-drill","commands":["make formal-local"]},
+    {"capability_id":"baseline.sdk-lock","target_id":"baseline.flutter-3.47.1","state":"covered","keywords":["sdk migration","flutter sdk version","flutter version","baseline","3.47.1","sdk","sdk移行","sdkバージョン"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-engine-3.47.1-deps","dart-sdk-3.13.1","devtools-2.60.0"],"lab_id":"lab.authority-lock","commands":["make formal-local","make validate"]},
+    {"capability_id":"operations.runbooks","target_id":"quality.migration-operations","state":"covered","keywords":["upgrade","migration","incident","restore","backup","runbook","移行","復旧","運用"],"authority_ids":["reference-atlas-core-v1","dart-sdk-3.13.1"],"lab_id":"lab.operations-drill","commands":["make formal-local","scripts/validate-runbooks.sh"]},
+    {"capability_id":"language.conflict-resolution","target_id":"language.dart-concurrency","state":"covered","keywords":["conflict","offline","lost update","競合","同期"],"authority_ids":["dart-sdk-3.13.1","dart-container-3.13.1"],"lab_id":"lab.offline-conflict-resolution","commands":["scripts/labs-container.sh"]},
+    {"capability_id":"execution.container-lab","target_id":"execution.container","state":"covered","keywords":["container","docker","コンテナ"],"authority_ids":["dart-sdk-3.13.1","dart-container-3.13.1"],"lab_id":"lab.container-profile","commands":["scripts/labs-container.sh"]},
+    {"capability_id":"execution.local-lab","target_id":"execution.local","state":"covered","keywords":["formal local","local profile","local lab","ローカル"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","local-runtime-inventory"],"lab_id":"lab.formal-local-closure","commands":["make formal-local"]},
+    {"capability_id":"skill.router","target_id":"skill.router","state":"covered","keywords":["router skill","skill eval","agent routing","スキル評価"],"authority_ids":["reference-atlas-core-v1"],"lab_id":"lab.skill-eval","commands":["make skill-eval"]},
+    {"capability_id":"product.adaptive-workspace","target_id":"product.operations-workspace","state":"covered","keywords":["adaptive","workspace","widget","ui","画面"],"authority_ids":["flutter-sdk-3.47.1-macos-arm64","flutter-widgets-api"],"lab_id":"lab.operations-workspace","commands":["make formal-local"]}
   ]
 }

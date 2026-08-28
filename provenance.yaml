@@ -1,0 +1,75 @@
+{
+  "artifacts": [
+    {
+      "digest": "sha256:4d5a5e2cadbbfb52b8fcec73d98b5d8430ab2153555dcfc0228276dfeacb51f3",
+      "generated_by": "tooling/evidence_capture/bin/capture.dart",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/artifacts/formal-local-closure-report.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "dart-sdk-3.13.1",
+        "local-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:cdd9a338ac362f235ef8665a9c62a96aba99331b570a1c48603a257e8737be80",
+      "generated_by": "scripts/labs-container.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/artifacts/container-conflict-report.json",
+      "source_ids": [
+        "dart-sdk-3.13.1",
+        "dart-container-3.13.1"
+      ]
+    },
+    {
+      "digest": "sha256:902662c70a25a66456f07e4be2af5118073dd155fa0efab86d95278b7954de73",
+      "generated_by": "evals/evaluate.py",
+      "kind": "skill-eval",
+      "license": "Apache-2.0",
+      "path": "evidence/artifacts/router-eval-report.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
+      ]
+    },
+    {
+      "digest": "sha256:9c9aaf3b9baf0b50ba4b2d01e75e244796a37f75849ba4cc0778108f9b52d369",
+      "generated_by": "evals/evaluate.py",
+      "kind": "skill-eval",
+      "license": "Apache-2.0",
+      "path": "evals/flutter-router.skill-eval.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
+      ]
+    },
+    {
+      "digest": "sha256:c7dbee181953b9528ac79760308be9011de66e06ec3c85907d9122cf833901be",
+      "generated_by": "tooling/surface_inventory/generate.py",
+      "kind": "generated",
+      "license": "Apache-2.0",
+      "path": "baseline/public-surface-inventory.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps",
+        "dart-sdk-3.13.1",
+        "devtools-2.60.0"
+      ]
+    },
+    {
+      "digest": "sha256:5f78bff51d61bbadcebc4caf71afab4426a59ccd4021e2023d0c9ee584a1c6a7",
+      "generated_by": "tooling/generate_supply_chain.py",
+      "kind": "sbom",
+      "license": "CC0-1.0",
+      "path": "sbom.spdx.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "dart-container-3.13.1",
+        "reference-atlas-core-v1"
+      ]
+    }
+  ],
+  "atlas_id": "flutter-reference-atlas",
+  "generated_at": "2026-08-28T07:20:00Z",
+  "schema_version": 1
+}

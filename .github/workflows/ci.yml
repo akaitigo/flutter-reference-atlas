@@ -23,13 +23,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: akaitigo/reference-atlas-core
-          ref: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+          ref: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
           path: .tools/reference-atlas-core
       - name: Core atlas CLIを固定commitからBuild
         run: make atlas-bootstrap CORE_DIR=.tools/reference-atlas-core
       - name: atlas validateとOverlay Gate
         run: make validate CORE_DIR=.tools/reference-atlas-core
       - name: Test・Analyze・Skill Eval・Legal Gate
-        run: make test analyze skill-eval runbooks legal
+        run: make test analyze skill-eval runbooks legal FORMAL_SDK="$FLUTTER_ROOT"
 
 # Publication、Release、Store送信はこのWorkflowで行わない。

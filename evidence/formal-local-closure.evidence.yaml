@@ -1,0 +1,43 @@
+schema_version: 1
+id: execution.formal-local-closure.2026-08-28
+atlas_id: flutter-reference-atlas
+claim_ids:
+  - baseline.flutter-version-lock
+  - framework.key-controls-state-identity
+  - framework.layout-and-paint-are-separate
+  - product.adaptive-state-flow
+  - product.state-lifecycle-is-ordered
+  - product.navigation-is-observable
+  - language.public-surface-is-finite
+  - platform.channel-plugin-source-contract
+  - platform.ffi-runtime-call
+  - platform.add-to-app-engine-contract
+  - platform.web-release-build
+  - platform.desktop-source-boundary
+  - platform.mobile-source-boundary
+  - platform.runner-matrix-is-explicit
+  - execution.local-repeatability
+  - quality.test-pyramid-is-repeatable
+  - quality.accessibility-semantics
+  - quality.performance-budget
+  - quality.security-boundaries
+  - quality.failure-recovery-is-safe
+  - quality.explicit-operational-boundary
+  - quality.backup-migration-recovery
+kind: conformance
+producer: Flutter 3.47.1 formal local closure harness
+command: env XDG_CONFIG_HOME=.tools/xdg-config .tools/flutter-3.47.1/flutter/bin/dart run tooling/evidence_capture/bin/capture.dart --sdk .tools/flutter-3.47.1/flutter --output evidence/artifacts/formal-local-closure-report.json
+created_at: "2026-08-28T07:32:22.065256Z"
+environment:
+  profile: local
+  manifest_digest: sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23
+source_digest: sha256:178fb77475110267290631bcb1118d90aa7b361ae38c86736ffa199feac449d9
+harness_digest: sha256:a4391ed76541b61990b5c7e69009d3d3e6c9166b94933adeb31a2cbca9d11dab
+harness_path: tooling/evidence_capture/bin/capture.dart
+artifact:
+  uri: evidence/artifacts/formal-local-closure-report.json
+  digest: sha256:4d5a5e2cadbbfb52b8fcec73d98b5d8430ab2153555dcfc0228276dfeacb51f3
+  media_type: application/json
+  size_bytes: 14683
+verdict: pass
+retention: git

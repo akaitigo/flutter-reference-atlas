@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "container-conflict-harness",
+  "files": {
+    "runner": "sha256:100686abff7b4a9dfa046fb746b7170ef34b648a15a90d2a8faffc86fffa986c",
+    "dockerfile": "sha256:110c04bff6284a24ef9b18ec026649e13d27a5313d5d45a644171e76e4342100",
+    "verifier": "sha256:1df53ddb97e83e366271a32a3751bbee7a5e590e8106bba6cd2e3af692a061f4"
+  },
+  "isolation": "network=none; temporary container and derived image removed by cleanup"
+}

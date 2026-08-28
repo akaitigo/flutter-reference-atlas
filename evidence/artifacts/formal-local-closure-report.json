@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "harness_id": "formal-local-closure",
+  "created_at": "2026-08-28T07:32:22.065256Z",
+  "verdict": "pass",
+  "sdk": {
+    "flutter": "3.47.1",
+    "framework_revision": "6655482ec06e547f90abf8ae7590466f4415978d",
+    "engine_revision": "5d531788691ec3404cac0cee66ead4007b177363",
+    "dart": "3.13.1",
+    "devtools": "2.60.0"
+  },
+  "web_build": {
+    "files": 38,
+    "bytes": 41765456
+  },
+  "results": [
+    {
+      "id": "sdk-version",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "--version",
+        "--machine"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 248,
+      "stdout": "{\n  \"frameworkVersion\": \"3.47.1\",\n  \"channel\": \"stable\",\n  \"repositoryUrl\": \"https://github.com/flutter/flutter.git\",\n  \"frameworkRevision\": \"6655482ec06e547f90abf8ae7590466f4415978d\",\n  \"frameworkCommitDate\": \"2026-08-19 10:07:23 -0700\",\n  \"engineRevision\": \"5d531788691ec3404cac0cee66ead4007b177363\",\n  \"engineCommitDate\": \"2026-08-18 23:36:01.000Z\",\n  \"engineContentHash\": \"11d79658c444477b06513d32b52c8c4ccb7276b0\",\n  \"engineBuildDate\": \"2026-08-18 20:19:20.672\",\n  \"dartSdkVersion\": \"3.13.1\",\n  \"devToolsVersion\": \"2.60.0\",\n  \"flutterVersion\": \"3.47.1\",\n  \"flutterRoot\": \"$FORMAL_SDK\"\n}",
+      "stderr": ""
+    },
+    {
+      "id": "sdk-doctor",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "doctor",
+        "-v"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 1516,
+      "stdout": "[✓] Flutter (Channel stable, 3.47.1, on macOS 26.1 25B78 darwin-arm64, locale ja-JP) [173ms]\n    • Flutter version 3.47.1 on channel stable at $FORMAL_SDK\n    • Upstream repository https://github.com/flutter/flutter.git\n    • Framework revision 6655482ec0 (9 days ago), 2026-08-19 10:07:23 -0700\n    • Engine revision 5d53178869\n    • Dart version 3.13.1\n    • DevTools version 2.60.0\n    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-record-use, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration\n\n[✗] Android toolchain - develop for Android devices [58ms]\n    ✗ Unable to locate Android SDK.\n      Install Android Studio from: https://developer.android.com/studio/index.html\n      On first launch it will assist you in installing the Android SDK components.\n      (or visit https://flutter.dev/to/macos-android-setup for detailed instructions).\n      If the Android SDK has been installed to a custom location, please use\n      `flutter config --android-sdk` to update to that location.\n\n\n[!] Xcode - develop for iOS and macOS [68ms]\n    ✗ Xcode installation is incomplete; a full installation is necessary for iOS and macOS development.\n      Download at: https://developer.apple.com/xcode/\n      Or install Xcode via the App Store.\n      Once installed, run:\n        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer\n        sudo xcodebuild -runFirstLaunch\n    ! CocoaPods not installed.\n        CocoaPods is a package manager for iOS or macOS platform code.\n        Without CocoaPods, plugins will not work on iOS or macOS.\n        For more info, see https://flutter.dev/to/platform-plugins\n      For installation instructions, see https://guides.cocoapods.org/using/getting-started.html#installation\n\n[✓] Chrome - develop for the web [31ms]\n    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n\n[✓] Connected device (2 available) [90ms]\n    • macOS (desktop) • macos  • darwin-arm64   • macOS 26.1 25B78 darwin-arm64\n    • Chrome (web)    • chrome • web-javascript • Google Chrome 151.0.7922.175\n\n[✓] Network resources [987ms]\n    • All expected network resources are available.\n\n! Doctor found issues in 2 categories.",
+      "stderr": ""
+    },
+    {
+      "id": "surface-inventory-check",
+      "command": [
+        "python3",
+        "tooling/surface_inventory/generate.py",
+        "--sdk-root",
+        "$FORMAL_SDK",
+        "--output",
+        "baseline/public-surface-inventory.json",
+        "--check"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 175,
+      "stdout": "Surface Inventory検証済み: baseline/public-surface-inventory.json",
+      "stderr": ""
+    },
+    {
+      "id": "surface-inventory-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tooling/surface_inventory/test_generate.py"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 105,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.008s\n\nOK"
+    },
+    {
+      "id": "operations-drill",
+      "command": [
+        "$FORMAL_SDK/bin/dart",
+        "run",
+        "labs/operations-drill/bin/verify.dart"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 275,
+      "stdout": "{\"schema_version\":1,\"lab_id\":\"lab.operations-drill\",\"verdict\":\"pass\",\"checks\":{\"backup_round_trip\":true,\"input_immutable\":true,\"corrupt_restore_rejected\":true,\"unsupported_migration_rejected\":true,\"cleanup\":true}}",
+      "stderr": ""
+    },
+    {
+      "id": "security-boundary",
+      "command": [
+        "$FORMAL_SDK/bin/dart",
+        "run",
+        "labs/security-boundary/bin/verify.dart"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 273,
+      "stdout": "{\"schema_version\":1,\"lab_id\":\"lab.security-boundary\",\"verdict\":\"pass\",\"checks\":{\"https_allowlist\":true,\"credential_uri_rejected\":true,\"path_traversal_rejected\":true,\"secret_redacted\":true,\"platform_response_validated\":true}}",
+      "stderr": ""
+    },
+    {
+      "id": "platform-source-contract",
+      "command": [
+        "$FORMAL_SDK/bin/dart",
+        "run",
+        "labs/platform-integration/bin/verify.dart"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 291,
+      "stdout": "{\"schema_version\":1,\"lab_id\":\"lab.platform-integration-source-contract\",\"verdict\":\"pass\",\"contracts_checked\":7,\"source_assertions_checked\":61,\"evidence\":{\"source_contract\":\"pass\",\"runtime_evidence\":{\"platform-channel.method-contract\":\"not_collected\",\"plugin.registration-contract\":\"not_collected\",\"ffi.abi-contract\":\"not_collected\",\"add-to-app.engine-contract\":\"blocked\",\"boundary.web-contract\":\"not_collected\",\"boundary.desktop-contract\":\"not_collected\",\"boundary.mobile-contract\":\"not_collected\"}},\"issues\":[]}",
+      "stderr": ""
+    },
+    {
+      "id": "platform-analyze",
+      "command": [
+        "$FORMAL_SDK/bin/dart",
+        "analyze",
+        "labs/platform-integration"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 652,
+      "stdout": "Analyzing platform-integration...\nNo issues found!",
+      "stderr": ""
+    },
+    {
+      "id": "platform-source-mutation-test",
+      "command": [
+        "$FORMAL_SDK/bin/dart",
+        "run",
+        "labs/platform-integration/test/source_contract_verifier_test.dart"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 327,
+      "stdout": "{\"schema_version\":1,\"lab_id\":\"lab.platform-integration-source-contract\",\"verdict\":\"pass\",\"tests\":[\"baseline-source-contract\",\"path-boundary\",\"mutation-detection\"]}",
+      "stderr": ""
+    },
+    {
+      "id": "platform-ffi-runtime",
+      "command": [
+        "$FORMAL_SDK/bin/dart",
+        "run",
+        "labs/platform-integration/bin/verify_ffi_runtime.dart"
+      ],
+      "working_directory": ".",
+      "exit_code": 0,
+      "elapsed_milliseconds": 931,
+      "stdout": "{\"schema_version\":1,\"lab_id\":\"lab.platform-integration-source-contract\",\"evidence_layer\":\"runtime_evidence\",\"integration\":\"dart-ffi\",\"target\":\"macos-arm64\",\"dart_version\":\"3.13.1\",\"compiler\":\"apple-clang-17\",\"operation\":\"atlas_add(19, 23)\",\"actual\":42,\"cleanup\":\"pass\",\"verdict\":\"pass\"}",
+      "stderr": ""
+    },
+    {
+      "id": "framework-reconciliation-test",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "test"
+      ],
+      "working_directory": "labs/framework-element-reconciliation",
+      "exit_code": 0,
+      "elapsed_milliseconds": 1790,
+      "stdout": "00:00 +0: loading $ATLAS_ROOT/labs/framework-element-reconciliation/test/reconciliation_probe_test.dart\n00:00 +0: Keyなしでは同じ位置のElementへStateを再利用する\n00:00 +1: LocalKeyは移動後も論理項目へStateを結び付ける\n00:00 +2: All tests passed!",
+      "stderr": ""
+    },
+    {
+      "id": "framework-rendering-test",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "test"
+      ],
+      "working_directory": "labs/framework-rendering-pipeline",
+      "exit_code": 0,
+      "elapsed_milliseconds": 1295,
+      "stdout": "00:00 +0: loading $ATLAS_ROOT/labs/framework-rendering-pipeline/test/pipeline_probe_test.dart\n00:00 +0: Constraintでsizeを決めlayout後にpaintする\n00:00 +1: paint変更はlayoutを再実行しない\n00:00 +2: layout変更はlayoutとpaintを順に再実行する\n00:00 +3: All tests passed!",
+      "stderr": ""
+    },
+    {
+      "id": "widget-lifecycle-test",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "test"
+      ],
+      "working_directory": "labs/widget-lifecycle",
+      "exit_code": 0,
+      "elapsed_milliseconds": 1302,
+      "stdout": "00:00 +0: loading $ATLAS_ROOT/labs/widget-lifecycle/test/lifecycle_probe_test.dart\n00:00 +0: lifecycleを順序どおり観測しdispose後は通知しない\n00:00 +1: All tests passed!",
+      "stderr": ""
+    },
+    {
+      "id": "product-analyze",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "analyze"
+      ],
+      "working_directory": "reference-systems/operations-workspace",
+      "exit_code": 0,
+      "elapsed_milliseconds": 5148,
+      "stdout": "Analyzing operations-workspace...                               \nNo issues found! (ran in 3.8s)",
+      "stderr": ""
+    },
+    {
+      "id": "product-test",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "test"
+      ],
+      "working_directory": "reference-systems/operations-workspace",
+      "exit_code": 0,
+      "elapsed_milliseconds": 2771,
+      "stdout": "00:00 +0: loading $ATLAS_ROOT/reference-systems/operations-workspace/test/incident_input_policy_test.dart\n00:00 +0: $ATLAS_ROOT/reference-systems/operations-workspace/test/incident_input_policy_test.dart: 空白を正規化して安全な件名を受理する\n00:00 +1: $ATLAS_ROOT/reference-systems/operations-workspace/test/incident_input_policy_test.dart: 制御文字と双方向表示制御を拒否する\n00:00 +2: $ATLAS_ROOT/reference-systems/operations-workspace/test/incident_input_policy_test.dart: Unicode code point単位の上限を適用する\n00:00 +3: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_controller_test.dart: loadと状態遷移がRepositoryを正本にする\n00:00 +4: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_controller_test.dart: 空件名は保存せずUI Messageへ変換する\n00:00 +5: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_controller_test.dart: 保存失敗は状態を壊さず同じ変更を再試行できる\n00:00 +6: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_controller_test.dart: 遅れて完了した古いloadは新しい状態を上書きしない\n00:00 +7: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_controller_test.dart: dispose後に完了したloadは通知しない\n00:00 +8: $ATLAS_ROOT/reference-systems/operations-workspace/test/frame_performance_monitor_test.dart: Frame budget超過とp95を公開Snapshotへ集約する\n00:00 +9: $ATLAS_ROOT/reference-systems/operations-workspace/test/incident_status_chart_test.dart: CustomPainterの状態集計をSemanticsでも公開する\n00:00 +10: $ATLAS_ROOT/reference-systems/operations-workspace/test/incident_status_chart_test.dart: CustomPainterの状態集計をSemanticsでも公開する\n00:00 +11: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_app_test.dart: 広幅では一覧と詳細を同時表示し状態遷移できる\n00:00 +12: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_app_test.dart: 広幅では一覧と詳細を同時表示し状態遷移できる\n00:00 +13: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_app_test.dart: Dialogから新規インシデントを追加できる\n00:00 +14: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_app_test.dart: 公開Navigator routeで診断へ移動しPerformanceを観測できる\n00:01 +15: $ATLAS_ROOT/reference-systems/operations-workspace/test/workspace_app_test.dart: Repository失敗を秘匿して再試行から回復する\n00:01 +16: All tests passed!",
+      "stderr": ""
+    },
+    {
+      "id": "web-release-build",
+      "command": [
+        "$FORMAL_SDK/bin/flutter",
+        "build",
+        "web",
+        "--release",
+        "--output=$WEB_OUTPUT"
+      ],
+      "working_directory": "reference-systems/operations-workspace",
+      "exit_code": 0,
+      "elapsed_milliseconds": 15482,
+      "stdout": "Compiling lib/main.dart for the Web...                          \nExpected to find fonts for (MaterialIcons, packages/cupertino_icons/CupertinoIcons), but found (MaterialIcons). This usually means you are referring to font families in an IconData class but not including them in the assets section of your pubspec.yaml, are missing the package that would include them, or are missing \"uses-material-design: true\".\nFont asset \"MaterialIcons-Regular.otf\" was tree-shaken, reducing it from 1645184 to 8456 bytes (99.5% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.\nCompiling lib/main.dart for the Web...                             15.0s\n✓ Built ../../../../../../..$WEB_OUTPUT",
+      "stderr": "Wasm dry run succeeded. Consider building and testing your application with the `--wasm` flag. See docs for more info: https://docs.flutter.dev/platform-integration/web/wasm\nUse --no-wasm-dry-run to disable these warnings."
+    }
+  ]
+}

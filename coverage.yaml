@@ -1,7 +1,7 @@
 schema_version: 1
 atlas_id: flutter-reference-atlas
 epoch: "2026-08-28"
-authority_lock_digest: sha256:c24de5c1382ed64931092f87471fc55f923441389c0a19287f95d8beb594e409
+authority_lock_digest: sha256:178fb77475110267290631bcb1118d90aa7b361ae38c86736ffa199feac449d9
 target_sets:
   - id: baseline
     title: 固定SDKと一次資料
@@ -51,28 +51,64 @@ targets:
     target_set: baseline
     kind: compatibility
     requirement: required
-    state: partial
-    rationale: 配布物とrevisionは固定済みだが、対象SDK本体での全Lab再実行がまだ完了していない。
+    state: covered
+    rationale: 公式配布物DigestとSDK内部metadataを照合し、Flutter 3.47.1で全Formal Local Gateを再実行した。
     claim_ids: [baseline.flutter-version-lock]
-    evidence_ids: []
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: framework.internal-architecture
+    title: Widget・Element・RenderObject内部契約
+    target_set: baseline
+    kind: concept
+    requirement: required
+    state: covered
+    rationale: Key有無によるElement reconciliationとState identityの差をFlutter 3.47.1 Widget Testで観測した。
+    claim_ids: [framework.key-controls-state-identity]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: framework.rendering-pipeline
+    title: Constraint・Layout・Paint Pipeline
+    target_set: baseline
+    kind: capability
+    requirement: required
+    state: covered
+    rationale: RenderBoxのConstraintとmarkNeedsLayout、markNeedsPaintによる無効化範囲を決定論Testで検証した。
+    claim_ids: [framework.layout-and-paint-are-separate]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: product.operations-workspace
     title: Operations Workspace製品実装
     target_set: product
     kind: construction
     requirement: required
-    state: partial
-    rationale: Adaptive UIと状態管理の基準実装は存在するが、永続化、同期、配布までの閉包が未完了である。
+    state: covered
+    rationale: Adaptive UI、Repository境界、入力Policy、診断画面を正式SDKでanalyzeし16件のUnit・Widget Testを通した。
     claim_ids: [product.adaptive-state-flow]
-    evidence_ids: [execution.local-compatibility.2026-08-28]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: product.state-lifecycle
+    title: State・Lifecycle・Concurrency
+    target_set: product
+    kind: capability
+    requirement: required
+    state: covered
+    rationale: stale async completion、dispose後通知、保存中競合、immutable stateをController Testで検証した。
+    claim_ids: [product.state-lifecycle-is-ordered]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: product.navigation
+    title: Navigationと診断Route
+    target_set: product
+    kind: construction
+    requirement: required
+    state: covered
+    rationale: 公開named routeから診断画面へ遷移し、状態とPerformance Snapshotを表示する契約をWidget Testで検証した。
+    claim_ids: [product.navigation-is-observable]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: language.public-surface-inventory
     title: 公開API Surface Inventory
     target_set: language-platform
     kind: capability
     requirement: required
-    state: planned
-    rationale: SDK公開SymbolとCLI Optionを機械抽出して全件をCapabilityへ分類する必要がある。
-    claim_ids: []
-    evidence_ids: []
+    state: covered
+    rationale: 固定SDKからFramework、Engine、Dart公開Library入口とCLI分類対象Sourceを決定論的に生成し再生成一致を確認した。
+    claim_ids: [language.public-surface-is-finite]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: language.dart-concurrency
     title: Dart非同期処理と競合解決
     target_set: language-platform
@@ -82,24 +118,81 @@ targets:
     rationale: 固定Dart 3.13.1 Containerで決定論的競合解決とlost update検出を再実行した。
     claim_ids: [language.deterministic-conflict-resolution]
     evidence_ids: [execution.container-conflict.2026-08-28]
+  - id: platform.channel-plugin-contract
+    title: Platform ChannelとPlugin Contract
+    target_set: language-platform
+    kind: capability
+    requirement: required
+    state: covered
+    rationale: Dart、Kotlin、SwiftのChannel、Method、Plugin登録とLifecycle宣言を61 assertionのSource Contractで照合した。
+    claim_ids: [platform.channel-plugin-source-contract]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.ffi-macos
+    title: Dart FFI macOS arm64 Runtime
+    target_set: language-platform
+    kind: capability
+    requirement: required
+    state: covered
+    rationale: Apple clangで一時dylibを生成し、Dart 3.13.1 FFIでatlas_addを実呼出して42を確認後Cleanupした。
+    claim_ids: [platform.ffi-runtime-call]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.add-to-app-contract
+    title: Add-to-App Engine Source Contract
+    target_set: language-platform
+    kind: construction
+    requirement: required
+    state: covered
+    rationale: AndroidとiOS host fixtureのEngine生成、entrypoint、共有Engine ID、View Controller接続を静的に照合した。
+    claim_ids: [platform.add-to-app-engine-contract]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.web
+    title: Web BoundaryとRelease Build
+    target_set: language-platform
+    kind: compatibility
+    requirement: required
+    state: covered
+    rationale: Web専用conditional export境界を検証し、Flutter 3.47.1で38 fileのrelease Web artifactを生成した。
+    claim_ids: [platform.web-release-build]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.desktop
+    title: Desktop Platform Boundary
+    target_set: language-platform
+    kind: compatibility
+    requirement: required
+    state: covered
+    rationale: macOS、Windows、Linuxの公開IO分岐とWeb API非依存をSource Contractで検証し、macOS FFI runtimeを実行した。
+    claim_ids: [platform.desktop-source-boundary]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.mobile
+    title: Mobile Platform Boundary
+    target_set: language-platform
+    kind: compatibility
+    requirement: required
+    state: covered
+    rationale: Android、iOSの公開IO分岐、Platform Channel、Plugin登録をSource Contractで検証しNative runtime未実行を分離した。
+    claim_ids: [platform.mobile-source-boundary]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: platform.six-target-builds
     title: 公式6Platform Build
     target_set: language-platform
     kind: compatibility
     requirement: required
-    state: planned
-    rationale: Android、iOS、Web、Windows、macOS、Linuxの固定環境Build証拠を揃える必要がある。
-    claim_ids: []
-    evidence_ids: []
+    state: infeasible
+    rationale: Web release buildは通過したが、このmacOS HostだけではAndroid、iOS、Windows、LinuxのNative buildを実行できない。
+    claim_ids: [platform.runner-matrix-is-explicit]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+    exclusion:
+      reason: Android SDK、full Xcode、CocoaPods、WindowsおよびLinux Runnerを用意した固定CI Matrixで再評価する。
+      reviewed_at: "2026-08-28"
   - id: execution.local
     title: Local Profile Lab
     target_set: execution
     kind: operation
     requirement: required
-    state: partial
-    rationale: 再実行Scriptは存在するが対象SDK 3.47.1ではなく既存3.38.5でのみ確認している。
+    state: covered
+    rationale: 正式Flutter 3.47.1でInventory、Framework、Product、Security、Operations、FFI、Web buildの16 Commandを再実行した。
     claim_ids: [execution.local-repeatability]
-    evidence_ids: [execution.local-compatibility.2026-08-28]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: execution.container
     title: Container Profile Lab
     target_set: execution
@@ -116,35 +209,53 @@ targets:
     requirement: required
     state: infeasible
     rationale: 現在のHostには完全なXcodeとAndroid SDKがなく、対象Simulatorでの実行証拠を生成できない。
-    claim_ids: []
-    evidence_ids: []
+    claim_ids: [platform.runner-matrix-is-explicit]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
     exclusion:
       reason: iOS SimulatorまたはAndroid EmulatorのToolchain導入後に再評価し、代替証拠を同等とは扱わない。
       reviewed_at: "2026-08-28"
+  - id: quality.testing
+    title: Unit・Widget・Integration Test Contract
+    target_set: quality
+    kind: capability
+    requirement: required
+    state: covered
+    rationale: Domain、Controller、Widget、Framework、Mutation、Integration sourceを分離し、実行可能なUnit・Widget Contractを正式SDKで通した。
+    claim_ids: [quality.test-pyramid-is-repeatable]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: quality.accessibility-performance-security
     title: Accessibility・Performance・Security Gate
     target_set: quality
     kind: performance
     requirement: required
-    state: planned
-    rationale: Semantics、Keyboard、Frame、Memory、Secret、SBOMの定量Gateを対象SDKで実行する必要がある。
-    claim_ids: []
-    evidence_ids: []
+    state: covered
+    rationale: Semantics、Focus、FrameTiming集約、入力制限、URL allowlist、Path traversal、Secret redactionを正式SDKで検証した。
+    claim_ids: [quality.accessibility-semantics, quality.performance-budget, quality.security-boundaries]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: quality.failure-recovery
+    title: Failure InjectionとRecovery
+    target_set: quality
+    kind: failure
+    requirement: required
+    state: covered
+    rationale: Repository失敗、破損Backup、未知schema、stale completionを注入し、状態を壊さずRetryまたは拒否することを検証した。
+    claim_ids: [quality.failure-recovery-is-safe]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: quality.migration-operations
     title: Upgradeと運用Runbook
     target_set: quality
     kind: migration
     requirement: required
-    state: partial
-    rationale: Runbookの骨格はあるがBackup、Restore、Upgrade Drillの実行証拠が未生成である。
-    claim_ids: [quality.explicit-operational-boundary]
-    evidence_ids: []
+    state: covered
+    rationale: Backup round-trip、非破壊schema Migration、Restore、破損拒否、Cleanupを決定論Operations Drillで検証した。
+    claim_ids: [quality.explicit-operational-boundary, quality.backup-migration-recovery]
+    evidence_ids: [execution.formal-local-closure.2026-08-28]
   - id: skill.router
     title: Flutter Reference Router Skill
     target_set: skill
     kind: skill
     requirement: required
     state: covered
-    rationale: Routerの決定論Eval 9件と独立Agent Forward Evalで、Coverage Gap、Simulator専用Lab、書込・公開権限境界を確認した。
+    rationale: Routerの決定論・Forward Regression 62件と独立Agent Forward Evalで、複合依頼、未知Package、Version・Runtime・Publication Gap、書込・公開権限境界を確認した。
     claim_ids: [skill.routes-without-invention]
     evidence_ids: [skill.router-eval.2026-08-28]

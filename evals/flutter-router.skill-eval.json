@@ -1,0 +1,82 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "atlas_release": "v1.0.0",
+  "cases": [
+    {
+      "assertion": "代表Case route-design-ui, route-navigation, route-platform-channel が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "routing",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.routing",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case reject-nearby-tech, avoid-async-sync-substring, app-version-is-not-sdk が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "near-neighbor",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.near-neighbor",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case reject-uncovered-package, reject-windows-ffi-runtime, reject-new-flutter-version が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "coverage-gap",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.coverage-gap",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case route-implement-state, route-failure, fwd-12-bloc-migration が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "lifecycle",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.lifecycle",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case route-public-surface, route-migrate-sdk, route-review-container が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "authority",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.authority",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case route-local, route-diagnose-simulator, fwd-09-matrix-surface が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "execution",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.execution",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case publication-boundary, fwd-19-infeasible-write-gate, fwd-20-design-publish-gate が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "authorization",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.authorization",
+      "result": "pass"
+    },
+    {
+      "assertion": "代表Case route-security, fwd-05-firebase-plugin, fwd-18-review-write-gate が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "security",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.security",
+      "result": "pass"
+    }
+  ],
+  "generated_at": "2026-08-28T07:10:00Z",
+  "id": "flutter.router.skill-eval.2026-08-28",
+  "schema_version": 1,
+  "skill_id": "flutter-reference-router"
+}

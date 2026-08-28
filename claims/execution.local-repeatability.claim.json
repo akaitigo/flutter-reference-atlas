@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "execution.local-lab",
+  "id": "execution.local-repeatability",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "正式Local HarnessがInventory、Framework、Product、Security、Operations、FFI、Web buildを一括実行しpassする。"
+      ],
+      "id": "proof.setup-execute-verify-cleanup",
+      "statement": "Lab lab.formal-local-closure とTest test.formal-local-closureで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "local-runtime-inventory",
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。正式Local HarnessがInventory、Framework、Product、Security、Operations、FFI、Web buildを一括実行しpassする。",
+  "status": "accepted"
+}

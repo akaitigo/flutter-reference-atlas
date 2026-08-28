@@ -1,0 +1,17 @@
+name: device_bridge_contract_fixture
+description: Platform ChannelとPlugin登録宣言を照合するための非公開Fixture。
+publish_to: none
+version: 0.0.0
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: dev.flutter.reference_atlas.device_bridge
+        pluginClass: DeviceBridgePlugin
+      ios:
+        pluginClass: DeviceBridgePlugin

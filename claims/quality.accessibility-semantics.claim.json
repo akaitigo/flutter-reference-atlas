@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "quality.accessibility",
+  "id": "quality.accessibility-semantics",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Chart、選択、見出し、進行、failure announcementのSemanticsとFocus境界をWidget Testで観測できる。"
+      ],
+      "id": "proof.accessibility-semantics",
+      "statement": "Lab lab.operations-workspace とTest test.operations-workspaceで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-widgets-api"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Chart、選択、見出し、進行、failure announcementのSemanticsとFocus境界をWidget Testで観測できる。",
+  "status": "accepted"
+}

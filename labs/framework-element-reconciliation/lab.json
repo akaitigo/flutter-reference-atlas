@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "lab.framework-element-reconciliation",
+  "deterministic_scope": "同一runtimeTypeの兄弟Widgetを並べ替えた際のElement/State照合とLocalKey",
+  "setup": "Flutter 3.47.1 SDKをBaselineと照合し、flutter pub get --offlineを実行する。",
+  "execute": "flutter test test/reconciliation_probe_test.dart --reporter expanded",
+  "verify": "Keyなしでは位置へStateが残り、ValueKeyありでは論理項目とStateが一緒に移動する。",
+  "cleanup": "buildと.dart_toolは再生成可能な一時物として削除でき、外部Resourceは作成しない。",
+  "evidence_policy": "Flutter 3.47.1で成功した出力だけをRelease Evidenceへ接続する。",
+  "files": {
+    "implementation": "sha256:9ec0ea80dd8ae2e2fb3b4e11e78dad3669bc06419859aa59ed61e9df3f253a06",
+    "test": "sha256:073706eeabba8c890dad075ffc0d0806f42d82854a7383d3b8599ec4c179c7ca",
+    "dependency_lock": "sha256:1ac1113dc6ddc976459082b0ad4c33413b53d174e32ddf9f23fbe6e6973865e2"
+  }
+}

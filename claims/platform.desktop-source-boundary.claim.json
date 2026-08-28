@@ -1,0 +1,20 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.desktop",
+  "id": "platform.desktop-source-boundary",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "IO実装がmacOS、Windows、LinuxをDesktopとして分類しWeb専用APIへ依存しない。"
+      ],
+      "id": "proof.platform-source-contract",
+      "statement": "Lab lab.platform-integration-source-contract とTest test.platform-source-contractで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。IO実装がmacOS、Windows、LinuxをDesktopとして分類しWeb専用APIへ依存しない。",
+  "status": "accepted"
+}

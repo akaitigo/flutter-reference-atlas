@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "quality.security",
+  "id": "quality.security-boundaries",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "制御文字、bidi制御、危険URL、credential URI、Path traversal、Secret漏洩、型外Platform応答を拒否する。"
+      ],
+      "id": "proof.security-boundary",
+      "statement": "Lab lab.security-boundary とTest test.security-boundaryで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "dart-sdk-3.13.1",
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。制御文字、bidi制御、危険URL、credential URI、Path traversal、Secret漏洩、型外Platform応答を拒否する。",
+  "status": "accepted"
+}

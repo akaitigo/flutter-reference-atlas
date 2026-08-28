@@ -1,26 +1,1744 @@
 {
-  "schema_version": 1,
-  "eval_id": "flutter-reference-router-eval",
-  "total": 9,
-  "passed": 9,
   "pass_rate": 1.0,
-  "boundary_assertions": {
-    "publish_authorized": true,
-    "publish_allowed": false,
-    "uncovered_write_authorized": true,
-    "uncovered_write_allowed": false,
-    "simulator_lab": "lab.simulator-integration"
-  },
-  "case_ids": [
-    "route-design-ui",
-    "route-implement-sync",
-    "route-diagnose-simulator",
-    "route-recover-operations",
-    "route-migrate-sdk",
-    "route-review-container",
-    "reject-nearby-tech",
-    "reject-uncovered-package",
-    "publication-boundary"
+  "passed": 62,
+  "results": [
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.adaptive-workspace",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.adaptive-workspace"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.operations-workspace",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-design-ui",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.state-lifecycle",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.state-lifecycle"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.state-lifecycle",
+        "write_allowed": true,
+        "write_authorized": true
+      },
+      "id": "route-implement-state",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.navigation",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.navigation"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.navigation",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-navigation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "framework.element-reconciliation",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-element-reconciliation"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.framework-element-reconciliation",
+        "matched_capabilities": [
+          "framework.element-reconciliation"
+        ],
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "framework.internal-architecture",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-framework-element",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps"
+        ],
+        "capability_id": "framework.rendering-invalidation",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-rendering-pipeline"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.framework-rendering-pipeline",
+        "matched_capabilities": [
+          "framework.rendering-invalidation"
+        ],
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "framework.rendering-pipeline",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-rendering",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps",
+          "dart-sdk-3.13.1",
+          "devtools-2.60.0"
+        ],
+        "capability_id": "language.public-surface",
+        "commands": [
+          "python3 tooling/surface_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter --output baseline/public-surface-inventory.json --check",
+          "make formal-local",
+          "make validate"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.public-surface-inventory",
+        "matched_capabilities": [
+          "language.public-surface",
+          "baseline.sdk-lock"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "language.public-surface-inventory",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-public-surface",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1",
+          "dart-container-3.13.1"
+        ],
+        "capability_id": "language.conflict-resolution",
+        "commands": [
+          "scripts/labs-container.sh"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.offline-conflict-resolution",
+        "matched_capabilities": [
+          "language.conflict-resolution"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "language.dart-concurrency",
+        "write_allowed": true,
+        "write_authorized": true
+      },
+      "id": "route-implement-sync",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.channel-plugin",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.channel-plugin"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.channel-plugin-contract",
+        "write_allowed": true,
+        "write_authorized": true
+      },
+      "id": "route-platform-channel",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1"
+        ],
+        "capability_id": "platform.ffi",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify_ffi_runtime.dart"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.platform-ffi-runtime",
+        "matched_capabilities": [
+          "platform.ffi"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.ffi-macos",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-ffi",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.add-to-app",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.add-to-app"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.add-to-app-contract",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-add-to-app",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.web",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.web"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.web",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-web",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.desktop",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.desktop"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.desktop",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-desktop",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.mobile",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.mobile"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.mobile",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-mobile",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "local-runtime-inventory"
+        ],
+        "capability_id": "platform.runner-matrix",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "platform.runner-matrixのCoverage stateはinfeasibleです。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.runner-matrix"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "infeasible",
+        "target_id": "platform.six-target-builds",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-matrix",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "local-runtime-inventory"
+        ],
+        "capability_id": "execution.simulator-lab",
+        "commands": [
+          "scripts/labs-simulator.sh doctor",
+          "scripts/labs-simulator.sh run",
+          "scripts/labs-simulator.sh cleanup"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "execution.simulator-labのCoverage stateはinfeasibleです。"
+        ],
+        "lab_id": "lab.simulator-integration",
+        "matched_capabilities": [
+          "execution.simulator-lab"
+        ],
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "infeasible",
+        "target_id": "execution.simulator",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-diagnose-simulator",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "local-runtime-inventory"
+        ],
+        "capability_id": "execution.local-lab",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "execution.local-lab"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "execution.local",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-local",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1",
+          "dart-container-3.13.1"
+        ],
+        "capability_id": "execution.container-lab",
+        "commands": [
+          "scripts/labs-container.sh"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.container-profile",
+        "matched_capabilities": [
+          "execution.container-lab"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "execution.container",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-review-container",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.testing",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "quality.testing",
+          "product.adaptive-workspace"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.testing",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-testing",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "quality.accessibility",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "quality.accessibility"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.accessibility-performance-security",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-accessibility",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.performance",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "quality.performance"
+        ],
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.accessibility-performance-security",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-performance",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1",
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.security",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.security-boundary",
+        "matched_capabilities": [
+          "quality.security"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.accessibility-performance-security",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-security",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1",
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.failure-recovery",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-drill",
+        "matched_capabilities": [
+          "quality.failure-recovery"
+        ],
+        "mode": "recover",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.failure-recovery",
+        "write_allowed": true,
+        "write_authorized": true
+      },
+      "id": "route-failure",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "reference-atlas-core-v1",
+          "dart-sdk-3.13.1"
+        ],
+        "capability_id": "operations.runbooks",
+        "commands": [
+          "make formal-local",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-drill",
+        "matched_capabilities": [
+          "operations.runbooks"
+        ],
+        "mode": "recover",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.migration-operations",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-recover-operations",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "reference-atlas-core-v1"
+        ],
+        "capability_id": "skill.router",
+        "commands": [
+          "make skill-eval"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.skill-eval",
+        "matched_capabilities": [
+          "skill.router"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "skill.router",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "route-skill",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps",
+          "dart-sdk-3.13.1",
+          "devtools-2.60.0"
+        ],
+        "capability_id": "baseline.sdk-lock",
+        "commands": [
+          "make formal-local",
+          "make validate",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.authority-lock",
+        "matched_capabilities": [
+          "baseline.sdk-lock",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "baseline.flutter-3.47.1",
+        "write_allowed": true,
+        "write_authorized": true
+      },
+      "id": "route-migrate-sdk",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Coverageに一致するCapabilityがありません。"
+        ],
+        "matched_capabilities": [],
+        "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "reject-nearby-tech",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Coverageに一致するCapabilityがありません。"
+        ],
+        "matched_capabilities": [],
+        "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-uncovered-package",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps",
+          "dart-sdk-3.13.1",
+          "devtools-2.60.0"
+        ],
+        "capability_id": "baseline.sdk-lock",
+        "commands": [
+          "make formal-local",
+          "make validate"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "公開、配信、Store送信はPublication Coverage外です。"
+        ],
+        "lab_id": "lab.authority-lock",
+        "matched_capabilities": [
+          "baseline.sdk-lock"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "baseline.flutter-3.47.1",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "publication-boundary",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1"
+        ],
+        "capability_id": "platform.ffi",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify_ffi_runtime.dart",
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "FFI Runtime EvidenceがないPlatformです: windows"
+        ],
+        "lab_id": "lab.platform-ffi-runtime",
+        "matched_capabilities": [
+          "platform.ffi",
+          "platform.desktop"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.ffi-macos",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-windows-ffi-runtime",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.state-lifecycle",
+        "commands": [
+          "make formal-local",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "riverpod固有のCoverageとRuntime Evidenceは収録されていません。",
+          "状態管理Packageまたは方式間MigrationのEvidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.state-lifecycle",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.state-lifecycle",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-untracked-riverpod",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps",
+          "dart-sdk-3.13.1",
+          "devtools-2.60.0"
+        ],
+        "capability_id": "baseline.sdk-lock",
+        "commands": [
+          "make formal-local",
+          "make validate",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Flutter 3.48は固定Baseline外です。"
+        ],
+        "lab_id": "lab.authority-lock",
+        "matched_capabilities": [
+          "baseline.sdk-lock",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "baseline.flutter-3.47.1",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-new-flutter-version",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.adaptive-workspace",
+        "commands": [
+          "make formal-local",
+          ".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-rendering-pipeline"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.adaptive-workspace",
+          "framework.rendering-invalidation"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.operations-workspace",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "prefer-adaptive-over-layout",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Coverageに一致するCapabilityがありません。"
+        ],
+        "matched_capabilities": [],
+        "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "avoid-async-sync-substring",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Coverageに一致するCapabilityがありません。"
+        ],
+        "matched_capabilities": [],
+        "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "app-version-is-not-sdk",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.channel-plugin",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "firebase固有のCoverageとRuntime Evidenceは収録されていません。",
+          "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "特定Pluginの実装・Runtime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.channel-plugin"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.channel-plugin-contract",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "source-contract-is-not-device-runtime",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.web",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "cloudflare固有のCoverageとRuntime Evidenceは収録されていません。",
+          "公開、配信、Store送信はPublication Coverage外です。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.web"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "platform.web",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "web-deploy-is-gap",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.state-lifecycle",
+        "commands": [
+          "make formal-local",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "状態管理Packageまたは方式間MigrationのEvidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.state-lifecycle",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.state-lifecycle",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-unknown-state-migration",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.channel-plugin",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "特定Pluginの実装・Runtime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.channel-plugin"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.channel-plugin-contract",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "reject-unknown-flutter-plugin",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.navigation",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "公開、配信、Store送信はPublication Coverage外です。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.navigation"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "product.navigation",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "submission-is-publication-gap",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.web",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "公開、配信、Store送信はPublication Coverage外です。",
+          "外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.web"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "platform.web",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "production-release-is-publication-gap",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.web",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "公開、配信、Store送信はPublication Coverage外です。",
+          "外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.web"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.web",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "production-rollout-is-publication-gap",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.web",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.web"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.web",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "production-environment-is-external-gap",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.add-to-app",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "testflight固有のCoverageとRuntime Evidenceは収録されていません。",
+          "公開、配信、Store送信はPublication Coverage外です。",
+          "Source Contractは実機Runtime Evidenceの代替ではありません。"
+        ],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.add-to-app"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "platform.add-to-app-contract",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-01-add-to-app-release",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1"
+        ],
+        "capability_id": "platform.ffi",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify_ffi_runtime.dart",
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "FFI Runtime EvidenceがないPlatformです: windows"
+        ],
+        "lab_id": "lab.platform-ffi-runtime",
+        "matched_capabilities": [
+          "platform.ffi",
+          "platform.desktop"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.ffi-macos",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-02-windows-ffi",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps",
+          "dart-sdk-3.13.1",
+          "devtools-2.60.0"
+        ],
+        "capability_id": "baseline.sdk-lock",
+        "commands": [
+          "make formal-local",
+          "make validate",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Flutter 3.48は固定Baseline外です。",
+          "公開、配信、Store送信はPublication Coverage外です。"
+        ],
+        "lab_id": "lab.authority-lock",
+        "matched_capabilities": [
+          "baseline.sdk-lock",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "baseline.flutter-3.47.1",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-03-sdk-348-publish",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.state-lifecycle",
+        "commands": [
+          "make formal-local",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "riverpod固有のCoverageとRuntime Evidenceは収録されていません。",
+          "状態管理Packageまたは方式間MigrationのEvidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.state-lifecycle",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.state-lifecycle",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-04-riverpod",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.channel-plugin",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "firebase固有のCoverageとRuntime Evidenceは収録されていません。",
+          "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "特定Pluginの実装・Runtime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.channel-plugin"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.channel-plugin-contract",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-05-firebase-plugin",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.performance",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "canvaskit固有のCoverageとRuntime Evidenceは収録されていません。",
+          "wasm固有のCoverageとRuntime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "quality.performance",
+          "platform.web"
+        ],
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.accessibility-performance-security",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "fwd-06-web-wasm-performance",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "local-runtime-inventory"
+        ],
+        "capability_id": "execution.simulator-lab",
+        "commands": [
+          "scripts/labs-simulator.sh doctor",
+          "scripts/labs-simulator.sh run",
+          "scripts/labs-simulator.sh cleanup",
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "execution.simulator-labのCoverage stateはinfeasibleです。"
+        ],
+        "lab_id": "lab.simulator-integration",
+        "matched_capabilities": [
+          "execution.simulator-lab",
+          "quality.accessibility",
+          "product.navigation",
+          "product.adaptive-workspace"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "infeasible",
+        "target_id": "execution.simulator",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "fwd-07-simulator-a11y",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1",
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.failure-recovery",
+        "commands": [
+          "make formal-local",
+          "scripts/labs-container.sh",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Container Profileと復旧・運用Labを結合したEvidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-drill",
+        "matched_capabilities": [
+          "quality.failure-recovery",
+          "execution.container-lab",
+          "operations.runbooks"
+        ],
+        "mode": "recover",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.failure-recovery",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-08-container-recovery",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "local-runtime-inventory"
+        ],
+        "capability_id": "platform.runner-matrix",
+        "commands": [
+          "make formal-local",
+          "python3 tooling/surface_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter --output baseline/public-surface-inventory.json --check",
+          "make validate"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "platform.runner-matrixのCoverage stateはinfeasibleです。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.runner-matrix",
+          "language.public-surface",
+          "baseline.sdk-lock"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "infeasible",
+        "target_id": "platform.six-target-builds",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "fwd-09-matrix-surface",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.web",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "cloudflare固有のCoverageとRuntime Evidenceは収録されていません。",
+          "公開、配信、Store送信はPublication Coverage外です。",
+          "外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。"
+        ],
+        "lab_id": "lab.formal-local-closure",
+        "matched_capabilities": [
+          "platform.web"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "platform.web",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-10-web-deploy",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.add-to-app",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.add-to-app",
+          "platform.channel-plugin"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.add-to-app-contract",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "fwd-11-channel-add-to-app",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.state-lifecycle",
+        "commands": [
+          "make formal-local",
+          "scripts/validate-runbooks.sh"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "bloc固有のCoverageとRuntime Evidenceは収録されていません。",
+          "cubit固有のCoverageとRuntime Evidenceは収録されていません。",
+          "状態管理Packageまたは方式間MigrationのEvidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.state-lifecycle",
+          "operations.runbooks"
+        ],
+        "mode": "migrate",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.state-lifecycle",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-12-bloc-migration",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.navigation",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "go_router固有のCoverageとRuntime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.navigation"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.navigation",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-13-go-router",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "platform.channel-plugin",
+        "commands": [
+          ".tools/flutter-3.47.1/flutter/bin/dart run labs/platform-integration/bin/verify.dart",
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "camera固有のCoverageとRuntime Evidenceは収録されていません。",
+          "wayland固有のCoverageとRuntime Evidenceは収録されていません。",
+          "Source Contractは実機Runtime Evidenceの代替ではありません。",
+          "特定Pluginの実装・Runtime Evidenceは収録されていません。"
+        ],
+        "lab_id": "lab.platform-integration-source-contract",
+        "matched_capabilities": [
+          "platform.channel-plugin",
+          "platform.desktop"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "platform.channel-plugin-contract",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-14-linux-wayland",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.adaptive-workspace",
+        "commands": [
+          "make formal-local",
+          ".tools/flutter-3.47.1/flutter/bin/flutter test labs/framework-rendering-pipeline"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.adaptive-workspace",
+          "framework.rendering-invalidation"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "product.operations-workspace",
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "fwd-15-adaptive-layout",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Coverageに一致するCapabilityがありません。"
+        ],
+        "matched_capabilities": [],
+        "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
+        "mode": "diagnose",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "write_allowed": false,
+        "write_authorized": false
+      },
+      "id": "fwd-16-japanese-async",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "gap_reasons": [
+          "Coverageに一致するCapabilityがありません。"
+        ],
+        "matched_capabilities": [],
+        "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-17-app-version",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1",
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "capability_id": "quality.security",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": false,
+        "gap_reasons": [],
+        "lab_id": "lab.security-boundary",
+        "matched_capabilities": [
+          "quality.security",
+          "platform.web"
+        ],
+        "mode": "review",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "covered",
+        "target_id": "quality.accessibility-performance-security",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-18-review-write-gate",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "local-runtime-inventory"
+        ],
+        "capability_id": "execution.simulator-lab",
+        "commands": [
+          "scripts/labs-simulator.sh doctor",
+          "scripts/labs-simulator.sh run",
+          "scripts/labs-simulator.sh cleanup",
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "execution.simulator-labのCoverage stateはinfeasibleです。"
+        ],
+        "lab_id": "lab.simulator-integration",
+        "matched_capabilities": [
+          "execution.simulator-lab",
+          "quality.testing"
+        ],
+        "mode": "implement",
+        "publish_allowed": false,
+        "publish_authorized": false,
+        "state": "infeasible",
+        "target_id": "execution.simulator",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-19-infeasible-write-gate",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-widgets-api"
+        ],
+        "capability_id": "product.navigation",
+        "commands": [
+          "make formal-local"
+        ],
+        "coverage_gap": true,
+        "gap_reasons": [
+          "公開、配信、Store送信はPublication Coverage外です。",
+          "外部Production・Staging・Hosting EnvironmentはCoverage Profile外です。"
+        ],
+        "lab_id": "lab.operations-workspace",
+        "matched_capabilities": [
+          "product.navigation"
+        ],
+        "mode": "design",
+        "publish_allowed": false,
+        "publish_authorized": true,
+        "state": "covered",
+        "target_id": "product.navigation",
+        "write_allowed": false,
+        "write_authorized": true
+      },
+      "id": "fwd-20-design-publish-gate",
+      "passed": true
+    }
   ],
-  "verdict": "pass"
+  "schema_version": 1,
+  "total": 62
 }

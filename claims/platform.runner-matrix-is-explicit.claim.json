@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.runner-matrix",
+  "id": "platform.runner-matrix-is-explicit",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Webで実行できたGateとAndroid、iOS、Windows、Linuxで不足するHost toolchainを混同せず列挙する。"
+      ],
+      "id": "proof.runner-blocker-matrix",
+      "statement": "Lab lab.formal-local-closure とTest test.formal-local-closureで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "local-runtime-inventory"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Webで実行できたGateとAndroid、iOS、Windows、Linuxで不足するHost toolchainを混同せず列挙する。",
+  "status": "accepted"
+}

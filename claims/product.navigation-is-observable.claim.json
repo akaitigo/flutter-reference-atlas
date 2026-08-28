@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "product.navigation",
+  "id": "product.navigation-is-observable",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "公開named routeから診断画面へ遷移し、戻る操作とPerformance Snapshotを観測できる。"
+      ],
+      "id": "proof.navigation-route",
+      "statement": "Lab lab.operations-workspace とTest test.operations-workspaceで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-widgets-api"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。公開named routeから診断画面へ遷移し、戻る操作とPerformance Snapshotを観測できる。",
+  "status": "accepted"
+}

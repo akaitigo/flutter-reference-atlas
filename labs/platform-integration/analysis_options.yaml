@@ -1,0 +1,10 @@
+analyzer:
+  exclude:
+    - fixtures/**
+
+linter:
+  rules:
+    - avoid_dynamic_calls
+    - directives_ordering
+    - prefer_final_locals
+    - sort_constructors_first

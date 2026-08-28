@@ -13,9 +13,12 @@ devtools:
   version: 2.60.0
   revision: 12d595649f189f1896722623f72599077f476848
 core_contract:
-  commit: d5c0a6ce757fd5f43af837edd26f55c7325b811e
+  commit: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
   release_status: unreleased-commit
 execution_status:
-  target_sdk_installed: false
+  target_sdk_installed: true
+  verified_sdk_path: .tools/flutter-3.47.1/flutter
+  runtime_metadata_verified: true
+  public_surface_inventory: baseline/public-surface-inventory.json
   local_compatibility_sdk: 3.38.5
-  completion_effect: 対象SDKで全Evidenceを再生成するまでstatusはincompleteのままとする。
+  completion_effect: 対象SDKで全Lab Evidenceを再生成しSymbol分類と全Platform Gateを閉じるまでstatusはincompleteのままとする。
