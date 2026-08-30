@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "flutter-reference-system-scenario-v1",
+  "atlas_id": "flutter-reference-atlas",
+  "status": "bounded-integration-proof",
+  "runtime": "real-browser-local-js-wasm",
+  "scenarios": [
+    {"id":"normal","surface_ids":["framework.lifecycle","navigation.imperative","state.change-notifier"],"runtime_boundaries":["adaptive-layout","repository-state"],"assertions":["wide layout composes list and detail","state transition completes"]},
+    {"id":"boundary","surface_ids":["navigation.imperative","accessibility.semantics-tree"],"runtime_boundaries":["narrow-layout"],"assertions":["detail remains reachable","back action restores list"]},
+    {"id":"refusal","surface_ids":["security.input-data-boundary"],"runtime_boundaries":["untrusted-text"],"assertions":["bidi control is rejected","rejected input is not rendered"]},
+    {"id":"failure","surface_ids":["state.change-notifier","failure.framework-errors"],"runtime_boundaries":["repository-error"],"assertions":["safe failure is visible","sensitive detail is hidden"]},
+    {"id":"recovery","surface_ids":["state.change-notifier","failure.framework-errors"],"runtime_boundaries":["retry-ownership"],"assertions":["intent survives failure","retry reaches expected state"]},
+    {"id":"migration","surface_ids":["migration.data-schema"],"runtime_boundaries":["snapshot-schema"],"assertions":["v1 maps explicitly","current domain renders migrated state"]},
+    {"id":"operations","surface_ids":["framework.lifecycle","operations.logging-crash-diagnostics"],"runtime_boundaries":["callback-ownership"],"assertions":["monitor starts with app","monitor stops on unmount"]},
+    {"id":"security","surface_ids":["security.input-data-boundary"],"runtime_boundaries":["diagnostic-disclosure"],"assertions":["input policy is observable","repository detail disclosure is prohibited"]},
+    {"id":"performance","surface_ids":["performance.frame-jank"],"runtime_boundaries":["frame-budget"],"assertions":["budget breach is recorded","sample count is observable"]},
+    {"id":"compatibility","surface_ids":["build.web"],"runtime_boundaries":["javascript-wasm"],"assertions":["adapter result is observable","same test contract runs on both compiler variants"]}
+  ],
+  "completion_limits": [
+    "統合TraceはSurface固有Runtime Proofの代替ではない。",
+    "Widget TestのPlatform fixtureはMethodChannelまたは実Device証拠ではない。",
+    "Authority Human Reviewが完了するまでCompletion eligible rowは0である。"
+  ]
+}

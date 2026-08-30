@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "fe-reference-system-scenario-proof-v1",
+  "repository": "https://github.com/akaitigo/frontend-behavior-atlas",
+  "commit": "7175de4305afb308722d5b83475e91c18da64957",
+  "frontend_status": "incomplete",
+  "transplant_absolute_counts": false,
+  "files": [
+    {"path":"docs/REFERENCE_SYSTEM.md","digest":"sha256:33d8b7d1c4cd0b01e094f3c1c805cfb0d6e2e7f2862305cb6daffc2852fe8bb9"},
+    {"path":"integrations/reference-system/manifest.json","digest":"sha256:118ae5f25958855e3e1846ab998b6d45db656220ab8e4bd99330c0e208082940"},
+    {"path":"scripts/lib/scenario-proof.ts","digest":"sha256:8b89ff8d0f042b181abe22a2fb1280546f7534f0525a931c6437a177fdb2432f"},
+    {"path":"scripts/verify-scenario-proofs.ts","digest":"sha256:d6192f7da3b160300690f3a4168846711b366b77f8fc6c28918733db221005cd"},
+    {"path":"scripts/test-scenario-proofs.ts","digest":"sha256:5598aa2b5093a05420361a09e9723c7c4311bb5ee4977c562dc0afe6b6a8f792"},
+    {"path":"scripts/verify-pattern-scenario-evidence.ts","digest":"sha256:fc05990ab4a02a075f72badf60190dc3e584fe62acf52a31c179b99c90e3e0fd"},
+    {"path":"artifacts/pattern-scenarios/results.json","digest":"sha256:dbc9dc2641b2293c7daf85c4a3a59a65d90ca080d61d45994413a94e22d6d284"},
+    {"path":"pattern-scenario-e2e/reactive-queue-boundary.spec.ts","digest":"sha256:8ccca7ac5dff89d6b4c2e50445acc1b2275b44363c93ae344ca706c0dd5e513a"},
+    {"path":"playwright.pattern-scenario.config.ts","digest":"sha256:0c3156fc717262093a81395faa6e5cf38ef2ac395dcd4d6e1c0b658a6081e4be"},
+    {"path":"scripts/reporters/pattern-scenario-evidence-reporter.ts","digest":"sha256:fa93509b82141deb456e1218095de52a147c88d2b7e6f8e0e5df2725e92ad330"}
+  ],
+  "completion_semantics": {
+    "integrated_trace_substitutes_surface_proof": false,
+    "separate_capture_metadata_substitutes_dedicated_runtime": false,
+    "all_variants_required": true,
+    "retry_count_required": 0,
+    "first_attempt_pass_required": true,
+    "oracle_trace_artifact_required_per_variant": true,
+    "source_harness_digest_required": true,
+    "runtime_identity_required": true,
+    "artifacts_staged_before_publish": true,
+    "publish_requires_full_run_pass": true,
+    "failed_run_retains_prior_success": true,
+    "directory_swap_rollback_required": true,
+    "partial_overwrite_allowed": false,
+    "mixed_run_bundle_allowed": false,
+    "authority_atomic_binding_required": true,
+    "completion_eligible_without_authority_atomic_binding": false
+  }
+}

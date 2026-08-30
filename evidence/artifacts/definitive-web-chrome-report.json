@@ -1,0 +1,56 @@
+{
+  "artifacts": {
+    "javascript_log_digest": "sha256:38e784e6fb881a39a23dccea55e4e807e0fa17febc660fdd0b0dd58574f61bbe",
+    "javascript_log_size_bytes": 540,
+    "javascript_sanitized_log": "evidence/artifacts/definitive-web-chrome-js.log",
+    "javascript_sanitized_log_digest": "sha256:5d621d5234d2912e27cd5cf9ee01667f2539dac247a22310c2ce605ab0d58ba8",
+    "wasm_log_digest": "sha256:61241f173605c7717420fc69aef2a75d73cda17712ceaff0586887163781e09f",
+    "wasm_log_size_bytes": 794,
+    "wasm_sanitized_log": "evidence/artifacts/definitive-web-chrome-wasm.log",
+    "wasm_sanitized_log_digest": "sha256:8048f3288d88e977708ad1bbf0a497790493b6b34fc5c4337b452dae2e01bef1"
+  },
+  "atlas_id": "flutter-reference-atlas",
+  "cleanup": {
+    "browser_process_managed_by_flutter_test": true,
+    "existing_evidence_deleted": false,
+    "user_data_deleted": false
+  },
+  "commands": [
+    "flutter test --platform chrome test/workspace_app_test.dart --no-pub",
+    "flutter test --platform chrome --wasm test/workspace_app_test.dart --no-pub"
+  ],
+  "finished_at": "2026-08-30T16:18:16Z",
+  "inputs": {
+    "pubspec_lock_digest": "sha256:fccdb7243198b1146b02b352ab9324bd517fb006fc9806c065c454b41f868658",
+    "test_file_digest": "sha256:9364e5d09f200baff8a62e83c02fead8f5f1969a4c0f94e40fed60374995f9f6"
+  },
+  "oracle": {
+    "expected_test_count_per_variant": 5,
+    "scenario_assertions": {
+      "boundary": "1200x800の広幅境界で一覧と詳細を同時表示する",
+      "failure": "Repositoryの初回保存失敗を安全な表示へ変換する",
+      "normal": "Adaptive UI、作成、NavigationをBrowserで実行する",
+      "recovery": "同じUIからRetryし状態遷移を完了する",
+      "rejection": "bidi制御文字を統合UIで拒否する"
+    },
+    "variants": {
+      "javascript": {
+        "exit_code": 0,
+        "observed_test_count": 5
+      },
+      "wasm": {
+        "exit_code": 0,
+        "observed_test_count": 5
+      }
+    }
+  },
+  "profile": "web-chrome",
+  "runner": {
+    "browser": "Chrome",
+    "kind": "browser-runtime",
+    "physical_device": false
+  },
+  "schema_version": 2,
+  "started_at": "2026-08-30T16:17:03Z",
+  "verdict": "pass"
+}

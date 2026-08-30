@@ -57,6 +57,12 @@
       "lab_id":"lab.platform-integration-source-contract","test_id":"test.platform-source-contract"
     },
     {
+      "id":"platform.method-channel-android-runtime","capability_id":"platform.method-channel-runtime","proof_obligation_id":"proof.method-channel-android-runtime",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","android-emulator-runtime-inventory"],
+      "acceptance":"Android API 36 Emulator上の統合Reference AppでPluginがActivityへattachされ、StandardMethodCodecとJSONMethodCodecの両方が正常、64/65文字境界、policy拒否、一過性障害、再試行回復を同じ結果で通す。",
+      "lab_id":"lab.definitive-android-method-channel","test_id":"test.definitive-android-method-channel"
+    },
+    {
       "id":"platform.ffi-runtime-call","capability_id":"platform.ffi","proof_obligation_id":"proof.ffi-runtime",
       "authority_ids":["dart-sdk-3.13.1"],
       "acceptance":"macOS arm64でC symbol atlas_addをDart FFIから呼び、19と23の和42を得て一時dylibを削除する。",
@@ -73,6 +79,12 @@
       "authority_ids":["flutter-sdk-3.47.1-macos-arm64"],
       "acceptance":"Web conditional exportがdart:ioを参照せず、Flutter 3.47.1 release buildが非空Artifactを生成する。",
       "lab_id":"lab.formal-local-closure","test_id":"test.formal-local-closure"
+    },
+    {
+      "id":"platform.web-chrome-js-wasm-runtime","capability_id":"platform.web-runtime","proof_obligation_id":"proof.web-chrome-runtime-variants",
+      "authority_ids":["flutter-sdk-3.47.1-macos-arm64","dart-sdk-3.13.1"],
+      "acceptance":"Chrome上でJavaScriptとWasmの両Variantが、統合Reference Appの正常・境界・拒否・障害・回復5 Testを各5件成功する。",
+      "lab_id":"lab.definitive-web-chrome","test_id":"test.definitive-web-chrome"
     },
     {
       "id":"platform.desktop-source-boundary","capability_id":"platform.desktop","proof_obligation_id":"proof.platform-source-contract",
@@ -157,6 +169,12 @@
       "authority_ids":["reference-atlas-core-v1"],
       "acceptance":"全Eval Caseで正しいMode、Capability、Gap、権限境界を返す。",
       "lab_id":"lab.skill-eval","test_id":"test.router-eval"
+    },
+    {
+      "id":"skill.definitive-routes-gaps","capability_id":"skill.definitive-router","proof_obligation_id":"proof.definitive-surface-routing",
+      "authority_ids":["reference-atlas-core-v1","flutter-sdk-3.47.1-macos-arm64"],
+      "acceptance":"代表QueryがMethodChannel、Impeller、Add-to-App、Windows build、Accessibility、DevTools、Web storageの細粒度Surfaceと未充足Runtimeへ一致し、近接分野を捏造しない。",
+      "lab_id":"lab.definitive-skill-eval","test_id":"test.definitive-router-eval"
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "activity_block": {
+    "end_line": 886,
+    "start_line": 743
+  },
+  "activity_blocks": {
+    "count": 2,
+    "resumed_component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+    "resumed_count": 1
+  },
+  "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+  "historical_package_match_accepted": false,
+  "non_target_resumed_accepted": false,
+  "raw_artifact": {
+    "bytes": 72131,
+    "digest": "sha256:40c24b8dd80f8223969b8f8d6a54dbecc4a4b0e9b11b9427cdc4b9b13fcf263e",
+    "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/platform-state.txt"
+  },
+  "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
+  "schema_version": 1,
+  "state_contract": "foreground-input-observation",
+  "states": {
+    "mFinished": false,
+    "mResumed": true,
+    "mStopped": false
+  },
+  "surface_id": "input.keyboard-shortcuts",
+  "validation": "passed",
+  "variant": "callback-shortcuts"
+}

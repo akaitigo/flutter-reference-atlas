@@ -1,0 +1,30 @@
+{
+  "activity_block": {
+    "end_line": 883,
+    "start_line": 739
+  },
+  "activity_blocks": {
+    "count": 2,
+    "resumed_component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+    "resumed_count": 1
+  },
+  "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+  "historical_package_match_accepted": false,
+  "non_target_resumed_accepted": false,
+  "raw_artifact": {
+    "bytes": 71595,
+    "digest": "sha256:a7373594c79e79ccef87351b3015875d868d765737a8359c32fa9d8ea5d93233",
+    "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.txt"
+  },
+  "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
+  "schema_version": 1,
+  "state_contract": "foreground-after-isolate-result",
+  "states": {
+    "mFinished": false,
+    "mResumed": true,
+    "mStopped": false
+  },
+  "surface_id": "background.isolate-work",
+  "validation": "passed",
+  "variant": "isolate-run"
+}

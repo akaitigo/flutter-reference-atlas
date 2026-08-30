@@ -1,0 +1,100 @@
+{
+  "batch_id": "review-p1-heading-01",
+  "items": [
+    {
+      "anchor_id": "anchor-086900b62b7ad5461fc3",
+      "batch_id": "review-p1-heading-01",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:1f232e8680069edf8753ee537c4a25b5583b5a1c0b026bee0f58f830492a7709",
+      "context_end": 159293,
+      "context_start": 154152,
+      "context_unit": "utf8-byte",
+      "document_id": "document-docs-flutter-dev-bf05d2eba7be",
+      "document_url": "https://docs.flutter.dev/release/release-notes/release-notes-3.47.0",
+      "existing_reference_edge_ids": [],
+      "heading_level": 3,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:355f5e74848522db142812706d3559c35daf9f66536507b4f5bf7ad3e1f68575",
+      "locator": "#ios",
+      "locator_kind": "fragment",
+      "locked_source_digest": "sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3",
+      "parent_anchor_id": "anchor-e88741ed7b24aa6f71e1",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "flutter-3.47-release-notes"
+      ],
+      "state": "pending-human",
+      "tag": "h3"
+    },
+    {
+      "anchor_id": "anchor-6986bff36abf443ab75b",
+      "batch_id": "review-p1-heading-01",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:a36afda70c72787dc983031f7b9cc787008f5791b803e6bda451d400425ddb33",
+      "context_end": 310097,
+      "context_start": 304907,
+      "context_unit": "utf8-byte",
+      "document_id": "document-dart-dev-9ddf4f55d122",
+      "document_url": "https://dart.dev/changelog",
+      "existing_reference_edge_ids": [],
+      "heading_level": 2,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:8a199b120cf400d69c300e1dd6eacdc8b0002353e3044bbab21e0125b32c9fd6",
+      "locator": "offset:utf8-byte:305931",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "parent_anchor_id": "anchor-2f8ee9ad07634d3781ae",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ],
+      "state": "pending-human",
+      "tag": "h2"
+    },
+    {
+      "anchor_id": "anchor-e88741ed7b24aa6f71e1",
+      "batch_id": "review-p1-heading-01",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:3085db4c3c721fff11b4acbfd868aa87f5d2c81e67b572946c570fbbe1916706",
+      "context_end": 108756,
+      "context_start": 103594,
+      "context_unit": "utf8-byte",
+      "document_id": "document-docs-flutter-dev-bf05d2eba7be",
+      "document_url": "https://docs.flutter.dev/release/release-notes/release-notes-3.47.0",
+      "existing_reference_edge_ids": [],
+      "heading_level": 2,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:814a49660ff756302fb6def8d8d4e077883a474b646f9527bcd5068139c18d57",
+      "locator": "#whats-changed",
+      "locator_kind": "fragment",
+      "locked_source_digest": "sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3",
+      "parent_anchor_id": "anchor-53a45816c85a522fc979",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "flutter-3.47-release-notes"
+      ],
+      "state": "pending-human",
+      "tag": "h2"
+    }
+  ],
+  "machine_assistance": "ordering-and-candidate-clustering-only",
+  "queue_id": "authority-review-d98f30af55d0f6b21c99",
+  "schema_version": 1,
+  "semantic_decisions": "none",
+  "status": "pending-human"
+}

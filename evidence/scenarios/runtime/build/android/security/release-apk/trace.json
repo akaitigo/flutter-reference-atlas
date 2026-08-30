@@ -1,0 +1,44 @@
+{
+  "oracle": {
+    "apk_bytes": 15082518,
+    "apk_sha256": "sha256:7a09136fc765d2ab41250559725d28677b7bb04c71d6f38f84252b5819421187",
+    "debuggable": false,
+    "installed_and_launched": true,
+    "package": "dev.akaitigo.atlas.operations_workspace",
+    "signing_verified": true,
+    "variant": "release-apk"
+  },
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      "flutter-build",
+      "apk-install",
+      "activity-launch",
+      "accessibility-capture"
+    ],
+    "network": {
+      "applicable": false,
+      "reason": "local Android build/install security scenario has no network action"
+    },
+    "resource": {
+      "events": [
+        "apk-created",
+        "manifest-inspected",
+        "signature-verified",
+        "screen-captured"
+      ]
+    }
+  },
+  "surface_id": "build.android",
+  "variant": "release-apk"
+}

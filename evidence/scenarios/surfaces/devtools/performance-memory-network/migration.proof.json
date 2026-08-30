@@ -1,0 +1,110 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "devtools-2.60.0",
+    "dart-sdk-3.13.1"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/devtools/performance-memory-network/migration/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "devtools",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.devtools.performance-memory-network.migration",
+  "integrated_reference": {
+    "assertions": [
+      "v1 maps explicitly",
+      "current domain renders migrated state"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "snapshot-schema"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3711,
+      "digest": "sha256:a0b82a66282797fd41b1a20cb99a694259cda14982cc764d3a80f7f8ab7d54fe",
+      "path": "evidence/scenarios/integrated/migration.trace.json"
+    }
+  },
+  "scenario": "migration",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:f1a891e99944fcd01ce2bcd23532de53eafeea3ceeb728b4fcea30405a9589b2",
+      "path": "bin/cache/dart-sdk/bin/resources/devtools/version.json"
+    },
+    {
+      "digest": "sha256:1ccd92ae69be85ff867c6a0c62a49886e9af6bf197ce634238ed263e7cb5dcdc",
+      "path": "bin/cache/dart-sdk/lib/developer/developer.dart"
+    },
+    {
+      "digest": "sha256:2c605fc99433da454612e47f4733341f5cf1ad78cf294ccfb2657575e13d08f7",
+      "path": "bin/cache/dart-sdk/lib/io/network_profiling.dart"
+    }
+  ],
+  "source_set_digest": "sha256:12c043d40f78e2c4e7545beb3541742659fe0581fc91f95fff85ce99114a3ec2",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "devtools.performance-memory-network",
+  "surface_title": "DevTools Performance・Memory・Network"
+}

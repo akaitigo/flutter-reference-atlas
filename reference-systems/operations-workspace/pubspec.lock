@@ -9,6 +9,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.13.1"
+  atlas_runtime_probe:
+    dependency: "direct main"
+    description:
+      path: "packages/atlas_runtime_probe"
+      relative: true
+    source: path
+    version: "0.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -257,4 +264,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=3.11.0-0 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
+  flutter: ">=3.35.0"

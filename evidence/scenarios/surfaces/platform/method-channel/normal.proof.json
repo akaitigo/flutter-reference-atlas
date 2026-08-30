@@ -1,0 +1,240 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [
+      "json",
+      "standard"
+    ],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/platform/method-channel/normal/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "platform-integration",
+  "gaps": [
+    "既存Observationまたは別Capture metadataは専用Surface+Scenario Runtime Proofへ流用しない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.platform.method-channel.normal",
+  "integrated_reference": {
+    "assertions": [
+      "wide layout composes list and detail",
+      "state transition completes"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "adaptive-layout",
+      "repository-state"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3707,
+      "digest": "sha256:49a07bcecd9a95e8e39972cc7208a16c1fae0287015a51fe5557d5ac91adbb8a",
+      "path": "evidence/scenarios/integrated/normal.trace.json"
+    }
+  },
+  "scenario": "normal",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:8f06a2bcecef0f8868deb393d197c180aacde2f2ec74b8d44158f0a605dfdb51",
+      "path": "packages/flutter/lib/src/services/message_codecs.dart"
+    },
+    {
+      "digest": "sha256:857573f18a3c329a71a990f5355f49e29f25561d0d5f2aa6ff292ba7154678c3",
+      "path": "packages/flutter/lib/src/services/platform_channel.dart"
+    }
+  ],
+  "source_set_digest": "sha256:90a522edf8b0a1e0458b2aff204f020c09d0cba00e7915acd8e36ba706d6a21e",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [
+    {
+      "artifact_binding": {
+        "bytes": 2116,
+        "digest": "sha256:c0aacd3427ad50ab9f44924fb2bb63c15a995efb86585f106ae9d51f05b5e20a",
+        "path": "evidence/artifacts/definitive-android-method-channel-report.json"
+      },
+      "dedicated_surface_scenario_report_required": true,
+      "eligible_surface_runtime_proof": false,
+      "evidence_id": "execution.definitive-android-method-channel.2026-08-28",
+      "evidence_kind": "device-runtime",
+      "evidence_record": {
+        "bytes": 1031,
+        "digest": "sha256:c079c1c7fc63000fe2e857f901f9969fec787b99fbee233b208597d64dabafaa",
+        "path": "evidence/definitive-android-method-channel.evidence.yaml"
+      },
+      "harness_binding": {
+        "bytes": 4058,
+        "digest": "sha256:dfdbae1fbaf102c0ee8216db9a416147ed5788ce618287156d5f25a0d6e99dac",
+        "path": "scripts/definitive-android-runtime.sh"
+      },
+      "harness_digest_matches_record": true,
+      "legacy_runtime_candidate": true,
+      "real_runtime": true,
+      "real_runtime_identity": true,
+      "reference_app_observation": true,
+      "runtime_identity": {
+        "api_level": 36,
+        "architecture": null,
+        "browser": null,
+        "browser_version": null,
+        "device_id": "emulator-5554",
+        "os": "Android 16",
+        "physical_device": false,
+        "profile": "android-emulator",
+        "runner_kind": "android-emulator"
+      },
+      "runtime_identity_gaps": [],
+      "runtime_profile": "android-emulator",
+      "source_contract_only": false,
+      "surface_specific": true,
+      "variant": "json"
+    },
+    {
+      "artifact_binding": {
+        "bytes": 2116,
+        "digest": "sha256:c0aacd3427ad50ab9f44924fb2bb63c15a995efb86585f106ae9d51f05b5e20a",
+        "path": "evidence/artifacts/definitive-android-method-channel-report.json"
+      },
+      "dedicated_surface_scenario_report_required": true,
+      "eligible_surface_runtime_proof": false,
+      "evidence_id": "execution.definitive-android-method-channel.2026-08-28",
+      "evidence_kind": "device-runtime",
+      "evidence_record": {
+        "bytes": 1031,
+        "digest": "sha256:c079c1c7fc63000fe2e857f901f9969fec787b99fbee233b208597d64dabafaa",
+        "path": "evidence/definitive-android-method-channel.evidence.yaml"
+      },
+      "harness_binding": {
+        "bytes": 4058,
+        "digest": "sha256:dfdbae1fbaf102c0ee8216db9a416147ed5788ce618287156d5f25a0d6e99dac",
+        "path": "scripts/definitive-android-runtime.sh"
+      },
+      "harness_digest_matches_record": true,
+      "legacy_runtime_candidate": true,
+      "real_runtime": true,
+      "real_runtime_identity": true,
+      "reference_app_observation": true,
+      "runtime_identity": {
+        "api_level": 36,
+        "architecture": null,
+        "browser": null,
+        "browser_version": null,
+        "device_id": "emulator-5554",
+        "os": "Android 16",
+        "physical_device": false,
+        "profile": "android-emulator",
+        "runner_kind": "android-emulator"
+      },
+      "runtime_identity_gaps": [],
+      "runtime_profile": "android-emulator",
+      "source_contract_only": false,
+      "surface_specific": true,
+      "variant": "standard"
+    },
+    {
+      "artifact_binding": {
+        "bytes": 14683,
+        "digest": "sha256:4d5a5e2cadbbfb52b8fcec73d98b5d8430ab2153555dcfc0228276dfeacb51f3",
+        "path": "evidence/artifacts/formal-local-closure-report.json"
+      },
+      "dedicated_surface_scenario_report_required": true,
+      "eligible_surface_runtime_proof": false,
+      "evidence_id": "execution.formal-local-closure.2026-08-28",
+      "evidence_kind": "source-contract",
+      "evidence_record": {
+        "bytes": 1847,
+        "digest": "sha256:c6b129cb22ae562cb7e5b264dd4221b5c3abb384e223c3791ac7ea0808a0a73d",
+        "path": "evidence/formal-local-closure.evidence.yaml"
+      },
+      "harness_binding": {
+        "bytes": 8208,
+        "digest": "sha256:a4391ed76541b61990b5c7e69009d3d3e6c9166b94933adeb31a2cbca9d11dab",
+        "path": "tooling/evidence_capture/bin/capture.dart"
+      },
+      "harness_digest_matches_record": true,
+      "legacy_runtime_candidate": false,
+      "real_runtime": false,
+      "real_runtime_identity": false,
+      "reference_app_observation": false,
+      "runtime_identity": {
+        "api_level": null,
+        "architecture": null,
+        "browser": null,
+        "browser_version": null,
+        "device_id": null,
+        "os": null,
+        "physical_device": null,
+        "profile": "local",
+        "runner_kind": null
+      },
+      "runtime_identity_gaps": [
+        "runner-kind",
+        "os",
+        "architecture"
+      ],
+      "runtime_profile": "source-contract",
+      "source_contract_only": true,
+      "surface_specific": true,
+      "variant": "kotlin-swift-fixture"
+    }
+  ],
+  "surface_id": "platform.method-channel",
+  "surface_title": "MethodChannel runtime"
+}

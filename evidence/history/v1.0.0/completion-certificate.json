@@ -1,0 +1,47 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "atlas_release": "v1.0.0",
+  "authority_lock_digest": "sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f",
+  "commit": "766ee4226d23b55dd7ef1b0451f8162b6365bd0e",
+  "core_policy_version": "1.0.0",
+  "coverage_epoch": "2026-08-28",
+  "evidence_set_digest": "sha256:83ca90e444eab146f94cbb720947f07130513d132dafd0f21163efd0f4cb9a0b",
+  "graph_digest": "sha256:d01a8db1f874a681ed270a91443c4bc7aa2a20b8b9abb071994e20c7a7fdedf7",
+  "issued_at": "2026-08-28T08:13:45Z",
+  "provenance_digest": "sha256:86b060d6b1fd616dd1ab780ca0f448ac62bd912914d2a870063905ea9c23ab53",
+  "required_profiles": [
+    {
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28",
+        "skill.router-eval.2026-08-28"
+      ],
+      "profile": "local",
+      "result": "pass"
+    },
+    {
+      "evidence_ids": [
+        "execution.container-conflict.2026-08-28"
+      ],
+      "profile": "container",
+      "result": "pass"
+    },
+    {
+      "evidence_ids": [
+        "execution.android-emulator-integration.2026-08-28"
+      ],
+      "profile": "simulator",
+      "result": "pass"
+    }
+  ],
+  "sbom_digest": "sha256:f4ef3cbfd8f70643b5d4db3bec162781a8e89550228bcb807a2e673ad049d026",
+  "schema_version": 1,
+  "signature": {
+    "digest": "sha256:42040d01e06e8654f1f03724db8b0de2daf7fc8bb9303c81f0e6d9f3aa16dd54",
+    "type": "payload-sha256"
+  },
+  "skill_eval": {
+    "digest": "sha256:1724d5fdb21fed9269fdc2c16c2781d3913f86a266cc88b08f29004cf19d7ab6",
+    "pass_rate": 1
+  },
+  "skill_package_digest": "sha256:f506c9a3902b78cfb9406b16c53c92d96215849a91160cee40d02c50dae9a2da"
+}

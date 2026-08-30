@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.web-runtime",
+  "id": "platform.web-chrome-js-wasm-runtime",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Chrome上でJavaScriptとWasmの両Variantが、統合Reference Appの正常・境界・拒否・障害・回復5 Testを各5件成功する。"
+      ],
+      "id": "proof.web-chrome-runtime-variants",
+      "statement": "Lab lab.definitive-web-chrome とTest test.definitive-web-chromeで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "dart-sdk-3.13.1"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Chrome上でJavaScriptとWasmの両Variantが、統合Reference Appの正常・境界・拒否・障害・回復5 Testを各5件成功する。",
+  "status": "accepted"
+}

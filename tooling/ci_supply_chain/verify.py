@@ -1,0 +1,148 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
+"""Reject mutable third-party GitHub Action references."""
+
+from __future__ import annotations
+
+import re
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+USES = re.compile(r"^\s*-?\s*uses:\s*([^\s#]+)", re.MULTILINE)
+ACTION_SHA = re.compile(r"^[0-9a-f]{40}$")
+CHECKOUT_BLOCK = re.compile(
+    r"(?ms)^      - uses: actions/checkout@[0-9a-f]{40}[^\n]*\n"
+    r"(?P<body>.*?)(?=^      - (?:uses|name):|\Z)"
+)
+SDK_BINDINGS = (
+    'echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"',
+    'echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"',
+)
+LOCKED_RUNTIME_DEPENDENCY_COMMAND = (
+    'run: \'"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile\''
+)
+RUNTIME_WORKSPACE = "working-directory: reference-systems/operations-workspace"
+EXPANDED_RUNTIME_REPORTER_COMMAND = (
+    "run: env -u GITHUB_ACTIONS make definitive-web-runtime"
+)
+CORE_V2_ADAPTER_COMMANDS = (
+    "python3 -m unittest tooling.ci_supply_chain.test_core_v2_adapter",
+    "python3 tooling/ci_supply_chain/core_v2_adapter.py --check",
+    "python3 tooling/ci_supply_chain/core_v2_adapter.py --audit-incomplete --atlas-bin .tools/bin/atlas-v2",
+)
+REFERENCE_SNAPSHOT_COMMANDS = (
+    "python3 tooling/reference_snapshot/verify.py --lock definitive/fe-depth-reference.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/8a9e34a89a55cc53702032783c06ede7246a286f",
+    "python3 tooling/fe_parity/generate.py --check",
+    "python3 tooling/reference_snapshot/verify.py --lock definitive/fe-reference-system.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/7175de4305afb308722d5b83475e91c18da64957",
+    "python3 tooling/scenario_proof/generate.py --check",
+    "python3 -m unittest tooling.reference_snapshot.test_verify",
+)
+
+
+def violations(text: str, path: str) -> list[str]:
+    errors: list[str] = []
+    for value in USES.findall(text):
+        if value.startswith("./") or value.startswith("docker://"):
+            continue
+        action, separator, revision = value.partition("@")
+        if separator != "@" or not action or ACTION_SHA.fullmatch(revision) is None:
+            errors.append(f"{path}: mutable or invalid action reference: {value}")
+    return errors
+
+
+def checkout_history_violations(text: str, path: str) -> list[str]:
+    errors: list[str] = []
+    subject_checkouts = [
+        match.group(0) for match in CHECKOUT_BLOCK.finditer(text)
+        if "repository:" not in match.group("body")
+    ]
+    if not subject_checkouts:
+        return [f"{path}: subject repository checkoutがありません"]
+    for block in subject_checkouts:
+        if re.search(r"(?m)^\s+fetch-depth:\s*0\s*$", block) is None:
+            errors.append(f"{path}: subject repository checkoutはfetch-depth: 0が必要です")
+    return errors
+
+
+def sdk_binding_violations(text: str, path: str) -> list[str]:
+    """CIのFormal GateとRuntime Gateを同じAction導入SDKへ束縛する。"""
+    errors: list[str] = []
+    if 'test -n "$FLUTTER_ROOT"' not in text:
+        errors.append(f"{path}: FLUTTER_ROOTの非空検証が必要です")
+    for binding in SDK_BINDINGS:
+        if binding not in text:
+            variable = binding.split("=", 1)[0].split('"')[-1]
+            errors.append(
+                f"{path}: {variable}をFLUTTER_ROOTへ束縛する必要があります"
+            )
+    return errors
+
+
+def runtime_dependency_violations(text: str, path: str) -> list[str]:
+    """clean CI checkoutのRuntime依存を固定lockfileからのみ復元する。"""
+    errors: list[str] = []
+    if RUNTIME_WORKSPACE not in text:
+        errors.append(f"{path}: Reference Appのworking-directoryが必要です")
+    if LOCKED_RUNTIME_DEPENDENCY_COMMAND not in text:
+        errors.append(
+            f"{path}: 固定FLUTTER_ROOTによるpub get --enforce-lockfileが必要です"
+        )
+    return errors
+
+
+def runtime_reporter_violations(text: str, path: str) -> list[str]:
+    """Runtime Oracleが解析するFlutter標準reporterをCIでも固定する。"""
+    if EXPANDED_RUNTIME_REPORTER_COMMAND not in text:
+        return [
+            f"{path}: definitive-web-runtimeはGITHUB_ACTIONSを除外して実行する必要があります"
+        ]
+    return []
+
+
+def core_v2_adapter_violations(text: str, path: str) -> list[str]:
+    """Require schema-valid root adapters and an exact honest promotion block."""
+    return [
+        f"{path}: Core v2 incomplete adapter commandが必要です: {command}"
+        for command in CORE_V2_ADAPTER_COMMANDS
+        if command not in text
+    ]
+
+
+def reference_snapshot_violations(text: str, path: str) -> list[str]:
+    """Keep cross-repository locks executable without an unavailable checkout."""
+    errors = [
+        f"{path}: self-contained Reference snapshot Gateが必要です: {command}"
+        for command in REFERENCE_SNAPSHOT_COMMANDS
+        if command not in text
+    ]
+    if "repository: akaitigo/frontend-behavior-atlas" in text:
+        errors.append(f"{path}: 存在しないGitHub sibling checkoutに依存できません")
+    return errors
+
+
+def main() -> int:
+    errors: list[str] = []
+    workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
+    if not workflows:
+        errors.append(".github/workflows: workflowがありません")
+    for workflow in workflows:
+        relative = str(workflow.relative_to(ROOT))
+        text = workflow.read_text(encoding="utf-8")
+        errors.extend(violations(text, relative))
+        errors.extend(checkout_history_violations(text, relative))
+        errors.extend(sdk_binding_violations(text, relative))
+        errors.extend(runtime_dependency_violations(text, relative))
+        errors.extend(runtime_reporter_violations(text, relative))
+        errors.extend(core_v2_adapter_violations(text, relative))
+        errors.extend(reference_snapshot_violations(text, relative))
+    if errors:
+        for error in errors:
+            print(f"CI supply-chainエラー: {error}")
+        return 1
+    print(f"CI supply-chain検証済み: workflows={len(workflows)} immutable-action-refs")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

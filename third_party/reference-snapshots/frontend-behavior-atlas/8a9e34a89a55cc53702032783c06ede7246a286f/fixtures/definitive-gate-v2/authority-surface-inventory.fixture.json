@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "fixtureKind": "authority-surface-inventory-reference",
+  "status": "incomplete-unreviewed",
+  "coreV2CompletionEvidence": false,
+  "extractionSnapshot": {
+    "path": "authority/extraction.snapshot.json",
+    "bodyStorage": "digest-and-locator-context-digest-only",
+    "matchedBodies": 81,
+    "staleBodies": 3,
+    "fetchFailed": 0,
+    "authorityTextSurfacesExhaustive": false,
+    "humanReviewedSurfaces": 0
+  },
+  "bodyInventorySnapshot": {
+    "path": "authority/body-inventory.snapshot.json",
+    "bodyStorage": "digest-locator-and-offset-only",
+    "matchedDocuments": 70,
+    "uniqueDocuments": 73,
+    "selectorAnchors": 15963,
+    "unclassifiedAnchors": 15963,
+    "authoritySemanticsExhaustive": false,
+    "humanReviewedAnchors": 0
+  },
+  "humanReviewQueue": {
+    "path": "authority/review-queue.snapshot.json",
+    "batches": 447,
+    "queuedAnchors": 15963,
+    "pendingHuman": 15963,
+    "humanReviewed": 0,
+    "machineCandidateClusters": 1489,
+    "staleDocumentHolds": 3,
+    "semanticDecisions": "human-only"
+  },
+  "priorityZeroPortalExport": {
+    "path": "authority/portal/review-export.v1.json",
+    "mode": "read-only",
+    "packets": 80,
+    "deepLinks": 80,
+    "candidateDomainProjections": 230,
+    "proposedClusters": 113,
+    "pendingHuman": 80,
+    "semanticDecisionsByExport": 0
+  },
+  "staleRelockCandidates": {
+    "path": "authority/stale-relock-candidates.json",
+    "status": "proposal-only-explicit-relock-required",
+    "candidates": 3,
+    "lockedDigestsUpdated": 0,
+    "humanChoices": 0
+  },
+  "example": {
+    "patternId": "foundations/enter-exit",
+    "targetId": "enter-exit-transition",
+    "claimId": "claim.pattern.foundations.enter-exit",
+    "authoritySources": [
+      {
+        "id": "w3-org-5bfce0550c",
+        "url": "https://www.w3.org/TR/css-animations-1/",
+        "digest": "sha256:f725ad790abbf87f7f53b00f383b8c206a95decb27cd5c257a9725646abb4d98",
+        "status": 200,
+        "sizeBytes": 278425,
+        "locator": "document-root",
+        "extractionArtifact": "authority/surfaces-draft/w3-org-5bfce0550c.json"
+      },
+      {
+        "id": "w3-org-83e0f2ec02",
+        "url": "https://www.w3.org/TR/web-animations-1/",
+        "digest": "sha256:e814a799ef2442a6c2f5bb783307080054441215ae75921349c018aaef3a2e55",
+        "status": 200,
+        "sizeBytes": 1000120,
+        "locator": "document-root",
+        "extractionArtifact": "authority/surfaces-draft/w3-org-83e0f2ec02.json"
+      }
+    ],
+    "candidateSurfaceIds": [
+      "orientation-scope",
+      "foundations-mechanics",
+      "implementation-construction",
+      "testing-verification",
+      "compatibility-integration",
+      "decision-comparison",
+      "provenance-rights"
+    ],
+    "candidateReferenceEdges": [
+      {
+        "edge_id": "edge.foundations.enter-exit.w3-org-5bfce0550c",
+        "source_id": "w3-org-5bfce0550c",
+        "reference_url": "https://www.w3.org/TR/css-animations-1/",
+        "locator": "document-root",
+        "pattern_id": "foundations/enter-exit",
+        "pattern_kind": "atomic",
+        "candidate_behavior_id": "candidate.foundations.enter-exit.w3-org-5bfce0550c",
+        "capability_id": "capability.foundations.enter-exit",
+        "target_id": "foundation.enter-exit-transition",
+        "claim_id": "claim.pattern.foundations.enter-exit",
+        "variant_ids": [
+          "variant.foundations.enter-exit.css-transition",
+          "variant.foundations.enter-exit.waapi"
+        ],
+        "surface_ids": [
+          "compatibility-integration",
+          "decision-comparison",
+          "foundations-mechanics",
+          "implementation-construction",
+          "operations-observability",
+          "orientation-scope",
+          "performance-capacity-cost",
+          "provenance-rights",
+          "testing-verification"
+        ],
+        "classification_basis": "domain-contract-projection-unreviewed",
+        "domain_reference_metadata_digest": "sha256:2dc6f98eda7abe7112732d01b5fb0f7f4fc555d16425ae58d11453ac649a6b39",
+        "locator_status": "root-document",
+        "context_digest": "sha256:f725ad790abbf87f7f53b00f383b8c206a95decb27cd5c257a9725646abb4d98",
+        "context_start": 0,
+        "context_end": 276899,
+        "context_unit": "utf16-code-unit",
+        "heading_digest": null,
+        "classification": "candidate-included-unreviewed"
+      },
+      {
+        "edge_id": "edge.foundations.enter-exit.w3-org-83e0f2ec02",
+        "source_id": "w3-org-83e0f2ec02",
+        "reference_url": "https://www.w3.org/TR/web-animations-1/",
+        "locator": "document-root",
+        "pattern_id": "foundations/enter-exit",
+        "pattern_kind": "atomic",
+        "candidate_behavior_id": "candidate.foundations.enter-exit.w3-org-83e0f2ec02",
+        "capability_id": "capability.foundations.enter-exit",
+        "target_id": "foundation.enter-exit-transition",
+        "claim_id": "claim.pattern.foundations.enter-exit",
+        "variant_ids": [
+          "variant.foundations.enter-exit.css-transition",
+          "variant.foundations.enter-exit.waapi"
+        ],
+        "surface_ids": [
+          "compatibility-integration",
+          "decision-comparison",
+          "failure-recovery",
+          "foundations-mechanics",
+          "implementation-construction",
+          "operations-observability",
+          "orientation-scope",
+          "performance-capacity-cost",
+          "provenance-rights",
+          "testing-verification"
+        ],
+        "classification_basis": "domain-contract-projection-unreviewed",
+        "domain_reference_metadata_digest": "sha256:18e6a2b8e57a0f0d5878d1056d2cbe59117bef57badd27ed217cf91f198658aa",
+        "locator_status": "root-document",
+        "context_digest": "sha256:e814a799ef2442a6c2f5bb783307080054441215ae75921349c018aaef3a2e55",
+        "context_start": 0,
+        "context_end": 986348,
+        "context_unit": "utf16-code-unit",
+        "heading_digest": null,
+        "classification": "candidate-included-unreviewed"
+      }
+    ],
+    "atomicBehaviorExtraction": {
+      "reviewed": false,
+      "items": []
+    },
+    "currentVariantIds": [
+      "foundations/enter-exit::css-transition",
+      "foundations/enter-exit::waapi"
+    ]
+  },
+  "reusableRule": "Authority本文LocatorごとにAtomic behaviorを抽出し、一意なTarget/Claim/Variantへ分類する。既存Pattern件数をInventory denominatorとして転用しない。",
+  "gaps": [
+    "Authority本文全体のSurface抽出",
+    "Human classification review",
+    "一意なAtomic behavior/Target/Claim"
+  ]
+}

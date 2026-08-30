@@ -1,0 +1,6 @@
+{
+  "id": "retry-run",
+  "operation": "change-attempts-from-one-to-two",
+  "target": "run.formal-local.2026-08-28",
+  "expected_error": "first-attempt passではありません"
+}

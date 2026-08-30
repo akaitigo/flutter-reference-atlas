@@ -1,0 +1,184 @@
+{
+  "completed_at": "2026-08-30T16:43:17Z",
+  "harness": {
+    "bytes": 6044,
+    "digest": "sha256:6d17b41bce34e997b54ec45e002c39c2e16f99170df0f673225598127dbe7f0e",
+    "path": "scripts/scenario-build-web-security-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 10919,
+    "digest": "sha256:c29ee09fca36c470410b860b081ccda34523029955b38923a595c651a5e9a0c8",
+    "path": "tooling/scenario_build_web/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-three-build-and-chrome-variants-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "architecture": "arm64",
+    "browser": "Google Chrome",
+    "browser_version": "151.0.7922.175",
+    "os": "macOS 26.1",
+    "physical_device": false,
+    "profile": "web-chrome",
+    "runner_kind": "browser-runtime"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:28b9780621e7b71b046312fb6bd741c1e6085f36c697be9f69fcc15589527b05",
+      "path": "packages/flutter_tools/lib/src/commands/build_web.dart"
+    },
+    {
+      "digest": "sha256:7ab2525f4b86b65d3e4c70358a17e5a1aaf6f437f99cbcc046dad73d59bb9015",
+      "path": "packages/flutter_tools/templates/app/web/favicon.png.copy.tmpl"
+    },
+    {
+      "digest": "sha256:3dce99077602f70421c1c6b2a240bc9b83d64d86681d45f2154143310c980be3",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-192.png.copy.tmpl"
+    },
+    {
+      "digest": "sha256:baccb205ae45f0b421be1657259b4943ac40c95094ab877f3bcbe12cd544dcbe",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-512.png.copy.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-maskable-192.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-maskable-512.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:05d0ced2e93473830ca09b9f9f47460ffe6828ed1452721ded107df7bd3e2229",
+      "path": "packages/flutter_tools/templates/app/web/index.html.tmpl"
+    },
+    {
+      "digest": "sha256:3eb44d2563ce13cf33daa730a8111392f52cad7c4f232439a836eec7577f398d",
+      "path": "packages/flutter_tools/templates/app/web/manifest.json.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:cb3100c4db78eb963577190f6d347615cc9dfa494397062f1c031ae586a96116",
+  "started_at": "2026-08-30T16:41:55Z",
+  "status": "passed",
+  "surface_id": "build.web",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 7383770,
+        "digest": "sha256:935f09601165e83daf9cb4219c1137b027e8579da6c1e4976cb47349ec1b5b9c",
+        "path": "evidence/scenarios/runtime/build/web/security/javascript/app.js"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "fixed Flutter SDK produced the declared JavaScript or Wasm build mode",
+          "compiled artifact type and source-map boundary matched the variant contract",
+          "the built bundle loaded from localhost in a dedicated headless Chrome profile",
+          "Chrome observed the Flutter first frame and captured the rendered screen"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 11079,
+        "digest": "sha256:127cbc7270dd24c6a6c94b081ea57eaf53715d4febf2fbaa222538a58e09868b",
+        "path": "evidence/scenarios/runtime/build/web/security/javascript/screen.png"
+      },
+      "source": {
+        "bytes": 941,
+        "digest": "sha256:1476c49975e8141cde6663d4a710ce98212e1e5605073c4a67c7f542ab6f511f",
+        "path": "tooling/scenario_build_web/build_security_main.dart"
+      },
+      "trace": {
+        "bytes": 1168,
+        "digest": "sha256:6a749456fd656fdc276eeb60535da7b1451d3f7d5d892fa8f4f9caf7b5225f3c",
+        "path": "evidence/scenarios/runtime/build/web/security/javascript/trace.json"
+      },
+      "variant": "javascript"
+    },
+    {
+      "artifact": {
+        "bytes": 1737318,
+        "digest": "sha256:e1add77b07a5bd88ed6b63092d56fbaec4c0dd3c859255c51609bf1ed3577e63",
+        "path": "evidence/scenarios/runtime/build/web/security/release-js/app.js"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "fixed Flutter SDK produced the declared JavaScript or Wasm build mode",
+          "compiled artifact type and source-map boundary matched the variant contract",
+          "the built bundle loaded from localhost in a dedicated headless Chrome profile",
+          "Chrome observed the Flutter first frame and captured the rendered screen"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 8617,
+        "digest": "sha256:67fcdc5e34820b926f0e916dae958100c34e671b692820adccffe1dc4db949c0",
+        "path": "evidence/scenarios/runtime/build/web/security/release-js/screen.png"
+      },
+      "source": {
+        "bytes": 941,
+        "digest": "sha256:1476c49975e8141cde6663d4a710ce98212e1e5605073c4a67c7f542ab6f511f",
+        "path": "tooling/scenario_build_web/build_security_main.dart"
+      },
+      "trace": {
+        "bytes": 1172,
+        "digest": "sha256:5557f196d1c82cec537f990922d7419528978f684f6d0d2181e116048f32aae6",
+        "path": "evidence/scenarios/runtime/build/web/security/release-js/trace.json"
+      },
+      "variant": "release-js"
+    },
+    {
+      "artifact": {
+        "bytes": 1387306,
+        "digest": "sha256:9909ed953a2b23a2855bf3c301c62c336fa48cc27de3f7a30b70c0fc5e898ae2",
+        "path": "evidence/scenarios/runtime/build/web/security/wasm/app.wasm"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "fixed Flutter SDK produced the declared JavaScript or Wasm build mode",
+          "compiled artifact type and source-map boundary matched the variant contract",
+          "the built bundle loaded from localhost in a dedicated headless Chrome profile",
+          "Chrome observed the Flutter first frame and captured the rendered screen"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 8220,
+        "digest": "sha256:82949ed3cefbdbc60dbc608ddca22984e09862633d0c4f9909c78fee5633a3af",
+        "path": "evidence/scenarios/runtime/build/web/security/wasm/screen.png"
+      },
+      "source": {
+        "bytes": 941,
+        "digest": "sha256:1476c49975e8141cde6663d4a710ce98212e1e5605073c4a67c7f542ab6f511f",
+        "path": "tooling/scenario_build_web/build_security_main.dart"
+      },
+      "trace": {
+        "bytes": 1152,
+        "digest": "sha256:39a0dc6cee440ea4365ca1ff20b667eabd9c8a892f3b7cd62cff6ad32bf02b42",
+        "path": "evidence/scenarios/runtime/build/web/security/wasm/trace.json"
+      },
+      "variant": "wasm"
+    }
+  ],
+  "variant_contract": [
+    "javascript",
+    "release-js",
+    "wasm"
+  ]
+}

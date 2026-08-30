@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "core-v2-fe-depth-reference-v1",
+  "repository": "https://github.com/akaitigo/frontend-behavior-atlas",
+  "commit": "4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45",
+  "path": "FE_DEPTH_REFERENCE.json",
+  "local_path": "authority/FE_DEPTH_REFERENCE.json",
+  "digest": "sha256:2452696f9807b7d4a8ffb22b3ba37f079a25a34ac2370d78423445b96064582a",
+  "status_at_commit": "incomplete",
+  "purpose": "reference-atlas-core 072d7ca Definitive v2 depth-parity schema input"
+}

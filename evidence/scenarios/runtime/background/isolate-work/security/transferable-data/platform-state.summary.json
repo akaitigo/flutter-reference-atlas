@@ -1,0 +1,30 @@
+{
+  "activity_block": {
+    "end_line": 886,
+    "start_line": 743
+  },
+  "activity_blocks": {
+    "count": 2,
+    "resumed_component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+    "resumed_count": 1
+  },
+  "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+  "historical_package_match_accepted": false,
+  "non_target_resumed_accepted": false,
+  "raw_artifact": {
+    "bytes": 72123,
+    "digest": "sha256:2b53bfe86a11cb74eda09270b7f7bada65f2b925b3b19f225e3e7bbaab7f0c87",
+    "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.txt"
+  },
+  "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
+  "schema_version": 1,
+  "state_contract": "foreground-after-isolate-result",
+  "states": {
+    "mFinished": false,
+    "mResumed": true,
+    "mStopped": false
+  },
+  "surface_id": "background.isolate-work",
+  "validation": "passed",
+  "variant": "transferable-data"
+}

@@ -14,3 +14,5 @@
 Core CLIの`atlas validate`は5 Manifest、Claim実体、Evidence、第三者Manifest、ProvenanceのSchema形状を検証し、`atlas audit .`はID、Epoch、Target Set、Routerを横断監査します。Overlay ValidatorはManifest間Digest、Claim/Evidence Graph、Artifact、Skill Eval、Legal Path、Status整合を補います。
 
 現在、Authority、有限Coverage分類、Mastery、Claim実体、Formal Local、Container、Android Emulator、Operations Drill、Skill、SBOM/第三者Manifest/Provenanceは閉じています。local、container、simulatorの必須Profileはpass Evidenceを持ち、Core GeneratorがDCO付きsource commitをCompletion Certificateへ束縛します。iOS Simulator、Android / iOS実機、6PlatformすべてのNative Runner、未組込みのPlatform Channel / Plugin / Add-to-App / FFI runtimeは別のEvidence境界であり、理由付き`infeasible`または明示的Gapをpassへ読み替えません。
+
+Evidence Dependency Graph GateはSource、Harness、Runtime、Profileの変更後に影響Evidenceが実再実行されたことを検査する独立Gateです。Graphがcurrentでも上記Runtime GapやAuthority Gapは閉じません。Subject Definitive Certificate生成時はGraph digestを`evidence_dependency_digest`へ固定し、stale、retry、再実行対象漏れ、構造縮小が1件でもあれば発行しません。

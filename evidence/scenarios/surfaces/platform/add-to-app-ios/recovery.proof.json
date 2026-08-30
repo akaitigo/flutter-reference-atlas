@@ -1,0 +1,289 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/platform/add-to-app-ios/recovery/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "platform-integration",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.platform.add-to-app-ios.recovery",
+  "integrated_reference": {
+    "assertions": [
+      "intent survives failure",
+      "retry reaches expected state"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "retry-ownership"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:47780401dc6887e91abbf3924a6b3cf5a3664a6c05e6535442a4e6b921c4fab9",
+      "path": "evidence/scenarios/integrated/recovery.trace.json"
+    }
+  },
+  "scenario": "recovery",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:7e874f0d481fb545baf18c2098cef94b696dcd86ed175dd7a9e4ff721af99d35",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Config.tmpl/Debug.xcconfig"
+    },
+    {
+      "digest": "sha256:de63ac2e83790c9c36ba0ec1cc0fcd653280350d0b6053069599391a7c97babd",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Config.tmpl/Flutter.xcconfig"
+    },
+    {
+      "digest": "sha256:7e874f0d481fb545baf18c2098cef94b696dcd86ed175dd7a9e4ff721af99d35",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Config.tmpl/Release.xcconfig"
+    },
+    {
+      "digest": "sha256:56223d9c5dc9edfad99964b879bed8f627a4c7cb433c103156c19bbc85bfcde2",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/AppDelegate.h"
+    },
+    {
+      "digest": "sha256:b9544b3a5b380b98bff7a0a33d7449b4fd1f309d8057bca57bf72b732f8a4a96",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/AppDelegate.m"
+    },
+    {
+      "digest": "sha256:3b1e214f466ffedff74baa5598ad5c4421130eea6bc8d57b8fe23435e8280ae4",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Contents.json"
+    },
+    {
+      "digest": "sha256:7770183009e914112de7d8ef1d235a6a30c5834424858e0d2f8253f6b8d31926",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png"
+    },
+    {
+      "digest": "sha256:5925dab509451f9ecbb12ce8a625f9d4c104718ee20caff8b1b51032d1cd8946",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png"
+    },
+    {
+      "digest": "sha256:c4d9a284c12301d0f50e248ec53ed51a19a10147b774b23308399250b0d44c55",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png"
+    },
+    {
+      "digest": "sha256:bf97f9d3233f33e1389b09f7b8add53741300cb834d6c7a5ca32cbed363a4fb2",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png"
+    },
+    {
+      "digest": "sha256:285442f69a06b45d9d79df80321815b546473548a37b78819b68959c7b8ed237",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png"
+    },
+    {
+      "digest": "sha256:2ab64af8ac727ea99c6ab9eaff847f46fbf2a9a0a78a0abcbf3180f3851645b4",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png"
+    },
+    {
+      "digest": "sha256:9dca09f4e5ed5684d3c4dff41f4e8b7cb864b438172d72be069315fa362930f9",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png"
+    },
+    {
+      "digest": "sha256:c4d9a284c12301d0f50e248ec53ed51a19a10147b774b23308399250b0d44c55",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png"
+    },
+    {
+      "digest": "sha256:d5ad04de321ef37cacc5a7b960afcce71bdcb96fa020c48249c1545dd1a0f497",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png"
+    },
+    {
+      "digest": "sha256:809abfe75c440770c13c4e2e46d09603c22053e9d4e0e2275dcb9c1dcfbb2c75",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png"
+    },
+    {
+      "digest": "sha256:809abfe75c440770c13c4e2e46d09603c22053e9d4e0e2275dcb9c1dcfbb2c75",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png"
+    },
+    {
+      "digest": "sha256:3db08cb79e7b01b9e81f956e3a0ae10148d0fafde3ea7aa70048df905aa52cfd",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png"
+    },
+    {
+      "digest": "sha256:23c13d463f5dca5c1f14a14934003601c29f1218fd461016d8a22cef579a665f",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png"
+    },
+    {
+      "digest": "sha256:6db7726530d71d3f52cb59793eb691313baa04796e129e1e043c0a58a1bffd2f",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png"
+    },
+    {
+      "digest": "sha256:cee565f5e62116569b64980b209fd5ca4b3d3739011f5343250b33a1a2c6eb65",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png"
+    },
+    {
+      "digest": "sha256:ccc7950fd5f5b82067c85f667940a9d59189151460761ece8098ca78daa19469",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/Contents.json"
+    },
+    {
+      "digest": "sha256:93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/LaunchImage.png"
+    },
+    {
+      "digest": "sha256:93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png"
+    },
+    {
+      "digest": "sha256:93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png"
+    },
+    {
+      "digest": "sha256:a985b626c4f7546a8ba392d135e9226c3547c8e2b46895f5f2bdf40d7b14ef9f",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/README.md"
+    },
+    {
+      "digest": "sha256:857e61203b3deafb05766d8fcda898b86a7cb6f3d5e385ecc9926c4d698215e9",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Base.lproj/LaunchScreen.storyboard"
+    },
+    {
+      "digest": "sha256:fd367b6c43006d61b730f674970dd48b9f662c8f2264e52ffc1558102a2c9f2d",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Base.lproj/Main.storyboard"
+    },
+    {
+      "digest": "sha256:bb7a1f15fa552f9464453286d2fe403e3d6b8cb7f86dba0e67827c804f80f4e2",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Info.plist.tmpl"
+    },
+    {
+      "digest": "sha256:77aea35ec8ae1e214a84fdd9db920a9fcaa9091042fef4e1bb74386532c24977",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/SceneDelegate.h"
+    },
+    {
+      "digest": "sha256:5b108002ac8b52a1ba8b4ea763668cc886015d10350a8fd4aef99b079dcab524",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/SceneDelegate.m"
+    },
+    {
+      "digest": "sha256:3c0819ab0d1650de7a5f33cfe519bf0ffd1c1e13354d8337532a731951aa060e",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/main.m"
+    },
+    {
+      "digest": "sha256:75f2c308cb645af8af5eeec4af5ceefa3cdb91627c7830b0f18efc1ae3efbc08",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.pbxproj.tmpl"
+    },
+    {
+      "digest": "sha256:7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "digest": "sha256:11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings"
+    },
+    {
+      "digest": "sha256:bb952e5b2be329e496c0d8d1e8153aee31d620e7529149f9be9203330c2718ff",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/xcshareddata/xcschemes/Runner.xcscheme"
+    },
+    {
+      "digest": "sha256:46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcworkspace.tmpl/contents.xcworkspacedata"
+    },
+    {
+      "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcworkspace.tmpl/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "digest": "sha256:11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcworkspace.tmpl/xcshareddata/WorkspaceSettings.xcsettings"
+    },
+    {
+      "digest": "sha256:0825df7111781623377881c6505df1604ca2f27b6257eecd7ad9ae8c4bd3da5e",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Config.tmpl/Debug.xcconfig"
+    },
+    {
+      "digest": "sha256:2212ec15694c13be4e17226fb5153ea40e4c21de5ddb4d4d17a832eeaafdd2e2",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Config.tmpl/Release.xcconfig"
+    },
+    {
+      "digest": "sha256:52bc94e8f278afee26d413e09510169fa816dd8864d5cd30c32c96dcdfa207d1",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Podfile.copy.tmpl"
+    },
+    {
+      "digest": "sha256:ea3671d16fe8415ca0c9fc6312a12f7bc38f1dbdc17486ea37f64f7d0ad1bee8",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Runner.tmpl/AppDelegate.h"
+    },
+    {
+      "digest": "sha256:11c0db7e19e2d5db076f18226c861c2d5b18bf3e0e7a19a65a21922886271462",
+      "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Runner.tmpl/AppDelegate.m"
+    },
+    {
+      "digest": "sha256:da12038f9b2688a8a26160fea2609fa8fcb11421448c109f09c0f573efe7698d",
+      "path": "packages/flutter_tools/templates/module/ios/library/Flutter.tmpl/AppFrameworkInfo.plist"
+    },
+    {
+      "digest": "sha256:3174675a4e539e84e4a6241ae490f4b66fef4b87574e9d14f6c552645609ca2e",
+      "path": "packages/flutter_tools/templates/module/ios/library/Flutter.tmpl/README.md"
+    },
+    {
+      "digest": "sha256:c32af76952791c4719e5aa3fa237b3f65eaad2605356f622b2e2a3f60df55d18",
+      "path": "packages/flutter_tools/templates/module/ios/library/Flutter.tmpl/podhelper.rb.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:b74336d2b3cfdc9a75deee7e4f539e939b907930a9eff806939e405e9b905851",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "platform.add-to-app-ios",
+  "surface_title": "iOS Add-to-App runtime"
+}

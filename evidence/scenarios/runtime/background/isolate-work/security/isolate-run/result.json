@@ -1,0 +1,43 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "checksum": 1497067863,
+    "input_length": 25,
+    "mechanism": "isolate-run",
+    "platform": "Android",
+    "raw_sensitive_value_returned": false,
+    "scenario": "security",
+    "surface_id": "background.isolate-work",
+    "variant": "isolate-run",
+    "worker_completed": true
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "isolate-runの実Isolateから要約値だけを返した"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 71595,
+    "digest": "sha256:a7373594c79e79ccef87351b3015875d868d765737a8359c32fa9d8ea5d93233",
+    "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.txt"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:582e25fe6fc5bd7894fe18390543845ac64c952fdfab0b7228eb18925a23482d",
+  "surface_id": "background.isolate-work",
+  "variant": "isolate-run"
+}

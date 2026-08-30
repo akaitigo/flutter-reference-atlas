@@ -1,0 +1,105 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/failure/platform-loss-recovery/boundary/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "failure-recovery",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.failure.platform-loss-recovery.boundary",
+  "integrated_reference": {
+    "assertions": [
+      "detail remains reachable",
+      "back action restores list"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "narrow-layout"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:139a42fdd6d1b95a4f5427550f7c269d473817469dfd0ad0b0cfe8ab851d9cfe",
+      "path": "evidence/scenarios/integrated/boundary.trace.json"
+    }
+  },
+  "scenario": "boundary",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:857573f18a3c329a71a990f5355f49e29f25561d0d5f2aa6ff292ba7154678c3",
+      "path": "packages/flutter/lib/src/services/platform_channel.dart"
+    },
+    {
+      "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+      "path": "packages/flutter/lib/src/widgets/binding.dart"
+    }
+  ],
+  "source_set_digest": "sha256:3386b777b84664d0a997aac0c43e5d4a1cb95476fe184e43a121184cdc646a0c",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "failure.platform-loss-recovery",
+  "surface_title": "Platform capability loss・recovery"
+}

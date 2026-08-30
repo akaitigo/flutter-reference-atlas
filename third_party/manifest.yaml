@@ -55,6 +55,33 @@
       "version": "v2"
     },
     {
+      "id": "frontend-depth-reference",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "FE Depth Reference v1",
+      "redistribution": "allowed",
+      "source": "https://github.com/akaitigo/frontend-behavior-atlas/blob/4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45/FE_DEPTH_REFERENCE.json",
+      "version": "4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45"
+    },
+    {
+      "id": "frontend-depth-reference-snapshot",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "FE Definitive Gate v2 reference snapshot",
+      "redistribution": "allowed",
+      "source": "https://github.com/akaitigo/frontend-behavior-atlas/tree/8a9e34a89a55cc53702032783c06ede7246a286f",
+      "version": "8a9e34a89a55cc53702032783c06ede7246a286f"
+    },
+    {
+      "id": "frontend-scenario-reference-snapshot",
+      "kind": "source",
+      "license": "Apache-2.0",
+      "name": "FE scenario proof reference snapshot",
+      "redistribution": "allowed",
+      "source": "https://github.com/akaitigo/frontend-behavior-atlas/tree/7175de4305afb308722d5b83475e91c18da64957",
+      "version": "7175de4305afb308722d5b83475e91c18da64957"
+    },
+    {
       "id": "pub-async",
       "kind": "source",
       "license": "BSD-3-Clause",

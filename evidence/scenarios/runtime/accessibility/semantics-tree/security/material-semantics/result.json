@@ -1,0 +1,42 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "explicit_child_nodes": false,
+    "platform": "Android",
+    "scenario": "security",
+    "semantic_container": true,
+    "semantics_label": "Public security action",
+    "sensitive_value_exposed": false,
+    "surface_id": "accessibility.semantics-tree",
+    "variant": "material-semantics"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "material-semanticsのSemantics構造で非公開値を除外した"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 3532,
+    "digest": "sha256:e39604caf3502268546cad811c3e8f619bf8a607baf2d7b52f70d05bd6dfc284",
+    "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/platform-tree.xml"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:e996171c243559b2794b195de279b10c6e6c640e863b934a40fe88980c390b5c",
+  "surface_id": "accessibility.semantics-tree",
+  "variant": "material-semantics"
+}

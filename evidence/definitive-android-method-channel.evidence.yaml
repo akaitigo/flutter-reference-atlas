@@ -1,0 +1,26 @@
+schema_version: 1
+id: execution.definitive-android-method-channel.2026-08-28
+atlas_id: flutter-reference-atlas
+claim_ids:
+  - platform.method-channel-android-runtime
+kind: test-report
+producer: Flutter 3.47.1 Android API 36 integrated MethodChannel Plugin harness
+command: scripts/definitive-android-runtime.sh
+created_at: "2026-08-28T11:14:10Z"
+environment:
+  profile: simulator
+  manifest_digest: sha256:2e94d242d95eeadecac3e71269c523ecb61972c384f36c419901633f5a53b925
+  runner_kind: android-emulator
+  os: Android 16
+  api_level: 36
+  physical_device: false
+source_digest: sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f
+harness_digest: sha256:dfdbae1fbaf102c0ee8216db9a416147ed5788ce618287156d5f25a0d6e99dac
+harness_path: scripts/definitive-android-runtime.sh
+artifact:
+  uri: evidence/artifacts/definitive-android-method-channel-report.json
+  digest: sha256:c0aacd3427ad50ab9f44924fb2bb63c15a995efb86585f106ae9d51f05b5e20a
+  media_type: application/json
+  size_bytes: 2116
+verdict: pass
+retention: git

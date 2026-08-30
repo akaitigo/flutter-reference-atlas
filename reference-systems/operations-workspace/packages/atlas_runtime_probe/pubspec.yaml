@@ -1,0 +1,24 @@
+name: atlas_runtime_probe
+description: Flutter Atlas統合Reference App用のRuntime MethodChannel Plugin。
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.10.4
+  flutter: '>=3.35.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: dev.akaitigo.atlas.runtime_probe
+        pluginClass: AtlasRuntimeProbePlugin

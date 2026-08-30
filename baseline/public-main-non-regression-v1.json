@@ -1,0 +1,2448 @@
+{
+  "schema_version": 1,
+  "policy": "public-main-non-regression-v1",
+  "baseline_commit": "0b5ff9311f88ee5bcb76f224ee71668c668ea14b",
+  "baseline_tree": "bdb73809e4b43e5fd8fb46a7e3b13b55ed01db1b",
+  "atlas_id": "flutter-reference-atlas",
+  "version_and_scope_floor": {
+    "coverage_epoch": "2026-08-28",
+    "scope_statement": "Flutter 3.47.1と同梱Dart 3.13.1の公開アプリ開発Surfaceを、製品実装、決定論的Lab、試験、運用証拠として実証する。",
+    "required_profiles": [
+      "local",
+      "container",
+      "simulator"
+    ],
+    "sdk_baseline": {
+      "schema_version": 1,
+      "coverage_epoch": "2026-08-28",
+      "flutter": {
+        "version": "3.47.1",
+        "channel": "stable",
+        "framework_revision": "6655482ec06e547f90abf8ae7590466f4415978d",
+        "engine_revision": "5d531788691ec3404cac0cee66ead4007b177363",
+        "release_bundle_sha256": "38c9ffe0af4a71e4600f4fda310f0e895757550926128e28aa57782ea97538fa"
+      },
+      "dart": {
+        "version": "3.13.1",
+        "revision": "852b3e3608906afbe6102573cfd4407aeedd1b78"
+      },
+      "devtools": {
+        "version": "2.60.0",
+        "revision": "12d595649f189f1896722623f72599077f476848"
+      },
+      "core_contract": {
+        "commit": "cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+        "release_status": "unreleased-commit"
+      },
+      "execution_status": {
+        "target_sdk_installed": true,
+        "verified_sdk_path": ".tools/flutter-3.47.1/flutter",
+        "runtime_metadata_verified": true,
+        "public_surface_inventory": "baseline/public-surface-inventory.json",
+        "local_compatibility_sdk": "3.38.5",
+        "completion_effect": "対象SDKで全Lab Evidenceを再生成しSymbol分類と全Platform Gateを閉じるまでstatusはincompleteのままとする。"
+      }
+    }
+  },
+  "target_sets": {
+    "baseline": {
+      "id": "baseline",
+      "title": "固定SDKと一次資料",
+      "sequence": 1,
+      "completion_required": true,
+      "exit_criteria": [
+        "Flutter、Engine、Dart、DevToolsのVersionとrevisionを固定すること",
+        "Authority LockとRuntime InventoryのDigestを再計算できること"
+      ]
+    },
+    "product": {
+      "id": "product",
+      "title": "Production Reference Product",
+      "sequence": 2,
+      "completion_required": true,
+      "exit_criteria": [
+        "Adaptive UI、状態遷移、永続化境界を自動試験できること",
+        "正常、拒否、障害、復旧の代表フローを再実行できること"
+      ]
+    },
+    "language-platform": {
+      "id": "language-platform",
+      "title": "FlutterとDartの公開能力",
+      "sequence": 3,
+      "completion_required": true,
+      "exit_criteria": [
+        "固定SDKの公開SurfaceをCapabilityへ欠落なく分類すること",
+        "Platform固有能力を実行環境とEvidenceへ接続すること"
+      ]
+    },
+    "execution": {
+      "id": "execution",
+      "title": "再実行可能なLab",
+      "sequence": 4,
+      "completion_required": true,
+      "exit_criteria": [
+        "local、container、simulatorのSetupからCleanupを自動化すること",
+        "各Labの決定論範囲と失敗注入の隔離を明示すること"
+      ]
+    },
+    "quality": {
+      "id": "quality",
+      "title": "品質、運用、移行",
+      "sequence": 5,
+      "completion_required": true,
+      "exit_criteria": [
+        "Test、性能、Accessibility、Security、配布判断を証拠化すること",
+        "Upgrade、Incident、BackupとRestoreのRunbookを検証すること"
+      ]
+    },
+    "skill": {
+      "id": "skill",
+      "title": "Router Skillと評価",
+      "sequence": 6,
+      "completion_required": true,
+      "exit_criteria": [
+        "一つのRouterがCapability、Lab、Evidenceへ正しく誘導すること",
+        "Coverage外と権限外の依頼を捏造または実行せず返すこと"
+      ]
+    }
+  },
+  "targets": {
+    "baseline.flutter-3.47.1": {
+      "id": "baseline.flutter-3.47.1",
+      "title": "Flutter 3.47.1 Authority Baseline",
+      "target_set": "baseline",
+      "kind": "compatibility",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "公式配布物DigestとSDK内部metadataを照合し、Flutter 3.47.1で全Formal Local Gateを再実行した。",
+      "claim_ids": [
+        "baseline.flutter-version-lock"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "framework.internal-architecture": {
+      "id": "framework.internal-architecture",
+      "title": "Widget・Element・RenderObject内部契約",
+      "target_set": "baseline",
+      "kind": "concept",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Key有無によるElement reconciliationとState identityの差をFlutter 3.47.1 Widget Testで観測した。",
+      "claim_ids": [
+        "framework.key-controls-state-identity"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "framework.rendering-pipeline": {
+      "id": "framework.rendering-pipeline",
+      "title": "Constraint・Layout・Paint Pipeline",
+      "target_set": "baseline",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "RenderBoxのConstraintとmarkNeedsLayout、markNeedsPaintによる無効化範囲を決定論Testで検証した。",
+      "claim_ids": [
+        "framework.layout-and-paint-are-separate"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "product.operations-workspace": {
+      "id": "product.operations-workspace",
+      "title": "Operations Workspace製品実装",
+      "target_set": "product",
+      "kind": "construction",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Adaptive UI、Repository境界、入力Policy、診断画面を正式SDKでanalyzeし16件のUnit・Widget Testを通した。",
+      "claim_ids": [
+        "product.adaptive-state-flow"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "product.state-lifecycle": {
+      "id": "product.state-lifecycle",
+      "title": "State・Lifecycle・Concurrency",
+      "target_set": "product",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "stale async completion、dispose後通知、保存中競合、immutable stateをController Testで検証した。",
+      "claim_ids": [
+        "product.state-lifecycle-is-ordered"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "product.navigation": {
+      "id": "product.navigation",
+      "title": "Navigationと診断Route",
+      "target_set": "product",
+      "kind": "construction",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "公開named routeから診断画面へ遷移し、状態とPerformance Snapshotを表示する契約をWidget Testで検証した。",
+      "claim_ids": [
+        "product.navigation-is-observable"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "language.public-surface-inventory": {
+      "id": "language.public-surface-inventory",
+      "title": "公開API Surface Inventory",
+      "target_set": "language-platform",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "固定SDKからFramework、Engine、Dart公開Library入口とCLI分類対象Sourceを決定論的に生成し再生成一致を確認した。",
+      "claim_ids": [
+        "language.public-surface-is-finite"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "language.dart-concurrency": {
+      "id": "language.dart-concurrency",
+      "title": "Dart非同期処理と競合解決",
+      "target_set": "language-platform",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "固定Dart 3.13.1 Containerで決定論的競合解決とlost update検出を再実行した。",
+      "claim_ids": [
+        "language.deterministic-conflict-resolution"
+      ],
+      "evidence_ids": [
+        "execution.container-conflict.2026-08-28"
+      ]
+    },
+    "platform.channel-plugin-contract": {
+      "id": "platform.channel-plugin-contract",
+      "title": "Platform ChannelとPlugin Contract",
+      "target_set": "language-platform",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Dart、Kotlin、SwiftのChannel、Method、Plugin登録とLifecycle宣言を61 assertionのSource Contractで照合した。",
+      "claim_ids": [
+        "platform.channel-plugin-source-contract"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "platform.ffi-macos": {
+      "id": "platform.ffi-macos",
+      "title": "Dart FFI macOS arm64 Runtime",
+      "target_set": "language-platform",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Apple clangで一時dylibを生成し、Dart 3.13.1 FFIでatlas_addを実呼出して42を確認後Cleanupした。",
+      "claim_ids": [
+        "platform.ffi-runtime-call"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "platform.add-to-app-contract": {
+      "id": "platform.add-to-app-contract",
+      "title": "Add-to-App Engine Source Contract",
+      "target_set": "language-platform",
+      "kind": "construction",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "AndroidとiOS host fixtureのEngine生成、entrypoint、共有Engine ID、View Controller接続を静的に照合した。",
+      "claim_ids": [
+        "platform.add-to-app-engine-contract"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "platform.web": {
+      "id": "platform.web",
+      "title": "Web BoundaryとRelease Build",
+      "target_set": "language-platform",
+      "kind": "compatibility",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Web専用conditional export境界を検証し、Flutter 3.47.1で38 fileのrelease Web artifactを生成した。",
+      "claim_ids": [
+        "platform.web-release-build"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "platform.desktop": {
+      "id": "platform.desktop",
+      "title": "Desktop Platform Boundary",
+      "target_set": "language-platform",
+      "kind": "compatibility",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "macOS、Windows、Linuxの公開IO分岐とWeb API非依存をSource Contractで検証し、macOS FFI runtimeを実行した。",
+      "claim_ids": [
+        "platform.desktop-source-boundary"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "platform.mobile": {
+      "id": "platform.mobile",
+      "title": "Mobile Platform Boundary",
+      "target_set": "language-platform",
+      "kind": "compatibility",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Android、iOSの公開IO分岐、Platform Channel、Plugin登録をSource Contractで検証しNative runtime未実行を分離した。",
+      "claim_ids": [
+        "platform.mobile-source-boundary"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "platform.six-target-builds": {
+      "id": "platform.six-target-builds",
+      "title": "公式6Platform Build",
+      "target_set": "language-platform",
+      "kind": "compatibility",
+      "requirement": "required",
+      "state": "infeasible",
+      "rationale": "Web release buildは通過したが、このmacOS HostだけではAndroid、iOS、Windows、LinuxのNative buildを実行できない。",
+      "claim_ids": [
+        "platform.runner-matrix-is-explicit"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ],
+      "exclusion": {
+        "reason": "Android SDK、full Xcode、CocoaPods、WindowsおよびLinux Runnerを用意した固定CI Matrixで再評価する。",
+        "reviewed_at": "2026-08-28"
+      }
+    },
+    "execution.local": {
+      "id": "execution.local",
+      "title": "Local Profile Lab",
+      "target_set": "execution",
+      "kind": "operation",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "正式Flutter 3.47.1でInventory、Framework、Product、Security、Operations、FFI、Web buildの16 Commandを再実行した。",
+      "claim_ids": [
+        "execution.local-repeatability"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "execution.container": {
+      "id": "execution.container",
+      "title": "Container Profile Lab",
+      "target_set": "execution",
+      "kind": "operation",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Digest固定Dart 3.13.1 ImageをNetwork無効で実行し、終了後の派生ContainerとImageをCleanupした。",
+      "claim_ids": [
+        "execution.container-isolation"
+      ],
+      "evidence_ids": [
+        "execution.container-conflict.2026-08-28"
+      ]
+    },
+    "execution.android-emulator": {
+      "id": "execution.android-emulator",
+      "title": "Android Emulator Profile Lab",
+      "target_set": "execution",
+      "kind": "operation",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Android 16 API 36 Emulatorを実機と判別し、Flutter 3.47.1でassemble、install、runとIntegration Test 1件を通した。",
+      "claim_ids": [
+        "execution.android-emulator-repeatability",
+        "platform.runner-matrix-is-explicit"
+      ],
+      "evidence_ids": [
+        "execution.android-emulator-integration.2026-08-28"
+      ]
+    },
+    "execution.ios-simulator": {
+      "id": "execution.ios-simulator",
+      "title": "iOS Simulator Profile Lab",
+      "target_set": "execution",
+      "kind": "operation",
+      "requirement": "required",
+      "state": "infeasible",
+      "rationale": "現在のHostはCommand Line Toolsのみでfull XcodeとCocoaPodsがなく、iOS Simulator runtimeを実行できない。",
+      "claim_ids": [
+        "platform.runner-matrix-is-explicit"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ],
+      "exclusion": {
+        "reason": "full Xcode、iOS Simulator runtime、CocoaPodsを用意したHostで再評価し、Android Emulator Evidenceを代替とは扱わない。",
+        "reviewed_at": "2026-08-28"
+      }
+    },
+    "quality.testing": {
+      "id": "quality.testing",
+      "title": "Unit・Widget・Integration Test Contract",
+      "target_set": "quality",
+      "kind": "capability",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Domain、Controller、Widget、Framework、Mutation、Integration sourceを分離し、実行可能なUnit・Widget Contractを正式SDKで通した。",
+      "claim_ids": [
+        "quality.test-pyramid-is-repeatable"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "quality.accessibility-performance-security": {
+      "id": "quality.accessibility-performance-security",
+      "title": "Accessibility・Performance・Security Gate",
+      "target_set": "quality",
+      "kind": "performance",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Semantics、Focus、FrameTiming集約、入力制限、URL allowlist、Path traversal、Secret redactionを正式SDKで検証した。",
+      "claim_ids": [
+        "quality.accessibility-semantics",
+        "quality.performance-budget",
+        "quality.security-boundaries"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "quality.failure-recovery": {
+      "id": "quality.failure-recovery",
+      "title": "Failure InjectionとRecovery",
+      "target_set": "quality",
+      "kind": "failure",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Repository失敗、破損Backup、未知schema、stale completionを注入し、状態を壊さずRetryまたは拒否することを検証した。",
+      "claim_ids": [
+        "quality.failure-recovery-is-safe"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "quality.migration-operations": {
+      "id": "quality.migration-operations",
+      "title": "Upgradeと運用Runbook",
+      "target_set": "quality",
+      "kind": "migration",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Backup round-trip、非破壊schema Migration、Restore、破損拒否、Cleanupを決定論Operations Drillで検証した。",
+      "claim_ids": [
+        "quality.explicit-operational-boundary",
+        "quality.backup-migration-recovery"
+      ],
+      "evidence_ids": [
+        "execution.formal-local-closure.2026-08-28"
+      ]
+    },
+    "skill.router": {
+      "id": "skill.router",
+      "title": "Flutter Reference Router Skill",
+      "target_set": "skill",
+      "kind": "skill",
+      "requirement": "required",
+      "state": "covered",
+      "rationale": "Routerの決定論・Forward Regression 62件と独立Agent Forward Evalで、複合依頼、未知Package、Version・Runtime・Publication Gap、書込・公開権限境界を確認した。",
+      "claim_ids": [
+        "skill.routes-without-invention"
+      ],
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ]
+    }
+  },
+  "labs": {
+    "lab.authority-lock": {
+      "id": "lab.authority-lock",
+      "path": "tooling/surface_inventory",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.public-surface-inventory": {
+      "id": "lab.public-surface-inventory",
+      "path": "tooling/surface_inventory",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.framework-element-reconciliation": {
+      "id": "lab.framework-element-reconciliation",
+      "path": "labs/framework-element-reconciliation",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.framework-rendering-pipeline": {
+      "id": "lab.framework-rendering-pipeline",
+      "path": "labs/framework-rendering-pipeline",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.widget-lifecycle": {
+      "id": "lab.widget-lifecycle",
+      "path": "labs/widget-lifecycle",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.operations-workspace": {
+      "id": "lab.operations-workspace",
+      "path": "reference-systems/operations-workspace",
+      "profiles": [
+        "local",
+        "simulator"
+      ]
+    },
+    "lab.simulator-integration": {
+      "id": "lab.simulator-integration",
+      "path": "reference-systems/operations-workspace/integration_test",
+      "profiles": [
+        "simulator"
+      ]
+    },
+    "lab.offline-conflict-resolution": {
+      "id": "lab.offline-conflict-resolution",
+      "path": "labs/offline-conflict-resolution",
+      "profiles": [
+        "local",
+        "container"
+      ]
+    },
+    "lab.platform-integration-source-contract": {
+      "id": "lab.platform-integration-source-contract",
+      "path": "labs/platform-integration",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.platform-ffi-runtime": {
+      "id": "lab.platform-ffi-runtime",
+      "path": "labs/platform-integration/bin/verify_ffi_runtime.dart",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.security-boundary": {
+      "id": "lab.security-boundary",
+      "path": "labs/security-boundary",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.operations-drill": {
+      "id": "lab.operations-drill",
+      "path": "labs/operations-drill",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.formal-local-closure": {
+      "id": "lab.formal-local-closure",
+      "path": "tooling/evidence_capture",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.local-profile": {
+      "id": "lab.local-profile",
+      "path": "scripts/labs-local.sh",
+      "profiles": [
+        "local"
+      ]
+    },
+    "lab.container-profile": {
+      "id": "lab.container-profile",
+      "path": "scripts/labs-container.sh",
+      "profiles": [
+        "container"
+      ]
+    },
+    "lab.simulator-profile": {
+      "id": "lab.simulator-profile",
+      "path": "scripts/labs-simulator.sh",
+      "profiles": [
+        "simulator"
+      ]
+    },
+    "lab.skill-eval": {
+      "id": "lab.skill-eval",
+      "path": "evals",
+      "profiles": [
+        "local"
+      ]
+    }
+  },
+  "tests": {
+    "test.overlay-validator": {
+      "id": "test.overlay-validator",
+      "path": "tooling/atlascheck/main_test.go"
+    },
+    "test.public-surface-inventory": {
+      "id": "test.public-surface-inventory",
+      "path": "tooling/surface_inventory/test_generate.py"
+    },
+    "test.framework-element-reconciliation": {
+      "id": "test.framework-element-reconciliation",
+      "path": "labs/framework-element-reconciliation/test/reconciliation_probe_test.dart"
+    },
+    "test.framework-rendering-pipeline": {
+      "id": "test.framework-rendering-pipeline",
+      "path": "labs/framework-rendering-pipeline/test/pipeline_probe_test.dart"
+    },
+    "test.operations-workspace": {
+      "id": "test.operations-workspace",
+      "path": "reference-systems/operations-workspace/test"
+    },
+    "test.simulator-integration": {
+      "id": "test.simulator-integration",
+      "path": "reference-systems/operations-workspace/integration_test/workspace_integration_test.dart"
+    },
+    "test.conflict-verifier": {
+      "id": "test.conflict-verifier",
+      "path": "labs/offline-conflict-resolution/bin/verify.dart"
+    },
+    "test.platform-source-contract": {
+      "id": "test.platform-source-contract",
+      "path": "labs/platform-integration/test/source_contract_verifier_test.dart"
+    },
+    "test.platform-ffi-runtime": {
+      "id": "test.platform-ffi-runtime",
+      "path": "labs/platform-integration/bin/verify_ffi_runtime.dart"
+    },
+    "test.security-boundary": {
+      "id": "test.security-boundary",
+      "path": "labs/security-boundary/bin/verify.dart"
+    },
+    "test.operations-drill": {
+      "id": "test.operations-drill",
+      "path": "labs/operations-drill/bin/verify.dart"
+    },
+    "test.formal-local-closure": {
+      "id": "test.formal-local-closure",
+      "path": "tooling/evidence_capture/bin/capture.dart"
+    },
+    "test.local-script": {
+      "id": "test.local-script",
+      "path": "scripts/labs-local.sh"
+    },
+    "test.container-script": {
+      "id": "test.container-script",
+      "path": "scripts/labs-container.sh"
+    },
+    "test.simulator-script": {
+      "id": "test.simulator-script",
+      "path": "scripts/labs-simulator.sh"
+    },
+    "test.runbook-structure": {
+      "id": "test.runbook-structure",
+      "path": "scripts/validate-runbooks.sh"
+    },
+    "test.router-eval": {
+      "id": "test.router-eval",
+      "path": "evals/evaluate.py"
+    }
+  },
+  "capabilities": {
+    "baseline.sdk-lock": {
+      "id": "baseline.sdk-lock",
+      "title": "SDKと一次資料の固定",
+      "target_ids": [
+        "baseline.flutter-3.47.1"
+      ],
+      "recommendation": "required"
+    },
+    "framework.element-reconciliation": {
+      "id": "framework.element-reconciliation",
+      "title": "Widget・Element・State照合",
+      "target_ids": [
+        "framework.internal-architecture"
+      ],
+      "recommendation": "required"
+    },
+    "framework.rendering-invalidation": {
+      "id": "framework.rendering-invalidation",
+      "title": "Layout・Paint無効化",
+      "target_ids": [
+        "framework.rendering-pipeline"
+      ],
+      "recommendation": "required"
+    },
+    "product.adaptive-workspace": {
+      "id": "product.adaptive-workspace",
+      "title": "Adaptive Operations Workspace",
+      "target_ids": [
+        "product.operations-workspace"
+      ],
+      "recommendation": "recommended"
+    },
+    "product.state-lifecycle": {
+      "id": "product.state-lifecycle",
+      "title": "状態と非同期Lifecycle",
+      "target_ids": [
+        "product.state-lifecycle"
+      ],
+      "recommendation": "required"
+    },
+    "product.navigation": {
+      "id": "product.navigation",
+      "title": "公開Navigationと診断Route",
+      "target_ids": [
+        "product.navigation"
+      ],
+      "recommendation": "required"
+    },
+    "language.public-surface": {
+      "id": "language.public-surface",
+      "title": "固定SDK公開Surface Inventory",
+      "target_ids": [
+        "language.public-surface-inventory"
+      ],
+      "recommendation": "required"
+    },
+    "language.conflict-resolution": {
+      "id": "language.conflict-resolution",
+      "title": "決定論的競合解決",
+      "target_ids": [
+        "language.dart-concurrency"
+      ],
+      "recommendation": "recommended"
+    },
+    "platform.channel-plugin": {
+      "id": "platform.channel-plugin",
+      "title": "Platform ChannelとPlugin Contract",
+      "target_ids": [
+        "platform.channel-plugin-contract"
+      ],
+      "recommendation": "required"
+    },
+    "platform.ffi": {
+      "id": "platform.ffi",
+      "title": "Dart FFI Runtime",
+      "target_ids": [
+        "platform.ffi-macos"
+      ],
+      "recommendation": "conditional"
+    },
+    "platform.add-to-app": {
+      "id": "platform.add-to-app",
+      "title": "Add-to-App Engine Contract",
+      "target_ids": [
+        "platform.add-to-app-contract"
+      ],
+      "recommendation": "conditional"
+    },
+    "platform.web": {
+      "id": "platform.web",
+      "title": "Web BoundaryとRelease Build",
+      "target_ids": [
+        "platform.web"
+      ],
+      "recommendation": "required"
+    },
+    "platform.desktop": {
+      "id": "platform.desktop",
+      "title": "Desktop Platform Boundary",
+      "target_ids": [
+        "platform.desktop"
+      ],
+      "recommendation": "conditional"
+    },
+    "platform.mobile": {
+      "id": "platform.mobile",
+      "title": "Mobile Platform Boundary",
+      "target_ids": [
+        "platform.mobile"
+      ],
+      "recommendation": "conditional"
+    },
+    "platform.runner-matrix": {
+      "id": "platform.runner-matrix",
+      "title": "公式Platform Runner Matrix",
+      "target_ids": [
+        "platform.six-target-builds",
+        "execution.android-emulator",
+        "execution.ios-simulator"
+      ],
+      "recommendation": "conditional"
+    },
+    "execution.local-lab": {
+      "id": "execution.local-lab",
+      "title": "Formal Local Lab",
+      "target_ids": [
+        "execution.local"
+      ],
+      "recommendation": "required"
+    },
+    "execution.container-lab": {
+      "id": "execution.container-lab",
+      "title": "Container Lab",
+      "target_ids": [
+        "execution.container"
+      ],
+      "recommendation": "conditional"
+    },
+    "execution.android-emulator-lab": {
+      "id": "execution.android-emulator-lab",
+      "title": "Android Emulator Lab",
+      "target_ids": [
+        "execution.android-emulator"
+      ],
+      "recommendation": "required"
+    },
+    "execution.ios-simulator-lab": {
+      "id": "execution.ios-simulator-lab",
+      "title": "iOS Simulator Lab",
+      "target_ids": [
+        "execution.ios-simulator"
+      ],
+      "recommendation": "blocked"
+    },
+    "quality.testing": {
+      "id": "quality.testing",
+      "title": "Unit・Widget・Integration Test Contract",
+      "target_ids": [
+        "quality.testing"
+      ],
+      "recommendation": "required"
+    },
+    "quality.accessibility": {
+      "id": "quality.accessibility",
+      "title": "SemanticsとFocus Contract",
+      "target_ids": [
+        "quality.accessibility-performance-security"
+      ],
+      "recommendation": "required"
+    },
+    "quality.performance": {
+      "id": "quality.performance",
+      "title": "Frame Budget Observability",
+      "target_ids": [
+        "quality.accessibility-performance-security"
+      ],
+      "recommendation": "required"
+    },
+    "quality.security": {
+      "id": "quality.security",
+      "title": "入力と外部境界Security",
+      "target_ids": [
+        "quality.accessibility-performance-security"
+      ],
+      "recommendation": "required"
+    },
+    "quality.failure-recovery": {
+      "id": "quality.failure-recovery",
+      "title": "Failure InjectionとRecovery",
+      "target_ids": [
+        "quality.failure-recovery"
+      ],
+      "recommendation": "required"
+    },
+    "operations.runbooks": {
+      "id": "operations.runbooks",
+      "title": "Backup・Migration・Recovery運用",
+      "target_ids": [
+        "quality.migration-operations"
+      ],
+      "recommendation": "required"
+    },
+    "skill.router": {
+      "id": "skill.router",
+      "title": "Flutter Router Skill",
+      "target_ids": [
+        "skill.router"
+      ],
+      "recommendation": "required"
+    }
+  },
+  "claims": {
+    "baseline.flutter-version-lock": {
+      "id": "baseline.flutter-version-lock",
+      "capability_id": "baseline.sdk-lock",
+      "proof_obligation_id": "proof.baseline-digest",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps",
+        "dart-sdk-3.13.1",
+        "devtools-2.60.0"
+      ],
+      "acceptance": "固定Version、revision、配布物DigestとSDK内部metadataが一致し、正式SDKでHarnessが成功する。",
+      "lab_id": "lab.authority-lock",
+      "test_id": "test.formal-local-closure"
+    },
+    "framework.key-controls-state-identity": {
+      "id": "framework.key-controls-state-identity",
+      "capability_id": "framework.element-reconciliation",
+      "proof_obligation_id": "proof.keyed-reconciliation",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-widgets-api"
+      ],
+      "acceptance": "同一runtimeTypeの兄弟を並べ替え、Keyなしでは位置、ValueKeyありでは論理項目へStateが残る。",
+      "lab_id": "lab.framework-element-reconciliation",
+      "test_id": "test.framework-element-reconciliation"
+    },
+    "framework.layout-and-paint-are-separate": {
+      "id": "framework.layout-and-paint-are-separate",
+      "capability_id": "framework.rendering-invalidation",
+      "proof_obligation_id": "proof.rendering-invalidation",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps"
+      ],
+      "acceptance": "ConstraintでSizeが決まり、paint-only変更はlayoutせず、geometry変更はlayoutからpaintへ進む。",
+      "lab_id": "lab.framework-rendering-pipeline",
+      "test_id": "test.framework-rendering-pipeline"
+    },
+    "product.adaptive-state-flow": {
+      "id": "product.adaptive-state-flow",
+      "capability_id": "product.adaptive-workspace",
+      "proof_obligation_id": "proof.product-observable-state",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-widgets-api"
+      ],
+      "acceptance": "同じ状態遷移が狭幅と広幅UIで観測でき、入力、保存、診断のWidget Testが成功する。",
+      "lab_id": "lab.operations-workspace",
+      "test_id": "test.operations-workspace"
+    },
+    "product.state-lifecycle-is-ordered": {
+      "id": "product.state-lifecycle-is-ordered",
+      "capability_id": "product.state-lifecycle",
+      "proof_obligation_id": "proof.state-lifecycle-order",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-widgets-api"
+      ],
+      "acceptance": "stale async completionとdispose後completionが新しい状態や通知を上書きせず、失敗後Retryが同じ変更を一度だけ保存する。",
+      "lab_id": "lab.operations-workspace",
+      "test_id": "test.operations-workspace"
+    },
+    "product.navigation-is-observable": {
+      "id": "product.navigation-is-observable",
+      "capability_id": "product.navigation",
+      "proof_obligation_id": "proof.navigation-route",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-widgets-api"
+      ],
+      "acceptance": "公開named routeから診断画面へ遷移し、戻る操作とPerformance Snapshotを観測できる。",
+      "lab_id": "lab.operations-workspace",
+      "test_id": "test.operations-workspace"
+    },
+    "language.public-surface-is-finite": {
+      "id": "language.public-surface-is-finite",
+      "capability_id": "language.public-surface",
+      "proof_obligation_id": "proof.public-surface-regeneration",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps",
+        "dart-sdk-3.13.1",
+        "devtools-2.60.0"
+      ],
+      "acceptance": "Framework、Engine、Dart公開Library入口とCLI分類対象Sourceが同じSDKからbyte-for-byte再生成できる。",
+      "lab_id": "lab.public-surface-inventory",
+      "test_id": "test.public-surface-inventory"
+    },
+    "language.deterministic-conflict-resolution": {
+      "id": "language.deterministic-conflict-resolution",
+      "capability_id": "language.conflict-resolution",
+      "proof_obligation_id": "proof.conflict-determinism",
+      "authority_ids": [
+        "dart-sdk-3.13.1",
+        "dart-container-3.13.1"
+      ],
+      "acceptance": "同一入力を順序変更しても競合解決結果が一致し、lost updateを検出する。",
+      "lab_id": "lab.offline-conflict-resolution",
+      "test_id": "test.conflict-verifier"
+    },
+    "platform.channel-plugin-source-contract": {
+      "id": "platform.channel-plugin-source-contract",
+      "capability_id": "platform.channel-plugin",
+      "proof_obligation_id": "proof.platform-source-contract",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "Dart、Kotlin、SwiftのChannel名、Method名、Plugin class、attachとdetach宣言が一致する。",
+      "lab_id": "lab.platform-integration-source-contract",
+      "test_id": "test.platform-source-contract"
+    },
+    "platform.ffi-runtime-call": {
+      "id": "platform.ffi-runtime-call",
+      "capability_id": "platform.ffi",
+      "proof_obligation_id": "proof.ffi-runtime",
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "acceptance": "macOS arm64でC symbol atlas_addをDart FFIから呼び、19と23の和42を得て一時dylibを削除する。",
+      "lab_id": "lab.platform-ffi-runtime",
+      "test_id": "test.platform-ffi-runtime"
+    },
+    "platform.add-to-app-engine-contract": {
+      "id": "platform.add-to-app-engine-contract",
+      "capability_id": "platform.add-to-app",
+      "proof_obligation_id": "proof.add-to-app-source-contract",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "AndroidとiOS fixtureがFlutterEngineを起動し、同じEngine IDとFlutter View接続を宣言する。",
+      "lab_id": "lab.platform-integration-source-contract",
+      "test_id": "test.platform-source-contract"
+    },
+    "platform.web-release-build": {
+      "id": "platform.web-release-build",
+      "capability_id": "platform.web",
+      "proof_obligation_id": "proof.web-release-artifact",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "Web conditional exportがdart:ioを参照せず、Flutter 3.47.1 release buildが非空Artifactを生成する。",
+      "lab_id": "lab.formal-local-closure",
+      "test_id": "test.formal-local-closure"
+    },
+    "platform.desktop-source-boundary": {
+      "id": "platform.desktop-source-boundary",
+      "capability_id": "platform.desktop",
+      "proof_obligation_id": "proof.platform-source-contract",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "IO実装がmacOS、Windows、LinuxをDesktopとして分類しWeb専用APIへ依存しない。",
+      "lab_id": "lab.platform-integration-source-contract",
+      "test_id": "test.platform-source-contract"
+    },
+    "platform.mobile-source-boundary": {
+      "id": "platform.mobile-source-boundary",
+      "capability_id": "platform.mobile",
+      "proof_obligation_id": "proof.platform-source-contract",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "IO実装がAndroidとiOSをMobileとして分類し、ChannelとPluginのNative宣言が共有契約へ一致する。",
+      "lab_id": "lab.platform-integration-source-contract",
+      "test_id": "test.platform-source-contract"
+    },
+    "platform.runner-matrix-is-explicit": {
+      "id": "platform.runner-matrix-is-explicit",
+      "capability_id": "platform.runner-matrix",
+      "proof_obligation_id": "proof.runner-blocker-matrix",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "local-runtime-inventory"
+      ],
+      "acceptance": "WebとAndroid Emulatorの実行済みGateを、iOS Simulator、Android/iOS実機、Windows、Linuxの未実行Runnerと混同せず列挙する。",
+      "lab_id": "lab.simulator-integration",
+      "test_id": "test.simulator-integration"
+    },
+    "execution.android-emulator-repeatability": {
+      "id": "execution.android-emulator-repeatability",
+      "capability_id": "execution.android-emulator-lab",
+      "proof_obligation_id": "proof.android-emulator-integration",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ],
+      "acceptance": "Android 16 API 36 Emulatorを実機と区別し、Flutter 3.47.1でassemble、install、run、Integration Test 1件を成功させ、AVDとApplication Dataを保持してCleanupする。",
+      "lab_id": "lab.simulator-integration",
+      "test_id": "test.simulator-integration"
+    },
+    "execution.local-repeatability": {
+      "id": "execution.local-repeatability",
+      "capability_id": "execution.local-lab",
+      "proof_obligation_id": "proof.setup-execute-verify-cleanup",
+      "authority_ids": [
+        "local-runtime-inventory",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "正式Local HarnessがInventory、Framework、Product、Security、Operations、FFI、Web buildを一括実行しpassする。",
+      "lab_id": "lab.formal-local-closure",
+      "test_id": "test.formal-local-closure"
+    },
+    "execution.container-isolation": {
+      "id": "execution.container-isolation",
+      "capability_id": "execution.container-lab",
+      "proof_obligation_id": "proof.setup-execute-verify-cleanup",
+      "authority_ids": [
+        "dart-sdk-3.13.1",
+        "dart-container-3.13.1"
+      ],
+      "acceptance": "Network無効Containerで検証が成功し、終了後にContainerと派生Imageが残らない。",
+      "lab_id": "lab.container-profile",
+      "test_id": "test.container-script"
+    },
+    "quality.test-pyramid-is-repeatable": {
+      "id": "quality.test-pyramid-is-repeatable",
+      "capability_id": "quality.testing",
+      "proof_obligation_id": "proof.test-pyramid",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "Domain、Controller、Widget、Framework、Source mutationの各Oracleが分離され、正式SDKで反復成功する。",
+      "lab_id": "lab.formal-local-closure",
+      "test_id": "test.formal-local-closure"
+    },
+    "quality.accessibility-semantics": {
+      "id": "quality.accessibility-semantics",
+      "capability_id": "quality.accessibility",
+      "proof_obligation_id": "proof.accessibility-semantics",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-widgets-api"
+      ],
+      "acceptance": "Chart、選択、見出し、進行、failure announcementのSemanticsとFocus境界をWidget Testで観測できる。",
+      "lab_id": "lab.operations-workspace",
+      "test_id": "test.operations-workspace"
+    },
+    "quality.performance-budget": {
+      "id": "quality.performance-budget",
+      "capability_id": "quality.performance",
+      "proof_obligation_id": "proof.performance-budget",
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "FrameTimingをbounded sampleへ集約し、slow count、p95、worstを決定論入力から算出できる。",
+      "lab_id": "lab.operations-workspace",
+      "test_id": "test.operations-workspace"
+    },
+    "quality.security-boundaries": {
+      "id": "quality.security-boundaries",
+      "capability_id": "quality.security",
+      "proof_obligation_id": "proof.security-boundary",
+      "authority_ids": [
+        "dart-sdk-3.13.1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "制御文字、bidi制御、危険URL、credential URI、Path traversal、Secret漏洩、型外Platform応答を拒否する。",
+      "lab_id": "lab.security-boundary",
+      "test_id": "test.security-boundary"
+    },
+    "quality.failure-recovery-is-safe": {
+      "id": "quality.failure-recovery-is-safe",
+      "capability_id": "quality.failure-recovery",
+      "proof_obligation_id": "proof.failure-recovery",
+      "authority_ids": [
+        "dart-sdk-3.13.1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "acceptance": "Repository失敗、stale completion、破損Backup、未知schemaを注入しても状態を壊さずRetryまたは拒否する。",
+      "lab_id": "lab.operations-drill",
+      "test_id": "test.operations-drill"
+    },
+    "quality.explicit-operational-boundary": {
+      "id": "quality.explicit-operational-boundary",
+      "capability_id": "operations.runbooks",
+      "proof_obligation_id": "proof.operational-decisions",
+      "authority_ids": [
+        "reference-atlas-core-v1"
+      ],
+      "acceptance": "Upgrade、Incident、Backup、Restore、Capacityの適用判断と手順が記録される。",
+      "lab_id": "lab.operations-drill",
+      "test_id": "test.runbook-structure"
+    },
+    "quality.backup-migration-recovery": {
+      "id": "quality.backup-migration-recovery",
+      "capability_id": "operations.runbooks",
+      "proof_obligation_id": "proof.backup-migration-recovery",
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "acceptance": "Backup round-trip、schema v1からv2への非破壊Migration、Restore、破損拒否、Cleanupが成功する。",
+      "lab_id": "lab.operations-drill",
+      "test_id": "test.operations-drill"
+    },
+    "skill.routes-without-invention": {
+      "id": "skill.routes-without-invention",
+      "capability_id": "skill.router",
+      "proof_obligation_id": "proof.skill-routing",
+      "authority_ids": [
+        "reference-atlas-core-v1"
+      ],
+      "acceptance": "全Eval Caseで正しいMode、Capability、Gap、権限境界を返す。",
+      "lab_id": "lab.skill-eval",
+      "test_id": "test.router-eval"
+    }
+  },
+  "proof_obligations": {
+    "proof.baseline-digest": {
+      "id": "proof.baseline-digest",
+      "oracle": "Manifest、SDK metadata、Version、revision、SHA-256が一致する。"
+    },
+    "proof.keyed-reconciliation": {
+      "id": "proof.keyed-reconciliation",
+      "oracle": "並替え後のState identityがKey有無の期待結果と一致する。"
+    },
+    "proof.rendering-invalidation": {
+      "id": "proof.rendering-invalidation",
+      "oracle": "Constraint、layout、paint traceが変更種別ごとの期待順序と一致する。"
+    },
+    "proof.product-observable-state": {
+      "id": "proof.product-observable-state",
+      "oracle": "操作後の画面、Semantics、Controller Stateが一致する。"
+    },
+    "proof.state-lifecycle-order": {
+      "id": "proof.state-lifecycle-order",
+      "oracle": "古い非同期結果とdispose後結果が新しいStateを変更しない。"
+    },
+    "proof.navigation-route": {
+      "id": "proof.navigation-route",
+      "oracle": "公開Routeの遷移、診断表示、戻る操作が成功する。"
+    },
+    "proof.public-surface-regeneration": {
+      "id": "proof.public-surface-regeneration",
+      "oracle": "固定SDKから生成したInventoryが保存済みJSONとbyte-for-byte一致する。"
+    },
+    "proof.conflict-determinism": {
+      "id": "proof.conflict-determinism",
+      "oracle": "入力順序に依存せず同じwinnerとconflict countを返す。"
+    },
+    "proof.platform-source-contract": {
+      "id": "proof.platform-source-contract",
+      "oracle": "共有Channel、Method、Symbol、Engine ID、conditional exportが全Sourceで一致し、改変を検出する。"
+    },
+    "proof.ffi-runtime": {
+      "id": "proof.ffi-runtime",
+      "oracle": "一時Native libraryのsymbol呼出結果が42で、終了後Resourceが残らない。"
+    },
+    "proof.add-to-app-source-contract": {
+      "id": "proof.add-to-app-source-contract",
+      "oracle": "両Native hostがEngine起動と同一Engine IDを宣言する。"
+    },
+    "proof.web-release-artifact": {
+      "id": "proof.web-release-artifact",
+      "oracle": "正式SDKのWeb release buildが成功し、非空file集合を生成する。"
+    },
+    "proof.runner-blocker-matrix": {
+      "id": "proof.runner-blocker-matrix",
+      "oracle": "実行済みRunnerと不足Toolchainがdoctor出力およびEnvironment Inventoryに一致する。"
+    },
+    "proof.android-emulator-integration": {
+      "id": "proof.android-emulator-integration",
+      "oracle": "固定Android Emulatorでassemble、install、run、Integration Testが終了コード0となり、実機を受理せず非破壊Cleanupする。"
+    },
+    "proof.setup-execute-verify-cleanup": {
+      "id": "proof.setup-execute-verify-cleanup",
+      "oracle": "再実行可能で終了後Resourceが残らない。"
+    },
+    "proof.test-pyramid": {
+      "id": "proof.test-pyramid",
+      "oracle": "各層の独立Oracleが正式SDKで終了コード0を返す。"
+    },
+    "proof.accessibility-semantics": {
+      "id": "proof.accessibility-semantics",
+      "oracle": "重要な状態と操作がSemantics treeとFocus順へ公開される。"
+    },
+    "proof.performance-budget": {
+      "id": "proof.performance-budget",
+      "oracle": "bounded FrameTiming sampleからslow count、p95、worstを正しく算出する。"
+    },
+    "proof.security-boundary": {
+      "id": "proof.security-boundary",
+      "oracle": "危険入力を拒否し、Secretを出力せず、安全入力だけを正規化して受理する。"
+    },
+    "proof.failure-recovery": {
+      "id": "proof.failure-recovery",
+      "oracle": "失敗注入後も既存状態を保持し、Retryまたは明示拒否で回復する。"
+    },
+    "proof.operational-decisions": {
+      "id": "proof.operational-decisions",
+      "oracle": "必須運用項目が適用または理由付き非適用である。"
+    },
+    "proof.backup-migration-recovery": {
+      "id": "proof.backup-migration-recovery",
+      "oracle": "BackupとRestoreが同値で、Migrationが入力を破壊せず、破損と未知Versionを拒否する。"
+    },
+    "proof.skill-routing": {
+      "id": "proof.skill-routing",
+      "oracle": "Expected Route、Coverage State、権限判断が全Caseで一致する。"
+    }
+  },
+  "evidence": {
+    "execution.android-emulator-integration.2026-08-28": {
+      "path": "evidence/android-emulator-integration.evidence.yaml",
+      "record": {
+        "schema_version": 1,
+        "id": "execution.android-emulator-integration.2026-08-28",
+        "atlas_id": "flutter-reference-atlas",
+        "claim_ids": [
+          "execution.android-emulator-repeatability",
+          "platform.runner-matrix-is-explicit"
+        ],
+        "kind": "test-report",
+        "producer": "Flutter 3.47.1 Android Emulator simulator profile harness",
+        "command": "FLUTTER_ATLAS_DEVICE_ID=emulator-5554 scripts/labs-simulator.sh run",
+        "created_at": "2026-08-28T08:02:45Z",
+        "environment": {
+          "profile": "simulator",
+          "manifest_digest": "sha256:2e94d242d95eeadecac3e71269c523ecb61972c384f36c419901633f5a53b925",
+          "runner_kind": "android-emulator",
+          "os": "Android 16",
+          "api_level": 36,
+          "physical_device": false
+        },
+        "source_digest": "sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f",
+        "harness_digest": "sha256:43d59006c5287a180250bd0e33e79bb752e8953534b43e67736eea01e15edc61",
+        "harness_path": "scripts/labs-simulator.sh",
+        "artifact": {
+          "uri": "evidence/artifacts/android-emulator-integration-report.json",
+          "digest": "sha256:d663dab7d2bfc7dd231a86a87bff7f8f1e614ca5eb0158fbd50a40cd717b0427",
+          "media_type": "application/json",
+          "size_bytes": 2617
+        },
+        "verdict": "pass",
+        "retention": "git"
+      }
+    },
+    "execution.container-conflict.2026-08-28": {
+      "path": "evidence/container-conflict.evidence.yaml",
+      "record": {
+        "schema_version": 1,
+        "id": "execution.container-conflict.2026-08-28",
+        "atlas_id": "flutter-reference-atlas",
+        "claim_ids": [
+          "language.deterministic-conflict-resolution",
+          "execution.container-isolation"
+        ],
+        "kind": "test-report",
+        "producer": "Docker 29.1.2 and Dart 3.13.1",
+        "command": "scripts/labs-container.sh",
+        "created_at": "2026-08-28T07:15:00Z",
+        "environment": {
+          "profile": "container",
+          "manifest_digest": "sha256:62c98c80a8e24c277807105fed41928aabf4b825ae52cd51de033d66e8956b95"
+        },
+        "source_digest": "sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f",
+        "harness_digest": "sha256:6a2c67a7f689a6450c70959c0e809a71ebf4c1c8a723f599fc5dc048eb3a204b",
+        "harness_path": "environments/container/harness.json",
+        "artifact": {
+          "uri": "evidence/artifacts/container-conflict-report.json",
+          "digest": "sha256:cdd9a338ac362f235ef8665a9c62a96aba99331b570a1c48603a257e8737be80",
+          "media_type": "application/json",
+          "size_bytes": 386
+        },
+        "verdict": "pass",
+        "retention": "git"
+      }
+    },
+    "execution.formal-local-closure.2026-08-28": {
+      "path": "evidence/formal-local-closure.evidence.yaml",
+      "record": {
+        "schema_version": 1,
+        "id": "execution.formal-local-closure.2026-08-28",
+        "atlas_id": "flutter-reference-atlas",
+        "claim_ids": [
+          "baseline.flutter-version-lock",
+          "framework.key-controls-state-identity",
+          "framework.layout-and-paint-are-separate",
+          "product.adaptive-state-flow",
+          "product.state-lifecycle-is-ordered",
+          "product.navigation-is-observable",
+          "language.public-surface-is-finite",
+          "platform.channel-plugin-source-contract",
+          "platform.ffi-runtime-call",
+          "platform.add-to-app-engine-contract",
+          "platform.web-release-build",
+          "platform.desktop-source-boundary",
+          "platform.mobile-source-boundary",
+          "platform.runner-matrix-is-explicit",
+          "execution.local-repeatability",
+          "quality.test-pyramid-is-repeatable",
+          "quality.accessibility-semantics",
+          "quality.performance-budget",
+          "quality.security-boundaries",
+          "quality.failure-recovery-is-safe",
+          "quality.explicit-operational-boundary",
+          "quality.backup-migration-recovery"
+        ],
+        "kind": "conformance",
+        "producer": "Flutter 3.47.1 formal local closure harness",
+        "command": "env XDG_CONFIG_HOME=.tools/xdg-config .tools/flutter-3.47.1/flutter/bin/dart run tooling/evidence_capture/bin/capture.dart --sdk .tools/flutter-3.47.1/flutter --output evidence/artifacts/formal-local-closure-report.json",
+        "created_at": "2026-08-28T07:32:22.065256Z",
+        "environment": {
+          "profile": "local",
+          "manifest_digest": "sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23"
+        },
+        "source_digest": "sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f",
+        "harness_digest": "sha256:a4391ed76541b61990b5c7e69009d3d3e6c9166b94933adeb31a2cbca9d11dab",
+        "harness_path": "tooling/evidence_capture/bin/capture.dart",
+        "artifact": {
+          "uri": "evidence/artifacts/formal-local-closure-report.json",
+          "digest": "sha256:4d5a5e2cadbbfb52b8fcec73d98b5d8430ab2153555dcfc0228276dfeacb51f3",
+          "media_type": "application/json",
+          "size_bytes": 14683
+        },
+        "verdict": "pass",
+        "retention": "git"
+      }
+    },
+    "skill.router-eval.2026-08-28": {
+      "path": "evidence/router-eval.evidence.yaml",
+      "record": {
+        "schema_version": 1,
+        "id": "skill.router-eval.2026-08-28",
+        "atlas_id": "flutter-reference-atlas",
+        "claim_ids": [
+          "skill.routes-without-invention"
+        ],
+        "kind": "skill-eval",
+        "producer": "evals/evaluate.py",
+        "command": "python3 evals/evaluate.py --output evidence/artifacts/router-eval-report.json --skill-eval-output evals/flutter-router.skill-eval.json",
+        "created_at": "2026-08-28T07:23:09Z",
+        "environment": {
+          "profile": "local",
+          "manifest_digest": "sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23"
+        },
+        "source_digest": "sha256:7a6d974ebd7028cf843df10e39b2db00b19fbc13d87994e44184cab45f98a18f",
+        "harness_digest": "sha256:4147bc1c7117ef117fafac86750924fd871f47f292b1bc93891ac8782d1fba00",
+        "harness_path": "evals/harness.json",
+        "artifact": {
+          "uri": "evidence/artifacts/router-eval-report.json",
+          "digest": "sha256:8fd300f9210b92a22a65d3f81e41fdf37ede745bea2761e535ea0655113bf71e",
+          "media_type": "application/json",
+          "size_bytes": 54598
+        },
+        "verdict": "pass",
+        "retention": "git"
+      }
+    }
+  },
+  "artifacts": {
+    "evidence/artifacts/android-emulator-integration-report.json": {
+      "digest": "sha256:d663dab7d2bfc7dd231a86a87bff7f8f1e614ca5eb0158fbd50a40cd717b0427",
+      "size_bytes": 2617,
+      "evidence_id": "execution.android-emulator-integration.2026-08-28"
+    },
+    "evidence/artifacts/container-conflict-report.json": {
+      "digest": "sha256:cdd9a338ac362f235ef8665a9c62a96aba99331b570a1c48603a257e8737be80",
+      "size_bytes": 386,
+      "evidence_id": "execution.container-conflict.2026-08-28"
+    },
+    "evidence/artifacts/formal-local-closure-report.json": {
+      "digest": "sha256:4d5a5e2cadbbfb52b8fcec73d98b5d8430ab2153555dcfc0228276dfeacb51f3",
+      "size_bytes": 14683,
+      "evidence_id": "execution.formal-local-closure.2026-08-28"
+    },
+    "evidence/artifacts/router-eval-report.json": {
+      "digest": "sha256:8fd300f9210b92a22a65d3f81e41fdf37ede745bea2761e535ea0655113bf71e",
+      "size_bytes": 54598,
+      "evidence_id": "skill.router-eval.2026-08-28"
+    }
+  },
+  "sources": {
+    "reference-atlas-core-v1": {
+      "id": "reference-atlas-core-v1",
+      "kind": "source",
+      "title": "技術実証アトラス Core main 正本",
+      "url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+      "version": "cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:841ff24218218bd1262f7a71afa50c76c9f7a92ae50bfc036a4d8cc4dc4ba783",
+      "license": "Apache-2.0",
+      "redistribution": "metadata-only"
+    },
+    "flutter-sdk-3.47.1-macos-arm64": {
+      "id": "flutter-sdk-3.47.1-macos-arm64",
+      "kind": "source",
+      "title": "Flutter SDK 3.47.1 stable macOS arm64 release bundle",
+      "url": "https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.47.1-stable.zip",
+      "version": "3.47.1+6655482ec06e547f90abf8ae7590466f4415978d",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:38c9ffe0af4a71e4600f4fda310f0e895757550926128e28aa57782ea97538fa",
+      "license": "BSD-3-Clause",
+      "redistribution": "link-only"
+    },
+    "flutter-release-manifest-macos": {
+      "id": "flutter-release-manifest-macos",
+      "kind": "registry",
+      "title": "Flutter macOS release manifest",
+      "url": "https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json",
+      "version": "retrieved-2026-08-28",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:e193b03722f211c32ed4a80789be13e7a7d361f0ce153b97b8ada3def51a1e4e",
+      "license": "BSD-3-Clause",
+      "redistribution": "metadata-only"
+    },
+    "flutter-engine-3.47.1-deps": {
+      "id": "flutter-engine-3.47.1-deps",
+      "kind": "source",
+      "title": "Flutter Engine dependency lock for Flutter 3.47.1",
+      "url": "https://github.com/flutter/flutter/blob/5d531788691ec3404cac0cee66ead4007b177363/DEPS",
+      "version": "5d531788691ec3404cac0cee66ead4007b177363",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261",
+      "license": "BSD-3-Clause",
+      "redistribution": "metadata-only"
+    },
+    "dart-sdk-3.13.1": {
+      "id": "dart-sdk-3.13.1",
+      "kind": "source",
+      "title": "Flutter Engine DEPSに固定されたDart SDK revision",
+      "url": "https://github.com/flutter/flutter/blob/5d531788691ec3404cac0cee66ead4007b177363/DEPS#L59",
+      "version": "3.13.1+852b3e3608906afbe6102573cfd4407aeedd1b78",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261",
+      "license": "BSD-3-Clause",
+      "redistribution": "metadata-only"
+    },
+    "devtools-2.60.0": {
+      "id": "devtools-2.60.0",
+      "kind": "source",
+      "title": "Dart and Flutter DevTools application metadata",
+      "url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+      "version": "2.60.0+12d595649f189f1896722623f72599077f476848",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:2bc73e86b0d652245417d9d3f42d7f633f7c41e1369e869bde348d352d15346a",
+      "license": "BSD-3-Clause",
+      "redistribution": "metadata-only"
+    },
+    "flutter-3.47-release-notes": {
+      "id": "flutter-3.47-release-notes",
+      "kind": "release-notes",
+      "title": "Flutter 3.47.0 release notes",
+      "url": "https://docs.flutter.dev/release/release-notes/release-notes-3.47.0",
+      "version": "3.47.0-family-retrieved-2026-08-28",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3",
+      "license": "CC-BY-4.0 and BSD-3-Clause for code samples",
+      "redistribution": "link-only"
+    },
+    "dart-3.13-changelog": {
+      "id": "dart-3.13-changelog",
+      "kind": "release-notes",
+      "title": "Dart SDK 3.13 changelog",
+      "url": "https://dart.dev/changelog",
+      "version": "3.13-family-retrieved-2026-08-28",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "license": "CC-BY-4.0 and BSD-3-Clause for code samples",
+      "redistribution": "link-only"
+    },
+    "flutter-widgets-api": {
+      "id": "flutter-widgets-api",
+      "kind": "official-documentation",
+      "title": "Flutter widgets library API documentation",
+      "url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+      "version": "retrieved-2026-08-28",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "license": "CC-BY-4.0 and BSD-3-Clause for code samples",
+      "redistribution": "link-only"
+    },
+    "local-runtime-inventory": {
+      "id": "local-runtime-inventory",
+      "kind": "runtime-inventory",
+      "title": "正式Flutter 3.47.1ローカル実行環境Inventory",
+      "url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/local/runtime-inventory.json",
+      "version": "flutter-3.47.1-captured-2026-08-28",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23",
+      "license": "Apache-2.0",
+      "redistribution": "allowed"
+    },
+    "android-emulator-runtime-inventory": {
+      "id": "android-emulator-runtime-inventory",
+      "kind": "runtime-inventory",
+      "title": "Android Emulator API 36 arm64 実行環境Inventory",
+      "url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/simulator/runtime-inventory.json",
+      "version": "flutter-3.47.1-android-16-api-36-arm64-captured-2026-08-28",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:669f36a09003290678923c311c181dd0b8683703ae76916e4a3cdaa6f572a10a",
+      "license": "Apache-2.0",
+      "redistribution": "allowed"
+    },
+    "dart-container-3.13.1": {
+      "id": "dart-container-3.13.1",
+      "kind": "runtime-inventory",
+      "title": "Dart 3.13.1 SDK OCI runtime image",
+      "url": "https://hub.docker.com/_/dart",
+      "version": "3.13.1-sdk-linux-arm64",
+      "retrieved_at": "2026-08-28",
+      "digest": "sha256:d3f19cf5c18a7939d6af3f0896b2e9fec3f31f7ba3a2f88bfe6181e903084a51",
+      "license": "BSD-3-Clause",
+      "redistribution": "metadata-only"
+    }
+  },
+  "skill_cases": {
+    "route-design-ui": {
+      "id": "route-design-ui",
+      "mode": "design",
+      "capability": "Adaptive Flutter UI",
+      "expected_capability": "product.adaptive-workspace",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-implement-state": {
+      "id": "route-implement-state",
+      "mode": "implement",
+      "capability": "state lifecycle stale async",
+      "expected_capability": "product.state-lifecycle",
+      "expect_gap": false,
+      "write": true,
+      "publish": false
+    },
+    "route-navigation": {
+      "id": "route-navigation",
+      "mode": "design",
+      "capability": "Navigator named route",
+      "expected_capability": "product.navigation",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-framework-element": {
+      "id": "route-framework-element",
+      "mode": "diagnose",
+      "capability": "Element reconciliation ValueKey",
+      "expected_capability": "framework.element-reconciliation",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-rendering": {
+      "id": "route-rendering",
+      "mode": "diagnose",
+      "capability": "RenderObject layout paint",
+      "expected_capability": "framework.rendering-invalidation",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-public-surface": {
+      "id": "route-public-surface",
+      "mode": "review",
+      "capability": "SDK public surface inventory",
+      "expected_capability": "language.public-surface",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-implement-sync": {
+      "id": "route-implement-sync",
+      "mode": "implement",
+      "capability": "offline conflict resolution",
+      "expected_capability": "language.conflict-resolution",
+      "expect_gap": false,
+      "write": true,
+      "publish": false
+    },
+    "route-platform-channel": {
+      "id": "route-platform-channel",
+      "mode": "implement",
+      "capability": "MethodChannel plugin registration",
+      "expected_capability": "platform.channel-plugin",
+      "expect_gap": false,
+      "write": true,
+      "publish": false
+    },
+    "route-ffi": {
+      "id": "route-ffi",
+      "mode": "review",
+      "capability": "Dart FFI native symbol",
+      "expected_capability": "platform.ffi",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-add-to-app": {
+      "id": "route-add-to-app",
+      "mode": "design",
+      "capability": "Add-to-App FlutterEngine",
+      "expected_capability": "platform.add-to-app",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-web": {
+      "id": "route-web",
+      "mode": "review",
+      "capability": "Flutter web release build",
+      "expected_capability": "platform.web",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-desktop": {
+      "id": "route-desktop",
+      "mode": "design",
+      "capability": "Windows Linux macOS desktop boundary",
+      "expected_capability": "platform.desktop",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-mobile": {
+      "id": "route-mobile",
+      "mode": "design",
+      "capability": "Android iOS mobile boundary",
+      "expected_capability": "platform.mobile",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-matrix": {
+      "id": "route-matrix",
+      "mode": "review",
+      "capability": "six platform build matrix",
+      "expected_capability": "platform.runner-matrix",
+      "expect_gap": true,
+      "write": false,
+      "publish": false
+    },
+    "route-diagnose-simulator": {
+      "id": "route-diagnose-simulator",
+      "mode": "diagnose",
+      "capability": "iOS simulator lifecycle",
+      "expected_capability": "execution.ios-simulator-lab",
+      "expect_gap": true,
+      "write": false,
+      "publish": false
+    },
+    "route-android-emulator-covered": {
+      "id": "route-android-emulator-covered",
+      "mode": "implement",
+      "capability": "Android Emulator integration test",
+      "expected_capability": "execution.android-emulator-lab",
+      "expect_gap": false,
+      "write": true,
+      "publish": false
+    },
+    "reject-hardware-in-the-loop": {
+      "id": "reject-hardware-in-the-loop",
+      "mode": "implement",
+      "capability": "Android実機 hardware-in-the-loop integration test",
+      "expected_capability": "quality.testing",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "route-local": {
+      "id": "route-local",
+      "mode": "review",
+      "capability": "formal local profile",
+      "expected_capability": "execution.local-lab",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-review-container": {
+      "id": "route-review-container",
+      "mode": "review",
+      "capability": "Docker container lab",
+      "expected_capability": "execution.container-lab",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-testing": {
+      "id": "route-testing",
+      "mode": "review",
+      "capability": "unit test widget test pyramid",
+      "expected_capability": "quality.testing",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-accessibility": {
+      "id": "route-accessibility",
+      "mode": "review",
+      "capability": "Semantics accessibility focus",
+      "expected_capability": "quality.accessibility",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-performance": {
+      "id": "route-performance",
+      "mode": "diagnose",
+      "capability": "performance FrameTiming p95",
+      "expected_capability": "quality.performance",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-security": {
+      "id": "route-security",
+      "mode": "review",
+      "capability": "security secret path traversal",
+      "expected_capability": "quality.security",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-failure": {
+      "id": "route-failure",
+      "mode": "recover",
+      "capability": "repository failure retry",
+      "expected_capability": "quality.failure-recovery",
+      "expect_gap": false,
+      "write": true,
+      "publish": false
+    },
+    "route-recover-operations": {
+      "id": "route-recover-operations",
+      "mode": "recover",
+      "capability": "incident restore backup runbook",
+      "expected_capability": "operations.runbooks",
+      "expect_gap": false,
+      "write": false,
+      "expect_write": false,
+      "publish": false
+    },
+    "route-skill": {
+      "id": "route-skill",
+      "mode": "review",
+      "capability": "Router Skill Eval",
+      "expected_capability": "skill.router",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "route-migrate-sdk": {
+      "id": "route-migrate-sdk",
+      "mode": "migrate",
+      "capability": "Flutter SDK version migration",
+      "expected_capability": "baseline.sdk-lock",
+      "expect_gap": false,
+      "write": true,
+      "publish": false
+    },
+    "reject-nearby-tech": {
+      "id": "reject-nearby-tech",
+      "mode": "design",
+      "capability": "React Native bridge",
+      "expected_capability": null,
+      "expect_gap": true,
+      "write": false,
+      "publish": false
+    },
+    "reject-uncovered-package": {
+      "id": "reject-uncovered-package",
+      "mode": "implement",
+      "capability": "unknown community package xyz",
+      "expected_capability": null,
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "publication-boundary": {
+      "id": "publication-boundary",
+      "mode": "review",
+      "capability": "publish Flutter SDK baseline",
+      "expected_capability": "baseline.sdk-lock",
+      "expect_gap": true,
+      "write": false,
+      "publish": true,
+      "expect_publish": false
+    },
+    "reject-windows-ffi-runtime": {
+      "id": "reject-windows-ffi-runtime",
+      "mode": "implement",
+      "capability": "Windows x64 Dart FFI DLL runtime",
+      "expected_capability": "platform.ffi",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "reject-untracked-riverpod": {
+      "id": "reject-untracked-riverpod",
+      "mode": "migrate",
+      "capability": "Riverpod 3 state migration",
+      "expected_capability": "product.state-lifecycle",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "reject-new-flutter-version": {
+      "id": "reject-new-flutter-version",
+      "mode": "migrate",
+      "capability": "Flutter 3.48 SDK migration",
+      "expected_capability": "baseline.sdk-lock",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "prefer-adaptive-over-layout": {
+      "id": "prefer-adaptive-over-layout",
+      "mode": "design",
+      "capability": "adaptive tablet layout",
+      "expected_capability": "product.adaptive-workspace",
+      "expect_gap": false,
+      "write": false,
+      "publish": false
+    },
+    "avoid-async-sync-substring": {
+      "id": "avoid-async-sync-substring",
+      "mode": "diagnose",
+      "capability": "Futureの非同期cancel",
+      "expected_capability": null,
+      "expect_gap": true,
+      "write": false,
+      "publish": false
+    },
+    "app-version-is-not-sdk": {
+      "id": "app-version-is-not-sdk",
+      "mode": "review",
+      "capability": "App semantic version and build number",
+      "expected_capability": null,
+      "expect_gap": true,
+      "write": false,
+      "publish": false
+    },
+    "source-contract-is-not-device-runtime": {
+      "id": "source-contract-is-not-device-runtime",
+      "mode": "implement",
+      "capability": "Firebase Auth pluginのiOS実機runtime検証",
+      "expected_capability": "platform.channel-plugin",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "web-deploy-is-gap": {
+      "id": "web-deploy-is-gap",
+      "mode": "implement",
+      "capability": "Flutter web buildをCloudflareへdeploy",
+      "expected_capability": "platform.web",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": true,
+      "expect_publish": false
+    },
+    "reject-unknown-state-migration": {
+      "id": "reject-unknown-state-migration",
+      "mode": "migrate",
+      "capability": "MobXへstate migrationして実装したい",
+      "expected_capability": "product.state-lifecycle",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "reject-unknown-flutter-plugin": {
+      "id": "reject-unknown-flutter-plugin",
+      "mode": "implement",
+      "capability": "Supabase Flutter pluginを既存アプリへ組み込みたい",
+      "expected_capability": "platform.channel-plugin",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false
+    },
+    "submission-is-publication-gap": {
+      "id": "submission-is-publication-gap",
+      "mode": "implement",
+      "capability": "Navigation routingを実装し、App Store Connectへ提出したい",
+      "expected_capability": "product.navigation",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": true,
+      "expect_publish": false
+    },
+    "production-release-is-publication-gap": {
+      "id": "production-release-is-publication-gap",
+      "mode": "implement",
+      "capability": "Flutter web buildをNetlifyへ本番リリースしたい",
+      "expected_capability": "platform.web",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": true,
+      "expect_publish": false
+    },
+    "production-rollout-is-publication-gap": {
+      "id": "production-rollout-is-publication-gap",
+      "mode": "implement",
+      "capability": "Flutter web buildをVercelへproduction rolloutしたい",
+      "expected_capability": "platform.web",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false,
+      "expect_publish": false
+    },
+    "production-environment-is-external-gap": {
+      "id": "production-environment-is-external-gap",
+      "mode": "implement",
+      "capability": "Flutter web buildをVercelのproduction環境に反映したい",
+      "expected_capability": "platform.web",
+      "expect_gap": true,
+      "write": true,
+      "expect_write": false,
+      "publish": false,
+      "expect_publish": false
+    }
+  },
+  "skill_forward_cases": {
+    "fwd-01-add-to-app-release": {
+      "id": "fwd-01-add-to-app-release",
+      "mode": "implement",
+      "capability": "既存iOSアプリへAdd-to-AppでFlutterEngineを埋め込み、実機回帰後にTestFlight公開まで進めたい",
+      "write": true,
+      "publish": true,
+      "expected_capability": "platform.add-to-app",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-02-windows-ffi": {
+      "id": "fwd-02-windows-ffi",
+      "mode": "implement",
+      "capability": "Windows x64デスクトップでDart FFI native libraryをBuildし、DLL symbolを実呼出して検証したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "platform.ffi",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-03-sdk-348-publish": {
+      "id": "fwd-03-sdk-348-publish",
+      "mode": "migrate",
+      "capability": "既存アプリをFlutter SDK version 3.48へmigrationし、App StoreとGoogle Playへ公開したい",
+      "write": true,
+      "publish": true,
+      "expected_capability": "baseline.sdk-lock",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-04-riverpod": {
+      "id": "fwd-04-riverpod",
+      "mode": "migrate",
+      "capability": "ChangeNotifierの状態管理をRiverpod 3へ全面migrationし、stale asyncも直したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "product.state-lifecycle",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-05-firebase-plugin": {
+      "id": "fwd-05-firebase-plugin",
+      "mode": "implement",
+      "capability": "Firebase Auth plugin lifecycleをAndroidとiOS実機で検証して組み込みたい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "platform.channel-plugin",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-06-web-wasm-performance": {
+      "id": "fwd-06-web-wasm-performance",
+      "mode": "diagnose",
+      "capability": "Flutter webのCanvasKitとWasm buildでFrameTiming p95 performance劣化を診断したい",
+      "write": false,
+      "publish": false,
+      "expected_capability": "quality.performance",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-07-simulator-a11y": {
+      "id": "fwd-07-simulator-a11y",
+      "mode": "review",
+      "capability": "iOS SimulatorでSemantics、screen reader focus、画面遷移を回帰Reviewしたい",
+      "write": false,
+      "publish": false,
+      "expected_capability": "execution.ios-simulator-lab",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-08-container-recovery": {
+      "id": "fwd-08-container-recovery",
+      "mode": "recover",
+      "capability": "Docker container上でrepository failure injectionとretry、backup restoreを再現して復旧したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "quality.failure-recovery",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-09-matrix-surface": {
+      "id": "fwd-09-matrix-surface",
+      "mode": "review",
+      "capability": "six platform build matrixを回しつつFlutter SDK public surface inventoryの差分もReviewしたい",
+      "write": false,
+      "publish": false,
+      "expected_capability": "platform.runner-matrix",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-10-web-deploy": {
+      "id": "fwd-10-web-deploy",
+      "mode": "implement",
+      "capability": "Flutter web release buildをCloudflare Pagesへdeployしてproduction公開まで進めたい",
+      "write": true,
+      "publish": true,
+      "expected_capability": "platform.web",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-11-channel-add-to-app": {
+      "id": "fwd-11-channel-add-to-app",
+      "mode": "design",
+      "capability": "Android既存アプリのAdd-to-App構成でMethodChannel plugin registrationまで設計したい",
+      "write": false,
+      "publish": false,
+      "expected_capability": "platform.add-to-app",
+      "expect_gap": false,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-12-bloc-migration": {
+      "id": "fwd-12-bloc-migration",
+      "mode": "migrate",
+      "capability": "既存の状態管理をBlocとCubitへmigrationし、dispose後の非同期完了も防ぎたい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "product.state-lifecycle",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-13-go-router": {
+      "id": "fwd-13-go-router",
+      "mode": "implement",
+      "capability": "go_routerでdeep linkと認証redirectを含むNavigation routingを実装したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "product.navigation",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-14-linux-wayland": {
+      "id": "fwd-14-linux-wayland",
+      "mode": "implement",
+      "capability": "Linux desktopのWayland向けcamera plugin lifecycleを実装して実機相当で検証したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "platform.channel-plugin",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-15-adaptive-layout": {
+      "id": "fwd-15-adaptive-layout",
+      "mode": "design",
+      "capability": "折りたたみ端末とtablet向けのadaptive layout UIを設計したい",
+      "write": false,
+      "publish": false,
+      "expected_capability": "product.adaptive-workspace",
+      "expect_gap": false,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-16-japanese-async": {
+      "id": "fwd-16-japanese-async",
+      "mode": "diagnose",
+      "capability": "Futureの非同期エラーとcancel処理を診断したい",
+      "write": false,
+      "publish": false,
+      "expected_capability": null,
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-17-app-version": {
+      "id": "fwd-17-app-version",
+      "mode": "implement",
+      "capability": "アプリのsemantic versionとbuild numberを自動更新したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": null,
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-18-review-write-gate": {
+      "id": "fwd-18-review-write-gate",
+      "mode": "review",
+      "capability": "Flutter web securityとpath traversal対策をReviewして必要なら直したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "quality.security",
+      "expect_gap": false,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-19-infeasible-write-gate": {
+      "id": "fwd-19-infeasible-write-gate",
+      "mode": "implement",
+      "capability": "iOS Simulatorでintegration testを実装して実行したい",
+      "write": true,
+      "publish": false,
+      "expected_capability": "execution.ios-simulator-lab",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    },
+    "fwd-20-design-publish-gate": {
+      "id": "fwd-20-design-publish-gate",
+      "mode": "design",
+      "capability": "Navigation routingを設計してproductionへpublishしたい",
+      "write": true,
+      "publish": true,
+      "expected_capability": "product.navigation",
+      "expect_gap": true,
+      "expect_write": false,
+      "expect_publish": false
+    }
+  },
+  "skill_eval_cases": {
+    "router.routing": {
+      "assertion": "代表Case route-design-ui, route-navigation, route-platform-channel が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "routing",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.routing",
+      "result": "pass"
+    },
+    "router.near-neighbor": {
+      "assertion": "代表Case reject-nearby-tech, avoid-async-sync-substring, app-version-is-not-sdk が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "near-neighbor",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.near-neighbor",
+      "result": "pass"
+    },
+    "router.coverage-gap": {
+      "assertion": "代表Case reject-uncovered-package, reject-windows-ffi-runtime, reject-new-flutter-version が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "coverage-gap",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.coverage-gap",
+      "result": "pass"
+    },
+    "router.lifecycle": {
+      "assertion": "代表Case route-implement-state, route-failure, fwd-12-bloc-migration が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "lifecycle",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.lifecycle",
+      "result": "pass"
+    },
+    "router.authority": {
+      "assertion": "代表Case route-public-surface, route-migrate-sdk, route-review-container が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "authority",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.authority",
+      "result": "pass"
+    },
+    "router.execution": {
+      "assertion": "代表Case route-local, route-android-emulator-covered, route-diagnose-simulator, fwd-09-matrix-surface が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "execution",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.execution",
+      "result": "pass"
+    },
+    "router.authorization": {
+      "assertion": "代表Case publication-boundary, reject-hardware-in-the-loop, fwd-19-infeasible-write-gate, fwd-20-design-publish-gate が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "authorization",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.authorization",
+      "result": "pass"
+    },
+    "router.security": {
+      "assertion": "代表Case route-security, fwd-05-firebase-plugin, fwd-18-review-write-gate が期待するRoute、Gap、権限境界へ一致する。",
+      "category": "security",
+      "evidence_ids": [
+        "skill.router-eval.2026-08-28"
+      ],
+      "id": "router.security",
+      "result": "pass"
+    }
+  },
+  "ci_jobs": {
+    "validate": {
+      "runs-on": "macos-15",
+      "strategy": null,
+      "steps": [
+        {
+          "uses": "actions/checkout@v4"
+        },
+        {
+          "uses": "actions/setup-go@v5",
+          "with": {
+            "go-version": "1.26.0"
+          }
+        },
+        {
+          "uses": "subosito/flutter-action@v2",
+          "with": {
+            "flutter-version": "3.47.1",
+            "channel": "stable",
+            "cache": true
+          }
+        },
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "repository": "akaitigo/reference-atlas-core",
+            "ref": "cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+            "path": ".tools/reference-atlas-core"
+          }
+        },
+        {
+          "name": "Core atlas CLIを固定commitからBuild",
+          "run": "make atlas-bootstrap CORE_DIR=.tools/reference-atlas-core"
+        },
+        {
+          "name": "atlas validateとOverlay Gate",
+          "run": "make validate CORE_DIR=.tools/reference-atlas-core"
+        },
+        {
+          "name": "Test・Analyze・Skill Eval・Legal Gate",
+          "run": "make test analyze skill-eval runbooks legal FORMAL_SDK=\"$FLUTTER_ROOT\""
+        }
+      ]
+    }
+  },
+  "test_metrics": {
+    "labs/framework-element-reconciliation/test/reconciliation_probe_test.dart": {
+      "test_names": [
+        "Keyなしでは同じ位置のElementへStateを再利用する",
+        "LocalKeyは移動後も論理項目へStateを結び付ける"
+      ],
+      "test_declaration_count": 2,
+      "assertion_count": 8
+    },
+    "labs/framework-rendering-pipeline/test/pipeline_probe_test.dart": {
+      "test_names": [
+        "Constraintでsizeを決めlayout後にpaintする",
+        "layout変更はlayoutとpaintを順に再実行する",
+        "paint変更はlayoutを再実行しない"
+      ],
+      "test_declaration_count": 3,
+      "assertion_count": 5
+    },
+    "labs/widget-lifecycle/test/lifecycle_probe_test.dart": {
+      "test_names": [
+        "lifecycleを順序どおり観測しdispose後は通知しない"
+      ],
+      "test_declaration_count": 1,
+      "assertion_count": 2
+    },
+    "reference-systems/operations-workspace/integration_test/workspace_integration_test.dart": {
+      "test_names": [
+        "Device runner上で主要な状態遷移を実行する"
+      ],
+      "test_declaration_count": 1,
+      "assertion_count": 5
+    },
+    "reference-systems/operations-workspace/test/frame_performance_monitor_test.dart": {
+      "test_names": [
+        "Frame budget超過とp95を公開Snapshotへ集約する",
+        "Sample保持数を上限で制限する"
+      ],
+      "test_declaration_count": 2,
+      "assertion_count": 7
+    },
+    "reference-systems/operations-workspace/test/incident_input_policy_test.dart": {
+      "test_names": [
+        "Unicode code point単位の上限を適用する",
+        "制御文字と双方向表示制御を拒否する",
+        "空白を正規化して安全な件名を受理する"
+      ],
+      "test_declaration_count": 3,
+      "assertion_count": 6
+    },
+    "reference-systems/operations-workspace/test/incident_status_chart_test.dart": {
+      "test_names": [
+        "CustomPainterの状態集計をSemanticsでも公開する",
+        "Painterは集計値の変化だけで再描画する"
+      ],
+      "test_declaration_count": 2,
+      "assertion_count": 6
+    },
+    "reference-systems/operations-workspace/test/workspace_app_test.dart": {
+      "test_names": [
+        "Dialogから新規インシデントを追加できる",
+        "Repository失敗を秘匿して再試行から回復する",
+        "公開Navigator routeで診断へ移動しPerformanceを観測できる",
+        "広幅では一覧と詳細を同時表示し状態遷移できる"
+      ],
+      "test_declaration_count": 4,
+      "assertion_count": 15
+    },
+    "reference-systems/operations-workspace/test/workspace_controller_test.dart": {
+      "test_names": [
+        "dispose後に完了したloadは通知しない",
+        "loadと状態遷移がRepositoryを正本にする",
+        "保存失敗は状態を壊さず同じ変更を再試行できる",
+        "空件名は保存せずUI Messageへ変換する",
+        "遅れて完了した古いloadは新しい状態を上書きしない"
+      ],
+      "test_declaration_count": 5,
+      "assertion_count": 14
+    },
+    "tooling/atlascheck/main_test.go": {
+      "test_names": [
+        "TestDigestFile"
+      ],
+      "test_declaration_count": 1,
+      "assertion_count": 3
+    },
+    "tooling/surface_inventory/test_generate.py": {
+      "test_names": [
+        "test_baseline_parser_keeps_nested_sections_separate",
+        "test_dart_inventory_excludes_private_libraries",
+        "test_directives_are_unique_and_sorted"
+      ],
+      "test_declaration_count": 3,
+      "assertion_count": 1
+    }
+  }
+}

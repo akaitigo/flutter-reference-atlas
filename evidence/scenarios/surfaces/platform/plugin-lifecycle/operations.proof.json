@@ -1,0 +1,227 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [
+      "activity-aware-plugin"
+    ],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/platform/plugin-lifecycle/operations/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "platform-integration",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.platform.plugin-lifecycle.operations",
+  "integrated_reference": {
+    "assertions": [
+      "monitor starts with app",
+      "monitor stops on unmount"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "callback-ownership"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3713,
+      "digest": "sha256:4fae5c8dca61f85cb30b566727ca2b48361a87945ec8deac09c12a71bb3443cb",
+      "path": "evidence/scenarios/integrated/operations.trace.json"
+    }
+  },
+  "scenario": "operations",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:3e8731c1471be6f6cf6ca350420fe98c8291acc07887a93f0adcf2a715dab8ac",
+      "path": "engine/src/flutter/lib/ui/plugins.dart"
+    },
+    {
+      "digest": "sha256:6e0be8cf66c158f635db9f4a08a21677e4321b996cd024eca1c05c1627c9c027",
+      "path": "packages/flutter_tools/templates/plugin/README.md.tmpl"
+    },
+    {
+      "digest": "sha256:244c28c2a74a8b072024d8146e85c6ae9bee1ef42723e204ed1af92ae60b19df",
+      "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/build.gradle.kts.tmpl"
+    },
+    {
+      "digest": "sha256:5d195259d53be8fa28dbc6d7f1d3bcb7885d0a92f3bde2c3ba12d708b658a5d6",
+      "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/projectName_android.iml.tmpl"
+    },
+    {
+      "digest": "sha256:ca2e8f043eb681d3d73e4b36f118d2a5fa21c599fefad9550da66fa90050af64",
+      "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/src/main/java/androidIdentifier/pluginClass.java.tmpl"
+    },
+    {
+      "digest": "sha256:9ab4b33a60a6af830d4a77bb5c8d3af248755f05d40d16583cc508a83db71193",
+      "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/src/test/java/androidIdentifier/pluginClassTest.java.tmpl"
+    },
+    {
+      "digest": "sha256:dd41f474134f278e6d19804d185aed61c68e8c730eb31d27120acc9eb24f584a",
+      "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/build.gradle.kts.tmpl"
+    },
+    {
+      "digest": "sha256:ac624a43903b997739491187e762d6e0a69d02985ed343d14d9663db7ed9e79c",
+      "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/projectName_android.iml.tmpl"
+    },
+    {
+      "digest": "sha256:d2a7c998af004169878a85751c4f63f58809be806d0aafcccb5f73d6063fad75",
+      "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/src/main/kotlin/androidIdentifier/pluginClass.kt.tmpl"
+    },
+    {
+      "digest": "sha256:f689f023dac6e1ec4b305676a9703bffc112689d94335e9029f630d0e12d585b",
+      "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/src/test/kotlin/androidIdentifier/pluginClassTest.kt.tmpl"
+    },
+    {
+      "digest": "sha256:d2e03a989d8c77a5bc181ebd7ba45253c9b64c39a0448735b4a94aebb7e0b155",
+      "path": "packages/flutter_tools/templates/plugin/android.tmpl/.gitignore"
+    },
+    {
+      "digest": "sha256:504f28f87e17dd6c30fd1def773b8f1907b97ab24d22dee29ee99648006aee81",
+      "path": "packages/flutter_tools/templates/plugin/android.tmpl/settings.gradle.kts.tmpl"
+    },
+    {
+      "digest": "sha256:86fd09b72666e3b42842b8b21dad52f432018251c74c0b002f5ace932fc6b819",
+      "path": "packages/flutter_tools/templates/plugin/android.tmpl/src/main/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:e9cfa4dfcb9bab821da4048c87dd0d0622383a6d2d76bb0edd8c7013030924a1",
+      "path": "packages/flutter_tools/templates/plugin/ios.tmpl/.gitignore"
+    },
+    {
+      "digest": "sha256:eee409dce1fb71df2dac72613904f4c9a17abfab24960d3f154303cf7f70c9b8",
+      "path": "packages/flutter_tools/templates/plugin/ios.tmpl/projectName.podspec.tmpl"
+    },
+    {
+      "digest": "sha256:96278408fb0a37744c2ca8ac51f469e231e6847050470b8b12b94ae81d554bbe",
+      "path": "packages/flutter_tools/templates/plugin/lib/projectName.dart.tmpl"
+    },
+    {
+      "digest": "sha256:276dd3781eff466210a2c8f728d8a663a43e7a6d4b79f709d73c5d231b4dc206",
+      "path": "packages/flutter_tools/templates/plugin/lib/projectName_method_channel.dart.tmpl"
+    },
+    {
+      "digest": "sha256:8ece093d5b506594ac3c9df7b530c1174156d0a88767d8974620fda4b2b60d3c",
+      "path": "packages/flutter_tools/templates/plugin/lib/projectName_platform_interface.dart.tmpl"
+    },
+    {
+      "digest": "sha256:4ce7f4ca9bf8115ee929656c9d893507a67da1c36022028bf6ca3e2077ffd491",
+      "path": "packages/flutter_tools/templates/plugin/lib/projectName_web.dart.tmpl"
+    },
+    {
+      "digest": "sha256:53bb25d2736ca6a8f6a2ac20a986ac84b99a44e509f3138dc5a441187817ff4f",
+      "path": "packages/flutter_tools/templates/plugin/linux.tmpl/CMakeLists.txt.tmpl"
+    },
+    {
+      "digest": "sha256:6f797bcb456a01facce710ee31b36d6fff387abd839871528c80ee48968020ef",
+      "path": "packages/flutter_tools/templates/plugin/linux.tmpl/include/projectName.tmpl/pluginClassSnakeCase.h.tmpl"
+    },
+    {
+      "digest": "sha256:b5c64e8511310e793b95ea7da0a8ca32177719d40e4fbd00935443b7f40b50b6",
+      "path": "packages/flutter_tools/templates/plugin/linux.tmpl/pluginClassSnakeCase.cc.tmpl"
+    },
+    {
+      "digest": "sha256:0a7fabc09239f1a63786c06b362d558e2dad3e2da258fe83faae5f2430468af3",
+      "path": "packages/flutter_tools/templates/plugin/linux.tmpl/pluginClassSnakeCase_private.h.tmpl"
+    },
+    {
+      "digest": "sha256:1cf6e1b931215820b1ea6731519aa263db19300af83dc5c133ade0adc759d4f6",
+      "path": "packages/flutter_tools/templates/plugin/linux.tmpl/test/pluginClassSnakeCase_test.cc.tmpl"
+    },
+    {
+      "digest": "sha256:45b48bf7ffa2b82dbbfd6c2f68b1a8c1056773a8def127e7d46203c8996f0e03",
+      "path": "packages/flutter_tools/templates/plugin/test/projectName_method_channel_test.dart.tmpl"
+    },
+    {
+      "digest": "sha256:44dcebd029943e2a716c73176e65d64ddea18d89ba45ff1f4679c302bd0ed970",
+      "path": "packages/flutter_tools/templates/plugin/test/projectName_test.dart.tmpl"
+    },
+    {
+      "digest": "sha256:85bccfafa7674923609e429d169ce189c6df04af817f7429f9a2ca44f145d2d4",
+      "path": "packages/flutter_tools/templates/plugin/windows.tmpl/CMakeLists.txt.tmpl"
+    },
+    {
+      "digest": "sha256:5d7e41528f08173b9b97600c38b70a2fb73c7ed86f3a7ec1ac4d8ecf0efd031a",
+      "path": "packages/flutter_tools/templates/plugin/windows.tmpl/include/projectName.tmpl/pluginClassSnakeCase_c_api.h.tmpl"
+    },
+    {
+      "digest": "sha256:eeb7abbe47a81b11ddf6bf9fa551306f2b36ee339182ac7b36c2b71138c4c68b",
+      "path": "packages/flutter_tools/templates/plugin/windows.tmpl/pluginClassSnakeCase.cpp.tmpl"
+    },
+    {
+      "digest": "sha256:594a908fe70d7e28c1a58ea0e5f5fea492ceadc5877a6336a898ad6feefebc21",
+      "path": "packages/flutter_tools/templates/plugin/windows.tmpl/pluginClassSnakeCase.h.tmpl"
+    },
+    {
+      "digest": "sha256:0b538d8f9c1b774278eb79672542a0cac2336226978f20944fcec8331a445024",
+      "path": "packages/flutter_tools/templates/plugin/windows.tmpl/pluginClassSnakeCase_c_api.cpp.tmpl"
+    },
+    {
+      "digest": "sha256:4653a7e2f4896ee7443f4e327908c64400f0ad5d4c8dc7631221c37c2cccc313",
+      "path": "packages/flutter_tools/templates/plugin/windows.tmpl/test/pluginClassSnakeCase_test.cpp.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:ba4c44a09b4c230315a5c1858f50739cc0259312adc25ea3e49d84bf48397a92",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "platform.plugin-lifecycle",
+  "surface_title": "Plugin registration・Activity lifecycle"
+}

@@ -1,0 +1,11 @@
+{
+  "artifact_bytes": 7383770,
+  "artifact_sha256": "sha256:935f09601165e83daf9cb4219c1137b027e8579da6c1e4976cb47349ec1b5b9c",
+  "chrome_accessibility_tree_captured": true,
+  "chrome_flutter_view_observed": true,
+  "compiler": "dart2js",
+  "mode": "debug-javascript-with-source-maps",
+  "schema_version": 1,
+  "status": "passed",
+  "variant": "javascript"
+}

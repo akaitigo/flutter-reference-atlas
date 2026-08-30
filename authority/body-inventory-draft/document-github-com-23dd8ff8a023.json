@@ -1,0 +1,47 @@
+{
+  "anchors": [],
+  "document_id": "document-github-com-23dd8ff8a023",
+  "extraction": {
+    "authority_semantics_exhaustive": false,
+    "body_storage": "digest-locator-and-offset-only",
+    "method": "html-semantic-anchor-selector-v1",
+    "review_status": "automated-unreviewed",
+    "selector_contract": [
+      "document-root",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "dfn",
+      "section",
+      "article",
+      "main",
+      "nav",
+      "aside",
+      "table",
+      "figure"
+    ],
+    "selector_exhaustive_for_locked_body": false,
+    "tool": "flutter-reference-atlas-authority-body-inventory-v1",
+    "tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 270187,
+    "fetched_digest": "sha256:4951d203d09a0196bddf3a7adbe6f03add62107d0de94178e54c23901133eea4",
+    "final_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+    "http_status": 200,
+    "locked_digest_match": false,
+    "status": "stale"
+  },
+  "fetch_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+  "locked_body_digest": "sha256:841ff24218218bd1262f7a71afa50c76c9f7a92ae50bfc036a4d8cc4dc4ba783",
+  "schema_version": 1,
+  "source_ids": [
+    "reference-atlas-core-v1"
+  ]
+}

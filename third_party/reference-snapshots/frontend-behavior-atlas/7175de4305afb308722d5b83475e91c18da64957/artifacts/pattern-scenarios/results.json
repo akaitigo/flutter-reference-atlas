@@ -1,0 +1,1195 @@
+{
+  "schema_version": 1,
+  "id": "frontend-pattern-scenario-runtime-v1",
+  "created_at": "2026-08-28T14:25:16.952Z",
+  "status": "passed",
+  "command": "pnpm pattern-scenario:test",
+  "profile": "local-real-browser",
+  "counts": {
+    "rows": 8,
+    "variants": 16,
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "source_digest": "sha256:4a61fe1e808102193cf6dd57b58719bef0c148fc9c92fd8a0f204819850864dd",
+  "harness_digest": "sha256:82a6ea5f7275e7300249bb12eb9cccb79533bc182032a269f5c1d99956361baa",
+  "environment": {
+    "node": "v25.2.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "playwright": "1.62.1",
+    "browser_name": "chromium",
+    "browser_version": "151.0.7922.175",
+    "browser_channel": "chrome",
+    "workers": 1,
+    "retries": 0,
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "device_scale_factor": 1
+    },
+    "trace_mode": "on"
+  },
+  "trace_contract": {
+    "per_variant": true,
+    "required_streams": [
+      "action",
+      "network",
+      "resource"
+    ],
+    "oracle_attachment": "scenario-oracle"
+  },
+  "retention_contract": {
+    "publish_on": "full-run-passed",
+    "failed_run": "retain-prior-success",
+    "swap": "staged-directory-rename-with-rollback"
+  },
+  "completion_limits": [
+    "incremental tranches: two boundary rows and six security rows only",
+    "does not replace the remaining Pattern-specific Scenario gaps",
+    "does not establish external Device, AT, Cloud, or HIL profiles",
+    "does not establish independent Agent Forward Eval",
+    "does not establish Authority-derived Atomic behavior completion"
+  ],
+  "tests": [
+    {
+      "id": "d962194216a46ca74904-f5b567b4292dd4345250",
+      "pattern_id": "direct-manipulation/drag-reorder",
+      "variant_id": "native-dnd",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:direct-manipulation/drag-reorder][variant:native-dnd] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:c75532c641aa067323c66da3237dcee5fa94f48229e1290fb8e28ce6c1b04e90",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "reorder-transfer-confinement",
+        "variant_engine": "native-dnd",
+        "driven_actions": {
+          "trusted_keyboard_reorder": 1,
+          "external_transfer_drop": 1
+        },
+        "allowed_record_ids": [
+          "alpha",
+          "bravo",
+          "charlie",
+          "delta"
+        ],
+        "external_drop": {
+          "over_accepted": false,
+          "drop_accepted": false,
+          "transfer_types": [
+            "text/html",
+            "text/uri-list"
+          ]
+        },
+        "dom": {
+          "item_ids": [
+            "bravo",
+            "charlie",
+            "delta",
+            "alpha"
+          ],
+          "image_count": 0,
+          "link_count": 0,
+          "script_executed": false
+        },
+        "final_state": {
+          "order": "bravo,charlie,delta,alpha",
+          "grabbed": "none",
+          "motion": "reduced"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/direct-manipulation__drag-reorder__security__native-dnd.trace.zip",
+        "digest": "sha256:ccecb958345b560b12044ffe3a844b9a7da4276c8e2d323fa8435530e04acb62",
+        "bytes": 193311,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/direct-manipulation__drag-reorder__security__native-dnd.png",
+        "digest": "sha256:ffb8d7532df8779362c226ec167b77ab03c1f010638aeef0ca2556c4458b397f",
+        "bytes": 72880
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-61fd42eda18f18e71422",
+      "pattern_id": "direct-manipulation/drag-reorder",
+      "variant_id": "pointer-reorder",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:direct-manipulation/drag-reorder][variant:pointer-reorder] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:c11a6da304a49622e797bca1782d8d97d473caa2b5e98d8c8acb523aa1530498",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "reorder-transfer-confinement",
+        "variant_engine": "pointer-reorder",
+        "driven_actions": {
+          "trusted_keyboard_reorder": 1,
+          "external_transfer_drop": 1
+        },
+        "allowed_record_ids": [
+          "alpha",
+          "bravo",
+          "charlie",
+          "delta"
+        ],
+        "external_drop": {
+          "over_accepted": false,
+          "drop_accepted": false,
+          "transfer_types": [
+            "text/html",
+            "text/uri-list"
+          ]
+        },
+        "dom": {
+          "item_ids": [
+            "bravo",
+            "charlie",
+            "delta",
+            "alpha"
+          ],
+          "image_count": 0,
+          "link_count": 0,
+          "script_executed": false
+        },
+        "final_state": {
+          "order": "bravo,charlie,delta,alpha",
+          "grabbed": "none",
+          "motion": "reduced"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/direct-manipulation__drag-reorder__security__pointer-reorder.trace.zip",
+        "digest": "sha256:76b818e7ef7a0a4ba0fb3533eb3f6c55c572b602456279038890bc3583c2ed58",
+        "bytes": 165836,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/direct-manipulation__drag-reorder__security__pointer-reorder.png",
+        "digest": "sha256:e17bc06ce8ddfa31afa89bbcd5ce9c42230407cf16a79a128f6926dc7525a83d",
+        "bytes": 71943
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-8293fced6fd08b228ded",
+      "pattern_id": "direct-manipulation/inertial-drag",
+      "variant_id": "fixed-step-inertia",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:direct-manipulation/inertial-drag][variant:fixed-step-inertia] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:e18b0d622da81be92f17a0d8e4f23c48bdb9467cf73fccf78602e358bf1a7bf0",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "kinetic-input-confinement",
+        "variant_engine": "fixed-step-inertia",
+        "driven_actions": {
+          "arrow_input_flood": 128,
+          "inertial_launch": 1
+        },
+        "bounds": {
+          "x": 416,
+          "y": 121
+        },
+        "flooded_state": {
+          "x": 416,
+          "y": 121,
+          "vx": 0,
+          "vy": 0,
+          "phase": "positioned",
+          "collisions": 0,
+          "motion": "full"
+        },
+        "trajectory": {
+          "samples": 154,
+          "all_finite": true,
+          "all_within_bounds": true,
+          "maximum_abs_x": 416,
+          "maximum_abs_y": 121
+        },
+        "final_state": {
+          "x": 193,
+          "y": 121,
+          "vx": 0,
+          "vy": 0,
+          "phase": "settled",
+          "collisions": 0,
+          "motion": "full"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/direct-manipulation__inertial-drag__security__fixed-step-inertia.trace.zip",
+        "digest": "sha256:127f3cd6624d12464ea2a873ebe1ec0be0f7da8796d213af78dc3673a8c0b04b",
+        "bytes": 2260682,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/direct-manipulation__inertial-drag__security__fixed-step-inertia.png",
+        "digest": "sha256:e0360020730a4f22a6c954da17c3fca999c8de95e1e11a97efc691d79475388e",
+        "bytes": 73874
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-25331f862d04e3e403e4",
+      "pattern_id": "direct-manipulation/inertial-drag",
+      "variant_id": "waapi-sampled-inertia",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:direct-manipulation/inertial-drag][variant:waapi-sampled-inertia] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:a1481273bf2416553f1d75547a5d8081377262fcc37ac2b0d6005b0271ee36a9",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "kinetic-input-confinement",
+        "variant_engine": "waapi-sampled-inertia",
+        "driven_actions": {
+          "arrow_input_flood": 128,
+          "inertial_launch": 1
+        },
+        "bounds": {
+          "x": 416,
+          "y": 121
+        },
+        "flooded_state": {
+          "x": 416,
+          "y": 121,
+          "vx": 0,
+          "vy": 0,
+          "phase": "positioned",
+          "collisions": 0,
+          "motion": "full"
+        },
+        "trajectory": {
+          "samples": 154,
+          "all_finite": true,
+          "all_within_bounds": true,
+          "maximum_abs_x": 416,
+          "maximum_abs_y": 121
+        },
+        "final_state": {
+          "x": 193,
+          "y": 121,
+          "vx": 0,
+          "vy": 0,
+          "phase": "settled",
+          "collisions": 0,
+          "motion": "full"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/direct-manipulation__inertial-drag__security__waapi-sampled-inertia.trace.zip",
+        "digest": "sha256:4c22c5ea86e8803ddb9855cab984f0b75c3b268badbcb15db2ed4678101e244c",
+        "bytes": 2204892,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/direct-manipulation__inertial-drag__security__waapi-sampled-inertia.png",
+        "digest": "sha256:152c1f4fe4fe880f043acb5558db9a0c1dfe59eb3488a95d4622c21e67c6d938",
+        "bytes": 75377
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-7c6311d3eb1c660c4483",
+      "pattern_id": "disclosure/accordion",
+      "variant_id": "aria-controlled",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:disclosure/accordion][variant:aria-controlled] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:4cc1d7dee3f58f4cc4cc9f119c3b30d4565161a7565f2dd4d943224b32243bf8",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "exclusive-disclosure-integrity",
+        "variant_engine": "aria-controlled",
+        "driven_actions": {
+          "sequential_disclosures": 3,
+          "explicit_close": 1
+        },
+        "snapshots": [
+          {
+            "expected_open": "first",
+            "open_count": 1,
+            "concealed_count": 2,
+            "relationship_valid": true
+          },
+          {
+            "expected_open": "second",
+            "open_count": 1,
+            "concealed_count": 2,
+            "relationship_valid": true
+          },
+          {
+            "expected_open": "third",
+            "open_count": 1,
+            "concealed_count": 2,
+            "relationship_valid": true
+          }
+        ],
+        "maximum_simultaneously_open": 1,
+        "final_concealed_regions": 3,
+        "final_state": {
+          "open": "none",
+          "motion": "reduced"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/disclosure__accordion__security__aria-controlled.trace.zip",
+        "digest": "sha256:8ca57eb9ca013c3a76215acb9cfd43fc3e6975522c12e54c31eb274ea042be50",
+        "bytes": 104358,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/disclosure__accordion__security__aria-controlled.png",
+        "digest": "sha256:9c1513da238ee1f82eb1bbdf7cd8da6ae34798897bc1d46f3139c753cbbb133c",
+        "bytes": 30734
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-3be2edc79d3aed412c8a",
+      "pattern_id": "disclosure/accordion",
+      "variant_id": "native-details",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:disclosure/accordion][variant:native-details] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:6e4393fa814fa423a5b8bf5f5a4673503c7571bcb52e530e43a09331e9928e6b",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "exclusive-disclosure-integrity",
+        "variant_engine": "native-details",
+        "driven_actions": {
+          "sequential_disclosures": 3,
+          "explicit_close": 1
+        },
+        "snapshots": [
+          {
+            "expected_open": "first",
+            "open_count": 1,
+            "concealed_count": 2,
+            "relationship_valid": true
+          },
+          {
+            "expected_open": "second",
+            "open_count": 1,
+            "concealed_count": 2,
+            "relationship_valid": true
+          },
+          {
+            "expected_open": "third",
+            "open_count": 1,
+            "concealed_count": 2,
+            "relationship_valid": true
+          }
+        ],
+        "maximum_simultaneously_open": 1,
+        "final_concealed_regions": 3,
+        "final_state": {
+          "open": "none",
+          "motion": "reduced"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/disclosure__accordion__security__native-details.trace.zip",
+        "digest": "sha256:c105dda41159a886b17dee03ad6a0cbd039386b1388bbc204a5e3b76ef9cd960",
+        "bytes": 110319,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/disclosure__accordion__security__native-details.png",
+        "digest": "sha256:1361c7e5e2624bd2b70da6912bbd88ba045f5b375b834864dff705e63c101709",
+        "bytes": 31799
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-52289d57efe803a9598d",
+      "pattern_id": "disclosure/mask-reveal",
+      "variant_id": "css-clip-path",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:disclosure/mask-reveal][variant:css-clip-path] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:658c1e59d6893926a053556544dd1d674a64bea6bb25e01297c09cd06139c93d",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "visual-semantic-separation",
+        "variant_engine": "css-clip-path",
+        "driven_actions": {
+          "clamped_increment": 110,
+          "clamped_decrement": 110,
+          "partial_increment": 50
+        },
+        "art_remained_aria_hidden": true,
+        "focusable_art_descendants": 0,
+        "semantic_copy_remained_visible": true,
+        "engine_boundary_valid": true,
+        "snapshots": {
+          "maximum": {
+            "state": {
+              "progress": 1,
+              "state": "revealed",
+              "engine": "clip-path",
+              "motion": "reduced"
+            },
+            "art_aria_hidden": "true",
+            "art_focusable_descendants": 0,
+            "semantic_copy_visible": true,
+            "css_reveal_right": "0%",
+            "svg_mask_width": null
+          },
+          "minimum": {
+            "state": {
+              "progress": 0,
+              "state": "concealed",
+              "engine": "clip-path",
+              "motion": "reduced"
+            },
+            "art_aria_hidden": "true",
+            "art_focusable_descendants": 0,
+            "semantic_copy_visible": true,
+            "css_reveal_right": "100%",
+            "svg_mask_width": null
+          },
+          "partial": {
+            "state": {
+              "progress": 0.5,
+              "state": "partial",
+              "engine": "clip-path",
+              "motion": "reduced"
+            },
+            "art_aria_hidden": "true",
+            "art_focusable_descendants": 0,
+            "semantic_copy_visible": true,
+            "css_reveal_right": "50%",
+            "svg_mask_width": null
+          }
+        },
+        "final_state": {
+          "progress": 0.5,
+          "state": "partial",
+          "engine": "clip-path",
+          "motion": "reduced"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/disclosure__mask-reveal__security__css-clip-path.trace.zip",
+        "digest": "sha256:4fffb058672f4baec6dbd899dd0fe62c49caa4fd0258a47c872555c388a2cb10",
+        "bytes": 2174861,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/disclosure__mask-reveal__security__css-clip-path.png",
+        "digest": "sha256:afcb2977482d06f169ab980803226b4d7643df361868f3173897f37eac9ea940",
+        "bytes": 67433
+      }
+    },
+    {
+      "id": "d962194216a46ca74904-f58f2f2d809224f6aa94",
+      "pattern_id": "disclosure/mask-reveal",
+      "variant_id": "svg-alpha-mask",
+      "scenario": "security",
+      "title": "security-interaction-boundaries.spec.ts › [pattern-scenario:security][pattern:disclosure/mask-reveal][variant:svg-alpha-mask] enforces the Pattern security boundary",
+      "file": "pattern-scenario-e2e/security-interaction-boundaries.spec.ts",
+      "line": 36,
+      "source_digest": "sha256:97ac380ed599454c8685595f8bc8a2ae373c0c3880f51a43d479005a7ea843c5",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "visual-semantic-separation",
+        "variant_engine": "svg-alpha-mask",
+        "driven_actions": {
+          "clamped_increment": 110,
+          "clamped_decrement": 110,
+          "partial_increment": 50
+        },
+        "art_remained_aria_hidden": true,
+        "focusable_art_descendants": 0,
+        "semantic_copy_remained_visible": true,
+        "engine_boundary_valid": true,
+        "snapshots": {
+          "maximum": {
+            "state": {
+              "progress": 1,
+              "state": "revealed",
+              "engine": "svg-alpha-mask",
+              "motion": "reduced"
+            },
+            "art_aria_hidden": "true",
+            "art_focusable_descendants": 0,
+            "semantic_copy_visible": true,
+            "css_reveal_right": "",
+            "svg_mask_width": "1"
+          },
+          "minimum": {
+            "state": {
+              "progress": 0,
+              "state": "concealed",
+              "engine": "svg-alpha-mask",
+              "motion": "reduced"
+            },
+            "art_aria_hidden": "true",
+            "art_focusable_descendants": 0,
+            "semantic_copy_visible": true,
+            "css_reveal_right": "",
+            "svg_mask_width": "0"
+          },
+          "partial": {
+            "state": {
+              "progress": 0.5,
+              "state": "partial",
+              "engine": "svg-alpha-mask",
+              "motion": "reduced"
+            },
+            "art_aria_hidden": "true",
+            "art_focusable_descendants": 0,
+            "semantic_copy_visible": true,
+            "css_reveal_right": "",
+            "svg_mask_width": "0.5"
+          }
+        },
+        "final_state": {
+          "progress": 0.5,
+          "state": "partial",
+          "engine": "svg-alpha-mask",
+          "motion": "reduced"
+        },
+        "scenario": "security",
+        "external_effects": {
+          "action_requests": [],
+          "navigations": [],
+          "popups": [],
+          "runtime_errors": []
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/disclosure__mask-reveal__security__svg-alpha-mask.trace.zip",
+        "digest": "sha256:d3d98fa2c20302fa2c1811f5bd007e21a3b169be9d38432f3c78f2a04182d065",
+        "bytes": 2009968,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/disclosure__mask-reveal__security__svg-alpha-mask.png",
+        "digest": "sha256:f1b5a6b3598a555c47be749a0420badbc5a61539b1a2df354a2781f8e1924fe2",
+        "bytes": 67504
+      }
+    },
+    {
+      "id": "44dd9b17b615b6e4d7ca-92df2a2aaf9803c4be3d",
+      "pattern_id": "interaction/combobox-autocomplete",
+      "variant_id": "abort-controller-pipeline",
+      "scenario": "security",
+      "title": "security-input-sinks.spec.ts › [pattern-scenario:security][pattern:interaction/combobox-autocomplete][variant:abort-controller-pipeline] preserves untrusted input as text",
+      "file": "pattern-scenario-e2e/security-input-sinks.spec.ts",
+      "line": 33,
+      "source_digest": "sha256:a50fc60d668d1e9630c31731a5c9b49335602954affa5cead8479f598ce816dd",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "untrusted-input-sink",
+        "scenario": "security",
+        "payload": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+        "driven_actions": {
+          "navigate": 1,
+          "open": 0,
+          "fill": 1,
+          "inert_enter": 0
+        },
+        "sink_contract": {
+          "exact_input_value": true,
+          "rendered_as_text": true,
+          "rendered_images": 0,
+          "probe_requests": [],
+          "script_executed": false
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        },
+        "rendered_status": "No suggestions for <img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">.",
+        "final_state": {
+          "query": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+          "phase": "empty",
+          "count": 0,
+          "active": "none",
+          "committed": "",
+          "expanded": true,
+          "busy": false,
+          "focus": "input",
+          "motion": "reduced",
+          "engine": "abort-controller"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/interaction__combobox-autocomplete__security__abort-controller-pipeline.trace.zip",
+        "digest": "sha256:7450919c0a50c91b112daf51a93f355fbe4259d61ddd9329fde506a5e87d12e6",
+        "bytes": 299728,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/interaction__combobox-autocomplete__security__abort-controller-pipeline.png",
+        "digest": "sha256:fbd264e160e47b9d42d3a5e60b6aa91721bb6ab5c3be0700abe3ee069a9975d2",
+        "bytes": 150033
+      }
+    },
+    {
+      "id": "44dd9b17b615b6e4d7ca-33d460f996a19fe0f46b",
+      "pattern_id": "interaction/combobox-autocomplete",
+      "variant_id": "request-sequence-guard",
+      "scenario": "security",
+      "title": "security-input-sinks.spec.ts › [pattern-scenario:security][pattern:interaction/combobox-autocomplete][variant:request-sequence-guard] preserves untrusted input as text",
+      "file": "pattern-scenario-e2e/security-input-sinks.spec.ts",
+      "line": 33,
+      "source_digest": "sha256:c31e4b539195dd0ab85bc960e2ebe5d32380a9d217af190443345e30ed8591c1",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "untrusted-input-sink",
+        "scenario": "security",
+        "payload": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+        "driven_actions": {
+          "navigate": 1,
+          "open": 0,
+          "fill": 1,
+          "inert_enter": 0
+        },
+        "sink_contract": {
+          "exact_input_value": true,
+          "rendered_as_text": true,
+          "rendered_images": 0,
+          "probe_requests": [],
+          "script_executed": false
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        },
+        "rendered_status": "No suggestions for <img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">.",
+        "final_state": {
+          "query": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+          "phase": "empty",
+          "count": 0,
+          "active": "none",
+          "committed": "",
+          "expanded": true,
+          "busy": false,
+          "focus": "input",
+          "motion": "reduced",
+          "engine": "request-sequence"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/interaction__combobox-autocomplete__security__request-sequence-guard.trace.zip",
+        "digest": "sha256:1f05d3a131fe9234a7f4d5966babc15947fe02ff7331851effd621e87f6dcaee",
+        "bytes": 300005,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/interaction__combobox-autocomplete__security__request-sequence-guard.png",
+        "digest": "sha256:425e6ff2b0a645777e3cb79a49f92d46ce2240fdfc4b3b7b969858c6d5600349",
+        "bytes": 150113
+      }
+    },
+    {
+      "id": "44dd9b17b615b6e4d7ca-3cfc889b18f90e87e8bf",
+      "pattern_id": "interaction/command-palette",
+      "variant_id": "boundary-subsequence-ranker",
+      "scenario": "security",
+      "title": "security-input-sinks.spec.ts › [pattern-scenario:security][pattern:interaction/command-palette][variant:boundary-subsequence-ranker] preserves untrusted input as text",
+      "file": "pattern-scenario-e2e/security-input-sinks.spec.ts",
+      "line": 33,
+      "source_digest": "sha256:28a59d3e7afcee8d3498acec7019fa83b3abfca729dd9609be6759abbe51accd",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "untrusted-input-sink",
+        "scenario": "security",
+        "payload": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+        "driven_actions": {
+          "navigate": 1,
+          "open": 1,
+          "fill": 1,
+          "inert_enter": 1
+        },
+        "sink_contract": {
+          "exact_input_value": true,
+          "rendered_as_text": true,
+          "rendered_images": 0,
+          "probe_requests": [],
+          "script_executed": false
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        },
+        "rendered_status": "No commands match <img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">.",
+        "final_state": {
+          "open": true,
+          "scope": "root",
+          "query": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+          "count": 0,
+          "order": "",
+          "active": "none",
+          "selectedWorkspace": "Tidal laboratory",
+          "gridVisible": false,
+          "action": "The desk is ready for a command.",
+          "focus": "input",
+          "shortcut": "button",
+          "engine": "subsequence",
+          "motion": "reduced"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/interaction__command-palette__security__boundary-subsequence-ranker.trace.zip",
+        "digest": "sha256:787ce65b4fb2407c8347250441f6882fc3545b8750c880c1ca06f93b18ee754f",
+        "bytes": 281825,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/interaction__command-palette__security__boundary-subsequence-ranker.png",
+        "digest": "sha256:06302678fda7b2ede8f42f430c6384dc56cc618f4351342d9cb176d10bed9021",
+        "bytes": 99229
+      }
+    },
+    {
+      "id": "44dd9b17b615b6e4d7ca-296afe6583604b00e422",
+      "pattern_id": "interaction/command-palette",
+      "variant_id": "weighted-token-ranker",
+      "scenario": "security",
+      "title": "security-input-sinks.spec.ts › [pattern-scenario:security][pattern:interaction/command-palette][variant:weighted-token-ranker] preserves untrusted input as text",
+      "file": "pattern-scenario-e2e/security-input-sinks.spec.ts",
+      "line": 33,
+      "source_digest": "sha256:f0296a88f28c0bbbe869498ff28eadac608ee314bc570c26b6657b4e481d2c9b",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "untrusted-input-sink",
+        "scenario": "security",
+        "payload": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+        "driven_actions": {
+          "navigate": 1,
+          "open": 1,
+          "fill": 1,
+          "inert_enter": 1
+        },
+        "sink_contract": {
+          "exact_input_value": true,
+          "rendered_as_text": true,
+          "rendered_images": 0,
+          "probe_requests": [],
+          "script_executed": false
+        },
+        "response_headers": {
+          "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'none'; media-src 'self' blob:; connect-src 'self' ws://localhost:5174; worker-src 'self'; child-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors http://localhost:5173",
+          "permissions_policy": "accelerometer=(), camera=(), clipboard-read=(), clipboard-write=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), serial=(), usb=()"
+        },
+        "rendered_status": "No commands match <img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">.",
+        "final_state": {
+          "open": true,
+          "scope": "root",
+          "query": "<img src=\"/__fba-security-probe.png\" onerror=\"window.__fbaInjected=true\">",
+          "count": 0,
+          "order": "",
+          "active": "none",
+          "selectedWorkspace": "Tidal laboratory",
+          "gridVisible": false,
+          "action": "The desk is ready for a command.",
+          "focus": "input",
+          "shortcut": "button",
+          "engine": "token",
+          "motion": "reduced"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/interaction__command-palette__security__weighted-token-ranker.trace.zip",
+        "digest": "sha256:52d5d0edf16345eb66ccdc091d025976c68d6ddc161c43b81e879f64d2661550",
+        "bytes": 249924,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/interaction__command-palette__security__weighted-token-ranker.png",
+        "digest": "sha256:0304f7334293f7ad7231a76b5d3275a1c8df0bffb695f372102222072f1d97aa",
+        "bytes": 99168
+      }
+    },
+    {
+      "id": "fc9392a77101f793fcba-994872ea1f7fe73a5115",
+      "pattern_id": "reactive/background-sync-status",
+      "variant_id": "durable-sync-queue",
+      "scenario": "boundary",
+      "title": "reactive-queue-boundary.spec.ts › [pattern-scenario:boundary][pattern:reactive/background-sync-status][variant:durable-sync-queue] bounds queued work under repeated input",
+      "file": "pattern-scenario-e2e/reactive-queue-boundary.spec.ts",
+      "line": 30,
+      "source_digest": "sha256:1d90bfa6a7df87f0c7c2f2de4285d6b73faa3f212d5ce801ca09dee7d8e178be",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "bounded-queue",
+        "scenario": "boundary",
+        "driven_actions": {
+          "repeated_start": 8,
+          "disconnect": 1,
+          "recover": 1
+        },
+        "observed_queue_depths": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "maximum_queue_depth": 1,
+        "final_state": {
+          "pattern": "background-sync-status",
+          "strategy": "durable-sync-queue",
+          "phase": "recovered",
+          "permission": "fixture",
+          "connected": true,
+          "sequence": 9,
+          "queued": 0,
+          "fixture": "two idempotency keys",
+          "motion": "reduced"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/reactive__background-sync-status__boundary__durable-sync-queue.trace.zip",
+        "digest": "sha256:aee392483e1ce76f78b20ca14ded1a9ef0c52fd14731a827cae8ee2905fbbec5",
+        "bytes": 655086,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/reactive__background-sync-status__boundary__durable-sync-queue.png",
+        "digest": "sha256:9d7e1d822bcda95edc353c28ec96bd36d1c5ca7e20bb4d9630801dfd34ea9303",
+        "bytes": 96330
+      }
+    },
+    {
+      "id": "fc9392a77101f793fcba-ebf5102949b597758cb0",
+      "pattern_id": "reactive/background-sync-status",
+      "variant_id": "foreground-retry-queue",
+      "scenario": "boundary",
+      "title": "reactive-queue-boundary.spec.ts › [pattern-scenario:boundary][pattern:reactive/background-sync-status][variant:foreground-retry-queue] bounds queued work under repeated input",
+      "file": "pattern-scenario-e2e/reactive-queue-boundary.spec.ts",
+      "line": 30,
+      "source_digest": "sha256:c3b7bf011a659dfceac40e369180b1421f0bd4ec6c06f00ba294f8a1642eeb74",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "bounded-queue",
+        "scenario": "boundary",
+        "driven_actions": {
+          "repeated_start": 8,
+          "disconnect": 1,
+          "recover": 1
+        },
+        "observed_queue_depths": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "maximum_queue_depth": 1,
+        "final_state": {
+          "pattern": "background-sync-status",
+          "strategy": "foreground-retry-queue",
+          "phase": "recovered",
+          "permission": "fixture",
+          "connected": true,
+          "sequence": 9,
+          "queued": 0,
+          "fixture": "two idempotency keys",
+          "motion": "reduced"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/reactive__background-sync-status__boundary__foreground-retry-queue.trace.zip",
+        "digest": "sha256:a591eeb9d6086593a04328498871bc4276707d8d07363d851e7e00d7ba5a63eb",
+        "bytes": 611553,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/reactive__background-sync-status__boundary__foreground-retry-queue.png",
+        "digest": "sha256:4dacaf54bb6aa0f7d8cdf7dac1007af0d009b13b9f42c26197db65bed8c34472",
+        "bytes": 96341
+      }
+    },
+    {
+      "id": "fc9392a77101f793fcba-2173ccbaf839a25a1f9e",
+      "pattern_id": "reactive/network-offline-recovery",
+      "variant_id": "idempotent-operation-queue",
+      "scenario": "boundary",
+      "title": "reactive-queue-boundary.spec.ts › [pattern-scenario:boundary][pattern:reactive/network-offline-recovery][variant:idempotent-operation-queue] bounds queued work under repeated input",
+      "file": "pattern-scenario-e2e/reactive-queue-boundary.spec.ts",
+      "line": 30,
+      "source_digest": "sha256:316671bb5dab743a9ecd60d014ee9fcc553df6ba51dd578258f9cd8687fe9f88",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "bounded-queue",
+        "scenario": "boundary",
+        "driven_actions": {
+          "repeated_start": 8,
+          "disconnect": 1,
+          "recover": 1
+        },
+        "observed_queue_depths": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "maximum_queue_depth": 1,
+        "final_state": {
+          "pattern": "network-offline-recovery",
+          "strategy": "idempotent-operation-queue",
+          "phase": "recovered",
+          "permission": "fixture",
+          "connected": true,
+          "sequence": 9,
+          "queued": 0,
+          "fixture": "three mutation identifiers",
+          "motion": "reduced"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/reactive__network-offline-recovery__boundary__idempotent-operation-queue.trace.zip",
+        "digest": "sha256:c7d7ca5ea97aa86696b49eb7895f795aeaa026dc57ba30ffc5faeff4fcfef616",
+        "bytes": 621309,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/reactive__network-offline-recovery__boundary__idempotent-operation-queue.png",
+        "digest": "sha256:97f5e6d49591afd62594b1f8acb46acd81b78a8a57200d51d2a0d391ebf85b50",
+        "bytes": 97049
+      }
+    },
+    {
+      "id": "fc9392a77101f793fcba-277d82e40ba63e807791",
+      "pattern_id": "reactive/network-offline-recovery",
+      "variant_id": "snapshot-reconciliation",
+      "scenario": "boundary",
+      "title": "reactive-queue-boundary.spec.ts › [pattern-scenario:boundary][pattern:reactive/network-offline-recovery][variant:snapshot-reconciliation] bounds queued work under repeated input",
+      "file": "pattern-scenario-e2e/reactive-queue-boundary.spec.ts",
+      "line": 30,
+      "source_digest": "sha256:13da21742a3eaa2e3f362564abf6fba2be5fc136046aa41a0c48e3a5ab64c4fe",
+      "outcome": "expected",
+      "attempts": 1,
+      "final_status": "passed",
+      "error": null,
+      "oracle": {
+        "kind": "bounded-queue",
+        "scenario": "boundary",
+        "driven_actions": {
+          "repeated_start": 8,
+          "disconnect": 1,
+          "recover": 1
+        },
+        "observed_queue_depths": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "maximum_queue_depth": 1,
+        "final_state": {
+          "pattern": "network-offline-recovery",
+          "strategy": "snapshot-reconciliation",
+          "phase": "recovered",
+          "permission": "fixture",
+          "connected": true,
+          "sequence": 9,
+          "queued": 0,
+          "fixture": "three mutation identifiers",
+          "motion": "reduced"
+        }
+      },
+      "trace": {
+        "path": "artifacts/pattern-scenarios/traces/reactive__network-offline-recovery__boundary__snapshot-reconciliation.trace.zip",
+        "digest": "sha256:9771422612941704f45fbc4a6702376c292157d4827a4ed2906314d672f0b28c",
+        "bytes": 665394,
+        "action_stream": true,
+        "network_stream": true,
+        "resource_stream": true
+      },
+      "screenshot": {
+        "path": "artifacts/pattern-scenarios/screenshots/reactive__network-offline-recovery__boundary__snapshot-reconciliation.png",
+        "digest": "sha256:89f0eac05c904d2ed6e87f01917545ad6797488f34fc8cb493cf38e238db86cf",
+        "bytes": 96850
+      }
+    }
+  ]
+}

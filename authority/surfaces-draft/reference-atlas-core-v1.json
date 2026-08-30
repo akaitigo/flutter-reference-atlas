@@ -1,0 +1,103 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.claim.quality.explicit-operational-boundary.reference-atlas-core-v1",
+      "capability_id": "operations.runbooks",
+      "claim_id": "quality.explicit-operational-boundary",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:73635cc680df76fdc63d7665dd2727df408ee2980ddbd8fe944d8556de647fbc",
+      "edge_id": "edge.claim.quality.explicit-operational-boundary.reference-atlas-core-v1",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+      "source_id": "reference-atlas-core-v1",
+      "target_ids": [
+        "quality.migration-operations"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.skill.definitive-routes-gaps.reference-atlas-core-v1",
+      "capability_id": "skill.definitive-router",
+      "claim_id": "skill.definitive-routes-gaps",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:b51a0ef25911a78edd9073896be986f3a0a0685ff1ece6a3b1ae21e1a502a0ef",
+      "edge_id": "edge.claim.skill.definitive-routes-gaps.reference-atlas-core-v1",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+      "source_id": "reference-atlas-core-v1",
+      "target_ids": [
+        "skill.definitive-router"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.skill.routes-without-invention.reference-atlas-core-v1",
+      "capability_id": "skill.router",
+      "claim_id": "skill.routes-without-invention",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:2d465068baf9b18f1633fe3cd1a9b3180b5c49351707e5bea049e2b262ea2395",
+      "edge_id": "edge.claim.skill.routes-without-invention.reference-atlas-core-v1",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+      "source_id": "reference-atlas-core-v1",
+      "target_ids": [
+        "skill.router"
+      ]
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 270186,
+    "fetched_digest": "sha256:406f09040b73f4fa090a008315b762e68e22046060696033f9b1705f3c9b6ede",
+    "final_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263",
+    "http_status": 200,
+    "locked_digest_match": false,
+    "status": "stale"
+  },
+  "locked_source_digest": "sha256:841ff24218218bd1262f7a71afa50c76c9f7a92ae50bfc036a4d8cc4dc4ba783",
+  "schema_version": 1,
+  "source_id": "reference-atlas-core-v1",
+  "source_metadata": {
+    "kind": "source",
+    "license": "Apache-2.0",
+    "redistribution": "metadata-only",
+    "retrieved_at": "2026-08-28",
+    "title": "技術実証アトラス Core main 正本",
+    "version": "cf9e6e2d981305c83f970c1f21a1ddc9c1109263"
+  },
+  "source_url": "https://github.com/akaitigo/reference-atlas-core/commit/cf9e6e2d981305c83f970c1f21a1ddc9c1109263"
+}

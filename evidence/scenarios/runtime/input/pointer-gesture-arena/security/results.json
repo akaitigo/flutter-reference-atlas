@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-08-30T18:50:29Z",
+  "harness": {
+    "bytes": 13110,
+    "digest": "sha256:72794fef1d7242d4cfafd7e45d86097f3efcf20faf0ff675b578c5049499a09f",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 20508,
+    "digest": "sha256:330c64f1d686c2e498de068358a37f6c4db34e3e2cc6464f2f7ca6299dcc0277",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:294832ac2b1f8c3432524f8d30a7b784ecebd66c2dc919ce3bed77e17210e19e",
+      "path": "packages/flutter/lib/src/gestures/arena.dart"
+    },
+    {
+      "digest": "sha256:c797c6e29ca3b78d786486e6c38ddb1e63d9fb76c902c39b2993ef0d92b40187",
+      "path": "packages/flutter/lib/src/gestures/binding.dart"
+    }
+  ],
+  "source_set_digest": "sha256:05bd1fe2adeb139e607ad844fdfd167083f9199ea1f7f2d1ca940fb52167726e",
+  "started_at": "2026-08-30T18:31:57Z",
+  "status": "passed",
+  "surface_id": "input.pointer-gesture-arena",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1449,
+        "digest": "sha256:869a0d64c30b081f9a3cb78fc90e94e537f4c7724670e3d2126221777e9442e2",
+        "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "tap-recognizerがGesture arenaの単一winnerとなった"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 53314,
+        "digest": "sha256:813fd12558742d697db779bda844d254ee473ac1f0c4d7b68ab503a0fc1c4cd8",
+        "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2112,
+        "digest": "sha256:05e9168164d1f2940bb5475536231839c9fe22b4272a0b6c2dc0ea213f37ec5b",
+        "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/trace.json"
+      },
+      "variant": "tap-recognizer"
+    },
+    {
+      "artifact": {
+        "bytes": 1455,
+        "digest": "sha256:53c09a7a4fe520cce98cf504e9c583b1f42a3f050a130db4a88a0b0bc65f9f17",
+        "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "horizontal-dragがGesture arenaの単一winnerとなった"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 53424,
+        "digest": "sha256:17a953620437d5f9b1b0f50b68e19538faf9e69b2d76fe7ea427922768e01c73",
+        "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2121,
+        "digest": "sha256:d0bf0129f05a5b34d2a0f566c8bcaf50fa2e382b1c332d1a9521f7a04af8f9bd",
+        "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/trace.json"
+      },
+      "variant": "horizontal-drag"
+    }
+  ],
+  "variant_contract": [
+    "tap-recognizer",
+    "horizontal-drag"
+  ]
+}

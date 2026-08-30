@@ -1,0 +1,21 @@
+schema_version: 2
+atlas_id: flutter-reference-atlas
+from: bounded-complete-v1
+to: subject-definitive-v2
+generated_at: "2026-08-28T11:11:09Z"
+historical_certificate:
+  path: evidence/history/v1.0.0/completion-certificate.json
+  digest: sha256:41f45edf62f1626ea835a396cfd79c337c612c902dd09162a1a3140a01fb2b53
+  classification: bounded-complete
+status: inventory-required
+required_actions:
+  - lock-authority-artifacts
+  - classify-all-surfaces
+  - split-behavior-proofs
+  - complete-scenario-matrix
+  - verify-evidence-dependency-reruns
+  - collect-runtime-evidence
+  - add-reference-system-if-applicable
+  - add-comparisons-if-applicable
+  - upgrade-skill-eval
+  - issue-definitive-certificate

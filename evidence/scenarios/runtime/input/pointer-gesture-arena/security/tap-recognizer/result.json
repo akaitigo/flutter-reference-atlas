@@ -1,0 +1,43 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "drag_count": 0,
+    "gesture_winner": "tap-recognizer",
+    "mechanism": "tap-recognizer",
+    "platform": "Android",
+    "scenario": "security",
+    "single_winner": true,
+    "surface_id": "input.pointer-gesture-arena",
+    "tap_count": 1,
+    "variant": "tap-recognizer"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "tap-recognizerがGesture arenaの単一winnerとなった"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 75168,
+    "digest": "sha256:080b821e874521017e67e2cb58e6d5e4beb2424d0c013a066d5614f9d41b0ca2",
+    "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/platform-state.txt"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:813fd12558742d697db779bda844d254ee473ac1f0c4d7b68ab503a0fc1c4cd8",
+  "surface_id": "input.pointer-gesture-arena",
+  "variant": "tap-recognizer"
+}

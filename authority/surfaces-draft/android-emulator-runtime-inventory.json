@@ -1,0 +1,80 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.claim.execution.android-emulator-repeatability.android-emulator-runtime-inventory",
+      "capability_id": "execution.android-emulator-lab",
+      "claim_id": "execution.android-emulator-repeatability",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:f7dbf55ceb9fcb01cdb5c740e7d7d4df058831414e6c017102a00a9be4987f45",
+      "edge_id": "edge.claim.execution.android-emulator-repeatability.android-emulator-runtime-inventory",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-policy-deferred",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/simulator/runtime-inventory.json",
+      "source_id": "android-emulator-runtime-inventory",
+      "target_ids": [
+        "execution.android-emulator"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.platform.method-channel-android-runtime.android-emulator-runtime-inventory",
+      "capability_id": "platform.method-channel-runtime",
+      "claim_id": "platform.method-channel-android-runtime",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:1399644debff283155360fe481d4bac508d7fc13087d99d349fe1b713e4fcd2d",
+      "edge_id": "edge.claim.platform.method-channel-android-runtime.android-emulator-runtime-inventory",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-policy-deferred",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/simulator/runtime-inventory.json",
+      "source_id": "android-emulator-runtime-inventory",
+      "target_ids": [
+        "platform.method-channel-runtime-matrix"
+      ]
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": null,
+    "deferred_reason": "repository-owned-runtime-record-not-remote-authority-body",
+    "error_digest": null,
+    "fetched_bytes": null,
+    "fetched_digest": null,
+    "final_url": null,
+    "http_status": null,
+    "locked_digest_match": false,
+    "status": "deferred"
+  },
+  "locked_source_digest": "sha256:669f36a09003290678923c311c181dd0b8683703ae76916e4a3cdaa6f572a10a",
+  "schema_version": 1,
+  "source_id": "android-emulator-runtime-inventory",
+  "source_metadata": {
+    "kind": "runtime-inventory",
+    "license": "Apache-2.0",
+    "redistribution": "allowed",
+    "retrieved_at": "2026-08-28",
+    "title": "Android Emulator API 36 arm64 実行環境Inventory",
+    "version": "flutter-3.47.1-android-16-api-36-arm64-captured-2026-08-28"
+  },
+  "source_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/simulator/runtime-inventory.json"
+}

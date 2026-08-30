@@ -1,0 +1,916 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "axes": [
+    {
+      "checks": [
+        {
+          "evidence": [
+            "sources.lock.yaml",
+            "authority/extraction.snapshot.json"
+          ],
+          "id": "authority.locked-sources",
+          "observed": "12/12",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/extraction.snapshot.json",
+            "authority/surfaces-draft"
+          ],
+          "id": "authority.body-reproduction",
+          "observed": "4/12 matched; 4 stale; 0 failed; 4 deferred",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "authority/extraction.snapshot.json",
+            "authority/surfaces-draft"
+          ],
+          "id": "authority.reference-edge-candidates",
+          "observed": "114/114; 107 locator evaluations open",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/body-inventory.snapshot.json",
+            "authority/body-inventory-draft"
+          ],
+          "id": "authority.body-anchor-inventory",
+          "observed": "4/11 matched documents; 74 raw anchors; 74 pending-human",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "authority/review-queue.snapshot.json",
+            "authority/review-queue-draft",
+            "authority/reviews/decisions.json"
+          ],
+          "id": "authority.human-review-queue",
+          "observed": "74/74 anchors in 56 batches; 3 stale holds",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/extraction.snapshot.json",
+            "docs/DEFINITIVE_GATE_V2.md"
+          ],
+          "id": "authority.surface-exhaustiveness",
+          "observed": false,
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "authority/review-queue.snapshot.json",
+            "authority/reviews/decisions.json"
+          ],
+          "id": "authority.human-review",
+          "observed": "0/74; 74 pending",
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority sources and extracted locator surfaces",
+      "gaps": [
+        "既存114 reference edge候補とAuthority本文全体のSurface Inventoryは別の母集団である。",
+        "11 unique documentのraw anchor 74件をQueue化したが、74件は未判断でSemantic Surfaceへ未昇格。",
+        "stale=4、failed=0、deferred=4、locator未評価=107、stale hold=3。",
+        "Authority本文全体exhaustive=false、Human review=0件。"
+      ],
+      "id": "authority-body-digestion",
+      "status": "partial",
+      "title": "Authority本文消化"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "definitive/requirements.json"
+          ],
+          "id": "behavior.provisional-surface-map",
+          "observed": 54,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "atlas/definitive/gap-ledger.json"
+          ],
+          "id": "behavior.multi-variant",
+          "observed": "7/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "migrations/definitive-v2.yaml"
+          ],
+          "id": "behavior.unique-target-claim",
+          "observed": 0,
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority-derived atomic behaviors",
+      "gaps": [
+        "Provisional SurfaceをAuthority由来Atomic behaviorへ分解し、専用Target/Claimへ一対一接続していない。"
+      ],
+      "id": "surface-atomic-behavior-variant",
+      "status": "partial",
+      "title": "Surface→Atomic behavior→Variant"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "atlas/definitive/gap-ledger.json"
+          ],
+          "id": "runtime.observed-profile-rows",
+          "observed": "21/182",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "atlas/definitive/gap-ledger.json"
+          ],
+          "id": "runtime.non-substitution",
+          "observed": true,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence"
+          ],
+          "id": "runtime.source-harness-binding",
+          "observed": 61,
+          "status": "pass"
+        }
+      ],
+      "denominator": "required Flutter behavior × runtime profile",
+      "gaps": [
+        "iOS、実Device、macOS/Linux/Windows、GPU、支援技術等のrequired Profileが未閉包。"
+      ],
+      "id": "real-runtime-lab",
+      "status": "partial",
+      "title": "実Runtime Lab"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-normal.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-normal.surface-specific-runtime",
+          "observed": "0/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-normal.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-normal.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority-derived atomic behaviors",
+      "gaps": [
+        "Surface固有Runtime Proofは0/54、明示gapは54件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-normal",
+      "status": "partial",
+      "title": "Normal Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-boundary.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-boundary.surface-specific-runtime",
+          "observed": "1/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-boundary.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-boundary.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority-derived atomic behaviors",
+      "gaps": [
+        "Surface固有Runtime Proofは1/54、明示gapは53件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-boundary",
+      "status": "partial",
+      "title": "Boundary Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-refusal.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-refusal.surface-specific-runtime",
+          "observed": "1/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-refusal.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-refusal.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority-derived atomic behaviors",
+      "gaps": [
+        "Surface固有Runtime Proofは1/54、明示gapは53件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-refusal",
+      "status": "partial",
+      "title": "Refusal Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-failure.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-failure.surface-specific-runtime",
+          "observed": "1/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-failure.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-failure.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority-derived atomic behaviors",
+      "gaps": [
+        "Surface固有Runtime Proofは1/54、明示gapは53件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-failure",
+      "status": "partial",
+      "title": "Failure Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-recovery.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-recovery.surface-specific-runtime",
+          "observed": "1/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-recovery.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-recovery.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter authority-derived atomic behaviors",
+      "gaps": [
+        "Surface固有Runtime Proofは1/54、明示gapは53件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-recovery",
+      "status": "partial",
+      "title": "Recovery Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-migration.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-migration.surface-specific-runtime",
+          "observed": "0/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-migration.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-migration.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "required Flutter atomic behavior × migration profile",
+      "gaps": [
+        "Surface固有Runtime Proofは0/54、明示gapは54件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-migration",
+      "status": "partial",
+      "title": "Migration Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-operations.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-operations.surface-specific-runtime",
+          "observed": "0/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-operations.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-operations.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "required Flutter atomic behavior × operations profile",
+      "gaps": [
+        "Surface固有Runtime Proofは0/54、明示gapは54件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-operations",
+      "status": "partial",
+      "title": "Operations Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-security.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-security.surface-specific-runtime",
+          "observed": "10/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-security.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-security.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "required Flutter atomic behavior × security profile",
+      "gaps": [
+        "Surface固有Runtime Proofは10/54、明示gapは44件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-security",
+      "status": "partial",
+      "title": "Security Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-performance.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-performance.surface-specific-runtime",
+          "observed": "0/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-performance.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-performance.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "required Flutter behavior × variant × workload/profile",
+      "gaps": [
+        "Surface固有Runtime Proofは0/54、明示gapは54件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-performance",
+      "status": "partial",
+      "title": "Performance Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-compatibility.dedicated-row",
+          "observed": "54/54",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/index.json",
+            "evidence/scenarios/surfaces"
+          ],
+          "id": "scenario-compatibility.surface-specific-runtime",
+          "observed": "0/54",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-compatibility.integrated-trace",
+          "observed": "10/10 integrated; 540/540 bound",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "scenario-compatibility.authority-atomic-row",
+          "observed": "authority=0 completion=0",
+          "status": "gap"
+        }
+      ],
+      "denominator": "required Flutter behavior × platform/runtime profile",
+      "gaps": [
+        "Surface固有Runtime Proofは0/54、明示gapは54件。",
+        "統合Reference App Traceを全Surface固有Proofへ流用しない。",
+        "Authority Human review完了までCompletion eligible rowは0。"
+      ],
+      "id": "scenario-compatibility",
+      "status": "partial",
+      "title": "Compatibility Scenario"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/artifacts/core-v2-audit-attempt-2026-08-28.log",
+            "evidence/artifacts/definitive-android-method-channel.log",
+            "evidence/artifacts/definitive-web-chrome-js.log",
+            "evidence/artifacts/definitive-web-chrome-wasm.log"
+          ],
+          "id": "artifact.execution-log",
+          "observed": 4,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "migrations/definitive-v2.yaml"
+          ],
+          "id": "artifact.visual-trace-build",
+          "observed": 0,
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "definitive/runtime-observations.json"
+          ],
+          "id": "artifact.unique-binding",
+          "observed": {
+            "evidence/artifacts/android-emulator-integration-report.json": 6,
+            "evidence/artifacts/container-conflict-report.json": 1,
+            "evidence/artifacts/definitive-android-method-channel-report.json": 21,
+            "evidence/artifacts/definitive-web-chrome-report.json": 22,
+            "evidence/artifacts/formal-local-closure-report.json": 11
+          },
+          "status": "gap"
+        }
+      ],
+      "denominator": "required Flutter scenario rows",
+      "gaps": [
+        "画面、frame/network/memory trace、build artifactおよびScenario専用bindingが未閉包。"
+      ],
+      "id": "artifact-trace",
+      "status": "partial",
+      "title": "Artifact・Trace"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "reference-systems/operations-workspace"
+          ],
+          "id": "reference.app-exists",
+          "observed": true,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "integrations/reference-system/manifest.json"
+          ],
+          "id": "reference.scenario-manifest",
+          "observed": 10,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evidence/scenarios/integrated/index.json",
+            "evidence/scenarios/integrated"
+          ],
+          "id": "reference.cross-behavior-proof",
+          "observed": "10/10",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "authority/reviews/decisions.json",
+            "evidence/scenarios/index.json"
+          ],
+          "id": "reference.authority-derived-scope",
+          "observed": 0,
+          "status": "gap"
+        }
+      ],
+      "denominator": "Flutter architecture and integration surfaces",
+      "gaps": [
+        "統合Systemはbounded Cross-behavior Proofであり、Authority由来Atomic Surface completionではない。"
+      ],
+      "id": "integrated-reference-system",
+      "status": "partial",
+      "title": "統合Reference System"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "evidence/artifacts/definitive-router-eval-report.json"
+          ],
+          "id": "skill.surface-routing",
+          "observed": 14,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evals/flutter-router.definitive-mastery-eval.json",
+            ".agents/skills/flutter-reference-router/references/mastery-contract.json"
+          ],
+          "id": "skill.8-outcome-14-surface",
+          "observed": "112/112",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evals/flutter-router.definitive-mastery-eval.json"
+          ],
+          "id": "skill.boundary-cases",
+          "observed": "5/5",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "evals/flutter-router.definitive-mastery-eval.json",
+            "mastery.yaml",
+            "coverage.yaml"
+          ],
+          "id": "skill.mastery-routing",
+          "observed": "82/112 routed; 24 runtime evidence gaps; 3 target route gaps",
+          "status": "gap"
+        },
+        {
+          "evidence": [
+            "evals/flutter-router.agent-forward-eval.json"
+          ],
+          "id": "skill.agent-execution",
+          "observed": "0/4",
+          "status": "gap"
+        }
+      ],
+      "denominator": "8 outcome × 14 surface × risk/coverage-gap classes",
+      "gaps": [
+        "30 Mastery routing cell、24 Runtime Evidence cell、3 Target routeが未閉包。",
+        "112 cellは決定論Router contractであり、独立Agentによる実Project変更結果のForward Evalではない。"
+      ],
+      "id": "skill-eval",
+      "status": "partial",
+      "title": "Skill Eval"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "LICENSE",
+            "NOTICE",
+            "third_party/manifest.yaml",
+            "sbom.spdx.json",
+            "provenance.yaml"
+          ],
+          "id": "rights.automated",
+          "observed": 5,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "migrations/definitive-v2.yaml"
+          ],
+          "id": "rights.human-review",
+          "observed": 0,
+          "status": "gap"
+        }
+      ],
+      "denominator": "all tracked publication artifacts and transitive dependencies",
+      "gaps": [
+        "第三者License義務、Brand/Similarity、Repository名の人手Reviewが未完。"
+      ],
+      "id": "rights-provenance",
+      "status": "partial",
+      "title": "権利・Provenance"
+    },
+    {
+      "checks": [
+        {
+          "evidence": [
+            "baseline/public-main-non-regression-v1.json"
+          ],
+          "id": "non-regression.public-main",
+          "observed": 0,
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "baseline/authority-body-inventory-v1.json",
+            "migrations/authority-body-inventory-v1.json",
+            "evidence/artifacts/authority-body-non-regression-report.json"
+          ],
+          "id": "non-regression.authority-anchor-floor",
+          "observed": {
+            "added": 0,
+            "baseline_anchors": 74,
+            "baseline_id": "flutter-authority-body-inventory-v1-2026-08-28",
+            "current_anchors": 74,
+            "document_floor": "11/11",
+            "replaced": 0,
+            "retained": 74,
+            "schema_version": 1,
+            "status": "pass"
+          },
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            ".github/workflows/ci.yml"
+          ],
+          "id": "non-regression.ci",
+          "observed": 0,
+          "status": "pass"
+        }
+      ],
+      "denominator": "tracked public-main baseline capability identities",
+      "gaps": [],
+      "id": "non-regression-gate",
+      "status": "satisfied",
+      "title": "非後退Gate"
+    }
+  ],
+  "core_v2_gate": {
+    "evidence": "evidence/history/core-v2-audit-attempt-2026-08-28.record.yaml",
+    "state": "not-passed"
+  },
+  "coverage_epoch": "2026-08-28",
+  "denominator_policy": {
+    "authority_candidate_reference_edges": 114,
+    "authority_human_decisions": 0,
+    "authority_human_reviewed_surfaces": 0,
+    "authority_locked_sources": 12,
+    "authority_pending_human_anchors": 74,
+    "authority_raw_anchors": 74,
+    "authority_review_batches": 56,
+    "authority_review_pending": 74,
+    "authority_stale_document_holds": 3,
+    "authority_text_surfaces_exhaustive": false,
+    "authority_unique_documents": 11,
+    "definitive_skill_matrix_cells": 112,
+    "definitive_skill_matrix_passed": 112,
+    "definitive_skill_routing_gaps": 30,
+    "definitive_skill_runtime_evidence_gap_cells": 24,
+    "definitive_skill_target_route_gaps": 3,
+    "independent_agent_forward_executed": 0,
+    "integrated_trace_substitutes_surface_proof": false,
+    "provisional_surface_count": 54,
+    "raw_anchors_count_as_semantic_surfaces": false,
+    "review_queue_count_as_semantic_surfaces": false,
+    "scenario_authority_atomic_rows": 0,
+    "scenario_completion_eligible_rows": 0,
+    "scenario_integrated_trace_rows": 540,
+    "scenario_proof_rows": 540,
+    "scenario_surface_runtime_gap_rows": 526,
+    "scenario_surface_runtime_rows": 14,
+    "skill_matrix_pass_implies_complete": false,
+    "source": "Flutter authority-derived subject surface inventory",
+    "state": "provisional-unreviewed",
+    "transplant_fe_absolute_counts": false
+  },
+  "id": "flutter-depth-parity",
+  "reference": {
+    "commit": "8a9e34a89a55cc53702032783c06ede7246a286f",
+    "lock": "definitive/fe-depth-reference.lock.json"
+  },
+  "schema_version": 1,
+  "status": "incomplete",
+  "summary": {
+    "axis_count": 18,
+    "definitive_candidate": false,
+    "gap_zero": false,
+    "missing": 0,
+    "partial": 17,
+    "satisfied": 1
+  }
+}

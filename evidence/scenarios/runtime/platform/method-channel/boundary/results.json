@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-08-30T11:16:07Z",
+  "harness": {
+    "bytes": 5593,
+    "digest": "sha256:7da3fd4ff063b6971962ee5a61235e519b10322b433527d374216089c8374038",
+    "path": "scripts/scenario-method-channel-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 12583,
+    "digest": "sha256:4b1695c2196b58ceb2752a8cc05161c0dc77c237c1eb8c28ada58edd7ca593db",
+    "path": "tooling/scenario_method_channel/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-four-scenarios-and-eight-variant-runs-passed",
+    "swap": "staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "boundary",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:8f06a2bcecef0f8868deb393d197c180aacde2f2ec74b8d44158f0a605dfdb51",
+      "path": "packages/flutter/lib/src/services/message_codecs.dart"
+    },
+    {
+      "digest": "sha256:857573f18a3c329a71a990f5355f49e29f25561d0d5f2aa6ff292ba7154678c3",
+      "path": "packages/flutter/lib/src/services/platform_channel.dart"
+    }
+  ],
+  "source_set_digest": "sha256:90a522edf8b0a1e0458b2aff204f020c09d0cba00e7915acd8e36ba706d6a21e",
+  "started_at": "2026-08-30T11:13:37Z",
+  "status": "passed",
+  "surface_id": "platform.method-channel",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1092,
+        "digest": "sha256:592589394344655c76f0093c2fbd308dff8e9490e2c542c1422484f474303179",
+        "path": "evidence/scenarios/runtime/platform/method-channel/boundary/json/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36上でActivity attachedを観測した",
+          "json codecを実Platform側で確認した",
+          "64文字を受理した",
+          "65文字をBOUNDARY_EXCEEDEDで拒否した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 48294,
+        "digest": "sha256:911d2b1989939bc135556d5ab7e5be10e881f69c85d315882ce4052e7631482c",
+        "path": "evidence/scenarios/runtime/platform/method-channel/boundary/json/screen.png"
+      },
+      "source": {
+        "bytes": 3423,
+        "digest": "sha256:346b06b6229da98ce0ab0a3cc64fc168ba1bda03927be45d30b3debdbc92c9f9",
+        "path": "tooling/scenario_method_channel/method_channel_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 1894,
+        "digest": "sha256:6aeeb3e71dd9de3b3f69ca0f613a2d04270be0cc5e9141ef431266444632ffbe",
+        "path": "evidence/scenarios/runtime/platform/method-channel/boundary/json/trace.json"
+      },
+      "variant": "json"
+    },
+    {
+      "artifact": {
+        "bytes": 1108,
+        "digest": "sha256:14b5803325ec02a58f22d8b723ef5a4c328493a159d17a313b007e04b3bc2853",
+        "path": "evidence/scenarios/runtime/platform/method-channel/boundary/standard/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36上でActivity attachedを観測した",
+          "standard codecを実Platform側で確認した",
+          "64文字を受理した",
+          "65文字をBOUNDARY_EXCEEDEDで拒否した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 49807,
+        "digest": "sha256:b1bfa270824e2bdf98a2e339c5f3e903069aaac28b9cfbd439094817c52e6677",
+        "path": "evidence/scenarios/runtime/platform/method-channel/boundary/standard/screen.png"
+      },
+      "source": {
+        "bytes": 3423,
+        "digest": "sha256:346b06b6229da98ce0ab0a3cc64fc168ba1bda03927be45d30b3debdbc92c9f9",
+        "path": "tooling/scenario_method_channel/method_channel_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 1918,
+        "digest": "sha256:f803ac46ddbd723ff95b92e8066d6791ddcbf379edfc1e5087d32bc8110bcb7b",
+        "path": "evidence/scenarios/runtime/platform/method-channel/boundary/standard/trace.json"
+      },
+      "variant": "standard"
+    }
+  ],
+  "variant_contract": [
+    "json",
+    "standard"
+  ]
+}

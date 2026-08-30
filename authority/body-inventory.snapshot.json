@@ -1,0 +1,164 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "body_storage": "digest-locator-and-offset-only",
+  "documents": [
+    {
+      "anchors_by_kind": {
+        "document-root": 1
+      },
+      "digest": "sha256:a83f81aae43aa5f5e4a6d6822ba3583f59861ffb97ec043d7efb96a3b8b733f3",
+      "fetch_status": "matched",
+      "id": "document-api-flutter-dev-0e7e7f9fb0de",
+      "path": "authority/body-inventory-draft/document-api-flutter-dev-0e7e7f9fb0de.json",
+      "raw_anchors": 1,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {
+        "document-root": 1,
+        "heading": 38,
+        "landmark": 5,
+        "section": 2
+      },
+      "digest": "sha256:dd3b31162184e10a52454142de1f8e585b0135452dd3500bb104cd8d4ac5e776",
+      "fetch_status": "matched",
+      "id": "document-dart-dev-9ddf4f55d122",
+      "path": "authority/body-inventory-draft/document-dart-dev-9ddf4f55d122.json",
+      "raw_anchors": 46,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {
+        "document-root": 1,
+        "heading": 13,
+        "landmark": 10,
+        "section": 2
+      },
+      "digest": "sha256:9e5c03df7764830ecc6b7eeaf4cfb68654fe267c840453b6ea8d316f3e2d94f4",
+      "fetch_status": "matched",
+      "id": "document-docs-flutter-dev-bf05d2eba7be",
+      "path": "authority/body-inventory-draft/document-docs-flutter-dev-bf05d2eba7be.json",
+      "raw_anchors": 26,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:e9413e64cbba99f8a5439cd9e3ca923f340b955e65bb85108f831d61f5485695",
+      "fetch_status": "stale",
+      "id": "document-github-com-23dd8ff8a023",
+      "path": "authority/body-inventory-draft/document-github-com-23dd8ff8a023.json",
+      "raw_anchors": 0,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:e16b855974d350a4bf3711078890a73fee4e0bec0ccdafc2c897fe894fd53242",
+      "fetch_status": "deferred",
+      "id": "document-github-com-5221d316273a",
+      "path": "authority/body-inventory-draft/document-github-com-5221d316273a.json",
+      "raw_anchors": 0,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:eca44ebd9ad8acdd453c6d196d1e01a2405bd3b8de087e5117fca0614f6f2586",
+      "fetch_status": "stale",
+      "id": "document-github-com-52d2b8198dd9",
+      "path": "authority/body-inventory-draft/document-github-com-52d2b8198dd9.json",
+      "raw_anchors": 0,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:54a895bdcbda58a833f831b3668fd14fb2b2b025542b940990bf6a13ed29b7ac",
+      "fetch_status": "deferred",
+      "id": "document-github-com-7f74cd6fffae",
+      "path": "authority/body-inventory-draft/document-github-com-7f74cd6fffae.json",
+      "raw_anchors": 0,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:f0d982da1ee991aa32b2f7b804630038aee7f97720d2acf10a1986f9f0824925",
+      "fetch_status": "stale",
+      "id": "document-github-com-a33fd1668b7d",
+      "path": "authority/body-inventory-draft/document-github-com-a33fd1668b7d.json",
+      "raw_anchors": 0,
+      "source_entries": 2
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:d19d39fb68af64a688dce5946f629c10d5f3b9da4a87ae34f6ae9bbd7d62ca02",
+      "fetch_status": "deferred",
+      "id": "document-hub-docker-com-3b3ee7fdbe11",
+      "path": "authority/body-inventory-draft/document-hub-docker-com-3b3ee7fdbe11.json",
+      "raw_anchors": 0,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {},
+      "digest": "sha256:6e8c6f6575153b35d465f55e5c9b0b19390be9404d40fc6dab76ff6616794cb1",
+      "fetch_status": "deferred",
+      "id": "document-storage-googleapis-com-99abdff88685",
+      "path": "authority/body-inventory-draft/document-storage-googleapis-com-99abdff88685.json",
+      "raw_anchors": 0,
+      "source_entries": 1
+    },
+    {
+      "anchors_by_kind": {
+        "document-root": 1
+      },
+      "digest": "sha256:dfc37416953c783a7d3744a8014faeba5fef32cc8db126f716564d5f3bdde58b",
+      "fetch_status": "matched",
+      "id": "document-storage-googleapis-com-ba9f7d63a203",
+      "path": "authority/body-inventory-draft/document-storage-googleapis-com-ba9f7d63a203.json",
+      "raw_anchors": 1,
+      "source_entries": 1
+    }
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "input_digest": "sha256:9138f3aac94d00c517327255352a6af44faeda8b876bcfb749b106a9120b6354",
+  "schema_version": 1,
+  "selector_contract": [
+    "document-root",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "dfn",
+    "section",
+    "article",
+    "main",
+    "nav",
+    "aside",
+    "table",
+    "figure"
+  ],
+  "status": "incomplete-human-review-required",
+  "summary": {
+    "anchors_by_kind": {
+      "document-root": 4,
+      "heading": 51,
+      "landmark": 15,
+      "section": 4
+    },
+    "authority_semantics_exhaustive": false,
+    "core_v2_eligible_artifacts": 0,
+    "deferred_documents": 4,
+    "failed_documents": 0,
+    "human_decided_anchors": 0,
+    "matched_documents": 4,
+    "pending_human_anchors": 74,
+    "promoted_atomic_behavior_anchors": 0,
+    "promoted_surface_anchors": 0,
+    "raw_anchors": 74,
+    "raw_anchors_count_as_semantic_surfaces": false,
+    "selector_exhaustive_documents": 4,
+    "source_entries": 12,
+    "stale_documents": 3,
+    "unique_documents": 11
+  },
+  "tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd"
+}

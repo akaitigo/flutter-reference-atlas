@@ -1,0 +1,82 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.claim.execution.local-repeatability.local-runtime-inventory",
+      "capability_id": "execution.local-lab",
+      "claim_id": "execution.local-repeatability",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:93f05e97b9095f6b94048da3fca61482922194d9058cfe60543b016c496bfb77",
+      "edge_id": "edge.claim.execution.local-repeatability.local-runtime-inventory",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-policy-deferred",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/local/runtime-inventory.json",
+      "source_id": "local-runtime-inventory",
+      "target_ids": [
+        "execution.local"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.platform.runner-matrix-is-explicit.local-runtime-inventory",
+      "capability_id": "platform.runner-matrix",
+      "claim_id": "platform.runner-matrix-is-explicit",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:8d00b0b646149c8db1407e83e521224525c2d3ed681fb407dcf4bc96ee92a645",
+      "edge_id": "edge.claim.platform.runner-matrix-is-explicit.local-runtime-inventory",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-policy-deferred",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/local/runtime-inventory.json",
+      "source_id": "local-runtime-inventory",
+      "target_ids": [
+        "execution.android-emulator",
+        "execution.ios-simulator",
+        "platform.six-target-builds"
+      ]
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": null,
+    "deferred_reason": "repository-owned-runtime-record-not-remote-authority-body",
+    "error_digest": null,
+    "fetched_bytes": null,
+    "fetched_digest": null,
+    "final_url": null,
+    "http_status": null,
+    "locked_digest_match": false,
+    "status": "deferred"
+  },
+  "locked_source_digest": "sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23",
+  "schema_version": 1,
+  "source_id": "local-runtime-inventory",
+  "source_metadata": {
+    "kind": "runtime-inventory",
+    "license": "Apache-2.0",
+    "redistribution": "allowed",
+    "retrieved_at": "2026-08-28",
+    "title": "正式Flutter 3.47.1ローカル実行環境Inventory",
+    "version": "flutter-3.47.1-captured-2026-08-28"
+  },
+  "source_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/local/runtime-inventory.json"
+}

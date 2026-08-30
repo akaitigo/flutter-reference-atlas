@@ -1,0 +1,37 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "activity_attached": true,
+    "api_level": 36,
+    "codec": "json",
+    "error_code": "PERMISSION_DENIED",
+    "os_version": "16",
+    "platform": "Android",
+    "scenario": "refusal",
+    "surface_id": "platform.method-channel",
+    "variant": "json"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36上でActivity attachedを観測した",
+      "json codecを実Platform側で確認した",
+      "policy拒否をPERMISSION_DENIEDとして観測した"
+    ],
+    "passed": true
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "refusal",
+  "schema_version": 1,
+  "screen_sha256": "sha256:f9eab9cafc040127be945fb86ec9b24c29765a79af5d732542081b84d42f2ccf",
+  "surface_id": "platform.method-channel",
+  "variant": "json"
+}

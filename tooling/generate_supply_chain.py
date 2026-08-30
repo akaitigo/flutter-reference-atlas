@@ -10,7 +10,15 @@ from pathlib import Path
 
 
 APACHE_PACKAGES = {"clock", "fake_async", "material_color_utilities", "webdriver"}
-SKIP_SDK_PACKAGES = {"flutter", "flutter_driver", "flutter_test", "fuchsia_remote_debug_protocol", "integration_test", "sky_engine"}
+SKIP_SDK_PACKAGES = {
+    "atlas_runtime_probe",
+    "flutter",
+    "flutter_driver",
+    "flutter_test",
+    "fuchsia_remote_debug_protocol",
+    "integration_test",
+    "sky_engine",
+}
 
 
 def locked_pub_packages(lock: str) -> list[dict[str, str]]:
@@ -50,6 +58,9 @@ def make_documents(root: Path) -> tuple[str, str]:
         {"id":"actions-checkout", "name":"actions/checkout", "kind":"github-action", "version":"v4", "source":"https://github.com/actions/checkout", "license":"MIT", "redistribution":"link-only"},
         {"id":"actions-setup-go", "name":"actions/setup-go", "kind":"github-action", "version":"v5", "source":"https://github.com/actions/setup-go", "license":"MIT", "redistribution":"link-only"},
         {"id":"subosito-flutter-action", "name":"subosito/flutter-action", "kind":"github-action", "version":"v2", "source":"https://github.com/subosito/flutter-action", "license":"MIT", "redistribution":"link-only"},
+        {"id":"frontend-depth-reference", "name":"FE Depth Reference v1", "kind":"source", "version":"4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45", "source":"https://github.com/akaitigo/frontend-behavior-atlas/blob/4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45/FE_DEPTH_REFERENCE.json", "license":"Apache-2.0", "redistribution":"allowed"},
+        {"id":"frontend-depth-reference-snapshot", "name":"FE Definitive Gate v2 reference snapshot", "kind":"source", "version":"8a9e34a89a55cc53702032783c06ede7246a286f", "source":"https://github.com/akaitigo/frontend-behavior-atlas/tree/8a9e34a89a55cc53702032783c06ede7246a286f", "license":"Apache-2.0", "redistribution":"allowed"},
+        {"id":"frontend-scenario-reference-snapshot", "name":"FE scenario proof reference snapshot", "kind":"source", "version":"7175de4305afb308722d5b83475e91c18da64957", "source":"https://github.com/akaitigo/frontend-behavior-atlas/tree/7175de4305afb308722d5b83475e91c18da64957", "license":"Apache-2.0", "redistribution":"allowed"},
     ]
     for package in pub_packages:
         name, version = package["name"], package["version"]

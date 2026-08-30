@@ -1,0 +1,43 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "drag_count": 1,
+    "gesture_winner": "horizontal-drag",
+    "mechanism": "horizontal-drag",
+    "platform": "Android",
+    "scenario": "security",
+    "single_winner": true,
+    "surface_id": "input.pointer-gesture-arena",
+    "tap_count": 0,
+    "variant": "horizontal-drag"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "horizontal-dragがGesture arenaの単一winnerとなった"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 76080,
+    "digest": "sha256:68c1ea92b1e91c775aaa2b3821236496240b7658ce9d4956108434271a41f310",
+    "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/platform-state.txt"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:17a953620437d5f9b1b0f50b68e19538faf9e69b2d76fe7ea427922768e01c73",
+  "surface_id": "input.pointer-gesture-arena",
+  "variant": "horizontal-drag"
+}

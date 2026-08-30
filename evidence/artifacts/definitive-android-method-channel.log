@@ -1,0 +1,9 @@
+00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/workspace_integration_test.dart
+Running Gradle task 'assembleDebug'...                             12.8s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...          475ms
+00:00 +0: Device runner上で主要な状態遷移を実行する
+00:06 +1: MethodChannel ProbeCodecVariant.standard の正常・境界・拒否・障害・回復
+00:06 +2: MethodChannel ProbeCodecVariant.json の正常・境界・拒否・障害・回復
+00:06 +3: (tearDownAll)
+00:06 +3: All tests passed!

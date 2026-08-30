@@ -1,0 +1,42 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "initial_focus_received": true,
+    "mechanism": "skip-sensitive",
+    "platform": "Android",
+    "public_target_focused": true,
+    "scenario": "security",
+    "sensitive_target_focused": false,
+    "surface_id": "input.focus-traversal",
+    "variant": "skip-sensitive"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "skip-sensitiveで公開Focus targetへ遷移し機密targetをFocusしなかった"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 72545,
+    "digest": "sha256:ce88116be3c960d1349951dab264c45ddbc0efc6051239b2ea4228720e302605",
+    "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/platform-state.txt"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:a055a995495fa9a0ccbc72c92139c9a61281f1ca952b81b4677dd16bbb5f7485",
+  "surface_id": "input.focus-traversal",
+  "variant": "skip-sensitive"
+}

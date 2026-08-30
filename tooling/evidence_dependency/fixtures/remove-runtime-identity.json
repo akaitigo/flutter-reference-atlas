@@ -1,0 +1,6 @@
+{
+  "id": "remove-runtime-identity",
+  "operation": "remove-runtime-identity-from-platform-run",
+  "target": "run.android-integration.2026-08-28",
+  "expected_error": "実Runtime identityがありません"
+}

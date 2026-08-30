@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "atlas_id": "flutter-reference-atlas",
+  "captured_at": "2026-08-28T19:18:51+09:00",
+  "host": {
+    "os": "macOS 26.1 25B78",
+    "architecture": "arm64"
+  },
+  "available": [
+    {"profile":"local-test-runner","basis":"Flutter 3.47.1 formal SDK"},
+    {"profile":"local-dart-vm","basis":"Dart 3.13.1 bundled SDK"},
+    {"profile":"web-build-host","basis":"Flutter web toolchain and local Chrome"},
+    {"profile":"web-chrome","basis":"Google Chrome local installation"},
+    {"profile":"android-build-host","basis":"Android SDK platform 36 and build-tools 35.0.0"},
+    {"profile":"android-emulator","basis":"preserved Android 16 API 36 arm64 AVD and prior reproducible harness"},
+    {"profile":"dart-container","basis":"Docker Server 29.1.2 and digest-locked Dart image"}
+  ],
+  "unavailable": [
+    {"profile":"ios-build-host","reason":"full Xcode、simctl、CocoaPodsがない"},
+    {"profile":"ios-simulator","reason":"full XcodeとiOS Simulator Runtimeがない"},
+    {"profile":"ios-device","reason":"実機と署名identityがない"},
+    {"profile":"macos-build-host","reason":"full Xcodeがない"},
+    {"profile":"macos-host","reason":"Flutter macOS appをbuild/runするfull Xcodeがない"},
+    {"profile":"linux-build-host","reason":"Linux host/toolchainがない"},
+    {"profile":"linux-host","reason":"Linux runtimeがない"},
+    {"profile":"windows-build-host","reason":"Windows host/Visual Studio toolchainがない"},
+    {"profile":"windows-host","reason":"Windows runtimeがない"},
+    {"profile":"android-device","reason":"Android実機が接続されていない"},
+    {"profile":"android-device-profile","reason":"Android実機profile mode計測環境がない"},
+    {"profile":"ios-device-profile","reason":"iOS実機と署名identityがない"}
+  ],
+  "non_substitution": "利用可能Profileはunavailable Profileの代替証拠にならない。"
+}

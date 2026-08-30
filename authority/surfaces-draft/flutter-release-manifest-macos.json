@@ -1,0 +1,33 @@
+{
+  "candidate_surfaces": [],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": "application/json",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 369659,
+    "fetched_digest": "sha256:e193b03722f211c32ed4a80789be13e7a7d361f0ce153b97b8ada3def51a1e4e",
+    "final_url": "https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json",
+    "http_status": 200,
+    "locked_digest_match": true,
+    "status": "matched"
+  },
+  "locked_source_digest": "sha256:e193b03722f211c32ed4a80789be13e7a7d361f0ce153b97b8ada3def51a1e4e",
+  "schema_version": 1,
+  "source_id": "flutter-release-manifest-macos",
+  "source_metadata": {
+    "kind": "registry",
+    "license": "BSD-3-Clause",
+    "redistribution": "metadata-only",
+    "retrieved_at": "2026-08-28",
+    "title": "Flutter macOS release manifest",
+    "version": "retrieved-2026-08-28"
+  },
+  "source_url": "https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json"
+}

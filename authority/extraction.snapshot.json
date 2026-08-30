@@ -1,0 +1,158 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "body_storage": "digest-and-locator-offset-only",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "input_digest": "sha256:524a3c2576f1f2a8dd17cb7d1bd4f8992eb0bb53e763d3d26a8c858135298553",
+  "schema_version": 1,
+  "sources": [
+    {
+      "candidate_surfaces": 2,
+      "digest": "sha256:0cbca5f53856fdddde8058fe541f0c3f56c4f30e01bcfd52d97e6daddbbe27a0",
+      "fetch_status": "deferred",
+      "id": "android-emulator-runtime-inventory",
+      "locator_status": {
+        "not-evaluated-policy-deferred": 2
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/android-emulator-runtime-inventory.json"
+    },
+    {
+      "candidate_surfaces": 1,
+      "digest": "sha256:818146e29a24cb70ec9353fe93300f9e763284b965cb0ea2f025b52da549b3bd",
+      "fetch_status": "matched",
+      "id": "dart-3.13-changelog",
+      "locator_status": {
+        "root-document": 1
+      },
+      "locked_digest_match": true,
+      "path": "authority/surfaces-draft/dart-3.13-changelog.json"
+    },
+    {
+      "candidate_surfaces": 2,
+      "digest": "sha256:fac7e007251bb2f0eadb40c888c3b7e38318def8d03d9343db792881c0584b62",
+      "fetch_status": "deferred",
+      "id": "dart-container-3.13.1",
+      "locator_status": {
+        "not-evaluated-policy-deferred": 2
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/dart-container-3.13.1.json"
+    },
+    {
+      "candidate_surfaces": 22,
+      "digest": "sha256:4f1a63434abdcfda4bb2d0e1af9f577271a3d0aa411770a7a5c2f689b80a632e",
+      "fetch_status": "stale",
+      "id": "dart-sdk-3.13.1",
+      "locator_status": {
+        "not-evaluated-stale-body": 22
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/dart-sdk-3.13.1.json"
+    },
+    {
+      "candidate_surfaces": 4,
+      "digest": "sha256:963b71bc0a70bb2fa2c77e908e04aac4206511426cb5c8abda76c5eaa29c92b6",
+      "fetch_status": "stale",
+      "id": "devtools-2.60.0",
+      "locator_status": {
+        "not-evaluated-stale-body": 4
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/devtools-2.60.0.json"
+    },
+    {
+      "candidate_surfaces": 1,
+      "digest": "sha256:27deae76687e663bcac141fde3c59481f4447646e6963919171a47f9f38f38d4",
+      "fetch_status": "matched",
+      "id": "flutter-3.47-release-notes",
+      "locator_status": {
+        "root-document": 1
+      },
+      "locked_digest_match": true,
+      "path": "authority/surfaces-draft/flutter-3.47-release-notes.json"
+    },
+    {
+      "candidate_surfaces": 7,
+      "digest": "sha256:0e65b6aaffe5a6757e2f4f4af4ccfab20c0d827bb8dbc366e6f79a0b729d3e2f",
+      "fetch_status": "stale",
+      "id": "flutter-engine-3.47.1-deps",
+      "locator_status": {
+        "not-evaluated-stale-body": 7
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/flutter-engine-3.47.1-deps.json"
+    },
+    {
+      "candidate_surfaces": 0,
+      "digest": "sha256:c1d2b1138b37bc1cb9df89ad2f36021ec8dab2ab879df9fb40ea54253b5f9fd4",
+      "fetch_status": "matched",
+      "id": "flutter-release-manifest-macos",
+      "locator_status": {},
+      "locked_digest_match": true,
+      "path": "authority/surfaces-draft/flutter-release-manifest-macos.json"
+    },
+    {
+      "candidate_surfaces": 65,
+      "digest": "sha256:f1a49f465212f5b0a7e65296bc56d5321a81e5e9d1094697d46b7017e4bd61f5",
+      "fetch_status": "deferred",
+      "id": "flutter-sdk-3.47.1-macos-arm64",
+      "locator_status": {
+        "not-evaluated-policy-deferred": 65
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/flutter-sdk-3.47.1-macos-arm64.json"
+    },
+    {
+      "candidate_surfaces": 5,
+      "digest": "sha256:454d5ef6894dfab01380ba12769d25179c8efd3b809363cb59879edd8ab0bf2a",
+      "fetch_status": "matched",
+      "id": "flutter-widgets-api",
+      "locator_status": {
+        "root-document": 5
+      },
+      "locked_digest_match": true,
+      "path": "authority/surfaces-draft/flutter-widgets-api.json"
+    },
+    {
+      "candidate_surfaces": 2,
+      "digest": "sha256:23c49c4fd11d69e1bafa53ed17f76e8c81b43e6e132a22f9dda3a6bdccd17511",
+      "fetch_status": "deferred",
+      "id": "local-runtime-inventory",
+      "locator_status": {
+        "not-evaluated-policy-deferred": 2
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/local-runtime-inventory.json"
+    },
+    {
+      "candidate_surfaces": 3,
+      "digest": "sha256:18ce1f1569272e934c45e47019364c26c39e21f40084c863a42694cd7b30c6dd",
+      "fetch_status": "stale",
+      "id": "reference-atlas-core-v1",
+      "locator_status": {
+        "not-evaluated-stale-body": 3
+      },
+      "locked_digest_match": false,
+      "path": "authority/surfaces-draft/reference-atlas-core-v1.json"
+    }
+  ],
+  "status": "incomplete-human-review-required",
+  "summary": {
+    "authority_text_surfaces_exhaustive": false,
+    "candidate_surfaces": 114,
+    "core_v2_eligible_surfaces": 0,
+    "fetch_deferred": 4,
+    "fetch_failed": 0,
+    "fetched_digest_matched": 4,
+    "fetched_digest_stale": 4,
+    "fragments_found": 0,
+    "fragments_not_found": 0,
+    "human_reviewed_surfaces": 0,
+    "locator_evaluations_deferred": 107,
+    "locked_sources": 12,
+    "reference_edges_classified": 114,
+    "root_locators": 7,
+    "unclassified_reference_edges": 0
+  },
+  "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+}

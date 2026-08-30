@@ -1,0 +1,107 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": true,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": true,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": true,
+    "real_platform_runtime_identity": true,
+    "retry_zero": true,
+    "screenshot_artifact_per_variant": true,
+    "source_harness_digest_bound": true,
+    "surface_specific_evidence": true,
+    "trace_artifact_per_variant": true,
+    "trace_streams_per_variant": true
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": true,
+    "baseline_variants": [],
+    "closed": true,
+    "declared_variants": [
+      "app-lifecycle-listener",
+      "widgets-binding-observer"
+    ],
+    "errors": [],
+    "minimum_variants": 2,
+    "oracle_per_variant": true,
+    "report_binding": {
+      "bytes": 4919,
+      "digest": "sha256:9e046b680c456090246c8d533979f8e942ae88fad634e4f7eca8a2cf90733f5f",
+      "path": "evidence/scenarios/runtime/background/app-lifecycle/security/results.json"
+    },
+    "report_path": "evidence/scenarios/runtime/background/app-lifecycle/security/results.json",
+    "report_present": true,
+    "retry_zero": true,
+    "runtime_identity_complete": true,
+    "screenshot_artifact_per_variant": true,
+    "source_harness_digest_bound": true,
+    "trace_artifact_per_variant": true,
+    "trace_streams_per_variant": true
+  },
+  "domain": "background-lifecycle",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.background.app-lifecycle.security",
+  "integrated_reference": {
+    "assertions": [
+      "input policy is observable",
+      "repository detail disclosure is prohibited"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "diagnostic-disclosure"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:a9afe57e17a920ddfc6335ef4e460bcbd88c1073f4e9058103d2ff170fa7bb3d",
+      "path": "evidence/scenarios/integrated/security.trace.json"
+    }
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:5cf49c08d47c1f01e377cebed40c547a2fe2b2e2e974aa360eb4d73e8303caac",
+      "path": "packages/flutter/lib/src/widgets/app_lifecycle_listener.dart"
+    },
+    {
+      "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+      "path": "packages/flutter/lib/src/widgets/binding.dart"
+    }
+  ],
+  "source_set_digest": "sha256:1d569a108137b653c710a04f6c73c9e78f8a48e0e5e7f8499b0e0ef3cdad80ac",
+  "status": "surface-runtime-proof",
+  "surface_evidence": [],
+  "surface_id": "background.app-lifecycle",
+  "surface_title": "Foreground・background lifecycle"
+}

@@ -1,0 +1,100 @@
+{
+  "batch_id": "review-p1-heading-19",
+  "items": [
+    {
+      "anchor_id": "anchor-18ee468bc71a720650be",
+      "batch_id": "review-p1-heading-19",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:e4917438fb3b3a8e27ece52d45f53d248de0eaeb086908eae5595fe344f4f3d0",
+      "context_end": 878982,
+      "context_start": 873849,
+      "context_unit": "utf8-byte",
+      "document_id": "document-dart-dev-9ddf4f55d122",
+      "document_url": "https://dart.dev/changelog",
+      "existing_reference_edge_ids": [],
+      "heading_level": 4,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:024dc204d7ba77a8ff9ba36a886c96335a5b4a0d2f9af2130d04bc5b39a1a764",
+      "locator": "offset:utf8-byte:874873",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "parent_anchor_id": "anchor-cb5d1d3203e20005e8ef",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ],
+      "state": "pending-human",
+      "tag": "h4"
+    },
+    {
+      "anchor_id": "anchor-3b3b5e1c365d7812484a",
+      "batch_id": "review-p1-heading-19",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:003af622d28f21ea84a8bcf6caf28668c1f770402617f00d972e241d708f3596",
+      "context_end": 850615,
+      "context_start": 845425,
+      "context_unit": "utf8-byte",
+      "document_id": "document-dart-dev-9ddf4f55d122",
+      "document_url": "https://dart.dev/changelog",
+      "existing_reference_edge_ids": [],
+      "heading_level": 2,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d",
+      "locator": "offset:utf8-byte:846449",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "parent_anchor_id": "anchor-2f8ee9ad07634d3781ae",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ],
+      "state": "pending-human",
+      "tag": "h2"
+    },
+    {
+      "anchor_id": "anchor-8438a45cae3198e5ab55",
+      "batch_id": "review-p1-heading-19",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:3c7c298a7c1a8c9a2d022d59de0c131510c0d71837c72f12fd91c66a5d5ec157",
+      "context_end": 841638,
+      "context_start": 836448,
+      "context_unit": "utf8-byte",
+      "document_id": "document-dart-dev-9ddf4f55d122",
+      "document_url": "https://dart.dev/changelog",
+      "existing_reference_edge_ids": [],
+      "heading_level": 2,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:914204c25f3f144ddec3469c61a6faea695c87590ab78a5eb25b0f3904cf84e0",
+      "locator": "offset:utf8-byte:837472",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "parent_anchor_id": "anchor-2f8ee9ad07634d3781ae",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ],
+      "state": "pending-human",
+      "tag": "h2"
+    }
+  ],
+  "machine_assistance": "ordering-and-candidate-clustering-only",
+  "queue_id": "authority-review-d98f30af55d0f6b21c99",
+  "schema_version": 1,
+  "semantic_decisions": "none",
+  "status": "pending-human"
+}

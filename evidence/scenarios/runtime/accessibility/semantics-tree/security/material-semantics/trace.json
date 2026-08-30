@@ -1,0 +1,50 @@
+{
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             12.9s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...        2,359ms\n00:00 +0: accessibility.semantics-tree security material-semantics\nATLAS_CAPTURE_READY:accessibility.semantics-tree:material-semantics\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"accessibility.semantics-tree\",\"scenario\":\"security\",\"variant\":\"material-semantics\",\"platform\":\"Android\",\"semantics_label\":\"Public security action\",\"semantic_container\":true,\"explicit_child_nodes\":false,\"sensitive_value_exposed\":false}\n00:22 +1: (tearDownAll)\n00:22 +1: All tests passed!\n",
+  "scenario": "security",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      {
+        "name": "security",
+        "observed": {
+          "explicit_child_nodes": false,
+          "platform": "Android",
+          "scenario": "security",
+          "semantic_container": true,
+          "semantics_label": "Public security action",
+          "sensitive_value_exposed": false,
+          "surface_id": "accessibility.semantics-tree",
+          "variant": "material-semantics"
+        },
+        "status": "passed"
+      }
+    ],
+    "network": {
+      "applicable": false,
+      "reason": "security-001 runtimeはnetworkを使用しない。"
+    },
+    "resource": [
+      {
+        "api_level": 36,
+        "platform_artifact": {
+          "kind": "android-accessibility-tree",
+          "nodes": 10,
+          "sensitive_value_absent": true,
+          "surface_visible": true,
+          "variant_visible": true
+        }
+      }
+    ]
+  },
+  "surface_id": "accessibility.semantics-tree",
+  "variant": "material-semantics"
+}

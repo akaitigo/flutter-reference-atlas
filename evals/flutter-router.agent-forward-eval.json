@@ -1,0 +1,47 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "completion_blocking": true,
+  "deterministic_router_matrix_substitutes_forward_eval": false,
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "flutter-router.independent-agent-forward-eval.v1",
+  "independent_agent": false,
+  "planned_cases": [
+    {
+      "id": "agent-forward.build-reference-app",
+      "outcome": "build",
+      "status": "not-executed"
+    },
+    {
+      "id": "agent-forward.troubleshoot-platform-recovery",
+      "outcome": "troubleshoot",
+      "status": "not-executed"
+    },
+    {
+      "id": "agent-forward.evolve-sdk-migration",
+      "outcome": "evolve",
+      "status": "not-executed"
+    },
+    {
+      "id": "agent-forward.delegate-review",
+      "outcome": "delegate",
+      "status": "not-executed"
+    }
+  ],
+  "reason": "独立Agentによる隔離Project変更と独立Oracle Reviewはこの実行では行っていない。",
+  "required_artifacts": [
+    "agent-transcript",
+    "isolated-worktree-diff",
+    "executed-tests",
+    "runtime-artifacts",
+    "independent-oracle-review"
+  ],
+  "schema_version": 1,
+  "semantic_scope": "independent-agent-project-change-forward-eval",
+  "status": "not-executed-required",
+  "summary": {
+    "executed": 0,
+    "failed": 0,
+    "passed": 0,
+    "planned": 4
+  }
+}

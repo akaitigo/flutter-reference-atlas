@@ -1,0 +1,55 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.provisional-surface.migration.sdk-api.dart-3.13-changelog",
+      "capability_id": null,
+      "claim_id": null,
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "context_end": 906045,
+      "context_start": 0,
+      "context_unit": "byte",
+      "domain_reference_metadata_digest": "sha256:f0c6a3b1f7b236fb2bb1c994478073e44b395ea9737d91457368af585e5cd544",
+      "edge_id": "edge.provisional-surface.migration.sdk-api.dart-3.13-changelog",
+      "edge_kind": "provisional-surface-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "root-document",
+      "provisional_surface_id": "migration.sdk-api",
+      "reference_url": "https://dart.dev/changelog",
+      "source_id": "dart-3.13-changelog",
+      "target_ids": []
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 906045,
+    "fetched_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+    "final_url": "https://dart.dev/changelog",
+    "http_status": 200,
+    "locked_digest_match": true,
+    "status": "matched"
+  },
+  "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+  "schema_version": 1,
+  "source_id": "dart-3.13-changelog",
+  "source_metadata": {
+    "kind": "release-notes",
+    "license": "CC-BY-4.0 and BSD-3-Clause for code samples",
+    "redistribution": "link-only",
+    "retrieved_at": "2026-08-28",
+    "title": "Dart SDK 3.13 changelog",
+    "version": "3.13-family-retrieved-2026-08-28"
+  },
+  "source_url": "https://dart.dev/changelog"
+}

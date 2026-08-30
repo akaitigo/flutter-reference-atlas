@@ -1,0 +1,49 @@
+export const masteryTargetSets = ["foundation", "interaction", "narrative", "graphics", "reactive", "production"] as const;
+
+export type MasteryTargetSet = typeof masteryTargetSets[number];
+
+export const masteryOutcomes = [
+  { id: "understand", title: "挙動の原理、状態、境界を説明できる", target_sets: masteryTargetSets },
+  { id: "choose", title: "制約とTrade-offから方式を選択できる", target_sets: masteryTargetSets },
+  { id: "build", title: "挙動を実装し対象Applicationへ統合できる", target_sets: masteryTargetSets },
+  { id: "verify", title: "主張を試験、Capture、Benchmarkで検証できる", target_sets: masteryTargetSets },
+  { id: "operate", title: "Lifecycleと劣化を観測し安全に運用できる", target_sets: ["graphics", "reactive", "production"] },
+  { id: "troubleshoot", title: "失敗を再現し原因を診断して回復できる", target_sets: ["interaction", "narrative", "graphics", "reactive", "production"] },
+  { id: "evolve", title: "互換性を守って実装と証拠を進化できる", target_sets: masteryTargetSets },
+  { id: "delegate", title: "Agentへ安全に委任し結果をReviewできる", target_sets: masteryTargetSets },
+] as const;
+
+export const masterySurfaces = [
+  { id: "orientation-scope", title: "定義・目的・境界", applicability: "required", rationale: "挙動と静的な見た目の境界、有限Coverage、対象外を明示し、誤った入口や完成度の過大評価を避けるために必要である。", target_sets: ["foundation", "production"], required_deliverables: ["concept", "decision"] },
+  { id: "foundations-mechanics", title: "原理・内部機構・Invariant", applicability: "required", rationale: "時間、状態、入力、描画、Browser Lifecycleの仕組みから観測結果を説明し、表面的なSnippet依存を避けるために必要である。", target_sets: ["foundation"], required_deliverables: ["concept", "lab"] },
+  { id: "architecture-design", title: "Architecture・設計", applicability: "required", rationale: "状態、入力、描画、通信、Resource ownershipを保守可能な責任境界へ分解し、複合挙動を安全に構成するために必要である。", target_sets: ["interaction", "narrative", "graphics", "reactive", "production"], required_deliverables: ["decision", "reference-implementation"] },
+  { id: "implementation-construction", title: "実装・構築", applicability: "required", rationale: "説明したObservable Contractを複数Variantで実装し、対象Applicationの制約へ統合できる状態にするために必要である。", target_sets: ["foundation", "interaction", "narrative", "graphics", "reactive"], required_deliverables: ["reference-implementation", "lab"] },
+  { id: "testing-verification", title: "試験・検証", applicability: "required", rationale: "正常、境界、失敗、Accessibility、性能の主張を決定論Stateと再実行可能なOracleで確かめるために必要である。", target_sets: masteryTargetSets, required_deliverables: ["test", "evidence"] },
+  { id: "failure-recovery", title: "失敗・診断・回復", applicability: "required", rationale: "入力競合、通信断、権限拒否、描画喪失、古い状態などを再現し、利用可能な結果へ安全に回復するために必要である。", target_sets: ["interaction", "narrative", "graphics", "reactive", "production"], required_deliverables: ["failure-catalog", "runbook", "evidence"] },
+  { id: "operations-observability", title: "運用・Observability", applicability: "required", rationale: "利用者環境で起きるResource leak、性能劣化、Capability変化をTelemetryとEvidenceから診断し、復旧するために必要である。", target_sets: ["graphics", "reactive", "production"], required_deliverables: ["runbook", "evidence"] },
+  { id: "security-privacy-safety", title: "Security・Privacy・Safety", applicability: "required", rationale: "Sandbox、入力、権限、個人Data、外部Source、危険なInteractionをBrowserの信頼境界内で安全に扱うために必要である。", target_sets: ["interaction", "graphics", "reactive", "production"], required_deliverables: ["security-review", "test"] },
+  { id: "performance-capacity-cost", title: "性能・容量・Cost", applicability: "required", rationale: "Frame time、Long task、Memory、Network、描画量の予算と劣化を測定し、方式選択と運用判断へ戻すために必要である。", target_sets: ["narrative", "graphics", "reactive", "production"], required_deliverables: ["benchmark", "evidence"] },
+  { id: "compatibility-integration", title: "互換性・Integration", applicability: "required", rationale: "Browser、入力方式、支援技術、Capability、Framework境界の差をFallback込みで検証し統合するために必要である。", target_sets: masteryTargetSets, required_deliverables: ["test", "evidence"] },
+  { id: "migration-evolution-deprecation", title: "移行・進化・廃止", applicability: "required", rationale: "Platform API、Variant、Dependency、Schemaの変更時にObservable ContractとEvidenceを壊さず段階移行するために必要である。", target_sets: masteryTargetSets, required_deliverables: ["migration-guide", "test"] },
+  { id: "decision-comparison", title: "選択・比較・Trade-off", applicability: "required", rationale: "同じObservable Contractを持つ方式の制約、利点、失敗、Accessibility、Costを同じ尺度で比較するために必要である。", target_sets: masteryTargetSets, required_deliverables: ["decision", "benchmark"] },
+  { id: "provenance-rights", title: "出典・来歴・権利", applicability: "required", rationale: "仕様根拠、独自実装、生成Asset、第三者Dependencyの来歴と再配布条件を追跡し、安全な公開判断を行うために必要である。", target_sets: ["production"], required_deliverables: ["provenance-record", "evidence"] },
+  { id: "agent-skill", title: "Agent Skill・評価", applicability: "required", rationale: "AgentがCoverage外を捏造せず、利用目的を既存Pattern、実装、Evidence、停止条件へ正しくRouteするために必要である。", target_sets: ["production"], required_deliverables: ["skill-reference", "skill-eval"] },
+] as const;
+
+export type MasteryOutcomeId = typeof masteryOutcomes[number]["id"];
+export type MasterySurfaceId = typeof masterySurfaces[number]["id"];
+
+export const outcomeExecutionContracts = {
+  understand: { mode: "select", mutation_policy: "read-only", required_output_fields: ["observable-contract", "principle", "boundary", "coverage-state", "evidence"] },
+  choose: { mode: "select", mutation_policy: "read-only", required_output_fields: ["primary-candidate", "bounded-alternatives", "tradeoffs", "constraints", "acceptance-criteria", "coverage-state"] },
+  build: { mode: "implement", mutation_policy: "explicit-authorization-required", required_output_fields: ["pattern-id", "variant", "constraints", "acceptance-criteria", "authorized-change-scope", "verification"] },
+  verify: { mode: "review", mutation_policy: "read-only", required_output_fields: ["oracle", "reproduction-command", "evidence", "environment", "coverage-state"] },
+  operate: { mode: "review", mutation_policy: "read-only", required_output_fields: ["lifecycle-owner", "telemetry", "degradation", "runbook", "recovery"] },
+  troubleshoot: { mode: "diagnose", mutation_policy: "read-only", required_output_fields: ["reproduction", "failure-stage", "cause", "recovery-condition", "evidence"] },
+  evolve: { mode: "migrate", mutation_policy: "explicit-authorization-required", required_output_fields: ["old-new-mapping", "compatibility", "migration-evidence", "non-regression", "rollback"] },
+  delegate: { mode: "review", mutation_policy: "explicit-authorization-required", required_output_fields: ["pattern-id", "variant", "constraints", "acceptance-criteria", "authorized-change-scope", "stop-condition", "review"] },
+} as const;
+
+export const masteryPromise = "Webフロントエンドの観測可能な挙動について、原理と境界を理解し、条件から方式を選び、実装・検証・運用・診断・移行を行い、Agentへ安全に委任して結果をReviewできるまでを、既存のDomain正本と再実行可能な証拠へ接続して提供する。";
+
+export const masteryAudiences = ["learner", "practitioner", "architect", "operator", "maintainer", "reviewer", "educator", "agent"] as const;

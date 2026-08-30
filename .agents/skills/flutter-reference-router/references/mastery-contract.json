@@ -1,0 +1,437 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "completion_semantics": {
+    "independent_agent_forward_eval_required": true,
+    "matrix_pass_implies_atlas_complete": false,
+    "routing_gap_is_reported_not_filled": true
+  },
+  "outcome_execution_contracts": {
+    "build": {
+      "mode": "implement",
+      "mutation_policy": "explicit-authorization-required",
+      "required_output_fields": [
+        "target",
+        "variant",
+        "authorized-change-scope",
+        "verification",
+        "coverage-state"
+      ]
+    },
+    "choose": {
+      "mode": "design",
+      "mutation_policy": "read-only",
+      "required_output_fields": [
+        "primary-candidate",
+        "alternatives",
+        "tradeoffs",
+        "constraints",
+        "coverage-state"
+      ]
+    },
+    "delegate": {
+      "mode": "review",
+      "mutation_policy": "explicit-authorization-required",
+      "required_output_fields": [
+        "target",
+        "variant",
+        "authorized-change-scope",
+        "stop-condition",
+        "independent-review"
+      ]
+    },
+    "evolve": {
+      "mode": "migrate",
+      "mutation_policy": "explicit-authorization-required",
+      "required_output_fields": [
+        "old-new-mapping",
+        "compatibility",
+        "migration-evidence",
+        "non-regression",
+        "rollback"
+      ]
+    },
+    "operate": {
+      "mode": "review",
+      "mutation_policy": "read-only",
+      "required_output_fields": [
+        "lifecycle-owner",
+        "telemetry",
+        "runbook",
+        "recovery",
+        "evidence"
+      ]
+    },
+    "troubleshoot": {
+      "mode": "diagnose",
+      "mutation_policy": "read-only",
+      "required_output_fields": [
+        "reproduction",
+        "failure-stage",
+        "cause",
+        "recovery-condition",
+        "evidence"
+      ]
+    },
+    "understand": {
+      "mode": "review",
+      "mutation_policy": "read-only",
+      "required_output_fields": [
+        "principle",
+        "boundary",
+        "coverage-state",
+        "authority",
+        "evidence"
+      ]
+    },
+    "verify": {
+      "mode": "review",
+      "mutation_policy": "read-only",
+      "required_output_fields": [
+        "oracle",
+        "command",
+        "runtime-profile",
+        "artifact",
+        "coverage-state"
+      ]
+    }
+  },
+  "outcomes": [
+    {
+      "id": "understand",
+      "target_sets": [
+        "baseline",
+        "language-platform"
+      ],
+      "title": "Flutterの原理と境界を説明できる"
+    },
+    {
+      "id": "choose",
+      "target_sets": [
+        "product",
+        "language-platform",
+        "quality"
+      ],
+      "title": "制約から実装方式を選択できる"
+    },
+    {
+      "id": "build",
+      "target_sets": [
+        "product",
+        "language-platform",
+        "execution"
+      ],
+      "title": "公開Surfaceで製品を構築できる"
+    },
+    {
+      "id": "verify",
+      "target_sets": [
+        "baseline",
+        "product",
+        "execution",
+        "quality"
+      ],
+      "title": "主張を試験と証拠で検証できる"
+    },
+    {
+      "id": "operate",
+      "target_sets": [
+        "product",
+        "execution",
+        "quality"
+      ],
+      "title": "アプリを観測し安全に運用できる"
+    },
+    {
+      "id": "troubleshoot",
+      "target_sets": [
+        "product",
+        "execution",
+        "quality"
+      ],
+      "title": "失敗を再現し診断・復旧できる"
+    },
+    {
+      "id": "evolve",
+      "target_sets": [
+        "baseline",
+        "language-platform",
+        "quality"
+      ],
+      "title": "互換性を守って移行できる"
+    },
+    {
+      "id": "delegate",
+      "target_sets": [
+        "skill"
+      ],
+      "title": "Agentへ委任し結果をReviewできる"
+    }
+  ],
+  "routing_exemplars": {
+    "agent-skill": {
+      "skill": "skill.router"
+    },
+    "architecture-design": {
+      "language-platform": "platform.channel-plugin",
+      "product": "product.adaptive-workspace"
+    },
+    "compatibility-integration": {
+      "baseline": "baseline.sdk-lock",
+      "execution": "execution.android-emulator-lab",
+      "language-platform": "platform.runner-matrix"
+    },
+    "decision-comparison": {
+      "language-platform": "platform.channel-plugin",
+      "product": "product.state-lifecycle",
+      "quality": "quality.performance"
+    },
+    "failure-recovery": {
+      "execution": "execution.container-lab",
+      "product": "product.state-lifecycle",
+      "quality": "quality.failure-recovery"
+    },
+    "foundations-mechanics": {
+      "execution": "execution.local-lab",
+      "language-platform": "platform.channel-plugin"
+    },
+    "implementation-construction": {
+      "execution": "execution.android-emulator-lab",
+      "product": "product.adaptive-workspace"
+    },
+    "migration-evolution-deprecation": {
+      "baseline": "baseline.sdk-lock",
+      "language-platform": "language.public-surface",
+      "quality": "operations.runbooks"
+    },
+    "operations-observability": {
+      "product": "product.adaptive-workspace",
+      "quality": "operations.runbooks"
+    },
+    "orientation-scope": {
+      "baseline": "baseline.sdk-lock",
+      "language-platform": "language.public-surface"
+    },
+    "performance-capacity-cost": {
+      "product": "product.adaptive-workspace",
+      "quality": "quality.performance"
+    },
+    "provenance-rights": {
+      "baseline": "baseline.sdk-lock",
+      "quality": "operations.runbooks"
+    },
+    "security-privacy-safety": {
+      "product": "product.adaptive-workspace",
+      "quality": "quality.security"
+    },
+    "testing-verification": {
+      "execution": "execution.local-lab",
+      "product": "product.state-lifecycle",
+      "quality": "quality.testing"
+    }
+  },
+  "schema_version": 1,
+  "source": "mastery.yaml",
+  "surfaces": [
+    {
+      "applicability": "required",
+      "id": "orientation-scope",
+      "rationale": "Flutterで扱う公開アプリ開発Surfaceと対象外を明示し、誤った入口や完全性の誤認を防ぐために必要である。",
+      "required_deliverables": [
+        "concept",
+        "decision"
+      ],
+      "target_sets": [
+        "baseline",
+        "language-platform"
+      ],
+      "title": "定義・目的・境界"
+    },
+    {
+      "applicability": "required",
+      "id": "foundations-mechanics",
+      "rationale": "Widget lifecycle、状態、非同期処理、Platform境界の挙動を表面的なAPI利用ではなく説明するために必要である。",
+      "required_deliverables": [
+        "concept",
+        "lab"
+      ],
+      "target_sets": [
+        "language-platform",
+        "execution"
+      ],
+      "title": "原理・内部機構・Invariant"
+    },
+    {
+      "applicability": "required",
+      "id": "architecture-design",
+      "rationale": "UI、状態、Repository、Platform依存を試験可能で保守可能な責任境界へ分解するために必要である。",
+      "required_deliverables": [
+        "decision",
+        "reference-implementation"
+      ],
+      "target_sets": [
+        "product",
+        "language-platform"
+      ],
+      "title": "Architecture・設計"
+    },
+    {
+      "applicability": "required",
+      "id": "implementation-construction",
+      "rationale": "Adaptive UIと状態遷移を公開Surfaceだけで構築し、実行可能な参照実装とLabへ結び付けるために必要である。",
+      "required_deliverables": [
+        "reference-implementation",
+        "lab"
+      ],
+      "target_sets": [
+        "product",
+        "execution"
+      ],
+      "title": "実装・構築"
+    },
+    {
+      "applicability": "required",
+      "id": "testing-verification",
+      "rationale": "正常、境界、拒否、障害、復旧の主張を固定HarnessとArtifactで反復検証するために必要である。",
+      "required_deliverables": [
+        "test",
+        "evidence"
+      ],
+      "target_sets": [
+        "product",
+        "execution",
+        "quality"
+      ],
+      "title": "試験・検証"
+    },
+    {
+      "applicability": "required",
+      "id": "failure-recovery",
+      "rationale": "非同期競合、Lifecycle、永続化、Platform統合の失敗を隔離して再現し、安全に復旧するために必要である。",
+      "required_deliverables": [
+        "failure-catalog",
+        "runbook",
+        "evidence"
+      ],
+      "target_sets": [
+        "product",
+        "execution",
+        "quality"
+      ],
+      "title": "失敗・診断・回復"
+    },
+    {
+      "applicability": "required",
+      "id": "operations-observability",
+      "rationale": "利用者環境で発生する状態不整合、性能劣化、障害を観測し、証拠から診断するために必要である。",
+      "required_deliverables": [
+        "runbook",
+        "evidence"
+      ],
+      "target_sets": [
+        "product",
+        "quality"
+      ],
+      "title": "運用・Observability"
+    },
+    {
+      "applicability": "required",
+      "id": "security-privacy-safety",
+      "rationale": "入力、秘密、端末権限、保存Data、外部連携の境界を安全に扱い、公開前に検証するために必要である。",
+      "required_deliverables": [
+        "security-review",
+        "test"
+      ],
+      "target_sets": [
+        "product",
+        "quality"
+      ],
+      "title": "Security・Privacy・Safety"
+    },
+    {
+      "applicability": "required",
+      "id": "performance-capacity-cost",
+      "rationale": "Frame、Memory、起動、通信、Artifact容量の予算と劣化を測り、設計判断へ戻すために必要である。",
+      "required_deliverables": [
+        "benchmark",
+        "evidence"
+      ],
+      "target_sets": [
+        "product",
+        "quality"
+      ],
+      "title": "性能・容量・Cost"
+    },
+    {
+      "applicability": "required",
+      "id": "compatibility-integration",
+      "rationale": "FlutterとDartのVersion、公式6 Platform、Host toolchainの差を区別して統合判断するために必要である。",
+      "required_deliverables": [
+        "test",
+        "evidence"
+      ],
+      "target_sets": [
+        "baseline",
+        "language-platform",
+        "execution"
+      ],
+      "title": "互換性・Integration"
+    },
+    {
+      "applicability": "required",
+      "id": "migration-evolution-deprecation",
+      "rationale": "SDKや公開APIの変更時に利用者挙動と証拠の有効範囲を壊さず移行するために必要である。",
+      "required_deliverables": [
+        "migration-guide",
+        "test"
+      ],
+      "target_sets": [
+        "baseline",
+        "language-platform",
+        "quality"
+      ],
+      "title": "移行・進化・廃止"
+    },
+    {
+      "applicability": "required",
+      "id": "decision-comparison",
+      "rationale": "状態管理、実行Profile、Platform対応の条件、利点、失敗、Costを同じ基準で比較するために必要である。",
+      "required_deliverables": [
+        "decision",
+        "benchmark"
+      ],
+      "target_sets": [
+        "product",
+        "language-platform",
+        "quality"
+      ],
+      "title": "選択・比較・Trade-off"
+    },
+    {
+      "applicability": "required",
+      "id": "provenance-rights",
+      "rationale": "一次資料、SDK由来物、Container、依存物、独自実装の来歴と再配布条件を追跡するために必要である。",
+      "required_deliverables": [
+        "provenance-record",
+        "evidence"
+      ],
+      "target_sets": [
+        "baseline",
+        "quality"
+      ],
+      "title": "出典・来歴・権利"
+    },
+    {
+      "applicability": "required",
+      "id": "agent-skill",
+      "rationale": "AgentがCoverage状態と一次資料を守り、適切な実装、Lab、Evidence、未達報告へ到達するために必要である。",
+      "required_deliverables": [
+        "skill-reference",
+        "skill-eval"
+      ],
+      "target_sets": [
+        "skill"
+      ],
+      "title": "Agent Skill・評価"
+    }
+  ]
+}

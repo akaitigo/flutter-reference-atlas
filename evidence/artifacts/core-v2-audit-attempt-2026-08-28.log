@@ -1,0 +1,4 @@
+command: .tools/bin/atlas-v2 audit . --gate definitive
+core_commit: be19ddaa411fe60dcf12f0f5d457902bb57b9eb3
+exit_code: 1
+stderr: エラー: subject-definitiveには有効なbounded-complete基盤が必要です

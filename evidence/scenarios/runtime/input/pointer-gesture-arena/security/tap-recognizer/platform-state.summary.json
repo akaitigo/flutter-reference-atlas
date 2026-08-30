@@ -1,0 +1,30 @@
+{
+  "activity_block": {
+    "end_line": 915,
+    "start_line": 772
+  },
+  "activity_blocks": {
+    "count": 2,
+    "resumed_component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+    "resumed_count": 1
+  },
+  "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+  "historical_package_match_accepted": false,
+  "non_target_resumed_accepted": false,
+  "raw_artifact": {
+    "bytes": 75168,
+    "digest": "sha256:080b821e874521017e67e2cb58e6d5e4beb2424d0c013a066d5614f9d41b0ca2",
+    "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/platform-state.txt"
+  },
+  "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
+  "schema_version": 1,
+  "state_contract": "foreground-input-observation",
+  "states": {
+    "mFinished": false,
+    "mResumed": true,
+    "mStopped": false
+  },
+  "surface_id": "input.pointer-gesture-arena",
+  "validation": "passed",
+  "variant": "tap-recognizer"
+}

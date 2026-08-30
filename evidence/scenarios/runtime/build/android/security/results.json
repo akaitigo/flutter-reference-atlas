@@ -1,0 +1,183 @@
+{
+  "completed_at": "2026-08-30T15:12:15Z",
+  "harness": {
+    "bytes": 5998,
+    "digest": "sha256:5084099f5b0a2a856de6f43b80d6785ceef4b3a3e11d431cd96a3b1c45d0fe69",
+    "path": "scripts/scenario-build-android-security-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 9374,
+    "digest": "sha256:5a23fb2c6673c29fc629a692486cb82570e8a1bdc36abb408d2c610e90916b51",
+    "path": "tooling/scenario_build_android/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "both-build-variants-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:1d0acef991ea2b757673df344ebd385a6d7e7d14813774b289b46d3250e3df14",
+      "path": "packages/flutter_tools/lib/src/commands/build_apk.dart"
+    },
+    {
+      "digest": "sha256:b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/.gitignore"
+    },
+    {
+      "digest": "sha256:30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/debug/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:0b0b08f95ba5eb37dfa8d5140487ca2040fd0400e64c3695ccedb7fed20c92a7",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:7ca6d5cec2169c5a98661a119db23a6f3399c8fef2256ff04f3a642831282478",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/drawable-v21/launch_background.xml"
+    },
+    {
+      "digest": "sha256:94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/drawable/launch_background.xml"
+    },
+    {
+      "digest": "sha256:6a7c8f0d703e3682108f9662f813302236240d3f8f638bb391e32bfb96055fef",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+      "digest": "sha256:c7c0c0189145e4e32a401c61c9bdc615754b0264e7afae24e834bb81049eaf81",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+      "digest": "sha256:e14aa40904929bf313fded22cf7e7ffcbf1d1aac4263b5ef1be8bfce650397aa",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+      "digest": "sha256:4d470bf22d5c17d84edc5f82516d1ba8a1c09559cd761cefb792f86d9f52b540",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+      "digest": "sha256:3c34e1f298d0c9ea3455d46db6b7759c8211a49e9ec6e44b635fc5c87dfb4180",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+      "digest": "sha256:8c5bad5152f217e837519f9c15211d19f39bd45f5f67faf6dd81cb4b299e518f",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/values-night/styles.xml"
+    },
+    {
+      "digest": "sha256:937d7c82f539c72eb94fd3a3773f29b3d3fef1997213c92cb632298cedf4bda9",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/values/styles.xml"
+    },
+    {
+      "digest": "sha256:30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/profile/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:0f82b18017fba6bb5ce3aa4b2d1a00c9382fc8aae7b1d9326e44b18abd66d80b",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/gradle.properties.tmpl"
+    },
+    {
+      "digest": "sha256:6ee3776aef2884dc0862427c33a98ce1c28bcc8283dd3087a8e0d3db363de07e",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/gradle/wrapper/gradle-wrapper.properties.tmpl"
+    },
+    {
+      "digest": "sha256:d886cf6b9af4c9b6446c57a9cc8a45e6abb5a0df0c93957dfd1a766ed3a029d0",
+      "path": "packages/flutter_tools/templates/app/android.tmpl/settings.gradle.kts.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:6cff2e3d35831cdc076499f767494174b57f0336a789ee51cd901c5de31cb05b",
+  "started_at": "2026-08-30T15:11:32Z",
+  "status": "passed",
+  "surface_id": "build.android",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 78402304,
+        "digest": "sha256:4059926b5273748eeecb5f1420ef15375fe30fea1717406eb82e69a15a74851c",
+        "path": "evidence/scenarios/runtime/build/android/security/debug-apk-install/app.apk"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "fixed Flutter SDK built the APK on the declared host",
+          "APK signature verification passed",
+          "debuggable manifest boundary matched the build mode",
+          "APK installed and the dedicated PASS screen was captured on Android API 36"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 48410,
+        "digest": "sha256:7a50045aaeb6faed0616d7128a93b1d6e65ddd053986e48dc37914f437f145c6",
+        "path": "evidence/scenarios/runtime/build/android/security/debug-apk-install/screen.png"
+      },
+      "source": {
+        "bytes": 936,
+        "digest": "sha256:9ffd3a0de082ec5a771ddeb1963ba77b8f1f2a4617e85acfdabd520dd17461cf",
+        "path": "tooling/scenario_build_android/build_security_main.dart"
+      },
+      "trace": {
+        "bytes": 1123,
+        "digest": "sha256:25b743d529473250da21e3d7ea20e9a03d9d5f0e978767b24676f0d44c546393",
+        "path": "evidence/scenarios/runtime/build/android/security/debug-apk-install/trace.json"
+      },
+      "variant": "debug-apk-install"
+    },
+    {
+      "artifact": {
+        "bytes": 15082518,
+        "digest": "sha256:7a09136fc765d2ab41250559725d28677b7bb04c71d6f38f84252b5819421187",
+        "path": "evidence/scenarios/runtime/build/android/security/release-apk/app.apk"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "fixed Flutter SDK built the APK on the declared host",
+          "APK signature verification passed",
+          "debuggable manifest boundary matched the build mode",
+          "APK installed and the dedicated PASS screen was captured on Android API 36"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 40178,
+        "digest": "sha256:52afb8e172dba4ef3d46a8c854f53f3647bdd99d900a563e7dc9615ce4480233",
+        "path": "evidence/scenarios/runtime/build/android/security/release-apk/screen.png"
+      },
+      "source": {
+        "bytes": 936,
+        "digest": "sha256:9ffd3a0de082ec5a771ddeb1963ba77b8f1f2a4617e85acfdabd520dd17461cf",
+        "path": "tooling/scenario_build_android/build_security_main.dart"
+      },
+      "trace": {
+        "bytes": 1112,
+        "digest": "sha256:f33d812c89a1ba9ce3f65d82534b335531757fb5adea4705d1650315544bebc5",
+        "path": "evidence/scenarios/runtime/build/android/security/release-apk/trace.json"
+      },
+      "variant": "release-apk"
+    }
+  ],
+  "variant_contract": [
+    "debug-apk-install",
+    "release-apk"
+  ]
+}

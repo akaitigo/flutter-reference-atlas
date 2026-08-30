@@ -1,0 +1,122 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "completion_limits": [
+    "10 Scenario passを全Flutter Surface固有Proofへ流用しない。",
+    "Surface固有Proof MatrixとAuthority atomic bindingを別に検証する。"
+  ],
+  "files": [
+    {
+      "digest": "sha256:49a07bcecd9a95e8e39972cc7208a16c1fae0287015a51fe5557d5ac91adbb8a",
+      "id": "trace.reference-system.normal",
+      "path": "evidence/scenarios/integrated/normal.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "normal",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:139a42fdd6d1b95a4f5427550f7c269d473817469dfd0ad0b0cfe8ab851d9cfe",
+      "id": "trace.reference-system.boundary",
+      "path": "evidence/scenarios/integrated/boundary.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "boundary",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:0a4ecd61c5902852fb0d753c055f42bd043fd13f34a8619f3a5f6a5b645ba73b",
+      "id": "trace.reference-system.refusal",
+      "path": "evidence/scenarios/integrated/refusal.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "refusal",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:a06cf1437a4b28c72ba42598c5483fd94b77b966555813972c3f6fe0bd498d6c",
+      "id": "trace.reference-system.failure",
+      "path": "evidence/scenarios/integrated/failure.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "failure",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:47780401dc6887e91abbf3924a6b3cf5a3664a6c05e6535442a4e6b921c4fab9",
+      "id": "trace.reference-system.recovery",
+      "path": "evidence/scenarios/integrated/recovery.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "recovery",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:a0b82a66282797fd41b1a20cb99a694259cda14982cc764d3a80f7f8ab7d54fe",
+      "id": "trace.reference-system.migration",
+      "path": "evidence/scenarios/integrated/migration.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "migration",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:4fae5c8dca61f85cb30b566727ca2b48361a87945ec8deac09c12a71bb3443cb",
+      "id": "trace.reference-system.operations",
+      "path": "evidence/scenarios/integrated/operations.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "operations",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:a9afe57e17a920ddfc6335ef4e460bcbd88c1073f4e9058103d2ff170fa7bb3d",
+      "id": "trace.reference-system.security",
+      "path": "evidence/scenarios/integrated/security.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "security",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:5cfd330dd37445f10adcd641ae323421158c2dd6ec2fb6c24a20727248acf1f7",
+      "id": "trace.reference-system.performance",
+      "path": "evidence/scenarios/integrated/performance.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "performance",
+      "status": "passed"
+    },
+    {
+      "digest": "sha256:676629aad901bf770d8d7beedc6f649373f3316fc7a5afd3debe5fbc037d1ca2",
+      "id": "trace.reference-system.compatibility",
+      "path": "evidence/scenarios/integrated/compatibility.trace.json",
+      "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+      "scenario": "compatibility",
+      "status": "passed"
+    }
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "flutter-reference-system-integrated-traces-v1",
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "full-run-passed",
+    "swap": "staged-directory-rename-with-rollback"
+  },
+  "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+  "runtime_identity": {
+    "architecture": "arm64",
+    "browser": "Google Chrome",
+    "browser_version": "151.0.7922.175",
+    "compiler_variants": [
+      "javascript",
+      "wasm"
+    ],
+    "dart_version": "3.13.1",
+    "flutter_version": "3.47.1",
+    "os": "Darwin",
+    "physical_device": false,
+    "profile": "web-chrome",
+    "runner_kind": "browser-runtime"
+  },
+  "schema_version": 1,
+  "status": "bounded-integration-proof-not-surface-completion",
+  "summary": {
+    "completion_eligible": 0,
+    "dedicated_trace_artifacts": 10,
+    "failed": 0,
+    "passed": 10,
+    "scenarios": 10
+  }
+}

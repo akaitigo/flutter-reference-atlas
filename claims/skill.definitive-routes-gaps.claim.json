@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "skill.definitive-router",
+  "id": "skill.definitive-routes-gaps",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "代表QueryがMethodChannel、Impeller、Add-to-App、Windows build、Accessibility、DevTools、Web storageの細粒度Surfaceと未充足Runtimeへ一致し、近接分野を捏造しない。"
+      ],
+      "id": "proof.definitive-surface-routing",
+      "statement": "Lab lab.definitive-skill-eval とTest test.definitive-router-evalで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "reference-atlas-core-v1",
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。代表QueryがMethodChannel、Impeller、Add-to-App、Windows build、Accessibility、DevTools、Web storageの細粒度Surfaceと未充足Runtimeへ一致し、近接分野を捏造しない。",
+  "status": "accepted"
+}

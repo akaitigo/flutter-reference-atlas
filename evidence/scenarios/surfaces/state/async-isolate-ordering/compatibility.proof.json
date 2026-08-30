@@ -1,0 +1,107 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "dart-sdk-3.13.1"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [
+      "last-write-wins"
+    ],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/state/async-isolate-ordering/compatibility/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "state",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.state.async-isolate-ordering.compatibility",
+  "integrated_reference": {
+    "assertions": [
+      "adapter result is observable",
+      "same test contract runs on both compiler variants"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "javascript-wasm"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3720,
+      "digest": "sha256:676629aad901bf770d8d7beedc6f649373f3316fc7a5afd3debe5fbc037d1ca2",
+      "path": "evidence/scenarios/integrated/compatibility.trace.json"
+    }
+  },
+  "scenario": "compatibility",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:f3c65eaebd0daa70a020988a8e3c1d356a792ed9324031df12d80fd23dac1b43",
+      "path": "bin/cache/dart-sdk/lib/async/async.dart"
+    },
+    {
+      "digest": "sha256:635b51d99245dd38c0a8782961e80d1ad1f4cd2852750fbab24d2962a952f1f2",
+      "path": "bin/cache/dart-sdk/lib/isolate/isolate.dart"
+    }
+  ],
+  "source_set_digest": "sha256:4b137a72bc7ae08f471a7ba42f86551ce877ea4200c80a78e7058dc23ef986a7",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "state.async-isolate-ordering",
+  "surface_title": "Async・Isolate・ordering"
+}

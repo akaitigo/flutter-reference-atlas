@@ -11,16 +11,26 @@ jobs:
   validate:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
           go-version: '1.26.0'
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: '3.47.1'
           channel: stable
           cache: true
-      - uses: actions/checkout@v4
+      - name: 固定Flutter SDKを全Formal Gateへbinding
+        run: |
+          test -n "$FLUTTER_ROOT"
+          echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+          echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+      - name: Reference App固定依存をlockfileから復元
+        working-directory: reference-systems/operations-workspace
+        run: '"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/reference-atlas-core
           ref: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
@@ -29,6 +39,36 @@ jobs:
         run: make atlas-bootstrap CORE_DIR=.tools/reference-atlas-core
       - name: atlas validateとOverlay Gate
         run: make validate CORE_DIR=.tools/reference-atlas-core
+      - name: 公開main非後退Baseline Gate
+        run: make non-regression-audit
+      - name: Chrome JavaScript・Wasm Runtime Gate
+        run: env -u GITHUB_ACTIONS make definitive-web-runtime
+      - name: Reference App 10 Scenario Trace Gate
+        run: make reference-scenario-runtime
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: akaitigo/reference-atlas-core
+          ref: 072d7ca77981f51754e824d70c6d4ecd55ea67e5
+          path: .tools/reference-atlas-core-v2
+      - name: Core v2 atlas CLIを固定commitからBuild
+        run: make atlas-v2-bootstrap CORE_V2_DIR=.tools/reference-atlas-core-v2
+      - name: Evidence Dependency Graph Gate
+        run: make evidence-dependency-audit
+      - name: Core v2 incomplete migration Gate
+        run: |
+          python3 -m unittest tooling.ci_supply_chain.test_core_v2_adapter
+          python3 tooling/ci_supply_chain/core_v2_adapter.py --check
+          python3 tooling/ci_supply_chain/core_v2_adapter.py --audit-incomplete --atlas-bin .tools/bin/atlas-v2
+      - name: FE 18軸Depth Reference Lock検証
+        run: |
+          python3 tooling/reference_snapshot/verify.py --lock definitive/fe-depth-reference.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/8a9e34a89a55cc53702032783c06ede7246a286f
+          python3 tooling/fe_parity/generate.py --check
+      - name: FE Reference System Scenario Proof Lock検証
+        run: |
+          python3 tooling/reference_snapshot/verify.py --lock definitive/fe-reference-system.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/7175de4305afb308722d5b83475e91c18da64957
+          python3 tooling/scenario_proof/generate.py --check
+      - name: Reference Snapshot negative Gate
+        run: python3 -m unittest tooling.reference_snapshot.test_verify
       - name: Test・Analyze・Skill Eval・Legal Gate
         run: make test analyze skill-eval runbooks legal FORMAL_SDK="$FLUTTER_ROOT"
 

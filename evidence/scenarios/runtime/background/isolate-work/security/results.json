@@ -1,0 +1,119 @@
+{
+  "completed_at": "2026-08-30T18:50:29Z",
+  "harness": {
+    "bytes": 13110,
+    "digest": "sha256:72794fef1d7242d4cfafd7e45d86097f3efcf20faf0ff675b578c5049499a09f",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 20508,
+    "digest": "sha256:330c64f1d686c2e498de068358a37f6c4db34e3e2cc6464f2f7ca6299dcc0277",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:635b51d99245dd38c0a8782961e80d1ad1f4cd2852750fbab24d2962a952f1f2",
+      "path": "bin/cache/dart-sdk/lib/isolate/isolate.dart"
+    }
+  ],
+  "source_set_digest": "sha256:e33d49199cab02f349b8e1b08a0ffc2acd0d8cac9a3671d7419b101b601879e7",
+  "started_at": "2026-08-30T18:31:57Z",
+  "status": "passed",
+  "surface_id": "background.isolate-work",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1442,
+        "digest": "sha256:0030581078ab0c55402903e68fde0e33d9422c7c0a0350ef61ccea9de1520608",
+        "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "isolate-runの実Isolateから要約値だけを返した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 52416,
+        "digest": "sha256:582e25fe6fc5bd7894fe18390543845ac64c952fdfab0b7228eb18925a23482d",
+        "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2103,
+        "digest": "sha256:d54b1028261f8fefc7720d83149e578ede7160cc78a3545c521c9c40deefa74e",
+        "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/trace.json"
+      },
+      "variant": "isolate-run"
+    },
+    {
+      "artifact": {
+        "bytes": 1472,
+        "digest": "sha256:ee255030d0fc153261fbc12f11e3f7c00151d006452c4a902074a160f808d096",
+        "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "transferable-dataの実Isolateから要約値だけを返した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 55428,
+        "digest": "sha256:939c8d4c18bdec630a895641728bc2f3eb0e266307ad8bea97910682ba49f1cf",
+        "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2145,
+        "digest": "sha256:1ceb9a94c751bf8d0c5d512e5fafd01a74f7d081e4dbc5aa4fdffd8a935620c6",
+        "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/trace.json"
+      },
+      "variant": "transferable-data"
+    }
+  ],
+  "variant_contract": [
+    "isolate-run",
+    "transferable-data"
+  ]
+}

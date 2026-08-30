@@ -1,0 +1,6 @@
+{
+  "id": "retreat-output",
+  "operation": "remove-output-from-required-list-only",
+  "target": "evidence/scenarios/index.json",
+  "expected_error": "必要output機械列挙不一致"
+}

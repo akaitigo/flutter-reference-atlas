@@ -10,6 +10,8 @@
     {"id":"lab.simulator-integration","path":"reference-systems/operations-workspace/integration_test","profiles":["simulator"]},
     {"id":"lab.offline-conflict-resolution","path":"labs/offline-conflict-resolution","profiles":["local","container"]},
     {"id":"lab.platform-integration-source-contract","path":"labs/platform-integration","profiles":["local"]},
+    {"id":"lab.definitive-android-method-channel","path":"scripts/definitive-android-runtime.sh","profiles":["simulator"]},
+    {"id":"lab.definitive-web-chrome","path":"scripts/definitive-web-runtime.sh","profiles":["local"]},
     {"id":"lab.platform-ffi-runtime","path":"labs/platform-integration/bin/verify_ffi_runtime.dart","profiles":["local"]},
     {"id":"lab.security-boundary","path":"labs/security-boundary","profiles":["local"]},
     {"id":"lab.operations-drill","path":"labs/operations-drill","profiles":["local"]},
@@ -18,6 +20,7 @@
     {"id":"lab.container-profile","path":"scripts/labs-container.sh","profiles":["container"]},
     {"id":"lab.simulator-profile","path":"scripts/labs-simulator.sh","profiles":["simulator"]},
     {"id":"lab.skill-eval","path":"evals","profiles":["local"]}
+    ,{"id":"lab.definitive-skill-eval","path":"evals/evaluate_definitive.py","profiles":["local"]}
   ],
   "tests": [
     {"id":"test.overlay-validator","path":"tooling/atlascheck/main_test.go"},
@@ -28,6 +31,8 @@
     {"id":"test.simulator-integration","path":"reference-systems/operations-workspace/integration_test/workspace_integration_test.dart"},
     {"id":"test.conflict-verifier","path":"labs/offline-conflict-resolution/bin/verify.dart"},
     {"id":"test.platform-source-contract","path":"labs/platform-integration/test/source_contract_verifier_test.dart"},
+    {"id":"test.definitive-android-method-channel","path":"reference-systems/operations-workspace/integration_test/workspace_integration_test.dart"},
+    {"id":"test.definitive-web-chrome","path":"reference-systems/operations-workspace/test/workspace_app_test.dart"},
     {"id":"test.platform-ffi-runtime","path":"labs/platform-integration/bin/verify_ffi_runtime.dart"},
     {"id":"test.security-boundary","path":"labs/security-boundary/bin/verify.dart"},
     {"id":"test.operations-drill","path":"labs/operations-drill/bin/verify.dart"},
@@ -36,6 +41,7 @@
     {"id":"test.container-script","path":"scripts/labs-container.sh"},
     {"id":"test.simulator-script","path":"scripts/labs-simulator.sh"},
     {"id":"test.runbook-structure","path":"scripts/validate-runbooks.sh"},
-    {"id":"test.router-eval","path":"evals/evaluate.py"}
+    {"id":"test.router-eval","path":"evals/evaluate.py"},
+    {"id":"test.definitive-router-eval","path":"evals/evaluate_definitive.py"}
   ]
 }

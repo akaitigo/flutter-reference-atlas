@@ -1,0 +1,46 @@
+{
+  "oracle": {
+    "artifact_bytes": 1387306,
+    "artifact_sha256": "sha256:9909ed953a2b23a2855bf3c301c62c336fa48cc27de3f7a30b70c0fc5e898ae2",
+    "chrome_accessibility_tree_captured": true,
+    "chrome_flutter_view_observed": true,
+    "compiler": "dart2wasm",
+    "mode": "release-wasm-no-source-maps",
+    "variant": "wasm"
+  },
+  "runtime_identity": {
+    "architecture": "arm64",
+    "browser": "Google Chrome",
+    "browser_version": "151.0.7922.175",
+    "os": "macOS 26.1",
+    "physical_device": false,
+    "profile": "web-chrome",
+    "runner_kind": "browser-runtime"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      "flutter-build-web",
+      "localhost-serve",
+      "headless-chrome-load",
+      "dom-and-screenshot-capture"
+    ],
+    "network": {
+      "events": [
+        "GET http://127.0.0.1:<variant-port>/",
+        "local-static-assets-loaded"
+      ]
+    },
+    "resource": {
+      "events": [
+        "compiled-artifact-created",
+        "build-mode-verified",
+        "dom-captured",
+        "screenshot-captured"
+      ]
+    }
+  },
+  "surface_id": "build.web",
+  "variant": "wasm"
+}

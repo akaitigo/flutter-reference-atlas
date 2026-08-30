@@ -1,0 +1,15 @@
+schema_version: 1
+id: history.core-v2-audit-attempt.2026-08-28
+atlas_id: flutter-reference-atlas
+classification: failed-gate-attempt
+core_commit: be19ddaa411fe60dcf12f0f5d457902bb57b9eb3
+command: .tools/bin/atlas-v2 audit . --gate definitive
+observed_at: "2026-08-28T11:12:00Z"
+exit_code: 1
+reason: subject-definitiveには有効なbounded-complete基盤が必要であり、現行AtlasはDefinitive Gapを保持するためstatus incompleteである。
+artifact:
+  uri: evidence/artifacts/core-v2-audit-attempt-2026-08-28.log
+  digest: sha256:2c5a41a1453f848dff929606bab2ae5d4d907f66d3286e121197c2c8d5aa7a10
+  media_type: text/plain
+  size_bytes: 212
+retention: git

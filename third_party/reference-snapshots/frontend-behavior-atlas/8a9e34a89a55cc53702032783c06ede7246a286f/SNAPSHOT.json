@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "mode": "locked-content-snapshot",
+  "repository": "https://github.com/akaitigo/frontend-behavior-atlas",
+  "commit": "8a9e34a89a55cc53702032783c06ede7246a286f",
+  "files": [
+    {
+      "path": "FE_DEPTH_REFERENCE.json",
+      "digest": "sha256:fdf98c070a99412e31eeb64ff0015ff680ac0776e53a07840a39810114f53b0f"
+    },
+    {
+      "path": "docs/DEFINITIVE_GATE_V2_REFERENCE.md",
+      "digest": "sha256:d1d3b7234258a99be084a8c4b28303cb8cd17363a04ebb35660af0b184ad120f"
+    },
+    {
+      "path": "fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json",
+      "digest": "sha256:af27a67f4434f0d1729440d5843498d8d2df0e1cb830e09a73b0a62d89d92774"
+    },
+    {
+      "path": "fixtures/definitive-gate-v2/evidence-granularity.fixture.json",
+      "digest": "sha256:94506646f1e30429cb84a87927e1af7e1e890d401efd0335ebf911aed6f85126"
+    },
+    {
+      "path": "fixtures/definitive-gate-v2/profile-incompatibility.fixture.json",
+      "digest": "sha256:95c07992da4b78db5c5551d7ed0c4425668dde9188c0acb53c3b76b17a91e364"
+    },
+    {
+      "path": "fixtures/definitive-gate-v2/variant-comparison.fixture.json",
+      "digest": "sha256:2964d596201033761c083d06dc705d21a428de043a91a0f1e71e7d5b841f59d3"
+    },
+    {
+      "path": "baselines/definitive-gate-v2.json",
+      "digest": "sha256:b6685fac1e11429ed7c203e35aac55c7a82c276dc32aadb97f225af801c3bb67"
+    },
+    {
+      "path": "authority/extraction.snapshot.json",
+      "digest": "sha256:ef3d324232f3378909544b5407769e94fc3cc5a1defec968adbb71cb1a947aa8"
+    },
+    {
+      "path": "scripts/lib/authority-extraction.ts",
+      "digest": "sha256:eea9e10495383ec3cf89b0d57511ba5438ef1b3ca2e27dbdf57558b1b821c594"
+    },
+    {
+      "path": "scripts/extract-authority-surfaces.ts",
+      "digest": "sha256:786d8f671dbc556e50e832b0cbcfa520b034a3d0126a3138d9c01b9b194ad59b"
+    },
+    {
+      "path": "scripts/verify-authority-extraction.ts",
+      "digest": "sha256:420acbe08bff848786c4a28febb4443c671afdd53ff1643413317a9ce175d9aa"
+    },
+    {
+      "path": "authority/body-inventory.snapshot.json",
+      "digest": "sha256:8b3d2823ec22b2193c89932017d8fd9308fc1851a13e3515c28da0752cd99a1d"
+    },
+    {
+      "path": "baselines/authority-body-inventory-v1.json",
+      "digest": "sha256:22b4eefbadff2e2c0117b70584a2bc5e9ae8ed3997f3dcb35e01358db2ddd82c"
+    },
+    {
+      "path": "migrations/authority-body-inventory-v1.json",
+      "digest": "sha256:d6a3201d4cc4d7c7657821ff7bc49ad5bcafdaaab95a7d856a996797568598b5"
+    },
+    {
+      "path": "scripts/lib/authority-body-inventory.ts",
+      "digest": "sha256:04f62a0b63981c62a7ab90f39637c71745642e84a3bdd4404ce715a0163ebe76"
+    },
+    {
+      "path": "scripts/lib/authority-body-baseline.ts",
+      "digest": "sha256:0dc48dc9e62fdc9cd8493e9b5827b4cf5948c4b72df3374d5ebcc73ac344009c"
+    },
+    {
+      "path": "scripts/extract-authority-body-inventory.ts",
+      "digest": "sha256:1ce38aae8e9adf2c8095310bf54348eacc482cb19f5edbd7c013a4bf55e6d38c"
+    },
+    {
+      "path": "scripts/verify-authority-body-inventory.ts",
+      "digest": "sha256:5ba278737bfedae54b3c3b92fdf16a9ecf6b914bcaf0ab2cd04ff0d6ef24884a"
+    },
+    {
+      "path": "scripts/verify-authority-body-baseline.ts",
+      "digest": "sha256:599d6dee6d34b10f8496309c68e5cd3b8752366238311ecfbda4e2a23a8be897"
+    },
+    {
+      "path": "authority/review-queue.snapshot.json",
+      "digest": "sha256:9df1d3669135bf9612eb971b2e8279f8419deb3d0f484c7700ac1a3c19612484"
+    },
+    {
+      "path": "authority/reviews/decisions.json",
+      "digest": "sha256:a6a9d05f74e022e3632443ebc0a311f5ca193b9328a995aafb8d4b0170783f08"
+    },
+    {
+      "path": "docs/AUTHORITY_REVIEW_WORKFLOW.md",
+      "digest": "sha256:1c9a43c24bd9b0ee96ae4779d6f2e6dcec2383c5a77cf37058a8e302814c8711"
+    },
+    {
+      "path": "scripts/lib/authority-review-queue.ts",
+      "digest": "sha256:6a0d44da874e7332d2212416bcbaa9ca93ab7a2cda9d5c28b846fecb847c2187"
+    },
+    {
+      "path": "scripts/generate-authority-review-queue.ts",
+      "digest": "sha256:0ddb9e1ed3221c89e68449914e37a94a9104123d3ae0578b2e0a4aed3f57f291"
+    },
+    {
+      "path": "scripts/verify-authority-review-queue.ts",
+      "digest": "sha256:3849bd25a409742acdcbb8e028a65cf0d51249ac29c23ba606a14d63b81524f9"
+    },
+    {
+      "path": "scripts/test-authority-review-queue.ts",
+      "digest": "sha256:cd6ffd8860645b70f85feb262fffc903d3b0a0aa96c6f9a7181f6ed895e965ec"
+    },
+    {
+      "path": "evals/fe-behavior-advisor.definitive-skill-eval.json",
+      "digest": "sha256:566c9f3cea248f49c24f769c88695b10c15bbdb956c08bcfa68dbe7e96c18d0a"
+    },
+    {
+      "path": "scripts/lib/definitive-skill-eval.ts",
+      "digest": "sha256:8209f3deb47eff03a2f88822a7a2af52dd9a3a3d44b74e88e42e84e2c3d1b5b6"
+    },
+    {
+      "path": "scripts/lib/mastery-contract.ts",
+      "digest": "sha256:cf939059fa698e23c97c0cb8f08ff2289d37f9abca145cb8320a59425c41e363"
+    },
+    {
+      "path": ".agents/skills/fe-behavior-advisor/scripts/advisor-router.mjs",
+      "digest": "sha256:993326210fecfafa4843d9c11929cddc5bd93c2c9fac6c85a79b9dcf43120c07"
+    },
+    {
+      "path": ".agents/skills/fe-behavior-advisor/references/mastery-contract.json",
+      "digest": "sha256:f2d6ec5bc979cacaee6a8086654449b739d1b88a36134ea8c72b109baf5f376e"
+    },
+    {
+      "path": ".agents/skills/fe-behavior-advisor/SKILL.md",
+      "digest": "sha256:f75c967091762dda6b9da253da969436cbad0f6f8b0855e3b8e71e3c930a59a2"
+    }
+  ]
+}

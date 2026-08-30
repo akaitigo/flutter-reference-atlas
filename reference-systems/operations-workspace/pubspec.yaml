@@ -7,6 +7,8 @@ environment:
   sdk: ^3.10.4
 
 dependencies:
+  atlas_runtime_probe:
+    path: packages/atlas_runtime_probe
   flutter:
     sdk: flutter
 

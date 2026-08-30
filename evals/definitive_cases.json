@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "cases": [
+    {"id":"definitive.method-channel-android","query":"platform.method-channel Android Emulator runtime","expected_surface":"platform.method-channel","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.impeller-device","query":"rendering.gpu-impeller GPU Android device","expected_surface":"rendering.gpu-impeller","expected_gap_kind":"runtime-profile","expected_gap_id":"android-device"},
+    {"id":"definitive.add-to-app-ios","query":"platform.add-to-app-ios iOS Simulator host runtime","expected_surface":"platform.add-to-app-ios","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.windows-build","query":"build.windows Windows build host release","expected_surface":"build.windows","expected_gap_kind":"runtime-profile","expected_gap_id":"windows-build-host"},
+    {"id":"definitive.accessibility-runtime","query":"accessibility.semantics-tree Android device Semantics","expected_surface":"accessibility.semantics-tree","expected_gap_kind":"runtime-profile","expected_gap_id":"android-device"},
+    {"id":"definitive.devtools-memory","query":"devtools.performance-memory-network profile runtime","expected_surface":"devtools.performance-memory-network","expected_gap_kind":"runtime-profile","expected_gap_id":"devtools-web"},
+    {"id":"definitive.storage-web","query":"storage.web-persistence Web Chrome quota recovery","expected_surface":"storage.web-persistence","expected_gap_kind":"runtime-profile","expected_gap_id":"web-chrome"},
+    {"id":"definitive.framework-web","query":"framework.lifecycle Web Chrome runtime","expected_surface":"framework.lifecycle","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.state-web","query":"state.change-notifier Web Chrome runtime","expected_surface":"state.change-notifier","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.security-web","query":"security.input-data-boundary Web Chrome rejection","expected_surface":"security.input-data-boundary","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.build-web","query":"build.web Chrome JavaScript Wasm release runtime","expected_surface":"build.web","expected_gap_kind":"profile-scenario","expected_gap_id":"web-build-host:boundary"},
+    {"id":"definitive.integration-android","query":"testing.integration-device Android Emulator runtime","expected_surface":"testing.integration-device","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.plugin-lifecycle-android","query":"platform.plugin-lifecycle Android Emulator activity runtime","expected_surface":"platform.plugin-lifecycle","expected_gap_kind":"runtime-profile","expected_gap_id":"ios-simulator"},
+    {"id":"definitive.unknown-neighbor","query":"React Native bridge production","expected_surface":null,"expected_gap_kind":null,"expected_gap_id":null}
+  ]
+}

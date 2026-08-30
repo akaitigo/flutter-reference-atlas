@@ -1,0 +1,37 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "activity_attached": true,
+    "api_level": 36,
+    "codec": "json",
+    "error_code": "TRANSIENT_FAILURE",
+    "os_version": "16",
+    "platform": "Android",
+    "scenario": "failure",
+    "surface_id": "platform.method-channel",
+    "variant": "json"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36上でActivity attachedを観測した",
+      "json codecを実Platform側で確認した",
+      "初回操作をTRANSIENT_FAILUREとして観測した"
+    ],
+    "passed": true
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "failure",
+  "schema_version": 1,
+  "screen_sha256": "sha256:6736547cf9a65c825bc27c4f3e0e27fd81334088ca0ae58becd50645d60111ca",
+  "surface_id": "platform.method-channel",
+  "variant": "json"
+}

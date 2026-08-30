@@ -1,0 +1,48 @@
+{
+  "anchors": [],
+  "document_id": "document-github-com-a33fd1668b7d",
+  "extraction": {
+    "authority_semantics_exhaustive": false,
+    "body_storage": "digest-locator-and-offset-only",
+    "method": "html-semantic-anchor-selector-v1",
+    "review_status": "automated-unreviewed",
+    "selector_contract": [
+      "document-root",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "dfn",
+      "section",
+      "article",
+      "main",
+      "nav",
+      "aside",
+      "table",
+      "figure"
+    ],
+    "selector_exhaustive_for_locked_body": false,
+    "tool": "flutter-reference-atlas-authority-body-inventory-v1",
+    "tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 746130,
+    "fetched_digest": "sha256:8cbab6e86fb4f2f064c27fe37ac5041b80e65977e27f669d0d88f7f3a38a7ee4",
+    "final_url": "https://github.com/flutter/flutter/blob/5d531788691ec3404cac0cee66ead4007b177363/DEPS",
+    "http_status": 200,
+    "locked_digest_match": false,
+    "status": "stale"
+  },
+  "fetch_url": "https://github.com/flutter/flutter/blob/5d531788691ec3404cac0cee66ead4007b177363/DEPS",
+  "locked_body_digest": "sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261",
+  "schema_version": 1,
+  "source_ids": [
+    "dart-sdk-3.13.1",
+    "flutter-engine-3.47.1-deps"
+  ]
+}

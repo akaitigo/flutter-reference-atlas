@@ -1,0 +1,80 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.claim.execution.container-isolation.dart-container-3.13.1",
+      "capability_id": "execution.container-lab",
+      "claim_id": "execution.container-isolation",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:94d0f595f94cba77fe49119fbb1ef5bbc2ce1175e8339e33fb893ff994e34547",
+      "edge_id": "edge.claim.execution.container-isolation.dart-container-3.13.1",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-policy-deferred",
+      "provisional_surface_id": null,
+      "reference_url": "https://hub.docker.com/_/dart",
+      "source_id": "dart-container-3.13.1",
+      "target_ids": [
+        "execution.container"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.language.deterministic-conflict-resolution.dart-container-3.13.1",
+      "capability_id": "language.conflict-resolution",
+      "claim_id": "language.deterministic-conflict-resolution",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:84f4656fb3ea98116919aaeb0174e8bddf927e954a14c20b35459e8ff215f2bd",
+      "edge_id": "edge.claim.language.deterministic-conflict-resolution.dart-container-3.13.1",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-policy-deferred",
+      "provisional_surface_id": null,
+      "reference_url": "https://hub.docker.com/_/dart",
+      "source_id": "dart-container-3.13.1",
+      "target_ids": [
+        "language.dart-concurrency"
+      ]
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": null,
+    "deferred_reason": "repository-owned-runtime-record-not-remote-authority-body",
+    "error_digest": null,
+    "fetched_bytes": null,
+    "fetched_digest": null,
+    "final_url": null,
+    "http_status": null,
+    "locked_digest_match": false,
+    "status": "deferred"
+  },
+  "locked_source_digest": "sha256:d3f19cf5c18a7939d6af3f0896b2e9fec3f31f7ba3a2f88bfe6181e903084a51",
+  "schema_version": 1,
+  "source_id": "dart-container-3.13.1",
+  "source_metadata": {
+    "kind": "runtime-inventory",
+    "license": "BSD-3-Clause",
+    "redistribution": "metadata-only",
+    "retrieved_at": "2026-08-28",
+    "title": "Dart 3.13.1 SDK OCI runtime image",
+    "version": "3.13.1-sdk-linux-arm64"
+  },
+  "source_url": "https://hub.docker.com/_/dart"
+}

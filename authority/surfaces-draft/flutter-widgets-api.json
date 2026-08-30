@@ -1,0 +1,149 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.claim.framework.key-controls-state-identity.flutter-widgets-api",
+      "capability_id": "framework.element-reconciliation",
+      "claim_id": "framework.key-controls-state-identity",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "context_end": 246,
+      "context_start": 0,
+      "context_unit": "byte",
+      "domain_reference_metadata_digest": "sha256:3ada1d45a3db02ac84c6b0ca152c650376937a77edad217da18eae3214f9f71b",
+      "edge_id": "edge.claim.framework.key-controls-state-identity.flutter-widgets-api",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "root-document",
+      "provisional_surface_id": null,
+      "reference_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+      "source_id": "flutter-widgets-api",
+      "target_ids": [
+        "framework.internal-architecture"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.product.adaptive-state-flow.flutter-widgets-api",
+      "capability_id": "product.adaptive-workspace",
+      "claim_id": "product.adaptive-state-flow",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "context_end": 246,
+      "context_start": 0,
+      "context_unit": "byte",
+      "domain_reference_metadata_digest": "sha256:90b3c299b187e6979ac46d5dcde062389f96b73fc627872768b1c3a434ba56d8",
+      "edge_id": "edge.claim.product.adaptive-state-flow.flutter-widgets-api",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "root-document",
+      "provisional_surface_id": null,
+      "reference_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+      "source_id": "flutter-widgets-api",
+      "target_ids": [
+        "product.operations-workspace"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.product.navigation-is-observable.flutter-widgets-api",
+      "capability_id": "product.navigation",
+      "claim_id": "product.navigation-is-observable",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "context_end": 246,
+      "context_start": 0,
+      "context_unit": "byte",
+      "domain_reference_metadata_digest": "sha256:76302e36f2469becd18d9312d14c3539718e11a4e174fc17f93933609c2a5cd6",
+      "edge_id": "edge.claim.product.navigation-is-observable.flutter-widgets-api",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "root-document",
+      "provisional_surface_id": null,
+      "reference_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+      "source_id": "flutter-widgets-api",
+      "target_ids": [
+        "product.navigation"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.product.state-lifecycle-is-ordered.flutter-widgets-api",
+      "capability_id": "product.state-lifecycle",
+      "claim_id": "product.state-lifecycle-is-ordered",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "context_end": 246,
+      "context_start": 0,
+      "context_unit": "byte",
+      "domain_reference_metadata_digest": "sha256:0d80b4002dd313b40ebcde7899a8693413030eb225a2f2f981cf83b50507ad26",
+      "edge_id": "edge.claim.product.state-lifecycle-is-ordered.flutter-widgets-api",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "root-document",
+      "provisional_surface_id": null,
+      "reference_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+      "source_id": "flutter-widgets-api",
+      "target_ids": [
+        "product.state-lifecycle"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.quality.accessibility-semantics.flutter-widgets-api",
+      "capability_id": "quality.accessibility",
+      "claim_id": "quality.accessibility-semantics",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "context_end": 246,
+      "context_start": 0,
+      "context_unit": "byte",
+      "domain_reference_metadata_digest": "sha256:eb8e6bdeae76b65bba123448728c499a80572727dcb8c98aaea8883fb8f88c6a",
+      "edge_id": "edge.claim.quality.accessibility-semantics.flutter-widgets-api",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "root-document",
+      "provisional_surface_id": null,
+      "reference_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+      "source_id": "flutter-widgets-api",
+      "target_ids": [
+        "quality.accessibility-performance-security"
+      ]
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 246,
+    "fetched_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+    "final_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+    "http_status": 200,
+    "locked_digest_match": true,
+    "status": "matched"
+  },
+  "locked_source_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+  "schema_version": 1,
+  "source_id": "flutter-widgets-api",
+  "source_metadata": {
+    "kind": "official-documentation",
+    "license": "CC-BY-4.0 and BSD-3-Clause for code samples",
+    "redistribution": "link-only",
+    "retrieved_at": "2026-08-28",
+    "title": "Flutter widgets library API documentation",
+    "version": "retrieved-2026-08-28"
+  },
+  "source_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html"
+}

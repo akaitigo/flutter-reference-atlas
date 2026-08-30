@@ -1,0 +1,47 @@
+{
+  "anchors": [],
+  "document_id": "document-github-com-7f74cd6fffae",
+  "extraction": {
+    "authority_semantics_exhaustive": false,
+    "body_storage": "digest-locator-and-offset-only",
+    "method": "html-semantic-anchor-selector-v1",
+    "review_status": "automated-unreviewed",
+    "selector_contract": [
+      "document-root",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "dfn",
+      "section",
+      "article",
+      "main",
+      "nav",
+      "aside",
+      "table",
+      "figure"
+    ],
+    "selector_exhaustive_for_locked_body": false,
+    "tool": "flutter-reference-atlas-authority-body-inventory-v1",
+    "tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd"
+  },
+  "fetch": {
+    "content_type": null,
+    "deferred_reason": "repository-owned-runtime-record-not-remote-authority-body",
+    "error_digest": null,
+    "fetched_bytes": null,
+    "fetched_digest": null,
+    "final_url": null,
+    "http_status": null,
+    "locked_digest_match": false,
+    "status": "deferred"
+  },
+  "fetch_url": "https://github.com/akaitigo/flutter-reference-atlas/blob/main/environments/simulator/runtime-inventory.json",
+  "locked_body_digest": "sha256:669f36a09003290678923c311c181dd0b8683703ae76916e4a3cdaa6f572a10a",
+  "schema_version": 1,
+  "source_ids": [
+    "android-emulator-runtime-inventory"
+  ]
+}

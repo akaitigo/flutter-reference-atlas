@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "atlas_id": "flutter-reference-atlas",
+  "core_contract": {
+    "commit": "072d7ca77981f51754e824d70c6d4ecd55ea67e5",
+    "release_status": "main-ci-passed"
+  },
+  "graph": "evidence/dependency-graph.json",
+  "non_regression_baseline": "baseline/evidence-dependency-v1.json",
+  "scenario_closure_plan": "evidence/scenarios/closure-plan.json",
+  "connections": {
+    "non_regression_gate": "make non-regression-audit",
+    "evidence_dependency_gate": "make evidence-dependency-audit",
+    "definitive_gate": "make core-v2-audit",
+    "definitive_manifest_field": "evidence_dependency_graph",
+    "definitive_certificate_field": "evidence_dependency_digest",
+    "definitive_certificate_path": "evidence/definitive-certificate.json"
+  },
+  "completion_state": {
+    "atlas_status": "incomplete",
+    "definitive_certificate_present": false,
+    "graph_gate_can_pass_without_subject_completion": true,
+    "certificate_issuance_blocked_until_all_definitive_gates_pass": true
+  },
+  "required_evidence_families": [
+    "unit",
+    "widget",
+    "integration",
+    "golden",
+    "performance",
+    "platform",
+    "device",
+    "reference-system",
+    "scenario-proof"
+  ]
+}

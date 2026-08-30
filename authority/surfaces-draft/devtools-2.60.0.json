@@ -1,0 +1,122 @@
+{
+  "candidate_surfaces": [
+    {
+      "candidate_behavior_id": "candidate.claim.baseline.flutter-version-lock.devtools-2.60.0",
+      "capability_id": "baseline.sdk-lock",
+      "claim_id": "baseline.flutter-version-lock",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:f0897e73fb6c454bedf9f25e3d6dcb6c1304d66c5b8073589dab94bc267c2ae0",
+      "edge_id": "edge.claim.baseline.flutter-version-lock.devtools-2.60.0",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+      "source_id": "devtools-2.60.0",
+      "target_ids": [
+        "baseline.flutter-3.47.1"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.claim.language.public-surface-is-finite.devtools-2.60.0",
+      "capability_id": "language.public-surface",
+      "claim_id": "language.public-surface-is-finite",
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:74c08db57f49d1787185c432b86502826c604a8be72ad750076d703fccdc1fea",
+      "edge_id": "edge.claim.language.public-surface-is-finite.devtools-2.60.0",
+      "edge_kind": "claim-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": null,
+      "reference_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+      "source_id": "devtools-2.60.0",
+      "target_ids": [
+        "language.public-surface-inventory"
+      ]
+    },
+    {
+      "candidate_behavior_id": "candidate.provisional-surface.devtools.inspector-debugger.devtools-2.60.0",
+      "capability_id": null,
+      "claim_id": null,
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:b24a44466f7fac76505de470e0995166707dea12f85d7b01f31a7f428d54f714",
+      "edge_id": "edge.provisional-surface.devtools.inspector-debugger.devtools-2.60.0",
+      "edge_kind": "provisional-surface-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": "devtools.inspector-debugger",
+      "reference_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+      "source_id": "devtools-2.60.0",
+      "target_ids": []
+    },
+    {
+      "candidate_behavior_id": "candidate.provisional-surface.devtools.performance-memory-network.devtools-2.60.0",
+      "capability_id": null,
+      "claim_id": null,
+      "classification": "candidate-included-unreviewed",
+      "classification_basis": "existing-contract-projection-unreviewed",
+      "context_digest": null,
+      "context_end": null,
+      "context_start": null,
+      "context_unit": null,
+      "domain_reference_metadata_digest": "sha256:709f6773162f3ee3ee5cefa8876463a9f4b3ef35786bd2a438a6e5a26a56ab72",
+      "edge_id": "edge.provisional-surface.devtools.performance-memory-network.devtools-2.60.0",
+      "edge_kind": "provisional-surface-authority",
+      "heading_digest": null,
+      "locator": "document-root",
+      "locator_status": "not-evaluated-stale-body",
+      "provisional_surface_id": "devtools.performance-memory-network",
+      "reference_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+      "source_id": "devtools-2.60.0",
+      "target_ids": []
+    }
+  ],
+  "extraction": {
+    "body_storage": "digest-and-locator-offset-only",
+    "method": "locked-body-locator-context-digest",
+    "review_status": "automated-unreviewed",
+    "tool": "flutter-reference-atlas-authority-extractor-v1",
+    "tool_digest": "sha256:11ef842ec787cc7b5c16eb34252dd45a21d4ae9fa8cb9ce192036d26355c62fb"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 313253,
+    "fetched_digest": "sha256:10c05b6240c0ccbeca61383b7677843b436109b4897b6e054de55efaee72da17",
+    "final_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+    "http_status": 200,
+    "locked_digest_match": false,
+    "status": "stale"
+  },
+  "locked_source_digest": "sha256:2bc73e86b0d652245417d9d3f42d7f633f7c41e1369e869bde348d352d15346a",
+  "schema_version": 1,
+  "source_id": "devtools-2.60.0",
+  "source_metadata": {
+    "kind": "source",
+    "license": "BSD-3-Clause",
+    "redistribution": "metadata-only",
+    "retrieved_at": "2026-08-28",
+    "title": "Dart and Flutter DevTools application metadata",
+    "version": "2.60.0+12d595649f189f1896722623f72599077f476848"
+  },
+  "source_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml"
+}

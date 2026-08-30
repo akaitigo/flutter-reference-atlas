@@ -1,0 +1,6 @@
+{
+  "id": "omit-required-output",
+  "operation": "remove-output-from-graph-required-list-and-run",
+  "target_suffix": ".proof.json",
+  "expected_error": "必要output機械列挙不一致"
+}

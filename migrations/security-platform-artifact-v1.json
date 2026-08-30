@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "security-platform-artifact-migration-v1",
+  "mappings": [
+    {
+      "old_path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml",
+      "new_path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
+      "migration_evidence": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/result.json",
+      "reason": "UIAutomatorによるSemantics handle競合を避け、同一Android API 36 processのdumpsys activity stateへ置換した。旧pathはMapping metadataとして保持し、現在Proofには算入しない。"
+    },
+    {
+      "old_path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml",
+      "new_path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
+      "migration_evidence": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/result.json",
+      "reason": "UIAutomatorによるSemantics handle競合を避け、同一Android API 36 processのdumpsys activity stateへ置換した。旧pathはMapping metadataとして保持し、現在Proofには算入しない。"
+    },
+    {
+      "old_path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-tree.xml",
+      "new_path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.txt",
+      "migration_evidence": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/result.json",
+      "reason": "UIAutomatorによるSemantics handle競合を避け、同一Android API 36 processのdumpsys activity stateへ置換した。旧pathはMapping metadataとして保持し、現在Proofには算入しない。"
+    },
+    {
+      "old_path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-tree.xml",
+      "new_path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.txt",
+      "migration_evidence": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/result.json",
+      "reason": "UIAutomatorによるSemantics handle競合を避け、同一Android API 36 processのdumpsys activity stateへ置換した。旧pathはMapping metadataとして保持し、現在Proofには算入しない。"
+    }
+  ]
+}

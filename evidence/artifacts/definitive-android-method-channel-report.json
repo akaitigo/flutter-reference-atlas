@@ -1,0 +1,57 @@
+{
+  "artifacts": {
+    "integration_sanitized_log": "evidence/artifacts/definitive-android-method-channel.log",
+    "integration_sanitized_log_digest": "sha256:1fc7af4ce5cda47ef79347f8b49f1c1fdecdeb713e59c72d8fea911fc030e5f3",
+    "log_digest": "sha256:28ce219cbc22cf729e4267bca4a93a5a69539426546526558be48a5ed60f574a",
+    "log_size_bytes": 680
+  },
+  "atlas_id": "flutter-reference-atlas",
+  "cleanup": {
+    "application_data_deleted": false,
+    "application_force_stopped": true,
+    "avd_deleted": false,
+    "existing_evidence_deleted": false
+  },
+  "command": ".tools/flutter-3.47.1/flutter/bin/flutter test integration_test/workspace_integration_test.dart -d <android-emulator> --no-pub",
+  "finished_at": "2026-08-28T11:14:10Z",
+  "inputs": {
+    "android_plugin_digest": "sha256:6b36516841123d1a2843d78fc87cb950a441e4eaec4e2d673f2ab4cc38382321",
+    "dart_plugin_digest": "sha256:f44df42b1913af757ba796ff356f30fc8aeff41b2647a271f16694196de50e29",
+    "pubspec_lock_digest": "sha256:fccdb7243198b1146b02b352ab9324bd517fb006fc9806c065c454b41f868658",
+    "test_file_digest": "sha256:11fe79aa649ab4ce7471e994a03552c64472e549036d5447944327841fcd7d91"
+  },
+  "oracle": {
+    "assertions": [
+      "PluginはActivityへattachされAndroid API 36を返す",
+      "StandardMethodCodecとJSONMethodCodecが同じObservable Contractを満たす",
+      "64文字を受理し65文字をBOUNDARY_EXCEEDEDで拒否する",
+      "policy denialをPERMISSION_DENIEDとして返す",
+      "初回TRANSIENT_FAILURE後の再試行がrecoveredを返す"
+    ],
+    "exit_code": 0,
+    "expected_test_count": 3,
+    "observed_test_count": 3,
+    "scenarios_per_variant": [
+      "normal",
+      "boundary",
+      "rejection",
+      "failure",
+      "recovery"
+    ],
+    "variants": [
+      "standard",
+      "json"
+    ]
+  },
+  "profile": "android-emulator",
+  "runner": {
+    "api_level": 36,
+    "device_id": "emulator-5554",
+    "kind": "android-emulator",
+    "physical_device": false
+  },
+  "schema_version": 2,
+  "started_at": "2026-08-28T11:13:44Z",
+  "surface_id": "platform.method-channel",
+  "verdict": "pass"
+}
