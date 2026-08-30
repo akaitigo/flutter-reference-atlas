@@ -145,6 +145,28 @@
       ]
     },
     {
+      "digest": "sha256:4804bd4fde3f2a7e036c4a9d6ae0784c01280193e4b0d337ec54b789e42861d7",
+      "generated_by": "tooling/ci_supply_chain/core_v2_adapter.py",
+      "kind": "skill-eval",
+      "license": "Apache-2.0",
+      "path": "evals/flutter-router.definitive-skill-eval.json",
+      "source_ids": [
+        "reference-atlas-core-v1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ]
+    },
+    {
+      "digest": "sha256:a8c8546c4740c2f5915041f14a83fc7a5f963690cc5458e75263ef9b63d93b97",
+      "generated_by": "tooling/ci_supply_chain/core_v2_adapter.py",
+      "kind": "skill-eval",
+      "license": "Apache-2.0",
+      "path": "evals/definitive-skill-router.json",
+      "source_ids": [
+        "reference-atlas-core-v1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ]
+    },
+    {
       "digest": "sha256:4adcb5e916b34ca94eb3a8f82a4f200db2cc957783cfff7cd73eed1da4e40a05",
       "generated_by": "evals/evaluate_mastery.py",
       "kind": "generated",
@@ -210,7 +232,7 @@
       ]
     },
     {
-      "digest": "sha256:c2aa17605b745001d85635e2bf15833cb3d632423c4a292a5dcca562ef5b9f5e",
+      "digest": "sha256:6d95d16905ef9ef818a808ed026046d0bc17bb07028580beb85b5bcbbeaa3f5a",
       "generated_by": "tooling/evidence_dependency/graph.py",
       "kind": "generated",
       "license": "Apache-2.0",
@@ -279,6 +301,65 @@
         "flutter-engine-3.47.1-deps",
         "dart-sdk-3.13.1",
         "devtools-2.60.0"
+      ]
+    },
+    {
+      "digest": "sha256:cf9a3d759f79d9db64393d36d05b9865c97e02753bd3832f749fa659efa9b115",
+      "generated_by": "tooling/ci_supply_chain/core_v2_adapter.py",
+      "kind": "generated",
+      "license": "Apache-2.0",
+      "path": "surface.inventory.yaml",
+      "source_ids": [
+        "reference-atlas-core-v1",
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps",
+        "dart-sdk-3.13.1",
+        "devtools-2.60.0"
+      ]
+    },
+    {
+      "digest": "sha256:85fbf442a6f7fb577e835b46ec767068ccf4f009bdc5160510cf05709b49353f",
+      "generated_by": "tooling/ci_supply_chain/core_v2_adapter.py",
+      "kind": "generated",
+      "license": "Apache-2.0",
+      "path": "verification.matrix.yaml",
+      "source_ids": [
+        "reference-atlas-core-v1",
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps",
+        "dart-sdk-3.13.1",
+        "devtools-2.60.0"
+      ]
+    },
+    {
+      "digest": "sha256:14050975022bd9c9d71a80a4a6dd0d0b2b458fda6e2b29ed2eba782eaeb23f6a",
+      "generated_by": "tooling/ci_supply_chain/core_v2_adapter.py",
+      "kind": "generated",
+      "license": "Apache-2.0",
+      "path": "depth.parity.yaml",
+      "source_ids": [
+        "reference-atlas-core-v1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ]
+    },
+    {
+      "digest": "sha256:2452696f9807b7d4a8ffb22b3ba37f079a25a34ac2370d78423445b96064582a",
+      "generated_by": "fixed-copy-from-frontend-behavior-atlas-4a0b2df8",
+      "kind": "document",
+      "license": "Apache-2.0",
+      "path": "authority/FE_DEPTH_REFERENCE.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
+      ]
+    },
+    {
+      "digest": "sha256:1b650889bc1dd3ac1c95250321c51762147240daf71c5775c82fcf505caaba29",
+      "generated_by": "human-authored-reference-lock",
+      "kind": "document",
+      "license": "Apache-2.0",
+      "path": "definitive/core-v2-fe-depth-reference.lock.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
       ]
     },
     {

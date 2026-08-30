@@ -1,6 +1,6 @@
 {
   "atlas_id": "flutter-reference-atlas",
-  "generated_at": "2026-08-30T20:55:34Z",
+  "generated_at": "2026-08-31T06:49:52+09:00",
   "inputs": [
     {
       "baseline_digest": "sha256:0434f4aace21588948e0292774363e28421efcee9e26bf070ce86d39f90b025d",
@@ -127,13 +127,24 @@
     },
     {
       "baseline_digest": "sha256:d2cf30b10d0ae8de6390fc9406237c001aea5f1ceaa7957cb4db040ebbbe3787",
-      "current_digest": "sha256:decc6228835bcc34ddf97fc21e57255fe36f58a9d69f69d66e2df97a814b64b8",
+      "current_digest": "sha256:d010a04d389a18354ae8f723656755bf332910570dbf3c4598ab8c135382b16f",
       "id": "source.evidence-dependency-baseline",
       "kind": "source",
       "members": [
         "baseline/evidence-dependency-v1.json"
       ],
-      "observed_at": "2026-08-30T20:20:51Z"
+      "observed_at": "2026-08-31T06:46:20+09:00"
+    },
+    {
+      "baseline_digest": "sha256:ee3ab9fc9834d9634130016b4b630278d3928ae4a8807841e45015743f200ad2",
+      "current_digest": "sha256:ee3ab9fc9834d9634130016b4b630278d3928ae4a8807841e45015743f200ad2",
+      "id": "source.core-v2-depth-reference",
+      "kind": "source",
+      "members": [
+        "authority/FE_DEPTH_REFERENCE.json",
+        "definitive/core-v2-fe-depth-reference.lock.json"
+      ],
+      "observed_at": "2026-08-31T06:45:00+09:00"
     },
     {
       "baseline_digest": "sha256:d598228b97ed18903389ffae334db56d82abccc5f98473e7234b360844ba9043",
@@ -306,7 +317,7 @@
     },
     {
       "baseline_digest": "sha256:8357a933f5da99aae0aee0ae066968c4db30cd122a1a7857d05655f8bf059899",
-      "current_digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
+      "current_digest": "sha256:82592e72cbce9d52ff47a9953a2be73885d374d60274163fb8a812dfbe6a09fe",
       "id": "harness.authority-parity",
       "kind": "harness",
       "members": [
@@ -327,24 +338,26 @@
         "tooling/non_regression/audit.py",
         "tooling/non_regression/test_audit.py"
       ],
-      "observed_at": "2026-08-30T20:22:00Z"
+      "observed_at": "2026-08-31T06:34:00+09:00"
     },
     {
       "baseline_digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
-      "current_digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
+      "current_digest": "sha256:bbc1858e4c12ae1f7464c7e94f914fa1a48959beda480bc30909e87956b905ed",
       "id": "harness.ci-supply-chain",
       "kind": "harness",
       "members": [
         ".github/workflows/ci.yml",
         "tooling/ci_supply_chain/__init__.py",
+        "tooling/ci_supply_chain/core_v2_adapter.py",
+        "tooling/ci_supply_chain/test_core_v2_adapter.py",
         "tooling/ci_supply_chain/test_verify.py",
         "tooling/ci_supply_chain/verify.py"
       ],
-      "observed_at": "2026-08-30T20:54:32Z"
+      "observed_at": "2026-08-31T06:34:00+09:00"
     },
     {
       "baseline_digest": "sha256:b94abba8e35a255a9bd4f734287bfd5eca844caec8183410abb7aaf47d474a52",
-      "current_digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
+      "current_digest": "sha256:0c4d5e84a262c66e9ef520c66ec9d7bd151d93ab46f35cc594b746602ed3cfaa",
       "id": "harness.evidence-dependency",
       "kind": "harness",
       "members": [
@@ -361,7 +374,7 @@
         "tooling/evidence_dependency/platform_state.py",
         "tooling/evidence_dependency/test_graph.py"
       ],
-      "observed_at": "2026-08-30T20:20:00Z"
+      "observed_at": "2026-08-31T06:48:45+09:00"
     },
     {
       "baseline_digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
@@ -1580,6 +1593,46 @@
     },
     {
       "depends_on": [
+        "harness.ci-supply-chain",
+        "output:atlas:definitive:flutter-depth-parity.json",
+        "output:atlas:definitive:gap-ledger.json",
+        "output:atlas:definitive:surface-inventory.json",
+        "output:authority:review-queue.snapshot.json",
+        "output:evals:flutter-router.agent-forward-eval.json",
+        "output:evals:flutter-router.definitive-mastery-eval.json",
+        "output:evidence:scenarios:index.json",
+        "profile.local",
+        "source.core-v2-depth-reference"
+      ],
+      "digest": "sha256:14050975022bd9c9d71a80a4a6dd0d0b2b458fda6e2b29ed2eba782eaeb23f6a",
+      "id": "output:depth.parity.yaml",
+      "kind": "derived-evidence",
+      "path": "depth.parity.yaml",
+      "run_id": "run.core-v2-root-adapter.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.ci-supply-chain",
+        "output:atlas:definitive:flutter-depth-parity.json",
+        "output:atlas:definitive:gap-ledger.json",
+        "output:atlas:definitive:surface-inventory.json",
+        "output:authority:review-queue.snapshot.json",
+        "output:evals:flutter-router.agent-forward-eval.json",
+        "output:evals:flutter-router.definitive-mastery-eval.json",
+        "output:evidence:scenarios:index.json",
+        "profile.local",
+        "source.core-v2-depth-reference"
+      ],
+      "digest": "sha256:a8c8546c4740c2f5915041f14a83fc7a5f963690cc5458e75263ef9b63d93b97",
+      "id": "output:evals:definitive-skill-router.json",
+      "kind": "skill-eval",
+      "path": "evals/definitive-skill-router.json",
+      "run_id": "run.core-v2-root-adapter.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.skill",
         "output:atlas:definitive:flutter-depth-parity.json",
         "output:atlas:definitive:gap-ledger.json",
@@ -1610,6 +1663,26 @@
       "kind": "skill-eval",
       "path": "evals/flutter-router.definitive-mastery-eval.json",
       "run_id": "run.skill-eval.2026-08-28",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.ci-supply-chain",
+        "output:atlas:definitive:flutter-depth-parity.json",
+        "output:atlas:definitive:gap-ledger.json",
+        "output:atlas:definitive:surface-inventory.json",
+        "output:authority:review-queue.snapshot.json",
+        "output:evals:flutter-router.agent-forward-eval.json",
+        "output:evals:flutter-router.definitive-mastery-eval.json",
+        "output:evidence:scenarios:index.json",
+        "profile.local",
+        "source.core-v2-depth-reference"
+      ],
+      "digest": "sha256:4804bd4fde3f2a7e036c4a9d6ae0784c01280193e4b0d337ec54b789e42861d7",
+      "id": "output:evals:flutter-router.definitive-skill-eval.json",
+      "kind": "skill-eval",
+      "path": "evals/flutter-router.definitive-skill-eval.json",
+      "run_id": "run.core-v2-root-adapter.2026-08-31",
       "status": "current"
     },
     {
@@ -14820,8 +14893,11 @@
         "output:authority:surfaces-draft:local-runtime-inventory.json",
         "output:authority:surfaces-draft:reference-atlas-core-v1.json",
         "output:baseline:public-surface-inventory.json",
+        "output:depth.parity.yaml",
+        "output:evals:definitive-skill-router.json",
         "output:evals:flutter-router.agent-forward-eval.json",
         "output:evals:flutter-router.definitive-mastery-eval.json",
+        "output:evals:flutter-router.definitive-skill-eval.json",
         "output:evals:flutter-router.skill-eval.json",
         "output:evidence:android-emulator-integration.evidence.yaml",
         "output:evidence:artifacts:android-emulator-integration-report.json",
@@ -15557,15 +15633,57 @@
         "output:evidence:scenarios:surfaces:testing:unit-widget:recovery.proof.json",
         "output:evidence:scenarios:surfaces:testing:unit-widget:refusal.proof.json",
         "output:evidence:scenarios:surfaces:testing:unit-widget:security.proof.json",
+        "output:surface.inventory.yaml",
+        "output:verification.matrix.yaml",
         "profile.local",
         "source.atlas-contract",
         "source.evidence-dependency-baseline"
       ],
-      "digest": "sha256:1044fdf642b6228911e96a424469012498cf0eac62a7e2e99e644ce62f77eaaa",
+      "digest": "sha256:b657c9184c88bb07037c7e16b4cb9f2c6c7860bbcd9022f586e7435a7c0603c1",
       "id": "output:provenance.yaml",
       "kind": "derived-evidence",
       "path": "provenance.yaml",
       "run_id": "run.provenance.2026-08-29",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.ci-supply-chain",
+        "output:atlas:definitive:flutter-depth-parity.json",
+        "output:atlas:definitive:gap-ledger.json",
+        "output:atlas:definitive:surface-inventory.json",
+        "output:authority:review-queue.snapshot.json",
+        "output:evals:flutter-router.agent-forward-eval.json",
+        "output:evals:flutter-router.definitive-mastery-eval.json",
+        "output:evidence:scenarios:index.json",
+        "profile.local",
+        "source.core-v2-depth-reference"
+      ],
+      "digest": "sha256:cf9a3d759f79d9db64393d36d05b9865c97e02753bd3832f749fa659efa9b115",
+      "id": "output:surface.inventory.yaml",
+      "kind": "derived-evidence",
+      "path": "surface.inventory.yaml",
+      "run_id": "run.core-v2-root-adapter.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.ci-supply-chain",
+        "output:atlas:definitive:flutter-depth-parity.json",
+        "output:atlas:definitive:gap-ledger.json",
+        "output:atlas:definitive:surface-inventory.json",
+        "output:authority:review-queue.snapshot.json",
+        "output:evals:flutter-router.agent-forward-eval.json",
+        "output:evals:flutter-router.definitive-mastery-eval.json",
+        "output:evidence:scenarios:index.json",
+        "profile.local",
+        "source.core-v2-depth-reference"
+      ],
+      "digest": "sha256:85fbf442a6f7fb577e835b46ec767068ccf4f009bdc5160510cf05709b49353f",
+      "id": "output:verification.matrix.yaml",
+      "kind": "derived-evidence",
+      "path": "verification.matrix.yaml",
+      "run_id": "run.core-v2-root-adapter.2026-08-31",
       "status": "current"
     }
   ],
@@ -15665,8 +15783,11 @@
     "authority/surfaces-draft/local-runtime-inventory.json",
     "authority/surfaces-draft/reference-atlas-core-v1.json",
     "baseline/public-surface-inventory.json",
+    "depth.parity.yaml",
+    "evals/definitive-skill-router.json",
     "evals/flutter-router.agent-forward-eval.json",
     "evals/flutter-router.definitive-mastery-eval.json",
+    "evals/flutter-router.definitive-skill-eval.json",
     "evals/flutter-router.skill-eval.json",
     "evidence/android-emulator-integration.evidence.yaml",
     "evidence/artifacts/android-emulator-integration-report.json",
@@ -16402,7 +16523,9 @@
     "evidence/scenarios/surfaces/testing/unit-widget/recovery.proof.json",
     "evidence/scenarios/surfaces/testing/unit-widget/refusal.proof.json",
     "evidence/scenarios/surfaces/testing/unit-widget/security.proof.json",
-    "provenance.yaml"
+    "provenance.yaml",
+    "surface.inventory.yaml",
+    "verification.matrix.yaml"
   ],
   "runs": [
     {
@@ -16532,12 +16655,12 @@
     {
       "attempts": 1,
       "command": "make authority-verify",
-      "completed_at": "2026-08-30T20:22:10Z",
+      "completed_at": "2026-08-31T06:34:02+09:00",
       "execution_kind": "derived",
       "id": "run.authority-inventory.2026-08-28",
       "input_bindings": [
         {
-          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
+          "digest": "sha256:82592e72cbce9d52ff47a9953a2be73885d374d60274163fb8a812dfbe6a09fe",
           "input_id": "harness.authority-parity"
         },
         {
@@ -16634,7 +16757,7 @@
         "output:evidence:artifacts:authority-body-non-regression-report.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:22:01Z"
+      "started_at": "2026-08-31T06:34:01+09:00"
     },
     {
       "attempts": 1,
@@ -16674,8 +16797,106 @@
     },
     {
       "attempts": 1,
+      "command": "python3 tooling/ci_supply_chain/core_v2_adapter.py --write",
+      "completed_at": "2026-08-31T06:49:45+09:00",
+      "execution_kind": "derived",
+      "id": "run.core-v2-root-adapter.2026-08-31",
+      "input_bindings": [
+        {
+          "digest": "sha256:a5c1405d057eefd44e1f93af2d8e0b5a21a7697412df9768123f73e25f5d27ed",
+          "input_id": "harness.android-platform-state-validation"
+        },
+        {
+          "digest": "sha256:82592e72cbce9d52ff47a9953a2be73885d374d60274163fb8a812dfbe6a09fe",
+          "input_id": "harness.authority-parity"
+        },
+        {
+          "digest": "sha256:bbc1858e4c12ae1f7464c7e94f914fa1a48959beda480bc30909e87956b905ed",
+          "input_id": "harness.ci-supply-chain"
+        },
+        {
+          "digest": "sha256:0c4d5e84a262c66e9ef520c66ec9d7bd151d93ab46f35cc594b746602ed3cfaa",
+          "input_id": "harness.evidence-dependency"
+        },
+        {
+          "digest": "sha256:550411ef412f0139dd0c08e7143dc1333f951b2e8fb966c28e6a8ba8f5bce26f",
+          "input_id": "harness.scenario-build-android-security"
+        },
+        {
+          "digest": "sha256:f2764c1706cc558e30c9d468fd4e1c6a425fd0de85119261d9af596db84b8eaf",
+          "input_id": "harness.scenario-build-android-security-unit"
+        },
+        {
+          "digest": "sha256:3f15a5900169866b38687919a3e3ad92fda83893a70068319e7bc775dc282b46",
+          "input_id": "harness.scenario-build-web-security"
+        },
+        {
+          "digest": "sha256:e47c3c32a4cdf2bee5dca76ed0c0f207f47ae9e477c9bf56561a3409adb27f8b",
+          "input_id": "harness.scenario-build-web-security-unit"
+        },
+        {
+          "digest": "sha256:6d855408418ac71e800298292733d6590cd300409497dcb3809f4513a71fc2c2",
+          "input_id": "harness.scenario-method-channel"
+        },
+        {
+          "digest": "sha256:a894826b4ef9519c53bd6b4ecfb0be2ea41eb15a237d72d83564f90c11fa7462",
+          "input_id": "harness.scenario-security-artifact-migration"
+        },
+        {
+          "digest": "sha256:0646c5c0672c9747bc0267be5b1b923df7189775b11b57354d98cb6be4602ebb",
+          "input_id": "harness.scenario-security-tranche"
+        },
+        {
+          "digest": "sha256:4be9f09f74d6074575e4fd1cc4b70b8aa69cc014242b4de852a20f79c9eeca0e",
+          "input_id": "harness.skill"
+        },
+        {
+          "digest": "sha256:d588a6fdc3907fbce471bc965f3d4eb471bb58d80b51001cfe2bea21ba6950a4",
+          "input_id": "harness.web-reference"
+        },
+        {
+          "digest": "sha256:23cb49b82459dc60e54b1495a1e519a04b9f91d34d22cbae46a20b5eb02e027b",
+          "input_id": "profile.android-emulator"
+        },
+        {
+          "digest": "sha256:59bb0a6c6265c7d9d32f9c01df4d93a03e3238a8315df102b563105b67bbd421",
+          "input_id": "profile.local"
+        },
+        {
+          "digest": "sha256:0aef46f306671a22fc8bef10934547b4730685d7c497bf008d5a244471cd023c",
+          "input_id": "profile.web-chrome"
+        },
+        {
+          "digest": "sha256:e1deba5287a77a9d69542d15d71352256567a8b2f5d90e47de9bf8be78cd3429",
+          "input_id": "runtime.flutter-3.47.1"
+        },
+        {
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
+          "input_id": "source.atlas-contract"
+        },
+        {
+          "digest": "sha256:ee3ab9fc9834d9634130016b4b630278d3928ae4a8807841e45015743f200ad2",
+          "input_id": "source.core-v2-depth-reference"
+        },
+        {
+          "digest": "sha256:0434f4aace21588948e0292774363e28421efcee9e26bf070ce86d39f90b025d",
+          "input_id": "source.reference-app"
+        }
+      ],
+      "output_ids": [
+        "output:depth.parity.yaml",
+        "output:evals:definitive-skill-router.json",
+        "output:evals:flutter-router.definitive-skill-eval.json",
+        "output:surface.inventory.yaml",
+        "output:verification.matrix.yaml"
+      ],
+      "result": "passed",
+      "started_at": "2026-08-31T06:49:44+09:00"
+    },
+    {
+      "attempts": 1,
       "command": "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py",
-      "completed_at": "2026-08-30T20:54:48Z",
+      "completed_at": "2026-08-31T06:49:16+09:00",
       "execution_kind": "derived",
       "id": "run.definitive-parity.2026-08-28",
       "input_bindings": [
@@ -16684,15 +16905,15 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
+          "digest": "sha256:82592e72cbce9d52ff47a9953a2be73885d374d60274163fb8a812dfbe6a09fe",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
+          "digest": "sha256:bbc1858e4c12ae1f7464c7e94f914fa1a48959beda480bc30909e87956b905ed",
           "input_id": "harness.ci-supply-chain"
         },
         {
-          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
+          "digest": "sha256:0c4d5e84a262c66e9ef520c66ec9d7bd151d93ab46f35cc594b746602ed3cfaa",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -16758,7 +16979,7 @@
         "output:atlas:definitive:surface-inventory.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:54:39Z"
+      "started_at": "2026-08-31T06:49:16+09:00"
     },
     {
       "attempts": 1,
@@ -16810,7 +17031,7 @@
     {
       "attempts": 1,
       "command": "python3 tooling/generate_provenance.py",
-      "completed_at": "2026-08-30T20:55:34Z",
+      "completed_at": "2026-08-31T06:49:52+09:00",
       "execution_kind": "derived",
       "id": "run.provenance.2026-08-29",
       "input_bindings": [
@@ -16823,11 +17044,11 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
+          "digest": "sha256:82592e72cbce9d52ff47a9953a2be73885d374d60274163fb8a812dfbe6a09fe",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
+          "digest": "sha256:bbc1858e4c12ae1f7464c7e94f914fa1a48959beda480bc30909e87956b905ed",
           "input_id": "harness.ci-supply-chain"
         },
         {
@@ -16835,7 +17056,7 @@
           "input_id": "harness.container"
         },
         {
-          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
+          "digest": "sha256:0c4d5e84a262c66e9ef520c66ec9d7bd151d93ab46f35cc594b746602ed3cfaa",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -16903,7 +17124,11 @@
           "input_id": "source.atlas-contract"
         },
         {
-          "digest": "sha256:decc6228835bcc34ddf97fc21e57255fe36f58a9d69f69d66e2df97a814b64b8",
+          "digest": "sha256:ee3ab9fc9834d9634130016b4b630278d3928ae4a8807841e45015743f200ad2",
+          "input_id": "source.core-v2-depth-reference"
+        },
+        {
+          "digest": "sha256:d010a04d389a18354ae8f723656755bf332910570dbf3c4598ab8c135382b16f",
           "input_id": "source.evidence-dependency-baseline"
         },
         {
@@ -16919,7 +17144,7 @@
         "output:provenance.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:55:27Z"
+      "started_at": "2026-08-31T06:49:52+09:00"
     },
     {
       "attempts": 1,
@@ -17160,7 +17385,7 @@
     {
       "attempts": 1,
       "command": "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write",
-      "completed_at": "2026-08-30T20:20:10Z",
+      "completed_at": "2026-08-31T06:49:06+09:00",
       "execution_kind": "derived",
       "id": "run.scenario-proof-generation.2026-08-29",
       "input_bindings": [
@@ -17169,7 +17394,7 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
+          "digest": "sha256:0c4d5e84a262c66e9ef520c66ec9d7bd151d93ab46f35cc594b746602ed3cfaa",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -17770,7 +17995,7 @@
         "output:evidence:scenarios:surfaces:testing:unit-widget:security.proof.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:20:01Z"
+      "started_at": "2026-08-31T06:49:03+09:00"
     },
     {
       "attempts": 1,
@@ -17926,7 +18151,7 @@
     {
       "attempts": 1,
       "command": "make skill-eval",
-      "completed_at": "2026-08-30T20:55:18Z",
+      "completed_at": "2026-08-31T06:49:35+09:00",
       "execution_kind": "derived",
       "id": "run.skill-eval.2026-08-28",
       "input_bindings": [
@@ -17935,15 +18160,15 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
+          "digest": "sha256:82592e72cbce9d52ff47a9953a2be73885d374d60274163fb8a812dfbe6a09fe",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
+          "digest": "sha256:bbc1858e4c12ae1f7464c7e94f914fa1a48959beda480bc30909e87956b905ed",
           "input_id": "harness.ci-supply-chain"
         },
         {
-          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
+          "digest": "sha256:0c4d5e84a262c66e9ef520c66ec9d7bd151d93ab46f35cc594b746602ed3cfaa",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -18018,7 +18243,7 @@
         "output:evidence:router-eval.evidence.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:54:58Z"
+      "started_at": "2026-08-31T06:49:25+09:00"
     },
     {
       "attempts": 1,

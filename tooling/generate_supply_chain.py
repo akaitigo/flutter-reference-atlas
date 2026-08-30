@@ -58,6 +58,7 @@ def make_documents(root: Path) -> tuple[str, str]:
         {"id":"actions-checkout", "name":"actions/checkout", "kind":"github-action", "version":"v4", "source":"https://github.com/actions/checkout", "license":"MIT", "redistribution":"link-only"},
         {"id":"actions-setup-go", "name":"actions/setup-go", "kind":"github-action", "version":"v5", "source":"https://github.com/actions/setup-go", "license":"MIT", "redistribution":"link-only"},
         {"id":"subosito-flutter-action", "name":"subosito/flutter-action", "kind":"github-action", "version":"v2", "source":"https://github.com/subosito/flutter-action", "license":"MIT", "redistribution":"link-only"},
+        {"id":"frontend-depth-reference", "name":"FE Depth Reference v1", "kind":"source", "version":"4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45", "source":"https://github.com/akaitigo/frontend-behavior-atlas/blob/4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45/FE_DEPTH_REFERENCE.json", "license":"Apache-2.0", "redistribution":"allowed"},
     ]
     for package in pub_packages:
         name, version = package["name"], package["version"]

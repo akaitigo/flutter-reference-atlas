@@ -65,6 +65,13 @@ WEB_BUILD_INPUT_ID = "harness.scenario-build-web-security"
 WEB_BUILD_UNIT_INPUT_ID = "harness.scenario-build-web-security-unit"
 WEB_BUILD_TEST_PATH = "tooling/scenario_build_web/test_report.py"
 WEB_BUILD_INPUT_MIGRATION = Path("definitive/evidence-dependency-input-migration.web-build-test.json")
+CORE_V2_ADAPTER_OUTPUTS = {
+    "surface.inventory.yaml",
+    "verification.matrix.yaml",
+    "depth.parity.yaml",
+    "evals/definitive-skill-router.json",
+    "evals/flutter-router.definitive-skill-eval.json",
+}
 SECURITY_ARTIFACT_MIGRATION_PATHS = {
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
@@ -238,6 +245,10 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
         ("source.evidence-dependency-baseline", "source", [
             "baseline/evidence-dependency-v1.json",
         ]),
+        ("source.core-v2-depth-reference", "source", [
+            "authority/FE_DEPTH_REFERENCE.json",
+            "definitive/core-v2-fe-depth-reference.lock.json",
+        ]),
         ("harness.formal-local", "harness", [
             "tooling/evidence_capture/bin/capture.dart", "tooling/evidence_capture/pubspec.yaml",
             "tooling/surface_inventory/generate.py", "tooling/definitive_inventory/generate.py",
@@ -359,6 +370,7 @@ def discover_outputs(root: Path) -> dict[str, str]:
         "evals/flutter-router.agent-forward-eval.json", "baseline/public-surface-inventory.json",
         ".agents/skills/flutter-reference-router/references/mastery-contract.json",
         "provenance.yaml",
+        *sorted(CORE_V2_ADAPTER_OUTPUTS),
     ]:
         if (root / relative).is_file():
             paths.add(relative)
@@ -388,6 +400,8 @@ def output_kind(path: str) -> str:
 
 
 def run_for_path(path: str) -> str:
+    if path in CORE_V2_ADAPTER_OUTPUTS:
+        return "run.core-v2-root-adapter.2026-08-31"
     if path.endswith(PLATFORM_STATE_SUMMARY_SUFFIX):
         return "run.android-platform-state-validation.2026-08-31"
     if path in SECURITY_ARTIFACT_MIGRATION_PATHS:
@@ -442,6 +456,7 @@ RUN_CONFIG = {
     "run.authority-inventory.2026-08-28": ("derived", "make authority-verify", "2026-08-28T12:20:00Z", "2026-08-28T12:21:00Z", ["source.atlas-contract", "harness.authority-parity", "profile.local"], None),
     "run.scenario-proof-generation.2026-08-29": ("derived", "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, WEB_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
     "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "harness.authority-parity", "harness.ci-supply-chain", "runtime.flutter-3.47.1", "profile.local"], None),
+    "run.core-v2-root-adapter.2026-08-31": ("derived", "python3 tooling/ci_supply_chain/core_v2_adapter.py --write", "2026-08-31T06:34:09+09:00", "2026-08-31T06:34:10+09:00", ["source.core-v2-depth-reference", "harness.ci-supply-chain", "profile.local"], None),
     "run.provenance.2026-08-29": ("derived", "python3 tooling/generate_provenance.py", "2026-08-29T00:01:00+09:00", "2026-08-29T00:01:01+09:00", ["source.atlas-contract", "source.evidence-dependency-baseline", "harness.authority-parity", "profile.local"], None),
 }
 
@@ -488,6 +503,18 @@ def dependencies_for(path: str, output_ids: dict[str, str]) -> list[str]:
         direct.append(output_ids["evidence/scenarios/index.json"])
     elif path.startswith("atlas/definitive/"):
         direct.append(output_ids["evidence/scenarios/index.json"])
+    elif run_id == "run.core-v2-root-adapter.2026-08-31":
+        for upstream in (
+            "evidence/scenarios/index.json",
+            "atlas/definitive/surface-inventory.json",
+            "atlas/definitive/gap-ledger.json",
+            "atlas/definitive/flutter-depth-parity.json",
+            "evals/flutter-router.definitive-mastery-eval.json",
+            "evals/flutter-router.agent-forward-eval.json",
+            "authority/review-queue.snapshot.json",
+        ):
+            if upstream in output_ids and upstream != path:
+                direct.append(output_ids[upstream])
     elif run_id == "run.skill-eval.2026-08-28":
         for upstream in ("evidence/scenarios/index.json", "atlas/definitive/flutter-depth-parity.json", "atlas/definitive/gap-ledger.json"):
             if upstream in output_ids:

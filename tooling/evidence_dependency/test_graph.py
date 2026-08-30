@@ -60,6 +60,46 @@ class EvidenceDependencyNegativeFixtureTest(unittest.TestCase):
 
         self.assert_fixture_rejected("change-input-digest-only", mutate)
 
+    def test_core_v2_depth_reference_change_stales_adapter_and_provenance(self):
+        source = next(
+            item for item in self.document["inputs"]
+            if item["id"] == "source.core-v2-depth-reference"
+        )
+        self.assertEqual(
+            source["members"],
+            [
+                "authority/FE_DEPTH_REFERENCE.json",
+                "definitive/core-v2-fe-depth-reference.lock.json",
+            ],
+        )
+        bound_runs = {
+            run["id"]
+            for run in self.document["runs"]
+            if any(
+                binding["input_id"] == source["id"]
+                for binding in run["input_bindings"]
+            )
+        }
+        self.assertEqual(
+            bound_runs,
+            {
+                "run.core-v2-root-adapter.2026-08-31",
+                "run.provenance.2026-08-29",
+            },
+        )
+        reference = self.root / source["members"][0]
+        reference.write_bytes(reference.read_bytes() + b"\nchanged-reference\n")
+        source["current_digest"] = dependency.digest_members(self.root, source["members"])
+        source["observed_at"] = "2026-09-01T00:00:00Z"
+        with self.assertRaisesRegex(dependency.DependencyError, "現在input binding不一致"):
+            dependency.verify_graph(self.root, self.document)
+
+    def test_core_v2_source_files_are_not_misclassified_as_generated_outputs(self):
+        output_paths = {item["path"] for item in self.document["outputs"]}
+        self.assertTrue(dependency.CORE_V2_ADAPTER_OUTPUTS <= output_paths)
+        self.assertNotIn("authority/FE_DEPTH_REFERENCE.json", output_paths)
+        self.assertNotIn("definitive/core-v2-fe-depth-reference.lock.json", output_paths)
+
     def test_machine_discovery_rejects_omitted_evidence(self):
         def mutate(fixture):
             output = next(value for value in self.document["outputs"] if value["path"].endswith(fixture["target_suffix"]))

@@ -1,0 +1,214 @@
+schema_version: 2
+atlas_id: "flutter-reference-atlas"
+epoch: "2026-08-28"
+completion_status: "incomplete"
+reference:
+  id: "fe-depth-reference-v1"
+  path: "authority/FE_DEPTH_REFERENCE.json"
+  digest: "sha256:2452696f9807b7d4a8ffb22b3ba37f079a25a34ac2370d78423445b96064582a"
+  repository: "frontend-behavior-atlas"
+  commit: "4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45"
+  status_at_commit: "incomplete"
+denominator_policy:
+  source: "authority-derived-subject-surface-inventory"
+  transplant_absolute_counts: false
+rows:
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "authority-body-digestion"
+    status: "gap"
+    gap_count: 4
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "既存114 reference edge候補とAuthority本文全体のSurface Inventoryは別の母集団である。 / 11 unique documentのraw anchor 74件をQueue化したが、74件は未判断でSemantic Surfaceへ未昇格。 / stale=4、failed=0、deferred=4、locator未評価=107、stale hold=3。 / Authority本文全体exhaustive=false、Human review=0件。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "surface-atomic-behavior-variant"
+    status: "gap"
+    gap_count: 1
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Provisional SurfaceをAuthority由来Atomic behaviorへ分解し、専用Target/Claimへ一対一接続していない。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "real-runtime-lab"
+    status: "gap"
+    gap_count: 1
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "iOS、実Device、macOS/Linux/Windows、GPU、支援技術等のrequired Profileが未閉包。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-normal"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは0/54、明示gapは54件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-boundary"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは1/54、明示gapは53件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-refusal"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは1/54、明示gapは53件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-failure"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは1/54、明示gapは53件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-recovery"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは1/54、明示gapは53件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-migration"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは0/54、明示gapは54件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-operations"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは0/54、明示gapは54件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-security"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは10/54、明示gapは44件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-performance"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは0/54、明示gapは54件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "scenario-compatibility"
+    status: "gap"
+    gap_count: 3
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "Surface固有Runtime Proofは0/54、明示gapは54件。 / 統合Reference App Traceを全Surface固有Proofへ流用しない。 / Authority Human review完了までCompletion eligible rowは0。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "artifact-trace"
+    status: "gap"
+    gap_count: 1
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "画面、frame/network/memory trace、build artifactおよびScenario専用bindingが未閉包。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "integrated-reference-system"
+    status: "gap"
+    gap_count: 1
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "統合Systemはbounded Cross-behavior Proofであり、Authority由来Atomic Surface completionではない。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "skill-eval"
+    status: "gap"
+    gap_count: 2
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "30 Mastery routing cell、24 Runtime Evidence cell、3 Target routeが未閉包。 / 112 cellは決定論Router contractであり、独立Agentによる実Project変更結果のForward Evalではない。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "rights-provenance"
+    status: "gap"
+    gap_count: 1
+    proof_id: null
+    oracle: null
+    evidence_ids: []
+    artifact_uri: null
+    trace_id: null
+    rationale: "第三者License義務、Brand/Similarity、Repository名の人手Reviewが未完。"
+  - behavior_id: "skill.definitive-router"
+    variant_id: "skill.definitive-router.provisional"
+    axis: "non-regression-gate"
+    status: "satisfied"
+    gap_count: 0
+    proof_id: "proof.non-regression-gate"
+    oracle: "公開main baselineのTarget・Claim・Proof・Evidence・Source・Skill・CI floorが縮小していない。"
+    evidence_ids:
+      - "baseline.public-main-non-regression-v1"
+    artifact_uri: "baseline/public-main-non-regression-v1.json"
+    trace_id: "trace.non-regression-gate"
+    rationale: "既存非後退監査がpassし、公開main baselineの縮小を機械的に拒否する。"

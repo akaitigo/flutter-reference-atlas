@@ -822,6 +822,7 @@
     "profile.web-chrome",
     "runtime.flutter-3.47.1",
     "source.atlas-contract",
+    "source.core-v2-depth-reference",
     "source.evidence-dependency-baseline",
     "source.flutter-labs",
     "source.reference-app"
@@ -926,8 +927,11 @@
     "authority/surfaces-draft/local-runtime-inventory.json",
     "authority/surfaces-draft/reference-atlas-core-v1.json",
     "baseline/public-surface-inventory.json",
+    "depth.parity.yaml",
+    "evals/definitive-skill-router.json",
     "evals/flutter-router.agent-forward-eval.json",
     "evals/flutter-router.definitive-mastery-eval.json",
+    "evals/flutter-router.definitive-skill-eval.json",
     "evals/flutter-router.skill-eval.json",
     "evidence/android-emulator-integration.evidence.yaml",
     "evidence/artifacts/android-emulator-integration-report.json",
@@ -1663,7 +1667,9 @@
     "evidence/scenarios/surfaces/testing/unit-widget/recovery.proof.json",
     "evidence/scenarios/surfaces/testing/unit-widget/refusal.proof.json",
     "evidence/scenarios/surfaces/testing/unit-widget/security.proof.json",
-    "provenance.yaml"
+    "provenance.yaml",
+    "surface.inventory.yaml",
+    "verification.matrix.yaml"
   ],
   "run_ids": [
     "run.android-integration.2026-08-28",
@@ -1671,6 +1677,7 @@
     "run.android-platform-state-validation.2026-08-31",
     "run.authority-inventory.2026-08-28",
     "run.container-conflict.2026-08-28",
+    "run.core-v2-root-adapter.2026-08-31",
     "run.definitive-parity.2026-08-28",
     "run.formal-local.2026-08-28",
     "run.provenance.2026-08-29",

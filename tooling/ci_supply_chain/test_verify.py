@@ -3,6 +3,7 @@ import unittest
 
 from tooling.ci_supply_chain.verify import (
     checkout_history_violations,
+    core_v2_adapter_violations,
     runtime_dependency_violations,
     runtime_reporter_violations,
     sdk_binding_violations,
@@ -128,6 +129,22 @@ class CiSupplyChainVerifyTest(unittest.TestCase):
         errors = runtime_reporter_violations(workflow, "ci.yml")
         self.assertEqual(len(errors), 1)
         self.assertIn("GITHUB_ACTIONS", errors[0])
+
+    def test_core_v2_incomplete_adapter_is_explicit(self):
+        workflow = """
+      - name: Core v2 incomplete migration
+        run: |
+          python3 -m unittest tooling.ci_supply_chain.test_core_v2_adapter
+          python3 tooling/ci_supply_chain/core_v2_adapter.py --check
+          python3 tooling/ci_supply_chain/core_v2_adapter.py --audit-incomplete --atlas-bin .tools/bin/atlas-v2
+"""
+        self.assertEqual(core_v2_adapter_violations(workflow, "ci.yml"), [])
+
+    def test_raw_audit_without_adapter_contract_is_rejected(self):
+        errors = core_v2_adapter_violations(
+            "      - run: make core-v2-audit\n", "ci.yml"
+        )
+        self.assertEqual(len(errors), 3)
 
 
 if __name__ == "__main__":

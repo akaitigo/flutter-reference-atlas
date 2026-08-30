@@ -7,3 +7,7 @@ Google LLCの商標であり、本製品はGoogleによる承認、提携、公�
 本製品はFlutter SDK公式Templateから生成したPlatform shellと、第三者Packageの
 メタデータ・参照を含みます。第三者成果物の権利は各権利者に帰属し、詳細は
 third_party/manifest.yaml、sbom.spdx.json、LICENSES/を参照してください。
+
+Core v2 Depth Parity検証ではfrontend-behavior-atlasの固定commitにある
+FE_DEPTH_REFERENCE.jsonをApache-2.0条件で再配布します。固定元とDigestは
+definitive/core-v2-fe-depth-reference.lock.jsonに記録しています。

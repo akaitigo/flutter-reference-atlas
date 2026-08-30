@@ -1,0 +1,1466 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "atlas_release": "v1.0.0",
+  "cases": [
+    {
+      "assertion": "understand Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.orientation-scope",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.foundations-mechanics",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.architecture-design",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.implementation-construction",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.testing-verification",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.failure-recovery",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.operations-observability",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.security-privacy-safety",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.performance-capacity-cost",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.compatibility-integration",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.migration-evolution-deprecation",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.decision-comparison",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.provenance-rights",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "understand Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.understand.agent-skill",
+      "outcome_ids": [
+        "understand"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.orientation-scope",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.foundations-mechanics",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.architecture-design",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.implementation-construction",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.testing-verification",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.failure-recovery",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.operations-observability",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.security-privacy-safety",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.performance-capacity-cost",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.compatibility-integration",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.migration-evolution-deprecation",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.decision-comparison",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.provenance-rights",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "choose Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.choose.agent-skill",
+      "outcome_ids": [
+        "choose"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.orientation-scope",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.foundations-mechanics",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.architecture-design",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.implementation-construction",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.testing-verification",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.failure-recovery",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.operations-observability",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.security-privacy-safety",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.performance-capacity-cost",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.compatibility-integration",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.migration-evolution-deprecation",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.decision-comparison",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.provenance-rights",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "build Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.build.agent-skill",
+      "outcome_ids": [
+        "build"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.orientation-scope",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.foundations-mechanics",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.architecture-design",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.implementation-construction",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.testing-verification",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.failure-recovery",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.operations-observability",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.security-privacy-safety",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.performance-capacity-cost",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.compatibility-integration",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.migration-evolution-deprecation",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.decision-comparison",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.provenance-rights",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "verify Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.verify.agent-skill",
+      "outcome_ids": [
+        "verify"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.orientation-scope",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.foundations-mechanics",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.architecture-design",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.implementation-construction",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.testing-verification",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.failure-recovery",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.operations-observability",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.security-privacy-safety",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.performance-capacity-cost",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.compatibility-integration",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.migration-evolution-deprecation",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.decision-comparison",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.provenance-rights",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "operate Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.operate.agent-skill",
+      "outcome_ids": [
+        "operate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.orientation-scope",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.foundations-mechanics",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.architecture-design",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.implementation-construction",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.testing-verification",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.failure-recovery",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.operations-observability",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.security-privacy-safety",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.performance-capacity-cost",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.compatibility-integration",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.migration-evolution-deprecation",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.decision-comparison",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.provenance-rights",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "troubleshoot Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.troubleshoot.agent-skill",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.orientation-scope",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.foundations-mechanics",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.architecture-design",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.implementation-construction",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.testing-verification",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.failure-recovery",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.operations-observability",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.security-privacy-safety",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.performance-capacity-cost",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.compatibility-integration",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.migration-evolution-deprecation",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.decision-comparison",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.provenance-rights",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "evolve Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.evolve.agent-skill",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとorientation-scope SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.orientation-scope",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "orientation-scope"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとfoundations-mechanics SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.foundations-mechanics",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "foundations-mechanics"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとarchitecture-design SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.architecture-design",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "architecture-design"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとimplementation-construction SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.implementation-construction",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "implementation-construction"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとtesting-verification SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.testing-verification",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "testing-verification"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとfailure-recovery SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.failure-recovery",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "failure-recovery"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとoperations-observability SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.operations-observability",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "operations-observability"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとsecurity-privacy-safety SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.security-privacy-safety",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "security-privacy-safety"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとperformance-capacity-cost SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.performance-capacity-cost",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "performance-capacity-cost"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとcompatibility-integration SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.compatibility-integration",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "compatibility-integration"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとmigration-evolution-deprecation SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.migration-evolution-deprecation",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとdecision-comparison SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.decision-comparison",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "decision-comparison"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとprovenance-rights SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.provenance-rights",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "provenance-rights"
+      ]
+    },
+    {
+      "assertion": "delegate Outcomeとagent-skill SurfaceのRoute、Gap、Authority、Runtime、mutation境界を既存Mastery Eval結果へ照合する。",
+      "authorization_boundary": true,
+      "gap_behavior": true,
+      "id": "skill.delegate.agent-skill",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "result": "pass",
+      "surface_ids": [
+        "agent-skill"
+      ]
+    }
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "flutter-router.definitive-skill-eval",
+  "schema_version": 2,
+  "skill_id": "flutter-reference-router"
+}

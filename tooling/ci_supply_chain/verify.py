@@ -26,6 +26,11 @@ RUNTIME_WORKSPACE = "working-directory: reference-systems/operations-workspace"
 EXPANDED_RUNTIME_REPORTER_COMMAND = (
     "run: env -u GITHUB_ACTIONS make definitive-web-runtime"
 )
+CORE_V2_ADAPTER_COMMANDS = (
+    "python3 -m unittest tooling.ci_supply_chain.test_core_v2_adapter",
+    "python3 tooling/ci_supply_chain/core_v2_adapter.py --check",
+    "python3 tooling/ci_supply_chain/core_v2_adapter.py --audit-incomplete --atlas-bin .tools/bin/atlas-v2",
+)
 
 
 def violations(text: str, path: str) -> list[str]:
@@ -88,6 +93,15 @@ def runtime_reporter_violations(text: str, path: str) -> list[str]:
     return []
 
 
+def core_v2_adapter_violations(text: str, path: str) -> list[str]:
+    """Require schema-valid root adapters and an exact honest promotion block."""
+    return [
+        f"{path}: Core v2 incomplete adapter commandが必要です: {command}"
+        for command in CORE_V2_ADAPTER_COMMANDS
+        if command not in text
+    ]
+
+
 def main() -> int:
     errors: list[str] = []
     workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
@@ -101,6 +115,7 @@ def main() -> int:
         errors.extend(sdk_binding_violations(text, relative))
         errors.extend(runtime_dependency_violations(text, relative))
         errors.extend(runtime_reporter_violations(text, relative))
+        errors.extend(core_v2_adapter_violations(text, relative))
     if errors:
         for error in errors:
             print(f"CI supply-chainエラー: {error}")
