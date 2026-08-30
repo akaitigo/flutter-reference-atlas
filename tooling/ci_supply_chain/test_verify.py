@@ -1,7 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
 import unittest
 
-from tooling.ci_supply_chain.verify import checkout_history_violations, violations
+from tooling.ci_supply_chain.verify import (
+    checkout_history_violations,
+    sdk_binding_violations,
+    violations,
+)
 
 
 class CiSupplyChainVerifyTest(unittest.TestCase):
@@ -51,6 +55,39 @@ class CiSupplyChainVerifyTest(unittest.TestCase):
         run: make validate
 """
         self.assertEqual(len(checkout_history_violations(workflow, "ci.yml")), 1)
+
+    def test_formal_and_runtime_gates_share_action_sdk(self):
+        workflow = '''
+      - name: sdk binding
+        run: |
+          test -n "$FLUTTER_ROOT"
+          echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+          echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+'''
+        self.assertEqual(sdk_binding_violations(workflow, "ci.yml"), [])
+
+    def test_missing_runtime_sdk_binding_is_rejected(self):
+        workflow = '''
+      - name: sdk binding
+        run: |
+          test -n "$FLUTTER_ROOT"
+          echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+'''
+        errors = sdk_binding_violations(workflow, "ci.yml")
+        self.assertEqual(len(errors), 1)
+        self.assertIn("FLUTTER_ATLAS_SDK_ROOT", errors[0])
+
+    def test_empty_check_and_local_fixed_runtime_root_are_rejected(self):
+        workflow = '''
+      - name: sdk binding
+        run: |
+          echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+          echo "FLUTTER_ATLAS_SDK_ROOT=.tools/flutter-3.47.1/flutter" >> "$GITHUB_ENV"
+'''
+        errors = sdk_binding_violations(workflow, "ci.yml")
+        self.assertEqual(len(errors), 2)
+        self.assertTrue(any("非空検証" in error for error in errors))
+        self.assertTrue(any("FLUTTER_ATLAS_SDK_ROOT" in error for error in errors))
 
 
 if __name__ == "__main__":

@@ -23,7 +23,10 @@ jobs:
           channel: stable
           cache: true
       - name: 固定Flutter SDKを全Formal Gateへbinding
-        run: test -n "$FLUTTER_ROOT" && echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+        run: |
+          test -n "$FLUTTER_ROOT"
+          echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+          echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/reference-atlas-core

@@ -15,6 +15,10 @@ CHECKOUT_BLOCK = re.compile(
     r"(?ms)^      - uses: actions/checkout@[0-9a-f]{40}[^\n]*\n"
     r"(?P<body>.*?)(?=^      - (?:uses|name):|\Z)"
 )
+SDK_BINDINGS = (
+    'echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"',
+    'echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"',
+)
 
 
 def violations(text: str, path: str) -> list[str]:
@@ -42,6 +46,20 @@ def checkout_history_violations(text: str, path: str) -> list[str]:
     return errors
 
 
+def sdk_binding_violations(text: str, path: str) -> list[str]:
+    """CIのFormal GateとRuntime Gateを同じAction導入SDKへ束縛する。"""
+    errors: list[str] = []
+    if 'test -n "$FLUTTER_ROOT"' not in text:
+        errors.append(f"{path}: FLUTTER_ROOTの非空検証が必要です")
+    for binding in SDK_BINDINGS:
+        if binding not in text:
+            variable = binding.split("=", 1)[0].split('"')[-1]
+            errors.append(
+                f"{path}: {variable}をFLUTTER_ROOTへ束縛する必要があります"
+            )
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
@@ -52,6 +70,7 @@ def main() -> int:
         text = workflow.read_text(encoding="utf-8")
         errors.extend(violations(text, relative))
         errors.extend(checkout_history_violations(text, relative))
+        errors.extend(sdk_binding_violations(text, relative))
     if errors:
         for error in errors:
             print(f"CI supply-chainエラー: {error}")
