@@ -61,6 +61,10 @@ ANDROID_BUILD_INPUT_ID = "harness.scenario-build-android-security"
 ANDROID_BUILD_UNIT_INPUT_ID = "harness.scenario-build-android-security-unit"
 ANDROID_BUILD_TEST_PATH = "tooling/scenario_build_android/test_report.py"
 ANDROID_BUILD_INPUT_MIGRATION = Path("definitive/evidence-dependency-input-migration.android-build-test.json")
+WEB_BUILD_INPUT_ID = "harness.scenario-build-web-security"
+WEB_BUILD_UNIT_INPUT_ID = "harness.scenario-build-web-security-unit"
+WEB_BUILD_TEST_PATH = "tooling/scenario_build_web/test_report.py"
+WEB_BUILD_INPUT_MIGRATION = Path("definitive/evidence-dependency-input-migration.web-build-test.json")
 SECURITY_ARTIFACT_MIGRATION_PATHS = {
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
@@ -128,6 +132,61 @@ def verify_android_build_input_migration(root: Path, inputs: dict[str, dict[str,
         reported[test["source"]["path"]] = test["source"]["digest"]
     if any(reported.get(path) != digest_value for path, digest_value in expected.items()):
         raise DependencyError("Android build migrationが既存実Runtime reportへbindingされていません")
+
+
+def verify_web_build_input_migration(root: Path, inputs: dict[str, dict[str, Any]]) -> None:
+    migration = load_json(root, WEB_BUILD_INPUT_MIGRATION)
+    if migration.get("old_input_id") != WEB_BUILD_INPUT_ID or migration.get("new_input_ids") != [
+        WEB_BUILD_INPUT_ID,
+        WEB_BUILD_UNIT_INPUT_ID,
+    ] or migration.get("moved_member") != WEB_BUILD_TEST_PATH or not migration.get("reason"):
+        raise DependencyError("Web build test harness migration mappingが不正です")
+    bindings = migration.get("runtime_attestation", {}).get("bindings", [])
+    expected = {item["path"]: item["digest"] for item in bindings if set(item) == {"path", "digest"}}
+    production_members = set(inputs[WEB_BUILD_INPUT_ID]["members"])
+    if set(expected) != production_members:
+        raise DependencyError("Web build production harness migrationが構造縮小または粗い集約です")
+    unit_members = set(inputs[WEB_BUILD_UNIT_INPUT_ID]["members"])
+    if unit_members != {WEB_BUILD_TEST_PATH, WEB_BUILD_INPUT_MIGRATION.as_posix()}:
+        raise DependencyError("Web build unit harness migrationでtestまたはmigration Evidenceが欠落しています")
+    for path, digest_value in expected.items():
+        if sha_file(root, path) != digest_value:
+            raise DependencyError(f"Web build migration runtime binding不一致: {path}")
+    prior = migration.get("prior_graph_attestation", {})
+    prior_digest = prior.get("input_digest")
+    moved_digest = prior.get("moved_member_digest")
+    reconstructed = [
+        {"path": path, "digest": digest_value} for path, digest_value in expected.items()
+    ] + [{"path": WEB_BUILD_TEST_PATH, "digest": moved_digest}]
+    if not isinstance(moved_digest, str) or sha_bytes(canonical(sorted(reconstructed, key=lambda item: item["path"]))) != prior_digest:
+        raise DependencyError("Web build migrationのprior Graph input digestが再構成できません")
+    report_path = migration.get("runtime_attestation", {}).get("path")
+    report = load_json(root, safe_relative(report_path))
+    reported = {
+        report["harness"]["path"]: report["harness"]["digest"],
+        report["reporter"]["path"]: report["reporter"]["digest"],
+    }
+    for test in report["tests"]:
+        reported[test["source"]["path"]] = test["source"]["digest"]
+    directly_reported = set(expected) - {"tooling/scenario_build_web/capture.py"}
+    if any(reported.get(path) != expected[path] for path in directly_reported):
+        raise DependencyError("Web build migrationが既存実Runtime reportへbindingされていません")
+
+
+def web_build_input_migration_matches(
+    root: Path,
+    previous_web: dict[str, Any] | None,
+    candidate_inputs: dict[str, dict[str, Any]],
+) -> bool:
+    if previous_web is None:
+        return False
+    verify_web_build_input_migration(root, candidate_inputs)
+    migration = load_json(root, WEB_BUILD_INPUT_MIGRATION)
+    expected_old_members = set(candidate_inputs[WEB_BUILD_INPUT_ID]["members"]) | {WEB_BUILD_TEST_PATH}
+    return (
+        set(previous_web["members"]) == expected_old_members
+        and previous_web["current_digest"] == migration["prior_graph_attestation"]["input_digest"]
+    )
 
 
 def safe_relative(path: str) -> str:
@@ -217,7 +276,11 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
         ]),
         ("harness.scenario-build-web-security", "harness", [
             "scripts/scenario-build-web-security-runtime.sh",
-            "tooling/scenario_build_web/*.py", "tooling/scenario_build_web/*.dart",
+            "tooling/scenario_build_web/capture.py", "tooling/scenario_build_web/report.py",
+            "tooling/scenario_build_web/*.dart",
+        ]),
+        ("harness.scenario-build-web-security-unit", "harness", [
+            WEB_BUILD_TEST_PATH, WEB_BUILD_INPUT_MIGRATION.as_posix(),
         ]),
         ("harness.web-reference", "harness", [
             "scripts/definitive-web-runtime.sh", "scripts/reference-scenario-runtime.sh",
@@ -374,7 +437,7 @@ RUN_CONFIG = {
     "run.reference-scenarios.2026-08-28": ("runtime", "scripts/reference-scenario-runtime.sh", "2026-08-28T12:00:00Z", "2026-08-28T12:01:00Z", ["source.reference-app", "harness.web-reference", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "Darwin", "architecture": "arm64", "compiler_variants": ["javascript", "wasm"], "physical_device": False}),
     "run.skill-eval.2026-08-28": ("derived", "make skill-eval", "2026-08-28T12:10:00Z", "2026-08-28T12:11:00Z", ["source.atlas-contract", "harness.skill", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.authority-inventory.2026-08-28": ("derived", "make authority-verify", "2026-08-28T12:20:00Z", "2026-08-28T12:21:00Z", ["source.atlas-contract", "harness.authority-parity", "profile.local"], None),
-    "run.scenario-proof-generation.2026-08-29": ("derived", "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
+    "run.scenario-proof-generation.2026-08-29": ("derived", "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, WEB_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
     "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "harness.authority-parity", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.provenance.2026-08-29": ("derived", "python3 tooling/generate_provenance.py", "2026-08-29T00:01:00+09:00", "2026-08-29T00:01:01+09:00", ["source.atlas-contract", "source.evidence-dependency-baseline", "harness.authority-parity", "profile.local"], None),
 }
@@ -676,9 +739,16 @@ def reconcile_additive(root: Path, prior: dict[str, Any], observed_at: str) -> d
     prior_inputs = {item["id"]: item for item in prior["inputs"]}
     candidate_inputs = {item["id"]: item for item in candidate["inputs"]}
     verify_android_build_input_migration(root, candidate_inputs)
+    verify_web_build_input_migration(root, candidate_inputs)
     previous_android = prior_inputs.get(ANDROID_BUILD_INPUT_ID)
     android_input_migrated = previous_android is not None and set(previous_android["members"]) == (
         set(candidate_inputs[ANDROID_BUILD_INPUT_ID]["members"]) | {ANDROID_BUILD_TEST_PATH}
+    )
+    previous_web = prior_inputs.get(WEB_BUILD_INPUT_ID)
+    baseline_input_ids = set(load_json(root, BASELINE_PATH)["input_ids"])
+    web_input_migrated = (
+        WEB_BUILD_UNIT_INPUT_ID not in baseline_input_ids
+        and web_build_input_migration_matches(root, previous_web, candidate_inputs)
     )
     changed_inputs: set[str] = set()
     for item in candidate["inputs"]:
@@ -688,6 +758,10 @@ def reconcile_additive(root: Path, prior: dict[str, Any], observed_at: str) -> d
             changed_inputs.add(item["id"])
             continue
         if item["id"] == ANDROID_BUILD_INPUT_ID and android_input_migrated:
+            item["baseline_digest"] = item["current_digest"]
+            item["observed_at"] = previous["observed_at"]
+            continue
+        if item["id"] == WEB_BUILD_INPUT_ID and web_input_migrated:
             item["baseline_digest"] = item["current_digest"]
             item["observed_at"] = previous["observed_at"]
             continue
@@ -724,6 +798,13 @@ def reconcile_additive(root: Path, prior: dict[str, Any], observed_at: str) -> d
         digest_changed = item["digest"] != previous["digest"]
         item["digest"] = previous["digest"]
         item["status"] = "stale" if changed or dependencies_changed or digest_changed else previous["status"]
+        if (
+            web_input_migrated
+            and item["run_id"] == "run.scenario-build-web-security.2026-08-31"
+            and not dependencies_changed
+            and not digest_changed
+        ):
+            item["status"] = "current"
         if item["status"] == "stale":
             stale_runs.add(item["run_id"])
 
@@ -740,6 +821,10 @@ def reconcile_additive(root: Path, prior: dict[str, Any], observed_at: str) -> d
             for binding in run["input_bindings"]:
                 if binding["input_id"] == ANDROID_BUILD_INPUT_ID:
                     binding["digest"] = candidate_inputs[ANDROID_BUILD_INPUT_ID]["current_digest"]
+        if run["id"] == "run.scenario-build-web-security.2026-08-31" and web_input_migrated:
+            for binding in run["input_bindings"]:
+                if binding["input_id"] == WEB_BUILD_INPUT_ID:
+                    binding["digest"] = candidate_inputs[WEB_BUILD_INPUT_ID]["current_digest"]
 
     candidate["generated_at"] = observed_at
     candidate["status"] = "stale" if any(item["status"] == "stale" for item in candidate["outputs"]) else "current"
@@ -812,6 +897,7 @@ def verify_graph(root: Path, graph: dict[str, Any]) -> dict[str, int]:
     if set(expected_inputs) != {item["id"] for item in graph["inputs"]}:
         raise DependencyError("input ID機械列挙が現在の定義と一致しません")
     verify_android_build_input_migration(root, expected_inputs)
+    verify_web_build_input_migration(root, expected_inputs)
     for item in graph["inputs"]:
         if item["id"] in inputs:
             raise DependencyError(f"input ID重複: {item['id']}")

@@ -181,6 +181,34 @@ class EvidenceDependencyNegativeFixtureTest(unittest.TestCase):
         harness.write_bytes(harness.read_bytes() + b"\nmutated-after-run\n")
         self.assertFalse(dependency.security_runtime_report_attests_current_inputs(self.root, report["started_at"]))
 
+    def web_migration_previous_input(self) -> tuple[dict, dict[str, dict]]:
+        inputs = {item["id"]: item for item in dependency.input_definitions(self.root)}
+        migration = dependency.load_json(self.root, dependency.WEB_BUILD_INPUT_MIGRATION)
+        previous = copy.deepcopy(inputs[dependency.WEB_BUILD_INPUT_ID])
+        previous["members"] = sorted(set(previous["members"]) | {dependency.WEB_BUILD_TEST_PATH})
+        previous["current_digest"] = migration["prior_graph_attestation"]["input_digest"]
+        return previous, inputs
+
+    def test_web_input_migration_requires_exact_old_member_set(self):
+        previous, inputs = self.web_migration_previous_input()
+        previous["members"].append("tooling/scenario_build_web/unrelated-production-member.py")
+        self.assertFalse(dependency.web_build_input_migration_matches(self.root, previous, inputs))
+
+    def test_web_input_migration_requires_exact_old_digest(self):
+        previous, inputs = self.web_migration_previous_input()
+        previous["current_digest"] = "sha256:" + "0" * 64
+        self.assertFalse(dependency.web_build_input_migration_matches(self.root, previous, inputs))
+
+    def test_web_input_migration_reason_change_cannot_cover_production_drift(self):
+        capture = self.root / "tooling/scenario_build_web/capture.py"
+        capture.write_bytes(capture.read_bytes() + b"\nunattested-production-change\n")
+        migration = dependency.load_json(self.root, dependency.WEB_BUILD_INPUT_MIGRATION)
+        migration["reason"] = "reason text alone must not authorize a production change"
+        dependency.write_json(self.root, dependency.WEB_BUILD_INPUT_MIGRATION, migration)
+        inputs = {item["id"]: item for item in dependency.input_definitions(self.root)}
+        with self.assertRaisesRegex(dependency.DependencyError, "runtime binding不一致"):
+            dependency.verify_web_build_input_migration(self.root, inputs)
+
 
 class AndroidPlatformStateContractTest(unittest.TestCase):
     surface = "input.text-ime"

@@ -809,6 +809,7 @@
     "harness.scenario-build-android-security",
     "harness.scenario-build-android-security-unit",
     "harness.scenario-build-web-security",
+    "harness.scenario-build-web-security-unit",
     "harness.scenario-method-channel",
     "harness.scenario-security-artifact-migration",
     "harness.scenario-security-tranche",

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "migration.web-build-security-test-isolation.v1",
+  "old_input_id": "harness.scenario-build-web-security",
+  "new_input_ids": [
+    "harness.scenario-build-web-security",
+    "harness.scenario-build-web-security-unit"
+  ],
+  "moved_member": "tooling/scenario_build_web/test_report.py",
+  "reason": "Unit fixture changes do not produce Web platform evidence; the existing first-attempt report directly binds the script, reporter, and runtime source, while the prior Graph input digest additionally binds the retained capture harness.",
+  "prior_graph_attestation": {
+    "input_digest": "sha256:e2a4d2f73df917fe8fc8348200e1e8072a99ca4b9b55064f4aef3e9ffc19f5ba",
+    "moved_member_digest": "sha256:10089bb52b20de60b6e32c73475e31e6997f3faae858272f98991cf820d370a4"
+  },
+  "runtime_attestation": {
+    "path": "evidence/scenarios/runtime/build/web/security/results.json",
+    "bindings": [
+      {
+        "path": "scripts/scenario-build-web-security-runtime.sh",
+        "digest": "sha256:6d17b41bce34e997b54ec45e002c39c2e16f99170df0f673225598127dbe7f0e"
+      },
+      {
+        "path": "tooling/scenario_build_web/capture.py",
+        "digest": "sha256:45e09b72f1efa61dd1c7d20939195a5b54b51aa3844aa90536f656ad0fd2d822"
+      },
+      {
+        "path": "tooling/scenario_build_web/report.py",
+        "digest": "sha256:c29ee09fca36c470410b860b081ccda34523029955b38923a595c651a5e9a0c8"
+      },
+      {
+        "path": "tooling/scenario_build_web/build_security_main.dart",
+        "digest": "sha256:1476c49975e8141cde6663d4a710ce98212e1e5605073c4a67c7f542ab6f511f"
+      }
+    ]
+  }
+}
