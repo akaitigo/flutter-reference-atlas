@@ -3,13 +3,20 @@
     "end_line": 967,
     "start_line": 820
   },
+  "activity_blocks": {
+    "count": 2,
+    "resumed_component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+    "resumed_count": 1
+  },
   "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
   "historical_package_match_accepted": false,
+  "non_target_resumed_accepted": false,
   "raw_artifact": {
     "bytes": 81184,
     "digest": "sha256:9053436f3d05d0c92259fbc220bf6fbbf1143c3acfed0f8fd0ee8ffc66af79e8",
     "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt"
   },
+  "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
   "schema_version": 1,
   "state_contract": "resumed-after-background",
   "states": {

@@ -3,13 +3,20 @@
     "end_line": 890,
     "start_line": 743
   },
+  "activity_blocks": {
+    "count": 2,
+    "resumed_component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+    "resumed_count": 1
+  },
   "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
   "historical_package_match_accepted": false,
+  "non_target_resumed_accepted": false,
   "raw_artifact": {
     "bytes": 72545,
     "digest": "sha256:ce88116be3c960d1349951dab264c45ddbc0efc6051239b2ea4228720e302605",
     "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/platform-state.txt"
   },
+  "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
   "schema_version": 1,
   "state_contract": "foreground-input-observation",
   "states": {

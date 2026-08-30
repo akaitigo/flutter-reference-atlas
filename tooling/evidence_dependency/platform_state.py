@@ -50,34 +50,55 @@ def validate_text(raw: str, surface: str, variant: str) -> dict[str, Any]:
         raise PlatformStateError(f"Surface/Variant markerが先頭にありません: {surface}:{variant}")
     lines = raw.splitlines()
     starts = [(index, match.group(1)) for index, line in enumerate(lines) if (match := ACTIVITY.match(line))]
-    matches = [(index, component) for index, component in starts if component == COMPONENT]
+    blocks = []
+    for position, (start, component) in enumerate(starts):
+        end = starts[position + 1][0] if position + 1 < len(starts) else len(lines)
+        state_matches = [STATE.search(line) for line in lines[start:end]]
+        states = [match for match in state_matches if match is not None]
+        if len(states) != 1:
+            raise PlatformStateError(
+                f"Activity blockのlifecycle stateが一意でありません: {surface}:{variant} component={component}"
+            )
+        resumed, stopped, finished = (value == "true" for value in states[0].groups())
+        blocks.append({
+            "component": component,
+            "start_line": start + 1,
+            "end_line": end,
+            "states": {"mResumed": resumed, "mStopped": stopped, "mFinished": finished},
+        })
+    matches = [block for block in blocks if block["component"] == COMPONENT]
     if len(matches) != 1:
         raise PlatformStateError(
             f"current Activity blockはexact componentで1件必要です: {surface}:{variant} count={len(matches)}"
         )
-    start = matches[0][0]
-    end = next((index for index, _ in starts if index > start), len(lines))
-    block = lines[start:end]
-    state_matches = [STATE.search(line) for line in block]
-    states = [match for match in state_matches if match is not None]
-    if len(states) != 1:
-        raise PlatformStateError(f"current Activity blockのlifecycle stateが一意でありません: {surface}:{variant}")
-    resumed, stopped, finished = (value == "true" for value in states[0].groups())
     expected = {"mResumed": True, "mStopped": False, "mFinished": False}
-    actual = {"mResumed": resumed, "mStopped": stopped, "mFinished": finished}
+    actual = matches[0]["states"]
     if actual != expected:
         raise PlatformStateError(
             f"Surface固有のcurrent Activity state不一致: {surface}:{variant} expected={expected} actual={actual}"
+        )
+    resumed_blocks = [block for block in blocks if block["states"]["mResumed"]]
+    if len(resumed_blocks) != 1 or resumed_blocks[0]["component"] != COMPONENT:
+        raise PlatformStateError(
+            f"single-display profileのresumed Activityはexact target 1件必要です: {surface}:{variant} "
+            f"resumed={[block['component'] for block in resumed_blocks]}"
         )
     return {
         "schema_version": 1,
         "surface_id": surface,
         "variant": variant,
         "component": COMPONENT,
-        "activity_block": {"start_line": start + 1, "end_line": end},
+        "activity_block": {"start_line": matches[0]["start_line"], "end_line": matches[0]["end_line"]},
+        "activity_blocks": {
+            "count": len(blocks),
+            "resumed_count": len(resumed_blocks),
+            "resumed_component": resumed_blocks[0]["component"],
+        },
+        "runtime_profile": "android-emulator-single-internal-display-non-multiwindow",
         "state_contract": state_contract(surface),
         "states": actual,
         "historical_package_match_accepted": False,
+        "non_target_resumed_accepted": False,
         "validation": "passed",
     }
 

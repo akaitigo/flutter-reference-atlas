@@ -3,9 +3,11 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tooling.scenario_build_android import report
 
@@ -35,20 +37,47 @@ class BuildAndroidSecurityReporterTest(unittest.TestCase):
                 values.append(f"{variant}={kind}={row / name}")
         return values
 
-    def args(self, output: Path, inputs: list[str]) -> argparse.Namespace:
-        return argparse.Namespace(
-            repo_root=self.root, output=output, sdk_root=self.root / ".tools/flutter-3.47.1/flutter",
-            harness=self.root / "scripts/scenario-build-android-security-runtime.sh",
-            source=self.root / "tooling/scenario_build_android/build_security_main.dart",
+    def fixture(self, temp: Path) -> tuple[argparse.Namespace, Path]:
+        fixture_root = temp / "repo"
+        sdk_root = temp / "sdk"
+        harness = fixture_root / "scripts/scenario-build-android-security-runtime.sh"
+        source = fixture_root / "tooling/scenario_build_android/build_security_main.dart"
+        reporter = fixture_root / "tooling/scenario_build_android/report.py"
+        for path, contents in (
+            (harness, "#!/bin/sh\n"),
+            (source, "void main() {}\n"),
+            (reporter, "# isolated reporter fixture\n"),
+        ):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(contents)
+        source_bindings = []
+        for relative, contents in (
+            ("packages/flutter_tools/lib/src/commands/build_apk.dart", b"isolated build apk fixture\n"),
+            ("packages/flutter_tools/templates/app/android.tmpl/gradle.properties.tmpl", b"isolated gradle fixture\n"),
+        ):
+            path = sdk_root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(contents)
+            source_bindings.append({"path": relative, "digest": report.digest(path)})
+        proof = fixture_root / "evidence/scenarios/surfaces/build/android/security.proof.json"
+        proof.parent.mkdir(parents=True, exist_ok=True)
+        proof.write_text(json.dumps({"source_bindings": source_bindings}))
+        args = argparse.Namespace(
+            repo_root=fixture_root, output=temp / "runtime", sdk_root=sdk_root,
+            harness=harness,
+            source=source,
             started_at="2026-08-31T00:00:00Z", completed_at="2026-08-31T00:01:00Z",
             runtime_identity={"profile": "android-emulator", "runner_kind": "android-emulator", "os": "Android 16", "architecture": "arm64-v8a", "api_level": 36, "device_id": "emulator-5554", "physical_device": False},
-            input=inputs,
+            input=self.inputs(temp / "raw"),
         )
+        return args, reporter
 
     def test_publishes_both_build_variants(self) -> None:
         with tempfile.TemporaryDirectory(dir=self.root / ".tools") as temporary:
             temp = Path(temporary)
-            report.publish(self.args(temp / "runtime", self.inputs(temp / "raw")))
+            args, reporter = self.fixture(temp)
+            with mock.patch.object(report, "__file__", str(reporter)):
+                report.publish(args)
             result = temp / "runtime/build/android/security/results.json"
             self.assertTrue(result.is_file())
             self.assertTrue((temp / "runtime/build/android/security/release-apk/app.apk").is_file())
@@ -56,15 +85,25 @@ class BuildAndroidSecurityReporterTest(unittest.TestCase):
     def test_failed_generation_retains_prior_success(self) -> None:
         with tempfile.TemporaryDirectory(dir=self.root / ".tools") as temporary:
             temp = Path(temporary)
-            inputs = self.inputs(temp / "raw")
-            args = self.args(temp / "runtime", inputs)
-            report.publish(args)
+            args, reporter = self.fixture(temp)
+            with mock.patch.object(report, "__file__", str(reporter)):
+                report.publish(args)
             result = temp / "runtime/build/android/security/results.json"
             before = hashlib.sha256(result.read_bytes()).hexdigest()
             (temp / "raw/release-apk/platform-tree.xml").write_text("<hierarchy/>")
             with self.assertRaises(ValueError):
-                report.publish(args)
+                with mock.patch.object(report, "__file__", str(reporter)):
+                    report.publish(args)
             self.assertEqual(before, hashlib.sha256(result.read_bytes()).hexdigest())
+
+    def test_isolated_source_lock_rejects_sdk_byte_drift(self) -> None:
+        with tempfile.TemporaryDirectory(dir=self.root / ".tools") as temporary:
+            temp = Path(temporary)
+            args, _ = self.fixture(temp)
+            source = args.sdk_root / "packages/flutter_tools/lib/src/commands/build_apk.dart"
+            source.write_bytes(b"mutated host-independent fixture\n")
+            with self.assertRaisesRegex(ValueError, "SDK Source binding mismatch"):
+                report.source_contract(args.repo_root, args.sdk_root)
 
 
 if __name__ == "__main__":

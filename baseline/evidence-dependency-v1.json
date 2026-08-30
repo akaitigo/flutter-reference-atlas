@@ -807,6 +807,7 @@
     "harness.evidence-dependency",
     "harness.formal-local",
     "harness.scenario-build-android-security",
+    "harness.scenario-build-android-security-unit",
     "harness.scenario-build-web-security",
     "harness.scenario-method-channel",
     "harness.scenario-security-artifact-migration",

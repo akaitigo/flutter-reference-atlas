@@ -57,6 +57,10 @@ SECURITY_RUNTIME_PREFIXES = (
 BUILD_ANDROID_SECURITY_PREFIX = "evidence/scenarios/runtime/build/android/security/"
 BUILD_WEB_SECURITY_PREFIX = "evidence/scenarios/runtime/build/web/security/"
 PLATFORM_STATE_SUMMARY_SUFFIX = "/platform-state.summary.json"
+ANDROID_BUILD_INPUT_ID = "harness.scenario-build-android-security"
+ANDROID_BUILD_UNIT_INPUT_ID = "harness.scenario-build-android-security-unit"
+ANDROID_BUILD_TEST_PATH = "tooling/scenario_build_android/test_report.py"
+ANDROID_BUILD_INPUT_MIGRATION = Path("definitive/evidence-dependency-input-migration.android-build-test.json")
 SECURITY_ARTIFACT_MIGRATION_PATHS = {
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
@@ -94,6 +98,36 @@ def write_json(root: Path, relative: str | Path, value: Any) -> None:
     path = root / relative
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def verify_android_build_input_migration(root: Path, inputs: dict[str, dict[str, Any]]) -> None:
+    migration = load_json(root, ANDROID_BUILD_INPUT_MIGRATION)
+    if migration.get("old_input_id") != ANDROID_BUILD_INPUT_ID or migration.get("new_input_ids") != [
+        ANDROID_BUILD_INPUT_ID,
+        ANDROID_BUILD_UNIT_INPUT_ID,
+    ] or migration.get("moved_member") != ANDROID_BUILD_TEST_PATH or not migration.get("reason"):
+        raise DependencyError("Android build test harness migration mappingが不正です")
+    bindings = migration.get("runtime_attestation", {}).get("bindings", [])
+    expected = {item["path"]: item["digest"] for item in bindings if set(item) == {"path", "digest"}}
+    production_members = set(inputs[ANDROID_BUILD_INPUT_ID]["members"])
+    if set(expected) != production_members:
+        raise DependencyError("Android build production harness migrationが構造縮小または粗い集約です")
+    unit_members = set(inputs[ANDROID_BUILD_UNIT_INPUT_ID]["members"])
+    if unit_members != {ANDROID_BUILD_TEST_PATH, ANDROID_BUILD_INPUT_MIGRATION.as_posix()}:
+        raise DependencyError("Android build unit harness migrationでtestまたはmigration Evidenceが欠落しています")
+    for path, digest_value in expected.items():
+        if sha_file(root, path) != digest_value:
+            raise DependencyError(f"Android build migration runtime binding不一致: {path}")
+    report_path = migration.get("runtime_attestation", {}).get("path")
+    report = load_json(root, safe_relative(report_path))
+    reported = {
+        report["harness"]["path"]: report["harness"]["digest"],
+        report["reporter"]["path"]: report["reporter"]["digest"],
+    }
+    for test in report["tests"]:
+        reported[test["source"]["path"]] = test["source"]["digest"]
+    if any(reported.get(path) != digest_value for path, digest_value in expected.items()):
+        raise DependencyError("Android build migrationが既存実Runtime reportへbindingされていません")
 
 
 def safe_relative(path: str) -> str:
@@ -176,7 +210,10 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
         ]),
         ("harness.scenario-build-android-security", "harness", [
             "scripts/scenario-build-android-security-runtime.sh",
-            "tooling/scenario_build_android/*.py", "tooling/scenario_build_android/*.dart",
+            "tooling/scenario_build_android/report.py", "tooling/scenario_build_android/*.dart",
+        ]),
+        ("harness.scenario-build-android-security-unit", "harness", [
+            ANDROID_BUILD_TEST_PATH, ANDROID_BUILD_INPUT_MIGRATION.as_posix(),
         ]),
         ("harness.scenario-build-web-security", "harness", [
             "scripts/scenario-build-web-security-runtime.sh",
@@ -337,7 +374,7 @@ RUN_CONFIG = {
     "run.reference-scenarios.2026-08-28": ("runtime", "scripts/reference-scenario-runtime.sh", "2026-08-28T12:00:00Z", "2026-08-28T12:01:00Z", ["source.reference-app", "harness.web-reference", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "Darwin", "architecture": "arm64", "compiler_variants": ["javascript", "wasm"], "physical_device": False}),
     "run.skill-eval.2026-08-28": ("derived", "make skill-eval", "2026-08-28T12:10:00Z", "2026-08-28T12:11:00Z", ["source.atlas-contract", "harness.skill", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.authority-inventory.2026-08-28": ("derived", "make authority-verify", "2026-08-28T12:20:00Z", "2026-08-28T12:21:00Z", ["source.atlas-contract", "harness.authority-parity", "profile.local"], None),
-    "run.scenario-proof-generation.2026-08-29": ("derived", "python3 tooling/scenario_proof/generate.py && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", "runtime.flutter-3.47.1", "profile.web-chrome"], None),
+    "run.scenario-proof-generation.2026-08-29": ("derived", "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
     "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "harness.authority-parity", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.provenance.2026-08-29": ("derived", "python3 tooling/generate_provenance.py", "2026-08-29T00:01:00+09:00", "2026-08-29T00:01:01+09:00", ["source.atlas-contract", "source.evidence-dependency-baseline", "harness.authority-parity", "profile.local"], None),
 }
@@ -637,12 +674,22 @@ def reconcile_additive(root: Path, prior: dict[str, Any], observed_at: str) -> d
     parse_time(observed_at)
     candidate = build_graph(root)
     prior_inputs = {item["id"]: item for item in prior["inputs"]}
+    candidate_inputs = {item["id"]: item for item in candidate["inputs"]}
+    verify_android_build_input_migration(root, candidate_inputs)
+    previous_android = prior_inputs.get(ANDROID_BUILD_INPUT_ID)
+    android_input_migrated = previous_android is not None and set(previous_android["members"]) == (
+        set(candidate_inputs[ANDROID_BUILD_INPUT_ID]["members"]) | {ANDROID_BUILD_TEST_PATH}
+    )
     changed_inputs: set[str] = set()
     for item in candidate["inputs"]:
         previous = prior_inputs.get(item["id"])
         if previous is None:
             item["observed_at"] = observed_at
             changed_inputs.add(item["id"])
+            continue
+        if item["id"] == ANDROID_BUILD_INPUT_ID and android_input_migrated:
+            item["baseline_digest"] = item["current_digest"]
+            item["observed_at"] = previous["observed_at"]
             continue
         item["baseline_digest"] = previous["baseline_digest"]
         if item["current_digest"] != previous["current_digest"] or item["members"] != previous["members"]:
@@ -689,6 +736,10 @@ def reconcile_additive(root: Path, prior: dict[str, Any], observed_at: str) -> d
             run[key] = previous[key]
         if "runtime_identity" in previous:
             run["runtime_identity"] = previous["runtime_identity"]
+        if run["id"] == "run.scenario-build-android-security.2026-08-31" and android_input_migrated:
+            for binding in run["input_bindings"]:
+                if binding["input_id"] == ANDROID_BUILD_INPUT_ID:
+                    binding["digest"] = candidate_inputs[ANDROID_BUILD_INPUT_ID]["current_digest"]
 
     candidate["generated_at"] = observed_at
     candidate["status"] = "stale" if any(item["status"] == "stale" for item in candidate["outputs"]) else "current"
@@ -760,6 +811,7 @@ def verify_graph(root: Path, graph: dict[str, Any]) -> dict[str, int]:
     expected_inputs = {item["id"]: item for item in input_definitions(root)}
     if set(expected_inputs) != {item["id"] for item in graph["inputs"]}:
         raise DependencyError("input ID機械列挙が現在の定義と一致しません")
+    verify_android_build_input_migration(root, expected_inputs)
     for item in graph["inputs"]:
         if item["id"] in inputs:
             raise DependencyError(f"input ID重複: {item['id']}")

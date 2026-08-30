@@ -222,6 +222,17 @@ class AndroidPlatformStateContractTest(unittest.TestCase):
         with self.assertRaisesRegex(platform_state.PlatformStateError, "state不一致"):
             platform_state.validate_text(raw, self.surface, self.variant)
 
+    def test_non_target_and_target_cannot_both_be_resumed(self):
+        raw = (
+            self.marker
+            + "  ACTIVITY com.android.launcher/.Launcher pid=1\n"
+            + "    mResumed=true mStopped=false mFinished=false\n"
+            + "  ACTIVITY dev.akaitigo.atlas.operations_workspace/.MainActivity pid=2\n"
+            + "    mResumed=true mStopped=false mFinished=false\n"
+        )
+        with self.assertRaisesRegex(platform_state.PlatformStateError, "resumed Activity"):
+            platform_state.validate_text(raw, self.surface, self.variant)
+
 
 if __name__ == "__main__":
     unittest.main()

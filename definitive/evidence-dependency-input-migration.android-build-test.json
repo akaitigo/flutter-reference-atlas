@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "migration.android-build-security-test-isolation.v1",
+  "old_input_id": "harness.scenario-build-android-security",
+  "new_input_ids": [
+    "harness.scenario-build-android-security",
+    "harness.scenario-build-android-security-unit"
+  ],
+  "moved_member": "tooling/scenario_build_android/test_report.py",
+  "reason": "Unit fixture changes do not produce Android platform evidence; production runtime bindings remain the script, reporter, and runtime source recorded by the existing first-attempt report.",
+  "runtime_attestation": {
+    "path": "evidence/scenarios/runtime/build/android/security/results.json",
+    "bindings": [
+      {
+        "path": "scripts/scenario-build-android-security-runtime.sh",
+        "digest": "sha256:5084099f5b0a2a856de6f43b80d6785ceef4b3a3e11d431cd96a3b1c45d0fe69"
+      },
+      {
+        "path": "tooling/scenario_build_android/report.py",
+        "digest": "sha256:5a23fb2c6673c29fc629a692486cb82570e8a1bdc36abb408d2c610e90916b51"
+      },
+      {
+        "path": "tooling/scenario_build_android/build_security_main.dart",
+        "digest": "sha256:9ffd3a0de082ec5a771ddeb1963ba77b8f1f2a4617e85acfdabd520dd17461cf"
+      }
+    ]
+  }
+}
