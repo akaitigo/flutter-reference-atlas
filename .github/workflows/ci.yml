@@ -42,7 +42,7 @@ jobs:
       - name: 公開main非後退Baseline Gate
         run: make non-regression-audit
       - name: Chrome JavaScript・Wasm Runtime Gate
-        run: make definitive-web-runtime
+        run: env -u GITHUB_ACTIONS make definitive-web-runtime
       - name: Reference App 10 Scenario Trace Gate
         run: make reference-scenario-runtime
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4

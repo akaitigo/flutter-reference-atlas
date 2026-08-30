@@ -4,6 +4,7 @@ import unittest
 from tooling.ci_supply_chain.verify import (
     checkout_history_violations,
     runtime_dependency_violations,
+    runtime_reporter_violations,
     sdk_binding_violations,
     violations,
 )
@@ -117,6 +118,16 @@ class CiSupplyChainVerifyTest(unittest.TestCase):
         errors = runtime_dependency_violations(workflow, "ci.yml")
         self.assertEqual(len(errors), 1)
         self.assertIn("working-directory", errors[0])
+
+    def test_web_runtime_uses_oracle_compatible_reporter(self):
+        workflow = "      run: env -u GITHUB_ACTIONS make definitive-web-runtime\n"
+        self.assertEqual(runtime_reporter_violations(workflow, "ci.yml"), [])
+
+    def test_github_default_reporter_regression_is_rejected(self):
+        workflow = "      run: make definitive-web-runtime\n"
+        errors = runtime_reporter_violations(workflow, "ci.yml")
+        self.assertEqual(len(errors), 1)
+        self.assertIn("GITHUB_ACTIONS", errors[0])
 
 
 if __name__ == "__main__":

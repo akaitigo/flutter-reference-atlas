@@ -1,6 +1,6 @@
 {
   "atlas_id": "flutter-reference-atlas",
-  "generated_at": "2026-08-30T20:48:50Z",
+  "generated_at": "2026-08-30T20:55:34Z",
   "inputs": [
     {
       "baseline_digest": "sha256:0434f4aace21588948e0292774363e28421efcee9e26bf070ce86d39f90b025d",
@@ -331,7 +331,7 @@
     },
     {
       "baseline_digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
-      "current_digest": "sha256:ebc4db9980998a7117f689f2a159dd6a162ee861e099f27ce7c3423f32f75312",
+      "current_digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
       "id": "harness.ci-supply-chain",
       "kind": "harness",
       "members": [
@@ -340,7 +340,7 @@
         "tooling/ci_supply_chain/test_verify.py",
         "tooling/ci_supply_chain/verify.py"
       ],
-      "observed_at": "2026-08-30T20:47:42Z"
+      "observed_at": "2026-08-30T20:54:32Z"
     },
     {
       "baseline_digest": "sha256:b94abba8e35a255a9bd4f734287bfd5eca844caec8183410abb7aaf47d474a52",
@@ -16675,7 +16675,7 @@
     {
       "attempts": 1,
       "command": "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py",
-      "completed_at": "2026-08-30T20:48:12Z",
+      "completed_at": "2026-08-30T20:54:48Z",
       "execution_kind": "derived",
       "id": "run.definitive-parity.2026-08-28",
       "input_bindings": [
@@ -16688,7 +16688,7 @@
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:ebc4db9980998a7117f689f2a159dd6a162ee861e099f27ce7c3423f32f75312",
+          "digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
           "input_id": "harness.ci-supply-chain"
         },
         {
@@ -16758,7 +16758,7 @@
         "output:atlas:definitive:surface-inventory.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:47:51Z"
+      "started_at": "2026-08-30T20:54:39Z"
     },
     {
       "attempts": 1,
@@ -16810,7 +16810,7 @@
     {
       "attempts": 1,
       "command": "python3 tooling/generate_provenance.py",
-      "completed_at": "2026-08-30T20:48:50Z",
+      "completed_at": "2026-08-30T20:55:34Z",
       "execution_kind": "derived",
       "id": "run.provenance.2026-08-29",
       "input_bindings": [
@@ -16827,7 +16827,7 @@
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:ebc4db9980998a7117f689f2a159dd6a162ee861e099f27ce7c3423f32f75312",
+          "digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
           "input_id": "harness.ci-supply-chain"
         },
         {
@@ -16919,7 +16919,7 @@
         "output:provenance.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:48:43Z"
+      "started_at": "2026-08-30T20:55:27Z"
     },
     {
       "attempts": 1,
@@ -17926,7 +17926,7 @@
     {
       "attempts": 1,
       "command": "make skill-eval",
-      "completed_at": "2026-08-30T20:48:35Z",
+      "completed_at": "2026-08-30T20:55:18Z",
       "execution_kind": "derived",
       "id": "run.skill-eval.2026-08-28",
       "input_bindings": [
@@ -17939,7 +17939,7 @@
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:ebc4db9980998a7117f689f2a159dd6a162ee861e099f27ce7c3423f32f75312",
+          "digest": "sha256:9d707722972b4f9716136d266f1673efea1ffe8cd56141a1822701a2973d126e",
           "input_id": "harness.ci-supply-chain"
         },
         {
@@ -18018,7 +18018,7 @@
         "output:evidence:router-eval.evidence.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T20:48:20Z"
+      "started_at": "2026-08-30T20:54:58Z"
     },
     {
       "attempts": 1,

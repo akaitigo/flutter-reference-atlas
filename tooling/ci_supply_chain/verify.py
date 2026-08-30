@@ -23,6 +23,9 @@ LOCKED_RUNTIME_DEPENDENCY_COMMAND = (
     'run: \'"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile\''
 )
 RUNTIME_WORKSPACE = "working-directory: reference-systems/operations-workspace"
+EXPANDED_RUNTIME_REPORTER_COMMAND = (
+    "run: env -u GITHUB_ACTIONS make definitive-web-runtime"
+)
 
 
 def violations(text: str, path: str) -> list[str]:
@@ -76,6 +79,15 @@ def runtime_dependency_violations(text: str, path: str) -> list[str]:
     return errors
 
 
+def runtime_reporter_violations(text: str, path: str) -> list[str]:
+    """Runtime Oracleが解析するFlutter標準reporterをCIでも固定する。"""
+    if EXPANDED_RUNTIME_REPORTER_COMMAND not in text:
+        return [
+            f"{path}: definitive-web-runtimeはGITHUB_ACTIONSを除外して実行する必要があります"
+        ]
+    return []
+
+
 def main() -> int:
     errors: list[str] = []
     workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
@@ -88,6 +100,7 @@ def main() -> int:
         errors.extend(checkout_history_violations(text, relative))
         errors.extend(sdk_binding_violations(text, relative))
         errors.extend(runtime_dependency_violations(text, relative))
+        errors.extend(runtime_reporter_violations(text, relative))
     if errors:
         for error in errors:
             print(f"CI supply-chainエラー: {error}")
