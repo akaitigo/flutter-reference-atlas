@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "fixtureKind": "evidence-granularity-reference",
+  "status": "aggregate-closure-only",
+  "currentAggregateEvidence": [
+    {
+      "id": "evidence.accessibility.contract",
+      "path": "evidence/core-v1/accessibility-contract.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    },
+    {
+      "id": "evidence.benchmark.bundle",
+      "path": "evidence/core-v1/benchmarks.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    },
+    {
+      "id": "evidence.compatibility.browser-matrix",
+      "path": "evidence/core-v1/browser-compatibility.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    },
+    {
+      "id": "evidence.capture.bundle",
+      "path": "evidence/core-v1/captures.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    },
+    {
+      "id": "evidence.skill.eval",
+      "path": "evidence/core-v1/skill-eval.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    },
+    {
+      "id": "evidence.test.harness.container",
+      "path": "evidence/core-v1/test-harness.container.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    },
+    {
+      "id": "evidence.test.harness",
+      "path": "evidence/core-v1/test-harness.evidence.yaml",
+      "claimScope": "all-current-pattern-claims"
+    }
+  ],
+  "requiredUnit": "one authority-derived atomic behavior × one required scenario × one runtime/platform profile × one falsifiable proof × one dedicated artifact",
+  "exampleRows": [
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "normal",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "boundary",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "refusal",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "failure",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "recovery",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "migration",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "operations",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "security",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "performance",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    },
+    {
+      "behaviorId": "pending.authority-extraction",
+      "scenario": "compatibility",
+      "proofId": null,
+      "evidenceId": null,
+      "artifact": null,
+      "status": "gap"
+    }
+  ],
+  "reusableRule": "Bundle Evidenceは履歴として保持するが、同じEvidence/Artifactを全Behavior・全Scenarioの専用Proofとして数えない。"
+}

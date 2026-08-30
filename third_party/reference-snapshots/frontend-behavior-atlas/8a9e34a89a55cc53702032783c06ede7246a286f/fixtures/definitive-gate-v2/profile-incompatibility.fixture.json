@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "fixtureKind": "runtime-profile-incompatibility-reference",
+  "status": "incomplete",
+  "verified": {
+    "runtimeProfiles": {
+      "local": {
+        "profile": "local",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "node": "v25.2.1",
+        "playwright": "1.62.1",
+        "browserName": "chromium",
+        "browserVersion": "151.0.7922.175",
+        "browserChannel": "chrome",
+        "containerImageDigest": null,
+        "workers": 1,
+        "retries": 0,
+        "total": 299,
+        "passed": 299,
+        "failed": 0,
+        "flaky": 0,
+        "skipped": 0
+      },
+      "container": {
+        "profile": "container",
+        "platform": "linux",
+        "architecture": "arm64",
+        "node": "v24.18.1",
+        "playwright": "1.62.1",
+        "browserName": "chromium",
+        "browserVersion": "151.0.7922.34",
+        "browserChannel": "bundled",
+        "containerImageDigest": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+        "workers": 1,
+        "retries": 0,
+        "total": 299,
+        "passed": 299,
+        "failed": 0,
+        "flaky": 0,
+        "skipped": 0
+      }
+    },
+    "desktopBrowserVersions": {
+      "chromium": "151.0.7922.34",
+      "firefox": "153.0",
+      "webkit": "26.5"
+    }
+  },
+  "unverified": [
+    "cloud-live",
+    "hardware-in-the-loop",
+    "real-mobile-device",
+    "manual-assistive-technology",
+    "multi-os-desktop"
+  ],
+  "substitutionRules": [
+    {
+      "from": "container",
+      "to": "hardware-in-the-loop",
+      "allowed": false
+    },
+    {
+      "from": "desktop-browser",
+      "to": "real-mobile-device",
+      "allowed": false
+    },
+    {
+      "from": "automated-aria-contract",
+      "to": "manual-assistive-technology",
+      "allowed": false
+    },
+    {
+      "from": "deterministic-network-fixture",
+      "to": "cloud-live",
+      "allowed": false
+    },
+    {
+      "from": "static-fallback",
+      "to": "required-real-runtime",
+      "allowed": false
+    }
+  ],
+  "reusableRule": "各Claimの実際のRuntime boundaryを列挙し、Profile間の非互換を明示する。別Profileやmock/staticを代替Proofにしない。"
+}

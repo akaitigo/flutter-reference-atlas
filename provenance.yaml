@@ -232,7 +232,7 @@
       ]
     },
     {
-      "digest": "sha256:6d95d16905ef9ef818a808ed026046d0bc17bb07028580beb85b5bcbbeaa3f5a",
+      "digest": "sha256:797bd0005ac7035377b8430ac34af16ea7cab9d678d8f11a03c1f1dcd86cd26a",
       "generated_by": "tooling/evidence_dependency/graph.py",
       "kind": "generated",
       "license": "Apache-2.0",
@@ -358,6 +358,26 @@
       "kind": "document",
       "license": "Apache-2.0",
       "path": "definitive/core-v2-fe-depth-reference.lock.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
+      ]
+    },
+    {
+      "digest": "sha256:4dffeed91ce0e8189b49aa70fc72303031eafb6ac220bac7b56f41b56aa40d57",
+      "generated_by": "tooling/reference_snapshot/verify.py",
+      "kind": "document",
+      "license": "Apache-2.0",
+      "path": "third_party/reference-snapshots/frontend-behavior-atlas/8a9e34a89a55cc53702032783c06ede7246a286f/SNAPSHOT.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
+      ]
+    },
+    {
+      "digest": "sha256:63e42f1a52847f44c290fd1d0dcc9be0350a50c75d0e20e695ae7e978bfde690",
+      "generated_by": "tooling/reference_snapshot/verify.py",
+      "kind": "document",
+      "license": "Apache-2.0",
+      "path": "third_party/reference-snapshots/frontend-behavior-atlas/7175de4305afb308722d5b83475e91c18da64957/SNAPSHOT.json",
       "source_ids": [
         "reference-atlas-core-v1"
       ]

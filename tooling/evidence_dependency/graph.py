@@ -249,6 +249,12 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
             "authority/FE_DEPTH_REFERENCE.json",
             "definitive/core-v2-fe-depth-reference.lock.json",
         ]),
+        ("source.fe-reference-snapshots", "source", [
+            "third_party/reference-snapshots/frontend-behavior-atlas/**/*",
+        ]),
+        ("harness.reference-snapshot", "harness", [
+            "tooling/reference_snapshot/*.py",
+        ]),
         ("harness.formal-local", "harness", [
             "tooling/evidence_capture/bin/capture.dart", "tooling/evidence_capture/pubspec.yaml",
             "tooling/surface_inventory/generate.py", "tooling/definitive_inventory/generate.py",
@@ -454,8 +460,8 @@ RUN_CONFIG = {
     "run.reference-scenarios.2026-08-28": ("runtime", "scripts/reference-scenario-runtime.sh", "2026-08-28T12:00:00Z", "2026-08-28T12:01:00Z", ["source.reference-app", "harness.web-reference", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "Darwin", "architecture": "arm64", "compiler_variants": ["javascript", "wasm"], "physical_device": False}),
     "run.skill-eval.2026-08-28": ("derived", "make skill-eval", "2026-08-28T12:10:00Z", "2026-08-28T12:11:00Z", ["source.atlas-contract", "harness.skill", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.authority-inventory.2026-08-28": ("derived", "make authority-verify", "2026-08-28T12:20:00Z", "2026-08-28T12:21:00Z", ["source.atlas-contract", "harness.authority-parity", "profile.local"], None),
-    "run.scenario-proof-generation.2026-08-29": ("derived", "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, WEB_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
-    "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "harness.authority-parity", "harness.ci-supply-chain", "runtime.flutter-3.47.1", "profile.local"], None),
+    "run.scenario-proof-generation.2026-08-29": ("derived", "python3 tooling/reference_snapshot/verify.py --lock definitive/fe-reference-system.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/7175de4305afb308722d5b83475e91c18da64957 && make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "source.fe-reference-snapshots", "harness.reference-snapshot", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, WEB_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
+    "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/reference_snapshot/verify.py --lock definitive/fe-depth-reference.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/8a9e34a89a55cc53702032783c06ede7246a286f && python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "source.fe-reference-snapshots", "harness.reference-snapshot", "harness.authority-parity", "harness.ci-supply-chain", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.core-v2-root-adapter.2026-08-31": ("derived", "python3 tooling/ci_supply_chain/core_v2_adapter.py --write", "2026-08-31T06:34:09+09:00", "2026-08-31T06:34:10+09:00", ["source.core-v2-depth-reference", "harness.ci-supply-chain", "profile.local"], None),
     "run.provenance.2026-08-29": ("derived", "python3 tooling/generate_provenance.py", "2026-08-29T00:01:00+09:00", "2026-08-29T00:01:01+09:00", ["source.atlas-contract", "source.evidence-dependency-baseline", "harness.authority-parity", "profile.local"], None),
 }

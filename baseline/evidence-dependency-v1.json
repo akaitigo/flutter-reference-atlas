@@ -807,6 +807,7 @@
     "harness.container",
     "harness.evidence-dependency",
     "harness.formal-local",
+    "harness.reference-snapshot",
     "harness.scenario-build-android-security",
     "harness.scenario-build-android-security-unit",
     "harness.scenario-build-web-security",
@@ -824,6 +825,7 @@
     "source.atlas-contract",
     "source.core-v2-depth-reference",
     "source.evidence-dependency-baseline",
+    "source.fe-reference-snapshots",
     "source.flutter-labs",
     "source.reference-app"
   ],

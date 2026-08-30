@@ -11,3 +11,7 @@ third_party/manifest.yaml、sbom.spdx.json、LICENSES/を参照してくださ�
 Core v2 Depth Parity検証ではfrontend-behavior-atlasの固定commitにある
 FE_DEPTH_REFERENCE.jsonをApache-2.0条件で再配布します。固定元とDigestは
 definitive/core-v2-fe-depth-reference.lock.jsonに記録しています。
+
+CIから同Repositoryを再現できるように、別の固定commit 2点の検証対象Fileのみを
+Apache-2.0条件でthird_party/reference-snapshotsに収録しています。対象Pathと
+Digestは各SNAPSHOT.jsonおよびdefinitive配下のLockで固定しています。

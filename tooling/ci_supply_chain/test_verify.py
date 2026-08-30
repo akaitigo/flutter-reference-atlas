@@ -6,6 +6,7 @@ from tooling.ci_supply_chain.verify import (
     core_v2_adapter_violations,
     runtime_dependency_violations,
     runtime_reporter_violations,
+    reference_snapshot_violations,
     sdk_binding_violations,
     violations,
 )
@@ -145,6 +146,23 @@ class CiSupplyChainVerifyTest(unittest.TestCase):
             "      - run: make core-v2-audit\n", "ci.yml"
         )
         self.assertEqual(len(errors), 3)
+
+    def test_self_contained_reference_snapshots_are_required(self):
+        workflow = """
+      - run: python3 tooling/reference_snapshot/verify.py --lock definitive/fe-depth-reference.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/8a9e34a89a55cc53702032783c06ede7246a286f
+      - run: python3 tooling/fe_parity/generate.py --check
+      - run: python3 tooling/reference_snapshot/verify.py --lock definitive/fe-reference-system.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/7175de4305afb308722d5b83475e91c18da64957
+      - run: python3 tooling/scenario_proof/generate.py --check
+      - run: python3 -m unittest tooling.reference_snapshot.test_verify
+"""
+        self.assertEqual(reference_snapshot_violations(workflow, "ci.yml"), [])
+
+    def test_unavailable_sibling_checkout_is_rejected(self):
+        errors = reference_snapshot_violations(
+            "repository: akaitigo/frontend-behavior-atlas\n", "ci.yml"
+        )
+        self.assertEqual(len(errors), 6)
+        self.assertTrue(any("sibling checkout" in error for error in errors))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "fixtureKind": "variant-comparison-reference",
+  "status": "bounded-evidence-only",
+  "observableContract": {
+    "initial": "A reserved stage explains that the content is currently absent.",
+    "trigger": "Application state or a user control changes the content presence value.",
+    "transition": "Opacity and position interpolate without changing the surrounding layout or stealing focus.",
+    "outcome": "The content is visibly settled or semantically absent, and the trigger continues to expose the current state."
+  },
+  "patternId": "foundations/enter-exit",
+  "alternatives": [
+    {
+      "id": "foundations/enter-exit::css-transition",
+      "engine": "native-css",
+      "framework": "vanilla",
+      "control": "progress",
+      "requiredCapabilities": [
+        "css-transition",
+        "css-custom-properties"
+      ],
+      "fallbackVariant": null,
+      "rationale": "CSS owns live interpolation while custom properties expose exact comparison states with minimal runtime code.",
+      "tradeoffs": [
+        "DOM removal and interruption policy still require application-level lifecycle ownership."
+      ],
+      "lab": "experiments/foundations/enter-exit/variants/css-transition/entry.ts"
+    },
+    {
+      "id": "foundations/enter-exit::waapi",
+      "engine": "waapi",
+      "framework": "vanilla",
+      "control": "progress",
+      "requiredCapabilities": [
+        "web-animations-api"
+      ],
+      "fallbackVariant": "css-transition",
+      "rationale": "A paused Animation object exposes symmetric seeking, reversal, cancellation, and deterministic currentTime control.",
+      "tradeoffs": [
+        "The animation object and completion semantics must be explicitly cancelled during teardown."
+      ],
+      "lab": "experiments/foundations/enter-exit/variants/waapi/entry.ts"
+    }
+  ],
+  "boundedEvidence": [
+    "artifacts/capture-results.json",
+    "artifacts/benchmark-results.json",
+    "artifacts/e2e-results.json",
+    "artifacts/e2e-results.container.json"
+  ],
+  "reusableRule": "代替方式は同じObservable ContractとScenario Oracleで比較し、実装差だけをVariantにする。方式ごとに専用Proofを持つ。",
+  "gaps": [
+    "Definitive Comparison manifest",
+    "Scenarioごとの方式別一意Evidence ID"
+  ]
+}

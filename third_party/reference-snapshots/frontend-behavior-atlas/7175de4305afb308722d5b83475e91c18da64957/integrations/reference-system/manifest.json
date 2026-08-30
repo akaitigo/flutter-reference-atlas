@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "frontend-behavior-reference-system-v1",
+  "status": "bounded-integration-proof",
+  "subject": "current-domain-pattern-integration-not-authority-atomic-completion",
+  "entry": "apps/reference-system/src/main.ts",
+  "runtime": "real-browser-local",
+  "test": "reference-e2e/reference-system.spec.ts",
+  "evidence": "artifacts/reference-system/results.json",
+  "scenarios": [
+    {
+      "id": "normal",
+      "patterns": ["reactive/network-offline-recovery", "production/lifecycle-resource-cleanup"],
+      "runtime_boundaries": ["dom", "module-worker"],
+      "assertions": ["settled-state", "worker-result", "zero-queue"]
+    },
+    {
+      "id": "boundary",
+      "patterns": ["status/notification-queue", "production/performance-energy-budgets"],
+      "runtime_boundaries": ["dom", "bounded-queue"],
+      "assertions": ["queue-cap", "quality-degradation"]
+    },
+    {
+      "id": "refusal",
+      "patterns": ["reactive/permission-capability-state", "production/deployment-security-capabilities"],
+      "runtime_boundaries": ["permissions-policy", "semantic-fallback"],
+      "assertions": ["permission-denied", "fallback-visible", "no-capability-request"]
+    },
+    {
+      "id": "failure",
+      "patterns": ["reactive/network-offline-recovery", "graphics/offscreen-canvas-worker", "production/lifecycle-resource-cleanup"],
+      "runtime_boundaries": ["module-worker", "offline-queue"],
+      "assertions": ["worker-released", "queued-work-preserved", "failure-visible"]
+    },
+    {
+      "id": "recovery",
+      "patterns": ["reactive/network-offline-recovery", "graphics/offscreen-canvas-worker", "production/lifecycle-resource-cleanup"],
+      "runtime_boundaries": ["module-worker", "generation-ownership", "offline-queue"],
+      "assertions": ["new-generation", "replay-once", "queue-cleared"]
+    },
+    {
+      "id": "migration",
+      "patterns": ["production/dependency-version-policy", "production/compatibility-evidence-expiry"],
+      "runtime_boundaries": ["local-storage", "schema-version"],
+      "assertions": ["v1-to-v2", "selection-continuity", "old-new-mapping"]
+    },
+    {
+      "id": "operations",
+      "patterns": ["production/offscreen-background-suspension", "production/lifecycle-resource-cleanup", "reactive/idle-and-presence-state"],
+      "runtime_boundaries": ["module-worker", "timer", "event-listener"],
+      "assertions": ["worker-zero", "timer-zero", "listener-zero"]
+    },
+    {
+      "id": "security",
+      "patterns": ["production/deployment-security-capabilities", "reactive/permission-capability-state", "production/provenance-originality-rights"],
+      "runtime_boundaries": ["csp", "permissions-policy", "text-sink"],
+      "assertions": ["strict-headers", "untrusted-text-not-markup", "permission-not-requested"]
+    },
+    {
+      "id": "performance",
+      "patterns": ["production/performance-energy-budgets", "graphics/offscreen-canvas-worker", "reactive/streaming-data-chart"],
+      "runtime_boundaries": ["module-worker", "bounded-sample-set", "quality-tier"],
+      "assertions": ["sample-cap", "worker-result", "quality-low"]
+    },
+    {
+      "id": "compatibility",
+      "patterns": ["production/compatibility-evidence-expiry", "production/responsive-container-resilience", "production/motion-preference-equivalence"],
+      "runtime_boundaries": ["capability-override", "semantic-fallback", "browser-runtime"],
+      "assertions": ["fallback-active", "semantic-state-visible"]
+    }
+  ],
+  "completion_limits": [
+    "Authority由来Atomic behaviorの全母集団を証明しない。",
+    "local browser profileを実Device、支援技術、cloud-live、hardware-in-the-loopの代替にしない。",
+    "各Scenarioの統合Proofを全85 Patternの専用Runtime Proofとして流用しない。"
+  ]
+}

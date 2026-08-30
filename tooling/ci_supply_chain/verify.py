@@ -31,6 +31,13 @@ CORE_V2_ADAPTER_COMMANDS = (
     "python3 tooling/ci_supply_chain/core_v2_adapter.py --check",
     "python3 tooling/ci_supply_chain/core_v2_adapter.py --audit-incomplete --atlas-bin .tools/bin/atlas-v2",
 )
+REFERENCE_SNAPSHOT_COMMANDS = (
+    "python3 tooling/reference_snapshot/verify.py --lock definitive/fe-depth-reference.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/8a9e34a89a55cc53702032783c06ede7246a286f",
+    "python3 tooling/fe_parity/generate.py --check",
+    "python3 tooling/reference_snapshot/verify.py --lock definitive/fe-reference-system.lock.json --reference-root third_party/reference-snapshots/frontend-behavior-atlas/7175de4305afb308722d5b83475e91c18da64957",
+    "python3 tooling/scenario_proof/generate.py --check",
+    "python3 -m unittest tooling.reference_snapshot.test_verify",
+)
 
 
 def violations(text: str, path: str) -> list[str]:
@@ -102,6 +109,18 @@ def core_v2_adapter_violations(text: str, path: str) -> list[str]:
     ]
 
 
+def reference_snapshot_violations(text: str, path: str) -> list[str]:
+    """Keep cross-repository locks executable without an unavailable checkout."""
+    errors = [
+        f"{path}: self-contained Reference snapshot Gateが必要です: {command}"
+        for command in REFERENCE_SNAPSHOT_COMMANDS
+        if command not in text
+    ]
+    if "repository: akaitigo/frontend-behavior-atlas" in text:
+        errors.append(f"{path}: 存在しないGitHub sibling checkoutに依存できません")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
@@ -116,6 +135,7 @@ def main() -> int:
         errors.extend(runtime_dependency_violations(text, relative))
         errors.extend(runtime_reporter_violations(text, relative))
         errors.extend(core_v2_adapter_violations(text, relative))
+        errors.extend(reference_snapshot_violations(text, relative))
     if errors:
         for error in errors:
             print(f"CI supply-chainエラー: {error}")
