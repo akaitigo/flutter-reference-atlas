@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:operations_workspace/src/data/in_memory_incident_repository.dart';
 import 'package:operations_workspace/src/domain/incident.dart';
 import 'package:operations_workspace/src/observability/frame_performance_monitor.dart';
+import 'package:operations_workspace/src/platform/platform_capability_probe.dart';
 import 'package:operations_workspace/src/presentation/workspace_app.dart';
 
 void main() {
@@ -44,6 +45,30 @@ void main() {
     expect(find.text('新しい障害'), findsWidgets);
   });
 
+  testWidgets('不正な双方向表示制御を統合UIで拒否する', (tester) async {
+    tester.view.physicalSize = const Size(1200, 800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(
+      WorkspaceApp(repository: InMemoryIncidentRepository.seeded()),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byKey(const Key('create-button')));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const Key('incident-title-field')),
+      '拒否対象\u202e',
+    );
+    await tester.tap(find.byKey(const Key('save-incident-button')));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('failure-banner')), findsOneWidget);
+    expect(find.textContaining('利用できない制御文字'), findsOneWidget);
+    expect(find.textContaining('拒否対象'), findsNothing);
+  });
+
   testWidgets('公開Navigator routeで診断へ移動しPerformanceを観測できる', (tester) async {
     final monitor = FramePerformanceMonitor();
     addTearDown(monitor.dispose);
@@ -52,6 +77,7 @@ void main() {
       WorkspaceApp(
         repository: InMemoryIncidentRepository.seeded(),
         performanceMonitor: monitor,
+        platformProbe: const _FixturePlatformProbe(),
       ),
     );
     await tester.pumpAndSettle();
@@ -68,6 +94,10 @@ void main() {
       )?.settings.name,
       WorkspaceRoutes.diagnostics,
     );
+
+    await tester.tap(find.byKey(const Key('probe-platform-button')));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('fixture 1.0'), findsOneWidget);
 
     await tester.pageBack();
     await tester.pumpAndSettle();
@@ -98,6 +128,21 @@ void main() {
     expect(find.byKey(const Key('status-announcement')), findsOneWidget);
     expect(find.text('調査中'), findsWidgets);
   });
+}
+
+class _FixturePlatformProbe implements PlatformCapabilityProbe {
+  const _FixturePlatformProbe();
+
+  @override
+  Future<PlatformCapabilitySnapshot> inspect() async {
+    return const PlatformCapabilitySnapshot(
+      platform: 'fixture',
+      osVersion: '1.0',
+      sdkInt: 1,
+      activityAttached: true,
+      codec: 'fixture',
+    );
+  }
 }
 
 class _FailOnceRepository implements IncidentRepository {

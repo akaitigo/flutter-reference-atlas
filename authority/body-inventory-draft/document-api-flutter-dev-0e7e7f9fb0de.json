@@ -1,0 +1,66 @@
+{
+  "anchors": [
+    {
+      "atomic_behavior_ids": [],
+      "classification_status": "pending-human",
+      "context_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "context_end": 246,
+      "context_start": 0,
+      "context_unit": "utf8-byte",
+      "heading_level": null,
+      "human_decision_id": null,
+      "id": "anchor-root-9f5c00f1b59f75b60f2c",
+      "label_digest": null,
+      "locator": "document-root",
+      "locator_kind": "document-root",
+      "parent_anchor_id": null,
+      "semantic_kind": "document-root",
+      "surface_ids": [],
+      "tag": "document"
+    }
+  ],
+  "document_id": "document-api-flutter-dev-0e7e7f9fb0de",
+  "extraction": {
+    "authority_semantics_exhaustive": false,
+    "body_storage": "digest-locator-and-offset-only",
+    "method": "html-semantic-anchor-selector-v1",
+    "review_status": "automated-unreviewed",
+    "selector_contract": [
+      "document-root",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "dfn",
+      "section",
+      "article",
+      "main",
+      "nav",
+      "aside",
+      "table",
+      "figure"
+    ],
+    "selector_exhaustive_for_locked_body": true,
+    "tool": "flutter-reference-atlas-authority-body-inventory-v1",
+    "tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 246,
+    "fetched_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+    "final_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+    "http_status": 200,
+    "locked_digest_match": true,
+    "status": "matched"
+  },
+  "fetch_url": "https://api.flutter.dev/flutter/widgets/widgets-library.html",
+  "locked_body_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-widgets-api"
+  ]
+}

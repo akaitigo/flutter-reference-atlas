@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-08-30T14:52:58Z",
+  "harness": {
+    "bytes": 7104,
+    "digest": "sha256:3a4e9c992f957c76efe0c8fd3905ef5450a1164611c810cc2bfe96e29a0f2173",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 17141,
+    "digest": "sha256:9953a4ea2fef7c2a0d1f510cafba24b73916b1a35426182263cbe5e180b49684",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-four-security-surfaces-and-eight-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:5cf49c08d47c1f01e377cebed40c547a2fe2b2e2e974aa360eb4d73e8303caac",
+      "path": "packages/flutter/lib/src/widgets/app_lifecycle_listener.dart"
+    },
+    {
+      "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+      "path": "packages/flutter/lib/src/widgets/binding.dart"
+    }
+  ],
+  "source_set_digest": "sha256:1d569a108137b653c710a04f6c73c9e78f8a48e0e5e7f8499b0e0ef3cdad80ac",
+  "started_at": "2026-08-30T14:47:43Z",
+  "status": "passed",
+  "surface_id": "background.app-lifecycle",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1546,
+        "digest": "sha256:704f157ba1dd5a4bc41aa4aee42114c110f6890b764b09715df49decd611b05f",
+        "path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "app-lifecycle-listenerでbackground/resumeを観測し一時機密値を消去した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 56624,
+        "digest": "sha256:c9afb48dea95ca1930f47fe233696cacb6982554354fcc8e1d7501261e1854f8",
+        "path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/screen.png"
+      },
+      "source": {
+        "bytes": 9763,
+        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2241,
+        "digest": "sha256:900422879f04b827fdcda5c0acfd74deafedb5f09ec1693cc618fe0976e3001b",
+        "path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/trace.json"
+      },
+      "variant": "app-lifecycle-listener"
+    },
+    {
+      "artifact": {
+        "bytes": 1556,
+        "digest": "sha256:25915e8f2cf991cfb93ef11d552c92879e0a744ba8bac87b30ed7831ca1e1842",
+        "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "widgets-binding-observerでbackground/resumeを観測し一時機密値を消去した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 58219,
+        "digest": "sha256:ef42b3ae8ba0788c6a9d8d70aa5b2b7e48c990f92857bb05c797392330d73f11",
+        "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/screen.png"
+      },
+      "source": {
+        "bytes": 9763,
+        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2255,
+        "digest": "sha256:2cbb741a83a0e3f7505c05944e0dc24966f090d5ab3708184e5bc48f524e58dd",
+        "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/trace.json"
+      },
+      "variant": "widgets-binding-observer"
+    }
+  ],
+  "variant_contract": [
+    "app-lifecycle-listener",
+    "widgets-binding-observer"
+  ]
+}

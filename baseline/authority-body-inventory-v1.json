@@ -1,0 +1,204 @@
+{
+  "captured_at": "2026-08-28T00:00:00+09:00",
+  "documents": [
+    {
+      "anchor_ids": [
+        "anchor-root-9f5c00f1b59f75b60f2c"
+      ],
+      "id": "document-api-flutter-dev-0e7e7f9fb0de",
+      "locked_body_digest": "sha256:81bb2897f68595f41c4a9fc774d1bbcfdf5f6f2682ad43b046a0d9fa04948f23",
+      "path": "authority/body-inventory-draft/document-api-flutter-dev-0e7e7f9fb0de.json",
+      "source_ids": [
+        "flutter-widgets-api"
+      ]
+    },
+    {
+      "anchor_ids": [
+        "anchor-06bfab6591932f76e3b1",
+        "anchor-0808bd4dc5948fb35056",
+        "anchor-0812edceb0755feeef9f",
+        "anchor-18ee468bc71a720650be",
+        "anchor-1a1e13b1079cd9195beb",
+        "anchor-1abd122ec7d5aa37272a",
+        "anchor-1bf3576e307652cd76c5",
+        "anchor-2a5c26097522718395cc",
+        "anchor-2dcb9ca7ab218958883e",
+        "anchor-2f8ee9ad07634d3781ae",
+        "anchor-363f05112f0ee32f42fe",
+        "anchor-3653e4f00726d244cd71",
+        "anchor-37f406f9afbc85a3229f",
+        "anchor-3b27b592de757c2a053b",
+        "anchor-3b3b5e1c365d7812484a",
+        "anchor-3b67855e8fd887e74932",
+        "anchor-3d81a3c6309b5ae72505",
+        "anchor-4084e8bddfdfe808c3be",
+        "anchor-4de6cf1e61d2e3a10560",
+        "anchor-4f5393426aeffeb05126",
+        "anchor-518480deecd9c44869af",
+        "anchor-529a09a886c200081aaa",
+        "anchor-52a11b09e0c63af92046",
+        "anchor-5a42ddf83fc31cf066c3",
+        "anchor-5f659d08669807f506d1",
+        "anchor-655db5e2d3425695c8d1",
+        "anchor-6986bff36abf443ab75b",
+        "anchor-79922501453497bc4630",
+        "anchor-7b394643c442b15e8003",
+        "anchor-7cc5943ca3ac6622b590",
+        "anchor-8408d502b8c4323085bc",
+        "anchor-8438a45cae3198e5ab55",
+        "anchor-872a76cf5ff2485517e0",
+        "anchor-8888d9200c000652b7e4",
+        "anchor-889e80ecfacba3b81440",
+        "anchor-96a88b733440202b26f7",
+        "anchor-ad7ce8db3fa15d11b541",
+        "anchor-b792094a7f7e112d71d0",
+        "anchor-be3465b34b12b969c8b7",
+        "anchor-ca4ad1aee98734a0139d",
+        "anchor-cb5d1d3203e20005e8ef",
+        "anchor-d02c571c2963b036ec87",
+        "anchor-e0bfecd37ad9caba4dd5",
+        "anchor-ebdafc88b71fb706bfbb",
+        "anchor-f2c08e82dc142f5fd390",
+        "anchor-root-fcf5ddf2224c631e4700"
+      ],
+      "id": "document-dart-dev-9ddf4f55d122",
+      "locked_body_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "path": "authority/body-inventory-draft/document-dart-dev-9ddf4f55d122.json",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ]
+    },
+    {
+      "anchor_ids": [
+        "anchor-06ca07ea5b496278382f",
+        "anchor-086900b62b7ad5461fc3",
+        "anchor-14d41cf57bca80a423e5",
+        "anchor-2894d5267f74d42730bc",
+        "anchor-31259f6fd796794df0a4",
+        "anchor-3e08ff49316c06ec7b39",
+        "anchor-4b93f11b619e90c83edb",
+        "anchor-53a45816c85a522fc979",
+        "anchor-6066eae8f56f7d70f558",
+        "anchor-6533041d2aafe81425c4",
+        "anchor-6ae2e765c12898a098da",
+        "anchor-786d3ea52247d332dee0",
+        "anchor-7c25b2cae730e6ec2d09",
+        "anchor-80c1ea44aa5680b471e9",
+        "anchor-854e8c9fdbc9e6ca6932",
+        "anchor-8e7f1e173c424db80442",
+        "anchor-a379384d39231faa9f0a",
+        "anchor-a9b0f5aad0cb99fd6703",
+        "anchor-abf4c05886b262917aac",
+        "anchor-b82e739ee6776f37bc2f",
+        "anchor-cf931dd431fe5b66b851",
+        "anchor-d5aefdf37d53d5e98b0b",
+        "anchor-e56a4ec87d5cdc6ecc86",
+        "anchor-e88741ed7b24aa6f71e1",
+        "anchor-ead79bdae94de5a0cec3",
+        "anchor-root-c67dd232de06ecde07c0"
+      ],
+      "id": "document-docs-flutter-dev-bf05d2eba7be",
+      "locked_body_digest": "sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3",
+      "path": "authority/body-inventory-draft/document-docs-flutter-dev-bf05d2eba7be.json",
+      "source_ids": [
+        "flutter-3.47-release-notes"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-github-com-23dd8ff8a023",
+      "locked_body_digest": "sha256:841ff24218218bd1262f7a71afa50c76c9f7a92ae50bfc036a4d8cc4dc4ba783",
+      "path": "authority/body-inventory-draft/document-github-com-23dd8ff8a023.json",
+      "source_ids": [
+        "reference-atlas-core-v1"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-github-com-5221d316273a",
+      "locked_body_digest": "sha256:648542f9b30987e29fbda6009c017e4cdf91df741a923833010b5416d8385d23",
+      "path": "authority/body-inventory-draft/document-github-com-5221d316273a.json",
+      "source_ids": [
+        "local-runtime-inventory"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-github-com-52d2b8198dd9",
+      "locked_body_digest": "sha256:2bc73e86b0d652245417d9d3f42d7f633f7c41e1369e869bde348d352d15346a",
+      "path": "authority/body-inventory-draft/document-github-com-52d2b8198dd9.json",
+      "source_ids": [
+        "devtools-2.60.0"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-github-com-7f74cd6fffae",
+      "locked_body_digest": "sha256:669f36a09003290678923c311c181dd0b8683703ae76916e4a3cdaa6f572a10a",
+      "path": "authority/body-inventory-draft/document-github-com-7f74cd6fffae.json",
+      "source_ids": [
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-github-com-a33fd1668b7d",
+      "locked_body_digest": "sha256:522302fd57955ba5c0edbcc6e5f89646cdb23f0795eafc5d6bb69f8de5ccd261",
+      "path": "authority/body-inventory-draft/document-github-com-a33fd1668b7d.json",
+      "source_ids": [
+        "dart-sdk-3.13.1",
+        "flutter-engine-3.47.1-deps"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-hub-docker-com-3b3ee7fdbe11",
+      "locked_body_digest": "sha256:d3f19cf5c18a7939d6af3f0896b2e9fec3f31f7ba3a2f88bfe6181e903084a51",
+      "path": "authority/body-inventory-draft/document-hub-docker-com-3b3ee7fdbe11.json",
+      "source_ids": [
+        "dart-container-3.13.1"
+      ]
+    },
+    {
+      "anchor_ids": [],
+      "id": "document-storage-googleapis-com-99abdff88685",
+      "locked_body_digest": "sha256:38c9ffe0af4a71e4600f4fda310f0e895757550926128e28aa57782ea97538fa",
+      "path": "authority/body-inventory-draft/document-storage-googleapis-com-99abdff88685.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ]
+    },
+    {
+      "anchor_ids": [
+        "anchor-root-40ccf194a6cb0936842f"
+      ],
+      "id": "document-storage-googleapis-com-ba9f7d63a203",
+      "locked_body_digest": "sha256:e193b03722f211c32ed4a80789be13e7a7d361f0ce153b97b8ada3def51a1e4e",
+      "path": "authority/body-inventory-draft/document-storage-googleapis-com-ba9f7d63a203.json",
+      "source_ids": [
+        "flutter-release-manifest-macos"
+      ]
+    }
+  ],
+  "id": "flutter-authority-body-inventory-v1-2026-08-28",
+  "schema_version": 1,
+  "selector_contract": [
+    "document-root",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "dfn",
+    "section",
+    "article",
+    "main",
+    "nav",
+    "aside",
+    "table",
+    "figure"
+  ],
+  "source_entries": 12,
+  "unique_documents": 11
+}

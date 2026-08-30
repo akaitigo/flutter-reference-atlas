@@ -1,0 +1,47 @@
+{
+  "anchors": [],
+  "document_id": "document-github-com-52d2b8198dd9",
+  "extraction": {
+    "authority_semantics_exhaustive": false,
+    "body_storage": "digest-locator-and-offset-only",
+    "method": "html-semantic-anchor-selector-v1",
+    "review_status": "automated-unreviewed",
+    "selector_contract": [
+      "document-root",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "dfn",
+      "section",
+      "article",
+      "main",
+      "nav",
+      "aside",
+      "table",
+      "figure"
+    ],
+    "selector_exhaustive_for_locked_body": false,
+    "tool": "flutter-reference-atlas-authority-body-inventory-v1",
+    "tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd"
+  },
+  "fetch": {
+    "content_type": "text/html; charset=utf-8",
+    "deferred_reason": null,
+    "error_digest": null,
+    "fetched_bytes": 313254,
+    "fetched_digest": "sha256:2cb7b809811fd1f1badcf2695942198d870f2acffe306bc9a0acaab580859ba2",
+    "final_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+    "http_status": 200,
+    "locked_digest_match": false,
+    "status": "stale"
+  },
+  "fetch_url": "https://github.com/flutter/devtools/blob/12d595649f189f1896722623f72599077f476848/packages/devtools_app/pubspec.yaml",
+  "locked_body_digest": "sha256:2bc73e86b0d652245417d9d3f42d7f633f7c41e1369e869bde348d352d15346a",
+  "schema_version": 1,
+  "source_ids": [
+    "devtools-2.60.0"
+  ]
+}

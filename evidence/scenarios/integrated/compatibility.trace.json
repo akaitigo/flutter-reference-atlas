@@ -1,0 +1,112 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "closure": {
+    "authority_atomic_binding": false,
+    "bounded_integrated_trace": true,
+    "completion_eligible": false,
+    "surface_specific_proof": false
+  },
+  "completion_limits": [
+    "このTraceはReference AppのCross-behavior観測であり全Surface固有Proofではない。",
+    "Platform fixtureをMethodChannelまたは実Device Runtime Evidenceへ拡張しない。",
+    "Authority atomic bindingがないためCompletion対象外である。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "harness_bindings": [
+    {
+      "bytes": 7706,
+      "digest": "sha256:148482cf15f1588773c5476624e02784cbe9766146d1a8d4ca3f2e8ab05d0977",
+      "path": "reference-systems/operations-workspace/test/scenario_trace_test.dart"
+    },
+    {
+      "bytes": 2044,
+      "digest": "sha256:8adcf84434079dcd3706d3dee31e83750c5167a157f0ec3a1ff07f331e8229fc",
+      "path": "scripts/reference-scenario-runtime.sh"
+    },
+    {
+      "bytes": 1739,
+      "digest": "sha256:2b0d16c9737541ab67590e47c19ebe76d5ba7268b47cc9e0f422a3f96838dffe",
+      "path": "tooling/scenario_proof/atomic_publish.py"
+    },
+    {
+      "bytes": 10306,
+      "digest": "sha256:a98cd2dd1259c1b36443220a34fbedffe37074b782db56d50b59376d528cea3e",
+      "path": "tooling/scenario_proof/capture_runtime.py"
+    }
+  ],
+  "id": "trace.reference-system.compatibility",
+  "run_id": "sha256:b1df8fc4d7ececf8f80e8cd4842ee3633fa79d32bd53634726662b62f27390e1",
+  "runtime_identity": {
+    "architecture": "arm64",
+    "browser": "Google Chrome",
+    "browser_version": "151.0.7922.175",
+    "compiler_variants": [
+      "javascript",
+      "wasm"
+    ],
+    "dart_version": "3.13.1",
+    "flutter_version": "3.47.1",
+    "os": "Darwin",
+    "physical_device": false,
+    "profile": "web-chrome",
+    "runner_kind": "browser-runtime"
+  },
+  "scenario": "compatibility",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "bytes": 11662,
+      "digest": "sha256:3fed1bee72225761cc9f0d1cee881693c1d688a10ed988d2c660eff1b96a1bee",
+      "path": "reference-systems/operations-workspace/lib/src/presentation/workspace_app.dart"
+    },
+    {
+      "bytes": 7126,
+      "digest": "sha256:587dbbeeaf98afec0d4a26ae17a7be0386699d3e7f67412f94cc93efe813b0c5",
+      "path": "reference-systems/operations-workspace/lib/src/presentation/workspace_controller.dart"
+    },
+    {
+      "bytes": 1637,
+      "digest": "sha256:dd982c0b641fd6e0af370e8b6c63ae0b3cdf795f9416b9a37551f9fa456c470b",
+      "path": "reference-systems/operations-workspace/lib/src/data/incident_snapshot_migration.dart"
+    },
+    {
+      "bytes": 1338,
+      "digest": "sha256:3fd37aafd3576d1779c740e0195d15f41ae7ad1bcd7e35f62d968f77e3b3131c",
+      "path": "reference-systems/operations-workspace/lib/src/domain/incident_input_policy.dart"
+    },
+    {
+      "bytes": 2376,
+      "digest": "sha256:971e9614a5e9107e0495ed69ce5d3a6b46edeb1d44e581f8195953eb648ec51b",
+      "path": "reference-systems/operations-workspace/lib/src/observability/frame_performance_monitor.dart"
+    },
+    {
+      "bytes": 2518,
+      "digest": "sha256:2c190e672da03c12206ac8608d6e6dc765866674bbfd1960e6ab51c235344b11",
+      "path": "integrations/reference-system/manifest.json"
+    }
+  ],
+  "status": "passed",
+  "trace_contract": {
+    "dedicated_scenario_artifact": true,
+    "event_streams": [
+      "testStart",
+      "testDone",
+      "done"
+    ],
+    "format": "flutter-test-machine-scenario-events"
+  },
+  "variants": [
+    {
+      "duration_ms": 149,
+      "id": "javascript",
+      "result": "success",
+      "skipped": false
+    },
+    {
+      "duration_ms": 59,
+      "id": "wasm",
+      "result": "success",
+      "skipped": false
+    }
+  ]
+}

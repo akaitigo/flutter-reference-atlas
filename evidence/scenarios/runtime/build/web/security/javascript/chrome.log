@@ -1,0 +1,5 @@
+
+DevTools listening on ws://127.0.0.1:54308/devtools/browser/e4d2a333-5efc-403d-9c1a-163172fb68b8
+Trying to load the allocator multiple times. This is *not* supported.
+[62258:55974464:0831/014219.975722:ERROR:base/process/process_mac.cc:53] task_policy_set TASK_CATEGORY_POLICY: (os/kern) invalid argument (4)
+[62258:55974464:0831/014219.975760:ERROR:base/process/process_mac.cc:98] task_policy_set TASK_SUPPRESSION_POLICY: (os/kern) invalid argument (4)

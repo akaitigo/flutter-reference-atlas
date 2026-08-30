@@ -1,0 +1,46 @@
+{
+  "oracle": {
+    "artifact_bytes": 7383770,
+    "artifact_sha256": "sha256:935f09601165e83daf9cb4219c1137b027e8579da6c1e4976cb47349ec1b5b9c",
+    "chrome_accessibility_tree_captured": true,
+    "chrome_flutter_view_observed": true,
+    "compiler": "dart2js",
+    "mode": "debug-javascript-with-source-maps",
+    "variant": "javascript"
+  },
+  "runtime_identity": {
+    "architecture": "arm64",
+    "browser": "Google Chrome",
+    "browser_version": "151.0.7922.175",
+    "os": "macOS 26.1",
+    "physical_device": false,
+    "profile": "web-chrome",
+    "runner_kind": "browser-runtime"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      "flutter-build-web",
+      "localhost-serve",
+      "headless-chrome-load",
+      "dom-and-screenshot-capture"
+    ],
+    "network": {
+      "events": [
+        "GET http://127.0.0.1:<variant-port>/",
+        "local-static-assets-loaded"
+      ]
+    },
+    "resource": {
+      "events": [
+        "compiled-artifact-created",
+        "build-mode-verified",
+        "dom-captured",
+        "screenshot-captured"
+      ]
+    }
+  },
+  "surface_id": "build.web",
+  "variant": "javascript"
+}

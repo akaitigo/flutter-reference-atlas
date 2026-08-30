@@ -29,6 +29,37 @@ jobs:
         run: make atlas-bootstrap CORE_DIR=.tools/reference-atlas-core
       - name: atlas validateとOverlay Gate
         run: make validate CORE_DIR=.tools/reference-atlas-core
+      - name: 公開main非後退Baseline Gate
+        run: make non-regression-audit
+      - name: Chrome JavaScript・Wasm Runtime Gate
+        run: make definitive-web-runtime
+      - name: Reference App 10 Scenario Trace Gate
+        run: make reference-scenario-runtime
+      - uses: actions/checkout@v4
+        with:
+          repository: akaitigo/reference-atlas-core
+          ref: 072d7ca77981f51754e824d70c6d4ecd55ea67e5
+          path: .tools/reference-atlas-core-v2
+      - name: Core v2 atlas CLIを固定commitからBuild
+        run: make atlas-v2-bootstrap CORE_V2_DIR=.tools/reference-atlas-core-v2
+      - name: Evidence Dependency Graph Gate
+        run: make evidence-dependency-audit
+      - name: Core v2 Subject Definitive Gate
+        run: make core-v2-audit
+      - uses: actions/checkout@v4
+        with:
+          repository: akaitigo/frontend-behavior-atlas
+          ref: 8a9e34a89a55cc53702032783c06ede7246a286f
+          path: .tools/frontend-depth-reference
+      - name: FE 18軸Depth Reference Lock検証
+        run: make depth-reference-audit FE_DEPTH_REFERENCE_DIR=.tools/frontend-depth-reference
+      - uses: actions/checkout@v4
+        with:
+          repository: akaitigo/frontend-behavior-atlas
+          ref: 7175de4305afb308722d5b83475e91c18da64957
+          path: .tools/frontend-reference-system
+      - name: FE Reference System Scenario Proof Lock検証
+        run: make scenario-reference-audit FE_REFERENCE_SYSTEM_DIR=.tools/frontend-reference-system
       - name: Test・Analyze・Skill Eval・Legal Gate
         run: make test analyze skill-eval runbooks legal FORMAL_SDK="$FLUTTER_ROOT"
 

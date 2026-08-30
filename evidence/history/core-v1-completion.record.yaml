@@ -1,0 +1,26 @@
+schema_version: 1
+id: history.core-v1-completion.2026-08-28
+atlas_id: flutter-reference-atlas
+state: bounded-historical
+contract:
+  name: reference-atlas-core-v1
+  policy_version: 1.0.0
+  commit: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
+certificate:
+  path: evidence/completion-certificate.json
+  digest: sha256:41f45edf62f1626ea835a396cfd79c337c612c902dd09162a1a3140a01fb2b53
+  source_commit: 766ee4226d23b55dd7ef1b0451f8162b6365bd0e
+  issued_at: "2026-08-28T08:13:45Z"
+scope:
+  statement: Core v1契約と当時の24 Coverage Targetに対する履歴証明であり、Definitive Gate v2の完成証明ではない。
+  valid_for:
+    - 当時固定したFlutter 3.47.1、Dart 3.13.1、DevTools 2.60.0のAuthority Lock
+    - Core v1が許容したinfeasibleを含むCoverage Closure
+  not_valid_for:
+    - iOS SimulatorまたはAndroid/iOS実機のRuntime実証
+    - 公式6 PlatformすべてのBuild/Run実証
+    - Platform Channel、Plugin、Add-to-App、Platform View、GPU、Impellerの各Runtime実証
+    - Definitive Behavior/Capability Surface InventoryのClosure
+superseded_by:
+  gate: definitive-gate-v2
+  state: incomplete

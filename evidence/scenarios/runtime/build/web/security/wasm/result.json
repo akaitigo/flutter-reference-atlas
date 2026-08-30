@@ -1,0 +1,11 @@
+{
+  "artifact_bytes": 1387306,
+  "artifact_sha256": "sha256:9909ed953a2b23a2855bf3c301c62c336fa48cc27de3f7a30b70c0fc5e898ae2",
+  "chrome_accessibility_tree_captured": true,
+  "chrome_flutter_view_observed": true,
+  "compiler": "dart2wasm",
+  "mode": "release-wasm-no-source-maps",
+  "schema_version": 1,
+  "status": "passed",
+  "variant": "wasm"
+}

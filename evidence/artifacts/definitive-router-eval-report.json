@@ -1,0 +1,2058 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "gap_ledger": "atlas/definitive/gap-ledger.json",
+  "pass_rate": 1.0,
+  "passed": 14,
+  "results": [
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "platform-integration",
+        "gaps": [
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "linux-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "linux-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "linux-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "windows-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "windows-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "windows-host",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "android",
+          "channel",
+          "emulator",
+          "method",
+          "platform",
+          "runtime"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.definitive-android-method-channel.2026-08-28",
+          "execution.formal-local-closure.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-emulator",
+          "ios-simulator",
+          "macos-host",
+          "linux-host",
+          "windows-host"
+        ],
+        "state": "open",
+        "surface_id": "platform.method-channel"
+      },
+      "id": "definitive.method-channel-android",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-engine-3.47.1-deps"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "rendering",
+        "gaps": [
+          {
+            "id": "normal",
+            "kind": "scenario"
+          },
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "android-device",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "android-device:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "android-device",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "ios-device",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-device:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-device",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "android-emulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "android-emulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "android-emulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "integration",
+            "kind": "reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "android",
+          "device",
+          "gpu",
+          "impeller",
+          "rendering"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [],
+        "required_runtime_profiles": [
+          "android-device",
+          "ios-device",
+          "android-emulator",
+          "ios-simulator"
+        ],
+        "state": "open",
+        "surface_id": "rendering.gpu-impeller"
+      },
+      "id": "definitive.impeller-device",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "platform-integration",
+        "gaps": [
+          {
+            "id": "normal",
+            "kind": "scenario"
+          },
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "ios-device",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-device:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-device",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "integration",
+            "kind": "reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "add",
+          "app",
+          "host",
+          "ios",
+          "platform",
+          "runtime",
+          "simulator"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.formal-local-closure.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "ios-simulator",
+          "ios-device"
+        ],
+        "state": "open",
+        "surface_id": "platform.add-to-app-ios"
+      },
+      "id": "definitive.add-to-app-ios",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "build-release",
+        "gaps": [
+          {
+            "id": "normal",
+            "kind": "scenario"
+          },
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "windows-build-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "windows-build-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-build-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-build-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-build-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-build-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-build-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "windows-build-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "windows-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "windows-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "windows-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "integration",
+            "kind": "reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "build",
+          "host",
+          "release",
+          "windows"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [],
+        "required_runtime_profiles": [
+          "windows-build-host",
+          "windows-host"
+        ],
+        "state": "open",
+        "surface_id": "build.windows"
+      },
+      "id": "definitive.windows-build",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "flutter-engine-3.47.1-deps"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "accessibility",
+        "gaps": [
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "android-device",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "android-device:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "android-device",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "ios-device",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-device:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-device",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "web-chrome:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "accessibility",
+          "android",
+          "device",
+          "semantics",
+          "tree"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.formal-local-closure.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-device",
+          "ios-device",
+          "web-chrome",
+          "macos-host"
+        ],
+        "state": "open",
+        "surface_id": "accessibility.semantics-tree"
+      },
+      "id": "definitive.accessibility-runtime",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "devtools-2.60.0",
+          "dart-sdk-3.13.1"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "devtools",
+        "gaps": [
+          {
+            "id": "normal",
+            "kind": "scenario"
+          },
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "devtools-web",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "devtools-web:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "devtools-web:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "devtools-web:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "devtools-web:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "devtools-web:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "devtools-web:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "devtools-web",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "android-device-profile",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "android-device-profile:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device-profile:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device-profile:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device-profile:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device-profile:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-device-profile:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "android-device-profile",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "ios-device-profile",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-device-profile:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device-profile:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device-profile:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device-profile:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device-profile:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-device-profile:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-device-profile",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome-profile",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "web-chrome-profile:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome-profile:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome-profile:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome-profile:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome-profile:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome-profile:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "web-chrome-profile",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "integration",
+            "kind": "reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "devtools",
+          "memory",
+          "network",
+          "performance",
+          "profile"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [],
+        "required_runtime_profiles": [
+          "devtools-web",
+          "android-device-profile",
+          "ios-device-profile",
+          "web-chrome-profile"
+        ],
+        "state": "open",
+        "surface_id": "devtools.performance-memory-network"
+      },
+      "id": "definitive.devtools-memory",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "dart-sdk-3.13.1"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "storage",
+        "gaps": [
+          {
+            "id": "normal",
+            "kind": "scenario"
+          },
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "web-chrome:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "integration",
+            "kind": "reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "chrome",
+          "persistence",
+          "quota",
+          "recovery",
+          "storage",
+          "web"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [],
+        "required_runtime_profiles": [
+          "web-chrome"
+        ],
+        "state": "open",
+        "surface_id": "storage.web-persistence"
+      },
+      "id": "definitive.storage-web",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "framework",
+        "gaps": [
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "android-emulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:1/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "chrome",
+          "framework",
+          "lifecycle",
+          "web"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.android-emulator-integration.2026-08-28",
+          "execution.definitive-web-chrome.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-emulator",
+          "ios-simulator",
+          "web-chrome",
+          "macos-host"
+        ],
+        "state": "open",
+        "surface_id": "framework.lifecycle"
+      },
+      "id": "definitive.framework-web",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "state",
+        "gaps": [
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "android-emulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:1/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "change",
+          "chrome",
+          "notifier",
+          "state",
+          "web"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.android-emulator-integration.2026-08-28",
+          "execution.definitive-web-chrome.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-emulator",
+          "ios-simulator",
+          "web-chrome",
+          "macos-host"
+        ],
+        "state": "open",
+        "surface_id": "state.change-notifier"
+      },
+      "id": "definitive.state-web",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64",
+          "dart-sdk-3.13.1"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "security",
+        "gaps": [
+          {
+            "id": "normal",
+            "kind": "scenario"
+          },
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "android-emulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "android-emulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "android-emulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "boundary",
+          "chrome",
+          "data",
+          "input",
+          "security",
+          "web"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.definitive-web-chrome.2026-08-28",
+          "execution.formal-local-closure.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-emulator",
+          "ios-simulator",
+          "web-chrome",
+          "macos-host"
+        ],
+        "state": "open",
+        "surface_id": "security.input-data-boundary"
+      },
+      "id": "definitive.security-web",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "build-release",
+        "gaps": [
+          {
+            "id": "web-build-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-build-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-build-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-build-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-build-host:1/2",
+            "kind": "profile-variant"
+          }
+        ],
+        "matched_tokens": [
+          "build",
+          "chrome",
+          "release",
+          "wasm",
+          "web"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.definitive-web-chrome.2026-08-28",
+          "execution.formal-local-closure.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "web-build-host",
+          "web-chrome"
+        ],
+        "state": "open",
+        "surface_id": "build.web"
+      },
+      "id": "definitive.build-web",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "testing",
+        "gaps": [
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "web-chrome:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "android",
+          "device",
+          "emulator",
+          "integration",
+          "testing"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.android-emulator-integration.2026-08-28",
+          "execution.definitive-android-method-channel.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-emulator",
+          "ios-simulator",
+          "web-chrome",
+          "macos-host"
+        ],
+        "state": "open",
+        "surface_id": "testing.integration-device"
+      },
+      "id": "definitive.integration-android",
+      "passed": true
+    },
+    {
+      "actual": {
+        "authority_ids": [
+          "flutter-sdk-3.47.1-macos-arm64"
+        ],
+        "completion_claim_allowed": false,
+        "coverage_gap": true,
+        "domain": "platform-integration",
+        "gaps": [
+          {
+            "id": "boundary",
+            "kind": "scenario"
+          },
+          {
+            "id": "rejection",
+            "kind": "scenario"
+          },
+          {
+            "id": "failure",
+            "kind": "scenario"
+          },
+          {
+            "id": "recovery",
+            "kind": "scenario"
+          },
+          {
+            "id": "android-emulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "android-emulator:1/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "ios-simulator:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "ios-simulator:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "ios-simulator",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "macos-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "macos-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "macos-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "macos-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "linux-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "linux-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "linux-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "linux-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "windows-host",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "windows-host:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "windows-host:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "windows-host",
+            "kind": "profile-reference-app"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "runtime-profile"
+          },
+          {
+            "id": "web-chrome:normal",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:boundary",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:rejection",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:failure",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:recovery",
+            "kind": "profile-scenario"
+          },
+          {
+            "id": "web-chrome:0/2",
+            "kind": "profile-variant"
+          },
+          {
+            "id": "web-chrome",
+            "kind": "profile-reference-app"
+          }
+        ],
+        "matched_tokens": [
+          "activity",
+          "android",
+          "emulator",
+          "lifecycle",
+          "platform",
+          "plugin",
+          "runtime"
+        ],
+        "non_substitution": {
+          "infeasible_counts_as_closed": false,
+          "other_platform_substitutes_required_profile": false,
+          "required_scenarios": [
+            "normal",
+            "boundary",
+            "rejection",
+            "failure",
+            "recovery"
+          ],
+          "static_fixture_substitutes_runtime": false
+        },
+        "observed_evidence_ids": [
+          "execution.definitive-android-method-channel.2026-08-28",
+          "execution.formal-local-closure.2026-08-28"
+        ],
+        "required_runtime_profiles": [
+          "android-emulator",
+          "ios-simulator",
+          "macos-host",
+          "linux-host",
+          "windows-host",
+          "web-chrome"
+        ],
+        "state": "open",
+        "surface_id": "platform.plugin-lifecycle"
+      },
+      "id": "definitive.plugin-lifecycle-android",
+      "passed": true
+    },
+    {
+      "actual": {
+        "coverage_gap": true,
+        "message": "Definitive Surface Inventoryに一致しません。存在するCapabilityとして扱いません。",
+        "surface_id": null
+      },
+      "id": "definitive.unknown-neighbor",
+      "passed": true
+    }
+  ],
+  "schema_version": 2,
+  "skill_id": "flutter-reference-router",
+  "surface_inventory": "atlas/definitive/surface-inventory.json",
+  "total": 14
+}

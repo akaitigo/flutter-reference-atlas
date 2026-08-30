@@ -10,7 +10,15 @@ from pathlib import Path
 
 
 APACHE_PACKAGES = {"clock", "fake_async", "material_color_utilities", "webdriver"}
-SKIP_SDK_PACKAGES = {"flutter", "flutter_driver", "flutter_test", "fuchsia_remote_debug_protocol", "integration_test", "sky_engine"}
+SKIP_SDK_PACKAGES = {
+    "atlas_runtime_probe",
+    "flutter",
+    "flutter_driver",
+    "flutter_test",
+    "fuchsia_remote_debug_protocol",
+    "integration_test",
+    "sky_engine",
+}
 
 
 def locked_pub_packages(lock: str) -> list[dict[str, str]]:

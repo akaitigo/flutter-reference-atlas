@@ -1,0 +1,43 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "focus_received": true,
+    "platform": "Android",
+    "rendered_height": 40.0,
+    "scenario": "security",
+    "semantics_label": "Public focus status",
+    "sensitive_value_exposed": false,
+    "surface_id": "accessibility.focus-text-scale",
+    "text_scale": 2.0,
+    "variant": "text-scale-2x"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "text-scale-2xでFocusとtext scaleを適用し公開Semanticsだけを保持した"
+    ],
+    "passed": true
+  },
+  "platform_tree": {
+    "bytes": 3526,
+    "digest": "sha256:589e2cb664c5a53077a2be78c39fd1a8a1807b20a2109bf4892a45f1fbe2a359",
+    "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-2x/platform-tree.xml"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:fb6fce281ebdb6d6fcc867469c96f49f29663c4973d9f313cae42d11f50c7ba0",
+  "surface_id": "accessibility.focus-text-scale",
+  "variant": "text-scale-2x"
+}

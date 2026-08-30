@@ -1,0 +1,40 @@
+{
+  "batch_id": "review-p2-section-3a",
+  "items": [
+    {
+      "anchor_id": "anchor-786d3ea52247d332dee0",
+      "batch_id": "review-p2-section-3a",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:c68fe5aef095e3c86f7aa29e5e1aad0aaa214d493264e2d7f47001de089dcfc4",
+      "context_end": 13410,
+      "context_start": 7785,
+      "context_unit": "utf8-byte",
+      "document_id": "document-docs-flutter-dev-bf05d2eba7be",
+      "document_url": "https://docs.flutter.dev/release/release-notes/release-notes-3.47.0",
+      "existing_reference_edge_ids": [],
+      "heading_level": null,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": null,
+      "locator": "#cookie-notice",
+      "locator_kind": "fragment",
+      "locked_source_digest": "sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3",
+      "parent_anchor_id": "anchor-root-c67dd232de06ecde07c0",
+      "priority": 2,
+      "priority_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "section",
+      "source_ids": [
+        "flutter-3.47-release-notes"
+      ],
+      "state": "pending-human",
+      "tag": "section"
+    }
+  ],
+  "machine_assistance": "ordering-and-candidate-clustering-only",
+  "queue_id": "authority-review-d98f30af55d0f6b21c99",
+  "schema_version": 1,
+  "semantic_decisions": "none",
+  "status": "pending-human"
+}

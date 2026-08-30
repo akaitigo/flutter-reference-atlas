@@ -1,0 +1,107 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": true,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": true,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": true,
+    "real_platform_runtime_identity": true,
+    "retry_zero": true,
+    "screenshot_artifact_per_variant": true,
+    "source_harness_digest_bound": true,
+    "surface_specific_evidence": true,
+    "trace_artifact_per_variant": true,
+    "trace_streams_per_variant": true
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": true,
+    "baseline_variants": [],
+    "closed": true,
+    "declared_variants": [
+      "text-scale-1x",
+      "text-scale-2x"
+    ],
+    "errors": [],
+    "minimum_variants": 2,
+    "oracle_per_variant": true,
+    "report_binding": {
+      "bytes": 4844,
+      "digest": "sha256:e721358ed06910792442e9f42971959255059eff87449d1b163fccea930813e0",
+      "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/results.json"
+    },
+    "report_path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/results.json",
+    "report_present": true,
+    "retry_zero": true,
+    "runtime_identity_complete": true,
+    "screenshot_artifact_per_variant": true,
+    "source_harness_digest_bound": true,
+    "trace_artifact_per_variant": true,
+    "trace_streams_per_variant": true
+  },
+  "domain": "accessibility",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.accessibility.focus-text-scale.security",
+  "integrated_reference": {
+    "assertions": [
+      "input policy is observable",
+      "repository detail disclosure is prohibited"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "diagnostic-disclosure"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:a9afe57e17a920ddfc6335ef4e460bcbd88c1073f4e9058103d2ff170fa7bb3d",
+      "path": "evidence/scenarios/integrated/security.trace.json"
+    }
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:6095da6b738590454bfe60a76c2ed860346edc6ad42c6535800a1ac637fe1e4d",
+      "path": "packages/flutter/lib/src/widgets/focus_manager.dart"
+    },
+    {
+      "digest": "sha256:70e7918174e1b5dd71d6a8e9530d70feeddc292b6550f097194a5bacfa4e9b12",
+      "path": "packages/flutter/lib/src/widgets/media_query.dart"
+    }
+  ],
+  "source_set_digest": "sha256:92623227df28b7e4f455c72f4b56a9ee4d0bd1a3bf36f3ceb72fdd5531f916c2",
+  "status": "surface-runtime-proof",
+  "surface_evidence": [],
+  "surface_id": "accessibility.focus-text-scale",
+  "surface_title": "Focus・text scale・contrast"
+}

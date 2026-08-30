@@ -1,0 +1,160 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "dart-sdk-3.13.1",
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [
+      "dynamic-library"
+    ],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/platform/ffi-native-assets/operations/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "platform-integration",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.platform.ffi-native-assets.operations",
+  "integrated_reference": {
+    "assertions": [
+      "monitor starts with app",
+      "monitor stops on unmount"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "callback-ownership"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3713,
+      "digest": "sha256:4fae5c8dca61f85cb30b566727ca2b48361a87945ec8deac09c12a71bb3443cb",
+      "path": "evidence/scenarios/integrated/operations.trace.json"
+    }
+  },
+  "scenario": "operations",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:611d4e6f24c46aa65a3c3d8b1762f7d7c9fbf974cca1afb584827c36a888d204",
+      "path": "bin/cache/dart-sdk/lib/ffi/ffi.dart"
+    },
+    {
+      "digest": "sha256:ade895c6374f13aafb7e03437feca1dd64fda1f5891c312e53130cdf4c027b64",
+      "path": "packages/flutter_tools/templates/package_ffi/.gitignore.tmpl"
+    },
+    {
+      "digest": "sha256:7cb0ebb2be5eed03e3c6bacdef27adef7204d2304bce296c12424367b9bfcd9c",
+      "path": "packages/flutter_tools/templates/package_ffi/.metadata.tmpl"
+    },
+    {
+      "digest": "sha256:3790c391cc0632af71ae53941e38940072042e23a8649eee2898e939804a918a",
+      "path": "packages/flutter_tools/templates/package_ffi/CHANGELOG.md.tmpl"
+    },
+    {
+      "digest": "sha256:422e0de8e3275febf5c41a5ccf891f68f16bc40e1b5dca26e50913b307ef794e",
+      "path": "packages/flutter_tools/templates/package_ffi/LICENSE.tmpl"
+    },
+    {
+      "digest": "sha256:c52af3e9a25111f88b096912a60008674d1c4363c9de5a64b033b69393dc88bf",
+      "path": "packages/flutter_tools/templates/package_ffi/README.md.tmpl"
+    },
+    {
+      "digest": "sha256:0349d6d825f26f0468bb3715590961481ab4d97e5ae0bf8cd1d2922e700e5794",
+      "path": "packages/flutter_tools/templates/package_ffi/analysis_options.yaml.tmpl"
+    },
+    {
+      "digest": "sha256:b40739b6d1dcce67e858c30be5674d2092bd37747e0bb55dfbf7aa35bc7eaea3",
+      "path": "packages/flutter_tools/templates/package_ffi/ffigen.yaml.tmpl"
+    },
+    {
+      "digest": "sha256:34f877014a2308c74729e9730be326db600f85c86d07f114bbb7de8d9b3a2cea",
+      "path": "packages/flutter_tools/templates/package_ffi/hook/build.dart.tmpl"
+    },
+    {
+      "digest": "sha256:c1174ae75947863b20d760e9d1507c531995032eed4d7e14e839bc855597bd21",
+      "path": "packages/flutter_tools/templates/package_ffi/lib/projectName.dart.tmpl"
+    },
+    {
+      "digest": "sha256:c08606e9a05ab020471af97dab7d652702730fda3b051bc4d3e44f3a2a3eb975",
+      "path": "packages/flutter_tools/templates/package_ffi/lib/projectName_bindings_generated.dart.tmpl"
+    },
+    {
+      "digest": "sha256:ce2366a46ae5c5620695a48c67f754d3537dc95c09a725c86a6f363adbf25cee",
+      "path": "packages/flutter_tools/templates/package_ffi/pubspec.yaml.tmpl"
+    },
+    {
+      "digest": "sha256:e68090a10bc241f978e422050619eff5cf7c4f2b37a92088b62b081dddd90786",
+      "path": "packages/flutter_tools/templates/package_ffi/src.tmpl/projectName.c.tmpl"
+    },
+    {
+      "digest": "sha256:cef96eea6e4fb2cfd48b786562d46a6f71e3d199508e15acb60b81e948c140cb",
+      "path": "packages/flutter_tools/templates/package_ffi/src.tmpl/projectName.h.tmpl"
+    },
+    {
+      "digest": "sha256:801de1dd1bc7e2e8b526aec1313e18eb0f442587e76296ecb31a474582d194bc",
+      "path": "packages/flutter_tools/templates/package_ffi/test/projectName_test.dart.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:56afb0c65cc74762889fa3a7a3597007455ee9e947abd1885c578fbeb19b14fb",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "platform.ffi-native-assets",
+  "surface_title": "FFI・Native Assets"
+}

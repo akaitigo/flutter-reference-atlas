@@ -1,0 +1,2785 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "coverage_epoch": "2026-08-28",
+  "derivation": {
+    "requirements": "definitive/requirements.json",
+    "runtime_observations": "definitive/runtime-observations.json",
+    "sdk_root_kind": "version-locked-local-source"
+  },
+  "flutter_version": "3.47.1",
+  "schema_version": 2,
+  "surface_count": 54,
+  "surfaces": [
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "mount、update、deactivate、disposeとState identityを観測する",
+      "domain": "framework",
+      "id": "framework.lifecycle",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:5aab70de1ea1942f73338b89aed1aa6c9bea897fe93ce914e913aa229a2afbd2",
+      "sdk_sources": [
+        {
+          "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+          "path": "packages/flutter/lib/src/widgets/binding.dart"
+        },
+        {
+          "digest": "sha256:e7a9b820923c0c98ae650d2adc28f54a43755b780609a14358f0f255dabf572f",
+          "path": "packages/flutter/lib/src/widgets/framework.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Widget・Element・State lifecycle"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "Binding初期化とframe callback順序を観測する",
+      "domain": "framework",
+      "id": "framework.binding-scheduling",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:d15b04c41c120c8585819a3082eae0ce62e92ff967d69200ad05e5a0f081601b",
+      "sdk_sources": [
+        {
+          "digest": "sha256:1331b99fd756dd6aa037c9b47dcddb624e20016fdb59b42f942039f6cfe12683",
+          "path": "packages/flutter/lib/src/scheduler/binding.dart"
+        },
+        {
+          "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+          "path": "packages/flutter/lib/src/widgets/binding.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Bindingとframe scheduling"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "constraint伝播、layout、paintの分離と無効化を比較する",
+      "domain": "rendering",
+      "id": "rendering.constraints-layout-paint",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:6ca645329cdcc979d07ab05568501a40d91ad798bbf3ebb74c06a81ddc178f8c",
+      "sdk_sources": [
+        {
+          "digest": "sha256:a428a2423a54a11ecdab6969abf3df5c8870dccf88b1c43441f40d71b2e89d33",
+          "path": "packages/flutter/lib/src/rendering/binding.dart"
+        },
+        {
+          "digest": "sha256:292ef7c3a0995054054274827417820556e3afa8211977037460b30e6240aa51",
+          "path": "packages/flutter/lib/src/rendering/object.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Constraint・layout・paint pipeline"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps"
+      ],
+      "capability": "repaint boundary、layer再利用、破棄を観測する",
+      "domain": "rendering",
+      "id": "rendering.compositing-layers",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:34e3ff260fdcb5c34e4e2f76b5675fb604fa34e2ed0df0949bf8d7b4ef9cf0cf",
+      "sdk_sources": [
+        {
+          "digest": "sha256:ac0ffb0faaba5c50d932da5e653773596a6fac89e60bd3bca9de4af198f28a35",
+          "path": "engine/src/flutter/lib/ui/compositing.dart"
+        },
+        {
+          "digest": "sha256:0ef77d36a03cfc3b06a2ffe6010c468864417aff94384be665ce9308cde66bcd",
+          "path": "packages/flutter/lib/src/rendering/layer.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "CompositingとLayer lifecycle"
+    },
+    {
+      "authority_ids": [
+        "flutter-engine-3.47.1-deps"
+      ],
+      "capability": "renderer選択、GPU frame、fallback、surface recoveryを実機で比較する",
+      "domain": "rendering",
+      "id": "rendering.gpu-impeller",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "android-emulator",
+        "ios-simulator"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:5bac86fd9d1fa4da930023364b4a406efcbefdf82e69d4f87d3a5b82f93b5e70",
+      "sdk_sources": [
+        {
+          "digest": "sha256:a50b354eb4069d88c6bfcc6446a32ed8d62d228acf22f4a91871a7f856ec8def",
+          "path": "engine/src/flutter/impeller/display_list/aiks_context.cc"
+        },
+        {
+          "digest": "sha256:4f8e2bdff449b1957234d79ca6c7e6a4f574d175161beb9b29d23132083f6c18",
+          "path": "engine/src/flutter/impeller/renderer/render_target.cc"
+        },
+        {
+          "digest": "sha256:11bebed24489b326c131c5f1a820003e0948a92558220ad156460457ff9df63b",
+          "path": "engine/src/flutter/shell/common/rasterizer.cc"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "GPU・Impeller rendering"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "競合Gesture、cancel、boundary hit testを比較する",
+      "domain": "input",
+      "id": "input.pointer-gesture-arena",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:05bd1fe2adeb139e607ad844fdfd167083f9199ea1f7f2d1ca940fb52167726e",
+      "sdk_sources": [
+        {
+          "digest": "sha256:294832ac2b1f8c3432524f8d30a7b784ecebd66c2dc919ce3bed77e17210e19e",
+          "path": "packages/flutter/lib/src/gestures/arena.dart"
+        },
+        {
+          "digest": "sha256:c797c6e29ca3b78d786486e6c38ddb1e63d9fb76c902c39b2993ef0d92b40187",
+          "path": "packages/flutter/lib/src/gestures/binding.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "PointerとGesture Arena"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "物理/論理Key、Shortcut、拒否、focus recoveryを観測する",
+      "domain": "input",
+      "id": "input.keyboard-shortcuts",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "web-chrome",
+        "macos-host",
+        "linux-host",
+        "windows-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:4c6a4a3ba9d9110ca4fe16727ef83de93969ba2993079d37d08ed0019e5af918",
+      "sdk_sources": [
+        {
+          "digest": "sha256:7729ff50247a03ef790759609b5a9fc6bdcb17d7f59ab34c26245b4c224be6cb",
+          "path": "packages/flutter/lib/src/services/hardware_keyboard.dart"
+        },
+        {
+          "digest": "sha256:ccf4568230045858dbe5a5f07440ff1b3a392a01195358c91763fd45cc90fbf3",
+          "path": "packages/flutter/lib/src/widgets/actions.dart"
+        },
+        {
+          "digest": "sha256:9e9132d544d250385db539011b8e8c39b8b6e9ead869ce7eb9c4d31c0ad44918",
+          "path": "packages/flutter/lib/src/widgets/shortcuts.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Keyboard・Shortcut・Action"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "順序、scope、trap、復帰を比較する",
+      "domain": "input",
+      "id": "input.focus-traversal",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:de19fb2918b15d2852cd7ae47ce2c5e5106179ae652a935c891138491ecbea32",
+      "sdk_sources": [
+        {
+          "digest": "sha256:6095da6b738590454bfe60a76c2ed860346edc6ad42c6535800a1ac637fe1e4d",
+          "path": "packages/flutter/lib/src/widgets/focus_manager.dart"
+        },
+        {
+          "digest": "sha256:8df3b1e54ee06eeb0188aba3c4b27f972dcafbca7a629d83086a51b987715017",
+          "path": "packages/flutter/lib/src/widgets/focus_traversal.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Focus traversal"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "composition、selection、拒否、connection recoveryを観測する",
+      "domain": "input",
+      "id": "input.text-ime",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:875939e9cfc1cf33cc33819235256514cb412387bcd0b99e133bafa246c062e7",
+      "sdk_sources": [
+        {
+          "digest": "sha256:e102cc59b74b97f169c2c6722b7b7e60862b66f113f90c0c9f2ff901df684135",
+          "path": "packages/flutter/lib/src/services/text_input.dart"
+        },
+        {
+          "digest": "sha256:d579841ac35e72085bffb720142432342baaf7c9c895adfc7bcbb8bd3b7ca9fd",
+          "path": "packages/flutter/lib/src/widgets/editable_text.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Text input・IME"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "push/pop、result、拒否、復元を観測する",
+      "domain": "navigation",
+      "id": "navigation.imperative",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:3f4d95a1e02f20cb139c8fb0fd739bbe02738282d5130a4747155ec02f5de543",
+      "sdk_sources": [
+        {
+          "digest": "sha256:80c0bead88a92c921691955922cc5f7d9bd3fa2bdc336d254110c63d1b54dea2",
+          "path": "packages/flutter/lib/src/widgets/navigator.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Navigator imperative routing"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "RouteInformation、back dispatch、redirect、復旧を比較する",
+      "domain": "navigation",
+      "id": "navigation.declarative-router",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:27629a2c70e4d3c29e542e88798920ddbc78d4b63cdf1a07525d7dd579299df2",
+      "sdk_sources": [
+        {
+          "digest": "sha256:fe4bbbe824d7749d0ed4dfcbc405b30512d7c2dceb042e4a50dfa7a9edaa70b2",
+          "path": "packages/flutter/lib/src/widgets/app.dart"
+        },
+        {
+          "digest": "sha256:8e7d6b76086b5cffed3354f7282d1bdd1e24d3d3ab95f908b5fda904afa76b88",
+          "path": "packages/flutter/lib/src/widgets/router.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Router declarative navigation"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "cold/warm link、未知Route、history回復を観測する",
+      "domain": "navigation",
+      "id": "navigation.deep-link-restoration",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:e84b4ca1548df7c5c6479a7a80ef6ce6b2063b0a670a40b589ae6618c62b2d82",
+      "sdk_sources": [
+        {
+          "digest": "sha256:fe4bbbe824d7749d0ed4dfcbc405b30512d7c2dceb042e4a50dfa7a9edaa70b2",
+          "path": "packages/flutter/lib/src/widgets/app.dart"
+        },
+        {
+          "digest": "sha256:35c1fea632aebc5274a4abff3ba133ea54e7925a0345e23159f44df88d5f1af9",
+          "path": "packages/flutter/lib/src/widgets/restoration.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Deep link・history・restoration"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "通知、batch、dispose、失敗後の整合性を比較する",
+      "domain": "state",
+      "id": "state.change-notifier",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:a3491a5368c95a57666bcdc74fd812cb8b8bc32e96eac3f9c676bde164cc6910",
+      "sdk_sources": [
+        {
+          "digest": "sha256:caad456ccc80e4485c2ddbd4fc32f98ed7bb10c9a3110f6587109c6895f5d040",
+          "path": "packages/flutter/lib/src/foundation/change_notifier.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "ChangeNotifier state ownership"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "依存登録、選択的rebuild、境界、detachを観測する",
+      "domain": "state",
+      "id": "state.inherited-dependency",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:65ccf917eb7cf371443835aa57a35be00bf5943a5e32378305e8073d00331f29",
+      "sdk_sources": [
+        {
+          "digest": "sha256:e7a9b820923c0c98ae650d2adc28f54a43755b780609a14358f0f255dabf572f",
+          "path": "packages/flutter/lib/src/widgets/framework.dart"
+        },
+        {
+          "digest": "sha256:44a0ae641ad16b60f8ae2640a994bfde8bf90717d0c1b2b80e3388ab6785b339",
+          "path": "packages/flutter/lib/src/widgets/inherited_notifier.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Inherited dependency propagation"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "cancel、stale completion、isolate failure、再試行を比較する",
+      "domain": "state",
+      "id": "state.async-isolate-ordering",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:4b137a72bc7ae08f471a7ba42f86551ce877ea4200c80a78e7058dc23ef986a7",
+      "sdk_sources": [
+        {
+          "digest": "sha256:f3c65eaebd0daa70a020988a8e3c1d356a792ed9324031df12d80fd23dac1b43",
+          "path": "bin/cache/dart-sdk/lib/async/async.dart"
+        },
+        {
+          "digest": "sha256:635b51d99245dd38c0a8782961e80d1ad1f4cd2852750fbab24d2962a952f1f2",
+          "path": "bin/cache/dart-sdk/lib/isolate/isolate.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Async・Isolate・ordering"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "process loss相当、corrupt data、version差、復元を観測する",
+      "domain": "state",
+      "id": "state.restoration",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:30ed1c874b0170e49ac7d665eb38850ad688f0864093590f65141eb77095ac13",
+      "sdk_sources": [
+        {
+          "digest": "sha256:46ab4d3d6de0bb6c814963b651b0d0043b37a2676c4fed7208610ea7d452855c",
+          "path": "packages/flutter/lib/src/services/restoration.dart"
+        },
+        {
+          "digest": "sha256:35c1fea632aebc5274a4abff3ba133ea54e7925a0345e23159f44df88d5f1af9",
+          "path": "packages/flutter/lib/src/widgets/restoration.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Restoration state"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps"
+      ],
+      "capability": "label、role、state、merge、live regionをPlatform bridgeで検証する",
+      "domain": "accessibility",
+      "id": "accessibility.semantics-tree",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:4730a23ffe30745e76640d728583c39d45e33805d968a1d33f94e13cb1a15d25",
+      "sdk_sources": [
+        {
+          "digest": "sha256:56aa1c83878edb05757630a82878f2cd9ab0af274580f078b3d7f04729c6bb3f",
+          "path": "engine/src/flutter/lib/ui/semantics.dart"
+        },
+        {
+          "digest": "sha256:2a575725ea29b7d232760fb806abf31ae6f475340151a3b5dad50d8072b363b2",
+          "path": "packages/flutter/lib/src/semantics/binding.dart"
+        },
+        {
+          "digest": "sha256:b76165c41486de81d1b5df499b616064966ec3fc1509b100c42c296829c7590b",
+          "path": "packages/flutter/lib/src/semantics/semantics.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Semantics tree"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "assistive input、拡大、high contrast、復帰を実Runtimeで比較する",
+      "domain": "accessibility",
+      "id": "accessibility.focus-text-scale",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:92623227df28b7e4f455c72f4b56a9ee4d0bd1a3bf36f3ceb72fdd5531f916c2",
+      "sdk_sources": [
+        {
+          "digest": "sha256:6095da6b738590454bfe60a76c2ed860346edc6ad42c6535800a1ac637fe1e4d",
+          "path": "packages/flutter/lib/src/widgets/focus_manager.dart"
+        },
+        {
+          "digest": "sha256:70e7918174e1b5dd71d6a8e9530d70feeddc292b6550f097194a5bacfa4e9b12",
+          "path": "packages/flutter/lib/src/widgets/media_query.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Focus・text scale・contrast"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "locale選択、未対応Locale、RTL、runtime変更を比較する",
+      "domain": "localization",
+      "id": "localization.locale-resolution",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:ea2af565bacff21af20ba7f2ab2eff38e084af7e53cb8196c5017cc1c65119b9",
+      "sdk_sources": [
+        {
+          "digest": "sha256:f52607c80ff30a26709916fff8e6c9a5cbc4bd4377b75410f5241ea9697d1bc9",
+          "path": "packages/flutter/lib/src/material/app.dart"
+        },
+        {
+          "digest": "sha256:04d32cf5dedec9a319a02c58456acef8c595b65b2497c4754a971072a848b693",
+          "path": "packages/flutter/lib/src/widgets/localizations.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Locale resolution・fallback"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "成功、timeout、拒否、TLS失敗、再接続を隔離Serverで観測する",
+      "domain": "network",
+      "id": "network.http-tls",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:fbc865a74e6134c72379decbdadb49bd3efc0600589f35f589db72abc90b8a3a",
+      "sdk_sources": [
+        {
+          "digest": "sha256:94a61f118c3e3dc5d92d60c92cf9cc15bb30d04fc70e3079deba5cf21db5f385",
+          "path": "bin/cache/dart-sdk/lib/io/io.dart"
+        },
+        {
+          "digest": "sha256:efead7dc89e2c146f7801321d07169d06ed6bdf452b297eb70666e4d7536d835",
+          "path": "bin/cache/dart-sdk/lib/io/secure_socket.dart"
+        },
+        {
+          "digest": "sha256:e2ecbeb4bf19e25ac06cc9f6f020e1e779777240094ddb879b3b097620516e37",
+          "path": "bin/cache/dart-sdk/lib/io/security_context.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "HTTP・TLS・certificate boundary"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "fetch相当、CORS拒否、offline、retryをBrowserで観測する",
+      "domain": "network",
+      "id": "network.web-fetch-cors",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:1bb1824d41d357882edf561a96fea8ee6f537a112a2eb03fe8b7eef045190f12",
+      "sdk_sources": [
+        {
+          "digest": "sha256:eb8e7ebc5aeb7b3de12aa274d5a92d8933fc364d645e9c4becf74ad0e829b69e",
+          "path": "bin/cache/dart-sdk/lib/html/dart2js/html_dart2js.dart"
+        },
+        {
+          "digest": "sha256:2396e8da3a3485b911a5c8c8744a519d5bde7938fac5a503c3e4bb6b232045e8",
+          "path": "bin/cache/dart-sdk/lib/js_interop/js_interop.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Web network・CORS"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "write、境界容量、権限拒否、破損、回復を比較する",
+      "domain": "storage",
+      "id": "storage.file-atomicity",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "macos-host",
+        "linux-host",
+        "windows-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:9409024e474abae32fcc0788d06c9285b4728d1ef32316e7eae401aa67ddf56a",
+      "sdk_sources": [
+        {
+          "digest": "sha256:938dba699cfce2755162d7044f9da50ea53cc7e2f59f6ad14d42115c93315b7f",
+          "path": "bin/cache/dart-sdk/lib/io/file.dart"
+        },
+        {
+          "digest": "sha256:b103af4d5250589088457c9d8456877694e5977a680be6f5e95d72ccf80667c1",
+          "path": "bin/cache/dart-sdk/lib/io/file_impl.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "File storage・atomicity"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "保存、quota、拒否、破損、clear/recoveryをBrowserで観測する",
+      "domain": "storage",
+      "id": "storage.web-persistence",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:7aeb84240a0a7651c3a0c90763066e31a5a036f643dd60947520728aa6d267dc",
+      "sdk_sources": [
+        {
+          "digest": "sha256:037e5fdf4ae0794bc7745faaea4a607e27443738501ed9a5890729bc7ac1829e",
+          "path": "bin/cache/dart-sdk/lib/indexed_db/dart2js/indexed_db_dart2js.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Web persistence"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "codec、正常、未実装、native例外、再接続を双方向Runtimeで観測する",
+      "domain": "platform-integration",
+      "id": "platform.method-channel",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "macos-host",
+        "linux-host",
+        "windows-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:90a522edf8b0a1e0458b2aff204f020c09d0cba00e7915acd8e36ba706d6a21e",
+      "sdk_sources": [
+        {
+          "digest": "sha256:8f06a2bcecef0f8868deb393d197c180aacde2f2ec74b8d44158f0a605dfdb51",
+          "path": "packages/flutter/lib/src/services/message_codecs.dart"
+        },
+        {
+          "digest": "sha256:857573f18a3c329a71a990f5355f49e29f25561d0d5f2aa6ff292ba7154678c3",
+          "path": "packages/flutter/lib/src/services/platform_channel.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "MethodChannel runtime"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "stream、backpressure、cancel、codec failure、再購読を観測する",
+      "domain": "platform-integration",
+      "id": "platform.event-basic-channel",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:c95c59f61c1fa3da9dbab369df447fc36e1b6b49d3ec32bff88ebd98d35eb704",
+      "sdk_sources": [
+        {
+          "digest": "sha256:e3f1b11bc93ec388618f22a3b2d5501af2d4af134dc098e01b2a63df676d3b32",
+          "path": "packages/flutter/lib/src/services/binding.dart"
+        },
+        {
+          "digest": "sha256:857573f18a3c329a71a990f5355f49e29f25561d0d5f2aa6ff292ba7154678c3",
+          "path": "packages/flutter/lib/src/services/platform_channel.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "EventChannel・BasicMessageChannel runtime"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "登録、attach/detach、重複、欠落、再attachをPlugin Runtimeで観測する",
+      "domain": "platform-integration",
+      "id": "platform.plugin-lifecycle",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "macos-host",
+        "linux-host",
+        "windows-host",
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:ba4c44a09b4c230315a5c1858f50739cc0259312adc25ea3e49d84bf48397a92",
+      "sdk_sources": [
+        {
+          "digest": "sha256:3e8731c1471be6f6cf6ca350420fe98c8291acc07887a93f0adcf2a715dab8ac",
+          "path": "engine/src/flutter/lib/ui/plugins.dart"
+        },
+        {
+          "digest": "sha256:6e0be8cf66c158f635db9f4a08a21677e4321b996cd024eca1c05c1627c9c027",
+          "path": "packages/flutter_tools/templates/plugin/README.md.tmpl"
+        },
+        {
+          "digest": "sha256:244c28c2a74a8b072024d8146e85c6ae9bee1ef42723e204ed1af92ae60b19df",
+          "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/build.gradle.kts.tmpl"
+        },
+        {
+          "digest": "sha256:5d195259d53be8fa28dbc6d7f1d3bcb7885d0a92f3bde2c3ba12d708b658a5d6",
+          "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/projectName_android.iml.tmpl"
+        },
+        {
+          "digest": "sha256:ca2e8f043eb681d3d73e4b36f118d2a5fa21c599fefad9550da66fa90050af64",
+          "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/src/main/java/androidIdentifier/pluginClass.java.tmpl"
+        },
+        {
+          "digest": "sha256:9ab4b33a60a6af830d4a77bb5c8d3af248755f05d40d16583cc508a83db71193",
+          "path": "packages/flutter_tools/templates/plugin/android-java.tmpl/src/test/java/androidIdentifier/pluginClassTest.java.tmpl"
+        },
+        {
+          "digest": "sha256:dd41f474134f278e6d19804d185aed61c68e8c730eb31d27120acc9eb24f584a",
+          "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/build.gradle.kts.tmpl"
+        },
+        {
+          "digest": "sha256:ac624a43903b997739491187e762d6e0a69d02985ed343d14d9663db7ed9e79c",
+          "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/projectName_android.iml.tmpl"
+        },
+        {
+          "digest": "sha256:d2a7c998af004169878a85751c4f63f58809be806d0aafcccb5f73d6063fad75",
+          "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/src/main/kotlin/androidIdentifier/pluginClass.kt.tmpl"
+        },
+        {
+          "digest": "sha256:f689f023dac6e1ec4b305676a9703bffc112689d94335e9029f630d0e12d585b",
+          "path": "packages/flutter_tools/templates/plugin/android-kotlin.tmpl/src/test/kotlin/androidIdentifier/pluginClassTest.kt.tmpl"
+        },
+        {
+          "digest": "sha256:d2e03a989d8c77a5bc181ebd7ba45253c9b64c39a0448735b4a94aebb7e0b155",
+          "path": "packages/flutter_tools/templates/plugin/android.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:504f28f87e17dd6c30fd1def773b8f1907b97ab24d22dee29ee99648006aee81",
+          "path": "packages/flutter_tools/templates/plugin/android.tmpl/settings.gradle.kts.tmpl"
+        },
+        {
+          "digest": "sha256:86fd09b72666e3b42842b8b21dad52f432018251c74c0b002f5ace932fc6b819",
+          "path": "packages/flutter_tools/templates/plugin/android.tmpl/src/main/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:e9cfa4dfcb9bab821da4048c87dd0d0622383a6d2d76bb0edd8c7013030924a1",
+          "path": "packages/flutter_tools/templates/plugin/ios.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:eee409dce1fb71df2dac72613904f4c9a17abfab24960d3f154303cf7f70c9b8",
+          "path": "packages/flutter_tools/templates/plugin/ios.tmpl/projectName.podspec.tmpl"
+        },
+        {
+          "digest": "sha256:96278408fb0a37744c2ca8ac51f469e231e6847050470b8b12b94ae81d554bbe",
+          "path": "packages/flutter_tools/templates/plugin/lib/projectName.dart.tmpl"
+        },
+        {
+          "digest": "sha256:276dd3781eff466210a2c8f728d8a663a43e7a6d4b79f709d73c5d231b4dc206",
+          "path": "packages/flutter_tools/templates/plugin/lib/projectName_method_channel.dart.tmpl"
+        },
+        {
+          "digest": "sha256:8ece093d5b506594ac3c9df7b530c1174156d0a88767d8974620fda4b2b60d3c",
+          "path": "packages/flutter_tools/templates/plugin/lib/projectName_platform_interface.dart.tmpl"
+        },
+        {
+          "digest": "sha256:4ce7f4ca9bf8115ee929656c9d893507a67da1c36022028bf6ca3e2077ffd491",
+          "path": "packages/flutter_tools/templates/plugin/lib/projectName_web.dart.tmpl"
+        },
+        {
+          "digest": "sha256:53bb25d2736ca6a8f6a2ac20a986ac84b99a44e509f3138dc5a441187817ff4f",
+          "path": "packages/flutter_tools/templates/plugin/linux.tmpl/CMakeLists.txt.tmpl"
+        },
+        {
+          "digest": "sha256:6f797bcb456a01facce710ee31b36d6fff387abd839871528c80ee48968020ef",
+          "path": "packages/flutter_tools/templates/plugin/linux.tmpl/include/projectName.tmpl/pluginClassSnakeCase.h.tmpl"
+        },
+        {
+          "digest": "sha256:b5c64e8511310e793b95ea7da0a8ca32177719d40e4fbd00935443b7f40b50b6",
+          "path": "packages/flutter_tools/templates/plugin/linux.tmpl/pluginClassSnakeCase.cc.tmpl"
+        },
+        {
+          "digest": "sha256:0a7fabc09239f1a63786c06b362d558e2dad3e2da258fe83faae5f2430468af3",
+          "path": "packages/flutter_tools/templates/plugin/linux.tmpl/pluginClassSnakeCase_private.h.tmpl"
+        },
+        {
+          "digest": "sha256:1cf6e1b931215820b1ea6731519aa263db19300af83dc5c133ade0adc759d4f6",
+          "path": "packages/flutter_tools/templates/plugin/linux.tmpl/test/pluginClassSnakeCase_test.cc.tmpl"
+        },
+        {
+          "digest": "sha256:45b48bf7ffa2b82dbbfd6c2f68b1a8c1056773a8def127e7d46203c8996f0e03",
+          "path": "packages/flutter_tools/templates/plugin/test/projectName_method_channel_test.dart.tmpl"
+        },
+        {
+          "digest": "sha256:44dcebd029943e2a716c73176e65d64ddea18d89ba45ff1f4679c302bd0ed970",
+          "path": "packages/flutter_tools/templates/plugin/test/projectName_test.dart.tmpl"
+        },
+        {
+          "digest": "sha256:85bccfafa7674923609e429d169ce189c6df04af817f7429f9a2ca44f145d2d4",
+          "path": "packages/flutter_tools/templates/plugin/windows.tmpl/CMakeLists.txt.tmpl"
+        },
+        {
+          "digest": "sha256:5d7e41528f08173b9b97600c38b70a2fb73c7ed86f3a7ec1ac4d8ecf0efd031a",
+          "path": "packages/flutter_tools/templates/plugin/windows.tmpl/include/projectName.tmpl/pluginClassSnakeCase_c_api.h.tmpl"
+        },
+        {
+          "digest": "sha256:eeb7abbe47a81b11ddf6bf9fa551306f2b36ee339182ac7b36c2b71138c4c68b",
+          "path": "packages/flutter_tools/templates/plugin/windows.tmpl/pluginClassSnakeCase.cpp.tmpl"
+        },
+        {
+          "digest": "sha256:594a908fe70d7e28c1a58ea0e5f5fea492ceadc5877a6336a898ad6feefebc21",
+          "path": "packages/flutter_tools/templates/plugin/windows.tmpl/pluginClassSnakeCase.h.tmpl"
+        },
+        {
+          "digest": "sha256:0b538d8f9c1b774278eb79672542a0cac2336226978f20944fcec8331a445024",
+          "path": "packages/flutter_tools/templates/plugin/windows.tmpl/pluginClassSnakeCase_c_api.cpp.tmpl"
+        },
+        {
+          "digest": "sha256:4653a7e2f4896ee7443f4e327908c64400f0ad5d4c8dc7631221c37c2cccc313",
+          "path": "packages/flutter_tools/templates/plugin/windows.tmpl/test/pluginClassSnakeCase_test.cpp.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Plugin registration・Activity lifecycle"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "native view、gesture、resize、dispose、surface回復を観測する",
+      "domain": "platform-integration",
+      "id": "platform.platform-views",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:63bb51e2a1a6ab70808a70b3fd5dcba0a3a44823f0c69e0541633f72d5aab38a",
+      "sdk_sources": [
+        {
+          "digest": "sha256:378a40f8bc2b77bdfa652898532725aecfc4127a17aeda14d248f8a15a842d0b",
+          "path": "packages/flutter/lib/src/services/platform_views.dart"
+        },
+        {
+          "digest": "sha256:33e46e8068c5b3e75c73949bca5fc3e945ceae343e7c3ddbcab7cbbd63c13c10",
+          "path": "packages/flutter/lib/src/widgets/platform_view.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Platform Views composition"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "ABI、symbol、invalid input、load failure、resource recoveryを比較する",
+      "domain": "platform-integration",
+      "id": "platform.ffi-native-assets",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "macos-host",
+        "linux-host",
+        "windows-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:56afb0c65cc74762889fa3a7a3597007455ee9e947abd1885c578fbeb19b14fb",
+      "sdk_sources": [
+        {
+          "digest": "sha256:611d4e6f24c46aa65a3c3d8b1762f7d7c9fbf974cca1afb584827c36a888d204",
+          "path": "bin/cache/dart-sdk/lib/ffi/ffi.dart"
+        },
+        {
+          "digest": "sha256:ade895c6374f13aafb7e03437feca1dd64fda1f5891c312e53130cdf4c027b64",
+          "path": "packages/flutter_tools/templates/package_ffi/.gitignore.tmpl"
+        },
+        {
+          "digest": "sha256:7cb0ebb2be5eed03e3c6bacdef27adef7204d2304bce296c12424367b9bfcd9c",
+          "path": "packages/flutter_tools/templates/package_ffi/.metadata.tmpl"
+        },
+        {
+          "digest": "sha256:3790c391cc0632af71ae53941e38940072042e23a8649eee2898e939804a918a",
+          "path": "packages/flutter_tools/templates/package_ffi/CHANGELOG.md.tmpl"
+        },
+        {
+          "digest": "sha256:422e0de8e3275febf5c41a5ccf891f68f16bc40e1b5dca26e50913b307ef794e",
+          "path": "packages/flutter_tools/templates/package_ffi/LICENSE.tmpl"
+        },
+        {
+          "digest": "sha256:c52af3e9a25111f88b096912a60008674d1c4363c9de5a64b033b69393dc88bf",
+          "path": "packages/flutter_tools/templates/package_ffi/README.md.tmpl"
+        },
+        {
+          "digest": "sha256:0349d6d825f26f0468bb3715590961481ab4d97e5ae0bf8cd1d2922e700e5794",
+          "path": "packages/flutter_tools/templates/package_ffi/analysis_options.yaml.tmpl"
+        },
+        {
+          "digest": "sha256:b40739b6d1dcce67e858c30be5674d2092bd37747e0bb55dfbf7aa35bc7eaea3",
+          "path": "packages/flutter_tools/templates/package_ffi/ffigen.yaml.tmpl"
+        },
+        {
+          "digest": "sha256:34f877014a2308c74729e9730be326db600f85c86d07f114bbb7de8d9b3a2cea",
+          "path": "packages/flutter_tools/templates/package_ffi/hook/build.dart.tmpl"
+        },
+        {
+          "digest": "sha256:c1174ae75947863b20d760e9d1507c531995032eed4d7e14e839bc855597bd21",
+          "path": "packages/flutter_tools/templates/package_ffi/lib/projectName.dart.tmpl"
+        },
+        {
+          "digest": "sha256:c08606e9a05ab020471af97dab7d652702730fda3b051bc4d3e44f3a2a3eb975",
+          "path": "packages/flutter_tools/templates/package_ffi/lib/projectName_bindings_generated.dart.tmpl"
+        },
+        {
+          "digest": "sha256:ce2366a46ae5c5620695a48c67f754d3537dc95c09a725c86a6f363adbf25cee",
+          "path": "packages/flutter_tools/templates/package_ffi/pubspec.yaml.tmpl"
+        },
+        {
+          "digest": "sha256:e68090a10bc241f978e422050619eff5cf7c4f2b37a92088b62b081dddd90786",
+          "path": "packages/flutter_tools/templates/package_ffi/src.tmpl/projectName.c.tmpl"
+        },
+        {
+          "digest": "sha256:cef96eea6e4fb2cfd48b786562d46a6f71e3d199508e15acb60b81e948c140cb",
+          "path": "packages/flutter_tools/templates/package_ffi/src.tmpl/projectName.h.tmpl"
+        },
+        {
+          "digest": "sha256:801de1dd1bc7e2e8b526aec1313e18eb0f442587e76296ecb31a474582d194bc",
+          "path": "packages/flutter_tools/templates/package_ffi/test/projectName_test.dart.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "FFI・Native Assets"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "engine cache、entrypoint、view attach、host failure、engine recoveryをHost Appで観測する",
+      "domain": "platform-integration",
+      "id": "platform.add-to-app-android",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "android-device"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:90adb04ea8b10035c8b34cbc00e4443dca9fbf464f7586b7d80cf54126d0fd8b",
+      "sdk_sources": [
+        {
+          "digest": "sha256:394d027f5cdaa085dc1b5d0bfee4aeaa7a765915308a2f4622cd9d3b5300a09a",
+          "path": "packages/flutter_tools/templates/module/android/deferred_component/build.gradle.tmpl"
+        },
+        {
+          "digest": "sha256:c2f6646a5967132aeb7059fc271f78bfb18d8a1e134024b163119d4f39f798c5",
+          "path": "packages/flutter_tools/templates/module/android/deferred_component/src/main/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:d4382efd0a5f7dc29eda241a6398b3c8c9cc3d45f7a336410415d7b6581b3958",
+          "path": "packages/flutter_tools/templates/module/android/gradle/build.gradle.tmpl"
+        },
+        {
+          "digest": "sha256:0f82b18017fba6bb5ce3aa4b2d1a00c9382fc8aae7b1d9326e44b18abd66d80b",
+          "path": "packages/flutter_tools/templates/module/android/gradle/gradle.properties.tmpl"
+        },
+        {
+          "digest": "sha256:f85bd24fa11f25bd0a20a216f5b5e83bdad81fcbc1c3053d8443eaefa3bb251b",
+          "path": "packages/flutter_tools/templates/module/android/gradle/settings.gradle.tmpl"
+        },
+        {
+          "digest": "sha256:86fd09b72666e3b42842b8b21dad52f432018251c74c0b002f5ace932fc6b819",
+          "path": "packages/flutter_tools/templates/module/android/gradle/src/main/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:82ef2f1359d5e6f3d0c309e747c71358ac9c0fdb02a2c02e7d22531702a77db4",
+          "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/build.gradle.tmpl"
+        },
+        {
+          "digest": "sha256:4b93f36371290b1427b841d87794e5a851485f3cc040029ef2603f839f80ed3e",
+          "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:f77f93b51a7059eb65359080ec9d47d753c8581cac9bf8923d0cdb546605caf1",
+          "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/java/androidIdentifier/host/MainActivity.java.tmpl"
+        },
+        {
+          "digest": "sha256:94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a",
+          "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/res/drawable/launch_background.xml"
+        },
+        {
+          "digest": "sha256:6a7c8f0d703e3682108f9662f813302236240d3f8f638bb391e32bfb96055fef",
+          "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/res/mipmap-hdpi/ic_launcher.png"
+        },
+        {
+          "digest": "sha256:d7d8bd4f58a86b3e9dcee12295e6d9025eaa1f9b479d39ec5dc1201f4104eaca",
+          "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/res/values/styles.xml"
+        },
+        {
+          "digest": "sha256:2ad74d282cc5bec8f033fc0865e3d3177dc3a7b519cc8955b55e7dcc3255daee",
+          "path": "packages/flutter_tools/templates/module/android/host_app_editable/settings.gradle.copy.tmpl"
+        },
+        {
+          "digest": "sha256:c4db370e28739bfc6005fa2b97c7f5d18b981ad049b0152e3844a0981ac001f1",
+          "path": "packages/flutter_tools/templates/module/android/host_app_ephemeral/settings.gradle.tmpl"
+        },
+        {
+          "digest": "sha256:b84e7fa4a46ff3697c225bb313746d7d5fc6b158d88b3d677c55eb25949e2e68",
+          "path": "packages/flutter_tools/templates/module/android/library_new_embedding/Flutter.tmpl/build.gradle.tmpl"
+        },
+        {
+          "digest": "sha256:fa4ac80eb18d5106725a29afa4e4b4947ff0863a67871ce78bcc16452aad0c2e",
+          "path": "packages/flutter_tools/templates/module/android/library_new_embedding/Flutter.tmpl/flutter.iml.copy.tmpl"
+        },
+        {
+          "digest": "sha256:13f787bb3d807e808b4fcc80b04effec9a5d2248e86fd6e0d4e9ddf34ce0c214",
+          "path": "packages/flutter_tools/templates/module/android/library_new_embedding/Flutter.tmpl/src/main/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:0e9680ea87bec3c3ced44285c174b9a18158eea73dadf6afb52f7d1d496a720e",
+          "path": "packages/flutter_tools/templates/module/android/library_new_embedding/include_flutter.groovy.copy.tmpl"
+        },
+        {
+          "digest": "sha256:40b7b56302557c6256fbc4ecfc51d4d0574215926fb195f473d9130148964107",
+          "path": "packages/flutter_tools/templates/module/android/library_new_embedding/settings.gradle.copy.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Android Add-to-App runtime"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "engine、route、view controller、host failure、再attachをHost Appで観測する",
+      "domain": "platform-integration",
+      "id": "platform.add-to-app-ios",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "ios-simulator",
+        "ios-device"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:b74336d2b3cfdc9a75deee7e4f539e939b907930a9eff806939e405e9b905851",
+      "sdk_sources": [
+        {
+          "digest": "sha256:7e874f0d481fb545baf18c2098cef94b696dcd86ed175dd7a9e4ff721af99d35",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Config.tmpl/Debug.xcconfig"
+        },
+        {
+          "digest": "sha256:de63ac2e83790c9c36ba0ec1cc0fcd653280350d0b6053069599391a7c97babd",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Config.tmpl/Flutter.xcconfig"
+        },
+        {
+          "digest": "sha256:7e874f0d481fb545baf18c2098cef94b696dcd86ed175dd7a9e4ff721af99d35",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Config.tmpl/Release.xcconfig"
+        },
+        {
+          "digest": "sha256:56223d9c5dc9edfad99964b879bed8f627a4c7cb433c103156c19bbc85bfcde2",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/AppDelegate.h"
+        },
+        {
+          "digest": "sha256:b9544b3a5b380b98bff7a0a33d7449b4fd1f309d8057bca57bf72b732f8a4a96",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/AppDelegate.m"
+        },
+        {
+          "digest": "sha256:3b1e214f466ffedff74baa5598ad5c4421130eea6bc8d57b8fe23435e8280ae4",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Contents.json"
+        },
+        {
+          "digest": "sha256:7770183009e914112de7d8ef1d235a6a30c5834424858e0d2f8253f6b8d31926",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png"
+        },
+        {
+          "digest": "sha256:5925dab509451f9ecbb12ce8a625f9d4c104718ee20caff8b1b51032d1cd8946",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png"
+        },
+        {
+          "digest": "sha256:c4d9a284c12301d0f50e248ec53ed51a19a10147b774b23308399250b0d44c55",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png"
+        },
+        {
+          "digest": "sha256:bf97f9d3233f33e1389b09f7b8add53741300cb834d6c7a5ca32cbed363a4fb2",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png"
+        },
+        {
+          "digest": "sha256:285442f69a06b45d9d79df80321815b546473548a37b78819b68959c7b8ed237",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png"
+        },
+        {
+          "digest": "sha256:2ab64af8ac727ea99c6ab9eaff847f46fbf2a9a0a78a0abcbf3180f3851645b4",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png"
+        },
+        {
+          "digest": "sha256:9dca09f4e5ed5684d3c4dff41f4e8b7cb864b438172d72be069315fa362930f9",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png"
+        },
+        {
+          "digest": "sha256:c4d9a284c12301d0f50e248ec53ed51a19a10147b774b23308399250b0d44c55",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png"
+        },
+        {
+          "digest": "sha256:d5ad04de321ef37cacc5a7b960afcce71bdcb96fa020c48249c1545dd1a0f497",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png"
+        },
+        {
+          "digest": "sha256:809abfe75c440770c13c4e2e46d09603c22053e9d4e0e2275dcb9c1dcfbb2c75",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png"
+        },
+        {
+          "digest": "sha256:809abfe75c440770c13c4e2e46d09603c22053e9d4e0e2275dcb9c1dcfbb2c75",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png"
+        },
+        {
+          "digest": "sha256:3db08cb79e7b01b9e81f956e3a0ae10148d0fafde3ea7aa70048df905aa52cfd",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png"
+        },
+        {
+          "digest": "sha256:23c13d463f5dca5c1f14a14934003601c29f1218fd461016d8a22cef579a665f",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png"
+        },
+        {
+          "digest": "sha256:6db7726530d71d3f52cb59793eb691313baa04796e129e1e043c0a58a1bffd2f",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png"
+        },
+        {
+          "digest": "sha256:cee565f5e62116569b64980b209fd5ca4b3d3739011f5343250b33a1a2c6eb65",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png"
+        },
+        {
+          "digest": "sha256:ccc7950fd5f5b82067c85f667940a9d59189151460761ece8098ca78daa19469",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/Contents.json"
+        },
+        {
+          "digest": "sha256:93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/LaunchImage.png"
+        },
+        {
+          "digest": "sha256:93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png"
+        },
+        {
+          "digest": "sha256:93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png"
+        },
+        {
+          "digest": "sha256:a985b626c4f7546a8ba392d135e9226c3547c8e2b46895f5f2bdf40d7b14ef9f",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Assets.xcassets/LaunchImage.imageset/README.md"
+        },
+        {
+          "digest": "sha256:857e61203b3deafb05766d8fcda898b86a7cb6f3d5e385ecc9926c4d698215e9",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Base.lproj/LaunchScreen.storyboard"
+        },
+        {
+          "digest": "sha256:fd367b6c43006d61b730f674970dd48b9f662c8f2264e52ffc1558102a2c9f2d",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Base.lproj/Main.storyboard"
+        },
+        {
+          "digest": "sha256:bb7a1f15fa552f9464453286d2fe403e3d6b8cb7f86dba0e67827c804f80f4e2",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/Info.plist.tmpl"
+        },
+        {
+          "digest": "sha256:77aea35ec8ae1e214a84fdd9db920a9fcaa9091042fef4e1bb74386532c24977",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/SceneDelegate.h"
+        },
+        {
+          "digest": "sha256:5b108002ac8b52a1ba8b4ea763668cc886015d10350a8fd4aef99b079dcab524",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/SceneDelegate.m"
+        },
+        {
+          "digest": "sha256:3c0819ab0d1650de7a5f33cfe519bf0ffd1c1e13354d8337532a731951aa060e",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.tmpl/main.m"
+        },
+        {
+          "digest": "sha256:75f2c308cb645af8af5eeec4af5ceefa3cdb91627c7830b0f18efc1ae3efbc08",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.pbxproj.tmpl"
+        },
+        {
+          "digest": "sha256:7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.xcworkspace/contents.xcworkspacedata"
+        },
+        {
+          "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+        },
+        {
+          "digest": "sha256:11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings"
+        },
+        {
+          "digest": "sha256:bb952e5b2be329e496c0d8d1e8153aee31d620e7529149f9be9203330c2718ff",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcodeproj.tmpl/xcshareddata/xcschemes/Runner.xcscheme"
+        },
+        {
+          "digest": "sha256:46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcworkspace.tmpl/contents.xcworkspacedata"
+        },
+        {
+          "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcworkspace.tmpl/xcshareddata/IDEWorkspaceChecks.plist"
+        },
+        {
+          "digest": "sha256:11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral/Runner.xcworkspace.tmpl/xcshareddata/WorkspaceSettings.xcsettings"
+        },
+        {
+          "digest": "sha256:0825df7111781623377881c6505df1604ca2f27b6257eecd7ad9ae8c4bd3da5e",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Config.tmpl/Debug.xcconfig"
+        },
+        {
+          "digest": "sha256:2212ec15694c13be4e17226fb5153ea40e4c21de5ddb4d4d17a832eeaafdd2e2",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Config.tmpl/Release.xcconfig"
+        },
+        {
+          "digest": "sha256:52bc94e8f278afee26d413e09510169fa816dd8864d5cd30c32c96dcdfa207d1",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Podfile.copy.tmpl"
+        },
+        {
+          "digest": "sha256:ea3671d16fe8415ca0c9fc6312a12f7bc38f1dbdc17486ea37f64f7d0ad1bee8",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Runner.tmpl/AppDelegate.h"
+        },
+        {
+          "digest": "sha256:11c0db7e19e2d5db076f18226c861c2d5b18bf3e0e7a19a65a21922886271462",
+          "path": "packages/flutter_tools/templates/module/ios/host_app_ephemeral_cocoapods/Runner.tmpl/AppDelegate.m"
+        },
+        {
+          "digest": "sha256:da12038f9b2688a8a26160fea2609fa8fcb11421448c109f09c0f573efe7698d",
+          "path": "packages/flutter_tools/templates/module/ios/library/Flutter.tmpl/AppFrameworkInfo.plist"
+        },
+        {
+          "digest": "sha256:3174675a4e539e84e4a6241ae490f4b66fef4b87574e9d14f6c552645609ca2e",
+          "path": "packages/flutter_tools/templates/module/ios/library/Flutter.tmpl/README.md"
+        },
+        {
+          "digest": "sha256:c32af76952791c4719e5aa3fa237b3f65eaad2605356f622b2e2a3f60df55d18",
+          "path": "packages/flutter_tools/templates/module/ios/library/Flutter.tmpl/podhelper.rb.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "iOS Add-to-App runtime"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "inactive、paused、detached、resumeと状態整合を観測する",
+      "domain": "background-lifecycle",
+      "id": "background.app-lifecycle",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:1d569a108137b653c710a04f6c73c9e78f8a48e0e5e7f8499b0e0ef3cdad80ac",
+      "sdk_sources": [
+        {
+          "digest": "sha256:5cf49c08d47c1f01e377cebed40c547a2fe2b2e2e974aa360eb4d73e8303caac",
+          "path": "packages/flutter/lib/src/widgets/app_lifecycle_listener.dart"
+        },
+        {
+          "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+          "path": "packages/flutter/lib/src/widgets/binding.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Foreground・background lifecycle"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "spawn、message、cancel、crash、restartをPlatform制約下で比較する",
+      "domain": "background-lifecycle",
+      "id": "background.isolate-work",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:e33d49199cab02f349b8e1b08a0ffc2acd0d8cac9a3671d7419b101b601879e7",
+      "sdk_sources": [
+        {
+          "digest": "sha256:635b51d99245dd38c0a8782961e80d1ad1f4cd2852750fbab24d2962a952f1f2",
+          "path": "bin/cache/dart-sdk/lib/isolate/isolate.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Background isolate work"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "determinism、boundary、rejection、failure、cleanupを比較する",
+      "domain": "testing",
+      "id": "testing.unit-widget",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "local-test-runner"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:e749be25dc456ace7b7043a50c39297725557de82bb3dcb28861254a58229d6e",
+      "sdk_sources": [
+        {
+          "digest": "sha256:c9921395b919f0efc24059e91e3ee4d39fd436671c54738831693b3c3d2263ae",
+          "path": "packages/flutter_test/lib/flutter_test.dart"
+        },
+        {
+          "digest": "sha256:0b2956d87e54f51d702e3f316f49187d3c0e69e379657fbccbebc2fe07933dc7",
+          "path": "packages/flutter_tools/lib/src/commands/test.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Unit・Widget test oracle"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "app lifecycleを含むend-to-end正常・失敗・回復をPlatform別に実行する",
+      "domain": "testing",
+      "id": "testing.integration-device",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:66831d114b10aee732f42b1f85b7cc9a334a0fb10f19ade940051ece3fad130a",
+      "sdk_sources": [
+        {
+          "digest": "sha256:555193ce967df424f45cfdd2b63cd054a59722e45aa211756d761c7bc40fca99",
+          "path": "packages/flutter_tools/lib/src/commands/drive.dart"
+        },
+        {
+          "digest": "sha256:f80d6c866c22108972859ce1fe65667be324c0d46d87b049c2bc7bf3670a9898",
+          "path": "packages/integration_test/lib/integration_test.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Integration test on real runner"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "debug/profile/release、invalid config、build failure、clean rebuildを比較する",
+      "domain": "build-release",
+      "id": "build.android",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-build-host",
+        "android-emulator"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:6cff2e3d35831cdc076499f767494174b57f0336a789ee51cd901c5de31cb05b",
+      "sdk_sources": [
+        {
+          "digest": "sha256:1d0acef991ea2b757673df344ebd385a6d7e7d14813774b289b46d3250e3df14",
+          "path": "packages/flutter_tools/lib/src/commands/build_apk.dart"
+        },
+        {
+          "digest": "sha256:b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/debug/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:0b0b08f95ba5eb37dfa8d5140487ca2040fd0400e64c3695ccedb7fed20c92a7",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:7ca6d5cec2169c5a98661a119db23a6f3399c8fef2256ff04f3a642831282478",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/drawable-v21/launch_background.xml"
+        },
+        {
+          "digest": "sha256:94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/drawable/launch_background.xml"
+        },
+        {
+          "digest": "sha256:6a7c8f0d703e3682108f9662f813302236240d3f8f638bb391e32bfb96055fef",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        },
+        {
+          "digest": "sha256:c7c0c0189145e4e32a401c61c9bdc615754b0264e7afae24e834bb81049eaf81",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        },
+        {
+          "digest": "sha256:e14aa40904929bf313fded22cf7e7ffcbf1d1aac4263b5ef1be8bfce650397aa",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        },
+        {
+          "digest": "sha256:4d470bf22d5c17d84edc5f82516d1ba8a1c09559cd761cefb792f86d9f52b540",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        },
+        {
+          "digest": "sha256:3c34e1f298d0c9ea3455d46db6b7759c8211a49e9ec6e44b635fc5c87dfb4180",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        },
+        {
+          "digest": "sha256:8c5bad5152f217e837519f9c15211d19f39bd45f5f67faf6dd81cb4b299e518f",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/values-night/styles.xml"
+        },
+        {
+          "digest": "sha256:937d7c82f539c72eb94fd3a3773f29b3d3fef1997213c92cb632298cedf4bda9",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/main/res/values/styles.xml"
+        },
+        {
+          "digest": "sha256:30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/app/src/profile/AndroidManifest.xml.tmpl"
+        },
+        {
+          "digest": "sha256:0f82b18017fba6bb5ce3aa4b2d1a00c9382fc8aae7b1d9326e44b18abd66d80b",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/gradle.properties.tmpl"
+        },
+        {
+          "digest": "sha256:6ee3776aef2884dc0862427c33a98ce1c28bcc8283dd3087a8e0d3db363de07e",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/gradle/wrapper/gradle-wrapper.properties.tmpl"
+        },
+        {
+          "digest": "sha256:d886cf6b9af4c9b6446c57a9cc8a45e6abb5a0df0c93957dfd1a766ed3a029d0",
+          "path": "packages/flutter_tools/templates/app/android.tmpl/settings.gradle.kts.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Android build・install・release"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "simulator/device/profile/release、config拒否、clean rebuildを比較する",
+      "domain": "build-release",
+      "id": "build.ios",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "ios-build-host",
+        "ios-simulator",
+        "ios-device"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:bef442858ece72ca1ae38b4c797a514f831ab786cd1d7952befb7a8356814625",
+      "sdk_sources": [
+        {
+          "digest": "sha256:53ff8228d33a023c2ae94a36e40f359575263ce2cae1594f911d870b7c8c1055",
+          "path": "packages/flutter_tools/lib/src/commands/build_ios.dart"
+        },
+        {
+          "digest": "sha256:37380775aeb2499662b7aca80f4ac4c95ae827c3ba2bfa179aa3e9af4812c623",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:da12038f9b2688a8a26160fea2609fa8fcb11421448c109f09c0f573efe7698d",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Flutter/AppFrameworkInfo.plist"
+        },
+        {
+          "digest": "sha256:a82d7765b37116ee4821d2cd1d65942febf8032353757ffb0826eabde785b4a6",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Flutter/Debug.xcconfig"
+        },
+        {
+          "digest": "sha256:a82d7765b37116ee4821d2cd1d65942febf8032353757ffb0826eabde785b4a6",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Flutter/Release.xcconfig"
+        },
+        {
+          "digest": "sha256:e3bbbb58546938bbaf30dae330ab888bf3bc2cf38c6fdd2845fa198caa04cad9",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcodeproj/project.pbxproj.tmpl"
+        },
+        {
+          "digest": "sha256:7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata"
+        },
+        {
+          "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+        },
+        {
+          "digest": "sha256:11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings"
+        },
+        {
+          "digest": "sha256:5b1d0a5a212307a5e4de37847c1b44752a9d0c775094a47705adbf8e69a3ed09",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme.tmpl"
+        },
+        {
+          "digest": "sha256:46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcworkspace/contents.xcworkspacedata"
+        },
+        {
+          "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+        },
+        {
+          "digest": "sha256:11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings"
+        },
+        {
+          "digest": "sha256:451c6d9ba0a2b3ff43092ea349c60fa79a91f1158b915eb29dbdd357cb95d7b8",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/AppDelegate.swift"
+        },
+        {
+          "digest": "sha256:3b1e214f466ffedff74baa5598ad5c4421130eea6bc8d57b8fe23435e8280ae4",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:ccc7950fd5f5b82067c85f667940a9d59189151460761ece8098ca78daa19469",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:a985b626c4f7546a8ba392d135e9226c3547c8e2b46895f5f2bdf40d7b14ef9f",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Assets.xcassets/LaunchImage.imageset/README.md"
+        },
+        {
+          "digest": "sha256:857e61203b3deafb05766d8fcda898b86a7cb6f3d5e385ecc9926c4d698215e9",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Base.lproj/LaunchScreen.storyboard"
+        },
+        {
+          "digest": "sha256:fd367b6c43006d61b730f674970dd48b9f662c8f2264e52ffc1558102a2c9f2d",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Base.lproj/Main.storyboard"
+        },
+        {
+          "digest": "sha256:6709e983e2f60f2a764c90233bb1617ae5e3a7b43bd6f407c80e55cead1775ee",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Info.plist.tmpl"
+        },
+        {
+          "digest": "sha256:1a8d11d01d1cc92c650c9c9ed35299240052d4683a15a719a2315ef44185e074",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/Runner-Bridging-Header.h"
+        },
+        {
+          "digest": "sha256:add68b905971dedfcc0d0b5b7118030de5925ba8c081ad9815463699e3a444ad",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/Runner/SceneDelegate.swift"
+        },
+        {
+          "digest": "sha256:df61883b5d1a3d36fe03f5d3ddf6bda38e43e0fe3130fd8ce89bd65cf39d38aa",
+          "path": "packages/flutter_tools/templates/app/ios.tmpl/RunnerTests/RunnerTests.swift.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "iOS build・install・release"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "JS/Wasm選択、base path、invalid config、load failure、cache recoveryを比較する",
+      "domain": "build-release",
+      "id": "build.web",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "web-build-host",
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:cb3100c4db78eb963577190f6d347615cc9dfa494397062f1c031ae586a96116",
+      "sdk_sources": [
+        {
+          "digest": "sha256:28b9780621e7b71b046312fb6bd741c1e6085f36c697be9f69fcc15589527b05",
+          "path": "packages/flutter_tools/lib/src/commands/build_web.dart"
+        },
+        {
+          "digest": "sha256:7ab2525f4b86b65d3e4c70358a17e5a1aaf6f437f99cbcc046dad73d59bb9015",
+          "path": "packages/flutter_tools/templates/app/web/favicon.png.copy.tmpl"
+        },
+        {
+          "digest": "sha256:3dce99077602f70421c1c6b2a240bc9b83d64d86681d45f2154143310c980be3",
+          "path": "packages/flutter_tools/templates/app/web/icons/Icon-192.png.copy.tmpl"
+        },
+        {
+          "digest": "sha256:baccb205ae45f0b421be1657259b4943ac40c95094ab877f3bcbe12cd544dcbe",
+          "path": "packages/flutter_tools/templates/app/web/icons/Icon-512.png.copy.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/web/icons/Icon-maskable-192.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/web/icons/Icon-maskable-512.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:05d0ced2e93473830ca09b9f9f47460ffe6828ed1452721ded107df7bd3e2229",
+          "path": "packages/flutter_tools/templates/app/web/index.html.tmpl"
+        },
+        {
+          "digest": "sha256:3eb44d2563ce13cf33daa730a8111392f52cad7c4f232439a836eec7577f398d",
+          "path": "packages/flutter_tools/templates/app/web/manifest.json.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Web build・run・release"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "debug/profile/release、entitlement拒否、build failure、clean rebuildを比較する",
+      "domain": "build-release",
+      "id": "build.macos",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "macos-build-host",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:5d1204c8b751893e6d1157b2bb9a7fbfc88c66b796fed334f2a370421692e6cb",
+      "sdk_sources": [
+        {
+          "digest": "sha256:6671fbc49b19bdeeb577f0affe44eeac2ef8ea10cf3ea2296540a5313c6792b9",
+          "path": "packages/flutter_tools/lib/src/commands/build_macos.dart"
+        },
+        {
+          "digest": "sha256:ffec1a0bbd70547186b82ad4e49089bafab2de309b89de97c776d70debb179fa",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:62290ad8e938bf410206d8c7e131262696b58a6df110d39faf3399396ffe61b1",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Flutter/Flutter-Debug.xcconfig"
+        },
+        {
+          "digest": "sha256:62290ad8e938bf410206d8c7e131262696b58a6df110d39faf3399396ffe61b1",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Flutter/Flutter-Release.xcconfig"
+        },
+        {
+          "digest": "sha256:b2f48a703816698f426ef12a237f776d205a75c03a6fb1a66ea8dcf9a355f826",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcodeproj/project.pbxproj.tmpl"
+        },
+        {
+          "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+        },
+        {
+          "digest": "sha256:f82969adf4781a3c54173cc48c4a4ee3ff7d269ae99d60c905ec113bd9fde59d",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme.tmpl"
+        },
+        {
+          "digest": "sha256:46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcworkspace/contents.xcworkspacedata"
+        },
+        {
+          "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+        },
+        {
+          "digest": "sha256:ce9dbe45a57c59e85519da50a26c471615b9c8cdd85a8f4a39d2e480e62a4af4",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/AppDelegate.swift"
+        },
+        {
+          "digest": "sha256:bc6ba8105ca69651aeeb77358851590de295dca04681a1d58c0f449641c242f3",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png.img.tmpl"
+        },
+        {
+          "digest": "sha256:be9e9ef8469d3262370e0f0b855ed163cbf9c8362c59e330b2ffe63b86fa42f4",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Base.lproj/MainMenu.xib"
+        },
+        {
+          "digest": "sha256:a2c97c87a9d7657df2f6c06396468cb5d1fde9c648ac23356ba09927c08d3fda",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/AppInfo.xcconfig.tmpl"
+        },
+        {
+          "digest": "sha256:8067d533ef6593760baad9a9855a786a7a77470fcc3f0925ec04fe43bc1ac4b0",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/Debug.xcconfig"
+        },
+        {
+          "digest": "sha256:7a6a4b4d973a23052fa0a0388dd261e32d311d7b66ba1bfc3b914b361808ac61",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/Release.xcconfig"
+        },
+        {
+          "digest": "sha256:0e341a392b16ad302d12890aa3dac9257a6c10ece685437604259a85341645a3",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/Warnings.xcconfig"
+        },
+        {
+          "digest": "sha256:ebaab2b9992173de422c33e1fbab7f6e31acaa2213956097ac8cefd894a91ac8",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/DebugProfile.entitlements"
+        },
+        {
+          "digest": "sha256:f253e89c512b3a9a81bc5cdd7a14bf932470f835f261654a808ea4549cd94aad",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Info.plist"
+        },
+        {
+          "digest": "sha256:65c9613c11bcedfa51416b16c975d8ba6ff12b405fc19d60db8755d92e86d9fe",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/MainFlutterWindow.swift"
+        },
+        {
+          "digest": "sha256:b746c74b201e6af4e0864fbd1f4f629f96156a7ec4b7208bc995d0a5089bb592",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Release.entitlements"
+        },
+        {
+          "digest": "sha256:cae612ea454a13e8c92a3315bbf48fc4093f15c958cece2ce785afc7712b8bff",
+          "path": "packages/flutter_tools/templates/app/macos.tmpl/RunnerTests/RunnerTests.swift.tmpl"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "macOS build・run・release"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "debug/profile/release、dependency拒否、build failure、clean rebuildを比較する",
+      "domain": "build-release",
+      "id": "build.linux",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "linux-build-host",
+        "linux-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:f328959db98a5e302bf0a763f185e7631775362f6f1f59264215ef6b3bf967d6",
+      "sdk_sources": [
+        {
+          "digest": "sha256:b4ceb7e9f1f0b5fee02fde96a531cfe268315f84c8ab2e47108d6609d5891594",
+          "path": "packages/flutter_tools/lib/src/commands/build_linux.dart"
+        },
+        {
+          "digest": "sha256:5ded4f1a9d10d34bf6ee5beb0711d88ee2ef07b0f07ace9ed77935a246e8eb82",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:ea80f743a28319b4e2b1085f07fedc696bf47398239a6707d6f1ba8aed8d2309",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/CMakeLists.txt.tmpl"
+        },
+        {
+          "digest": "sha256:787189e2623313cfee590a0b553338eb9fc68b3af922ddd77c5d39c75f989aeb",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/flutter/CMakeLists.txt"
+        },
+        {
+          "digest": "sha256:8cdcfd911e770fd7d511c97c7bce6559486a815352a47c953f7ef632e236d2cc",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/CMakeLists.txt"
+        },
+        {
+          "digest": "sha256:ea23f7cdf74091d63bba29ef60486370b766157b848f0cfe62bd8b1c1695a0c1",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/main.cc"
+        },
+        {
+          "digest": "sha256:176121ad04a2876334d88816549636a09c7ad1ac1d494a4abe0826baafc3c3c3",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/my_application.cc.tmpl"
+        },
+        {
+          "digest": "sha256:a4218d7ac0db8a9a6716daf216b2d4fc6bdc7ac647e3183078b2c962ebdfcf70",
+          "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/my_application.h"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Linux build・run・release"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "debug/profile/release、toolchain拒否、build failure、clean rebuildを比較する",
+      "domain": "build-release",
+      "id": "build.windows",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "windows-build-host",
+        "windows-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:b807941aa271edb1696dd11365e9f5edc8f6b4e70638f90a41677c78760ad350",
+      "sdk_sources": [
+        {
+          "digest": "sha256:dc7ba5e93d59a42f9fbeb3a790bf1f9b42a01ac88f42b4b3329cccf1f9799bdf",
+          "path": "packages/flutter_tools/lib/src/commands/build_windows.dart"
+        },
+        {
+          "digest": "sha256:96345475f1a3c66bd32d28178fba151ab1506b35b1f7857b8f7651863093ea11",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/.gitignore"
+        },
+        {
+          "digest": "sha256:08063e4b837ebf8100553716de1df7731b15f20209768b23106aaaf74b84febe",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/CMakeLists.txt.tmpl"
+        },
+        {
+          "digest": "sha256:1fe418971b6f41bb35ceb3d64113a835f3f6f171ecaa707bf232492b57a588d6",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/flutter/CMakeLists.txt"
+        },
+        {
+          "digest": "sha256:34119ec122e36940235ef4bc245fcfb43b6960ed443e28af1a8d833a81209b9e",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/CMakeLists.txt"
+        },
+        {
+          "digest": "sha256:6da2975cc08647144b5e0e173cf977a7b8ab7883032f5c3f865d912c93012703",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/Runner.rc.tmpl"
+        },
+        {
+          "digest": "sha256:dd185884c0b5301d400b58f12ebb36b1c8b326531597e531b40e44a6eeb0e943",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/flutter_window.cpp"
+        },
+        {
+          "digest": "sha256:38e0fcd3a0b83895852ec295cb70d90179c0dcd40d58f065eb5232a4ecd84898",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/flutter_window.h"
+        },
+        {
+          "digest": "sha256:f75cc94c12887588e47e0526330150d4dce15da4f688555b344c567c2d7c9fe5",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/main.cpp.tmpl"
+        },
+        {
+          "digest": "sha256:1fa98588b04561590ba1cf0521ab86a9db4a878312f21c9d5861d965ddd8d1ae",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/resource.h"
+        },
+        {
+          "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/resources/app_icon.ico.img.tmpl"
+        },
+        {
+          "digest": "sha256:825d243e9fa1542619909c1b72d09b3ed7c1f3b225bb8367c125835e5dc3f8aa",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/runner.exe.manifest"
+        },
+        {
+          "digest": "sha256:6c2c87106b4b29d534c7edcafb3b7f7b9079caa3cdafa7e56671ad2adf5a2543",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/utils.cpp"
+        },
+        {
+          "digest": "sha256:95a7f7dddb832997cefa937a96f89472332277e75734a5de553610760b744b03",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/utils.h"
+        },
+        {
+          "digest": "sha256:9065f31ccf746cf8b390121f958f9e959033af864aed779597066625ed56bc36",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/win32_window.cpp"
+        },
+        {
+          "digest": "sha256:7dd03746b19dcf3542829b2f6e8ed40a2714ce5f2cb3b0e23f0118a2fcf62d62",
+          "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/win32_window.h"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Windows build・run・release"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "debug/release key、wrong key、expired/invalid config、再署名判断を検証する",
+      "domain": "build-release",
+      "id": "release.signing-android",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-build-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:2c531dbb6f9144951102c4e42c850297c89be15486ed93f3693ae1f115b942bd",
+      "sdk_sources": [
+        {
+          "digest": "sha256:84ea6ed0fc6f6b86128a220ba9a8830ad2bcd562f8791b9a9c237c29ffa0694e",
+          "path": "packages/flutter_tools/lib/src/android/gradle.dart"
+        },
+        {
+          "digest": "sha256:2b43e052f3045680a55d0bda3f4fd538951775115a111410a7d2dd452424f6f3",
+          "path": "packages/flutter_tools/lib/src/commands/build_appbundle.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Android signing・artifact verification"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "simulator/device identity、entitlement拒否、profile failure、再Buildを検証する",
+      "domain": "build-release",
+      "id": "release.signing-apple",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "ios-build-host",
+        "macos-build-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:3ab8beec15c6d38fd1aeadfef496ab1f9c2d0a052834fa67093118dafb226488",
+      "sdk_sources": [
+        {
+          "digest": "sha256:53ff8228d33a023c2ae94a36e40f359575263ce2cae1594f911d870b7c8c1055",
+          "path": "packages/flutter_tools/lib/src/commands/build_ios.dart"
+        },
+        {
+          "digest": "sha256:bf48c7d5660d6e25338bfa419d0d1f6dfadc681d2d85c7aa713ad91aaffb0524",
+          "path": "packages/flutter_tools/lib/src/ios/code_signing.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Apple signing・entitlements・artifact verification"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "flutter-engine-3.47.1-deps"
+      ],
+      "capability": "UI/raster timing、budget超過、負荷障害、回復をprofile Runtimeで比較する",
+      "domain": "performance",
+      "id": "performance.frame-jank",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device-profile",
+        "ios-device-profile",
+        "web-chrome-profile"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:f61de63f2c6c2d8c6b342f1950c6b14a97a9351c1a9c8908cb1cf16f5a2ba3e8",
+      "sdk_sources": [
+        {
+          "digest": "sha256:142080322c5ee3674dcc6ddecbf50df25a9f81972b48713f9aa60972d69f6670",
+          "path": "engine/src/flutter/lib/ui/platform_dispatcher.dart"
+        },
+        {
+          "digest": "sha256:1331b99fd756dd6aa037c9b47dcddb624e20016fdb59b42f942039f6cfe12683",
+          "path": "packages/flutter/lib/src/scheduler/binding.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Frame time・jank・shader"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "cold/warm start、size boundary、regression、rollbackをRelease artifactで比較する",
+      "domain": "performance",
+      "id": "performance.startup-size",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device-profile",
+        "ios-device-profile",
+        "web-chrome-profile",
+        "macos-host-profile"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:eb5a0801e0acc2cf3ce8a68130af4ed23d817cc6584f3a91a46efd987616d9e1",
+      "sdk_sources": [
+        {
+          "digest": "sha256:28b01b9df598e556722c7f9700249b3458dd34d7e0ad1cba8e84b69690fe019e",
+          "path": "packages/flutter_tools/lib/src/build_info.dart"
+        },
+        {
+          "digest": "sha256:8a4bdd12c4b49753e087a3f1dd2d2f46b7b096edfc1967e7296c5141e6c129ac",
+          "path": "packages/flutter_tools/lib/src/commands/build.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Startup・artifact size"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "allocation差、boundary、leak、OOM相当、dispose回復をprofile Runtimeで比較する",
+      "domain": "memory",
+      "id": "memory.allocation-leak",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device-profile",
+        "ios-device-profile",
+        "web-chrome-profile",
+        "macos-host-profile"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:c9e6c85cb04a2b454767ca4ad46bc91e8d43d4fd7f40e0a47db4f5edd5fbc798",
+      "sdk_sources": [
+        {
+          "digest": "sha256:1ccd92ae69be85ff867c6a0c62a49886e9af6bf197ce634238ed263e7cb5dcdc",
+          "path": "bin/cache/dart-sdk/lib/developer/developer.dart"
+        },
+        {
+          "digest": "sha256:ccc86d9e983cd989ac19a7a19941495a5c5d21ba54a6f5f3c9e0d25a32853703",
+          "path": "packages/flutter/lib/src/foundation/memory_allocations.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Allocation・retention・leak"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "正常、長大値、拒否、malformed、safe retryを実Runtimeで検証する",
+      "domain": "security",
+      "id": "security.input-data-boundary",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:897757d408b96c6604602389630e436b4b1229660f9cc49d26ad3baa5680e2d7",
+      "sdk_sources": [
+        {
+          "digest": "sha256:1499a12d41b1134b3991ee1e6fc0d7d7dca24a9e8bf741d9b8f9488e5008b1fa",
+          "path": "bin/cache/dart-sdk/lib/convert/convert.dart"
+        },
+        {
+          "digest": "sha256:38d2c8e5122eea2e45683693a9f807c03d0c384003f73a4e8e4e3555f5a88411",
+          "path": "packages/flutter/lib/src/services/text_formatter.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Input・data validation boundary"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "TLS、権限、redaction、漏洩失敗、credential rotation recoveryを検証する",
+      "domain": "security",
+      "id": "security.network-storage-secrets",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:bfb88ee597f24bfcf4c3842f980510537bd18f1e93d7bb93bd7450d8e9106da1",
+      "sdk_sources": [
+        {
+          "digest": "sha256:938dba699cfce2755162d7044f9da50ea53cc7e2f59f6ad14d42115c93315b7f",
+          "path": "bin/cache/dart-sdk/lib/io/file.dart"
+        },
+        {
+          "digest": "sha256:e2ecbeb4bf19e25ac06cc9f6f020e1e779777240094ddb879b3b097620516e37",
+          "path": "bin/cache/dart-sdk/lib/io/security_context.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Network・storage・secret boundary"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "build/layout/async error、error boundary、診断、再mountを比較する",
+      "domain": "failure-recovery",
+      "id": "failure.framework-errors",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:3e989bdbb80fc7277c98556bf1af8d515756191c7c2e3e59b1d8e9b5304bf321",
+      "sdk_sources": [
+        {
+          "digest": "sha256:67f2649557be331a0515114f4b0e79c9ab2a08b7525eaf04b392c796937387b1",
+          "path": "packages/flutter/lib/src/foundation/assertions.dart"
+        },
+        {
+          "digest": "sha256:e7a9b820923c0c98ae650d2adc28f54a43755b780609a14358f0f255dabf572f",
+          "path": "packages/flutter/lib/src/widgets/framework.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Framework error containment"
+    },
+    {
+      "authority_ids": [
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "channel切断、permission拒否、process/background loss、再接続を観測する",
+      "domain": "failure-recovery",
+      "id": "failure.platform-loss-recovery",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:3386b777b84664d0a997aac0c43e5d4a1cb95476fe184e43a121184cdc646a0c",
+      "sdk_sources": [
+        {
+          "digest": "sha256:857573f18a3c329a71a990f5355f49e29f25561d0d5f2aa6ff292ba7154678c3",
+          "path": "packages/flutter/lib/src/services/platform_channel.dart"
+        },
+        {
+          "digest": "sha256:fcd4ba2eff740aedff6249dda167fe1a6a4c5a0c83b052c2c78b25cb163133d1",
+          "path": "packages/flutter/lib/src/widgets/binding.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Platform capability loss・recovery"
+    },
+    {
+      "authority_ids": [
+        "flutter-3.47-release-notes",
+        "dart-3.13-changelog"
+      ],
+      "capability": "旧/新SDK差、deprecation、拒否、failure、rollbackを二Versionで比較する",
+      "domain": "migration",
+      "id": "migration.sdk-api",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "migration-old-sdk",
+        "migration-new-sdk"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:a93f1ec514352531aa411de5a452a7ca857bc36a060111a42fc2571a19fec6f2",
+      "sdk_sources": [
+        {
+          "digest": "sha256:c6dd3b5b9b1e5793efec3bfd249bfe7be0d47e4cc065a1bc67df412e20b0bfe9",
+          "path": "packages/flutter_tools/lib/src/commands/analyze.dart"
+        },
+        {
+          "digest": "sha256:c4c3d0933e008e1504006c8d5b42135839cd92f7bbf3a1c2ff3f28b937252467",
+          "path": "packages/flutter_tools/lib/src/commands/upgrade.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "SDK・API migration"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "旧/新schema、境界、未知Version、破損、restoreをRuntimeで比較する",
+      "domain": "migration",
+      "id": "migration.data-schema",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:e593bc2e7de64d9b2d81974218a4ed47bc03739b62635e17b31e875a3e61995e",
+      "sdk_sources": [
+        {
+          "digest": "sha256:e97ad4bb28ed4d968d7c2d309e751c84f5474d6797b63f1f111a6e2a33d0b541",
+          "path": "bin/cache/dart-sdk/lib/convert/json.dart"
+        },
+        {
+          "digest": "sha256:938dba699cfce2755162d7044f9da50ea53cc7e2f59f6ad14d42115c93315b7f",
+          "path": "bin/cache/dart-sdk/lib/io/file.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Application data migration"
+    },
+    {
+      "authority_ids": [
+        "devtools-2.60.0"
+      ],
+      "capability": "attach、選択、breakpoint、切断、reattachをReference Appで観測する",
+      "domain": "devtools",
+      "id": "devtools.inspector-debugger",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "devtools-web",
+        "android-emulator",
+        "ios-simulator",
+        "web-chrome"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:ca546aa735aa5d7938979fb47ba6d04a62345ee8bbef3f2c934dacbda419e9b3",
+      "sdk_sources": [
+        {
+          "digest": "sha256:f1a891e99944fcd01ce2bcd23532de53eafeea3ceeb728b4fcea30405a9589b2",
+          "path": "bin/cache/dart-sdk/bin/resources/devtools/version.json"
+        },
+        {
+          "digest": "sha256:72e6cd4f4fda2737b37fc49eafcf7bf0018c4f4e5ced8a9b59853db95c6ba4dc",
+          "path": "packages/flutter_tools/lib/src/commands/attach.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "DevTools Inspector・Debugger"
+    },
+    {
+      "authority_ids": [
+        "devtools-2.60.0",
+        "dart-sdk-3.13.1"
+      ],
+      "capability": "timeline、allocation、network、disconnect、再CaptureをArtifact化する",
+      "domain": "devtools",
+      "id": "devtools.performance-memory-network",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "devtools-web",
+        "android-device-profile",
+        "ios-device-profile",
+        "web-chrome-profile"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:12c043d40f78e2c4e7545beb3541742659fe0581fc91f95fff85ce99114a3ec2",
+      "sdk_sources": [
+        {
+          "digest": "sha256:f1a891e99944fcd01ce2bcd23532de53eafeea3ceeb728b4fcea30405a9589b2",
+          "path": "bin/cache/dart-sdk/bin/resources/devtools/version.json"
+        },
+        {
+          "digest": "sha256:1ccd92ae69be85ff867c6a0c62a49886e9af6bf197ce634238ed263e7cb5dcdc",
+          "path": "bin/cache/dart-sdk/lib/developer/developer.dart"
+        },
+        {
+          "digest": "sha256:2c605fc99433da454612e47f4733341f5cf1ad78cf294ccfb2657575e13d08f7",
+          "path": "bin/cache/dart-sdk/lib/io/network_profiling.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "DevTools Performance・Memory・Network"
+    },
+    {
+      "authority_ids": [
+        "dart-sdk-3.13.1",
+        "flutter-sdk-3.47.1-macos-arm64"
+      ],
+      "capability": "structured log、redaction、crash、offline capture、復旧手順をRuntime Artifactで検証する",
+      "domain": "operations",
+      "id": "operations.logging-crash-diagnostics",
+      "minimum_variants": 2,
+      "reference_app_required": true,
+      "required_runtime_profiles": [
+        "android-device",
+        "ios-device",
+        "web-chrome",
+        "macos-host"
+      ],
+      "required_scenarios": [
+        "normal",
+        "boundary",
+        "rejection",
+        "failure",
+        "recovery"
+      ],
+      "sdk_source_set_digest": "sha256:ce3e3c7a98da916b30b30bafef87234091d3340f23bdf71c706c175660913ead",
+      "sdk_sources": [
+        {
+          "digest": "sha256:1ccd92ae69be85ff867c6a0c62a49886e9af6bf197ce634238ed263e7cb5dcdc",
+          "path": "bin/cache/dart-sdk/lib/developer/developer.dart"
+        },
+        {
+          "digest": "sha256:67f2649557be331a0515114f4b0e79c9ab2a08b7525eaf04b392c796937387b1",
+          "path": "packages/flutter/lib/src/foundation/assertions.dart"
+        }
+      ],
+      "skill_eval_required": true,
+      "title": "Logging・crash diagnostics・runbook"
+    }
+  ]
+}

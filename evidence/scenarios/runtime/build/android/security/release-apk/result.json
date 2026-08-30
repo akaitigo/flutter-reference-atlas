@@ -1,0 +1,11 @@
+{
+  "apk_bytes": 15082518,
+  "apk_sha256": "sha256:7a09136fc765d2ab41250559725d28677b7bb04c71d6f38f84252b5819421187",
+  "debuggable": false,
+  "installed_and_launched": true,
+  "package": "dev.akaitigo.atlas.operations_workspace",
+  "schema_version": 1,
+  "signing_verified": true,
+  "status": "passed",
+  "variant": "release-apk"
+}

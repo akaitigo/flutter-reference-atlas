@@ -1,0 +1,105 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/navigation/declarative-router/operations/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "navigation",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.navigation.declarative-router.operations",
+  "integrated_reference": {
+    "assertions": [
+      "monitor starts with app",
+      "monitor stops on unmount"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "callback-ownership"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3713,
+      "digest": "sha256:4fae5c8dca61f85cb30b566727ca2b48361a87945ec8deac09c12a71bb3443cb",
+      "path": "evidence/scenarios/integrated/operations.trace.json"
+    }
+  },
+  "scenario": "operations",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:fe4bbbe824d7749d0ed4dfcbc405b30512d7c2dceb042e4a50dfa7a9edaa70b2",
+      "path": "packages/flutter/lib/src/widgets/app.dart"
+    },
+    {
+      "digest": "sha256:8e7d6b76086b5cffed3354f7282d1bdd1e24d3d3ab95f908b5fda904afa76b88",
+      "path": "packages/flutter/lib/src/widgets/router.dart"
+    }
+  ],
+  "source_set_digest": "sha256:27629a2c70e4d3c29e542e88798920ddbc78d4b63cdf1a07525d7dd579299df2",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "navigation.declarative-router",
+  "surface_title": "Router declarative navigation"
+}

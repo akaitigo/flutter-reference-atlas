@@ -1,0 +1,50 @@
+{
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                              8.2s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          315ms\n00:00 +0: background.isolate-work security transferable-data\nATLAS_CAPTURE_READY:background.isolate-work:transferable-data\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"background.isolate-work\",\"scenario\":\"security\",\"variant\":\"transferable-data\",\"platform\":\"Android\",\"mechanism\":\"transferable-data\",\"worker_completed\":true,\"input_length\":25,\"checksum\":1497067863,\"raw_sensitive_value_returned\":false}\n00:20 +1: (tearDownAll)\n00:20 +1: All tests passed!\n",
+  "scenario": "security",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      {
+        "name": "security",
+        "observed": {
+          "checksum": 1497067863,
+          "input_length": 25,
+          "mechanism": "transferable-data",
+          "platform": "Android",
+          "raw_sensitive_value_returned": false,
+          "scenario": "security",
+          "surface_id": "background.isolate-work",
+          "variant": "transferable-data",
+          "worker_completed": true
+        },
+        "status": "passed"
+      }
+    ],
+    "network": {
+      "applicable": false,
+      "reason": "security-001 runtimeはnetworkを使用しない。"
+    },
+    "resource": [
+      {
+        "api_level": 36,
+        "platform_tree": {
+          "nodes": 10,
+          "sensitive_value_absent": true,
+          "surface_visible": true,
+          "variant_visible": true
+        }
+      }
+    ]
+  },
+  "surface_id": "background.isolate-work",
+  "variant": "transferable-data"
+}

@@ -1,0 +1,105 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/performance/startup-size/operations/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "performance",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.performance.startup-size.operations",
+  "integrated_reference": {
+    "assertions": [
+      "monitor starts with app",
+      "monitor stops on unmount"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "callback-ownership"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3713,
+      "digest": "sha256:4fae5c8dca61f85cb30b566727ca2b48361a87945ec8deac09c12a71bb3443cb",
+      "path": "evidence/scenarios/integrated/operations.trace.json"
+    }
+  },
+  "scenario": "operations",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:28b01b9df598e556722c7f9700249b3458dd34d7e0ad1cba8e84b69690fe019e",
+      "path": "packages/flutter_tools/lib/src/build_info.dart"
+    },
+    {
+      "digest": "sha256:8a4bdd12c4b49753e087a3f1dd2d2f46b7b096edfc1967e7296c5141e6c129ac",
+      "path": "packages/flutter_tools/lib/src/commands/build.dart"
+    }
+  ],
+  "source_set_digest": "sha256:eb5a0801e0acc2cf3ce8a68130af4ed23d817cc6584f3a91a46efd987616d9e1",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "performance.startup-size",
+  "surface_title": "Startup・artifact size"
+}

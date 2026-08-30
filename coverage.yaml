@@ -127,6 +127,15 @@ targets:
     rationale: Dart、Kotlin、SwiftのChannel、Method、Plugin登録とLifecycle宣言を61 assertionのSource Contractで照合した。
     claim_ids: [platform.channel-plugin-source-contract]
     evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.method-channel-runtime-matrix
+    title: MethodChannel Plugin Runtime Matrix
+    target_set: language-platform
+    kind: capability
+    requirement: required
+    state: partial
+    rationale: Android API 36 EmulatorではStandardMethodCodecとJSONMethodCodecの正常・境界・拒否・障害・回復を実Pluginで通したが、iOS Simulator、macOS、Linux、Windows Runtimeが未実行である。
+    claim_ids: [platform.method-channel-android-runtime]
+    evidence_ids: [execution.definitive-android-method-channel.2026-08-28]
   - id: platform.ffi-macos
     title: Dart FFI macOS arm64 Runtime
     target_set: language-platform
@@ -154,6 +163,15 @@ targets:
     rationale: Web専用conditional export境界を検証し、Flutter 3.47.1で38 fileのrelease Web artifactを生成した。
     claim_ids: [platform.web-release-build]
     evidence_ids: [execution.formal-local-closure.2026-08-28]
+  - id: platform.web-chrome-runtime
+    title: Chrome JavaScript・Wasm統合Runtime
+    target_set: language-platform
+    kind: compatibility
+    requirement: required
+    state: covered
+    rationale: 固定Flutter 3.47.1でChrome JavaScriptとWasmを実行し、統合Reference Appの正常・境界・拒否・障害・回復5 Testを両Variantで通した。
+    claim_ids: [platform.web-chrome-js-wasm-runtime]
+    evidence_ids: [execution.definitive-web-chrome.2026-08-28]
   - id: platform.desktop
     title: Desktop Platform Boundary
     target_set: language-platform
@@ -268,3 +286,12 @@ targets:
     rationale: Routerの決定論・Forward Regression 62件と独立Agent Forward Evalで、複合依頼、未知Package、Version・Runtime・Publication Gap、書込・公開権限境界を確認した。
     claim_ids: [skill.routes-without-invention]
     evidence_ids: [skill.router-eval.2026-08-28]
+  - id: skill.definitive-router
+    title: Definitive Surface Router Skill Eval
+    target_set: skill
+    kind: skill
+    requirement: required
+    state: partial
+    rationale: 8代表CaseでSurface、実Runtime Gap、非代替境界を正しく返すが、54 Surface全件と全ScenarioのEvalは未閉包である。
+    claim_ids: [skill.definitive-routes-gaps]
+    evidence_ids: [skill.definitive-router-eval.2026-08-28]

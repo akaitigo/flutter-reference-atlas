@@ -1,0 +1,173 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/platform/add-to-app-android/boundary/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "platform-integration",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.platform.add-to-app-android.boundary",
+  "integrated_reference": {
+    "assertions": [
+      "detail remains reachable",
+      "back action restores list"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "narrow-layout"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:139a42fdd6d1b95a4f5427550f7c269d473817469dfd0ad0b0cfe8ab851d9cfe",
+      "path": "evidence/scenarios/integrated/boundary.trace.json"
+    }
+  },
+  "scenario": "boundary",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:394d027f5cdaa085dc1b5d0bfee4aeaa7a765915308a2f4622cd9d3b5300a09a",
+      "path": "packages/flutter_tools/templates/module/android/deferred_component/build.gradle.tmpl"
+    },
+    {
+      "digest": "sha256:c2f6646a5967132aeb7059fc271f78bfb18d8a1e134024b163119d4f39f798c5",
+      "path": "packages/flutter_tools/templates/module/android/deferred_component/src/main/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:d4382efd0a5f7dc29eda241a6398b3c8c9cc3d45f7a336410415d7b6581b3958",
+      "path": "packages/flutter_tools/templates/module/android/gradle/build.gradle.tmpl"
+    },
+    {
+      "digest": "sha256:0f82b18017fba6bb5ce3aa4b2d1a00c9382fc8aae7b1d9326e44b18abd66d80b",
+      "path": "packages/flutter_tools/templates/module/android/gradle/gradle.properties.tmpl"
+    },
+    {
+      "digest": "sha256:f85bd24fa11f25bd0a20a216f5b5e83bdad81fcbc1c3053d8443eaefa3bb251b",
+      "path": "packages/flutter_tools/templates/module/android/gradle/settings.gradle.tmpl"
+    },
+    {
+      "digest": "sha256:86fd09b72666e3b42842b8b21dad52f432018251c74c0b002f5ace932fc6b819",
+      "path": "packages/flutter_tools/templates/module/android/gradle/src/main/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:82ef2f1359d5e6f3d0c309e747c71358ac9c0fdb02a2c02e7d22531702a77db4",
+      "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/build.gradle.tmpl"
+    },
+    {
+      "digest": "sha256:4b93f36371290b1427b841d87794e5a851485f3cc040029ef2603f839f80ed3e",
+      "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:f77f93b51a7059eb65359080ec9d47d753c8581cac9bf8923d0cdb546605caf1",
+      "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/java/androidIdentifier/host/MainActivity.java.tmpl"
+    },
+    {
+      "digest": "sha256:94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a",
+      "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/res/drawable/launch_background.xml"
+    },
+    {
+      "digest": "sha256:6a7c8f0d703e3682108f9662f813302236240d3f8f638bb391e32bfb96055fef",
+      "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+      "digest": "sha256:d7d8bd4f58a86b3e9dcee12295e6d9025eaa1f9b479d39ec5dc1201f4104eaca",
+      "path": "packages/flutter_tools/templates/module/android/host_app_common/app.tmpl/src/main/res/values/styles.xml"
+    },
+    {
+      "digest": "sha256:2ad74d282cc5bec8f033fc0865e3d3177dc3a7b519cc8955b55e7dcc3255daee",
+      "path": "packages/flutter_tools/templates/module/android/host_app_editable/settings.gradle.copy.tmpl"
+    },
+    {
+      "digest": "sha256:c4db370e28739bfc6005fa2b97c7f5d18b981ad049b0152e3844a0981ac001f1",
+      "path": "packages/flutter_tools/templates/module/android/host_app_ephemeral/settings.gradle.tmpl"
+    },
+    {
+      "digest": "sha256:b84e7fa4a46ff3697c225bb313746d7d5fc6b158d88b3d677c55eb25949e2e68",
+      "path": "packages/flutter_tools/templates/module/android/library_new_embedding/Flutter.tmpl/build.gradle.tmpl"
+    },
+    {
+      "digest": "sha256:fa4ac80eb18d5106725a29afa4e4b4947ff0863a67871ce78bcc16452aad0c2e",
+      "path": "packages/flutter_tools/templates/module/android/library_new_embedding/Flutter.tmpl/flutter.iml.copy.tmpl"
+    },
+    {
+      "digest": "sha256:13f787bb3d807e808b4fcc80b04effec9a5d2248e86fd6e0d4e9ddf34ce0c214",
+      "path": "packages/flutter_tools/templates/module/android/library_new_embedding/Flutter.tmpl/src/main/AndroidManifest.xml.tmpl"
+    },
+    {
+      "digest": "sha256:0e9680ea87bec3c3ced44285c174b9a18158eea73dadf6afb52f7d1d496a720e",
+      "path": "packages/flutter_tools/templates/module/android/library_new_embedding/include_flutter.groovy.copy.tmpl"
+    },
+    {
+      "digest": "sha256:40b7b56302557c6256fbc4ecfc51d4d0574215926fb195f473d9130148964107",
+      "path": "packages/flutter_tools/templates/module/android/library_new_embedding/settings.gradle.copy.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:90adb04ea8b10035c8b34cbc00e4443dca9fbf464f7586b7d80cf54126d0fd8b",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "platform.add-to-app-android",
+  "surface_title": "Android Add-to-App runtime"
+}

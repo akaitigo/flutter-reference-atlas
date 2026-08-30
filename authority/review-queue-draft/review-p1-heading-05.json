@@ -1,0 +1,40 @@
+{
+  "batch_id": "review-p1-heading-05",
+  "items": [
+    {
+      "anchor_id": "anchor-8888d9200c000652b7e4",
+      "batch_id": "review-p1-heading-05",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:004f09676c512162e63b790c307e1bbd87b07607650c0b96b45c736cae1aabea",
+      "context_end": 332768,
+      "context_start": 327578,
+      "context_unit": "utf8-byte",
+      "document_id": "document-dart-dev-9ddf4f55d122",
+      "document_url": "https://dart.dev/changelog",
+      "existing_reference_edge_ids": [],
+      "heading_level": 2,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": "sha256:72d73db944cf6d9a5f11d6c073c1dce0bde28a4d2341caf4ae976e858c62cabc",
+      "locator": "offset:utf8-byte:328602",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "parent_anchor_id": "anchor-2f8ee9ad07634d3781ae",
+      "priority": 1,
+      "priority_reasons": [
+        "semantic-label-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "heading",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ],
+      "state": "pending-human",
+      "tag": "h2"
+    }
+  ],
+  "machine_assistance": "ordering-and-candidate-clustering-only",
+  "queue_id": "authority-review-d98f30af55d0f6b21c99",
+  "schema_version": 1,
+  "semantic_decisions": "none",
+  "status": "pending-human"
+}

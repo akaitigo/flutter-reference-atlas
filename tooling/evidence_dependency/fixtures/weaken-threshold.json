@@ -1,0 +1,6 @@
+{
+  "id": "weaken-threshold",
+  "operation": "increase-maximum-pattern-rows-per-tranche",
+  "target": "maximum_pattern_rows_per_tranche",
+  "expected_error": "試験・Scenario・tranche閾値が縮小または変更されました"
+}

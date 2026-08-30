@@ -1,0 +1,47 @@
+{
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/method_channel_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                              9.5s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          233ms\n00:00 +0: platform.method-channel boundary standard\nATLAS_SCENARIO_OBSERVATION:{\"surface_id\":\"platform.method-channel\",\"scenario\":\"boundary\",\"variant\":\"standard\",\"platform\":\"Android\",\"os_version\":\"16\",\"api_level\":36,\"activity_attached\":true,\"codec\":\"standard\",\"accepted_length\":64,\"rejected_length\":65,\"error_code\":\"BOUNDARY_EXCEEDED\"}\n00:03 +1: (tearDownAll)\n00:03 +1: All tests passed!\n",
+  "scenario": "boundary",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      {
+        "name": "boundary",
+        "observed": {
+          "accepted_length": 64,
+          "activity_attached": true,
+          "api_level": 36,
+          "codec": "standard",
+          "error_code": "BOUNDARY_EXCEEDED",
+          "os_version": "16",
+          "platform": "Android",
+          "rejected_length": 65,
+          "scenario": "boundary",
+          "surface_id": "platform.method-channel",
+          "variant": "standard"
+        },
+        "status": "passed"
+      }
+    ],
+    "network": {
+      "applicable": false,
+      "reason": "MethodChannel fixtureはnetworkを使用しない。"
+    },
+    "resource": [
+      {
+        "activity_attached": true,
+        "api_level": 36
+      }
+    ]
+  },
+  "surface_id": "platform.method-channel",
+  "variant": "standard"
+}

@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-08-30T14:52:58Z",
+  "harness": {
+    "bytes": 7104,
+    "digest": "sha256:3a4e9c992f957c76efe0c8fd3905ef5450a1164611c810cc2bfe96e29a0f2173",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 17141,
+    "digest": "sha256:9953a4ea2fef7c2a0d1f510cafba24b73916b1a35426182263cbe5e180b49684",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-four-security-surfaces-and-eight-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:6095da6b738590454bfe60a76c2ed860346edc6ad42c6535800a1ac637fe1e4d",
+      "path": "packages/flutter/lib/src/widgets/focus_manager.dart"
+    },
+    {
+      "digest": "sha256:70e7918174e1b5dd71d6a8e9530d70feeddc292b6550f097194a5bacfa4e9b12",
+      "path": "packages/flutter/lib/src/widgets/media_query.dart"
+    }
+  ],
+  "source_set_digest": "sha256:92623227df28b7e4f455c72f4b56a9ee4d0bd1a3bf36f3ceb72fdd5531f916c2",
+  "started_at": "2026-08-30T14:47:43Z",
+  "status": "passed",
+  "surface_id": "accessibility.focus-text-scale",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1495,
+        "digest": "sha256:40e7c542c239a96c5dde95e606bb2481a3371aed277d07dd7c8aa2b9946bef51",
+        "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-1x/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "text-scale-1xでFocusとtext scaleを適用し公開Semanticsだけを保持した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 53537,
+        "digest": "sha256:c8f9f23afca979ca030fd45d41c25eedf6ab5cf2cf463014d0905fc95aeab44a",
+        "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-1x/screen.png"
+      },
+      "source": {
+        "bytes": 9763,
+        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2102,
+        "digest": "sha256:3d9edb46dc4ab71e6da4d39de91dee7817b40a46e7a9cbd5d9577cdd5d5bc974",
+        "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-1x/trace.json"
+      },
+      "variant": "text-scale-1x"
+    },
+    {
+      "artifact": {
+        "bytes": 1495,
+        "digest": "sha256:f14a43455a0a719d95ff268dd56aaff39fb4872e198a5f9a948f0e7ab863c8ff",
+        "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-2x/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "text-scale-2xでFocusとtext scaleを適用し公開Semanticsだけを保持した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 54679,
+        "digest": "sha256:fb6fce281ebdb6d6fcc867469c96f49f29663c4973d9f313cae42d11f50c7ba0",
+        "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-2x/screen.png"
+      },
+      "source": {
+        "bytes": 9763,
+        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2102,
+        "digest": "sha256:8fb601a7c06fb7a31ec1d49f01959d8b765aac43242e4dcfe9bf2ab175942fad",
+        "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-2x/trace.json"
+      },
+      "variant": "text-scale-2x"
+    }
+  ],
+  "variant_contract": [
+    "text-scale-1x",
+    "text-scale-2x"
+  ]
+}

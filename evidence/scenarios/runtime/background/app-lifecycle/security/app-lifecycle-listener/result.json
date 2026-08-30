@@ -1,0 +1,46 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "background_seen": true,
+    "mechanism": "app-lifecycle-listener",
+    "platform": "Android",
+    "resumed_after_background": true,
+    "scenario": "security",
+    "sensitive_value_cleared": true,
+    "states": [
+      "inactive",
+      "resumed"
+    ],
+    "surface_id": "background.app-lifecycle",
+    "variant": "app-lifecycle-listener"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "app-lifecycle-listenerでbackground/resumeを観測し一時機密値を消去した"
+    ],
+    "passed": true
+  },
+  "platform_tree": {
+    "bytes": 3530,
+    "digest": "sha256:d706cbdf4f42fdb371fe62eb685499bfa4e5308e1352b5eff182334bf64f63ed",
+    "path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:c9afb48dea95ca1930f47fe233696cacb6982554354fcc8e1d7501261e1854f8",
+  "surface_id": "background.app-lifecycle",
+  "variant": "app-lifecycle-listener"
+}

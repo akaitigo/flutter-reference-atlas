@@ -5,6 +5,7 @@
 ## Canonical sources
 
 - 共通契約は`reference-atlas-core` main commit `cf9e6e2d981305c83f970c1f21a1ddc9c1109263`を正本とする。
+- Definitive v2 Evidence Dependency Graph契約は`reference-atlas-core` main/CI成功commit `072d7ca77981f51754e824d70c6d4ecd55ea67e5`を正本とする。
 - `atlas.yaml`、`mastery.yaml`、`sources.lock.yaml`、`coverage.yaml`、`skill.package.yaml`を共通Manifestの正本とする。
 - Flutter固有のCapability、Claim、Proof Obligation、Lab対応は`atlas/**/*.json`と`labs/index.json`を正本とする。
 - 生成ReferenceやEvidenceを先に手編集せず、正本とGeneratorまたはHarnessを変更する。

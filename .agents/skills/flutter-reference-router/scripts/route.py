@@ -82,6 +82,9 @@ def main() -> int:
     parser.add_argument("--capability", required=True)
     parser.add_argument("--write-authorized", action="store_true")
     parser.add_argument("--publish-authorized", action="store_true")
+    parser.add_argument("--mutation-requested", action="store_true")
+    parser.add_argument("--authority-semantic-decision", action="store_true")
+    parser.add_argument("--stale-source-relock", action="store_true")
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parents[4]
@@ -102,7 +105,19 @@ def main() -> int:
             ranked.append((safety, priority, specificity, -index, route, matched_keywords))
     ranked.sort(reverse=True, key=lambda item: (item[0], item[1], item[2], item[3]))
     matches = [item[4] for item in ranked]
-    selected = matches[0] if matches else None
+    ambiguous_capabilities = []
+    if ranked:
+        top_rank = ranked[0][:3]
+        ambiguous_capabilities = sorted({
+            str(item[4]["capability_id"])
+            for item in ranked
+            if item[:3] == top_rank
+        })
+    composable_capability_sets = {
+        frozenset({"platform.desktop", "platform.ffi"}),
+    }
+    ambiguous = len(ambiguous_capabilities) > 1 and frozenset(ambiguous_capabilities) not in composable_capability_sets
+    selected = matches[0] if matches and not ambiguous else None
     gaps = qualifier_gaps(query, matches, routes.get("policy", {}))
     gaps.extend(
         f"{match['capability_id']}のCoverage stateは{match['state']}です。"
@@ -111,8 +126,22 @@ def main() -> int:
     )
     gaps = list(dict.fromkeys(gaps))
 
-    if selected is None:
+    if ambiguous:
         result = {
+            "status": "coverage-gap",
+            "mode": args.mode,
+            "coverage_gap": True,
+            "message": "複数Capabilityが同順位です。対象Surfaceまたは制約を追加するまで実行しません。",
+            "write_allowed": False,
+            "publish_allowed": False,
+            "write_authorized": bool(args.write_authorized),
+            "publish_authorized": bool(args.publish_authorized),
+            "gap_reasons": ["曖昧なQueryを単一Capabilityとして扱いません。"],
+            "matched_capabilities": ambiguous_capabilities,
+        }
+    elif selected is None:
+        result = {
+            "status": "coverage-gap",
             "mode": args.mode,
             "coverage_gap": True,
             "message": "Coverageに一致するCapabilityがありません。存在する機能として扱いません。",
@@ -126,6 +155,7 @@ def main() -> int:
     else:
         commands = list(dict.fromkeys(command for match in matches for command in match.get("commands", [])))
         result = {
+            "status": "coverage-gap" if gaps else "routed",
             "mode": args.mode,
             "coverage_gap": bool(gaps),
             "capability_id": selected["capability_id"],
@@ -145,6 +175,27 @@ def main() -> int:
             "write_authorized": bool(args.write_authorized),
             "publish_authorized": bool(args.publish_authorized),
         }
+    mutation_requested = args.mutation_requested or args.mode in {"implement", "recover", "migrate"}
+    blocked_reasons = []
+    if mutation_requested and not args.write_authorized:
+        blocked_reasons.append("unauthorized-mutation")
+    if args.authority_semantic_decision:
+        blocked_reasons.append("external-human-authority-decision-required")
+    if args.stale_source_relock:
+        blocked_reasons.append("stale-source-relock-explicit-procedure-required")
+    if blocked_reasons:
+        result["status"] = "blocked"
+        result["write_allowed"] = False
+    result["blocked_reasons"] = blocked_reasons
+    result["mutation_policy"] = "explicit-authorization-required" if mutation_requested else "read-only"
+    result["mutation_status"] = "blocked" if blocked_reasons else "authorized-for-request-scope" if mutation_requested else "read-only"
+    result["stop_conditions"] = [
+        "coverage-gap",
+        "unauthorized-mutation",
+        "external-human-authority-decision-required",
+        "stale-source-relock-explicit-procedure-required",
+        "ambiguous-or-unknown-query",
+    ]
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))
     return 0
 

@@ -1,0 +1,8 @@
+Generated wasm module <temporary-path> and JS init file <temporary-path>.
+00:00 +0: loading <repo-root>/reference-systems/operations-workspace/test/workspace_app_test.dart
+00:00 +0: 広幅では一覧と詳細を同時表示し状態遷移できる
+00:00 +1: Dialogから新規インシデントを追加できる
+00:00 +2: 不正な双方向表示制御を統合UIで拒否する
+00:00 +3: 公開Navigator routeで診断へ移動しPerformanceを観測できる
+00:00 +4: Repository失敗を秘匿して再試行から回復する
+00:00 +5: All tests passed!

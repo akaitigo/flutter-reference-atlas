@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../domain/incident.dart';
 import '../domain/incident_input_policy.dart';
 import '../observability/frame_performance_monitor.dart';
+import '../platform/platform_capability_probe.dart';
 import 'incident_status_chart.dart';
 import 'workspace_controller.dart';
 import 'workspace_diagnostics_screen.dart';
@@ -17,12 +18,14 @@ class WorkspaceApp extends StatefulWidget {
   const WorkspaceApp({
     required this.repository,
     this.performanceMonitor,
+    this.platformProbe,
     this.navigatorObservers = const [],
     super.key,
   });
 
   final IncidentRepository repository;
   final FramePerformanceMonitor? performanceMonitor;
+  final PlatformCapabilityProbe? platformProbe;
   final List<NavigatorObserver> navigatorObservers;
 
   @override
@@ -70,6 +73,9 @@ class _WorkspaceAppState extends State<WorkspaceApp> {
             settings: settings,
             builder: (_) => WorkspaceDiagnosticsScreen(
               performanceMonitor: performanceMonitor,
+              platformProbe:
+                  widget.platformProbe ??
+                  MethodChannelPlatformCapabilityProbe(),
             ),
           );
         }

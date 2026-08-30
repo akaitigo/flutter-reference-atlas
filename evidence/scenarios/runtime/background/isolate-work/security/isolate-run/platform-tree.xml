@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
+    <node index="0" text="" resource-id="" class="android.widget.LinearLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="1" hint="">
+      <node index="0" text="" resource-id="android:id/content" class="android.widget.FrameLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="2" hint="">
+        <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="1" hint="">
+          <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
+            <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
+              <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
+                <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
+                  <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="Atlas security proof background.isolate-work isolate-run PASS" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[332,1095][748,1305]" drawing-order="0" hint="" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+</hierarchy>

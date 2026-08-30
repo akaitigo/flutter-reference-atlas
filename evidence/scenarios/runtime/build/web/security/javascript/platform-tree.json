@@ -1,0 +1,438 @@
+{
+  "accessibility": {
+    "nodes": [
+      {
+        "backendDOMNodeId": 1,
+        "childIds": [
+          "2"
+        ],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 144
+        },
+        "frameId": "A1C7FE71DFBBEA5FB86FD259F182854E",
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "type": "attribute"
+            },
+            {
+              "attribute": "aria-label",
+              "superseded": true,
+              "type": "attribute"
+            },
+            {
+              "nativeSource": "title",
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": ""
+        },
+        "nodeId": "1",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "url",
+            "value": {
+              "type": "string",
+              "value": "http://127.0.0.1:54305/"
+            }
+          }
+        ],
+        "role": {
+          "type": "internalRole",
+          "value": "RootWebArea"
+        }
+      },
+      {
+        "backendDOMNodeId": 2,
+        "childIds": [
+          "15"
+        ],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 0
+        },
+        "ignored": true,
+        "ignoredReasons": [
+          {
+            "name": "uninteresting",
+            "value": {
+              "type": "boolean",
+              "value": true
+            }
+          }
+        ],
+        "nodeId": "2",
+        "parentId": "1",
+        "role": {
+          "type": "role",
+          "value": "none"
+        }
+      },
+      {
+        "backendDOMNodeId": 15,
+        "childIds": [
+          "23",
+          "21",
+          "22",
+          "33"
+        ],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 88
+        },
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": ""
+        },
+        "nodeId": "15",
+        "parentId": "2",
+        "properties": [],
+        "role": {
+          "type": "role",
+          "value": "generic"
+        }
+      },
+      {
+        "backendDOMNodeId": 23,
+        "childIds": [],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 9
+        },
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Enable accessibility"
+              },
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Enable accessibility"
+              }
+            },
+            {
+              "superseded": true,
+              "type": "contents"
+            },
+            {
+              "attribute": "title",
+              "superseded": true,
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": "Enable accessibility"
+        },
+        "nodeId": "23",
+        "parentId": "15",
+        "properties": [
+          {
+            "name": "live",
+            "value": {
+              "type": "token",
+              "value": "polite"
+            }
+          },
+          {
+            "name": "atomic",
+            "value": {
+              "type": "boolean",
+              "value": false
+            }
+          },
+          {
+            "name": "relevant",
+            "value": {
+              "type": "tokenList",
+              "value": "additions text"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          }
+        ],
+        "role": {
+          "type": "role",
+          "value": "button"
+        }
+      },
+      {
+        "backendDOMNodeId": 21,
+        "childIds": [],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 88
+        },
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "type": "attribute"
+            },
+            {
+              "attribute": "title",
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": ""
+        },
+        "nodeId": "21",
+        "parentId": "15",
+        "properties": [
+          {
+            "name": "live",
+            "value": {
+              "type": "token",
+              "value": "polite"
+            }
+          },
+          {
+            "name": "atomic",
+            "value": {
+              "type": "boolean",
+              "value": false
+            }
+          },
+          {
+            "name": "relevant",
+            "value": {
+              "type": "tokenList",
+              "value": "additions text"
+            }
+          }
+        ],
+        "role": {
+          "type": "role",
+          "value": "generic"
+        }
+      },
+      {
+        "backendDOMNodeId": 22,
+        "childIds": [],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 88
+        },
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "type": "attribute"
+            },
+            {
+              "attribute": "title",
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": ""
+        },
+        "nodeId": "22",
+        "parentId": "15",
+        "properties": [
+          {
+            "name": "live",
+            "value": {
+              "type": "token",
+              "value": "assertive"
+            }
+          },
+          {
+            "name": "atomic",
+            "value": {
+              "type": "boolean",
+              "value": false
+            }
+          },
+          {
+            "name": "relevant",
+            "value": {
+              "type": "tokenList",
+              "value": "additions text"
+            }
+          }
+        ],
+        "role": {
+          "type": "role",
+          "value": "generic"
+        }
+      },
+      {
+        "backendDOMNodeId": 33,
+        "childIds": [
+          "30",
+          "29"
+        ],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 88
+        },
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "type": "attribute"
+            },
+            {
+              "type": "contents"
+            },
+            {
+              "attribute": "title",
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": ""
+        },
+        "nodeId": "33",
+        "parentId": "15",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          }
+        ],
+        "role": {
+          "type": "role",
+          "value": "generic"
+        }
+      },
+      {
+        "backendDOMNodeId": 30,
+        "childIds": [],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 0
+        },
+        "ignored": true,
+        "ignoredReasons": [
+          {
+            "name": "uninteresting",
+            "value": {
+              "type": "boolean",
+              "value": true
+            }
+          }
+        ],
+        "nodeId": "30",
+        "parentId": "33",
+        "role": {
+          "type": "role",
+          "value": "none"
+        }
+      },
+      {
+        "backendDOMNodeId": 29,
+        "childIds": [],
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 88
+        },
+        "ignored": false,
+        "name": {
+          "sources": [
+            {
+              "attribute": "aria-labelledby",
+              "type": "relatedElement"
+            },
+            {
+              "attribute": "aria-label",
+              "type": "attribute"
+            },
+            {
+              "attribute": "title",
+              "type": "attribute"
+            }
+          ],
+          "type": "computedString",
+          "value": ""
+        },
+        "nodeId": "29",
+        "parentId": "33",
+        "properties": [],
+        "role": {
+          "type": "role",
+          "value": "generic"
+        }
+      }
+    ]
+  },
+  "dom_semantics": [
+    {
+      "label": "Enable accessibility",
+      "role": "button",
+      "tag": "FLT-SEMANTICS-PLACEHOLDER"
+    }
+  ]
+}

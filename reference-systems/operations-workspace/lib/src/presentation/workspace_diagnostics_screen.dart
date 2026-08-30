@@ -4,14 +4,17 @@ import 'package:flutter/material.dart';
 
 import '../domain/incident_input_policy.dart';
 import '../observability/frame_performance_monitor.dart';
+import '../platform/platform_capability_probe.dart';
 
 class WorkspaceDiagnosticsScreen extends StatelessWidget {
   const WorkspaceDiagnosticsScreen({
     required this.performanceMonitor,
+    required this.platformProbe,
     super.key,
   });
 
   final FramePerformanceMonitor performanceMonitor;
+  final PlatformCapabilityProbe platformProbe;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,73 @@ class WorkspaceDiagnosticsScreen extends StatelessWidget {
           const _SecurityContractCard(),
           const SizedBox(height: 16),
           _PerformanceCard(monitor: performanceMonitor),
+          const SizedBox(height: 16),
+          _PlatformCapabilityCard(probe: platformProbe),
         ],
+      ),
+    );
+  }
+}
+
+class _PlatformCapabilityCard extends StatefulWidget {
+  const _PlatformCapabilityCard({required this.probe});
+
+  final PlatformCapabilityProbe probe;
+
+  @override
+  State<_PlatformCapabilityCard> createState() =>
+      _PlatformCapabilityCardState();
+}
+
+class _PlatformCapabilityCardState extends State<_PlatformCapabilityCard> {
+  PlatformCapabilitySnapshot? _snapshot;
+  String? _failure;
+  bool _loading = false;
+
+  Future<void> _inspect() async {
+    if (_loading) return;
+    setState(() {
+      _loading = true;
+      _failure = null;
+    });
+    try {
+      final snapshot = await widget.probe.inspect();
+      if (!mounted) return;
+      setState(() => _snapshot = snapshot);
+    } on Object {
+      if (!mounted) return;
+      setState(() => _failure = 'Platform Runtimeへ接続できません。');
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final snapshot = _snapshot;
+    final subtitle = switch ((snapshot, _failure)) {
+      (final value?, _) =>
+        '${value.platform} ${value.osVersion} / SDK ${value.sdkInt} / '
+            'codec ${value.codec} / Activity ${value.activityAttached ? 'attached' : 'detached'}',
+      (_, final failure?) => failure,
+      _ => 'MethodChannel Pluginの実Runtime情報を未取得です。',
+    };
+    return Card(
+      key: const Key('platform-capability-card'),
+      child: ListTile(
+        leading: const Icon(Icons.developer_board),
+        title: const Text('Platform Runtime'),
+        subtitle: Text(subtitle),
+        trailing: _loading
+            ? const SizedBox.square(
+                dimension: 24,
+                child: CircularProgressIndicator(),
+              )
+            : FilledButton(
+                key: const Key('probe-platform-button'),
+                onPressed: _inspect,
+                child: Text(snapshot == null ? '取得' : '再取得'),
+              ),
       ),
     );
   }

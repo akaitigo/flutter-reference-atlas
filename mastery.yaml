@@ -4,7 +4,7 @@ epoch: "2026-08-28"
 promise: >-
   Flutterの公開アプリ開発について、学習者が仕組みと境界を理解し、実務者が方式を選び実装し、
   検証者と運用者が一次資料および再実行可能な証拠から品質、障害、互換性を判断し、
-  保守者とAgentがCoverage外を捏造せず安全に進化させられる決定版の参照経路を提供する。
+  保守者とAgentがCoverage外を捏造せず安全に進化させられる参照経路を提供する。
 audiences: [learner, practitioner, architect, operator, maintainer, reviewer, educator, agent]
 outcomes:
   - id: understand

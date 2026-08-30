@@ -1,0 +1,6 @@
+{
+  "id": "change-input-digest-only",
+  "operation": "change-input-and-repin-digest-without-new-run",
+  "target": "source.reference-app",
+  "expected_error": "digest-only closure拒否"
+}

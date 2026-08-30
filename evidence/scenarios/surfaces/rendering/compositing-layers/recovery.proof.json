@@ -1,0 +1,106 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "flutter-engine-3.47.1-deps"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/rendering/compositing-layers/recovery/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "rendering",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.rendering.compositing-layers.recovery",
+  "integrated_reference": {
+    "assertions": [
+      "intent survives failure",
+      "retry reaches expected state"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "retry-ownership"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:47780401dc6887e91abbf3924a6b3cf5a3664a6c05e6535442a4e6b921c4fab9",
+      "path": "evidence/scenarios/integrated/recovery.trace.json"
+    }
+  },
+  "scenario": "recovery",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:ac0ffb0faaba5c50d932da5e653773596a6fac89e60bd3bca9de4af198f28a35",
+      "path": "engine/src/flutter/lib/ui/compositing.dart"
+    },
+    {
+      "digest": "sha256:0ef77d36a03cfc3b06a2ffe6010c468864417aff94384be665ce9308cde66bcd",
+      "path": "packages/flutter/lib/src/rendering/layer.dart"
+    }
+  ],
+  "source_set_digest": "sha256:34e3ff260fdcb5c34e4e2f76b5675fb604fa34e2ed0df0949bf8d7b4ef9cf0cf",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "rendering.compositing-layers",
+  "surface_title": "CompositingとLayer lifecycle"
+}

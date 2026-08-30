@@ -1,0 +1,6 @@
+{
+  "id": "shrink-closure-structure",
+  "operation": "remove-closure-row-and-tranche-membership-and-repin-file-digest",
+  "target": "evidence/scenarios/closure-plan.json",
+  "expected_error": "Proof/Closure Plan構造縮小または差替え"
+}

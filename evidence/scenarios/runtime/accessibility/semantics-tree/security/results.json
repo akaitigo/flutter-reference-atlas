@@ -1,0 +1,127 @@
+{
+  "completed_at": "2026-08-30T14:52:58Z",
+  "harness": {
+    "bytes": 7104,
+    "digest": "sha256:3a4e9c992f957c76efe0c8fd3905ef5450a1164611c810cc2bfe96e29a0f2173",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 17141,
+    "digest": "sha256:9953a4ea2fef7c2a0d1f510cafba24b73916b1a35426182263cbe5e180b49684",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-four-security-surfaces-and-eight-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:56aa1c83878edb05757630a82878f2cd9ab0af274580f078b3d7f04729c6bb3f",
+      "path": "engine/src/flutter/lib/ui/semantics.dart"
+    },
+    {
+      "digest": "sha256:2a575725ea29b7d232760fb806abf31ae6f475340151a3b5dad50d8072b363b2",
+      "path": "packages/flutter/lib/src/semantics/binding.dart"
+    },
+    {
+      "digest": "sha256:b76165c41486de81d1b5df499b616064966ec3fc1509b100c42c296829c7590b",
+      "path": "packages/flutter/lib/src/semantics/semantics.dart"
+    }
+  ],
+  "source_set_digest": "sha256:4730a23ffe30745e76640d728583c39d45e33805d968a1d33f94e13cb1a15d25",
+  "started_at": "2026-08-30T14:47:43Z",
+  "status": "passed",
+  "surface_id": "accessibility.semantics-tree",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1478,
+        "digest": "sha256:ae43e5913556d3c0c68b6e67fd475e5659dddbdd411c1b44cb2a1e6bee31b9d5",
+        "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "material-semanticsのSemantics構造で非公開値を除外した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 54539,
+        "digest": "sha256:12824a8822fca64e2feb2a2bd258ce3d5e0985b5804f8a1aea67562376bf03df",
+        "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/screen.png"
+      },
+      "source": {
+        "bytes": 9763,
+        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2095,
+        "digest": "sha256:c3b89d72a3ed6e8538e9203bed71bedb811ad5c80a3f085f8c02b0f194915618",
+        "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/trace.json"
+      },
+      "variant": "material-semantics"
+    },
+    {
+      "artifact": {
+        "bytes": 1480,
+        "digest": "sha256:828fc6e7f6297424dfbd5917ee2838bcb3cd28da251da14964263cc36478b4ba",
+        "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "explicit-containerのSemantics構造で非公開値を除外した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 53842,
+        "digest": "sha256:91576612cca65520d709dc042603fcdfe7930c5c4ec76aeed6114565c1fbf517",
+        "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/screen.png"
+      },
+      "source": {
+        "bytes": 9763,
+        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2099,
+        "digest": "sha256:5bbd0a68cfb68cc505d262a8ee5c8b3f4980fc79b9e8e9a44b3265064a5c646b",
+        "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/trace.json"
+      },
+      "variant": "explicit-container"
+    }
+  ],
+  "variant_contract": [
+    "material-semantics",
+    "explicit-container"
+  ]
+}

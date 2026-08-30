@@ -11,9 +11,11 @@
     {"id":"language.public-surface","title":"固定SDK公開Surface Inventory","target_ids":["language.public-surface-inventory"],"recommendation":"required"},
     {"id":"language.conflict-resolution","title":"決定論的競合解決","target_ids":["language.dart-concurrency"],"recommendation":"recommended"},
     {"id":"platform.channel-plugin","title":"Platform ChannelとPlugin Contract","target_ids":["platform.channel-plugin-contract"],"recommendation":"required"},
+    {"id":"platform.method-channel-runtime","title":"MethodChannel Plugin Runtime Matrix","target_ids":["platform.method-channel-runtime-matrix"],"recommendation":"required"},
     {"id":"platform.ffi","title":"Dart FFI Runtime","target_ids":["platform.ffi-macos"],"recommendation":"conditional"},
     {"id":"platform.add-to-app","title":"Add-to-App Engine Contract","target_ids":["platform.add-to-app-contract"],"recommendation":"conditional"},
     {"id":"platform.web","title":"Web BoundaryとRelease Build","target_ids":["platform.web"],"recommendation":"required"},
+    {"id":"platform.web-runtime","title":"Chrome JavaScript・Wasm Runtime","target_ids":["platform.web-chrome-runtime"],"recommendation":"required"},
     {"id":"platform.desktop","title":"Desktop Platform Boundary","target_ids":["platform.desktop"],"recommendation":"conditional"},
     {"id":"platform.mobile","title":"Mobile Platform Boundary","target_ids":["platform.mobile"],"recommendation":"conditional"},
     {"id":"platform.runner-matrix","title":"公式Platform Runner Matrix","target_ids":["platform.six-target-builds","execution.android-emulator","execution.ios-simulator"],"recommendation":"conditional"},
@@ -27,6 +29,7 @@
     {"id":"quality.security","title":"入力と外部境界Security","target_ids":["quality.accessibility-performance-security"],"recommendation":"required"},
     {"id":"quality.failure-recovery","title":"Failure InjectionとRecovery","target_ids":["quality.failure-recovery"],"recommendation":"required"},
     {"id":"operations.runbooks","title":"Backup・Migration・Recovery運用","target_ids":["quality.migration-operations"],"recommendation":"required"},
-    {"id":"skill.router","title":"Flutter Router Skill","target_ids":["skill.router"],"recommendation":"required"}
+    {"id":"skill.router","title":"Flutter Router Skill","target_ids":["skill.router"],"recommendation":"required"},
+    {"id":"skill.definitive-router","title":"Definitive Surface Router","target_ids":["skill.definitive-router"],"recommendation":"required"}
   ]
 }

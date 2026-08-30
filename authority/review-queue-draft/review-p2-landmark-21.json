@@ -1,0 +1,70 @@
+{
+  "batch_id": "review-p2-landmark-21",
+  "items": [
+    {
+      "anchor_id": "anchor-3b27b592de757c2a053b",
+      "batch_id": "review-p2-landmark-21",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:c68b8e6b06064898177bf4db6b63be80eefcb14595bf07a59338397a97be1666",
+      "context_end": 52048,
+      "context_start": 45815,
+      "context_unit": "utf8-byte",
+      "document_id": "document-dart-dev-9ddf4f55d122",
+      "document_url": "https://dart.dev/changelog",
+      "existing_reference_edge_ids": [],
+      "heading_level": null,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": null,
+      "locator": "offset:utf8-byte:46839",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c6ca2e01d78290523f54ccbaa3f54b0bebc25883f195453e789e3cd18baaabe5",
+      "parent_anchor_id": "anchor-2f8ee9ad07634d3781ae",
+      "priority": 2,
+      "priority_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "landmark",
+      "source_ids": [
+        "dart-3.13-changelog"
+      ],
+      "state": "pending-human",
+      "tag": "nav"
+    },
+    {
+      "anchor_id": "anchor-ead79bdae94de5a0cec3",
+      "batch_id": "review-p2-landmark-21",
+      "candidate_cluster_id": null,
+      "context_digest": "sha256:20bdc19a77fe0e013ed29c2ce66509d9ba3f32954e10737f6fd1d4d2a56ee5a1",
+      "context_end": 19795,
+      "context_start": 8366,
+      "context_unit": "utf8-byte",
+      "document_id": "document-docs-flutter-dev-bf05d2eba7be",
+      "document_url": "https://docs.flutter.dev/release/release-notes/release-notes-3.47.0",
+      "existing_reference_edge_ids": [],
+      "heading_level": null,
+      "inventory_tool_digest": "sha256:28366dbc229f23c42c0ba93d43786bdd82ad9b748b178f3d4fc491f31934e6fd",
+      "label_digest": null,
+      "locator": "offset:utf8-byte:9390",
+      "locator_kind": "locked-body-offset",
+      "locked_source_digest": "sha256:c74911038e4ef676b1586af7da6ded2ecc6ef7b857623668526258eda5625ed3",
+      "parent_anchor_id": "anchor-root-c67dd232de06ecde07c0",
+      "priority": 2,
+      "priority_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "review_queue_tool_digest": "sha256:c381ee56d4418a8e25b9ab94999039b028dda7f04130d0fae37d5afca0971121",
+      "semantic_kind": "landmark",
+      "source_ids": [
+        "flutter-3.47-release-notes"
+      ],
+      "state": "pending-human",
+      "tag": "nav"
+    }
+  ],
+  "machine_assistance": "ordering-and-candidate-clustering-only",
+  "queue_id": "authority-review-d98f30af55d0f6b21c99",
+  "schema_version": 1,
+  "semantic_decisions": "none",
+  "status": "pending-human"
+}

@@ -8,6 +8,27 @@ import sys
 from pathlib import Path
 
 
+# 公開済みv1評価Artifactのshapeは非後退baselineである。Routerが追加の
+# fail-closed診断を返しても、この既存Artifactには新Fieldを混入させない。
+BASELINE_ACTUAL_FIELDS = (
+    "authority_ids",
+    "capability_id",
+    "commands",
+    "coverage_gap",
+    "gap_reasons",
+    "lab_id",
+    "matched_capabilities",
+    "message",
+    "mode",
+    "publish_allowed",
+    "publish_authorized",
+    "state",
+    "target_id",
+    "write_allowed",
+    "write_authorized",
+)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Flutter Router Skillを評価します。")
     parser.add_argument("--output", type=Path)
@@ -35,7 +56,8 @@ def main() -> int:
             and actual["write_authorized"] == case["write"]
             and actual["publish_authorized"] == case["publish"]
         )
-        results.append({"id": case["id"], "passed": passed, "actual": actual})
+        baseline_actual = {key: actual[key] for key in BASELINE_ACTUAL_FIELDS if key in actual}
+        results.append({"id": case["id"], "passed": passed, "actual": baseline_actual})
     passed_count = sum(result["passed"] for result in results)
     report = {
         "schema_version": 1,

@@ -1,0 +1,43 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "checksum": 1497067863,
+    "input_length": 25,
+    "mechanism": "transferable-data",
+    "platform": "Android",
+    "raw_sensitive_value_returned": false,
+    "scenario": "security",
+    "surface_id": "background.isolate-work",
+    "variant": "transferable-data",
+    "worker_completed": true
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
+      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "transferable-dataの実Isolateから要約値だけを返した"
+    ],
+    "passed": true
+  },
+  "platform_tree": {
+    "bytes": 3524,
+    "digest": "sha256:091a62d6cae0ba319864a3ce773ff454d13269bb8665de7be2359b97bff2dcc4",
+    "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-tree.xml"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:93a97d44cc609c855fd553f5c67c3223ad15c4cc78bc1909fd1a2fe30f10d13c",
+  "surface_id": "background.isolate-work",
+  "variant": "transferable-data"
+}

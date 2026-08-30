@@ -1,0 +1,21 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "capability_id": "platform.method-channel-runtime",
+  "id": "platform.method-channel-android-runtime",
+  "proof_obligations": [
+    {
+      "acceptance_criteria": [
+        "Android API 36 Emulator上の統合Reference AppでPluginがActivityへattachされ、StandardMethodCodecとJSONMethodCodecの両方が正常、64/65文字境界、policy拒否、一過性障害、再試行回復を同じ結果で通す。"
+      ],
+      "id": "proof.method-channel-android-runtime",
+      "statement": "Lab lab.definitive-android-method-channel とTest test.definitive-android-method-channelで主張を反証可能に検査する。"
+    }
+  ],
+  "schema_version": 1,
+  "source_ids": [
+    "flutter-sdk-3.47.1-macos-arm64",
+    "android-emulator-runtime-inventory"
+  ],
+  "statement": "Flutter技術実証として次の観測可能な主張を固定する。Android API 36 Emulator上の統合Reference AppでPluginがActivityへattachされ、StandardMethodCodecとJSONMethodCodecの両方が正常、64/65文字境界、policy拒否、一過性障害、再試行回復を同じ結果で通す。",
+  "status": "accepted"
+}
