@@ -11,6 +11,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 USES = re.compile(r"^\s*-?\s*uses:\s*([^\s#]+)", re.MULTILINE)
 ACTION_SHA = re.compile(r"^[0-9a-f]{40}$")
+CHECKOUT_BLOCK = re.compile(
+    r"(?ms)^      - uses: actions/checkout@[0-9a-f]{40}[^\n]*\n"
+    r"(?P<body>.*?)(?=^      - (?:uses|name):|\Z)"
+)
 
 
 def violations(text: str, path: str) -> list[str]:
@@ -24,13 +28,30 @@ def violations(text: str, path: str) -> list[str]:
     return errors
 
 
+def checkout_history_violations(text: str, path: str) -> list[str]:
+    errors: list[str] = []
+    subject_checkouts = [
+        match.group(0) for match in CHECKOUT_BLOCK.finditer(text)
+        if "repository:" not in match.group("body")
+    ]
+    if not subject_checkouts:
+        return [f"{path}: subject repository checkoutがありません"]
+    for block in subject_checkouts:
+        if re.search(r"(?m)^\s+fetch-depth:\s*0\s*$", block) is None:
+            errors.append(f"{path}: subject repository checkoutはfetch-depth: 0が必要です")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
     if not workflows:
         errors.append(".github/workflows: workflowがありません")
     for workflow in workflows:
-        errors.extend(violations(workflow.read_text(encoding="utf-8"), str(workflow.relative_to(ROOT))))
+        relative = str(workflow.relative_to(ROOT))
+        text = workflow.read_text(encoding="utf-8")
+        errors.extend(violations(text, relative))
+        errors.extend(checkout_history_violations(text, relative))
     if errors:
         for error in errors:
             print(f"CI supply-chainエラー: {error}")

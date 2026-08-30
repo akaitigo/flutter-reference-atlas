@@ -803,6 +803,7 @@
     "harness.android",
     "harness.android-platform-state-validation",
     "harness.authority-parity",
+    "harness.ci-supply-chain",
     "harness.container",
     "harness.evidence-dependency",
     "harness.formal-local",

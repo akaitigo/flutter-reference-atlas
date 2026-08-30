@@ -298,6 +298,9 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
             "tooling/authority_extraction/*.py", "tooling/fe_parity/*.py",
             "tooling/non_regression/*.py", "tooling/generate_provenance.py",
         ]),
+        ("harness.ci-supply-chain", "harness", [
+            ".github/workflows/*.yml", "tooling/ci_supply_chain/*.py",
+        ]),
         ("harness.evidence-dependency", "harness", [
             "tooling/evidence_dependency/*.py", "tooling/evidence_dependency/fixtures/*.json",
             "definitive/evidence-dependency-contract.json",
@@ -438,7 +441,7 @@ RUN_CONFIG = {
     "run.skill-eval.2026-08-28": ("derived", "make skill-eval", "2026-08-28T12:10:00Z", "2026-08-28T12:11:00Z", ["source.atlas-contract", "harness.skill", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.authority-inventory.2026-08-28": ("derived", "make authority-verify", "2026-08-28T12:20:00Z", "2026-08-28T12:21:00Z", ["source.atlas-contract", "harness.authority-parity", "profile.local"], None),
     "run.scenario-proof-generation.2026-08-29": ("derived", "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write", "2026-08-29T00:00:00+09:00", "2026-08-29T00:00:01+09:00", ["source.atlas-contract", "harness.web-reference", "harness.evidence-dependency", ANDROID_BUILD_UNIT_INPUT_ID, WEB_BUILD_UNIT_INPUT_ID, "runtime.flutter-3.47.1", "profile.web-chrome"], None),
-    "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "harness.authority-parity", "runtime.flutter-3.47.1", "profile.local"], None),
+    "run.definitive-parity.2026-08-28": ("derived", "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py", "2026-08-28T12:30:00Z", "2026-08-28T12:31:00Z", ["source.atlas-contract", "harness.authority-parity", "harness.ci-supply-chain", "runtime.flutter-3.47.1", "profile.local"], None),
     "run.provenance.2026-08-29": ("derived", "python3 tooling/generate_provenance.py", "2026-08-29T00:01:00+09:00", "2026-08-29T00:01:01+09:00", ["source.atlas-contract", "source.evidence-dependency-baseline", "harness.authority-parity", "profile.local"], None),
 }
 

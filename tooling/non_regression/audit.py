@@ -303,18 +303,33 @@ ACTION_SHA = re.compile(r"^[0-9a-f]{40}$")
 def ci_step_is_equal_or_stronger(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
     if actual == expected:
         return True
-    if set(actual) != set(expected) or "uses" not in expected:
-        return False
-    if any(actual[key] != expected[key] for key in expected if key != "uses"):
+    if "uses" not in expected or not set(expected).issubset(actual) or set(actual) - set(expected) - {"with"}:
         return False
     expected_action, separator, expected_ref = expected["uses"].partition("@")
     actual_action, actual_separator, actual_ref = actual["uses"].partition("@")
-    return (
+    action_pinned = (
         separator == "@"
         and actual_separator == "@"
         and expected_action == actual_action
         and not ACTION_SHA.fullmatch(expected_ref)
         and ACTION_SHA.fullmatch(actual_ref) is not None
+    )
+    if not action_pinned:
+        return False
+    for key in set(expected) - {"uses", "with"}:
+        if actual[key] != expected[key]:
+            return False
+    expected_with = expected.get("with", {})
+    actual_with = actual.get("with", {})
+    if not isinstance(expected_with, dict) or not isinstance(actual_with, dict):
+        return False
+    if any(actual_with.get(key) != value for key, value in expected_with.items()):
+        return False
+    added_with = set(actual_with) - set(expected_with)
+    return not added_with or (
+        expected_action == "actions/checkout"
+        and added_with == {"fetch-depth"}
+        and actual_with["fetch-depth"] == 0
     )
 
 

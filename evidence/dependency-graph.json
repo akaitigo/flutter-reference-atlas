@@ -1,6 +1,6 @@
 {
   "atlas_id": "flutter-reference-atlas",
-  "generated_at": "2026-08-31T00:18:50Z",
+  "generated_at": "2026-08-31T00:22:50Z",
   "inputs": [
     {
       "baseline_digest": "sha256:0434f4aace21588948e0292774363e28421efcee9e26bf070ce86d39f90b025d",
@@ -127,13 +127,13 @@
     },
     {
       "baseline_digest": "sha256:d2cf30b10d0ae8de6390fc9406237c001aea5f1ceaa7957cb4db040ebbbe3787",
-      "current_digest": "sha256:a5d04681c4f2795cf93734fc3b2a0ba9b808f1c43f0bc6b76a5b12584351a497",
+      "current_digest": "sha256:decc6228835bcc34ddf97fc21e57255fe36f58a9d69f69d66e2df97a814b64b8",
       "id": "source.evidence-dependency-baseline",
       "kind": "source",
       "members": [
         "baseline/evidence-dependency-v1.json"
       ],
-      "observed_at": "2026-08-31T00:16:51Z"
+      "observed_at": "2026-08-31T00:20:51Z"
     },
     {
       "baseline_digest": "sha256:d598228b97ed18903389ffae334db56d82abccc5f98473e7234b360844ba9043",
@@ -306,7 +306,7 @@
     },
     {
       "baseline_digest": "sha256:8357a933f5da99aae0aee0ae066968c4db30cd122a1a7857d05655f8bf059899",
-      "current_digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
+      "current_digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
       "id": "harness.authority-parity",
       "kind": "harness",
       "members": [
@@ -327,11 +327,24 @@
         "tooling/non_regression/audit.py",
         "tooling/non_regression/test_audit.py"
       ],
-      "observed_at": "2026-08-30T18:54:32Z"
+      "observed_at": "2026-08-31T00:22:00Z"
+    },
+    {
+      "baseline_digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
+      "current_digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
+      "id": "harness.ci-supply-chain",
+      "kind": "harness",
+      "members": [
+        ".github/workflows/ci.yml",
+        "tooling/ci_supply_chain/__init__.py",
+        "tooling/ci_supply_chain/test_verify.py",
+        "tooling/ci_supply_chain/verify.py"
+      ],
+      "observed_at": "2026-08-31T00:20:00Z"
     },
     {
       "baseline_digest": "sha256:b94abba8e35a255a9bd4f734287bfd5eca844caec8183410abb7aaf47d474a52",
-      "current_digest": "sha256:b57b8191a5adc1f59537121c1e037ba799692bf8d420866b11037e7a23e313ab",
+      "current_digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
       "id": "harness.evidence-dependency",
       "kind": "harness",
       "members": [
@@ -348,7 +361,7 @@
         "tooling/evidence_dependency/platform_state.py",
         "tooling/evidence_dependency/test_graph.py"
       ],
-      "observed_at": "2026-08-31T00:18:00Z"
+      "observed_at": "2026-08-31T00:20:00Z"
     },
     {
       "baseline_digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
@@ -437,6 +450,7 @@
     {
       "depends_on": [
         "harness.authority-parity",
+        "harness.ci-supply-chain",
         "output:evidence:scenarios:index.json",
         "profile.local",
         "runtime.flutter-3.47.1",
@@ -452,6 +466,7 @@
     {
       "depends_on": [
         "harness.authority-parity",
+        "harness.ci-supply-chain",
         "output:evidence:scenarios:index.json",
         "profile.local",
         "runtime.flutter-3.47.1",
@@ -467,6 +482,7 @@
     {
       "depends_on": [
         "harness.authority-parity",
+        "harness.ci-supply-chain",
         "output:evidence:scenarios:index.json",
         "profile.local",
         "runtime.flutter-3.47.1",
@@ -15545,7 +15561,7 @@
         "source.atlas-contract",
         "source.evidence-dependency-baseline"
       ],
-      "digest": "sha256:89b9105edb3e5f5256fecbda7c826f54efd208783d4f52ee9935de99b83892fd",
+      "digest": "sha256:1044fdf642b6228911e96a424469012498cf0eac62a7e2e99e644ce62f77eaaa",
       "id": "output:provenance.yaml",
       "kind": "derived-evidence",
       "path": "provenance.yaml",
@@ -16516,12 +16532,12 @@
     {
       "attempts": 1,
       "command": "make authority-verify",
-      "completed_at": "2026-08-30T19:30:36Z",
+      "completed_at": "2026-08-31T00:22:10Z",
       "execution_kind": "derived",
       "id": "run.authority-inventory.2026-08-28",
       "input_bindings": [
         {
-          "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
+          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
           "input_id": "harness.authority-parity"
         },
         {
@@ -16618,7 +16634,7 @@
         "output:evidence:artifacts:authority-body-non-regression-report.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:30:06Z"
+      "started_at": "2026-08-31T00:22:01Z"
     },
     {
       "attempts": 1,
@@ -16659,7 +16675,7 @@
     {
       "attempts": 1,
       "command": "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py",
-      "completed_at": "2026-08-31T00:18:20Z",
+      "completed_at": "2026-08-31T00:22:20Z",
       "execution_kind": "derived",
       "id": "run.definitive-parity.2026-08-28",
       "input_bindings": [
@@ -16668,11 +16684,15 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
+          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:b57b8191a5adc1f59537121c1e037ba799692bf8d420866b11037e7a23e313ab",
+          "digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
+          "input_id": "harness.ci-supply-chain"
+        },
+        {
+          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -16738,7 +16758,7 @@
         "output:atlas:definitive:surface-inventory.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-31T00:18:11Z"
+      "started_at": "2026-08-31T00:22:11Z"
     },
     {
       "attempts": 1,
@@ -16790,7 +16810,7 @@
     {
       "attempts": 1,
       "command": "python3 tooling/generate_provenance.py",
-      "completed_at": "2026-08-31T00:18:50Z",
+      "completed_at": "2026-08-31T00:22:50Z",
       "execution_kind": "derived",
       "id": "run.provenance.2026-08-29",
       "input_bindings": [
@@ -16803,15 +16823,19 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
+          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
           "input_id": "harness.authority-parity"
+        },
+        {
+          "digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
+          "input_id": "harness.ci-supply-chain"
         },
         {
           "digest": "sha256:597eeda3bcd154e372fd378f310ea5b14973dc6e66733e95934179ef0fae11d6",
           "input_id": "harness.container"
         },
         {
-          "digest": "sha256:b57b8191a5adc1f59537121c1e037ba799692bf8d420866b11037e7a23e313ab",
+          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -16879,7 +16903,7 @@
           "input_id": "source.atlas-contract"
         },
         {
-          "digest": "sha256:a5d04681c4f2795cf93734fc3b2a0ba9b808f1c43f0bc6b76a5b12584351a497",
+          "digest": "sha256:decc6228835bcc34ddf97fc21e57255fe36f58a9d69f69d66e2df97a814b64b8",
           "input_id": "source.evidence-dependency-baseline"
         },
         {
@@ -16895,7 +16919,7 @@
         "output:provenance.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-31T00:18:41Z"
+      "started_at": "2026-08-31T00:22:41Z"
     },
     {
       "attempts": 1,
@@ -17136,7 +17160,7 @@
     {
       "attempts": 1,
       "command": "make scenario-proof && python3 tooling/evidence_dependency/graph.py --write",
-      "completed_at": "2026-08-31T00:18:10Z",
+      "completed_at": "2026-08-31T00:20:10Z",
       "execution_kind": "derived",
       "id": "run.scenario-proof-generation.2026-08-29",
       "input_bindings": [
@@ -17145,7 +17169,7 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:b57b8191a5adc1f59537121c1e037ba799692bf8d420866b11037e7a23e313ab",
+          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -17746,7 +17770,7 @@
         "output:evidence:scenarios:surfaces:testing:unit-widget:security.proof.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-31T00:18:01Z"
+      "started_at": "2026-08-31T00:20:01Z"
     },
     {
       "attempts": 1,
@@ -17902,7 +17926,7 @@
     {
       "attempts": 1,
       "command": "make skill-eval",
-      "completed_at": "2026-08-31T00:18:40Z",
+      "completed_at": "2026-08-31T00:22:40Z",
       "execution_kind": "derived",
       "id": "run.skill-eval.2026-08-28",
       "input_bindings": [
@@ -17911,11 +17935,15 @@
           "input_id": "harness.android-platform-state-validation"
         },
         {
-          "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
+          "digest": "sha256:f90c71067249d46ad7f39d013f91a27d170564fd99278cc4780aa159a6524760",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:b57b8191a5adc1f59537121c1e037ba799692bf8d420866b11037e7a23e313ab",
+          "digest": "sha256:9f665268e8e9918740f7a39f2dea8eff1311e7d5fa6395bf8e16bdde84ac0ca4",
+          "input_id": "harness.ci-supply-chain"
+        },
+        {
+          "digest": "sha256:ded98281d2213f11a5f9edbb539e88dda2fd0b5509d0552af02c8dfe1647dd67",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -17990,7 +18018,7 @@
         "output:evidence:router-eval.evidence.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-31T00:18:21Z"
+      "started_at": "2026-08-31T00:22:21Z"
     },
     {
       "attempts": 1,

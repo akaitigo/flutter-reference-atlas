@@ -50,6 +50,16 @@ class NonRegressionAuditTest(unittest.TestCase):
         self.assertFalse(ci_step_is_equal_or_stronger(expected, wrong_action))
         self.assertFalse(ci_step_is_equal_or_stronger(pinned, expected))
 
+    def test_checkout_tag_can_be_pinned_and_full_history_added(self):
+        expected = {"uses": "actions/checkout@v4"}
+        full_history = {
+            "uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+            "with": {"fetch-depth": 0},
+        }
+        shallow = {**full_history, "with": {"fetch-depth": 1}}
+        self.assertTrue(ci_step_is_equal_or_stronger(expected, full_history))
+        self.assertFalse(ci_step_is_equal_or_stronger(expected, shallow))
+
 
 if __name__ == "__main__":
     unittest.main()

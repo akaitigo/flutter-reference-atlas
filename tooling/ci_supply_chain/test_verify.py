@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 import unittest
 
-from tooling.ci_supply_chain.verify import violations
+from tooling.ci_supply_chain.verify import checkout_history_violations, violations
 
 
 class CiSupplyChainVerifyTest(unittest.TestCase):
@@ -18,6 +18,39 @@ class CiSupplyChainVerifyTest(unittest.TestCase):
     def test_short_sha_is_rejected(self):
         errors = violations("steps:\n  - uses: actions/setup-go@40f1582\n", "ci.yml")
         self.assertEqual(len(errors), 1)
+
+    def test_subject_checkout_requires_full_history(self):
+        workflow = """jobs:
+  validate:
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: akaitigo/reference-atlas-core
+"""
+        self.assertEqual(checkout_history_violations(workflow, "ci.yml"), [])
+
+    def test_shallow_subject_checkout_is_rejected(self):
+        workflow = """jobs:
+  validate:
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+"""
+        self.assertEqual(len(checkout_history_violations(workflow, "ci.yml")), 1)
+
+    def test_implicit_shallow_subject_checkout_is_rejected(self):
+        workflow = """jobs:
+  validate:
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: verify
+        run: make validate
+"""
+        self.assertEqual(len(checkout_history_violations(workflow, "ci.yml")), 1)
 
 
 if __name__ == "__main__":
