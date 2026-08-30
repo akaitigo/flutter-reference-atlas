@@ -13,13 +13,13 @@
   "oracle": {
     "assertions": [
       "Android API 36の実Flutter processでfirst-attempt実行した",
-      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
       "explicit-containerのSemantics構造で非公開値を除外した"
     ],
     "passed": true
   },
-  "platform_tree": {
+  "platform_artifact": {
     "bytes": 3535,
     "digest": "sha256:63273163e06cc83b2a37dc39330e8775f19cceb989cd6880531990804e87dee4",
     "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/platform-tree.xml"
@@ -36,7 +36,7 @@
   },
   "scenario": "security",
   "schema_version": 1,
-  "screen_sha256": "sha256:91576612cca65520d709dc042603fcdfe7930c5c4ec76aeed6114565c1fbf517",
+  "screen_sha256": "sha256:b640e187cc106a0dc87a7915a5a375e74563912d3ba034ad6511307970806b1b",
   "surface_id": "accessibility.semantics-tree",
   "variant": "explicit-container"
 }

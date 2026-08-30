@@ -8,7 +8,7 @@
     "profile": "android-emulator",
     "runner_kind": "android-emulator"
   },
-  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                              9.0s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          334ms\n00:00 +0: background.app-lifecycle security app-lifecycle-listener\nATLAS_HOST_ACTION:background-and-resume\nATLAS_CAPTURE_READY:background.app-lifecycle:app-lifecycle-listener\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"background.app-lifecycle\",\"scenario\":\"security\",\"variant\":\"app-lifecycle-listener\",\"platform\":\"Android\",\"mechanism\":\"app-lifecycle-listener\",\"states\":[\"inactive\",\"resumed\"],\"background_seen\":true,\"resumed_after_background\":true,\"sensitive_value_cleared\":true}\n00:22 +1: (tearDownAll)\n00:22 +1: All tests passed!\n",
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             10.5s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          538ms\n00:00 +0: background.app-lifecycle security app-lifecycle-listener\nATLAS_HOST_ACTION:background-and-resume\nATLAS_CAPTURE_READY:background.app-lifecycle:app-lifecycle-listener\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"background.app-lifecycle\",\"scenario\":\"security\",\"variant\":\"app-lifecycle-listener\",\"platform\":\"Android\",\"mechanism\":\"app-lifecycle-listener\",\"states\":[\"inactive\",\"hidden\",\"paused\",\"hidden\",\"inactive\",\"resumed\"],\"background_seen\":true,\"resumed_after_background\":true,\"sensitive_value_cleared\":true}\n00:22 +1: (tearDownAll)\n00:22 +1: All tests passed!\n",
   "scenario": "security",
   "schema_version": 1,
   "streams": {
@@ -23,6 +23,10 @@
           "scenario": "security",
           "sensitive_value_cleared": true,
           "states": [
+            "inactive",
+            "hidden",
+            "paused",
+            "hidden",
             "inactive",
             "resumed"
           ],
@@ -39,11 +43,12 @@
     "resource": [
       {
         "api_level": 36,
-        "platform_tree": {
-          "nodes": 10,
+        "platform_artifact": {
+          "application_visible": true,
+          "kind": "android-activity-state",
           "sensitive_value_absent": true,
-          "surface_visible": true,
-          "variant_visible": true
+          "surface_bound": true,
+          "variant_bound": true
         }
       }
     ]

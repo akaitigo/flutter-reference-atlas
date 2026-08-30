@@ -50,11 +50,18 @@ class SecurityTrancheReportTest(unittest.TestCase):
                 screen = row / "screen.png"
                 screen.write_bytes(b"\x89PNG\r\n\x1a\nactual-screen")
                 tree = row / "platform-tree.xml"
-                password_attribute = "password" + '="false"'
-                tree.write_text(
-                    f'<hierarchy><node text="{surface} {variant} PASS" content-desc="public" {password_attribute} /></hierarchy>',
-                    encoding="utf-8",
-                )
+                if surface.startswith("accessibility."):
+                    password_attribute = "password" + '="false"'
+                    tree.write_text(
+                        f'<hierarchy><node text="{surface} {variant} PASS" content-desc="public" {password_attribute} /></hierarchy>',
+                        encoding="utf-8",
+                    )
+                else:
+                    tree.write_text(
+                        f"ATLAS_PLATFORM_STATE surface={surface} variant={variant}\n"
+                        "ACTIVITY dev.akaitigo.atlas.operations_workspace/.MainActivity\n",
+                        encoding="utf-8",
+                    )
                 self.logs[(surface, variant)] = log
                 self.screenshots[(surface, variant)] = screen
                 self.trees[(surface, variant)] = tree
@@ -87,9 +94,23 @@ class SecurityTrancheReportTest(unittest.TestCase):
         elif surface == "background.app-lifecycle":
             value.update(mechanism=variant, states=["inactive", "paused", "resumed"], background_seen=True,
                          resumed_after_background=True, sensitive_value_cleared=True)
-        else:
+        elif surface == "background.isolate-work":
             value.update(mechanism=variant, worker_completed=True, input_length=25, checksum=42,
                          raw_sensitive_value_returned=False)
+        elif surface == "input.focus-traversal":
+            value.update(mechanism=variant, initial_focus_received=True, public_target_focused=True,
+                         sensitive_target_focused=False)
+        elif surface == "input.keyboard-shortcuts":
+            value.update(mechanism=variant, shortcut_invoked=True, command="lock-public-session",
+                         sensitive_payload_exposed=False)
+        elif surface == "input.pointer-gesture-arena":
+            value.update(mechanism=variant, gesture_winner=variant,
+                         tap_count=1 if variant == "tap-recognizer" else 0,
+                         drag_count=1 if variant == "horizontal-drag" else 0, single_winner=True)
+        else:
+            value.update(mechanism=variant, input_accepted=variant == "obscured-entry",
+                         bidi_rejected=variant == "bidi-rejection",
+                         rendered_obscured=variant == "obscured-entry", raw_sensitive_value_visible=False)
         return value
 
     def publish(self):
@@ -110,7 +131,7 @@ class SecurityTrancheReportTest(unittest.TestCase):
     def snapshot(self):
         return {str(path.relative_to(self.output)): path.read_bytes() for path in self.output.rglob("*") if path.is_file()}
 
-    def test_full_bundle_closes_security_001_and_retains_existing_runtime(self):
+    def test_full_bundle_closes_security_001_and_005_and_retains_existing_runtime(self):
         self.publish()
         self.assertEqual(self.snapshot()["platform/method-channel/keep.txt"], b"retained")
         self.assertNotIn(b"password" + b"=", b"".join(
@@ -134,6 +155,19 @@ class SecurityTrancheReportTest(unittest.TestCase):
         previous = self.snapshot()
         key = ("background.app-lifecycle", "app-lifecycle-listener")
         self.logs[key].write_text("failed without marker\n", encoding="utf-8")
+        with self.assertRaisesRegex(report.ReportError, "first-attempt"):
+            self.publish()
+        self.assertEqual(self.snapshot(), previous)
+
+    def test_post_marker_timeout_retains_prior_complete_runtime_root(self):
+        self.publish()
+        previous = self.snapshot()
+        key = ("input.focus-traversal", "ordered-traversal")
+        observation = self.observation(*key)
+        self.logs[key].write_text(
+            f"{report.MARKER}{json.dumps(observation)}\nATLAS_CAPTURE_READY:{key[0]}:{key[1]}\n",
+            encoding="utf-8",
+        )
         with self.assertRaisesRegex(report.ReportError, "first-attempt"):
             self.publish()
         self.assertEqual(self.snapshot(), previous)

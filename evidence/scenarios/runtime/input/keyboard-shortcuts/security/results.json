@@ -1,0 +1,127 @@
+{
+  "completed_at": "2026-08-30T18:50:29Z",
+  "harness": {
+    "bytes": 13110,
+    "digest": "sha256:72794fef1d7242d4cfafd7e45d86097f3efcf20faf0ff675b578c5049499a09f",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 20508,
+    "digest": "sha256:330c64f1d686c2e498de068358a37f6c4db34e3e2cc6464f2f7ca6299dcc0277",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:7729ff50247a03ef790759609b5a9fc6bdcb17d7f59ab34c26245b4c224be6cb",
+      "path": "packages/flutter/lib/src/services/hardware_keyboard.dart"
+    },
+    {
+      "digest": "sha256:ccf4568230045858dbe5a5f07440ff1b3a392a01195358c91763fd45cc90fbf3",
+      "path": "packages/flutter/lib/src/widgets/actions.dart"
+    },
+    {
+      "digest": "sha256:9e9132d544d250385db539011b8e8c39b8b6e9ead869ce7eb9c4d31c0ad44918",
+      "path": "packages/flutter/lib/src/widgets/shortcuts.dart"
+    }
+  ],
+  "source_set_digest": "sha256:4c6a4a3ba9d9110ca4fe16727ef83de93969ba2993079d37d08ed0019e5af918",
+  "started_at": "2026-08-30T18:31:57Z",
+  "status": "passed",
+  "surface_id": "input.keyboard-shortcuts",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1490,
+        "digest": "sha256:aeab060c4d56d9ff627fe9e4ec841ca9d8de313e9e70fca10b78f2dea4e91df3",
+        "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "shortcuts-actionsで宣言済みShortcutだけを実行し機密payloadを公開しなかった"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 53797,
+        "digest": "sha256:76a3395d51ad041bfdc5b42eb742e6b78ae7f951d11d00b9c61889f56788db25",
+        "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2116,
+        "digest": "sha256:19b230d15c95cdd9b875710c2dbfd1113798ad43a3376994f833630415a513e2",
+        "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/trace.json"
+      },
+      "variant": "shortcuts-actions"
+    },
+    {
+      "artifact": {
+        "bytes": 1495,
+        "digest": "sha256:51bd4fe3bbf100669ce6b27e590795c66fe7115e42a75c1f121a392b466b28d9",
+        "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "callback-shortcutsで宣言済みShortcutだけを実行し機密payloadを公開しなかった"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 55784,
+        "digest": "sha256:703d30ca16d4a1f146f6752010c774f4d32cef6ff00350893d2e74578d622fa0",
+        "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2123,
+        "digest": "sha256:a96c9f5148b9e7e3a9f51d40beecfaec0f5d356b22f54b658985afbe22bbe310",
+        "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/trace.json"
+      },
+      "variant": "callback-shortcuts"
+    }
+  ],
+  "variant_contract": [
+    "shortcuts-actions",
+    "callback-shortcuts"
+  ]
+}

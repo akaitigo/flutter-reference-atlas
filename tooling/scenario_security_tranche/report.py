@@ -25,6 +25,10 @@ SURFACE_VARIANTS = {
     "accessibility.semantics-tree": ("material-semantics", "explicit-container"),
     "background.app-lifecycle": ("app-lifecycle-listener", "widgets-binding-observer"),
     "background.isolate-work": ("isolate-run", "transferable-data"),
+    "input.focus-traversal": ("ordered-traversal", "skip-sensitive"),
+    "input.keyboard-shortcuts": ("shortcuts-actions", "callback-shortcuts"),
+    "input.pointer-gesture-arena": ("tap-recognizer", "horizontal-drag"),
+    "input.text-ime": ("obscured-entry", "bidi-rejection"),
 }
 MARKER = "ATLAS_SECURITY_OBSERVATION:"
 SENSITIVE_SENTINEL = "runtime-security-sentinel"
@@ -75,10 +79,21 @@ def sanitize(text: str, repo_root: Path) -> str:
     return value.rstrip() + "\n"
 
 
-def validate_platform_tree(path: Path, surface: str, variant: str) -> dict[str, Any]:
+def validate_platform_artifact(path: Path, surface: str, variant: str) -> dict[str, Any]:
     raw = path.read_text(encoding="utf-8", errors="strict")
     if SENSITIVE_SENTINEL in raw:
-        raise ReportError(f"Accessibility treeへsensitive valueが露出しました: {surface}:{variant}")
+        raise ReportError(f"Platform artifactへsensitive valueが露出しました: {surface}:{variant}")
+    if not surface.startswith("accessibility."):
+        marker = f"ATLAS_PLATFORM_STATE surface={surface} variant={variant}"
+        if marker not in raw or "dev.akaitigo.atlas.operations_workspace" not in raw:
+            raise ReportError(f"実Android Activity stateが専用実行を示しません: {surface}:{variant}")
+        return {
+            "kind": "android-activity-state",
+            "surface_bound": True,
+            "variant_bound": True,
+            "application_visible": True,
+            "sensitive_value_absent": True,
+        }
     try:
         root = ET.fromstring(raw)
     except ET.ParseError as error:
@@ -89,10 +104,13 @@ def validate_platform_tree(path: Path, surface: str, variant: str) -> dict[str, 
     joined = " ".join(values)
     if "PASS" not in joined or surface not in joined or variant not in joined:
         raise ReportError(f"実Android Accessibility treeが専用PASS画面を示しません: {surface}:{variant}")
-    return {"nodes": sum(1 for _ in root.iter()), "surface_visible": True, "variant_visible": True, "sensitive_value_absent": True}
+    return {"kind": "android-accessibility-tree", "nodes": sum(1 for _ in root.iter()), "surface_visible": True, "variant_visible": True, "sensitive_value_absent": True}
 
 
-def write_public_platform_tree(source: Path, destination: Path) -> None:
+def write_public_platform_artifact(source: Path, destination: Path, surface: str) -> None:
+    if not surface.startswith("accessibility."):
+        destination.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+        return
     document = ET.parse(source)
     for node in document.getroot().iter():
         password_state = node.attrib.pop("password", None)
@@ -147,6 +165,38 @@ def validate_observation(value: dict[str, Any], surface: str, variant: str) -> N
             and value["checksum"] > 0
             and value.get("raw_sensitive_value_returned") is False
         )
+    elif surface == "input.focus-traversal":
+        valid = (
+            value.get("mechanism") == variant
+            and value.get("initial_focus_received") is True
+            and value.get("public_target_focused") is True
+            and value.get("sensitive_target_focused") is False
+        )
+    elif surface == "input.keyboard-shortcuts":
+        valid = (
+            value.get("mechanism") == variant
+            and value.get("shortcut_invoked") is True
+            and value.get("command") == "lock-public-session"
+            and value.get("sensitive_payload_exposed") is False
+        )
+    elif surface == "input.pointer-gesture-arena":
+        expected_taps = 1 if variant == "tap-recognizer" else 0
+        expected_drags = 1 if variant == "horizontal-drag" else 0
+        valid = (
+            value.get("mechanism") == variant
+            and value.get("gesture_winner") == variant
+            and value.get("tap_count") == expected_taps
+            and value.get("drag_count") == expected_drags
+            and value.get("single_winner") is True
+        )
+    elif surface == "input.text-ime":
+        valid = (
+            value.get("mechanism") == variant
+            and value.get("input_accepted") is (variant == "obscured-entry")
+            and value.get("bidi_rejected") is (variant == "bidi-rejection")
+            and value.get("rendered_obscured") is (variant == "obscured-entry")
+            and value.get("raw_sensitive_value_visible") is False
+        )
     if not valid or SENSITIVE_SENTINEL in json.dumps(value, ensure_ascii=False):
         raise ReportError(f"Security Scenario Oracle不一致: {surface}:{variant}")
 
@@ -154,8 +204,8 @@ def validate_observation(value: dict[str, Any], surface: str, variant: str) -> N
 def assertions_for(surface: str, variant: str) -> list[str]:
     common = [
         "Android API 36の実Flutter processでfirst-attempt実行した",
-        "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-        "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+        "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+        "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
     ]
     if surface == "accessibility.focus-text-scale":
         return common + [f"{variant}でFocusとtext scaleを適用し公開Semanticsだけを保持した"]
@@ -165,6 +215,14 @@ def assertions_for(surface: str, variant: str) -> list[str]:
         return common + [f"{variant}でbackground/resumeを観測し一時機密値を消去した"]
     if surface == "background.isolate-work":
         return common + [f"{variant}の実Isolateから要約値だけを返した"]
+    if surface == "input.focus-traversal":
+        return common + [f"{variant}で公開Focus targetへ遷移し機密targetをFocusしなかった"]
+    if surface == "input.keyboard-shortcuts":
+        return common + [f"{variant}で宣言済みShortcutだけを実行し機密payloadを公開しなかった"]
+    if surface == "input.pointer-gesture-arena":
+        return common + [f"{variant}がGesture arenaの単一winnerとなった"]
+    if surface == "input.text-ime":
+        return common + [f"{variant}でobscureまたはbidi拒否境界を実行した"]
     raise ReportError(f"未対応Surfaceです: {surface}")
 
 
@@ -213,16 +271,17 @@ def build_bundle(
                 raise ReportError(f"実Android screenshotがありません: {surface}:{variant}")
             observed = parse_observation(text)
             validate_observation(observed, surface, variant)
-            tree_summary = validate_platform_tree(tree, surface, variant)
+            platform_summary = validate_platform_artifact(tree, surface, variant)
 
             variant_dir = scenario_dir / variant
             variant_dir.mkdir(parents=True, exist_ok=True)
             trace_path = variant_dir / "trace.json"
             artifact_path = variant_dir / "result.json"
             screenshot_path = variant_dir / "screen.png"
-            tree_path = variant_dir / "platform-tree.xml"
+            platform_name = "platform-tree.xml" if surface.startswith("accessibility.") else "platform-state.txt"
+            platform_path = variant_dir / platform_name
             screenshot_path.write_bytes(screenshot.read_bytes())
-            write_public_platform_tree(tree, tree_path)
+            write_public_platform_artifact(tree, platform_path, surface)
             trace = {
                 "schema_version": 1,
                 "surface_id": surface,
@@ -232,7 +291,7 @@ def build_bundle(
                 "streams": {
                     "action": [{"name": "security", "status": "passed", "observed": observed}],
                     "network": {"applicable": False, "reason": "security-001 runtimeはnetworkを使用しない。"},
-                    "resource": [{"api_level": runtime_identity["api_level"], "platform_tree": tree_summary}],
+                    "resource": [{"api_level": runtime_identity["api_level"], "platform_artifact": platform_summary}],
                 },
                 "sanitized_runtime_log": sanitize(text, root),
             }
@@ -246,7 +305,7 @@ def build_bundle(
                 "retries": 0,
                 "runtime_identity": runtime_identity,
                 "observed": observed,
-                "platform_tree": binding(tree_path, f"evidence/scenarios/runtime/{surface_path}/{SCENARIO}/{variant}/platform-tree.xml"),
+                "platform_artifact": binding(platform_path, f"evidence/scenarios/runtime/{surface_path}/{SCENARIO}/{variant}/{platform_name}"),
                 "oracle": {"passed": True, "assertions": assertions_for(surface, variant)},
                 "screen_sha256": digest(screenshot_path),
             }
@@ -283,7 +342,7 @@ def build_bundle(
             "retention_contract": {
                 "failed_run": "retain-prior-success",
                 "partial_overwrite_allowed": False,
-                "publish_on": "all-four-security-surfaces-and-eight-variant-runs-passed",
+                "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
                 "swap": "full-runtime-root-staged-directory-rename-with-rollback",
             },
             "tests": tests,
@@ -299,11 +358,12 @@ def validate_bundle(staging: Path) -> None:
         scenario_dir = staging / relative
         expected = {"results.json"}
         for variant in variants:
+            platform_name = "platform-tree.xml" if surface.startswith("accessibility.") else "platform-state.txt"
             expected.update({
                 f"{variant}/trace.json",
                 f"{variant}/result.json",
                 f"{variant}/screen.png",
-                f"{variant}/platform-tree.xml",
+                f"{variant}/{platform_name}",
             })
         actual = {str(path.relative_to(scenario_dir)) for path in scenario_dir.rglob("*") if path.is_file()}
         if actual != expected:

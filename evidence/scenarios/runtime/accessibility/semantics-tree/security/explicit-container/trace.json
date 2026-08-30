@@ -8,7 +8,7 @@
     "profile": "android-emulator",
     "runner_kind": "android-emulator"
   },
-  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             15.9s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          467ms\n00:00 +0: accessibility.semantics-tree security explicit-container\nATLAS_CAPTURE_READY:accessibility.semantics-tree:explicit-container\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"accessibility.semantics-tree\",\"scenario\":\"security\",\"variant\":\"explicit-container\",\"platform\":\"Android\",\"semantics_label\":\"Public security container\",\"semantic_container\":true,\"explicit_child_nodes\":true,\"sensitive_value_exposed\":false}\n00:21 +1: (tearDownAll)\n00:21 +1: All tests passed!\n",
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             11.6s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          526ms\n00:00 +0: accessibility.semantics-tree security explicit-container\nATLAS_CAPTURE_READY:accessibility.semantics-tree:explicit-container\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"accessibility.semantics-tree\",\"scenario\":\"security\",\"variant\":\"explicit-container\",\"platform\":\"Android\",\"semantics_label\":\"Public security container\",\"semantic_container\":true,\"explicit_child_nodes\":true,\"sensitive_value_exposed\":false}\n00:20 +1: (tearDownAll)\n00:21 +1: All tests passed!\n",
   "scenario": "security",
   "schema_version": 1,
   "streams": {
@@ -35,7 +35,8 @@
     "resource": [
       {
         "api_level": 36,
-        "platform_tree": {
+        "platform_artifact": {
+          "kind": "android-accessibility-tree",
           "nodes": 10,
           "sensitive_value_absent": true,
           "surface_visible": true,

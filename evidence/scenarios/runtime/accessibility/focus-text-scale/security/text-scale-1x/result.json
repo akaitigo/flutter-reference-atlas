@@ -14,13 +14,13 @@
   "oracle": {
     "assertions": [
       "Android API 36の実Flutter processでfirst-attempt実行した",
-      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
       "text-scale-1xでFocusとtext scaleを適用し公開Semanticsだけを保持した"
     ],
     "passed": true
   },
-  "platform_tree": {
+  "platform_artifact": {
     "bytes": 3526,
     "digest": "sha256:587d20b2cdfa9fc0b868c11d93fbe2eb06a04e859f6e6ae606d6def55eaa223c",
     "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/text-scale-1x/platform-tree.xml"
@@ -37,7 +37,7 @@
   },
   "scenario": "security",
   "schema_version": 1,
-  "screen_sha256": "sha256:c8f9f23afca979ca030fd45d41c25eedf6ab5cf2cf463014d0905fc95aeab44a",
+  "screen_sha256": "sha256:1c5e4b8ddad6731b77f771a829328c6c9268d2d935cac95f6e1b889b1796051f",
   "surface_id": "accessibility.focus-text-scale",
   "variant": "text-scale-1x"
 }

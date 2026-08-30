@@ -297,6 +297,27 @@ def compare_exact_entity_map(
             errors.append(f"{name}:{entity_id}: published contract changed")
 
 
+ACTION_SHA = re.compile(r"^[0-9a-f]{40}$")
+
+
+def ci_step_is_equal_or_stronger(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
+    if actual == expected:
+        return True
+    if set(actual) != set(expected) or "uses" not in expected:
+        return False
+    if any(actual[key] != expected[key] for key in expected if key != "uses"):
+        return False
+    expected_action, separator, expected_ref = expected["uses"].partition("@")
+    actual_action, actual_separator, actual_ref = actual["uses"].partition("@")
+    return (
+        separator == "@"
+        and actual_separator == "@"
+        and expected_action == actual_action
+        and not ACTION_SHA.fullmatch(expected_ref)
+        and ACTION_SHA.fullmatch(actual_ref) is not None
+    )
+
+
 def audit(snapshot: dict[str, Any], current: dict[str, Any], mappings_doc: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     mappings = mappings_doc.get("mappings", [])
@@ -347,10 +368,14 @@ def audit(snapshot: dict[str, Any], current: dict[str, Any], mappings_doc: dict[
         actual_steps = actual.get("steps", [])
         position = 0
         for step in expected.get("steps", []):
-            try:
-                position = actual_steps.index(step, position) + 1
-            except ValueError:
+            match = next(
+                (index for index in range(position, len(actual_steps)) if ci_step_is_equal_or_stronger(step, actual_steps[index])),
+                None,
+            )
+            if match is None:
                 errors.append(f"ci_jobs:{job_id}: published step removed, changed, or reordered: {step}")
+            else:
+                position = match + 1
 
     for path, expected in snapshot["test_metrics"].items():
         actual = current["test_metrics"].get(path)

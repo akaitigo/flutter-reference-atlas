@@ -34,8 +34,8 @@
     "minimum_variants": 2,
     "oracle_per_variant": true,
     "report_binding": {
-      "bytes": 4844,
-      "digest": "sha256:e721358ed06910792442e9f42971959255059eff87449d1b163fccea930813e0",
+      "bytes": 4850,
+      "digest": "sha256:4203679adbaeb6fa25475e9abda2ef13ac1545420d5d0f42c1ba672a2497d7ee",
       "path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/results.json"
     },
     "report_path": "evidence/scenarios/runtime/accessibility/focus-text-scale/security/results.json",

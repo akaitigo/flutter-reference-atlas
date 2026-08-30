@@ -13,6 +13,10 @@
     "closure.background.isolate-work.security",
     "closure.build.android.security",
     "closure.build.web.security",
+    "closure.input.focus-traversal.security",
+    "closure.input.keyboard-shortcuts.security",
+    "closure.input.pointer-gesture-arena.security",
+    "closure.input.text-ime.security",
     "closure.platform.method-channel.refusal",
     "closure.platform.method-channel.failure",
     "closure.platform.method-channel.recovery",
@@ -31,6 +35,23 @@
         "closure.accessibility.semantics-tree.security",
         "closure.background.app-lifecycle.security",
         "closure.background.isolate-work.security"
+      ],
+      "scenario": "security",
+      "status": "completed",
+      "variant_runs": 4
+    },
+    {
+      "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation",
+      "completed_pattern_rows": 4,
+      "completed_variant_runs": 8,
+      "id": "security-005",
+      "pattern_rows": 4,
+      "risk_rank": 1,
+      "row_ids": [
+        "closure.input.focus-traversal.security",
+        "closure.input.keyboard-shortcuts.security",
+        "closure.input.pointer-gesture-arena.security",
+        "closure.input.text-ime.security"
       ],
       "scenario": "security",
       "status": "completed",
@@ -94,7 +115,7 @@
       "id": "closure.accessibility.focus-text-scale.security",
       "pattern_id": "accessibility.focus-text-scale",
       "proof": {
-        "digest": "sha256:18a5972260107adc9d7397c34be59f40326eda02ef392a143a5d056742aff3c3",
+        "digest": "sha256:6f930116ee89c06181c8827eced4c7e895244e620ea2037522ae3b0f55c9bc93",
         "path": "evidence/scenarios/surfaces/accessibility/focus-text-scale/security.proof.json"
       },
       "required_closure": {
@@ -140,7 +161,7 @@
       "id": "closure.accessibility.semantics-tree.security",
       "pattern_id": "accessibility.semantics-tree",
       "proof": {
-        "digest": "sha256:74b8ef3686071ce576015c6a7dd55abd353c61512688e9699261a6b560bdf6cb",
+        "digest": "sha256:0d9eed0534e9e84dc28f97b1e9fff3fa1424fef66ae9c1d5d1fb72e473649ad4",
         "path": "evidence/scenarios/surfaces/accessibility/semantics-tree/security.proof.json"
       },
       "required_closure": {
@@ -186,7 +207,7 @@
       "id": "closure.background.app-lifecycle.security",
       "pattern_id": "background.app-lifecycle",
       "proof": {
-        "digest": "sha256:ffabcf017cfb84a15f5380c00324c25349d05eaa6c6cc0c96cee8a6ad9557ec2",
+        "digest": "sha256:6f63b041246b97a48e8a9e50d16d5bd1be644c29aa116a17d2e6302bba702afa",
         "path": "evidence/scenarios/surfaces/background/app-lifecycle/security.proof.json"
       },
       "required_closure": {
@@ -232,7 +253,7 @@
       "id": "closure.background.isolate-work.security",
       "pattern_id": "background.isolate-work",
       "proof": {
-        "digest": "sha256:979bb9f70dab9e21d5f3500c719a9a780a686897292e168ace2fa2813f84fc98",
+        "digest": "sha256:3673185cb3290a1858748b5f8b350401a0e4f5e50a91c647ceadd415d0b0a957",
         "path": "evidence/scenarios/surfaces/background/isolate-work/security.proof.json"
       },
       "required_closure": {
@@ -459,7 +480,7 @@
       "id": "closure.build.web.security",
       "pattern_id": "build.web",
       "proof": {
-        "digest": "sha256:83493f14024c1858fe41037a28b407251338b4039169e89111406cc16050d28e",
+        "digest": "sha256:f98007b4500cbfddbf52063e4bcc7f1221833775d0eb5241e8731ef3e8949dbe",
         "path": "evidence/scenarios/surfaces/build/web/security.proof.json"
       },
       "required_closure": {
@@ -819,15 +840,13 @@
     {
       "gaps": [
         "このSurfaceに当該ScenarioのRuntime Observationがない。",
-        "専用Runtime契約未達: dedicated-runtime-report-missing",
-        "専用Runtime契約未達: variant-contract-not-declared",
         "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
         "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
       ],
       "id": "closure.input.focus-traversal.security",
       "pattern_id": "input.focus-traversal",
       "proof": {
-        "digest": "sha256:d0423041097d91667a3468f0070ffeb8bd876dab7a5e194f39e42ea5bea0a5b1",
+        "digest": "sha256:5d837deae01932eb1a724d9fc5db4b3fa8075dac437ca8defde7cef82d7d359e",
         "path": "evidence/scenarios/surfaces/input/focus-traversal/security.proof.json"
       },
       "required_closure": {
@@ -852,11 +871,14 @@
         "source_and_harness_digests": true
       },
       "risk_rank": 1,
-      "runtime_status": "open",
-      "runtime_variant_ids": [],
+      "runtime_status": "completed",
+      "runtime_variant_ids": [
+        "ordered-traversal",
+        "skip-sensitive"
+      ],
       "scenario": "security",
       "target_id": "input.focus-traversal",
-      "variant_contract_status": "unresolved",
+      "variant_contract_status": "resolved-runtime",
       "variant_ids": [
         "unresolved-variant-contract"
       ]
@@ -864,15 +886,13 @@
     {
       "gaps": [
         "このSurfaceに当該ScenarioのRuntime Observationがない。",
-        "専用Runtime契約未達: dedicated-runtime-report-missing",
-        "専用Runtime契約未達: variant-contract-not-declared",
         "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
         "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
       ],
       "id": "closure.input.keyboard-shortcuts.security",
       "pattern_id": "input.keyboard-shortcuts",
       "proof": {
-        "digest": "sha256:11c4420deb1c70ec709ab65fd7c401722704280e94e57640b66aee46d1f752ef",
+        "digest": "sha256:f7f567457aa9f0de130321f86a3c3a6bb0b84d0a2e88d9328a52bd8cc2303c98",
         "path": "evidence/scenarios/surfaces/input/keyboard-shortcuts/security.proof.json"
       },
       "required_closure": {
@@ -897,11 +917,14 @@
         "source_and_harness_digests": true
       },
       "risk_rank": 1,
-      "runtime_status": "open",
-      "runtime_variant_ids": [],
+      "runtime_status": "completed",
+      "runtime_variant_ids": [
+        "callback-shortcuts",
+        "shortcuts-actions"
+      ],
       "scenario": "security",
       "target_id": "input.keyboard-shortcuts",
-      "variant_contract_status": "unresolved",
+      "variant_contract_status": "resolved-runtime",
       "variant_ids": [
         "unresolved-variant-contract"
       ]
@@ -909,15 +932,13 @@
     {
       "gaps": [
         "このSurfaceに当該ScenarioのRuntime Observationがない。",
-        "専用Runtime契約未達: dedicated-runtime-report-missing",
-        "専用Runtime契約未達: variant-contract-not-declared",
         "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
         "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
       ],
       "id": "closure.input.pointer-gesture-arena.security",
       "pattern_id": "input.pointer-gesture-arena",
       "proof": {
-        "digest": "sha256:9a7033c1ed3deae9bd3ac07ad6619ba92711fd8853f5d53c09c6dbef3acb0cff",
+        "digest": "sha256:921fdfbf370e96dd2ee9a798969bc9d4815e144d75b81ece34b96563966ce781",
         "path": "evidence/scenarios/surfaces/input/pointer-gesture-arena/security.proof.json"
       },
       "required_closure": {
@@ -942,11 +963,14 @@
         "source_and_harness_digests": true
       },
       "risk_rank": 1,
-      "runtime_status": "open",
-      "runtime_variant_ids": [],
+      "runtime_status": "completed",
+      "runtime_variant_ids": [
+        "horizontal-drag",
+        "tap-recognizer"
+      ],
       "scenario": "security",
       "target_id": "input.pointer-gesture-arena",
-      "variant_contract_status": "unresolved",
+      "variant_contract_status": "resolved-runtime",
       "variant_ids": [
         "unresolved-variant-contract"
       ]
@@ -954,15 +978,13 @@
     {
       "gaps": [
         "このSurfaceに当該ScenarioのRuntime Observationがない。",
-        "専用Runtime契約未達: dedicated-runtime-report-missing",
-        "専用Runtime契約未達: variant-contract-not-declared",
         "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
         "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
       ],
       "id": "closure.input.text-ime.security",
       "pattern_id": "input.text-ime",
       "proof": {
-        "digest": "sha256:eaba18c905098d3b063aaf7e7c65564b2fec95557321e0ceb1cef8922d8df810",
+        "digest": "sha256:6eca233ce1733450f6ebd1f4448cc6a631dc80b85d2cb8e55d71d74af83895ff",
         "path": "evidence/scenarios/surfaces/input/text-ime/security.proof.json"
       },
       "required_closure": {
@@ -987,11 +1009,14 @@
         "source_and_harness_digests": true
       },
       "risk_rank": 1,
-      "runtime_status": "open",
-      "runtime_variant_ids": [],
+      "runtime_status": "completed",
+      "runtime_variant_ids": [
+        "bidi-rejection",
+        "obscured-entry"
+      ],
       "scenario": "security",
       "target_id": "input.text-ime",
-      "variant_contract_status": "unresolved",
+      "variant_contract_status": "resolved-runtime",
       "variant_ids": [
         "unresolved-variant-contract"
       ]
@@ -24534,7 +24559,7 @@
   "schema_version": 1,
   "scope": "54 provisional Flutter Surfaceと10 Scenarioの全540 gapを専用実Platform Runtimeで閉じる計画。",
   "source_digests": {
-    "evidence/scenarios/index.json": "sha256:3f4b11948f5d38be097626e14ee9a26235ebe1d769975dd3470a4ba932dce25f",
+    "evidence/scenarios/index.json": "sha256:4b1e599d7df8f2b957a0eabde10a65f67add5ff22f1bd5b11c6e2a241e610fc4",
     "evidence/scenarios/integrated/index.json": "sha256:e67ca10033a3b56db544eddfc9d35003e3d93875d62b073d0375e0a8bcb5a4b4"
   },
   "status": "incomplete",
@@ -24586,15 +24611,15 @@
         "total": 54
       },
       "security": {
-        "completed": 6,
-        "remaining": 48,
+        "completed": 10,
+        "remaining": 44,
         "total": 54
       }
     },
-    "completed_dedicated_rows": 10,
-    "completed_tranches": 1,
+    "completed_dedicated_rows": 14,
+    "completed_tranches": 2,
     "planned_tranches": 140,
-    "remaining_rows": 530
+    "remaining_rows": 526
   },
   "tranches": [
     {
@@ -24667,8 +24692,8 @@
     },
     {
       "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation",
-      "completed_pattern_rows": 0,
-      "completed_variant_runs": 0,
+      "completed_pattern_rows": 4,
+      "completed_variant_runs": 8,
       "id": "security-005",
       "pattern_rows": 4,
       "risk_rank": 1,
@@ -24679,7 +24704,7 @@
         "closure.input.text-ime.security"
       ],
       "scenario": "security",
-      "status": "planned",
+      "status": "completed",
       "variant_runs": 4
     },
     {

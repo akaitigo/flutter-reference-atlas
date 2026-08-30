@@ -34,8 +34,8 @@
     "minimum_variants": 2,
     "oracle_per_variant": true,
     "report_binding": {
-      "bytes": 4913,
-      "digest": "sha256:c7da502721f11e8da0256b711348bf5d942cb8c8f6cf7ddde12eff21779c9401",
+      "bytes": 4919,
+      "digest": "sha256:9e046b680c456090246c8d533979f8e942ae88fad634e4f7eca8a2cf90733f5f",
       "path": "evidence/scenarios/runtime/background/app-lifecycle/security/results.json"
     },
     "report_path": "evidence/scenarios/runtime/background/app-lifecycle/security/results.json",

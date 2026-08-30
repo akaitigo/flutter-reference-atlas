@@ -37,8 +37,8 @@
     "minimum_variants": 2,
     "oracle_per_variant": true,
     "report_binding": {
-      "bytes": 5005,
-      "digest": "sha256:12a4d5c316e42d5360c779bfa62fbb4dcfaeb7ca0d1a70775dc755273be2a949",
+      "bytes": 5011,
+      "digest": "sha256:42372b3dd33e7e3b36b33b6d7a6199451686808c9a7ec30aa849c9ee46080826",
       "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/results.json"
     },
     "report_path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/results.json",

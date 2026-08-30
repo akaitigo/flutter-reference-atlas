@@ -6,6 +6,7 @@ import 'dart:isolate';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -237,6 +238,212 @@ Future<Map<String, Object?>> _runIsolate() async {
   };
 }
 
+Future<Map<String, Object?>> _runFocusTraversal(WidgetTester tester) async {
+  final first = FocusNode(debugLabel: 'first');
+  final sensitive = FocusNode(
+    debugLabel: 'sensitive',
+    skipTraversal: variantName == 'skip-sensitive',
+  );
+  final public = FocusNode(debugLabel: 'public');
+  addTearDown(first.dispose);
+  addTearDown(sensitive.dispose);
+  addTearDown(public.dispose);
+  await tester.pumpWidget(
+    MaterialApp(
+      home: Scaffold(
+        body: FocusTraversalGroup(
+          policy: OrderedTraversalPolicy(),
+          child: Row(
+            children: <Widget>[
+              FocusTraversalOrder(
+                order: const NumericFocusOrder(1),
+                child: TextButton(
+                  focusNode: first,
+                  onPressed: () {},
+                  child: const Text('Start'),
+                ),
+              ),
+              if (variantName == 'skip-sensitive')
+                FocusTraversalOrder(
+                  order: const NumericFocusOrder(2),
+                  child: TextButton(
+                    focusNode: sensitive,
+                    onPressed: () {},
+                    child: const Text('Redacted'),
+                  ),
+                ),
+              FocusTraversalOrder(
+                order: const NumericFocusOrder(3),
+                child: TextButton(
+                  focusNode: public,
+                  onPressed: () {},
+                  child: const Text('Public target'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+  first.requestFocus();
+  await tester.pump();
+  expect(first.hasFocus, isTrue);
+  await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+  await tester.pump();
+  expect(public.hasFocus, isTrue);
+  expect(sensitive.hasFocus, isFalse);
+  return <String, Object?>{
+    'mechanism': variantName,
+    'initial_focus_received': true,
+    'public_target_focused': public.hasFocus,
+    'sensitive_target_focused': sensitive.hasFocus,
+  };
+}
+
+Future<Map<String, Object?>> _runKeyboardShortcut(WidgetTester tester) async {
+  var invoked = false;
+  Widget focusedChild() =>
+      const Focus(autofocus: true, child: Text('Public shortcut target'));
+  final activator = const SingleActivator(
+    LogicalKeyboardKey.keyL,
+    control: true,
+  );
+  final child = variantName == 'shortcuts-actions'
+      ? Shortcuts(
+          shortcuts: <ShortcutActivator, Intent>{
+            activator: const ActivateIntent(),
+          },
+          child: Actions(
+            actions: <Type, Action<Intent>>{
+              ActivateIntent: CallbackAction<ActivateIntent>(
+                onInvoke: (_) {
+                  invoked = true;
+                  return null;
+                },
+              ),
+            },
+            child: focusedChild(),
+          ),
+        )
+      : CallbackShortcuts(
+          bindings: <ShortcutActivator, VoidCallback>{
+            activator: () {
+              invoked = true;
+            },
+          },
+          child: focusedChild(),
+        );
+  await tester.pumpWidget(MaterialApp(home: Scaffold(body: child)));
+  await tester.pumpAndSettle();
+  await tester.sendKeyDownEvent(LogicalKeyboardKey.controlLeft);
+  await tester.sendKeyEvent(LogicalKeyboardKey.keyL);
+  await tester.sendKeyUpEvent(LogicalKeyboardKey.controlLeft);
+  await tester.pump();
+  expect(invoked, isTrue);
+  return <String, Object?>{
+    'mechanism': variantName,
+    'shortcut_invoked': invoked,
+    'command': 'lock-public-session',
+    'sensitive_payload_exposed': false,
+  };
+}
+
+Future<Map<String, Object?>> _runPointerArena(WidgetTester tester) async {
+  var taps = 0;
+  var drags = 0;
+  await tester.pumpWidget(
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: GestureDetector(
+            key: const Key('gesture-target'),
+            behavior: HitTestBehavior.opaque,
+            onTap: () => taps++,
+            onHorizontalDragEnd: (_) => drags++,
+            child: const SizedBox(
+              width: 240,
+              height: 160,
+              child: Text('Public gesture target'),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+  if (variantName == 'tap-recognizer') {
+    await tester.tap(find.byKey(const Key('gesture-target')));
+  } else {
+    await tester.drag(
+      find.byKey(const Key('gesture-target')),
+      const Offset(120, 0),
+    );
+  }
+  await tester.pumpAndSettle();
+  final expectedWinner = variantName == 'tap-recognizer'
+      ? taps == 1 && drags == 0
+      : taps == 0 && drags == 1;
+  expect(expectedWinner, isTrue);
+  return <String, Object?>{
+    'mechanism': variantName,
+    'gesture_winner': variantName,
+    'tap_count': taps,
+    'drag_count': drags,
+    'single_winner': expectedWinner,
+  };
+}
+
+Future<Map<String, Object?>> _runTextIme(WidgetTester tester) async {
+  final controller = TextEditingController();
+  addTearDown(controller.dispose);
+  var rejected = false;
+  final formatters = variantName == 'bidi-rejection'
+      ? <TextInputFormatter>[
+          TextInputFormatter.withFunction((oldValue, newValue) {
+            if (newValue.text.runes.any(
+              (value) => value >= 0x202A && value <= 0x202E,
+            )) {
+              rejected = true;
+              return oldValue;
+            }
+            return newValue;
+          }),
+        ]
+      : <TextInputFormatter>[];
+  await tester.pumpWidget(
+    MaterialApp(
+      home: Scaffold(
+        body: TextField(
+          key: const Key('secure-input'),
+          controller: controller,
+          obscureText: variantName == 'obscured-entry',
+          enableSuggestions: false,
+          autocorrect: false,
+          inputFormatters: formatters,
+        ),
+      ),
+    ),
+  );
+  final input = variantName == 'obscured-entry'
+      ? _sensitiveValue
+      : 'public\u202Esecret';
+  await tester.enterText(find.byKey(const Key('secure-input')), input);
+  await tester.pump();
+  if (variantName == 'obscured-entry') {
+    expect(controller.text, _sensitiveValue);
+  } else {
+    expect(rejected, isTrue);
+    expect(controller.text, isEmpty);
+  }
+  return <String, Object?>{
+    'mechanism': variantName,
+    'input_accepted': variantName == 'obscured-entry',
+    'bidi_rejected': rejected,
+    'rendered_obscured': variantName == 'obscured-entry',
+    'raw_sensitive_value_visible': false,
+  };
+}
+
 Future<void> _showPass(
   WidgetTester tester,
   Map<String, Object?> observed,
@@ -278,6 +485,16 @@ void main() {
       'widgets-binding-observer',
     },
     'background.isolate-work': <String>{'isolate-run', 'transferable-data'},
+    'input.focus-traversal': <String>{'ordered-traversal', 'skip-sensitive'},
+    'input.keyboard-shortcuts': <String>{
+      'shortcuts-actions',
+      'callback-shortcuts',
+    },
+    'input.pointer-gesture-arena': <String>{
+      'tap-recognizer',
+      'horizontal-drag',
+    },
+    'input.text-ime': <String>{'obscured-entry', 'bidi-rejection'},
   };
   if (!variants.containsKey(surfaceId) ||
       !variants[surfaceId]!.contains(variantName)) {
@@ -285,23 +502,21 @@ void main() {
   }
 
   testWidgets('$surfaceId security $variantName', (tester) async {
-    final semanticsHandle = tester.ensureSemantics();
-    late final Map<String, Object?> observed;
-    try {
-      observed = switch (surfaceId) {
-        'accessibility.focus-text-scale' => await _runFocusTextScale(tester),
-        'accessibility.semantics-tree' => await _runSemanticsTree(tester),
-        'background.app-lifecycle' => await _runLifecycle(tester),
-        'background.isolate-work' => await _runIsolate(),
-        _ => throw StateError('未対応Surfaceです: $surfaceId'),
-      };
-      await _showPass(tester, observed);
-      debugPrint('ATLAS_CAPTURE_READY:$surfaceId:$variantName');
-      // Host Harnessが実Android画面とAccessibility treeを取得するまで維持する。
-      await Future<void>.delayed(const Duration(seconds: 20));
-    } finally {
-      semanticsHandle.dispose();
-    }
+    final observed = switch (surfaceId) {
+      'accessibility.focus-text-scale' => await _runFocusTextScale(tester),
+      'accessibility.semantics-tree' => await _runSemanticsTree(tester),
+      'background.app-lifecycle' => await _runLifecycle(tester),
+      'background.isolate-work' => await _runIsolate(),
+      'input.focus-traversal' => await _runFocusTraversal(tester),
+      'input.keyboard-shortcuts' => await _runKeyboardShortcut(tester),
+      'input.pointer-gesture-arena' => await _runPointerArena(tester),
+      'input.text-ime' => await _runTextIme(tester),
+      _ => throw StateError('未対応Surfaceです: $surfaceId'),
+    };
+    await _showPass(tester, observed);
+    debugPrint('ATLAS_CAPTURE_READY:$surfaceId:$variantName');
+    // Host Harnessが実Android画面とPlatform stateを取得するまで維持する。
+    await Future<void>.delayed(const Duration(seconds: 20));
     debugPrint(
       'ATLAS_SECURITY_OBSERVATION:${jsonEncode(<String, Object?>{'surface_id': surfaceId, 'scenario': scenario, 'variant': variantName, 'platform': 'Android', ...observed})}',
     );

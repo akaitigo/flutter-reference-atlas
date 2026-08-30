@@ -1,0 +1,43 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "bidi_rejected": true,
+    "input_accepted": false,
+    "mechanism": "bidi-rejection",
+    "platform": "Android",
+    "raw_sensitive_value_visible": false,
+    "rendered_obscured": false,
+    "scenario": "security",
+    "surface_id": "input.text-ime",
+    "variant": "bidi-rejection"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "bidi-rejectionでobscureまたはbidi拒否境界を実行した"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 72364,
+    "digest": "sha256:5ef72da7e8cd1d4faec60aa1d783ea1944c7b114b1f6a03c295c9aed250a1606",
+    "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/platform-state.txt"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:086256f6a22bcfa041d39f7dd88b97338f538cfe237a0740ed7263f59fd1fef3",
+  "surface_id": "input.text-ime",
+  "variant": "bidi-rejection"
+}

@@ -11,16 +11,18 @@ jobs:
   validate:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
           go-version: '1.26.0'
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: '3.47.1'
           channel: stable
           cache: true
-      - uses: actions/checkout@v4
+      - name: 固定Flutter SDKを全Formal Gateへbinding
+        run: test -n "$FLUTTER_ROOT" && echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/reference-atlas-core
           ref: cf9e6e2d981305c83f970c1f21a1ddc9c1109263
@@ -35,7 +37,7 @@ jobs:
         run: make definitive-web-runtime
       - name: Reference App 10 Scenario Trace Gate
         run: make reference-scenario-runtime
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/reference-atlas-core
           ref: 072d7ca77981f51754e824d70c6d4ecd55ea67e5
@@ -46,14 +48,14 @@ jobs:
         run: make evidence-dependency-audit
       - name: Core v2 Subject Definitive Gate
         run: make core-v2-audit
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/frontend-behavior-atlas
           ref: 8a9e34a89a55cc53702032783c06ede7246a286f
           path: .tools/frontend-depth-reference
       - name: FE 18軸Depth Reference Lock検証
         run: make depth-reference-audit FE_DEPTH_REFERENCE_DIR=.tools/frontend-depth-reference
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/frontend-behavior-atlas
           ref: 7175de4305afb308722d5b83475e91c18da64957

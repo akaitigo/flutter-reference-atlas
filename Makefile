@@ -12,9 +12,9 @@ FE_REFERENCE_SYSTEM_DIR ?= ../frontend-behavior-atlas
 FORMAL_SDK ?= $(CURDIR)/.tools/flutter-3.47.1/flutter
 FORMAL_FLUTTER ?= $(FORMAL_SDK)/bin/flutter
 FORMAL_DART ?= $(FORMAL_SDK)/bin/dart
-FORMAL_ENV ?= env XDG_CONFIG_HOME=$(CURDIR)/.tools/xdg-config
+FORMAL_ENV ?= env XDG_CONFIG_HOME=$(CURDIR)/.tools/xdg-config DASH__SUPPRESS_ANALYTICS=true FLUTTER_SUPPRESS_ANALYTICS=true
 
-.PHONY: atlas-bootstrap atlas-v2-bootstrap atlas-validate atlas-audit core-v2-audit evidence-dependency-local evidence-dependency-audit overlay-validate authority-extract authority-review-queue authority-baseline-init authority-verify definitive-audit depth-reference-audit scenario-reference-audit non-regression-audit definitive-web-runtime reference-scenario-runtime scenario-proof validate formal-local format analyze dart-test flutter-test test skill-eval runbooks legal check
+.PHONY: atlas-bootstrap atlas-v2-bootstrap atlas-validate atlas-audit core-v2-audit evidence-dependency-local evidence-dependency-audit overlay-validate sdk-binding-check ci-supply-chain-check authority-extract authority-review-queue authority-baseline-init authority-verify definitive-audit depth-reference-audit scenario-reference-audit non-regression-audit definitive-web-runtime reference-scenario-runtime scenario-proof validate formal-local format analyze dart-test flutter-test test skill-eval runbooks legal check
 
 atlas-bootstrap:
 	@git -C "$(CORE_DIR)" cat-file -e "$(CORE_COMMIT)^{commit}" || { echo "エラー: Core commit $(CORE_COMMIT)を参照できません。"; exit 1; }
@@ -52,7 +52,16 @@ overlay-validate:
 	@GOCACHE="$(ATLAS_GO_CACHE)" go run ./tooling/atlascheck
 	@python3 tooling/generate_claim_entities.py --check
 
-definitive-audit:
+sdk-binding-check:
+	@test -n "$(strip $(FORMAL_SDK))" || { echo "エラー: FORMAL_SDKが空です。"; exit 1; }
+	@python3 -m unittest tooling/sdk_binding/test_verify.py
+	@python3 tooling/sdk_binding/verify.py --sdk-root "$(FORMAL_SDK)"
+
+ci-supply-chain-check:
+	@python3 -m unittest tooling/ci_supply_chain/test_verify.py
+	@python3 tooling/ci_supply_chain/verify.py
+
+definitive-audit: sdk-binding-check
 	@python3 -m unittest tooling/definitive_inventory/test_generate.py
 	@python3 -m unittest tooling/definitive_android/test_report.py
 	@python3 tooling/definitive_inventory/generate.py --sdk-root "$(FORMAL_SDK)" --check
@@ -105,13 +114,17 @@ reference-scenario-runtime:
 		scripts/reference-scenario-runtime.sh
 
 scenario-proof:
+	@python3 tooling/scenario_security_tranche/artifact_migration.py --check
 	@python3 tooling/scenario_proof/generate.py --check
 	@python3 -m unittest tooling/scenario_proof/test_generate.py
 	@python3 -m unittest tooling/scenario_proof/test_atomic_publish.py
+	@python3 -m unittest tooling/scenario_security_tranche/test_report.py
+	@python3 -m unittest tooling/scenario_security_tranche/test_failure_record.py
+	@python3 -m unittest tooling/scenario_security_tranche/test_artifact_migration.py
 	@python3 -m unittest tooling/scenario_build_android/test_report.py
 	@python3 -m unittest tooling/scenario_build_web/test_report.py
 
-validate: atlas-validate atlas-audit overlay-validate definitive-audit non-regression-audit
+validate: sdk-binding-check ci-supply-chain-check atlas-validate atlas-audit overlay-validate definitive-audit non-regression-audit
 
 formal-local:
 	@mkdir -p .tools/xdg-config

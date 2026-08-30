@@ -8,7 +8,7 @@
     "profile": "android-emulator",
     "runner_kind": "android-emulator"
   },
-  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             18.7s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...        1,194ms\n00:00 +0: accessibility.focus-text-scale security text-scale-1x\nATLAS_CAPTURE_READY:accessibility.focus-text-scale:text-scale-1x\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"accessibility.focus-text-scale\",\"scenario\":\"security\",\"variant\":\"text-scale-1x\",\"platform\":\"Android\",\"text_scale\":1.0,\"rendered_height\":20.0,\"focus_received\":true,\"semantics_label\":\"Public focus status\",\"sensitive_value_exposed\":false}\n00:21 +1: (tearDownAll)\n00:22 +1: All tests passed!\n",
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             25.1s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          719ms\n00:00 +0: accessibility.focus-text-scale security text-scale-1x\nATLAS_CAPTURE_READY:accessibility.focus-text-scale:text-scale-1x\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"accessibility.focus-text-scale\",\"scenario\":\"security\",\"variant\":\"text-scale-1x\",\"platform\":\"Android\",\"text_scale\":1.0,\"rendered_height\":20.0,\"focus_received\":true,\"semantics_label\":\"Public focus status\",\"sensitive_value_exposed\":false}\n00:21 +1: (tearDownAll)\n00:24 +1: All tests passed!\n",
   "scenario": "security",
   "schema_version": 1,
   "streams": {
@@ -36,7 +36,8 @@
     "resource": [
       {
         "api_level": 36,
-        "platform_tree": {
+        "platform_artifact": {
+          "kind": "android-accessibility-tree",
           "nodes": 10,
           "sensitive_value_absent": true,
           "surface_visible": true,

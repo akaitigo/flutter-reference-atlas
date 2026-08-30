@@ -1,0 +1,42 @@
+{
+  "first_attempt": true,
+  "observed": {
+    "command": "lock-public-session",
+    "mechanism": "callback-shortcuts",
+    "platform": "Android",
+    "scenario": "security",
+    "sensitive_payload_exposed": false,
+    "shortcut_invoked": true,
+    "surface_id": "input.keyboard-shortcuts",
+    "variant": "callback-shortcuts"
+  },
+  "oracle": {
+    "assertions": [
+      "Android API 36の実Flutter processでfirst-attempt実行した",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+      "callback-shortcutsで宣言済みShortcutだけを実行し機密payloadを公開しなかった"
+    ],
+    "passed": true
+  },
+  "platform_artifact": {
+    "bytes": 72131,
+    "digest": "sha256:40c24b8dd80f8223969b8f8d6a54dbecc4a4b0e9b11b9427cdc4b9b13fcf263e",
+    "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/platform-state.txt"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "screen_sha256": "sha256:703d30ca16d4a1f146f6752010c774f4d32cef6ff00350893d2e74578d622fa0",
+  "surface_id": "input.keyboard-shortcuts",
+  "variant": "callback-shortcuts"
+}

@@ -34,8 +34,8 @@
     "minimum_variants": 2,
     "oracle_per_variant": true,
     "report_binding": {
-      "bytes": 4583,
-      "digest": "sha256:f75b5e1d390edb93964be918bf557ed742ec716503ad8142f0ca9e63b7a8fe2f",
+      "bytes": 4589,
+      "digest": "sha256:9bb1cce47b6e7dfb74702279b88dd1859546f8496a0703c39fd80c51ee9b03d0",
       "path": "evidence/scenarios/runtime/background/isolate-work/security/results.json"
     },
     "report_path": "evidence/scenarios/runtime/background/isolate-work/security/results.json",

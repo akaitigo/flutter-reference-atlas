@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-08-30T18:50:29Z",
+  "harness": {
+    "bytes": 13110,
+    "digest": "sha256:72794fef1d7242d4cfafd7e45d86097f3efcf20faf0ff675b578c5049499a09f",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 20508,
+    "digest": "sha256:330c64f1d686c2e498de068358a37f6c4db34e3e2cc6464f2f7ca6299dcc0277",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:6095da6b738590454bfe60a76c2ed860346edc6ad42c6535800a1ac637fe1e4d",
+      "path": "packages/flutter/lib/src/widgets/focus_manager.dart"
+    },
+    {
+      "digest": "sha256:8df3b1e54ee06eeb0188aba3c4b27f972dcafbca7a629d83086a51b987715017",
+      "path": "packages/flutter/lib/src/widgets/focus_traversal.dart"
+    }
+  ],
+  "source_set_digest": "sha256:de19fb2918b15d2852cd7ae47ce2c5e5106179ae652a935c891138491ecbea32",
+  "started_at": "2026-08-30T18:31:57Z",
+  "status": "passed",
+  "surface_id": "input.focus-traversal",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1473,
+        "digest": "sha256:cd345e878df4bda8b49989f58d35fc932ae34d65605d41c4b1325e328588e052",
+        "path": "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "ordered-traversalで公開Focus targetへ遷移し機密targetをFocusしなかった"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 52277,
+        "digest": "sha256:4c67c8fcb32349fedb2844f471eefac4cadacef28e2ff0dd92ce1d1c287117fc",
+        "path": "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2103,
+        "digest": "sha256:8c9a9e76983d89279cc4a71cb2ff48d70b64acaf43a0290b9829cd2e01f47161",
+        "path": "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/trace.json"
+      },
+      "variant": "ordered-traversal"
+    },
+    {
+      "artifact": {
+        "bytes": 1458,
+        "digest": "sha256:940d7ff377eda86adc63ad56ab2f7b9e6298164c729a5d3ea49cd0d5fc2c0cb3",
+        "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "skip-sensitiveで公開Focus targetへ遷移し機密targetをFocusしなかった"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 53246,
+        "digest": "sha256:a055a995495fa9a0ccbc72c92139c9a61281f1ca952b81b4677dd16bbb5f7485",
+        "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2082,
+        "digest": "sha256:9eca3cecb37e5b011c3715ce3247656b0c1d8fc52e280d6c6f09e44d9db5a9e7",
+        "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/trace.json"
+      },
+      "variant": "skip-sensitive"
+    }
+  ],
+  "variant_contract": [
+    "ordered-traversal",
+    "skip-sensitive"
+  ]
+}

@@ -24,9 +24,9 @@ class ScenarioProofTest(unittest.TestCase):
     def test_integrated_trace_does_not_launder_surface_proof(self):
         summary = self.index["summary"]
         self.assertEqual(summary["integrated_trace_rows"], 540)
-        self.assertEqual(summary["surface_specific_runtime_rows"], 10)
-        self.assertEqual(summary["dedicated_runtime_rows"], 10)
-        self.assertEqual(summary["surface_runtime_gap_rows"], 530)
+        self.assertEqual(summary["surface_specific_runtime_rows"], 14)
+        self.assertEqual(summary["dedicated_runtime_rows"], 14)
+        self.assertEqual(summary["surface_runtime_gap_rows"], 526)
         self.assertGreater(summary["legacy_observation_rows"], 0)
         self.assertEqual(summary["authority_atomic_rows"], 0)
         self.assertEqual(summary["completion_eligible_rows"], 0)

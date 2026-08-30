@@ -1,20 +1,2 @@
 <?xml version='1.0' encoding='utf-8'?>
-<hierarchy rotation="0">
-  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
-    <node index="0" text="" resource-id="" class="android.widget.LinearLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="1" hint="">
-      <node index="0" text="" resource-id="android:id/content" class="android.widget.FrameLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="2" hint="">
-        <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="1" hint="">
-          <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
-            <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
-              <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
-                <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[0,0][1080,2400]" drawing-order="0" hint="">
-                  <node index="0" text="" resource-id="" class="android.view.View" package="dev.akaitigo.atlas.operations_workspace" content-desc="Atlas security proof background.app-lifecycle widgets-binding-observer PASS" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" selected="false" bounds="[326,1095][754,1305]" drawing-order="0" hint="" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-</hierarchy>
+<artifact-migration schema-version="1" status="historical-identifier-preserved" proof-eligible="false" old-path="evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml" replacement-path="evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt" replacement-digest="sha256:9053436f3d05d0c92259fbc220bf6fbbf1143c3acfed0f8fd0ee8ffc66af79e8" migration-evidence="evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/result.json"><reason>UIAutomatorによるSemantics handle競合を避け、同一Android API 36 processのdumpsys activity stateへ置換した。旧pathはMapping metadataとして保持し、現在Proofには算入しない。</reason></artifact-migration>

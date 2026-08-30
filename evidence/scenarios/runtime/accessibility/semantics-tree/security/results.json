@@ -1,19 +1,19 @@
 {
-  "completed_at": "2026-08-30T14:52:58Z",
+  "completed_at": "2026-08-30T18:50:29Z",
   "harness": {
-    "bytes": 7104,
-    "digest": "sha256:3a4e9c992f957c76efe0c8fd3905ef5450a1164611c810cc2bfe96e29a0f2173",
+    "bytes": 13110,
+    "digest": "sha256:72794fef1d7242d4cfafd7e45d86097f3efcf20faf0ff675b578c5049499a09f",
     "path": "scripts/scenario-security-tranche-runtime.sh"
   },
   "reporter": {
-    "bytes": 17141,
-    "digest": "sha256:9953a4ea2fef7c2a0d1f510cafba24b73916b1a35426182263cbe5e180b49684",
+    "bytes": 20508,
+    "digest": "sha256:330c64f1d686c2e498de068358a37f6c4db34e3e2cc6464f2f7ca6299dcc0277",
     "path": "tooling/scenario_security_tranche/report.py"
   },
   "retention_contract": {
     "failed_run": "retain-prior-success",
     "partial_overwrite_allowed": false,
-    "publish_on": "all-four-security-surfaces-and-eight-variant-runs-passed",
+    "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
     "swap": "full-runtime-root-staged-directory-rename-with-rollback"
   },
   "retries": 0,
@@ -43,14 +43,14 @@
     }
   ],
   "source_set_digest": "sha256:4730a23ffe30745e76640d728583c39d45e33805d968a1d33f94e13cb1a15d25",
-  "started_at": "2026-08-30T14:47:43Z",
+  "started_at": "2026-08-30T18:31:57Z",
   "status": "passed",
   "surface_id": "accessibility.semantics-tree",
   "tests": [
     {
       "artifact": {
-        "bytes": 1478,
-        "digest": "sha256:ae43e5913556d3c0c68b6e67fd475e5659dddbdd411c1b44cb2a1e6bee31b9d5",
+        "bytes": 1482,
+        "digest": "sha256:db0fcdb9e97a1f13a944e647ecb8ecbdb26b126e0ac1ec994b2d10de53430e9e",
         "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/result.json"
       },
       "attempts": 1,
@@ -59,34 +59,34 @@
       "oracle": {
         "assertions": [
           "Android API 36の実Flutter processでfirst-attempt実行した",
-          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
           "material-semanticsのSemantics構造で非公開値を除外した"
         ],
         "passed": true
       },
       "outcome": "expected",
       "screenshot": {
-        "bytes": 54539,
-        "digest": "sha256:12824a8822fca64e2feb2a2bd258ce3d5e0985b5804f8a1aea67562376bf03df",
+        "bytes": 54165,
+        "digest": "sha256:e996171c243559b2794b195de279b10c6e6c640e863b934a40fe88980c390b5c",
         "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/screen.png"
       },
       "source": {
-        "bytes": 9763,
-        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
         "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
       },
       "trace": {
-        "bytes": 2095,
-        "digest": "sha256:c3b89d72a3ed6e8538e9203bed71bedb811ad5c80a3f085f8c02b0f194915618",
+        "bytes": 2147,
+        "digest": "sha256:ac5ea750c5a7fcf8a58f77732ea90d4fe36b26de24a0c2c71d33487e2ce1c13e",
         "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/trace.json"
       },
       "variant": "material-semantics"
     },
     {
       "artifact": {
-        "bytes": 1480,
-        "digest": "sha256:828fc6e7f6297424dfbd5917ee2838bcb3cd28da251da14964263cc36478b4ba",
+        "bytes": 1484,
+        "digest": "sha256:91bcd9c2af2238584140c1845f94d0b674902fdb0c1dc123f5cca0285aa64a33",
         "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/result.json"
       },
       "attempts": 1,
@@ -95,26 +95,26 @@
       "oracle": {
         "assertions": [
           "Android API 36の実Flutter processでfirst-attempt実行した",
-          "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-          "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
           "explicit-containerのSemantics構造で非公開値を除外した"
         ],
         "passed": true
       },
       "outcome": "expected",
       "screenshot": {
-        "bytes": 53842,
-        "digest": "sha256:91576612cca65520d709dc042603fcdfe7930c5c4ec76aeed6114565c1fbf517",
+        "bytes": 53448,
+        "digest": "sha256:b640e187cc106a0dc87a7915a5a375e74563912d3ba034ad6511307970806b1b",
         "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/screen.png"
       },
       "source": {
-        "bytes": 9763,
-        "digest": "sha256:6c425879dc94949c5b116d2a279b8c4419f69b7e7b391de588a875c3d8daf92d",
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
         "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
       },
       "trace": {
-        "bytes": 2099,
-        "digest": "sha256:5bbd0a68cfb68cc505d262a8ee5c8b3f4980fc79b9e8e9a44b3265064a5c646b",
+        "bytes": 2151,
+        "digest": "sha256:dcd3d694ebbceac409cb7bda7395bbe81915b549b94f2f2ef842fa8de3535a53",
         "path": "evidence/scenarios/runtime/accessibility/semantics-tree/security/explicit-container/trace.json"
       },
       "variant": "explicit-container"

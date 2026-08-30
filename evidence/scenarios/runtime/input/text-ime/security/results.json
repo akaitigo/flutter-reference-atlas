@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-08-30T18:50:29Z",
+  "harness": {
+    "bytes": 13110,
+    "digest": "sha256:72794fef1d7242d4cfafd7e45d86097f3efcf20faf0ff675b578c5049499a09f",
+    "path": "scripts/scenario-security-tranche-runtime.sh"
+  },
+  "reporter": {
+    "bytes": 20508,
+    "digest": "sha256:330c64f1d686c2e498de068358a37f6c4db34e3e2cc6464f2f7ca6299dcc0277",
+    "path": "tooling/scenario_security_tranche/report.py"
+  },
+  "retention_contract": {
+    "failed_run": "retain-prior-success",
+    "partial_overwrite_allowed": false,
+    "publish_on": "all-eight-security-surfaces-and-sixteen-variant-runs-passed",
+    "swap": "full-runtime-root-staged-directory-rename-with-rollback"
+  },
+  "retries": 0,
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "sdk_sources": [
+    {
+      "digest": "sha256:e102cc59b74b97f169c2c6722b7b7e60862b66f113f90c0c9f2ff901df684135",
+      "path": "packages/flutter/lib/src/services/text_input.dart"
+    },
+    {
+      "digest": "sha256:d579841ac35e72085bffb720142432342baaf7c9c895adfc7bcbb8bd3b7ca9fd",
+      "path": "packages/flutter/lib/src/widgets/editable_text.dart"
+    }
+  ],
+  "source_set_digest": "sha256:875939e9cfc1cf33cc33819235256514cb412387bcd0b99e133bafa246c062e7",
+  "started_at": "2026-08-30T18:31:57Z",
+  "status": "passed",
+  "surface_id": "input.text-ime",
+  "tests": [
+    {
+      "artifact": {
+        "bytes": 1438,
+        "digest": "sha256:c6f59da146c5642c9cb56b7ec33c49e0311413945f2586c34ef149a854d56c8e",
+        "path": "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "obscured-entryでobscureまたはbidi拒否境界を実行した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 49108,
+        "digest": "sha256:e1d8e98393d49251ff79c127f9a2f302a15dbac228de6d1cde78755a9b0c3fde",
+        "path": "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2087,
+        "digest": "sha256:f7dce1e8d9836b458c3ef70077184b721625d137ecc6d40ab8aa4f410475d677",
+        "path": "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/trace.json"
+      },
+      "variant": "obscured-entry"
+    },
+    {
+      "artifact": {
+        "bytes": 1439,
+        "digest": "sha256:ab0a80a453a03e5cee0481ab11360de4652bb2ec77b8dd48dd6de812e9dde31c",
+        "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/result.json"
+      },
+      "attempts": 1,
+      "error": null,
+      "final_status": "passed",
+      "oracle": {
+        "assertions": [
+          "Android API 36の実Flutter processでfirst-attempt実行した",
+          "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+          "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
+          "bidi-rejectionでobscureまたはbidi拒否境界を実行した"
+        ],
+        "passed": true
+      },
+      "outcome": "expected",
+      "screenshot": {
+        "bytes": 48260,
+        "digest": "sha256:086256f6a22bcfa041d39f7dd88b97338f538cfe237a0740ed7263f59fd1fef3",
+        "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/screen.png"
+      },
+      "source": {
+        "bytes": 16542,
+        "digest": "sha256:b7a14275f5069734a08d6d201beec06cc3448b97cffa8181791494ef440fb347",
+        "path": "tooling/scenario_security_tranche/security_tranche_scenario_test.dart"
+      },
+      "trace": {
+        "bytes": 2089,
+        "digest": "sha256:d955616df9eeac33a9e40e49bde467374f550131c0777911d15239501b28efa8",
+        "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/trace.json"
+      },
+      "variant": "bidi-rejection"
+    }
+  ],
+  "variant_contract": [
+    "obscured-entry",
+    "bidi-rejection"
+  ]
+}

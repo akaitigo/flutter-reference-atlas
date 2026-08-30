@@ -17,16 +17,16 @@
   "oracle": {
     "assertions": [
       "Android API 36の実Flutter processでfirst-attempt実行した",
-      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
       "widgets-binding-observerでbackground/resumeを観測し一時機密値を消去した"
     ],
     "passed": true
   },
-  "platform_tree": {
-    "bytes": 3532,
-    "digest": "sha256:10dfe289b5aad55e08269fce96a0b9a3c7daebe0e1fed582cfeb9b6aa06f0234",
-    "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml"
+  "platform_artifact": {
+    "bytes": 81184,
+    "digest": "sha256:9053436f3d05d0c92259fbc220bf6fbbf1143c3acfed0f8fd0ee8ffc66af79e8",
+    "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt"
   },
   "retries": 0,
   "runtime_identity": {
@@ -40,7 +40,7 @@
   },
   "scenario": "security",
   "schema_version": 1,
-  "screen_sha256": "sha256:ef42b3ae8ba0788c6a9d8d70aa5b2b7e48c990f92857bb05c797392330d73f11",
+  "screen_sha256": "sha256:b78f4e07a6987e4a9bfefb1e3b177684079e3dc4cd472f6ce9d0a92076fc3fdd",
   "surface_id": "background.app-lifecycle",
   "variant": "widgets-binding-observer"
 }

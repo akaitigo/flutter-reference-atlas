@@ -136,6 +136,21 @@ class EvidenceDependencyNegativeFixtureTest(unittest.TestCase):
         dependency.write_json(self.root, path, plan)
         self.assertEqual(before, dependency.structure_digest(self.root, "scenario-closure-plan", path))
 
+    def test_closure_structure_includes_completed_and_planned_tranches_like_core(self):
+        plan = dependency.load_json(self.root, dependency.PLAN_PATH.as_posix())
+        structure = dependency.closure_structure(plan)
+        completed = plan["completed_tranches"]
+        planned = plan["tranches"]
+        self.assertEqual(
+            [item["id"] for item in structure["tranches"]],
+            [item["id"] for item in completed] + [item["id"] for item in planned],
+        )
+        self.assertEqual(
+            structure["ordered_row_ids"],
+            [row_id for item in completed for row_id in item["row_ids"]]
+            + [item["id"] for item in plan["rows"]],
+        )
+
     def test_security_001_records_runtime_variants_without_rewriting_baseline_topology(self):
         plan = dependency.load_json(dependency.ROOT, dependency.PLAN_PATH)
         tranche = next(item for item in plan["tranches"] if item["id"] == "security-001")
@@ -147,6 +162,16 @@ class EvidenceDependencyNegativeFixtureTest(unittest.TestCase):
             self.assertEqual(rows[row_id]["runtime_status"], "completed")
             self.assertEqual(rows[row_id]["variant_contract_status"], "resolved-runtime")
             self.assertEqual(len(rows[row_id]["runtime_variant_ids"]), 2)
+
+    def test_security_runtime_attestation_requires_current_reported_inputs(self):
+        report = dependency.load_json(
+            self.root,
+            "evidence/scenarios/runtime/accessibility/focus-text-scale/security/results.json",
+        )
+        self.assertTrue(dependency.security_runtime_report_attests_current_inputs(self.root, report["started_at"]))
+        harness = self.root / "scripts/scenario-security-tranche-runtime.sh"
+        harness.write_bytes(harness.read_bytes() + b"\nmutated-after-run\n")
+        self.assertFalse(dependency.security_runtime_report_attests_current_inputs(self.root, report["started_at"]))
 
 
 if __name__ == "__main__":

@@ -14,16 +14,16 @@
   "oracle": {
     "assertions": [
       "Android API 36の実Flutter processでfirst-attempt実行した",
-      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
       "transferable-dataの実Isolateから要約値だけを返した"
     ],
     "passed": true
   },
-  "platform_tree": {
-    "bytes": 3524,
-    "digest": "sha256:091a62d6cae0ba319864a3ce773ff454d13269bb8665de7be2359b97bff2dcc4",
-    "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-tree.xml"
+  "platform_artifact": {
+    "bytes": 72123,
+    "digest": "sha256:2b53bfe86a11cb74eda09270b7f7bada65f2b925b3b19f225e3e7bbaab7f0c87",
+    "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.txt"
   },
   "retries": 0,
   "runtime_identity": {
@@ -37,7 +37,7 @@
   },
   "scenario": "security",
   "schema_version": 1,
-  "screen_sha256": "sha256:93a97d44cc609c855fd553f5c67c3223ad15c4cc78bc1909fd1a2fe30f10d13c",
+  "screen_sha256": "sha256:939c8d4c18bdec630a895641728bc2f3eb0e266307ad8bea97910682ba49f1cf",
   "surface_id": "background.isolate-work",
   "variant": "transferable-data"
 }

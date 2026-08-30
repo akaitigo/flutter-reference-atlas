@@ -1,6 +1,6 @@
 import unittest
 
-from tooling.non_regression.audit import audit, replacement_is_valid, test_metric
+from tooling.non_regression.audit import audit, ci_step_is_equal_or_stronger, replacement_is_valid, test_metric
 
 
 class NonRegressionAuditTest(unittest.TestCase):
@@ -41,6 +41,14 @@ class NonRegressionAuditTest(unittest.TestCase):
         self.assertTrue(replacement_is_valid(mapping, current))
         current["evidence"] = {}
         self.assertFalse(replacement_is_valid(mapping, current))
+
+    def test_ci_action_tag_can_only_be_strengthened_to_same_action_sha(self):
+        expected = {"uses": "actions/checkout@v4"}
+        pinned = {"uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262"}
+        wrong_action = {"uses": "example/checkout@11d5960a326750d5838078e36cf38b85af677262"}
+        self.assertTrue(ci_step_is_equal_or_stronger(expected, pinned))
+        self.assertFalse(ci_step_is_equal_or_stronger(expected, wrong_action))
+        self.assertFalse(ci_step_is_equal_or_stronger(pinned, expected))
 
 
 if __name__ == "__main__":

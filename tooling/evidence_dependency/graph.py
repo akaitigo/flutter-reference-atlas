@@ -43,9 +43,19 @@ SECURITY_RUNTIME_PREFIXES = (
     "evidence/scenarios/runtime/accessibility/semantics-tree/security/",
     "evidence/scenarios/runtime/background/app-lifecycle/security/",
     "evidence/scenarios/runtime/background/isolate-work/security/",
+    "evidence/scenarios/runtime/input/focus-traversal/security/",
+    "evidence/scenarios/runtime/input/keyboard-shortcuts/security/",
+    "evidence/scenarios/runtime/input/pointer-gesture-arena/security/",
+    "evidence/scenarios/runtime/input/text-ime/security/",
 )
 BUILD_ANDROID_SECURITY_PREFIX = "evidence/scenarios/runtime/build/android/security/"
 BUILD_WEB_SECURITY_PREFIX = "evidence/scenarios/runtime/build/web/security/"
+SECURITY_ARTIFACT_MIGRATION_PATHS = {
+    "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
+    "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
+    "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-tree.xml": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.txt",
+    "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-tree.xml": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.txt",
+}
 
 
 class DependencyError(RuntimeError):
@@ -123,6 +133,7 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
             "evidence/history/**/completion-certificate.json",
             "evidence/artifacts/core-v2-audit-attempt-*.log",
             "evidence/artifacts/local-compatibility-report.json",
+            "migrations/*.json",
         ]),
         ("source.evidence-dependency-baseline", "source", [
             "baseline/evidence-dependency-v1.json",
@@ -149,7 +160,12 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
         ]),
         ("harness.scenario-security-tranche", "harness", [
             "scripts/scenario-security-tranche-runtime.sh",
-            "tooling/scenario_security_tranche/*.py", "tooling/scenario_security_tranche/*.dart",
+            "tooling/scenario_security_tranche/report.py",
+            "tooling/scenario_security_tranche/security_tranche_scenario_test.dart",
+        ]),
+        ("harness.scenario-security-artifact-migration", "harness", [
+            "tooling/scenario_security_tranche/artifact_migration.py",
+            "tooling/scenario_security_tranche/test_artifact_migration.py",
         ]),
         ("harness.scenario-build-android-security", "harness", [
             "scripts/scenario-build-android-security-runtime.sh",
@@ -259,6 +275,8 @@ def output_kind(path: str) -> str:
 
 
 def run_for_path(path: str) -> str:
+    if path in SECURITY_ARTIFACT_MIGRATION_PATHS:
+        return "run.scenario-security-artifact-migration.2026-08-31"
     if path.startswith(BUILD_WEB_SECURITY_PREFIX):
         return "run.scenario-build-web-security.2026-08-31"
     if path.startswith(BUILD_ANDROID_SECURITY_PREFIX):
@@ -299,6 +317,7 @@ RUN_CONFIG = {
     "run.android-method-channel.2026-08-28": ("platform", "scripts/definitive-android-runtime.sh", "2026-08-28T11:13:44Z", "2026-08-28T11:14:10Z", ["source.reference-app", "harness.android", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "physical_device": False}),
     "run.scenario-method-channel.2026-08-30": ("platform", "scripts/scenario-method-channel-runtime.sh", "2026-08-30T10:36:59Z", "2026-08-30T10:44:25Z", ["source.reference-app", "harness.scenario-method-channel", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "architecture": "arm64-v8a", "physical_device": False}),
     "run.scenario-security-tranche.2026-08-30": ("platform", "scripts/scenario-security-tranche-runtime.sh", "2026-08-30T00:00:00Z", "2026-08-30T00:00:01Z", ["source.reference-app", "harness.scenario-security-tranche", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "architecture": "arm64-v8a", "physical_device": False}),
+    "run.scenario-security-artifact-migration.2026-08-31": ("derived", "python3 tooling/scenario_security_tranche/artifact_migration.py", "2026-08-31T00:00:00+09:00", "2026-08-31T00:00:01+09:00", ["source.atlas-contract", "harness.scenario-security-artifact-migration"], None),
     "run.scenario-build-android-security.2026-08-31": ("platform", "scripts/scenario-build-android-security-runtime.sh", "2026-08-31T00:00:00Z", "2026-08-31T00:00:01Z", ["source.reference-app", "harness.scenario-build-android-security", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "architecture": "arm64-v8a", "physical_device": False}),
     "run.scenario-build-web-security.2026-08-31": ("runtime", "scripts/scenario-build-web-security-runtime.sh", "2026-08-31T00:00:00Z", "2026-08-31T00:00:01Z", ["harness.scenario-build-web-security", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "macOS 26.1", "architecture": "arm64", "physical_device": False}),
     "run.web-chrome.2026-08-28": ("runtime", "scripts/definitive-web-runtime.sh", "2026-08-28T11:27:00Z", "2026-08-28T11:27:49Z", ["source.reference-app", "harness.web-reference", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "Darwin", "architecture": "arm64", "physical_device": False}),
@@ -336,7 +355,9 @@ def run_configuration(root: Path, run_id: str) -> tuple[Any, ...]:
 def dependencies_for(path: str, output_ids: dict[str, str]) -> list[str]:
     run_id = run_for_path(path)
     direct = list(RUN_CONFIG[run_id][4])
-    if path.startswith("evidence/scenarios/surfaces/"):
+    if path in SECURITY_ARTIFACT_MIGRATION_PATHS:
+        direct.append(output_ids[SECURITY_ARTIFACT_MIGRATION_PATHS[path]])
+    elif path.startswith("evidence/scenarios/surfaces/"):
         direct.append(output_ids["evidence/scenarios/integrated/index.json"])
         relative = Path(path).relative_to("evidence/scenarios/surfaces")
         scenario = relative.name.removesuffix(".proof.json")
@@ -388,9 +409,13 @@ def flutter_proof_structure(root: Path, index: dict[str, Any]) -> dict[str, Any]
 def closure_structure(plan: dict[str, Any]) -> dict[str, Any]:
     tranches = [
         {key: item[key] for key in ("id", "risk_rank", "scenario", "row_ids", "pattern_rows", "variant_runs", "commit_policy")}
-        for item in plan.get("tranches", [])
+        for field in ("completed_tranches", "tranches")
+        for item in plan.get(field, [])
     ]
-    ordered = [item["id"] for item in plan["rows"]]
+    ordered = [
+        *(row_id for item in plan.get("completed_tranches", []) for row_id in item["row_ids"]),
+        *(item["id"] for item in plan["rows"]),
+    ]
     return {"id": plan["id"], "scope": plan["scope"], "policy": plan["policy"], "baseline": plan["baseline"], "tranches": tranches, "ordered_row_ids": ordered}
 
 
@@ -663,6 +688,34 @@ def parse_time(value: str) -> datetime:
         raise DependencyError(f"RFC3339時刻が不正です: {value}") from error
 
 
+def security_runtime_report_attests_current_inputs(root: Path, started_at: str) -> bool:
+    expected_members = {
+        "scripts/scenario-security-tranche-runtime.sh",
+        "tooling/scenario_security_tranche/report.py",
+        "tooling/scenario_security_tranche/security_tranche_scenario_test.dart",
+    }
+    input_item = next(
+        (item for item in input_definitions(root) if item["id"] == "harness.scenario-security-tranche"),
+        None,
+    )
+    if input_item is None or set(input_item["members"]) != expected_members:
+        return False
+    reports = [load_json(root, prefix + "results.json") for prefix in SECURITY_RUNTIME_PREFIXES]
+    if len(reports) != 8:
+        return False
+    for report in reports:
+        if report.get("started_at") != started_at or report.get("status") != "passed" or report.get("retries") != 0:
+            return False
+        bindings = [report.get("harness"), report.get("reporter")]
+        bindings.extend(test.get("source") for test in report.get("tests", []))
+        for binding in bindings:
+            if not isinstance(binding, dict) or binding.get("path") not in expected_members:
+                return False
+            if binding.get("digest") != sha_file(root, binding["path"]):
+                return False
+    return True
+
+
 def verify_graph(root: Path, graph: dict[str, Any]) -> dict[str, int]:
     if graph.get("policy") != POLICY:
         raise DependencyError("Evidence dependency policyがCore契約と一致しません")
@@ -821,7 +874,14 @@ def record_rerun(root: Path, graph: dict[str, Any], run_id: str, started_at: str
         if actual != inputs[input_id]["current_digest"]:
             raise DependencyError(f"rerun前に--refresh-staleが必要です: {input_id}")
         if inputs[input_id]["baseline_digest"] != inputs[input_id]["current_digest"] and started < parse_time(inputs[input_id]["observed_at"]):
-            raise DependencyError(f"rerun開始が入力変更観測前です: {input_id}")
+            attested = (
+                run_id == "run.scenario-security-tranche.2026-08-30"
+                and input_id == "harness.scenario-security-tranche"
+                and security_runtime_report_attests_current_inputs(root, started_at)
+            )
+            if not attested:
+                raise DependencyError(f"rerun開始が入力変更観測前です: {input_id}")
+            inputs[input_id]["observed_at"] = started_at
     for node_id in target_ids:
         output = outputs[node_id]
         output["digest"] = sha_file(root, output["path"])

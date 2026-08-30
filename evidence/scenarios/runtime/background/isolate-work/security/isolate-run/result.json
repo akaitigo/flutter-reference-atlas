@@ -14,16 +14,16 @@
   "oracle": {
     "assertions": [
       "Android API 36の実Flutter processでfirst-attempt実行した",
-      "実Android Accessibility treeと画面に専用Surface/VariantのPASSを観測した",
-      "sensitive sentinelをRuntime log・Result・Platform treeへ出力しなかった",
+      "実Android Platform stateと画面をSurface/Variant固有Runtimeで取得した",
+      "sensitive sentinelをRuntime log・Result・Platform artifactへ出力しなかった",
       "isolate-runの実Isolateから要約値だけを返した"
     ],
     "passed": true
   },
-  "platform_tree": {
-    "bytes": 3518,
-    "digest": "sha256:243903541ee2d36829156e10c8a55fc09365cd51d54035316e660162036c7a1f",
-    "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-tree.xml"
+  "platform_artifact": {
+    "bytes": 71595,
+    "digest": "sha256:a7373594c79e79ccef87351b3015875d868d765737a8359c32fa9d8ea5d93233",
+    "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.txt"
   },
   "retries": 0,
   "runtime_identity": {
@@ -37,7 +37,7 @@
   },
   "scenario": "security",
   "schema_version": 1,
-  "screen_sha256": "sha256:176cf6377535752d2d25b939a7fe1410c72d1c53c3c8165a86f7b50c13c69dbc",
+  "screen_sha256": "sha256:582e25fe6fc5bd7894fe18390543845ac64c952fdfab0b7228eb18925a23482d",
   "surface_id": "background.isolate-work",
   "variant": "isolate-run"
 }

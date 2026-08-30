@@ -74,12 +74,12 @@
       "surface_specific_runtime": 1
     },
     "security": {
-      "dedicated_runtime_closure": 6,
-      "explicit_gaps": 48,
+      "dedicated_runtime_closure": 10,
+      "explicit_gaps": 44,
       "integrated_surface_mapped": 1,
       "legacy_observation_rows": 0,
       "rows": 54,
-      "surface_specific_runtime": 6
+      "surface_specific_runtime": 10
     }
   },
   "completion_limits": [
@@ -549,11 +549,11 @@
       "surface_id": "input.pointer-gesture-arena"
     },
     {
-      "digest": "sha256:9a7033c1ed3deae9bd3ac07ad6619ba92711fd8853f5d53c09c6dbef3acb0cff",
+      "digest": "sha256:921fdfbf370e96dd2ee9a798969bc9d4815e144d75b81ece34b96563966ce781",
       "id": "proof.surface.input.pointer-gesture-arena.security",
       "path": "evidence/scenarios/surfaces/input/pointer-gesture-arena/security.proof.json",
       "scenario": "security",
-      "status": "surface-scenario-gap",
+      "status": "surface-runtime-proof",
       "surface_id": "input.pointer-gesture-arena"
     },
     {
@@ -629,11 +629,11 @@
       "surface_id": "input.keyboard-shortcuts"
     },
     {
-      "digest": "sha256:11c4420deb1c70ec709ab65fd7c401722704280e94e57640b66aee46d1f752ef",
+      "digest": "sha256:f7f567457aa9f0de130321f86a3c3a6bb0b84d0a2e88d9328a52bd8cc2303c98",
       "id": "proof.surface.input.keyboard-shortcuts.security",
       "path": "evidence/scenarios/surfaces/input/keyboard-shortcuts/security.proof.json",
       "scenario": "security",
-      "status": "surface-scenario-gap",
+      "status": "surface-runtime-proof",
       "surface_id": "input.keyboard-shortcuts"
     },
     {
@@ -709,11 +709,11 @@
       "surface_id": "input.focus-traversal"
     },
     {
-      "digest": "sha256:d0423041097d91667a3468f0070ffeb8bd876dab7a5e194f39e42ea5bea0a5b1",
+      "digest": "sha256:5d837deae01932eb1a724d9fc5db4b3fa8075dac437ca8defde7cef82d7d359e",
       "id": "proof.surface.input.focus-traversal.security",
       "path": "evidence/scenarios/surfaces/input/focus-traversal/security.proof.json",
       "scenario": "security",
-      "status": "surface-scenario-gap",
+      "status": "surface-runtime-proof",
       "surface_id": "input.focus-traversal"
     },
     {
@@ -789,11 +789,11 @@
       "surface_id": "input.text-ime"
     },
     {
-      "digest": "sha256:eaba18c905098d3b063aaf7e7c65564b2fec95557321e0ceb1cef8922d8df810",
+      "digest": "sha256:6eca233ce1733450f6ebd1f4448cc6a631dc80b85d2cb8e55d71d74af83895ff",
       "id": "proof.surface.input.text-ime.security",
       "path": "evidence/scenarios/surfaces/input/text-ime/security.proof.json",
       "scenario": "security",
-      "status": "surface-scenario-gap",
+      "status": "surface-runtime-proof",
       "surface_id": "input.text-ime"
     },
     {
@@ -1429,7 +1429,7 @@
       "surface_id": "accessibility.semantics-tree"
     },
     {
-      "digest": "sha256:74b8ef3686071ce576015c6a7dd55abd353c61512688e9699261a6b560bdf6cb",
+      "digest": "sha256:0d9eed0534e9e84dc28f97b1e9fff3fa1424fef66ae9c1d5d1fb72e473649ad4",
       "id": "proof.surface.accessibility.semantics-tree.security",
       "path": "evidence/scenarios/surfaces/accessibility/semantics-tree/security.proof.json",
       "scenario": "security",
@@ -1509,7 +1509,7 @@
       "surface_id": "accessibility.focus-text-scale"
     },
     {
-      "digest": "sha256:18a5972260107adc9d7397c34be59f40326eda02ef392a143a5d056742aff3c3",
+      "digest": "sha256:6f930116ee89c06181c8827eced4c7e895244e620ea2037522ae3b0f55c9bc93",
       "id": "proof.surface.accessibility.focus-text-scale.security",
       "path": "evidence/scenarios/surfaces/accessibility/focus-text-scale/security.proof.json",
       "scenario": "security",
@@ -2549,7 +2549,7 @@
       "surface_id": "background.app-lifecycle"
     },
     {
-      "digest": "sha256:ffabcf017cfb84a15f5380c00324c25349d05eaa6c6cc0c96cee8a6ad9557ec2",
+      "digest": "sha256:6f63b041246b97a48e8a9e50d16d5bd1be644c29aa116a17d2e6302bba702afa",
       "id": "proof.surface.background.app-lifecycle.security",
       "path": "evidence/scenarios/surfaces/background/app-lifecycle/security.proof.json",
       "scenario": "security",
@@ -2629,7 +2629,7 @@
       "surface_id": "background.isolate-work"
     },
     {
-      "digest": "sha256:979bb9f70dab9e21d5f3500c719a9a780a686897292e168ace2fa2813f84fc98",
+      "digest": "sha256:3673185cb3290a1858748b5f8b350401a0e4f5e50a91c647ceadd415d0b0a957",
       "id": "proof.surface.background.isolate-work.security",
       "path": "evidence/scenarios/surfaces/background/isolate-work/security.proof.json",
       "scenario": "security",
@@ -4424,24 +4424,24 @@
     "integrations/reference-system/manifest.json": "sha256:2c190e672da03c12206ac8608d6e6dc765866674bbfd1960e6ab51c235344b11",
     "tooling/scenario_proof/dedicated_runtime.py": "sha256:583972841c109c78faa1574801ce1658bd4d8d6d5c4409f616d6874de37ea01c",
     "tooling/scenario_proof/generate.py": "sha256:55eb6cfff0deca727c37fef6f24fdfff5d83aeac75b2e6161290846f076b4b60",
-    "tooling/scenario_proof/test_generate.py": "sha256:073beace1955ada76959535e0a6b8caa3da22f64033bc9d5446bda11c36a8d25"
+    "tooling/scenario_proof/test_generate.py": "sha256:99c066384e94d770c5721f879413697c27934574d4eb646b488c45370a6f5967"
   },
   "status": "incomplete-authority-atomic-and-surface-runtime-closure",
   "summary": {
     "authority_atomic_rows": 0,
     "completion_eligible_rows": 0,
     "dedicated_artifacts": 540,
-    "dedicated_runtime_rows": 10,
+    "dedicated_runtime_rows": 14,
     "integrated_trace_rows": 540,
     "legacy_observation_rows": 31,
     "rows": 540,
     "scenarios": 10,
     "status_counts": {
-      "surface-runtime-proof": 10,
-      "surface-scenario-gap": 530
+      "surface-runtime-proof": 14,
+      "surface-scenario-gap": 526
     },
-    "surface_runtime_gap_rows": 530,
-    "surface_specific_runtime_rows": 10,
+    "surface_runtime_gap_rows": 526,
+    "surface_specific_runtime_rows": 14,
     "surfaces": 54
   }
 }

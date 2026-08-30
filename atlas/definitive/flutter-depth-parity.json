@@ -509,7 +509,7 @@
             "evidence/scenarios/surfaces"
           ],
           "id": "scenario-security.surface-specific-runtime",
-          "observed": "6/54",
+          "observed": "10/54",
           "status": "gap"
         },
         {
@@ -533,7 +533,7 @@
       ],
       "denominator": "required Flutter atomic behavior × security profile",
       "gaps": [
-        "Surface固有Runtime Proofは6/54、明示gapは48件。",
+        "Surface固有Runtime Proofは10/54、明示gapは44件。",
         "統合Reference App Traceを全Surface固有Proofへ流用しない。",
         "Authority Human review完了までCompletion eligible rowは0。"
       ],
@@ -891,8 +891,8 @@
     "scenario_completion_eligible_rows": 0,
     "scenario_integrated_trace_rows": 540,
     "scenario_proof_rows": 540,
-    "scenario_surface_runtime_gap_rows": 530,
-    "scenario_surface_runtime_rows": 10,
+    "scenario_surface_runtime_gap_rows": 526,
+    "scenario_surface_runtime_rows": 14,
     "skill_matrix_pass_implies_complete": false,
     "source": "Flutter authority-derived subject surface inventory",
     "state": "provisional-unreviewed",

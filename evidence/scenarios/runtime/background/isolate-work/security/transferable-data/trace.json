@@ -8,7 +8,7 @@
     "profile": "android-emulator",
     "runner_kind": "android-emulator"
   },
-  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                              8.2s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          315ms\n00:00 +0: background.isolate-work security transferable-data\nATLAS_CAPTURE_READY:background.isolate-work:transferable-data\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"background.isolate-work\",\"scenario\":\"security\",\"variant\":\"transferable-data\",\"platform\":\"Android\",\"mechanism\":\"transferable-data\",\"worker_completed\":true,\"input_length\":25,\"checksum\":1497067863,\"raw_sensitive_value_returned\":false}\n00:20 +1: (tearDownAll)\n00:20 +1: All tests passed!\n",
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             14.6s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          25.4s\n00:00 +0: background.isolate-work security transferable-data\nATLAS_CAPTURE_READY:background.isolate-work:transferable-data\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"background.isolate-work\",\"scenario\":\"security\",\"variant\":\"transferable-data\",\"platform\":\"Android\",\"mechanism\":\"transferable-data\",\"worker_completed\":true,\"input_length\":25,\"checksum\":1497067863,\"raw_sensitive_value_returned\":false}\n00:26 +1: (tearDownAll)\n00:28 +1: All tests passed!\n",
   "scenario": "security",
   "schema_version": 1,
   "streams": {
@@ -36,11 +36,12 @@
     "resource": [
       {
         "api_level": 36,
-        "platform_tree": {
-          "nodes": 10,
+        "platform_artifact": {
+          "application_visible": true,
+          "kind": "android-activity-state",
           "sensitive_value_absent": true,
-          "surface_visible": true,
-          "variant_visible": true
+          "surface_bound": true,
+          "variant_bound": true
         }
       }
     ]

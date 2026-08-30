@@ -1,0 +1,51 @@
+{
+  "runtime_identity": {
+    "api_level": 36,
+    "architecture": "arm64-v8a",
+    "device_id": "emulator-5554",
+    "os": "Android 16",
+    "physical_device": false,
+    "profile": "android-emulator",
+    "runner_kind": "android-emulator"
+  },
+  "sanitized_runtime_log": "00:00 +0: loading <repo-root>/reference-systems/operations-workspace/integration_test/.atlas-generated/security_tranche_scenario_test.dart\nRunning Gradle task 'assembleDebug'...                             34.9s\n✓ Built build/app/outputs/flutter-apk/app-debug.apk\nInstalling build/app/outputs/flutter-apk/app-debug.apk...          419ms\n00:00 +0: input.text-ime security obscured-entry\nATLAS_CAPTURE_READY:input.text-ime:obscured-entry\nATLAS_SECURITY_OBSERVATION:{\"surface_id\":\"input.text-ime\",\"scenario\":\"security\",\"variant\":\"obscured-entry\",\"platform\":\"Android\",\"mechanism\":\"obscured-entry\",\"input_accepted\":true,\"bidi_rejected\":false,\"rendered_obscured\":true,\"raw_sensitive_value_visible\":false}\n00:21 +1: (tearDownAll)\n00:22 +1: All tests passed!\n",
+  "scenario": "security",
+  "schema_version": 1,
+  "streams": {
+    "action": [
+      {
+        "name": "security",
+        "observed": {
+          "bidi_rejected": false,
+          "input_accepted": true,
+          "mechanism": "obscured-entry",
+          "platform": "Android",
+          "raw_sensitive_value_visible": false,
+          "rendered_obscured": true,
+          "scenario": "security",
+          "surface_id": "input.text-ime",
+          "variant": "obscured-entry"
+        },
+        "status": "passed"
+      }
+    ],
+    "network": {
+      "applicable": false,
+      "reason": "security-001 runtimeはnetworkを使用しない。"
+    },
+    "resource": [
+      {
+        "api_level": 36,
+        "platform_artifact": {
+          "application_visible": true,
+          "kind": "android-activity-state",
+          "sensitive_value_absent": true,
+          "surface_bound": true,
+          "variant_bound": true
+        }
+      }
+    ]
+  },
+  "surface_id": "input.text-ime",
+  "variant": "obscured-entry"
+}
