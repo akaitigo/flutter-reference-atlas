@@ -1,0 +1,23 @@
+{
+  "activity_block": {
+    "end_line": 883,
+    "start_line": 739
+  },
+  "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+  "historical_package_match_accepted": false,
+  "raw_artifact": {
+    "bytes": 71544,
+    "digest": "sha256:116514e7132cd30d9fea7571ab9f64785e6101f956d543d376f695b117c5dacd",
+    "path": "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/platform-state.txt"
+  },
+  "schema_version": 1,
+  "state_contract": "foreground-input-observation",
+  "states": {
+    "mFinished": false,
+    "mResumed": true,
+    "mStopped": false
+  },
+  "surface_id": "input.focus-traversal",
+  "validation": "passed",
+  "variant": "ordered-traversal"
+}

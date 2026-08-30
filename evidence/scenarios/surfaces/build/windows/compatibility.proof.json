@@ -1,0 +1,161 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/build/windows/compatibility/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "build-release",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.build.windows.compatibility",
+  "integrated_reference": {
+    "assertions": [
+      "adapter result is observable",
+      "same test contract runs on both compiler variants"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "javascript-wasm"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3720,
+      "digest": "sha256:676629aad901bf770d8d7beedc6f649373f3316fc7a5afd3debe5fbc037d1ca2",
+      "path": "evidence/scenarios/integrated/compatibility.trace.json"
+    }
+  },
+  "scenario": "compatibility",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:dc7ba5e93d59a42f9fbeb3a790bf1f9b42a01ac88f42b4b3329cccf1f9799bdf",
+      "path": "packages/flutter_tools/lib/src/commands/build_windows.dart"
+    },
+    {
+      "digest": "sha256:96345475f1a3c66bd32d28178fba151ab1506b35b1f7857b8f7651863093ea11",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/.gitignore"
+    },
+    {
+      "digest": "sha256:08063e4b837ebf8100553716de1df7731b15f20209768b23106aaaf74b84febe",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/CMakeLists.txt.tmpl"
+    },
+    {
+      "digest": "sha256:1fe418971b6f41bb35ceb3d64113a835f3f6f171ecaa707bf232492b57a588d6",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/flutter/CMakeLists.txt"
+    },
+    {
+      "digest": "sha256:34119ec122e36940235ef4bc245fcfb43b6960ed443e28af1a8d833a81209b9e",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/CMakeLists.txt"
+    },
+    {
+      "digest": "sha256:6da2975cc08647144b5e0e173cf977a7b8ab7883032f5c3f865d912c93012703",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/Runner.rc.tmpl"
+    },
+    {
+      "digest": "sha256:dd185884c0b5301d400b58f12ebb36b1c8b326531597e531b40e44a6eeb0e943",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/flutter_window.cpp"
+    },
+    {
+      "digest": "sha256:38e0fcd3a0b83895852ec295cb70d90179c0dcd40d58f065eb5232a4ecd84898",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/flutter_window.h"
+    },
+    {
+      "digest": "sha256:f75cc94c12887588e47e0526330150d4dce15da4f688555b344c567c2d7c9fe5",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/main.cpp.tmpl"
+    },
+    {
+      "digest": "sha256:1fa98588b04561590ba1cf0521ab86a9db4a878312f21c9d5861d965ddd8d1ae",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/resource.h"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/resources/app_icon.ico.img.tmpl"
+    },
+    {
+      "digest": "sha256:825d243e9fa1542619909c1b72d09b3ed7c1f3b225bb8367c125835e5dc3f8aa",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/runner.exe.manifest"
+    },
+    {
+      "digest": "sha256:6c2c87106b4b29d534c7edcafb3b7f7b9079caa3cdafa7e56671ad2adf5a2543",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/utils.cpp"
+    },
+    {
+      "digest": "sha256:95a7f7dddb832997cefa937a96f89472332277e75734a5de553610760b744b03",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/utils.h"
+    },
+    {
+      "digest": "sha256:9065f31ccf746cf8b390121f958f9e959033af864aed779597066625ed56bc36",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/win32_window.cpp"
+    },
+    {
+      "digest": "sha256:7dd03746b19dcf3542829b2f6e8ed40a2714ce5f2cb3b0e23f0118a2fcf62d62",
+      "path": "packages/flutter_tools/templates/app/windows.tmpl/runner/win32_window.h"
+    }
+  ],
+  "source_set_digest": "sha256:b807941aa271edb1696dd11365e9f5edc8f6b4e70638f90a41677c78760ad350",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "build.windows",
+  "surface_title": "Windows build・run・release"
+}

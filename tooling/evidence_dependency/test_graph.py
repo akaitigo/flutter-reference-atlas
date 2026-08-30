@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 from tooling.evidence_dependency import graph as dependency
+from tooling.evidence_dependency import platform_state
 
 
 FIXTURES = dependency.ROOT / "tooling/evidence_dependency/fixtures"
@@ -68,6 +69,13 @@ class EvidenceDependencyNegativeFixtureTest(unittest.TestCase):
             run["output_ids"].remove(output["id"])
 
         self.assert_fixture_rejected("omit-required-output", mutate)
+
+    def test_scenario_index_proofs_must_all_be_git_tracked(self):
+        index = dependency.load_json(self.root, "evidence/scenarios/index.json")
+        tracked = {item["path"] for item in index["files"]}
+        tracked.remove(index["files"][-1]["path"])
+        with self.assertRaisesRegex(dependency.DependencyError, "git ls-files"):
+            dependency.verify_scenario_proofs_are_tracked(self.root, tracked)
 
     def test_required_output_cannot_be_retreated(self):
         def mutate(fixture):
@@ -172,6 +180,47 @@ class EvidenceDependencyNegativeFixtureTest(unittest.TestCase):
         harness = self.root / "scripts/scenario-security-tranche-runtime.sh"
         harness.write_bytes(harness.read_bytes() + b"\nmutated-after-run\n")
         self.assertFalse(dependency.security_runtime_report_attests_current_inputs(self.root, report["started_at"]))
+
+
+class AndroidPlatformStateContractTest(unittest.TestCase):
+    surface = "input.text-ime"
+    variant = "obscured-entry"
+    marker = "ATLAS_PLATFORM_STATE surface=input.text-ime variant=obscured-entry\n"
+
+    def test_exact_current_activity_block_and_state_pass(self):
+        raw = (
+            self.marker
+            + "  ACTIVITY com.android.launcher/.Launcher pid=1\n"
+            + "    mResumed=false mStopped=true mFinished=false\n"
+            + "  ACTIVITY dev.akaitigo.atlas.operations_workspace/.MainActivity pid=2\n"
+            + "    mResumed=true mStopped=false mFinished=false\n"
+        )
+        summary = platform_state.validate_text(raw, self.surface, self.variant)
+        self.assertEqual(summary["states"], {"mResumed": True, "mStopped": False, "mFinished": False})
+
+    def test_historical_package_log_without_current_activity_is_rejected(self):
+        raw = self.marker + "LauncherAppsCallback packageName=dev.akaitigo.atlas.operations_workspace\n"
+        with self.assertRaisesRegex(platform_state.PlatformStateError, "current Activity block"):
+            platform_state.validate_text(raw, self.surface, self.variant)
+
+    def test_wrong_activity_with_historical_target_package_is_rejected(self):
+        raw = (
+            self.marker
+            + "  ACTIVITY com.android.launcher/.Launcher pid=1\n"
+            + "    mResumed=true mStopped=false mFinished=false\n"
+            + "history dev.akaitigo.atlas.operations_workspace/.MainActivity\n"
+        )
+        with self.assertRaisesRegex(platform_state.PlatformStateError, "current Activity block"):
+            platform_state.validate_text(raw, self.surface, self.variant)
+
+    def test_stopped_target_activity_is_rejected(self):
+        raw = (
+            self.marker
+            + "  ACTIVITY dev.akaitigo.atlas.operations_workspace/.MainActivity pid=2\n"
+            + "    mResumed=false mStopped=true mFinished=false\n"
+        )
+        with self.assertRaisesRegex(platform_state.PlatformStateError, "state不一致"):
+            platform_state.validate_text(raw, self.surface, self.variant)
 
 
 if __name__ == "__main__":

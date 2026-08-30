@@ -1,0 +1,129 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/build/linux/security/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "build-release",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.build.linux.security",
+  "integrated_reference": {
+    "assertions": [
+      "input policy is observable",
+      "repository detail disclosure is prohibited"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "diagnostic-disclosure"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3710,
+      "digest": "sha256:a9afe57e17a920ddfc6335ef4e460bcbd88c1073f4e9058103d2ff170fa7bb3d",
+      "path": "evidence/scenarios/integrated/security.trace.json"
+    }
+  },
+  "scenario": "security",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:b4ceb7e9f1f0b5fee02fde96a531cfe268315f84c8ab2e47108d6609d5891594",
+      "path": "packages/flutter_tools/lib/src/commands/build_linux.dart"
+    },
+    {
+      "digest": "sha256:5ded4f1a9d10d34bf6ee5beb0711d88ee2ef07b0f07ace9ed77935a246e8eb82",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/.gitignore"
+    },
+    {
+      "digest": "sha256:ea80f743a28319b4e2b1085f07fedc696bf47398239a6707d6f1ba8aed8d2309",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/CMakeLists.txt.tmpl"
+    },
+    {
+      "digest": "sha256:787189e2623313cfee590a0b553338eb9fc68b3af922ddd77c5d39c75f989aeb",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/flutter/CMakeLists.txt"
+    },
+    {
+      "digest": "sha256:8cdcfd911e770fd7d511c97c7bce6559486a815352a47c953f7ef632e236d2cc",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/CMakeLists.txt"
+    },
+    {
+      "digest": "sha256:ea23f7cdf74091d63bba29ef60486370b766157b848f0cfe62bd8b1c1695a0c1",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/main.cc"
+    },
+    {
+      "digest": "sha256:176121ad04a2876334d88816549636a09c7ad1ac1d494a4abe0826baafc3c3c3",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/my_application.cc.tmpl"
+    },
+    {
+      "digest": "sha256:a4218d7ac0db8a9a6716daf216b2d4fc6bdc7ac647e3183078b2c962ebdfcf70",
+      "path": "packages/flutter_tools/templates/app/linux.tmpl/runner/my_application.h"
+    }
+  ],
+  "source_set_digest": "sha256:f328959db98a5e302bf0a763f185e7631775362f6f1f59264215ef6b3bf967d6",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "build.linux",
+  "surface_title": "Linux build・run・release"
+}

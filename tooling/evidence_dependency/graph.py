@@ -14,9 +14,15 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
+
+try:
+    from tooling.evidence_dependency import platform_state
+except ModuleNotFoundError:  # direct script execution
+    import platform_state  # type: ignore[no-redef]
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -50,6 +56,7 @@ SECURITY_RUNTIME_PREFIXES = (
 )
 BUILD_ANDROID_SECURITY_PREFIX = "evidence/scenarios/runtime/build/android/security/"
 BUILD_WEB_SECURITY_PREFIX = "evidence/scenarios/runtime/build/web/security/"
+PLATFORM_STATE_SUMMARY_SUFFIX = "/platform-state.summary.json"
 SECURITY_ARTIFACT_MIGRATION_PATHS = {
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
@@ -124,7 +131,7 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
             "labs/**/*.swift", "labs/**/*.json", "labs/**/pubspec.yaml", "labs/**/pubspec.lock",
         ]),
         ("source.atlas-contract", "source", [
-            "atlas.yaml", "coverage.yaml", "mastery.yaml", "sources.lock.yaml",
+            "atlas.yaml", "coverage.yaml", "definitive.yaml", "mastery.yaml", "sources.lock.yaml",
             "skill.package.yaml", "labs/index.json", "definitive/requirements.json",
             "definitive/runtime-observations.json", "definitive/evidence-dependency-contract.json",
             "authority/extraction.snapshot.json", "authority/body-inventory.snapshot.json",
@@ -194,6 +201,9 @@ def input_definitions(root: Path) -> list[dict[str, Any]]:
         ("harness.evidence-dependency", "harness", [
             "tooling/evidence_dependency/*.py", "tooling/evidence_dependency/fixtures/*.json",
             "definitive/evidence-dependency-contract.json",
+        ]),
+        ("harness.android-platform-state-validation", "harness", [
+            "tooling/evidence_dependency/platform_state.py",
         ]),
         ("runtime.flutter-3.47.1", "runtime", [
             "baseline/flutter-3.47.1.yaml", "environments/definitive/host-capabilities.json",
@@ -275,6 +285,8 @@ def output_kind(path: str) -> str:
 
 
 def run_for_path(path: str) -> str:
+    if path.endswith(PLATFORM_STATE_SUMMARY_SUFFIX):
+        return "run.android-platform-state-validation.2026-08-31"
     if path in SECURITY_ARTIFACT_MIGRATION_PATHS:
         return "run.scenario-security-artifact-migration.2026-08-31"
     if path.startswith(BUILD_WEB_SECURITY_PREFIX):
@@ -318,6 +330,7 @@ RUN_CONFIG = {
     "run.scenario-method-channel.2026-08-30": ("platform", "scripts/scenario-method-channel-runtime.sh", "2026-08-30T10:36:59Z", "2026-08-30T10:44:25Z", ["source.reference-app", "harness.scenario-method-channel", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "architecture": "arm64-v8a", "physical_device": False}),
     "run.scenario-security-tranche.2026-08-30": ("platform", "scripts/scenario-security-tranche-runtime.sh", "2026-08-30T00:00:00Z", "2026-08-30T00:00:01Z", ["source.reference-app", "harness.scenario-security-tranche", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "architecture": "arm64-v8a", "physical_device": False}),
     "run.scenario-security-artifact-migration.2026-08-31": ("derived", "python3 tooling/scenario_security_tranche/artifact_migration.py", "2026-08-31T00:00:00+09:00", "2026-08-31T00:00:01+09:00", ["source.atlas-contract", "harness.scenario-security-artifact-migration"], None),
+    "run.android-platform-state-validation.2026-08-31": ("derived", "python3 tooling/evidence_dependency/platform_state.py --write", "2026-08-31T00:00:00+09:00", "2026-08-31T00:00:01+09:00", ["harness.android-platform-state-validation"], None),
     "run.scenario-build-android-security.2026-08-31": ("platform", "scripts/scenario-build-android-security-runtime.sh", "2026-08-31T00:00:00Z", "2026-08-31T00:00:01Z", ["source.reference-app", "harness.scenario-build-android-security", "runtime.flutter-3.47.1", "profile.android-emulator"], {"profile": "android-emulator", "device_id": "emulator-5554", "os": "Android 16", "api_level": 36, "architecture": "arm64-v8a", "physical_device": False}),
     "run.scenario-build-web-security.2026-08-31": ("runtime", "scripts/scenario-build-web-security-runtime.sh", "2026-08-31T00:00:00Z", "2026-08-31T00:00:01Z", ["harness.scenario-build-web-security", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "macOS 26.1", "architecture": "arm64", "physical_device": False}),
     "run.web-chrome.2026-08-28": ("runtime", "scripts/definitive-web-runtime.sh", "2026-08-28T11:27:00Z", "2026-08-28T11:27:49Z", ["source.reference-app", "harness.web-reference", "runtime.flutter-3.47.1", "profile.web-chrome"], {"profile": "web-chrome", "browser": "Google Chrome", "browser_version": "151.0.7922.175", "os": "Darwin", "architecture": "arm64", "physical_device": False}),
@@ -355,7 +368,10 @@ def run_configuration(root: Path, run_id: str) -> tuple[Any, ...]:
 def dependencies_for(path: str, output_ids: dict[str, str]) -> list[str]:
     run_id = run_for_path(path)
     direct = list(RUN_CONFIG[run_id][4])
-    if path in SECURITY_ARTIFACT_MIGRATION_PATHS:
+    if path.endswith(PLATFORM_STATE_SUMMARY_SUFFIX):
+        raw_path = path.removesuffix(".summary.json") + ".txt"
+        direct.append(output_ids[raw_path])
+    elif path in SECURITY_ARTIFACT_MIGRATION_PATHS:
         direct.append(output_ids[SECURITY_ARTIFACT_MIGRATION_PATHS[path]])
     elif path.startswith("evidence/scenarios/surfaces/"):
         direct.append(output_ids["evidence/scenarios/integrated/index.json"])
@@ -376,6 +392,22 @@ def dependencies_for(path: str, output_ids: dict[str, str]) -> list[str]:
     elif path == "provenance.yaml":
         direct.extend(node_id for output_path, node_id in output_ids.items() if output_path != path)
     return sorted(set(direct))
+
+
+def verify_scenario_proofs_are_tracked(root: Path, tracked_paths: set[str] | None = None) -> None:
+    expected = {item["path"] for item in load_json(root, "evidence/scenarios/index.json")["files"]}
+    if tracked_paths is None:
+        if not (root / ".git").exists():
+            return
+        result = subprocess.run(
+            ["git", "-C", str(root), "ls-files", "-z", "--", "evidence/scenarios/surfaces"],
+            check=True,
+            capture_output=True,
+        )
+        tracked_paths = {value.decode() for value in result.stdout.split(b"\0") if value}
+    missing = sorted(expected - tracked_paths)
+    if missing:
+        raise DependencyError(f"Scenario Proofがgit ls-filesに含まれません: count={len(missing)} first={missing[0]}")
 
 
 def proof_structure(root: Path, index: dict[str, Any]) -> dict[str, Any]:
@@ -717,6 +749,8 @@ def security_runtime_report_attests_current_inputs(root: Path, started_at: str) 
 
 
 def verify_graph(root: Path, graph: dict[str, Any]) -> dict[str, int]:
+    platform_state.verify_all(root, write=False)
+    verify_scenario_proofs_are_tracked(root)
     if graph.get("policy") != POLICY:
         raise DependencyError("Evidence dependency policyがCore契約と一致しません")
     if graph.get("status") != "current":

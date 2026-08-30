@@ -1,0 +1,30 @@
+schema_version: 2
+atlas_id: flutter-reference-atlas
+epoch: "2026-08-28"
+completion_class: subject-definitive
+authority_extraction: authority/extraction.snapshot.json
+authority_body_inventory: authority/body-inventory.snapshot.json
+authority_body_review: authority/review-queue.snapshot.json
+surface_inventory: surface.inventory.yaml
+verification_matrix: verification.matrix.yaml
+scenario_proofs: evidence/scenarios/index.json
+scenario_closure_plan: evidence/scenarios/closure-plan.json
+evidence_durability: artifacts/pattern-scenarios/results.json
+evidence_dependency_graph: evidence/dependency-graph.json
+depth_parity: depth.parity.yaml
+skill_eval: evals/flutter-router.definitive-skill-eval.json
+skill_router: evals/definitive-skill-router.json
+non_regression: non-regression.yaml
+certificate: evidence/definitive-certificate.json
+historical_certificates:
+  - path: evidence/history/v1.0.0/completion-certificate.json
+    classification: bounded-complete
+reference_systems:
+  - id: operations-workspace
+    path: reference-systems/operations-workspace/pubspec.yaml
+    digest: sha256:84d246b40fb8418736ec735cf46a7269c1f38822d7cee80b28f6c6e5285602c7
+    behavior_ids:
+      - product.adaptive-workspace
+      - product.state-lifecycle
+      - product.navigation
+comparisons: []

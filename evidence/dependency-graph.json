@@ -1,6 +1,6 @@
 {
   "atlas_id": "flutter-reference-atlas",
-  "generated_at": "2026-08-30T19:19:35Z",
+  "generated_at": "2026-08-30T19:34:26Z",
   "inputs": [
     {
       "baseline_digest": "sha256:0434f4aace21588948e0292774363e28421efcee9e26bf070ce86d39f90b025d",
@@ -94,7 +94,7 @@
     },
     {
       "baseline_digest": "sha256:130e9d2f95e8bf9e148fb7d764752399a7bc692e4646bdfac68f6f5e6f21c0f7",
-      "current_digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+      "current_digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
       "id": "source.atlas-contract",
       "kind": "source",
       "members": [
@@ -104,6 +104,7 @@
         "authority/review-queue.snapshot.json",
         "baseline/public-main-non-regression-v1.json",
         "coverage.yaml",
+        "definitive.yaml",
         "definitive/evidence-dependency-contract.json",
         "definitive/requirements.json",
         "definitive/runtime-observations.json",
@@ -122,17 +123,17 @@
         "skill.package.yaml",
         "sources.lock.yaml"
       ],
-      "observed_at": "2026-08-30T19:00:21Z"
+      "observed_at": "2026-08-30T19:30:05Z"
     },
     {
       "baseline_digest": "sha256:d2cf30b10d0ae8de6390fc9406237c001aea5f1ceaa7957cb4db040ebbbe3787",
-      "current_digest": "sha256:b52c6620bd993336367a816cb62a5537337041233cb9b2b7e6adec4121187a45",
+      "current_digest": "sha256:83301c8031283b6c9bf207d52c1290882fbb1308565b18d8715245bf91f880d5",
       "id": "source.evidence-dependency-baseline",
       "kind": "source",
       "members": [
         "baseline/evidence-dependency-v1.json"
       ],
-      "observed_at": "2026-08-30T19:17:23Z"
+      "observed_at": "2026-08-30T19:34:17Z"
     },
     {
       "baseline_digest": "sha256:d598228b97ed18903389ffae334db56d82abccc5f98473e7234b360844ba9043",
@@ -310,7 +311,7 @@
     },
     {
       "baseline_digest": "sha256:b94abba8e35a255a9bd4f734287bfd5eca844caec8183410abb7aaf47d474a52",
-      "current_digest": "sha256:b3f40caf6d9f33a1eca2cd890e6959e71ca67037287855e2b10c53e6af190ebf",
+      "current_digest": "sha256:dc7aea75cb9de0007f5901eaf3ec495bf8a464c8074d266e747443559b1966c8",
       "id": "harness.evidence-dependency",
       "kind": "harness",
       "members": [
@@ -324,9 +325,20 @@
         "tooling/evidence_dependency/fixtures/shrink-proof-structure.json",
         "tooling/evidence_dependency/fixtures/weaken-threshold.json",
         "tooling/evidence_dependency/graph.py",
+        "tooling/evidence_dependency/platform_state.py",
         "tooling/evidence_dependency/test_graph.py"
       ],
-      "observed_at": "2026-08-30T19:17:23Z"
+      "observed_at": "2026-08-30T19:30:05Z"
+    },
+    {
+      "baseline_digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+      "current_digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+      "id": "harness.android-platform-state-validation",
+      "kind": "harness",
+      "members": [
+        "tooling/evidence_dependency/platform_state.py"
+      ],
+      "observed_at": "2026-08-30T19:30:05Z"
     },
     {
       "baseline_digest": "sha256:e1deba5287a77a9d69542d15d71352256567a8b2f5d90e47de9bf8be78cd3429",
@@ -2841,6 +2853,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.txt"
+      ],
+      "digest": "sha256:83a2c76b21f74f6c6dd32d526ee929b439a07da05eb0541457dc4dbd293ae914",
+      "id": "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -2924,6 +2948,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.txt"
+      ],
+      "digest": "sha256:758bce8172c69f4fb544416129af0a658f1e94e567095284e12f229ae8d6e31e",
+      "id": "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -2989,6 +3025,18 @@
       "kind": "platform-evidence",
       "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/trace.json",
       "run_id": "run.scenario-security-tranche.2026-08-30",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.txt"
+      ],
+      "digest": "sha256:73e35d19bb04c8325e463b21eb8fde0e4e18e56681f7b9e6ca889a7979f03745",
+      "id": "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
       "status": "current"
     },
     {
@@ -3072,6 +3120,18 @@
       "kind": "platform-evidence",
       "path": "evidence/scenarios/runtime/background/isolate-work/security/results.json",
       "run_id": "run.scenario-security-tranche.2026-08-30",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.txt"
+      ],
+      "digest": "sha256:1c10f4402c99d1bd07f75fffca57f760a2eda0aeefe6d51b6f7ca209be030d7e",
+      "id": "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
       "status": "current"
     },
     {
@@ -3758,6 +3818,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.txt"
+      ],
+      "digest": "sha256:ef00347deed1ba597fcbbfc0d88ba7efacbfed80f4a33d9c331c86353e214028",
+      "id": "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -3828,6 +3900,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.txt"
+      ],
+      "digest": "sha256:fc1b1740b2ce7621de0fbf254c0666234ea30691d311de2272be7e6fc793bea6",
+      "id": "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -3880,6 +3964,18 @@
       "kind": "platform-evidence",
       "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/trace.json",
       "run_id": "run.scenario-security-tranche.2026-08-30",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.txt"
+      ],
+      "digest": "sha256:c9cb00903974a7e0ad50d228b767f1f0c16242fbf738d1069ad0b0b6b12ae344",
+      "id": "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
       "status": "current"
     },
     {
@@ -3954,6 +4050,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.txt"
+      ],
+      "digest": "sha256:cf9525734819beb66f783e63d4cc6c5ed1a746a8914ba89390d00eedc8905a84",
+      "id": "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -4006,6 +4114,18 @@
       "kind": "platform-evidence",
       "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/trace.json",
       "run_id": "run.scenario-security-tranche.2026-08-30",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.txt"
+      ],
+      "digest": "sha256:0161d1c89d907e9deb9db1291e35a117911e591bc69f9de9ebfac7fcbe3d57f2",
+      "id": "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
       "status": "current"
     },
     {
@@ -4080,6 +4200,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.txt"
+      ],
+      "digest": "sha256:7c7119c99ca41aa5ee99cbf0588e674b934ba288d7a393d5cb59be0fc944bc40",
+      "id": "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -4136,6 +4268,18 @@
     },
     {
       "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.txt"
+      ],
+      "digest": "sha256:6131cc16ab0a8ac2f81df0a0ea93a9bb75418f91103314174b2aacdf02ac9868",
+      "id": "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
+      "status": "current"
+    },
+    {
+      "depends_on": [
         "harness.scenario-security-tranche",
         "profile.android-emulator",
         "runtime.flutter-3.47.1",
@@ -4188,6 +4332,18 @@
       "kind": "platform-evidence",
       "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/trace.json",
       "run_id": "run.scenario-security-tranche.2026-08-30",
+      "status": "current"
+    },
+    {
+      "depends_on": [
+        "harness.android-platform-state-validation",
+        "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.txt"
+      ],
+      "digest": "sha256:bc7f564e37e5b9fb097b79c7a872a5a5e09b478831a0e6f1df44fe86321dbb47",
+      "id": "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.summary.json",
+      "kind": "platform-evidence",
+      "path": "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/platform-state.summary.json",
+      "run_id": "run.android-platform-state-validation.2026-08-31",
       "status": "current"
     },
     {
@@ -5139,12 +5295,14 @@
         "harness.evidence-dependency",
         "harness.web-reference",
         "output:evidence:scenarios:integrated:index.json",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.txt",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:result.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:screen.png",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:trace.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:results.json",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.txt",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:result.json",
@@ -5310,12 +5468,14 @@
         "harness.evidence-dependency",
         "harness.web-reference",
         "output:evidence:scenarios:integrated:index.json",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.txt",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:result.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:screen.png",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:trace.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:results.json",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.txt",
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:result.json",
@@ -7447,11 +7607,13 @@
         "harness.evidence-dependency",
         "harness.web-reference",
         "output:evidence:scenarios:integrated:index.json",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.txt",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:result.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:screen.png",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:trace.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:results.json",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.txt",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:result.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:screen.png",
@@ -7616,11 +7778,13 @@
         "harness.evidence-dependency",
         "harness.web-reference",
         "output:evidence:scenarios:integrated:index.json",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.txt",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:result.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:screen.png",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:trace.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:results.json",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.txt",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:result.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:screen.png",
@@ -7785,11 +7949,13 @@
         "harness.evidence-dependency",
         "harness.web-reference",
         "output:evidence:scenarios:integrated:index.json",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.txt",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:result.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:screen.png",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:trace.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:results.json",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.txt",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:result.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:screen.png",
@@ -7954,10 +8120,12 @@
         "harness.evidence-dependency",
         "harness.web-reference",
         "output:evidence:scenarios:integrated:index.json",
+        "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.txt",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:result.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:screen.png",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:trace.json",
+        "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.txt",
         "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:result.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:screen.png",
@@ -13585,23 +13753,27 @@
         "output:evidence:scenarios:runtime:accessibility:semantics-tree:security:material-semantics:screen.png",
         "output:evidence:scenarios:runtime:accessibility:semantics-tree:security:material-semantics:trace.json",
         "output:evidence:scenarios:runtime:accessibility:semantics-tree:security:results.json",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.txt",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:result.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:screen.png",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:trace.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:results.json",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.txt",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:result.json",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:screen.png",
         "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:trace.json",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.txt",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:result.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:screen.png",
         "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:trace.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:results.json",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.summary.json",
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.txt",
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-tree.xml",
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:result.json",
@@ -13653,37 +13825,45 @@
         "output:evidence:scenarios:runtime:build:web:security:wasm:result.json",
         "output:evidence:scenarios:runtime:build:web:security:wasm:screen.png",
         "output:evidence:scenarios:runtime:build:web:security:wasm:trace.json",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.txt",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:result.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:screen.png",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:trace.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:results.json",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.txt",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:result.json",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:screen.png",
         "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:trace.json",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.txt",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:result.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:screen.png",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:trace.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:results.json",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.txt",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:result.json",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:screen.png",
         "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:trace.json",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.txt",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:result.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:screen.png",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:trace.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:results.json",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.txt",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:result.json",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:screen.png",
         "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:trace.json",
+        "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.txt",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:result.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:screen.png",
         "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:trace.json",
+        "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.summary.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.txt",
         "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:result.json",
         "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:screen.png",
@@ -14261,7 +14441,7 @@
         "source.atlas-contract",
         "source.evidence-dependency-baseline"
       ],
-      "digest": "sha256:7820d665503eb8a2cc33ff6b98371d2096a7b168682a923cbac471aba20998a8",
+      "digest": "sha256:b55b3bebfe5116222052019875001c0d28ba230f62d95cfdf66c3a7f8cc6cdd9",
       "id": "output:provenance.yaml",
       "kind": "derived-evidence",
       "path": "provenance.yaml",
@@ -14418,23 +14598,27 @@
     "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/screen.png",
     "evidence/scenarios/runtime/accessibility/semantics-tree/security/material-semantics/trace.json",
     "evidence/scenarios/runtime/accessibility/semantics-tree/security/results.json",
+    "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.summary.json",
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.txt",
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-tree.xml",
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/result.json",
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/screen.png",
     "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/trace.json",
     "evidence/scenarios/runtime/background/app-lifecycle/security/results.json",
+    "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.summary.json",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.txt",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-tree.xml",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/result.json",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/screen.png",
     "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/trace.json",
+    "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.summary.json",
     "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.txt",
     "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-tree.xml",
     "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/result.json",
     "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/screen.png",
     "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/trace.json",
     "evidence/scenarios/runtime/background/isolate-work/security/results.json",
+    "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.summary.json",
     "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.txt",
     "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-tree.xml",
     "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/result.json",
@@ -14486,37 +14670,45 @@
     "evidence/scenarios/runtime/build/web/security/wasm/result.json",
     "evidence/scenarios/runtime/build/web/security/wasm/screen.png",
     "evidence/scenarios/runtime/build/web/security/wasm/trace.json",
+    "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/platform-state.summary.json",
     "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/platform-state.txt",
     "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/result.json",
     "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/screen.png",
     "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/trace.json",
     "evidence/scenarios/runtime/input/focus-traversal/security/results.json",
+    "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/platform-state.summary.json",
     "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/platform-state.txt",
     "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/result.json",
     "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/screen.png",
     "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/trace.json",
+    "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/platform-state.summary.json",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/platform-state.txt",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/result.json",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/screen.png",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/trace.json",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/results.json",
+    "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/platform-state.summary.json",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/platform-state.txt",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/result.json",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/screen.png",
     "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/trace.json",
+    "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/platform-state.summary.json",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/platform-state.txt",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/result.json",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/screen.png",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/trace.json",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/results.json",
+    "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/platform-state.summary.json",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/platform-state.txt",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/result.json",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/screen.png",
     "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/trace.json",
+    "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/platform-state.summary.json",
     "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/platform-state.txt",
     "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/result.json",
     "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/screen.png",
     "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/trace.json",
+    "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/platform-state.summary.json",
     "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/platform-state.txt",
     "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/result.json",
     "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/screen.png",
@@ -15174,8 +15366,53 @@
     },
     {
       "attempts": 1,
+      "command": "python3 tooling/evidence_dependency/platform_state.py --write",
+      "completed_at": "2026-08-30T19:30:36Z",
+      "execution_kind": "derived",
+      "id": "run.android-platform-state-validation.2026-08-31",
+      "input_bindings": [
+        {
+          "digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+          "input_id": "harness.android-platform-state-validation"
+        },
+        {
+          "digest": "sha256:0646c5c0672c9747bc0267be5b1b923df7189775b11b57354d98cb6be4602ebb",
+          "input_id": "harness.scenario-security-tranche"
+        },
+        {
+          "digest": "sha256:23cb49b82459dc60e54b1495a1e519a04b9f91d34d22cbae46a20b5eb02e027b",
+          "input_id": "profile.android-emulator"
+        },
+        {
+          "digest": "sha256:e1deba5287a77a9d69542d15d71352256567a8b2f5d90e47de9bf8be78cd3429",
+          "input_id": "runtime.flutter-3.47.1"
+        },
+        {
+          "digest": "sha256:0434f4aace21588948e0292774363e28421efcee9e26bf070ce86d39f90b025d",
+          "input_id": "source.reference-app"
+        }
+      ],
+      "output_ids": [
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:app-lifecycle-listener:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:background:app-lifecycle:security:widgets-binding-observer:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:isolate-run:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:ordered-traversal:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:focus-traversal:security:skip-sensitive:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:callback-shortcuts:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:keyboard-shortcuts:security:shortcuts-actions:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:horizontal-drag:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:pointer-gesture-arena:security:tap-recognizer:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:text-ime:security:bidi-rejection:platform-state.summary.json",
+        "output:evidence:scenarios:runtime:input:text-ime:security:obscured-entry:platform-state.summary.json"
+      ],
+      "result": "passed",
+      "started_at": "2026-08-30T19:30:06Z"
+    },
+    {
+      "attempts": 1,
       "command": "make authority-verify",
-      "completed_at": "2026-08-30T19:05:08Z",
+      "completed_at": "2026-08-30T19:30:36Z",
       "execution_kind": "derived",
       "id": "run.authority-inventory.2026-08-28",
       "input_bindings": [
@@ -15188,7 +15425,7 @@
           "input_id": "profile.local"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         }
       ],
@@ -15277,7 +15514,7 @@
         "output:evidence:artifacts:authority-body-non-regression-report.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:05:06Z"
+      "started_at": "2026-08-30T19:30:06Z"
     },
     {
       "attempts": 1,
@@ -15318,16 +15555,20 @@
     {
       "attempts": 1,
       "command": "python3 tooling/definitive_inventory/generate.py --sdk-root .tools/flutter-3.47.1/flutter && python3 tooling/fe_parity/generate.py",
-      "completed_at": "2026-08-30T19:19:22Z",
+      "completed_at": "2026-08-30T19:33:17Z",
       "execution_kind": "derived",
       "id": "run.definitive-parity.2026-08-28",
       "input_bindings": [
+        {
+          "digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+          "input_id": "harness.android-platform-state-validation"
+        },
         {
           "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:b3f40caf6d9f33a1eca2cd890e6959e71ca67037287855e2b10c53e6af190ebf",
+          "digest": "sha256:dc7aea75cb9de0007f5901eaf3ec495bf8a464c8074d266e747443559b1966c8",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -15371,7 +15612,7 @@
           "input_id": "runtime.flutter-3.47.1"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         },
         {
@@ -15385,12 +15626,12 @@
         "output:atlas:definitive:surface-inventory.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:18:45Z"
+      "started_at": "2026-08-30T19:31:47Z"
     },
     {
       "attempts": 1,
       "command": "make formal-local",
-      "completed_at": "2026-08-30T19:04:55Z",
+      "completed_at": "2026-08-30T19:31:46Z",
       "execution_kind": "runtime",
       "id": "run.formal-local.2026-08-28",
       "input_bindings": [
@@ -15407,7 +15648,7 @@
           "input_id": "runtime.flutter-3.47.1"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         },
         {
@@ -15432,18 +15673,22 @@
         "os": "Darwin",
         "profile": "local"
       },
-      "started_at": "2026-08-30T19:04:19Z"
+      "started_at": "2026-08-30T19:30:37Z"
     },
     {
       "attempts": 1,
       "command": "python3 tooling/generate_provenance.py",
-      "completed_at": "2026-08-30T19:19:35Z",
+      "completed_at": "2026-08-30T19:34:26Z",
       "execution_kind": "derived",
       "id": "run.provenance.2026-08-29",
       "input_bindings": [
         {
           "digest": "sha256:4268d566e910fb39adf5574e80a9ad91b88a7eaff2d1cf98e4f22815fa3e45a3",
           "input_id": "harness.android"
+        },
+        {
+          "digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+          "input_id": "harness.android-platform-state-validation"
         },
         {
           "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
@@ -15454,7 +15699,7 @@
           "input_id": "harness.container"
         },
         {
-          "digest": "sha256:b3f40caf6d9f33a1eca2cd890e6959e71ca67037287855e2b10c53e6af190ebf",
+          "digest": "sha256:dc7aea75cb9de0007f5901eaf3ec495bf8a464c8074d266e747443559b1966c8",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -15510,11 +15755,11 @@
           "input_id": "runtime.flutter-3.47.1"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         },
         {
-          "digest": "sha256:b52c6620bd993336367a816cb62a5537337041233cb9b2b7e6adec4121187a45",
+          "digest": "sha256:83301c8031283b6c9bf207d52c1290882fbb1308565b18d8715245bf91f880d5",
           "input_id": "source.evidence-dependency-baseline"
         },
         {
@@ -15530,7 +15775,7 @@
         "output:provenance.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:19:23Z"
+      "started_at": "2026-08-30T19:34:18Z"
     },
     {
       "attempts": 1,
@@ -15771,12 +16016,16 @@
     {
       "attempts": 1,
       "command": "python3 tooling/scenario_proof/generate.py && python3 tooling/evidence_dependency/graph.py --write",
-      "completed_at": "2026-08-30T19:18:44Z",
+      "completed_at": "2026-08-30T19:30:36Z",
       "execution_kind": "derived",
       "id": "run.scenario-proof-generation.2026-08-29",
       "input_bindings": [
         {
-          "digest": "sha256:b3f40caf6d9f33a1eca2cd890e6959e71ca67037287855e2b10c53e6af190ebf",
+          "digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+          "input_id": "harness.android-platform-state-validation"
+        },
+        {
+          "digest": "sha256:dc7aea75cb9de0007f5901eaf3ec495bf8a464c8074d266e747443559b1966c8",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -15816,7 +16065,7 @@
           "input_id": "runtime.flutter-3.47.1"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         },
         {
@@ -16369,12 +16618,12 @@
         "output:evidence:scenarios:surfaces:testing:unit-widget:security.proof.json"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:17:24Z"
+      "started_at": "2026-08-30T19:30:06Z"
     },
     {
       "attempts": 1,
       "command": "python3 tooling/scenario_security_tranche/artifact_migration.py",
-      "completed_at": "2026-08-30T19:00:31Z",
+      "completed_at": "2026-08-30T19:30:36Z",
       "execution_kind": "derived",
       "id": "run.scenario-security-artifact-migration.2026-08-31",
       "input_bindings": [
@@ -16395,7 +16644,7 @@
           "input_id": "runtime.flutter-3.47.1"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         },
         {
@@ -16410,7 +16659,7 @@
         "output:evidence:scenarios:runtime:background:isolate-work:security:transferable-data:platform-tree.xml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:00:30Z"
+      "started_at": "2026-08-30T19:30:06Z"
     },
     {
       "attempts": 1,
@@ -16525,16 +16774,20 @@
     {
       "attempts": 1,
       "command": "make skill-eval",
-      "completed_at": "2026-08-30T19:19:22Z",
+      "completed_at": "2026-08-30T19:33:17Z",
       "execution_kind": "derived",
       "id": "run.skill-eval.2026-08-28",
       "input_bindings": [
+        {
+          "digest": "sha256:809d079f323329bef1546a299884a43aee12b09ff307728f107160f9f71d4bb8",
+          "input_id": "harness.android-platform-state-validation"
+        },
         {
           "digest": "sha256:f8aff3bc3b6f8494c98a7e074ac25cd0ea256e5c04cded7d736a61b4cd0cb308",
           "input_id": "harness.authority-parity"
         },
         {
-          "digest": "sha256:b3f40caf6d9f33a1eca2cd890e6959e71ca67037287855e2b10c53e6af190ebf",
+          "digest": "sha256:dc7aea75cb9de0007f5901eaf3ec495bf8a464c8074d266e747443559b1966c8",
           "input_id": "harness.evidence-dependency"
         },
         {
@@ -16582,7 +16835,7 @@
           "input_id": "runtime.flutter-3.47.1"
         },
         {
-          "digest": "sha256:7708c61b323f1c71470a5b238f185490e327b250fe064529274d5e585ff83ffb",
+          "digest": "sha256:d7f9549e1c8a0be7b1a93889e9a75a93af393fa0e364770130c72ba44866bb62",
           "input_id": "source.atlas-contract"
         },
         {
@@ -16601,7 +16854,7 @@
         "output:evidence:router-eval.evidence.yaml"
       ],
       "result": "passed",
-      "started_at": "2026-08-30T19:18:45Z"
+      "started_at": "2026-08-30T19:31:47Z"
     },
     {
       "attempts": 1,

@@ -1,0 +1,23 @@
+{
+  "activity_block": {
+    "end_line": 887,
+    "start_line": 743
+  },
+  "component": "dev.akaitigo.atlas.operations_workspace/.MainActivity",
+  "historical_package_match_accepted": false,
+  "raw_artifact": {
+    "bytes": 72364,
+    "digest": "sha256:5ef72da7e8cd1d4faec60aa1d783ea1944c7b114b1f6a03c295c9aed250a1606",
+    "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/platform-state.txt"
+  },
+  "schema_version": 1,
+  "state_contract": "foreground-input-observation",
+  "states": {
+    "mFinished": false,
+    "mResumed": true,
+    "mStopped": false
+  },
+  "surface_id": "input.text-ime",
+  "validation": "passed",
+  "variant": "bidi-rejection"
+}

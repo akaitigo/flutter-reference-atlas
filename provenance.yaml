@@ -210,7 +210,7 @@
       ]
     },
     {
-      "digest": "sha256:bef497f6838887acccc4b982f8ecc0f881eb0ce054957e4b3aa36030baa572ef",
+      "digest": "sha256:d03d2860ff531a5946060f83dd22489e5558642d53b82e70250d23be4b16f542",
       "generated_by": "tooling/evidence_dependency/graph.py",
       "kind": "generated",
       "license": "Apache-2.0",
@@ -8532,6 +8532,17 @@
       ]
     },
     {
+      "digest": "sha256:83a2c76b21f74f6c6dd32d526ee929b439a07da05eb0541457dc4dbd293ae914",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/background/app-lifecycle/security/app-lifecycle-listener/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:c5e42e09644c9ce48d2c31e60a9ea97d5e51ddd9f9b67ced88f127a00c8a22ec",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -8598,6 +8609,17 @@
       ]
     },
     {
+      "digest": "sha256:758bce8172c69f4fb544416129af0a658f1e94e567095284e12f229ae8d6e31e",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:9053436f3d05d0c92259fbc220bf6fbbf1143c3acfed0f8fd0ee8ffc66af79e8",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -8647,6 +8669,17 @@
       "kind": "test-report",
       "license": "Apache-2.0",
       "path": "evidence/scenarios/runtime/background/app-lifecycle/security/widgets-binding-observer/trace.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:73e35d19bb04c8325e463b21eb8fde0e4e18e56681f7b9e6ca889a7979f03745",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/background/isolate-work/security/isolate-run/platform-state.summary.json",
       "source_ids": [
         "flutter-sdk-3.47.1-macos-arm64",
         "android-emulator-runtime-inventory"
@@ -8713,6 +8746,17 @@
       "kind": "test-report",
       "license": "Apache-2.0",
       "path": "evidence/scenarios/runtime/background/isolate-work/security/results.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:1c10f4402c99d1bd07f75fffca57f760a2eda0aeefe6d51b6f7ca209be030d7e",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/background/isolate-work/security/transferable-data/platform-state.summary.json",
       "source_ids": [
         "flutter-sdk-3.47.1-macos-arm64",
         "android-emulator-runtime-inventory"
@@ -9280,6 +9324,17 @@
       ]
     },
     {
+      "digest": "sha256:ef00347deed1ba597fcbbfc0d88ba7efacbfed80f4a33d9c331c86353e214028",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/focus-traversal/security/ordered-traversal/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:116514e7132cd30d9fea7571ab9f64785e6101f956d543d376f695b117c5dacd",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -9335,6 +9390,17 @@
       ]
     },
     {
+      "digest": "sha256:fc1b1740b2ce7621de0fbf254c0666234ea30691d311de2272be7e6fc793bea6",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:ce88116be3c960d1349951dab264c45ddbc0efc6051239b2ea4228720e302605",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -9373,6 +9439,17 @@
       "kind": "test-report",
       "license": "Apache-2.0",
       "path": "evidence/scenarios/runtime/input/focus-traversal/security/skip-sensitive/trace.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:c9cb00903974a7e0ad50d228b767f1f0c16242fbf738d1069ad0b0b6b12ae344",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/callback-shortcuts/platform-state.summary.json",
       "source_ids": [
         "flutter-sdk-3.47.1-macos-arm64",
         "android-emulator-runtime-inventory"
@@ -9434,6 +9511,17 @@
       ]
     },
     {
+      "digest": "sha256:cf9525734819beb66f783e63d4cc6c5ed1a746a8914ba89390d00eedc8905a84",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:6d7069bbd410394058c9d3a2de203aa2be3c29e13848be1dd45a1af9e7f33ff7",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -9472,6 +9560,17 @@
       "kind": "test-report",
       "license": "Apache-2.0",
       "path": "evidence/scenarios/runtime/input/keyboard-shortcuts/security/shortcuts-actions/trace.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:0161d1c89d907e9deb9db1291e35a117911e591bc69f9de9ebfac7fcbe3d57f2",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/horizontal-drag/platform-state.summary.json",
       "source_ids": [
         "flutter-sdk-3.47.1-macos-arm64",
         "android-emulator-runtime-inventory"
@@ -9533,6 +9632,17 @@
       ]
     },
     {
+      "digest": "sha256:7c7119c99ca41aa5ee99cbf0588e674b934ba288d7a393d5cb59be0fc944bc40",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/pointer-gesture-arena/security/tap-recognizer/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:080b821e874521017e67e2cb58e6d5e4beb2424d0c013a066d5614f9d41b0ca2",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -9577,6 +9687,17 @@
       ]
     },
     {
+      "digest": "sha256:6131cc16ab0a8ac2f81df0a0ea93a9bb75418f91103314174b2aacdf02ac9868",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/platform-state.summary.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
       "digest": "sha256:5ef72da7e8cd1d4faec60aa1d783ea1944c7b114b1f6a03c295c9aed250a1606",
       "generated_by": "scripts/scenario-security-tranche-runtime.sh",
       "kind": "test-report",
@@ -9615,6 +9736,17 @@
       "kind": "test-report",
       "license": "Apache-2.0",
       "path": "evidence/scenarios/runtime/input/text-ime/security/bidi-rejection/trace.json",
+      "source_ids": [
+        "flutter-sdk-3.47.1-macos-arm64",
+        "android-emulator-runtime-inventory"
+      ]
+    },
+    {
+      "digest": "sha256:bc7f564e37e5b9fb097b79c7a872a5a5e09b478831a0e6f1df44fe86321dbb47",
+      "generated_by": "scripts/scenario-security-tranche-runtime.sh",
+      "kind": "test-report",
+      "license": "Apache-2.0",
+      "path": "evidence/scenarios/runtime/input/text-ime/security/obscured-entry/platform-state.summary.json",
       "source_ids": [
         "flutter-sdk-3.47.1-macos-arm64",
         "android-emulator-runtime-inventory"

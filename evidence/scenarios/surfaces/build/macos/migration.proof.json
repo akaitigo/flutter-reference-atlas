@@ -1,0 +1,209 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/build/macos/migration/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "build-release",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.build.macos.migration",
+  "integrated_reference": {
+    "assertions": [
+      "v1 maps explicitly",
+      "current domain renders migrated state"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "snapshot-schema"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3711,
+      "digest": "sha256:a0b82a66282797fd41b1a20cb99a694259cda14982cc764d3a80f7f8ab7d54fe",
+      "path": "evidence/scenarios/integrated/migration.trace.json"
+    }
+  },
+  "scenario": "migration",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:6671fbc49b19bdeeb577f0affe44eeac2ef8ea10cf3ea2296540a5313c6792b9",
+      "path": "packages/flutter_tools/lib/src/commands/build_macos.dart"
+    },
+    {
+      "digest": "sha256:ffec1a0bbd70547186b82ad4e49089bafab2de309b89de97c776d70debb179fa",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/.gitignore"
+    },
+    {
+      "digest": "sha256:62290ad8e938bf410206d8c7e131262696b58a6df110d39faf3399396ffe61b1",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Flutter/Flutter-Debug.xcconfig"
+    },
+    {
+      "digest": "sha256:62290ad8e938bf410206d8c7e131262696b58a6df110d39faf3399396ffe61b1",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Flutter/Flutter-Release.xcconfig"
+    },
+    {
+      "digest": "sha256:b2f48a703816698f426ef12a237f776d205a75c03a6fb1a66ea8dcf9a355f826",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcodeproj/project.pbxproj.tmpl"
+    },
+    {
+      "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "digest": "sha256:f82969adf4781a3c54173cc48c4a4ee3ff7d269ae99d60c905ec113bd9fde59d",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme.tmpl"
+    },
+    {
+      "digest": "sha256:46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "digest": "sha256:dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "digest": "sha256:ce9dbe45a57c59e85519da50a26c471615b9c8cdd85a8f4a39d2e480e62a4af4",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/AppDelegate.swift"
+    },
+    {
+      "digest": "sha256:bc6ba8105ca69651aeeb77358851590de295dca04681a1d58c0f449641c242f3",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:be9e9ef8469d3262370e0f0b855ed163cbf9c8362c59e330b2ffe63b86fa42f4",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Base.lproj/MainMenu.xib"
+    },
+    {
+      "digest": "sha256:a2c97c87a9d7657df2f6c06396468cb5d1fde9c648ac23356ba09927c08d3fda",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/AppInfo.xcconfig.tmpl"
+    },
+    {
+      "digest": "sha256:8067d533ef6593760baad9a9855a786a7a77470fcc3f0925ec04fe43bc1ac4b0",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/Debug.xcconfig"
+    },
+    {
+      "digest": "sha256:7a6a4b4d973a23052fa0a0388dd261e32d311d7b66ba1bfc3b914b361808ac61",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/Release.xcconfig"
+    },
+    {
+      "digest": "sha256:0e341a392b16ad302d12890aa3dac9257a6c10ece685437604259a85341645a3",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Configs/Warnings.xcconfig"
+    },
+    {
+      "digest": "sha256:ebaab2b9992173de422c33e1fbab7f6e31acaa2213956097ac8cefd894a91ac8",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/DebugProfile.entitlements"
+    },
+    {
+      "digest": "sha256:f253e89c512b3a9a81bc5cdd7a14bf932470f835f261654a808ea4549cd94aad",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Info.plist"
+    },
+    {
+      "digest": "sha256:65c9613c11bcedfa51416b16c975d8ba6ff12b405fc19d60db8755d92e86d9fe",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/MainFlutterWindow.swift"
+    },
+    {
+      "digest": "sha256:b746c74b201e6af4e0864fbd1f4f629f96156a7ec4b7208bc995d0a5089bb592",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/Runner/Release.entitlements"
+    },
+    {
+      "digest": "sha256:cae612ea454a13e8c92a3315bbf48fc4093f15c958cece2ce785afc7712b8bff",
+      "path": "packages/flutter_tools/templates/app/macos.tmpl/RunnerTests/RunnerTests.swift.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:5d1204c8b751893e6d1157b2bb9a7fbfc88c66b796fed334f2a370421692e6cb",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "build.macos",
+  "surface_title": "macOS build・run・release"
+}

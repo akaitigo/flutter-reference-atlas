@@ -1,0 +1,133 @@
+{
+  "atlas_id": "flutter-reference-atlas",
+  "authority_atomic_binding": null,
+  "authority_lock_ids": [
+    "flutter-sdk-3.47.1-macos-arm64"
+  ],
+  "behavior_scope": "provisional-flutter-surface-not-authority-atomic",
+  "closure": {
+    "all_variants_driven": false,
+    "authority_atomic_binding": false,
+    "completion_eligible": false,
+    "dedicated_artifact": true,
+    "dedicated_row": true,
+    "dedicated_surface_scenario_runtime": false,
+    "integrated_runtime_trace": true,
+    "oracle_per_variant": false,
+    "real_platform_runtime_identity": false,
+    "retry_zero": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "surface_specific_evidence": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "dedicated_runtime": {
+    "all_variants_driven": false,
+    "baseline_variants": [
+      "javascript",
+      "release-js",
+      "wasm"
+    ],
+    "closed": false,
+    "declared_variants": [],
+    "errors": [
+      "dedicated-runtime-report-missing",
+      "variant-contract-not-declared"
+    ],
+    "minimum_variants": 2,
+    "oracle_per_variant": false,
+    "report_binding": null,
+    "report_path": "evidence/scenarios/runtime/build/web/performance/results.json",
+    "report_present": false,
+    "retry_zero": false,
+    "runtime_identity_complete": false,
+    "screenshot_artifact_per_variant": false,
+    "source_harness_digest_bound": false,
+    "trace_artifact_per_variant": false,
+    "trace_streams_per_variant": false
+  },
+  "domain": "build-release",
+  "gaps": [
+    "このSurfaceに当該ScenarioのRuntime Observationがない。",
+    "専用Runtime契約未達: dedicated-runtime-report-missing",
+    "専用Runtime契約未達: variant-contract-not-declared",
+    "統合Reference Appの当該ScenarioへこのSurfaceは直接Mappingされていない。",
+    "Authority由来Atomic behaviorのHuman reviewが未完了でCompletion対象外。"
+  ],
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "id": "proof.surface.build.web.performance",
+  "integrated_reference": {
+    "assertions": [
+      "budget breach is recorded",
+      "sample count is observable"
+    ],
+    "manifest": "integrations/reference-system/manifest.json",
+    "runtime_boundaries": [
+      "frame-budget"
+    ],
+    "runtime_identity": {
+      "architecture": "arm64",
+      "browser": "Google Chrome",
+      "browser_version": "151.0.7922.175",
+      "compiler_variants": [
+        "javascript",
+        "wasm"
+      ],
+      "dart_version": "3.13.1",
+      "flutter_version": "3.47.1",
+      "os": "Darwin",
+      "physical_device": false,
+      "profile": "web-chrome",
+      "runner_kind": "browser-runtime"
+    },
+    "status": "passed",
+    "surface_mapped": false,
+    "trace": {
+      "bytes": 3716,
+      "digest": "sha256:5cfd330dd37445f10adcd641ae323421158c2dd6ec2fb6c24a20727248acf1f7",
+      "path": "evidence/scenarios/integrated/performance.trace.json"
+    }
+  },
+  "scenario": "performance",
+  "schema_version": 1,
+  "source_bindings": [
+    {
+      "digest": "sha256:28b9780621e7b71b046312fb6bd741c1e6085f36c697be9f69fcc15589527b05",
+      "path": "packages/flutter_tools/lib/src/commands/build_web.dart"
+    },
+    {
+      "digest": "sha256:7ab2525f4b86b65d3e4c70358a17e5a1aaf6f437f99cbcc046dad73d59bb9015",
+      "path": "packages/flutter_tools/templates/app/web/favicon.png.copy.tmpl"
+    },
+    {
+      "digest": "sha256:3dce99077602f70421c1c6b2a240bc9b83d64d86681d45f2154143310c980be3",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-192.png.copy.tmpl"
+    },
+    {
+      "digest": "sha256:baccb205ae45f0b421be1657259b4943ac40c95094ab877f3bcbe12cd544dcbe",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-512.png.copy.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-maskable-192.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "packages/flutter_tools/templates/app/web/icons/Icon-maskable-512.png.img.tmpl"
+    },
+    {
+      "digest": "sha256:05d0ced2e93473830ca09b9f9f47460ffe6828ed1452721ded107df7bd3e2229",
+      "path": "packages/flutter_tools/templates/app/web/index.html.tmpl"
+    },
+    {
+      "digest": "sha256:3eb44d2563ce13cf33daa730a8111392f52cad7c4f232439a836eec7577f398d",
+      "path": "packages/flutter_tools/templates/app/web/manifest.json.tmpl"
+    }
+  ],
+  "source_set_digest": "sha256:cb3100c4db78eb963577190f6d347615cc9dfa494397062f1c031ae586a96116",
+  "status": "surface-scenario-gap",
+  "surface_evidence": [],
+  "surface_id": "build.web",
+  "surface_title": "Web build・run・release"
+}
