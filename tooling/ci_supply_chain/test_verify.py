@@ -3,6 +3,7 @@ import unittest
 
 from tooling.ci_supply_chain.verify import (
     checkout_history_violations,
+    runtime_dependency_violations,
     sdk_binding_violations,
     violations,
 )
@@ -88,6 +89,34 @@ class CiSupplyChainVerifyTest(unittest.TestCase):
         self.assertEqual(len(errors), 2)
         self.assertTrue(any("非空検証" in error for error in errors))
         self.assertTrue(any("FLUTTER_ATLAS_SDK_ROOT" in error for error in errors))
+
+    def test_runtime_dependencies_use_fixed_sdk_and_lockfile(self):
+        workflow = '''
+      - name: locked dependencies
+        working-directory: reference-systems/operations-workspace
+        run: '"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile'
+'''
+        self.assertEqual(runtime_dependency_violations(workflow, "ci.yml"), [])
+
+    def test_runtime_dependency_restore_without_lock_enforcement_is_rejected(self):
+        workflow = '''
+      - name: mutable dependencies
+        working-directory: reference-systems/operations-workspace
+        run: flutter pub get
+'''
+        errors = runtime_dependency_violations(workflow, "ci.yml")
+        self.assertEqual(len(errors), 1)
+        self.assertIn("--enforce-lockfile", errors[0])
+
+    def test_runtime_dependency_restore_in_wrong_directory_is_rejected(self):
+        workflow = '''
+      - name: wrong workspace
+        working-directory: .
+        run: '"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile'
+'''
+        errors = runtime_dependency_violations(workflow, "ci.yml")
+        self.assertEqual(len(errors), 1)
+        self.assertIn("working-directory", errors[0])
 
 
 if __name__ == "__main__":

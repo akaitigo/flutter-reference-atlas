@@ -19,6 +19,10 @@ SDK_BINDINGS = (
     'echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"',
     'echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"',
 )
+LOCKED_RUNTIME_DEPENDENCY_COMMAND = (
+    'run: \'"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile\''
+)
+RUNTIME_WORKSPACE = "working-directory: reference-systems/operations-workspace"
 
 
 def violations(text: str, path: str) -> list[str]:
@@ -60,6 +64,18 @@ def sdk_binding_violations(text: str, path: str) -> list[str]:
     return errors
 
 
+def runtime_dependency_violations(text: str, path: str) -> list[str]:
+    """clean CI checkoutのRuntime依存を固定lockfileからのみ復元する。"""
+    errors: list[str] = []
+    if RUNTIME_WORKSPACE not in text:
+        errors.append(f"{path}: Reference Appのworking-directoryが必要です")
+    if LOCKED_RUNTIME_DEPENDENCY_COMMAND not in text:
+        errors.append(
+            f"{path}: 固定FLUTTER_ROOTによるpub get --enforce-lockfileが必要です"
+        )
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     workflows = sorted((ROOT / ".github" / "workflows").glob("*.y*ml"))
@@ -71,6 +87,7 @@ def main() -> int:
         errors.extend(violations(text, relative))
         errors.extend(checkout_history_violations(text, relative))
         errors.extend(sdk_binding_violations(text, relative))
+        errors.extend(runtime_dependency_violations(text, relative))
     if errors:
         for error in errors:
             print(f"CI supply-chainエラー: {error}")

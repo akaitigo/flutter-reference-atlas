@@ -27,6 +27,9 @@ jobs:
           test -n "$FLUTTER_ROOT"
           echo "FORMAL_SDK=$FLUTTER_ROOT" >> "$GITHUB_ENV"
           echo "FLUTTER_ATLAS_SDK_ROOT=$FLUTTER_ROOT" >> "$GITHUB_ENV"
+      - name: Reference App固定依存をlockfileから復元
+        working-directory: reference-systems/operations-workspace
+        run: '"$FLUTTER_ROOT/bin/flutter" pub get --enforce-lockfile'
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: akaitigo/reference-atlas-core
